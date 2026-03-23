@@ -1,0 +1,68 @@
+:root {
+  --page-bg: var(--color-bg-light);
+  --page-bg-alt: var(--color-bg-mist);
+  --page-bg-dark: var(--color-bg-dark);
+  --page-text: var(--color-text-body);
+  --page-heading: var(--color-text-strong);
+  --page-text-muted: var(--color-text-muted);
+
+  --page-bg-wash-start: #eef2ff;
+  --page-bg-wash-end: #f3fbff;
+
+  --surface-card: var(--color-surface-light);
+  --surface-card-soft: var(--color-surface-soft);
+  --surface-panel: color-mix(in srgb, var(--color-surface-light) 92%, transparent 8%);
+  --surface-topbar: color-mix(in srgb, var(--color-bg-light) 88%, #ffffff 12%);
+
+  --border-card: var(--color-border-soft);
+  --border-strong: var(--color-border-strong);
+  --border-interactive: #bfd0ea;
+  --border-interactive-strong: #93b4e3;
+
+  --interactive-primary-bg: var(--color-primary);
+  --interactive-primary-bg-hover: var(--color-primary-strong);
+  --interactive-primary-text: #ffffff;
+  --interactive-secondary-bg: var(--color-surface-soft);
+  --interactive-secondary-bg-hover: #f0f6ff;
+  --interactive-secondary-text: #334155;
+  --interactive-secondary-border: var(--color-border-strong);
+  --interactive-selected-bg: var(--color-selected-bg);
+  --interactive-hover-bg: var(--color-hover-bg);
+  --interactive-focus-ring: var(--color-focus-ring);
+
+  --status-success: var(--color-success);
+  --status-warning: var(--color-warning);
+  --status-danger: var(--color-danger);
+
+  --shell-padding-desktop: var(--space-4);
+  --shell-padding-mobile: var(--space-3);
+  --shell-gap-desktop: var(--space-4);
+  --shell-gap-mobile: var(--space-3);
+  --sidebar-width: 256px;
+  --topbar-height-desktop: 74px;
+  --topbar-height-mobile: 64px;
+  --board-drawer-width: min(84vw, 320px);
+
+  --panel-padding: 18px;
+  --panel-padding-mobile: 14px;
+  --control-height: 46px;
+  --control-height-mobile: 44px;
+
+  --radius-card: var(--radius-md);
+  --radius-button: var(--radius-md);
+  --radius-panel: var(--radius-lg);
+
+  --font-ui: var(--font-family-ui);
+  --font-reading: var(--font-family-reading);
+  --font-size-title: var(--font-size-page-title);
+  --font-size-heading: var(--font-size-section-title);
+  --font-size-body-default: var(--font-size-body-lg);
+  --font-size-reading-default: var(--font-size-reading-body);
+
+  --shadow-panel: var(--shadow-card);
+  --shadow-panel-hover: var(--shadow-hover);
+  --shadow-button-primary: var(--shadow-elevated);
+
+  --list-row-hover-bg: rgba(20, 75, 184, 0.03);
+  --input-focus-border: #8caedf;
+}

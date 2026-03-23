@@ -7,7 +7,7 @@
 
 ## Source Of Truth
 - Primary reference: `index.html`
-- Supporting reference: `assets/css/app.css`
+- Implementation references: `assets/css/tokens.css`, `assets/css/semantic.css`, `assets/css/base.css`, `assets/css/components.css`, `assets/css/layouts.css`
 - Styleguide files under `assets/styleguide/` are exploratory references, not stronger than `index.html`
 
 ## Current Design DNA
@@ -57,18 +57,20 @@
 - Default border: `--color-border-soft`
 
 ### Typography
-- Font family: `Manrope, sans-serif`
+- UI font family: `Manrope, sans-serif`
+- Reading font family: `Lexend, Manrope, sans-serif`
 - Display title: `32px-40px`, `800`, tight tracking `-0.03em`
 - Page title: `28px-32px`, `800`, tight tracking `-0.03em`
 - Section title: `18px-20px`, `700`
 - Body: `14px-16px`, `500`
 - UI label: `12px-13px`, `700`
 - Caption: `10px-12px`, `700-800`, uppercase with wide tracking
+- Reading body: `16px`, line height `1.72`
 
 ### Radius
-- Card radius: `12px`
-- Large panel radius: `16px`
-- Button radius: `8px-12px`
+- `--radius-sm: 8px`
+- `--radius-md: 12px`
+- `--radius-lg: 16px`
 - Pill radius: `9999px`
 
 ### Shadow
@@ -79,6 +81,22 @@
 ### Spacing Scale
 - `4 / 8 / 12 / 16 / 24 / 32`
 - Extended layout spacing allowed for page shells: `40 / 48`
+
+### State Tokens
+- `--color-success: #15803D`
+- `--color-warning: #B45309`
+- `--color-danger: #C73F2E`
+- `--color-focus-ring: rgba(20, 75, 184, 0.13)`
+- `--color-selected-bg: #EDF4FF`
+- `--color-hover-bg: #FAFCFF`
+
+### Shell Tokens
+- `--sidebar-width: 256px`
+- `--topbar-height-desktop: 74px`
+- `--topbar-height-mobile: 64px`
+- `--shell-padding-desktop: 16px`
+- `--shell-padding-mobile: 12px`
+- `--board-drawer-width: min(84vw, 320px)`
 
 ## Core UI Patterns
 
@@ -152,7 +170,7 @@
 
 ## Styleguide Drift Notes
 - Some `assets/styleguide/` screens use nearby but inconsistent blues, creams, and radii.
-- When there is conflict, prefer the values and composition language already present in `index.html` and `assets/css/app.css`.
+- When there is conflict, prefer the values and composition language already present in `index.html` and the layered CSS token system.
 - Future cleanup should migrate exploratory screens toward these locked tokens rather than creating new variants.
 
 ## Mobile Evolution Rules
@@ -163,6 +181,9 @@
 
 ## Implementation Rules For Future Work
 - Define tokens once and reuse them across pages
+- `tokens.css` is for raw values only
+- `semantic.css` is for product meaning and role-based aliases
+- `components.css` and `layouts.css` should not introduce new raw hex values or ad hoc radius scales unless the design system is versioned first
 - New components should map to these tokens before adding new values
 - If a new screen needs a new token, version this document first
 - Prefer shared classes or CSS variables over one-off inline values

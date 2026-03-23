@@ -1,0 +1,61 @@
+:root {
+  --color-primary: #144bb8;
+  --color-primary-strong: #0f3d97;
+  --color-bg-light: #fdfcf9;
+  --color-bg-mist: #f4f6fb;
+  --color-bg-dark: #0a0d14;
+  --color-surface-light: #ffffff;
+  --color-surface-soft: #f8faff;
+  --color-surface-dark: #0f172a;
+  --color-text-strong: #111827;
+  --color-text-body: #0f172a;
+  --color-text-muted: #667085;
+  --color-border-soft: rgba(20, 75, 184, 0.1);
+  --color-border-strong: #d8e0ee;
+
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #c73f2e;
+  --color-focus-ring: rgba(20, 75, 184, 0.13);
+  --color-selected-bg: #edf4ff;
+  --color-hover-bg: #fafcff;
+
+  --font-family-ui: "Manrope", sans-serif;
+  --font-family-reading: "Lexend", "Manrope", sans-serif;
+
+  --font-size-display-min: 32px;
+  --font-size-display-max: 40px;
+  --font-size-page-title: 32px;
+  --font-size-section-title: 20px;
+  --font-size-body-lg: 16px;
+  --font-size-body: 14px;
+  --font-size-label: 12px;
+  --font-size-caption: 10px;
+  --font-size-reading-body: 16px;
+
+  --line-height-reading: 1.72;
+
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --tracking-tight: -0.03em;
+  --tracking-caption: 0.2em;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 4px 20px -2px rgba(20, 75, 184, 0.05);
+  --shadow-elevated: 0 12px 26px rgba(20, 75, 184, 0.2);
+  --shadow-hover: 0 12px 30px -5px rgba(20, 75, 184, 0.14);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+}

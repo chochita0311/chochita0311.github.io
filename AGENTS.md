@@ -16,7 +16,13 @@
 ## Project Structure & Module Organization
 - `notes/` is root holding the Markdown notes. Files are plain `.md` files
 - `docs/design-system/` holds the shared design rules, brand tokens, and UI guardrails for future screens
-- `assets/css/design-tokens.css` is the reusable token source for colors, type, radius, shadows, and spacing
+- `assets/css/tokens.css` holds primitive design tokens only: colors, typography, spacing, radius, shadows, and state constants
+- `assets/css/semantic.css` maps primitive tokens into product meanings such as page surfaces, shell sizing, interactive roles, and state usage
+- `assets/css/base.css` holds reset and shared element foundations
+- `assets/css/components.css` holds reusable component styles and should avoid raw design values
+- `assets/css/layouts.css` holds shell and responsive layout rules
+- `assets/css/app.css` is the compatibility entry point that imports the layered CSS files
+- `assets/css/design-tokens.css` is a backward-compatible alias to `assets/css/tokens.css`
 
 ## Default Information Management
 - For any changes to the project structure, coding style, or other guidelines, please propose updates to this document to keep it current
@@ -28,6 +34,7 @@
 - Use `index.html` as the canonical visual baseline for the note app unless a newer design-system version is approved
 - Follow `docs/design-system/NOTE-APP-DESIGN-SYSTEM.md` for brand tokens, component patterns, and identity guardrails
 - Keep the visual system consistent across pages by reusing the shared tokens instead of introducing one-off colors, spacing, shadows, or radius values
+- Treat `tokens.css` as raw primitives, `semantic.css` as product meaning, and component/layout files as consumers of those layers
 - Treat files under `assets/styleguide/` as exploratory references unless their patterns are aligned with the canonical tokens
 
 ## Commit & Pull Request Guidelines
