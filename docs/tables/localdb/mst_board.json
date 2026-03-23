@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "table": "mst_board",
+  "generated_at": "2026-02-19T19:03:17.791Z",
+  "total": 2,
+  "rows": [
+    {
+      "board_id": 1,
+      "display_name": "공지사항",
+      "sort_order": 100,
+      "record_status": "ACTIVE",
+      "reg_id": "system",
+      "reg_dt": "2026-02-19T19:03:17.791Z",
+      "upd_id": "system",
+      "upd_dt": "2026-02-19T19:03:17.791Z"
+    },
+    {
+      "board_id": 2,
+      "display_name": "My Notes",
+      "sort_order": 200,
+      "record_status": "ACTIVE",
+      "reg_id": "system",
+      "reg_dt": "2026-02-19T19:03:17.791Z",
+      "upd_id": "system",
+      "upd_dt": "2026-02-19T19:03:17.791Z"
+    }
+  ]
+}

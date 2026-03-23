@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play-Talk | Luxury Post Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#194cb3",
+                        "background-light": "#fdfcf9", // Cream Luxury Tone
+                        "background-dark": "#0e121b",
+                        "navy-900": "#0e121b",
+                        "cream-100": "#fdfcf9",
+                        "cream-200": "#f5f2eb",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'wght' 300, 'opsz' 24;
+            font-size: 20px;
+        }
+        .editor-content:focus {
+            outline: none;
+        }
+        .toolbar-btn {
+            @apply p-2 rounded-lg text-slate-600 hover:bg-primary/10 hover:text-primary transition-all duration-200;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Logo Area -->
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary flex items-center justify-center rounded-xl shadow-lg shadow-primary/20">
+<svg class="text-white size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<h2 class="text-navy-900 dark:text-slate-100 text-xl font-extrabold tracking-tight leading-none">Play-Talk</h2>
+<span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Luxury Editor</span>
+</div>
+</div>
+<!-- Actions Area -->
+<div class="flex items-center gap-6">
+<button class="text-slate-500 hover:text-navy-900 dark:hover:text-slate-100 text-sm font-semibold transition-colors">
+                    Discard Draft
+                </button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800"></div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end">
+<span class="text-xs text-slate-400 font-medium italic">Auto-saved at 2:45 PM</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 h-12 rounded-xl font-bold text-sm tracking-wide shadow-xl shadow-primary/30 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined !text-[18px]">send</span>
+                        Publish Post
+                    </button>
+<div class="size-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
+<img class="w-full h-full rounded-full object-cover" data-alt="User profile avatar with premium border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Fq-KR_K1R2AnwOGGVA54B7MLSd5ju8-JABUdvgySyngifQesvaGkqBy_ZrmupDpcBC0z4T7vpmj53pIXdYlVC1RrqQu4kIf0LvOXzBNK7Vr5-JRJq6RBFrfv1CTwPnBQmxL5b4HmPzk7Y2Fq5_56YriTDtRLjyYmzsBDVO601c73tJ5lt88sHvKlL0yRcTtPAcrA_jVbue9jzn-ogpv7Y6dyvZYFwQObVJ9_bhV9APLGztZToCQMy4s5qZZcWj2AD9moHpHI5tI"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20">
+<div class="max-w-[840px] mx-auto px-6">
+<!-- Breadcrumbs / Mode Indicator -->
+<div class="flex items-center gap-2 mb-8 text-slate-400 text-xs font-bold uppercase tracking-widest">
+<span class="text-primary">Community</span>
+<span class="material-symbols-outlined !text-[12px]">chevron_right</span>
+<span>New Discussion</span>
+</div>
+<!-- Editor Header Section -->
+<div class="space-y-6 mb-12">
+<!-- Title Input -->
+<textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-5xl font-extrabold text-navy-900 dark:text-slate-100 placeholder:text-slate-200 dark:placeholder:text-slate-800 resize-none min-h-[60px] leading-[1.1]" placeholder="Enter your high-end discussion title..." rows="1"></textarea>
+<!-- Category & Tags -->
+<div class="flex flex-wrap items-center gap-4">
+<div class="relative group">
+<select class="appearance-none bg-primary/5 dark:bg-primary/10 border border-primary/10 rounded-lg px-4 pr-10 h-10 text-sm font-semibold text-primary focus:ring-primary focus:border-primary cursor-pointer transition-all">
+<option>Select Category</option>
+<option>Language Tips</option>
+<option>Cultural Etiquette</option>
+<option>Deep Dives</option>
+<option>Global Trends</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-primary !text-[18px]">expand_more</span>
+</div>
+<button class="flex items-center gap-2 px-4 h-10 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 text-slate-400 hover:text-primary hover:border-primary transition-all text-sm font-medium">
+<span class="material-symbols-outlined !text-[18px]">add</span>
+                        Add Tags
+                    </button>
+</div>
+</div>
+<!-- Sticky Formatting Toolbar -->
+<div class="sticky top-24 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-2 mb-8 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-1">
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_bold</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_italic</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_strikethrough</span></button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<button class="toolbar-btn"><span class="material-symbols-outlined">link</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_quote</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">code</span></button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_list_bulleted</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">format_list_numbered</span></button>
+</div>
+<div class="flex items-center gap-1">
+<button class="toolbar-btn"><span class="material-symbols-outlined">image</span></button>
+<button class="toolbar-btn"><span class="material-symbols-outlined">video_library</span></button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<button class="toolbar-btn text-slate-400"><span class="material-symbols-outlined">help</span></button>
+</div>
+</div>
+<!-- Main Writing Area -->
+<div class="prose prose-slate dark:prose-invert max-w-none">
+<div class="editor-content w-full min-h-[500px] text-lg leading-relaxed text-slate-700 dark:text-slate-300 focus:outline-none" contenteditable="true" placeholder="Start typing your masterpiece...">
+<p class="text-slate-400 italic pointer-events-none">Draft your discussion here. Use the toolbar above for formatting. Highlight text for quick actions...</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Helper / Sidebar Menu -->
+<div class="fixed right-8 bottom-8 flex flex-col gap-4">
+<button class="size-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors group">
+<span class="material-symbols-outlined">settings</span>
+<span class="absolute right-14 bg-navy-900 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Post Settings</span>
+</button>
+<button class="size-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors group">
+<span class="material-symbols-outlined">history</span>
+<span class="absolute right-14 bg-navy-900 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Version History</span>
+</button>
+<button class="size-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors group">
+<span class="material-symbols-outlined">visibility</span>
+<span class="absolute right-14 bg-navy-900 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Preview Mode</span>
+</button>
+</div>
+<!-- Status Footer -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-3">
+<div class="max-w-[840px] mx-auto px-6 flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5"><span class="size-1.5 bg-green-500 rounded-full"></span> Editor Active</span>
+<span>Words: 0</span>
+<span>Characters: 0</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="hover:text-primary cursor-pointer transition-colors">Accessibility Check</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Markdown Tips</span>
+</div>
+</div>
+</footer>
+<!-- Abstract Background Pattern (Subtle) -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-5">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3"></div>
+</div>
+</body></html>

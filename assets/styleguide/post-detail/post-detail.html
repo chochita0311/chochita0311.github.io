@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play-Talk | Language Note Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#144bb8",
+                        "background-light": "#fdfcfb", // Cream-toned light background
+                        "background-dark": "#111621",
+                        "navy-luxury": "#0a1d44",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .prose-custom p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            color: #334155;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Geometric Abstract Logo -->
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 19H22L12 2Z" fill="white" fill-opacity="0.3"></path>
+<path d="M12 8L6 19H18L12 8Z" fill="white"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-primary">Play-Talk</h1>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#">Feed</a>
+<a class="text-sm font-semibold text-primary border-b-2 border-primary pb-1" href="#">Lessons</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors" href="#">Resources</a>
+</nav>
+<!-- User Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover rounded-full" data-alt="Professional headshot of a smiling male educator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEX1IaMc_ToJPyRVgyxgQKoFJOclwAWyc56Pes03vrlXvb1mKe-Ucl08VdurjQDYIdtbjgb9c_u6tEEW9CD85FM0SL8SZRfx-ykKNjrZHxz8tNBawolDWiWu6toH1_QNbNbB2lwuQafG35Ya95DgyT6FAqAs5E776sY6ChYktjSgAVmN2i8PBMj4vf_KsqAtUZ8IJ8Pptm7Oop1rFx2RNQhLUe2GtV2udE0reFuRWzivz_QmzPKxrhrAW7urMvjQk9h46Agh4Z108"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-12">
+<!-- Breadcrumb & Back Action -->
+<div class="flex items-center justify-between mb-10">
+<a class="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span>Back to Feed</span>
+</a>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">share</span>
+                    Share
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+                    Save
+                </button>
+</div>
+</div>
+<!-- Post Header -->
+<article>
+<header class="mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                    Grammar Mastery • Spanish
+                </div>
+<h1 class="text-5xl font-extrabold text-slate-900 leading-[1.15] mb-6">
+                    Mastering the Nuances of 'Ser' vs 'Estar' in Professional Contexts
+                </h1>
+<div class="flex items-center gap-4 text-slate-500 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Close up portrait of a professional woman profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-ME06PZEBNaZBfaav-fQFhHOmJxGbRRuR3wdCTe9Veb3pXWihJVmKFur9iUrndRK_jfLXdD1hAYVGo9jY2xZUYTwcZvuV74E7sURE1J2n93N0n9caTUw2reRXznHZoasdS-xJ2u9bJfZdpDLzwQ86I4tmgrygEbPsNcmG9SAE-a6BDzqXvwJZHgmWPSqZvZRIHaBPiDqJjhd1Svxur6_t_8p3jmEG2oJVhWujZXYD8l3XqsKRHPhCIEIdnIzQi70bNZXArXnE8E"/>
+</div>
+<span class="font-semibold text-slate-800">Prof. Elena Rodriguez</span>
+</div>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>October 24, 2023</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>8 min read</span>
+</div>
+</header>
+<!-- High Res Image -->
+<div class="w-full h-96 rounded-2xl overflow-hidden mb-12 shadow-2xl shadow-primary/5">
+<img alt="Professional office" class="w-full h-full object-cover" data-alt="Modern high-end office interior with minimalist wooden furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyNp2g_G_oEW4yP5wfvkwBi5FBrVRhahJFAl1ksIU4BY6O4rdw-GP1rnHGld7QFfCM0pSgQc25Zba-_IGwFTLI6DJqoPOVsDngdjeacvVFu3t8cLMjw92uUqLAOIr7KPHsLFFPuogrHvX4WvjwKD8-Plp2bjW4ae0ti90UGoxr592eppjA73VS01DMB8-rSB0Si-PREnIUHTITzFicIVACSzkscDxZybfLjOIdz7JhX_9GmIgrphcmyJ0HdGbhXEWQ9hgt1LqcYLg"/>
+</div>
+<!-- Content Body -->
+<div class="prose-custom text-lg">
+<p>In high-stakes business environments, the choice between <span class="font-bold text-primary">Ser</span> and <span class="font-bold text-primary">Estar</span> can subtly alter your professional image. While beginner learners often memorize "permanent vs. temporary," the reality in a corporate setting is much more nuanced. It’s about identity versus state, and defining characteristics versus situational conditions.</p>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Key Professional Vocabulary</h2>
+<!-- Vocabulary Boxes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+<div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="text-2xl font-bold text-primary">Capaz</span>
+<span class="text-xs font-mono text-slate-400">/ka'paθ/</span>
+</div>
+<p class="text-sm text-slate-600 mb-3">Capable, competent in a specific skill set or role.</p>
+<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Used with: SER</div>
+</div>
+<div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="text-2xl font-bold text-primary">Comprometido</span>
+<span class="text-xs font-mono text-slate-400">/komprome'tido/</span>
+</div>
+<p class="text-sm text-slate-600 mb-3">Committed or engaged in a specific project or task.</p>
+<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Used with: ESTAR</div>
+</div>
+</div>
+<p>When you say <em class="italic text-slate-800 font-medium">"Soy responsable,"</em> you are claiming responsibility as a character trait. However, saying <em class="italic text-slate-800 font-medium">"Estoy responsable de este proyecto"</em> is a common error; the correct form is <em class="italic text-slate-800 font-medium">"Soy el responsable"</em> (I am the person in charge).</p>
+<!-- Example Sentence Luxury Box (Midnight Navy) -->
+<div class="my-12 p-10 bg-navy-luxury rounded-2xl shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">translate</span>
+</div>
+<h3 class="text-white text-xl font-bold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                        Example Sentences in Context
+                    </h3>
+<div class="space-y-8">
+<div class="border-l-4 border-primary pl-6">
+<p class="text-white text-xl font-medium leading-relaxed italic mb-2">
+                                "Nuestra empresa <span class="text-primary font-bold">es</span> líder en el sector, pero actualmente <span class="text-primary font-bold">estamos</span> ante un mercado volátil."
+                            </p>
+<p class="text-slate-400 text-sm">
+                                "Our company is a leader in the sector, but we are currently facing a volatile market."
+                            </p>
+</div>
+<div class="border-l-4 border-primary pl-6">
+<p class="text-white text-xl font-medium leading-relaxed italic mb-2">
+                                "Él <span class="text-primary font-bold">es</span> muy eficiente, por eso <span class="text-primary font-bold">está</span> tan ocupado con la nueva auditoría."
+                            </p>
+<p class="text-slate-400 text-sm">
+                                "He is very efficient, that's why he is so busy with the new audit."
+                            </p>
+</div>
+</div>
+</div>
+<p>Understanding these distinctions allows you to navigate negotiations and presentations with the precision of a native speaker. In our next lesson, we will explore how these verbs change meaning entirely with certain adjectives, like <em class="italic">listo</em> (smart vs. ready).</p>
+</div>
+<!-- Author Footer Card -->
+<footer class="mt-20 pt-12 border-t border-slate-200">
+<div class="bg-primary/5 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="size-24 rounded-full overflow-hidden border-4 border-white shadow-lg shrink-0">
+<img alt="Elena Rodriguez" class="w-full h-full object-cover" data-alt="Professional portrait of Elena Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9DH8VU2iujsCDKbjisK-AsSs7QFiPAAnTgN_x1bVcwKBrQ3-2Gy041tgz08ohuxgcoFA08-rZngavgfT0mpahVPjaBpG9vYWyGLNNvPdr6KE3kgHP2ez0iiwGKWA30o0v4w2jg2_ZF2lMOJ4kPP02drH5j79JygTtZhdiHoSYf-7vLV-jlQNGEXxE83UZA9hwH5ng5b0lb7GK895VPnAa6fGgxv2DCyesybZBuFPDXgquSDTGa8T3nFqBf3XxQrkiSXLeGYAh64"/>
+</div>
+<div class="text-center md:text-left">
+<h4 class="text-xl font-bold text-slate-900 mb-2">About Prof. Elena Rodriguez</h4>
+<p class="text-slate-600 mb-4 leading-relaxed">
+                            Elena is a Senior Linguistic Consultant with over 15 years of experience in executive communication. She specializes in helping business leaders master Spanish for international diplomacy and commerce.
+                        </p>
+<div class="flex flex-wrap justify-center md:justify-start gap-3">
+<button class="px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary/90 transition-all shadow-md">
+                                Follow Author
+                            </button>
+<button class="px-6 py-2 bg-white border border-primary/20 text-primary text-sm font-bold rounded-lg hover:bg-primary/5 transition-all">
+                                View Profile
+                            </button>
+</div>
+</div>
+</div>
+</footer>
+</article>
+<!-- Floating Action Sidebar (Visible on large screens) -->
+<aside class="fixed left-8 bottom-8 hidden xl:flex flex-col gap-4">
+<div class="flex flex-col items-center bg-white border border-slate-200 rounded-full py-6 px-3 shadow-xl shadow-primary/5 gap-6">
+<button class="p-2 text-slate-400 hover:text-primary transition-all group relative" title="Clap/Appreciate">
+<span class="material-symbols-outlined">favorite</span>
+<span class="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">2.4k</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-all group relative" title="Comment">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">42</span>
+</button>
+<div class="w-8 h-[1px] bg-slate-100"></div>
+<button class="p-2 text-slate-400 hover:text-primary transition-all group relative" title="Adjust Font Size">
+<span class="material-symbols-outlined">text_fields</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-all group relative" title="Listen to Note">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-navy-luxury py-16 mt-20">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-slate-400 text-sm">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-8 bg-primary/20 flex items-center justify-center rounded-lg border border-primary/30">
+<svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 19H22L12 2Z" fill="#144bb8"></path>
+</svg>
+</div>
+<span class="text-xl font-black tracking-tight text-white">Play-Talk</span>
+</div>
+<p class="max-w-xs leading-relaxed">
+                    Premium language learning for the modern professional. Elevate your communication with cultural depth and linguistic precision.
+                </p>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Resources</h5>
+<ul class="space-y-4">
+<li><a class="hover:text-primary transition-colors" href="#">Grammar Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Business Vocabulary</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cultural Nuances</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Podcast Series</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Join Faculty</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center text-slate-500 text-xs uppercase tracking-widest">
+            © 2023 Play-Talk Inc. All Rights Reserved.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Play-Talk | Luxury Board Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#144bb8",
+                        "background-light": "#fdfcf9", // Creamier luxury background
+                        "background-dark": "#0a0d14",
+                        "luxury-navy": "#111827",
+                        "luxury-cream": "#fdfcf9",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .luxury-card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(20, 75, 184, 0.05);
+        }
+        .luxury-card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -5px rgba(20, 75, 184, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<!-- Wrapper -->
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-primary/10 bg-luxury-cream/80 dark:bg-background-dark/80 backdrop-blur-md px-8">
+<div class="flex items-center gap-10">
+<!-- Geometric Abstract Logo -->
+<div class="flex items-center gap-2.5">
+<div class="relative size-8 flex items-center justify-center">
+<div class="absolute inset-0 border-2 border-primary rotate-45 rounded-sm"></div>
+<div class="absolute inset-1.5 bg-primary/20 rotate-45"></div>
+<div class="z-10 size-2 bg-primary"></div>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-luxury-navy dark:text-slate-100 uppercase">Play-Talk</h1>
+</div>
+<!-- Global Search -->
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 text-xl">search</span>
+<input class="w-full bg-primary/5 border-none rounded-lg py-2 pl-11 pr-4 text-sm focus:ring-1 focus:ring-primary/30 placeholder:text-slate-400" placeholder="Search boards, topics, or members..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold text-primary hover:opacity-80 transition-opacity" href="#">Explore</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Resources</a>
+</nav>
+<div class="h-6 w-px bg-primary/10 mx-2"></div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up professional portrait of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJNs3pntIX_1OxEZ2k3J1GgQHlvs1zaWdA_VoQfEt_pKZSOLY8vz6jfeRbTmAaw-_nI5fKs5BSw-WIfJwBKvbnIZ7XWDGKaoWayeSI5aaEj9eE2u8RZkUA-eIBLP6LGtMZFyPUdm2X2LQ4rB5HyX3jq6XFbIj_zJuKcjK1Okzzcy0poZt33rcG-dVwrjt_ZHcmcWFt03EluqZebZ4f9H3K-T2AbSxioXvsxiW-Bm2Rsge_tGXWlPzidOpoleKcjhOja5AliyUR_oI"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-primary/5 bg-luxury-cream dark:bg-background-dark/50 flex flex-col p-6 gap-8">
+<div>
+<h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4">Language Tiers</h3>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white font-semibold transition-all shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+<span class="text-sm">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">chat_bubble</span>
+<span class="text-sm">Casual</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">work</span>
+<span class="text-sm">Business</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">terminal</span>
+<span class="text-sm">Technical</span>
+</a>
+</nav>
+</div>
+<div>
+<h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">My Activity</h3>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard_customize</span>
+<span class="text-sm">My Boards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">Starred</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="text-sm">Recent</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto">
+<div class="bg-primary/5 rounded-xl p-4 border border-primary/10">
+<p class="text-xs font-bold text-primary mb-1 italic">Pro Membership</p>
+<p class="text-[11px] text-slate-500 leading-relaxed mb-3">Unlock advanced business modules and group sessions.</p>
+<button class="w-full bg-luxury-navy text-white text-[11px] font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">Upgrade Now</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-10 bg-background-light dark:bg-background-dark/95">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<div class="flex items-center gap-2 mb-2 text-xs font-medium text-slate-400">
+<span>Dashboard</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary">Grammar</span>
+</div>
+<h2 class="text-4xl font-extrabold text-luxury-navy dark:text-slate-100 tracking-tight">Explore Boards</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2 font-medium">Refine your mastery with professional language learning communities.</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-bold text-sm shadow-xl shadow-primary/20 hover:-translate-y-0.5 transition-all active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                        Create New Board
+                    </button>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-3 mb-8 overflow-x-auto pb-2">
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary text-primary text-xs font-bold whitespace-nowrap">All Levels</button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold whitespace-nowrap hover:border-primary transition-colors">Beginner</button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold whitespace-nowrap hover:border-primary transition-colors">Intermediate</button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold whitespace-nowrap hover:border-primary transition-colors">Advanced</button>
+<div class="h-4 w-px bg-slate-200 mx-2"></div>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold whitespace-nowrap hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-sm">tune</span>
+                        More Filters
+                    </button>
+</div>
+<!-- Board Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Board Card 1 -->
+<div class="group luxury-card-shadow luxury-card-hover bg-white dark:bg-slate-800 rounded-xl overflow-hidden transition-all border border-primary/5">
+<div class="h-32 bg-primary/10 relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 size-32 bg-primary rounded-full blur-3xl -mr-10 -mt-10"></div>
+<div class="absolute bottom-0 left-0 size-24 bg-primary/40 rounded-full blur-2xl -ml-5 -mb-5"></div>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Intermediate</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-luxury-navy dark:text-slate-100 mb-2 group-hover:text-primary transition-colors leading-tight">Advanced French Subjunctive Mastery</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed mb-6">Deep dive into the nuances of the French subjunctive mood with professional educators.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Small avatar of a woman with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgzicucsbdHLlnRhPoWJY2VFnmy9RjVn00ebj76cgAZVRROkwZ1E5EPcy87k9CrtKxCqC5MRcvcRFQmmu-H5_pgkEBD-D1jMzOMLAPu8BQQVotXLmrJlFA6e15CGj9vOjhRGpPxEb2CtuLe-77E4QROfLp-hxwo4XpbaMMeoPnvCvlh-OzmdenlcddiQhXjqJu2Dc_TciWTbEx_xdb2WX6KnCrsrHTHKkEvGuxfO2QJu48b9Eb9GasOY0BhGAnno6NEdjwYjHIgcI"/>
+</div>
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Small avatar of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoBj4ki1swvfgmvB__811BSc0DvifK9OTPhkn_yD5056TQf4RmutGnRLOLccP352ZtyF6kI3ERwXxIPY2ZCt3GX5nxcF-bBWS5_mJA1RWB2IlshstlJwklRKycHro7bXx7eMRzVdqxkKAyu9llW7Q7Cl1-qOWRk2l8f-ThVxFc_8JWeV1jrUhOGnUuv0PzslYryp03UKUQA5kvJR54mJE3B__pALZr_pxxodELDyBJEtwCl6jFDFzEhdQxZcvV9HGgM8Ffwd2zWfg"/>
+</div>
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">
+                                        +12
+                                    </div>
+</div>
+<button class="text-sm font-bold text-primary hover:underline flex items-center gap-1 group/btn">
+                                    Join Board
+                                    <span class="material-symbols-outlined text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Board Card 2 -->
+<div class="group luxury-card-shadow luxury-card-hover bg-white dark:bg-slate-800 rounded-xl overflow-hidden transition-all border border-primary/5">
+<div class="h-32 bg-primary/5 relative overflow-hidden">
+<div class="absolute inset-0 opacity-30">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<path d="M0,100 C30,40 70,40 100,100" fill="none" stroke="#144bb8" stroke-width="0.5"></path>
+<path d="M0,100 C30,20 70,20 100,100" fill="none" stroke="#144bb8" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Advanced</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-luxury-navy dark:text-slate-100 mb-2 group-hover:text-primary transition-colors leading-tight">Legal English Terminology</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed mb-6">Master the specific grammar and syntax used in international corporate law contracts.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Small avatar of a focused woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0uqth6eznSRxpqUYQh_20d8IGs9Y-9bZv1tfFk9AWNtdxXNB4M9PozGx-Ub8b_Axr4yaKkKdXDnrTFdLbFVUS_wnhO7DdM2t-ErnPjdmiZ1B0EGQTsZ8AhXSdjx4HnE_EO0r9mdx0EVW4VPw1JNcbEYt4_jgE1h7v1qgmuTNeSaxtoKSP1BUbdfZdMSDHqqwv8odj_PIPadSctFYwhNQoXOGllDHZJT8VjMeYsl6ZCyi4_Fq61hZ5Pu7RpTWg8mSyor4Ir1fN57g"/>
+</div>
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">
+                                        +42
+                                    </div>
+</div>
+<button class="text-sm font-bold text-primary hover:underline flex items-center gap-1 group/btn">
+                                    Join Board
+                                    <span class="material-symbols-outlined text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Board Card 3 -->
+<div class="group luxury-card-shadow luxury-card-hover bg-white dark:bg-slate-800 rounded-xl overflow-hidden transition-all border border-primary/5">
+<div class="h-32 bg-primary/10 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Beginner</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-luxury-navy dark:text-slate-100 mb-2 group-hover:text-primary transition-colors leading-tight">Japanese Kanji Foundations</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed mb-6">Introduction to stroke order, grammar markers, and the first 100 JLPT N5 characters.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Small avatar of a smiling bearded man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkpENCScLpvaq_QCG0REhPveYSM5RUx6nMLfh-UEHBR9BsBXXe1b5C8hpRxwBIkv991g1ckh3n4Ji6c8pj3i5iv3nWo3a6jfb48FdwArSFkLinUyTVOItVAhfXshPIqk3wiJt8X8xCFCNoEwcoaRUkIrWdMtbNA7INTMjimAbeY5JJF_0XvuEOKPE_wsGwM15IHk6RaSpoyGgcOz9Ku-aYZ68_yY5n2pvDlTYTsTkHYBKRxxHqiglwxOEReNGIdIpF1ByJLRdbnRU"/>
+</div>
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">
+                                        +85
+                                    </div>
+</div>
+<button class="text-sm font-bold text-primary hover:underline flex items-center gap-1 group/btn">
+                                    Join Board
+                                    <span class="material-symbols-outlined text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Board Card 4 -->
+<div class="group luxury-card-shadow luxury-card-hover bg-white dark:bg-slate-800 rounded-xl overflow-hidden transition-all border border-primary/5">
+<div class="h-32 bg-primary/5 relative flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/20 text-6xl">architecture</span>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Advanced</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-luxury-navy dark:text-slate-100 mb-2 group-hover:text-primary transition-colors leading-tight">German Compound Syntax</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed mb-6">Advanced sentence structure for academic writing and professional publications.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-7 rounded-full border-2 border-white dark:border-slate-800 bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">
+                                        +8
+                                    </div>
+</div>
+<button class="text-sm font-bold text-primary hover:underline flex items-center gap-1 group/btn">
+                                    Join Board
+                                    <span class="material-symbols-outlined text-base group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
