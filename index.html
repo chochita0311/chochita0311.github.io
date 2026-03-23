@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>play-talk · Notes MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="play-talk home">
+        <span class="mark">pt</span>
+        <div>
+          <h1>play-talk</h1>
+          <p>English notes search and reading</p>
+        </div>
+      </div>
+      <button id="focusSearchBtn" class="ghost-btn" type="button">Focus Search</button>
+    </header>
+
+    <main class="content">
+      <section class="panel search-panel" aria-labelledby="searchHeading">
+        <div class="search-header">
+          <h2 id="searchHeading">Search Notes</h2>
+          <span id="dataSourceBadge" class="badge" aria-live="polite">Loading source...</span>
+        </div>
+
+        <form id="searchForm" class="controls" role="search">
+          <label class="field">
+            <span>Keyword</span>
+            <input id="queryInput" name="q" type="search" placeholder="Search by title/path/content" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>Folder</span>
+            <select id="folderSelect" name="folder">
+              <option value="">All folders</option>
+            </select>
+          </label>
+          <button class="primary-btn" type="submit">Search</button>
+        </form>
+
+        <p id="listStatus" class="status" aria-live="polite">Ready.</p>
+
+        <ul id="resultsList" class="results" aria-label="Search results"></ul>
+
+        <div class="pagination">
+          <button id="prevBtn" class="ghost-btn" type="button">Previous</button>
+          <span id="pageInfo" class="page-info">Page 1</span>
+          <button id="nextBtn" class="ghost-btn" type="button">Next</button>
+        </div>
+      </section>
+
+      <section class="panel detail-panel" aria-labelledby="detailHeading">
+        <div class="detail-header">
+          <h2 id="detailHeading">Note Detail</h2>
+          <button id="backToResultsBtn" class="ghost-btn" type="button">Back to results</button>
+        </div>
+
+        <p id="detailMeta" class="meta" aria-live="polite">Select a note to read details.</p>
+
+        <article id="detailContent" class="note-body">
+          <p class="placeholder">No note selected.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>
