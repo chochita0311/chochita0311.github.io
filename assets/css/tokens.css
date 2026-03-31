@@ -1,12 +1,11 @@
 :root {
   --color-primary: #144bb8;
   --color-primary-strong: #0f3d97;
+  --color-primary-tint: rgba(20, 75, 184, 0.08);
   --color-bg-light: #fdfcf9;
   --color-bg-mist: #f4f6fb;
-  --color-bg-dark: #0a0d14;
   --color-surface-light: #ffffff;
   --color-surface-soft: #f8faff;
-  --color-surface-dark: #0f172a;
   --color-text-strong: #111827;
   --color-text-body: #0f172a;
   --color-text-muted: #667085;
@@ -21,7 +20,7 @@
   --color-hover-bg: #fafcff;
 
   --font-family-ui: "Manrope", sans-serif;
-  --font-family-reading: "Lexend", "Manrope", sans-serif;
+  --font-family-reading: "Manrope", sans-serif;
 
   --font-size-display-min: 32px;
   --font-size-display-max: 40px;
@@ -36,6 +35,7 @@
   --line-height-reading: 1.72;
 
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --tracking-tight: -0.03em;

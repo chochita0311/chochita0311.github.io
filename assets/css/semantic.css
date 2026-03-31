@@ -1,7 +1,6 @@
 :root {
   --page-bg: var(--color-bg-light);
   --page-bg-alt: var(--color-bg-mist);
-  --page-bg-dark: var(--color-bg-dark);
   --page-text: var(--color-text-body);
   --page-heading: var(--color-text-strong);
   --page-text-muted: var(--color-text-muted);
@@ -41,7 +40,8 @@
   --sidebar-width: 256px;
   --topbar-height-desktop: 74px;
   --topbar-height-mobile: 64px;
-  --board-drawer-width: min(84vw, 320px);
+  --nav-drawer-width: min(84vw, 320px);
+  --board-drawer-width: var(--nav-drawer-width);
 
   --panel-padding: 18px;
   --panel-padding-mobile: 14px;

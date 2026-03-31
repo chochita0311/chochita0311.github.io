@@ -1,17 +1,21 @@
 const LOCAL_DB_DIR = "docs/tables/localdb";
-const LOCAL_BOARD_FILE = `${LOCAL_DB_DIR}/mst_board.json`;
-const LOCAL_POST_FILE = `${LOCAL_DB_DIR}/mst_post.json`;
+const LOCAL_COLLECTION_FILE = `${LOCAL_DB_DIR}/mst_board.json`;
+const LOCAL_NOTE_FILE = `${LOCAL_DB_DIR}/mst_post.json`;
 const PAGE_SIZE_OPTIONS = new Set([5, 15, 30, 100]);
+const DETAIL_PAGE = "assets/styleguide/board/myboards_detail.html";
 
 const state = {
-  posts: [],
-  filteredPosts: [],
+  notes: [],
+  filteredNotes: [],
   pageSize: 15,
   page: 1,
-  boardId: null,
+  collectionId: null,
 };
 
 const refs = {
+  appShell: document.getElementById("appShell"),
+  navToggle: document.getElementById("navToggle"),
+  drawerBackdrop: document.getElementById("drawerBackdrop"),
   desktop: {
     pageSizeSelect: document.getElementById("page-size"),
     listBody: document.getElementById("notes-list-body"),
@@ -58,8 +62,8 @@ async function fetchJson(url) {
   return response.json();
 }
 
-function resolveMyNotesBoardId(boards) {
-  const rows = Array.isArray(boards) ? boards : [];
+function resolveDefaultCollectionId(collections) {
+  const rows = Array.isArray(collections) ? collections : [];
   const myNotes = rows.find((row) => {
     if (!row || row.record_status === "DELETED") return false;
     const name = String(row.display_name || "").trim().toLowerCase();
@@ -75,46 +79,56 @@ function resolveMyNotesBoardId(boards) {
   return activeRows.length ? Number(activeRows[0].board_id) : null;
 }
 
-function toRenderablePosts(rows) {
+function toRenderableNotes(rows) {
   return rows
     .map((row) => ({
-      postId: Number(row.post_id),
-      boardId: Number(row.board_id),
+      noteId: Number(row.post_id),
+      collectionId: Number(row.board_id),
       title: row.title || "Untitled",
       dateCreated: row.reg_dt || row.published_at || row.upd_dt || "",
-      postStatus: String(row.post_status || "").toUpperCase(),
+      status: String(row.post_status || "").toUpperCase(),
+      categoryLabel: "General",
     }))
-    .filter((row) => row.postStatus !== "DELETED")
+    .filter((row) => row.status !== "DELETED")
     .sort((a, b) => {
       const aTime = new Date(a.dateCreated || 0).getTime() || 0;
       const bTime = new Date(b.dateCreated || 0).getTime() || 0;
       if (aTime !== bTime) return bTime - aTime;
-      return b.postId - a.postId;
+      return b.noteId - a.noteId;
     });
 }
 
 function paginateRows() {
   const start = (state.page - 1) * state.pageSize;
-  return state.filteredPosts.slice(start, start + state.pageSize);
+  return state.filteredNotes.slice(start, start + state.pageSize);
 }
 
 function getTotalPages() {
-  return Math.max(1, Math.ceil(state.filteredPosts.length / state.pageSize));
+  return Math.max(1, Math.ceil(state.filteredNotes.length / state.pageSize));
+}
+
+function noteHref(noteId) {
+  return `${DETAIL_PAGE}?post_id=${encodeURIComponent(noteId)}`;
 }
 
 function updateDesktopPageIndicator(totalPages) {
   if (!refs.desktop.pageIndicator) return;
   refs.desktop.pageIndicator.innerHTML = `
-    <button class="size-10 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20" type="button">
+    <span class="page-indicator">
       ${state.page}
-    </button>
-    <span class="px-2 text-slate-400 text-sm font-semibold">/ ${totalPages}</span>
+      <small>/ ${totalPages}</small>
+    </span>
   `;
 }
 
 function updateMobilePageIndicator(totalPages) {
   if (!refs.mobile.pageIndicator) return;
-  refs.mobile.pageIndicator.innerHTML = `${state.page} <span class="text-slate-300 mx-1">/</span> ${totalPages}`;
+  refs.mobile.pageIndicator.innerHTML = `
+    <span class="page-indicator">
+      ${state.page}
+      <small>/ ${totalPages}</small>
+    </span>
+  `;
 }
 
 function renderDesktopRows(rows) {
@@ -122,26 +136,28 @@ function renderDesktopRows(rows) {
 
   if (!rows.length) {
     refs.desktop.listBody.innerHTML = `
-      <div class="px-6 py-10 text-center text-sm font-semibold text-slate-400 border-b border-primary/5">
-        No notes found in My Notes.
+      <div class="empty-state">
+        No notes found in the current library view.
       </div>
     `;
     return;
   }
 
   refs.desktop.listBody.innerHTML = rows.map((row) => `
-    <div class="grid grid-cols-[1fr_150px_150px_80px] px-6 py-4 items-center border-b border-primary/5 list-row-hover transition-colors">
-      <div class="flex items-center gap-3 min-w-0">
-        <span class="material-symbols-outlined text-primary/40">description</span>
-        <a class="text-sm font-bold text-luxury-navy dark:text-slate-200 truncate hover:text-primary transition-colors" href="assets/styleguide/board/myboards_detail.html?post_id=${encodeURIComponent(row.postId)}">${escapeHtml(row.title)}</a>
+    <div class="note-table-row">
+      <div class="note-title-cell">
+        <span class="material-symbols-outlined">description</span>
+        <a class="note-title-link" href="${noteHref(row.noteId)}">${escapeHtml(row.title)}</a>
       </div>
-      <div class="text-sm text-slate-500">${escapeHtml(formatDate(row.dateCreated))}</div>
-      <div>
-        <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-[10px] font-bold uppercase">General</span>
-      </div>
-      <div class="flex justify-end gap-2 text-slate-400">
-        <button class="hover:text-primary transition-colors" type="button" aria-label="Edit disabled"><span class="material-symbols-outlined text-lg">edit</span></button>
-        <button class="hover:text-primary transition-colors" type="button" aria-label="More disabled"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+      <div class="note-meta">${escapeHtml(formatDate(row.dateCreated))}</div>
+      <div><span class="note-tag">${escapeHtml(row.categoryLabel)}</span></div>
+      <div class="row-actions">
+        <button class="icon-btn" type="button" aria-label="Edit disabled">
+          <span class="material-symbols-outlined">edit</span>
+        </button>
+        <button class="icon-btn" type="button" aria-label="More disabled">
+          <span class="material-symbols-outlined">more_horiz</span>
+        </button>
       </div>
     </div>
   `).join("");
@@ -152,26 +168,27 @@ function renderMobileCards(rows) {
 
   if (!rows.length) {
     refs.mobile.listWrap.innerHTML = `
-      <div class="luxury-card-shadow bg-white rounded-xl border border-primary/5 p-6 text-center text-sm font-semibold text-slate-400">
-        No notes found in My Notes.
+      <div class="empty-state">
+        No notes found in the current library view.
       </div>
     `;
     return;
   }
 
   refs.mobile.listWrap.innerHTML = rows.map((row) => `
-    <div class="luxury-card-shadow bg-white rounded-xl border border-primary/5 p-6 active:scale-[0.98] transition-transform">
-      <div class="flex justify-between items-start mb-3 gap-3">
-        <a class="text-lg font-bold text-luxury-navy leading-tight hover:text-primary transition-colors" href="assets/styleguide/board/myboards_detail.html?post_id=${encodeURIComponent(row.postId)}">${escapeHtml(row.title)}</a>
-        <span class="text-[10px] font-bold text-primary uppercase bg-primary/5 px-2 py-0.5 rounded border border-primary/10">General</span>
+    <article class="note-card">
+      <div class="note-card-top">
+        <a class="note-card-title" href="${noteHref(row.noteId)}">${escapeHtml(row.title)}</a>
+        <span class="note-tag">${escapeHtml(row.categoryLabel)}</span>
       </div>
-      <div class="mt-4 flex items-center justify-between">
-        <span class="text-[11px] text-slate-400 font-medium italic">${escapeHtml(formatDate(row.dateCreated))}</span>
-        <a class="text-primary text-sm font-bold flex items-center gap-1" href="assets/styleguide/board/myboards_detail.html?post_id=${encodeURIComponent(row.postId)}">
-          View Note <span class="material-symbols-outlined text-base">chevron_right</span>
+      <div class="note-card-footer">
+        <span class="note-meta">${escapeHtml(formatDate(row.dateCreated))}</span>
+        <a class="note-card-link" href="${noteHref(row.noteId)}">
+          View note
+          <span class="material-symbols-outlined">chevron_right</span>
         </a>
       </div>
-    </div>
+    </article>
   `).join("");
 }
 
@@ -183,9 +200,7 @@ function syncPageSizeControls() {
   refs.mobile.pageSizeButtons.forEach((btn) => {
     const value = Number(btn.dataset.mobilePageSize || "0");
     const active = value === state.pageSize;
-    btn.className = active
-      ? "flex-none px-5 py-2 rounded-full bg-primary text-white text-xs font-bold shadow-md shadow-primary/20 transition-all"
-      : "flex-none px-5 py-2 rounded-full bg-white border border-primary/10 text-slate-600 text-xs font-semibold hover:border-primary transition-colors";
+    btn.classList.toggle("active", active);
   });
 }
 
@@ -193,23 +208,10 @@ function renderPagination(totalPages) {
   const isFirst = state.page <= 1;
   const isLast = state.page >= totalPages;
 
-  if (refs.desktop.prevBtn) {
-    refs.desktop.prevBtn.disabled = isFirst;
-    refs.desktop.prevBtn.classList.toggle("opacity-40", isFirst);
-  }
-  if (refs.desktop.nextBtn) {
-    refs.desktop.nextBtn.disabled = isLast;
-    refs.desktop.nextBtn.classList.toggle("opacity-40", isLast);
-  }
-
-  if (refs.mobile.prevBtn) {
-    refs.mobile.prevBtn.disabled = isFirst;
-    refs.mobile.prevBtn.classList.toggle("opacity-40", isFirst);
-  }
-  if (refs.mobile.nextBtn) {
-    refs.mobile.nextBtn.disabled = isLast;
-    refs.mobile.nextBtn.classList.toggle("opacity-40", isLast);
-  }
+  if (refs.desktop.prevBtn) refs.desktop.prevBtn.disabled = isFirst;
+  if (refs.desktop.nextBtn) refs.desktop.nextBtn.disabled = isLast;
+  if (refs.mobile.prevBtn) refs.mobile.prevBtn.disabled = isFirst;
+  if (refs.mobile.nextBtn) refs.mobile.nextBtn.disabled = isLast;
 
   updateDesktopPageIndicator(totalPages);
   updateMobilePageIndicator(totalPages);
@@ -246,6 +248,10 @@ function setPageSize(next) {
   render();
 }
 
+function setNavOpen(open) {
+  refs.appShell?.classList.toggle("nav-open", open);
+}
+
 function bindEvents() {
   refs.desktop.pageSizeSelect?.addEventListener("change", () => {
     setPageSize(refs.desktop.pageSizeSelect.value);
@@ -262,23 +268,28 @@ function bindEvents() {
       setPageSize(btn.dataset.mobilePageSize);
     });
   });
+
+  refs.navToggle?.addEventListener("click", () => {
+    const isOpen = refs.appShell?.classList.contains("nav-open");
+    setNavOpen(!isOpen);
+  });
+
+  refs.drawerBackdrop?.addEventListener("click", () => {
+    setNavOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setNavOpen(false);
+  });
 }
 
 function renderLoadError(error) {
   const message = `Failed to load local notes data (${escapeHtml(error.message)}).`;
   if (refs.desktop.listBody) {
-    refs.desktop.listBody.innerHTML = `
-      <div class="px-6 py-10 text-center text-sm font-semibold text-red-500 border-b border-primary/5">
-        ${message}
-      </div>
-    `;
+    refs.desktop.listBody.innerHTML = `<div class="error-state">${message}</div>`;
   }
   if (refs.mobile.listWrap) {
-    refs.mobile.listWrap.innerHTML = `
-      <div class="luxury-card-shadow bg-white rounded-xl border border-primary/5 p-6 text-center text-sm font-semibold text-red-500">
-        ${message}
-      </div>
-    `;
+    refs.mobile.listWrap.innerHTML = `<div class="error-state">${message}</div>`;
   }
 }
 
@@ -286,16 +297,16 @@ async function init() {
   bindEvents();
 
   try {
-    const [boardPayload, postPayload] = await Promise.all([
-      fetchJson(LOCAL_BOARD_FILE),
-      fetchJson(LOCAL_POST_FILE),
+    const [collectionPayload, notePayload] = await Promise.all([
+      fetchJson(LOCAL_COLLECTION_FILE),
+      fetchJson(LOCAL_NOTE_FILE),
     ]);
 
-    state.boardId = resolveMyNotesBoardId(boardPayload?.rows);
-    state.posts = toRenderablePosts(Array.isArray(postPayload?.rows) ? postPayload.rows : []);
-    state.filteredPosts = state.boardId === null
+    state.collectionId = resolveDefaultCollectionId(collectionPayload?.rows);
+    state.notes = toRenderableNotes(Array.isArray(notePayload?.rows) ? notePayload.rows : []);
+    state.filteredNotes = state.collectionId === null
       ? []
-      : state.posts.filter((row) => row.boardId === state.boardId);
+      : state.notes.filter((row) => row.collectionId === state.collectionId);
 
     render();
   } catch (error) {
