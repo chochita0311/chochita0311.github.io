@@ -1,4 +1,8 @@
+# macOS Finder metadata
 .DS_Store
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+# Local automation and browser tooling artifacts
+.playwright-mcp/

@@ -1,42 +1,61 @@
 # Repository Guidelines
 
-## Repository Overview
-- This repository is my GitHub-hosted notes site and is published at `https://chochita0311.github.io`
-- The note collection will continue to grow with materials written by me, generated with AI assistance, or gathered from search-based tips and references
-- Organize all new materials so they remain easy to search, review, and preserve as long-term personal study assets
+## Purpose
+- This repository is the GitHub Pages home for `https://chochita0311.github.io`
+- It is a lightweight personal notes site for browsing, searching, and preserving long-term study materials
+- Keep the project easy to maintain as the note collection grows
 
-## Initial Note
-- Build a lightweight notes web app that helps me keep my own materials well organized in one place
-- Make the content easy to browse, search, and expand over time without breaking the structure as more notes are added
+## Product Scope
+- In scope:
+  - note browsing
+  - note search
+  - note reading
+  - note organization and long-term maintenance
+- Out of scope unless explicitly planned:
+  - unrelated dashboard expansion
+  - membership or upsell features
+  - notification-center patterns
+  - heavy framework or build-tool adoption
 
-## Goals
-- Implement a simple web app that allows me to view and search through my Markdown notes efficiently
-- Keep the app lightweight and fast by avoiding heavy frameworks or build tools
+## Codebase Map
+- Scan the project root first before making structural assumptions
+- `notes/`: long-term note archive
+- `assets/`: frontend assets for the static app
+- `docs/`: project, design, task, and shared reference documents
+- `index.html`: current static entry page
 
-## Project Structure & Module Organization
-- `notes/` is root holding the Markdown notes. Files are plain `.md` files
-- `docs/design-system/` holds the shared design rules, brand tokens, and UI guardrails for future screens
-- `assets/css/tokens.css` holds primitive design tokens only: colors, typography, spacing, radius, shadows, and state constants
-- `assets/css/semantic.css` maps primitive tokens into product meanings such as page surfaces, shell sizing, interactive roles, and state usage
-- `assets/css/base.css` holds reset and shared element foundations
-- `assets/css/components.css` holds reusable component styles and should avoid raw design values
-- `assets/css/layouts.css` holds shell and responsive layout rules
-- `assets/css/app.css` is the compatibility entry point that imports the layered CSS files
-- `assets/css/design-tokens.css` is a backward-compatible alias to `assets/css/tokens.css`
+## Source Of Truth
+- Keep `AGENTS.md` short and operational
+- Keep first-time user overview and local usage in `README.md`
+- Keep project-specific detail under `docs/project/`
+- Keep design-specific detail out of `AGENTS.md` and in `docs/designs/`
 
-## Default Information Management
-- For any changes to the project structure, coding style, or other guidelines, please propose updates to this document to keep it current
-- When changing `AGENTS.md`, or `docs/agents/*.md` templates, ask for review and do not revise pre-existing contents in those files; only add new content for new tasks or updates; only indentation changes are allowed for formatting consistency
-- All agent role definitions,logs, plans, and tables would be shared through each project, so please keep the content clear and concise for easy understanding
-- Only The Product Manager defines plan and acceptance criteria
+## Working Rules
+- Prefer small, focused changes unless the task explicitly asks for a broader restructure
+- Read the touched files first before changing patterns or structure
+- When changing code or documents, review related comments, nearby docs, and adjacent maintenance guidance, and update them if they became stale
+- Preserve GitHub Pages compatibility
+- Keep the app lightweight and static-first
+- Reuse existing project patterns before introducing new abstractions
+- Do not revert unrelated user changes
 
-## Design Guardrails
-- Use `index.html` as the canonical visual baseline for the note app unless a newer design-system version is approved
-- Follow `docs/design-system/NOTE-APP-DESIGN-SYSTEM.md` for brand tokens, component patterns, and identity guardrails
-- Keep the visual system consistent across pages by reusing the shared tokens instead of introducing one-off colors, spacing, shadows, or radius values
-- Treat `tokens.css` as raw primitives, `semantic.css` as product meaning, and component/layout files as consumers of those layers
-- Treat files under `assets/styleguide/` as exploratory references unless their patterns are aligned with the canonical tokens
+## Notes And Data Rules
+- New durable note content belongs under `notes/`
+- Keep folders and filenames easy to search and understand
+- If the UI still depends on local JSON preview data, keep that data aligned when a task requires UI parity
 
-## Commit & Pull Request Guidelines
-- If you add Git, use clear, imperative commit messages
-- For PRs, include: a brief summary, note list changes, and a screenshot of the viewer if UI changes
+## Documentation Rules
+- When behavior, structure, setup, or workflow changes, update the relevant Markdown docs in the same turn
+- Use kebab-case for Markdown filenames under `docs/` unless there is a strong reason to preserve an existing name
+- Keep project guidance neat, clean, and concise
+- If information is duplicated across docs, merge it into the appropriate higher-level source and restructure the docs so they stay maintainable
+- Keep each document responsible for one clear purpose and link to adjacent docs instead of repeating their content
+- Prefer seamless doc navigation across layers: entrance, overview, policy, architecture, development, and design
+- Use `AGENTS.md` for summary guidance only
+- Use `README.md` for user-facing repository usage
+- Use project docs for durable implementation detail
+- Put detailed maintenance guidance in linked docs instead of expanding `AGENTS.md`, unless the change affects the entrance-map itself
+
+## Planning And Ownership
+- Only the Product Manager defines plan and acceptance criteria when the repo is using the shared role/task workflow
+- Keep shared logs, tables, plans, and role docs concise and understandable across projects
