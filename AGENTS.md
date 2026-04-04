@@ -1,9 +1,9 @@
 # Repository Guidelines
 
 ## Purpose
-- This repository is the GitHub Pages home for `https://chochita0311.github.io`
-- It is a lightweight personal notes site for browsing, searching, and preserving long-term study materials
-- Keep the project easy to maintain as the note collection grows
+- GitHub Pages home for `https://chochita0311.github.io`
+- Lightweight personal notes site for browsing, searching, and preserving long-term study materials
+- Optimize for long-term maintainability as the note archive grows
 
 ## Product Scope
 - In scope:
@@ -21,7 +21,7 @@
 - Scan the project root first before making structural assumptions
 - `notes/`: long-term note archive
 - `assets/`: frontend assets for the static app
-- `docs/`: project, design, task, and shared reference documents
+- `docs/`: documentation map, project guides, design docs, and deeper references
 - `index.html`: current static entry page
 
 ## Source Of Truth
@@ -42,20 +42,19 @@
 ## Notes And Data Rules
 - New durable note content belongs under `notes/`
 - Keep folders and filenames easy to search and understand
-- If the UI still depends on local JSON preview data, keep that data aligned when a task requires UI parity
+- If the UI still depends on local JSON preview data, keep that data aligned when a task requires parity
 
 ## Documentation Rules
 - When behavior, structure, setup, or workflow changes, update the relevant Markdown docs in the same turn
 - Use kebab-case for Markdown filenames under `docs/` unless there is a strong reason to preserve an existing name
-- Keep project guidance neat, clean, and concise
-- If information is duplicated across docs, merge it into the appropriate higher-level source and restructure the docs so they stay maintainable
-- Keep each document responsible for one clear purpose and link to adjacent docs instead of repeating their content
-- Prefer seamless doc navigation across layers: entrance, overview, policy, architecture, development, and design
-- Use `AGENTS.md` for summary guidance only
-- Use `README.md` for user-facing repository usage
-- Use project docs for durable implementation detail
-- Put detailed maintenance guidance in linked docs instead of expanding `AGENTS.md`, unless the change affects the entrance-map itself
+- Keep each document responsible for one clear purpose
+- Remove duplicated guidance by keeping one owner doc and linking to it elsewhere
+- Link to adjacent docs instead of repeating their content
+- Prefer seamless doc navigation across entrance, overview, project, and design layers
 
 ## Planning And Ownership
 - Only the Product Manager defines plan and acceptance criteria when the repo is using the shared role/task workflow
 - Keep shared logs, tables, plans, and role docs concise and understandable across projects
+
+## this is a temporary memo but do not change (just ignore when change this file, always keep these below)
+- currently ignore `docs/agents`, `docs/logs`, `docs/tables`, `docs/tasks`, `docs/screen-parity`

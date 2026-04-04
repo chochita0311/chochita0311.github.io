@@ -26,5 +26,6 @@
 ## Constraints
 - Avoid introducing build requirements unless the product direction changes intentionally.
 - Keep file organization understandable as the note archive grows.
+- Treat Markdown notes as the durable content source even when the UI still depends on preview JSON.
 - Prefer incremental cleanup over broad rewrites.
 - Refer to `docs/project/policy.md` for product scope and `docs/project/developer-guide.md` for change workflow.

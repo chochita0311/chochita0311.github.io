@@ -2,11 +2,11 @@
 
 ## Current Direction
 - Clean up the repository around a clear notes-first product shape.
-- Keep the static app easy to browse, search, and extend.
+- Keep the static app easy to browse, search, read, and maintain.
 
 ## Near-Term Priorities
 - Reduce ambiguity between Markdown archive content and UI preview data.
-- Keep repository docs clean, separated, and easy to follow.
+- Keep repository docs clean, separated, and easy to navigate.
 - Continue simplifying the app toward a clearer personal notes experience.
 
 ## Longer-Term Direction

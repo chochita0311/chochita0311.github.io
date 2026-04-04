@@ -8,7 +8,7 @@ Follow the local run instructions in `README.md`.
 - Prefer small, focused changes.
 - Reuse existing project patterns before introducing new abstractions.
 - Do not treat sandbox tool issues as repository failures without checking the environment context.
-- Refer to `docs/project/policy.md` for scope decisions and `docs/project/architecture.md` for structure details.
+- Use `docs/project/policy.md` for scope decisions and `docs/project/architecture.md` for structure details.
 
 ## Content Updates
 - Add durable note content under `notes/`.

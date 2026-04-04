@@ -1,12 +1,12 @@
 # Project Policy
 
 ## Product Direction
-- This repository is a lightweight personal notes site published on GitHub Pages.
-- The product direction is a notes-first experience for browsing, searching, reading, and preserving study materials.
+- This repository is a notes-first personal study archive published on GitHub Pages.
+- Product work should strengthen browsing, search, reading, and long-term note maintenance.
 
 ## Scope
 - In scope:
-  - Markdown note storage
+  - Markdown note storage and preservation
   - static note browsing and reading
   - lightweight search and filtering
   - maintenance workflows that keep the archive usable over time
@@ -21,8 +21,10 @@
 - Preserve GitHub Pages compatibility.
 - Prefer clear structure and durable content over short-term feature clutter.
 - Keep documentation concise and separated by purpose.
+- Reuse existing patterns before introducing new abstractions.
 
 ## Change Expectations
 - Update the relevant documentation when product behavior, structure, or workflow changes.
 - Keep new rules in the most specific document that owns them instead of expanding `AGENTS.md`.
 - If guidance already exists elsewhere, link to it instead of copying it.
+- Use `docs/project/architecture.md` for implementation shape, `docs/project/developer-guide.md` for workflow, and `docs/project/roadmap.md` for planned direction.
