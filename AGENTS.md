@@ -19,7 +19,7 @@
 
 ## Codebase Map
 - Scan the project root first before making structural assumptions
-- `notes/`: long-term note archive
+- `CATEGORIES/`: current long-term Markdown archive
 - `assets/`: frontend assets for the static app
 - `docs/`: documentation map, project guides, design docs, and deeper references
 - `index.html`: current static entry page
@@ -40,7 +40,7 @@
 - Do not revert unrelated user changes
 
 ## Notes And Data Rules
-- New durable note content belongs under `notes/`
+- New durable note content belongs under `CATEGORIES/`
 - Keep folders and filenames easy to search and understand
 - If the UI still depends on local JSON preview data, keep that data aligned when a task requires parity
 

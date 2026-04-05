@@ -11,9 +11,9 @@ Follow the local run instructions in `README.md`.
 - Use `docs/project/policy.md` for scope decisions and `docs/project/architecture.md` for structure details.
 
 ## Content Updates
-- Add durable note content under `notes/`.
+- Add durable note content under `CATEGORIES/` using the current pattern `CATEGORIES/<category>/<collection>/<note>.md`.
 - Keep folders and filenames searchable and understandable.
-- If a task must expose new or changed content in the current UI, update the local JSON preview data when required.
+- Update the visible archive shell and owner docs when the category structure changes.
 
 ## Verification
 - Run the simplest verification that matches the change.

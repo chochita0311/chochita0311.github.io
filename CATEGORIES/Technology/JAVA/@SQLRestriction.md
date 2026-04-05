@@ -1,0 +1,1 @@
+- https://docs.jboss.org/hibernate/stable/orm/javadocs/org/hibernate/annotations/SQLRestriction.html

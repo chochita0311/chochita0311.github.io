@@ -1,0 +1,3 @@
+- https://www.baeldung.com/lombok-with-annotations
+- https://yeoooo.github.io/java/Lombok/
+- https://www.kapresoft.com/java/2022/08/29/lombok-cloning-immutable-objects-using-with.html

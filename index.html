@@ -1,205 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Play-Talk | My Notes Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/app.css" />
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Atelier | Editorial Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/app.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="app-shell" id="appShell">
-    <div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-    <header class="topbar">
-      <div class="topbar-start">
-        <button class="icon-btn mobile-menu-btn" id="navToggle" type="button" aria-label="Open note navigation">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-        <div class="brand">
-          <div class="logo-mark" aria-hidden="true">
-            <div class="diamond-frame"></div>
-            <div class="diamond-core"></div>
-            <div class="diamond-dot"></div>
-          </div>
-          <div class="brand-copy">
-            <strong>Play-Talk</strong>
-          </div>
-        </div>
-      </div>
-
-      <label class="topbar-search" aria-label="Search notes">
-        <span class="material-symbols-outlined">search</span>
-        <input type="text" placeholder="Search notes..." />
-      </label>
-
-      <div class="topbar-end">
-        <a class="topbar-link desktop-only" href="#">Explore</a>
-        <span class="topbar-divider desktop-only" aria-hidden="true"></span>
-        <button class="icon-btn desktop-only" type="button" aria-label="Open notifications">
-          <span class="material-symbols-outlined">notifications</span>
-        </button>
-        <button class="icon-btn" type="button" aria-label="Open settings">
-          <span class="material-symbols-outlined">settings</span>
-        </button>
-        <div class="profile-chip" aria-hidden="true">
-          <img alt="Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJNs3pntIX_1OxEZ2k3J1GgQHlvs1zaWdA_VoQfEt_pKZSOLY8vz6jfeRbTmAaw-_nI5fKs5BSw-WIfJwBKvbnIZ7XWDGKaoWayeSI5aaEj9eE2u8RZkUA-eIBLP6LGtMZFyPUdm2X2LQ4rB5HyX3jq6XFbIj_zJuKcjK1Okzzcy0poZt33rcG-dVwrjt_ZHcmcWFt03EluqZebZ4f9H3K-T2AbSxioXvsxiW-Bm2Rsge_tGXWlPzidOpoleKcjhOja5AliyUR_oI" />
-        </div>
-      </div>
-    </header>
-
-    <div class="shell-grid">
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-section">
-          <p class="eyebrow">Language Tiers</p>
-          <nav class="sidebar-nav" aria-label="Note collections">
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">menu_book</span>
-              <span>Grammar</span>
-            </button>
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">chat_bubble</span>
-              <span>Casual</span>
-            </button>
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">work</span>
-              <span>Business</span>
-            </button>
-          </nav>
-        </div>
-
-        <div class="sidebar-section">
-          <p class="eyebrow">My Activity</p>
-          <nav class="sidebar-nav" aria-label="Saved note views">
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">dashboard_customize</span>
-              <span>My Boards</span>
-            </button>
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">campaign</span>
-              <span>공지사항</span>
-            </button>
-            <button class="sidebar-link active" type="button">
-              <span class="material-symbols-outlined">edit_note</span>
-              <span>My Notes</span>
-            </button>
-            <button class="sidebar-link" type="button">
-              <span class="material-symbols-outlined">star</span>
-              <span>Starred</span>
-            </button>
-          </nav>
-        </div>
-
-        <div class="sidebar-footer membership-card">
-          <p class="eyebrow">Pro Membership</p>
-          <p class="section-copy">Unlock advanced business modules.</p>
-          <p style="margin-top: 12px;">
-            <button class="secondary-btn utility-btn" type="button" style="width: 100%; justify-content: center;">Upgrade Now</button>
-          </p>
-        </div>
-      </aside>
-
-      <main class="content-area">
-        <section class="page-header">
-          <div class="page-copy">
-            <div class="breadcrumb">
-              <span>Personal</span>
-              <span class="material-symbols-outlined">chevron_right</span>
-              <span class="is-active">My Notes</span>
-            </div>
-            <div>
-              <h2>My Private Notes</h2>
-              <p class="page-description">Manage and review your personal learning collection.</p>
-            </div>
-          </div>
-
-          <div class="page-actions">
-            <div class="toolbar-toggle" aria-label="Browse density mode">
-              <button class="icon-btn" type="button" aria-label="Grid view">
-                <span class="material-symbols-outlined">grid_view</span>
-              </button>
-              <button class="icon-btn active" type="button" aria-label="List view">
-                <span class="material-symbols-outlined">format_list_bulleted</span>
-              </button>
-            </div>
-            <button class="primary-btn desktop-only" type="button">
-              <span class="material-symbols-outlined">add_circle</span>
-              Create Note
-            </button>
-          </div>
-        </section>
-
-        <section>
-          <div class="filters-bar">
-            <div class="chip-row" aria-label="Category filters">
-              <button class="filter-chip active" type="button">All Notes</button>
-              <button class="filter-chip" type="button">Vocabulary</button>
-              <button class="filter-chip" type="button">Grammar</button>
-              <button class="filter-chip" type="button">Conversation</button>
-            </div>
-
-            <div class="filters-bar-actions desktop-only">
-              <label class="eyebrow" for="page-size">Page Size</label>
-              <div class="control-select">
-                <select id="page-size" aria-label="Page size">
-                  <option value="5">5</option>
-                  <option value="15" selected>15</option>
-                  <option value="30">30</option>
-                  <option value="100">100</option>
-                </select>
-                <span class="material-symbols-outlined">expand_more</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="library-panel panel desktop-only desktop-library">
-          <div class="library-table-shell">
-            <div class="library-table-head">
-              <div>Note Title</div>
-              <div>Date Created</div>
-              <div>Category</div>
-              <div style="text-align: right;">Actions</div>
-            </div>
-            <div id="notes-list-body"></div>
-          </div>
-          <div class="pagination">
-            <button id="prev-btn" class="ghost-btn" type="button">Previous</button>
-            <div class="page-info" id="page-indicator"></div>
-            <button id="next-btn" class="ghost-btn" type="button">Next</button>
-          </div>
-        </section>
-
-        <section class="library-panel mobile-library panel">
-          <div class="filters-bar-actions" style="margin-bottom: 14px;">
-            <p class="eyebrow">View Capacity</p>
-            <div class="chip-row" id="mobile-page-size-wrap" style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button data-mobile-page-size="5" class="filter-chip" type="button">5</button>
-              <button data-mobile-page-size="15" class="filter-chip active" type="button">15</button>
-              <button data-mobile-page-size="30" class="filter-chip" type="button">30</button>
-              <button data-mobile-page-size="100" class="filter-chip" type="button">100</button>
-            </div>
-          </div>
-
-          <div id="mobile-notes-list" class="mobile-list"></div>
-
-          <div class="pagination">
-            <button id="mobile-prev-btn" class="ghost-btn" type="button">Prev</button>
-            <div class="page-info" id="mobile-page-indicator"></div>
-            <button id="mobile-next-btn" class="primary-btn" type="button">Next</button>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <button class="floating-action mobile-only" type="button" aria-label="Create note">
-      <span class="material-symbols-outlined">add</span>
-    </button>
-  </div>
-
-  <script defer src="assets/js/note_library.js"></script>
-</body>
-</html>
+<!-- TopNavBar Implementation -->
+<nav class="topbar no-line-rule">
+<div class="topbar__start">
+<span class="brand-title">조치타의 메모장</span>
+<div class="topbar__nav">
+<div class="nav-dropdown">
+<button class="nav-link nav-link--active" type="button">Categories<br/><span class="material-symbols-outlined nav-link__icon">expand_more</span>
+</button>
+<div class="nav-dropdown__panel nav-dropdown__panel--level-1">
+<div class="nav-menu">
+<div class="nav-menu__item nav-menu__item--branch">
+<div class="nav-menu__button">
+                                Philosophy <span class="material-symbols-outlined nav-menu__icon">chevron_right</span>
+</div>
+<div class="nav-dropdown__panel nav-dropdown__panel--level-2">
+<div class="nav-menu nav-menu--narrow">
+<div class="nav-menu__item nav-menu__item--branch">
+<div class="nav-menu__button">
+                                            Ethics <span class="material-symbols-outlined nav-menu__icon">chevron_right</span>
+</div>
+<div class="nav-dropdown__panel nav-dropdown__panel--level-3">
+<div class="nav-menu nav-menu--tight">
+<a class="nav-menu__link" href="#">Virtue Ethics</a>
+<a class="nav-menu__link" href="#">Stoicism</a>
+</div>
+</div>
+</div>
+<div class="nav-menu__item">Metaphysics</div>
+</div>
+</div>
+</div>
+<div class="nav-menu__item">Design Theory</div>
+</div>
+</div>
+</div>
+<a class="nav-link" href="#">Library</a>
+<a class="nav-link" href="#">Archive</a>
+<a class="nav-link" href="#">About</a>
+</div>
+</div>
+<div class="topbar__end">
+<label class="search-field search-field--topbar">
+<input class="search-field__input" placeholder="Search archive..." type="text"/>
+<span class="material-symbols-outlined search-field__icon">search</span>
+</label>
+</div>
+</nav>
+<!-- Sidebar Implementation -->
+<aside class="sidebar tonal-shift-only">
+<div class="sidebar__profile">
+<div class="profile-card">
+<div class="profile-card__avatar">
+<img alt="professional editorial portrait of a scholar in a library setting with warm ambient lighting" class="profile-card__image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkALiCIwS40wH9WC8J6sgYAkSmCuOQ96UXmlBN6fVYQIRGeBLtZegv2K1VaLbgWbUnRmke_U4_nRnPRvJxHATu4H0FVyJ9o5sGz0Kn-O5guek24bNcoWXQB2weFrAqcc6_hKyIVn6jGKI1Mpq7S_lBqZiTeoZw3BHFHqtCPMpX57uGcrhwNwKw7kRfzdfZSyct4J1HvwB2BF--0Uy88aRymdn1daoiVnKNO1t3Sdko0SHh1wrnEZYbKrzh7Gk7FxcsZJluFuVixLI"/>
+</div>
+<div>
+<h3 class="profile-card__name">Chocheetah</h3>
+<p class="profile-card__meta">Powered by AI</p>
+</div>
+</div>
+</div>
+<div class="sidebar__section">
+<p class="section-label section-label--spaced">Categories</p>
+<!-- Category 1 (Expanded with sub-depth) -->
+<div class="sidebar__group">
+<a class="sidebar-link sidebar-link--active" href="#">
+<div class="sidebar-link__content">
+<span class="material-symbols-outlined sidebar-link__icon">auto_stories</span>
+<span class="sidebar-link__text">Philosophy (12)</span>
+</div>
+</a>
+</div>
+<!-- Category 2 -->
+<a class="sidebar-link" href="#">
+<div class="sidebar-link__content">
+<span class="material-symbols-outlined sidebar-link__icon">architecture</span>
+<span class="sidebar-link__text">Design Theory (08)</span>
+</div>
+</a>
+<!-- Category 3 (With sub-depth as requested) -->
+<div class="sidebar__group">
+<a class="sidebar-link" href="#">
+<div class="sidebar-link__content">
+<span class="material-symbols-outlined sidebar-link__icon">memory</span>
+<span class="sidebar-link__text">Technology (21)</span>
+</div>
+</a>
+<div class="sidebar-sublist">
+<a class="sidebar-sublist__item" href="#">
+<span class="sidebar-sublist__name">AI Intelligence</span>
+<span class="sidebar-sublist__count">14</span>
+</a>
+<a class="sidebar-sublist__item" href="#">
+<span class="sidebar-sublist__name">Java</span>
+<span class="sidebar-sublist__count">07</span>
+</a>
+</div>
+</div>
+<a class="sidebar-link" href="#">
+<div class="sidebar-link__content">
+<span class="material-symbols-outlined sidebar-link__icon">menu_book</span>
+<span class="sidebar-link__text">English (15)</span>
+</div>
+</a>
+<a class="sidebar-link" href="#">
+<div class="sidebar-link__content">
+<span class="material-symbols-outlined sidebar-link__icon">history</span>
+<span class="sidebar-link__text">History (09)</span>
+</div>
+</a>
+</div>
+<div class="sidebar__tags">
+<p class="section-label">Popular Tags</p>
+<div class="tag-cloud">
+<span class="tag-chip">Typography</span>
+<span class="tag-chip">Ethics</span>
+<span class="tag-chip">AI</span>
+<span class="tag-chip">Post-Modernism</span>
+<span class="tag-chip">UX</span>
+</div>
+</div>
+<div class="sidebar__footer">
+<a class="footer-link" href="#">
+<span class="material-symbols-outlined footer-link__icon">sell</span>
+<span class="footer-link__text">Tags</span>
+</a>
+<a class="footer-link" href="#">
+<span class="material-symbols-outlined footer-link__icon">bookmark</span>
+<span class="footer-link__text">Bookmarks</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="archive-main">
+<header class="archive-hero">
+<h1 class="archive-hero__title">Recent Archives</h1>
+<p class="archive-hero__summary">
+            Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces.
+        </p>
+</header>
+<!-- Vertical List of Notes -->
+<section class="note-list">
+<!-- Note Entry 1 (Text only, wide) -->
+<article class="note-card">
+<div class="note-card__body">
+<div class="note-card__meta">
+<span class="note-label note-label--accent">Technology</span>
+<span class="note-label note-label--muted">12 Oct 2023</span>
+</div>
+<h2 class="note-card__title">The Digital Nomad’s Dilemma: Finding Stillness in Connectivity</h2>
+<p class="note-card__summary">
+                        As our work lives become untethered from physical geography, the boundaries between the 'atelier' and the 'world' blur. We explore how to maintain a studious mind in a landscape designed for constant distraction.
+                    </p>
+<div class="note-card__tags">
+<span class="note-tag">Sociology</span>
+<span class="note-tag">Productivity</span>
+</div>
+</div>
+</article>
+<!-- Note Entry 2 (Text only, wide) -->
+<article class="note-card">
+<div class="note-card__body">
+<div class="note-card__meta">
+<span class="note-label note-label--accent">Design Theory</span>
+<span class="note-label note-label--muted">04 Oct 2023</span>
+</div>
+<h2 class="note-card__title">Typography as Architecture: Building Readable Digital Spaces</h2>
+<p class="note-card__summary">
+                        Type is not merely a medium for text; it is the physical structure of the digital experience. Exploring the relationship between Manrope's geometry and editorial authority in modern UI.
+                    </p>
+<div class="note-card__tags">
+<span class="note-tag">Manrope</span>
+<span class="note-tag">UI Design</span>
+</div>
+</div>
+</article>
+<!-- Note Entry 3 (Text only, wide) -->
+<article class="note-card">
+<div class="note-card__body">
+<div class="note-card__meta">
+<span class="note-label note-label--accent">Technology</span>
+<span class="note-label note-label--muted">28 Sep 2023</span>
+</div>
+<h2 class="note-card__title">The Ghost in the Large Language Model</h2>
+<p class="note-card__summary">
+                        An investigation into the emergent properties of neural networks and what they reveal about the human capacity for pattern recognition and narrative creation.
+                    </p>
+<div class="note-card__tags">
+<span class="note-tag">AI</span>
+<span class="note-tag">Future</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination (Asymmetric Style) -->
+<footer class="archive-footer">
+<div class="archive-footer__nav">
+<span class="archive-footer__page">Page 01 / 14</span>
+<div class="pagination-controls">
+<button class="pagination-button pagination-button--disabled" type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="pagination-button pagination-button--primary" type="button">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<p class="archive-footer__credit">
+            Curated by CHOCHEETAH © 2026</p>
+</footer>
+</main>
+</body></html>

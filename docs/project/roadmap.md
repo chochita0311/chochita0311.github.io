@@ -10,6 +10,6 @@
 - Continue simplifying the app toward a clearer personal notes experience.
 
 ## Longer-Term Direction
-- Improve the connection between `notes/` content and the browser runtime.
+- Improve the connection between `CATEGORIES/` content and the browser runtime.
 - Expand note-management workflows without losing the lightweight static model.
 - Keep future growth compatible with GitHub Pages and long-term archive maintenance.
