@@ -60,6 +60,11 @@
   gap: var(--space-1);
 }
 
+.sidebar__category-list {
+  display: grid;
+  gap: var(--space-1);
+}
+
 .sidebar__tags {
   display: grid;
   gap: var(--space-4);

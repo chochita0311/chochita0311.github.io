@@ -71,53 +71,7 @@
 </div>
 <div class="sidebar__section">
 <p class="section-label section-label--spaced">Categories</p>
-<!-- Category 1 (Expanded with sub-depth) -->
-<div class="sidebar__group">
-<a class="sidebar-link sidebar-link--active" href="#">
-<div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">auto_stories</span>
-<span class="sidebar-link__text">Philosophy (12)</span>
-</div>
-</a>
-</div>
-<!-- Category 2 -->
-<a class="sidebar-link" href="#">
-<div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">architecture</span>
-<span class="sidebar-link__text">Design Theory (08)</span>
-</div>
-</a>
-<!-- Category 3 (With sub-depth as requested) -->
-<div class="sidebar__group">
-<a class="sidebar-link" href="#">
-<div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">memory</span>
-<span class="sidebar-link__text">Technology (21)</span>
-</div>
-</a>
-<div class="sidebar-sublist">
-<a class="sidebar-sublist__item" href="#">
-<span class="sidebar-sublist__name">AI Intelligence</span>
-<span class="sidebar-sublist__count">14</span>
-</a>
-<a class="sidebar-sublist__item" href="#">
-<span class="sidebar-sublist__name">Java</span>
-<span class="sidebar-sublist__count">07</span>
-</a>
-</div>
-</div>
-<a class="sidebar-link" href="#">
-<div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">menu_book</span>
-<span class="sidebar-link__text">English (15)</span>
-</div>
-</a>
-<a class="sidebar-link" href="#">
-<div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">history</span>
-<span class="sidebar-link__text">History (09)</span>
-</div>
-</a>
+<div class="sidebar__category-list" id="sidebar-categories"></div>
 </div>
 <div class="sidebar__tags">
 <p class="section-label">Popular Tags</p>
@@ -143,13 +97,13 @@
 <!-- Main Content Canvas -->
 <main class="archive-main">
 <header class="archive-hero">
-<h1 class="archive-hero__title">Recent Archives</h1>
-<p class="archive-hero__summary">
+<h1 class="archive-hero__title" id="archive-title">Recent Archives</h1>
+<p class="archive-hero__summary" id="archive-summary">
             Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces.
         </p>
 </header>
 <!-- Vertical List of Notes -->
-<section class="note-list">
+<section class="note-list" id="archive-note-list">
 <!-- Note Entry 1 (Text only, wide) -->
 <article class="note-card">
 <div class="note-card__body">
@@ -205,12 +159,12 @@
 <!-- Pagination (Asymmetric Style) -->
 <footer class="archive-footer">
 <div class="archive-footer__nav">
-<span class="archive-footer__page">Page 01 / 14</span>
+<span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
 <div class="pagination-controls">
-<button class="pagination-button pagination-button--disabled" type="button">
+<button class="pagination-button pagination-button--disabled" id="archive-prev-button" type="button">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
-<button class="pagination-button pagination-button--primary" type="button">
+<button class="pagination-button pagination-button--primary" id="archive-next-button" type="button">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
@@ -219,4 +173,6 @@
             Curated by CHOCHEETAH © 2026</p>
 </footer>
 </main>
+<script defer src="assets/js/sidebar-categories.js"></script>
+<script defer src="assets/js/archive-content.js"></script>
 </body></html>

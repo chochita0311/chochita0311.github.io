@@ -24,12 +24,14 @@ http://localhost:8000
 ## Update Archive Content
 - Add or reorganize Markdown files under `CATEGORIES/`
 - Keep category and collection names searchable and understandable
+- Use `docs/project/note-data-contract.md` for note frontmatter and static index expectations
 - Update the UI or supporting docs in the same turn when the visible archive structure changes
 
 ## Documentation Map
 - `AGENTS.md`: entrance and contributor map
 - `docs/project/policy.md`: product direction and scope
 - `docs/project/architecture.md`: runtime and content structure
+- `docs/project/note-data-contract.md`: note frontmatter and generated index contract
 - `docs/project/developer-guide.md`: development and verification guidance
 - `docs/project/roadmap.md`: current and future direction
 - `docs/designs/design-constitution.md`: design source of truth

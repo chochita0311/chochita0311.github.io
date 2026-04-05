@@ -12,6 +12,7 @@ Follow the local run instructions in `README.md`.
 
 ## Content Updates
 - Add durable note content under `CATEGORIES/` using the current pattern `CATEGORIES/<category>/<collection>/<note>.md`.
+- Use the note metadata contract in `docs/project/note-data-contract.md` when adding or normalizing note frontmatter.
 - Keep folders and filenames searchable and understandable.
 - Update the visible archive shell and owner docs when the category structure changes.
 

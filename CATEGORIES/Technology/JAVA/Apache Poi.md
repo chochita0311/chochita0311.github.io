@@ -1,3 +1,15 @@
+---
+id: technology-java-apache-poi
+title: "Apache Poi"
+summary: Collected references for Apache POI write and read performance, streaming APIs, and spreadsheet format tradeoffs.
+tags:
+  - java
+  - apache-poi
+  - excel
+  - xlsx
+  - csv
+---
+
 ## write
 - https://andriymz.github.io/misc/apache-poi-slow-excel-generation/#
 - https://www.baeldung.com/java-microsoft-excel

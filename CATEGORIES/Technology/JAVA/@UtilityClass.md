@@ -1,3 +1,14 @@
+---
+id: technology-java-utility-class
+title: "@UtilityClass"
+summary: References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.
+tags:
+  - java
+  - lombok
+  - utility-class
+  - oop
+---
+
 - https://www.devkuma.com/docs/java/lombok/utility-class/
 - https://www.vojtechruzicka.com/avoid-utility-classes/
 - https://www.mimul.com/blog/oop-alternative-to-utility-classes/

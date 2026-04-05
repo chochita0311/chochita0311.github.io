@@ -249,9 +249,15 @@
 }
 
 .sidebar-sublist {
-  display: grid;
+  display: none;
   gap: var(--space-1);
   margin-left: 2.25rem;
+}
+
+.sidebar__group--has-children:hover .sidebar-sublist,
+.sidebar__group--has-children:focus-within .sidebar-sublist,
+.sidebar__group--has-children.is-open .sidebar-sublist {
+  display: grid;
 }
 
 .sidebar-sublist__item {
@@ -261,6 +267,11 @@
   padding: var(--space-2);
   color: var(--page-text-muted);
   transition: color var(--transition-fast);
+}
+
+.sidebar-sublist__item:hover,
+.sidebar-sublist__item:focus-visible {
+  color: var(--color-primary);
 }
 
 .sidebar-sublist__name {

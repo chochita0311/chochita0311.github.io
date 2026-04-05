@@ -1,3 +1,15 @@
+---
+id: technology-java-async-thread-pool
+title: "@Async & Thread Pool"
+summary: Notes and references on Java concurrency, Spring @Async usage, and rejected execution handling with thread pools.
+tags:
+  - java
+  - concurrency
+  - async
+  - thread-pool
+  - spring
+---
+
 - https://www.baeldung.com/java-when-to-use-parallel-stream
 - https://www.baeldung.com/java-8-parallel-streams-custom-threadpool
 - https://www.baeldung.com/java-future
