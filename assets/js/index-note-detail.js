@@ -118,8 +118,6 @@ function updateBreadcrumbs(path) {
   const collection = segments[2] || "Notes";
 
   detailBreadcrumbs().innerHTML = `
-<a href="#">Archive</a>
-<span class="material-symbols-outlined">chevron_right</span>
 <a href="#">${window.NoteDetailRenderer.escapeHtml(category)}</a>
 <span class="material-symbols-outlined">chevron_right</span>
 <span>${window.NoteDetailRenderer.escapeHtml(collection)}</span>`;

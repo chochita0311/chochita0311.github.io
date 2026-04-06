@@ -6,6 +6,7 @@ Lightweight static Markdown archive site for browsing and reading personal study
 - Desktop-first archive shell built with static HTML and layered CSS
 - Durable Markdown archive currently organized under `CATEGORIES/`
 - Current verified content shape: `CATEGORIES/<category>/<collection>/<note>.md`
+- GitHub Pages must serve the repo as static files so runtime `.md` fetches keep working
 - The published shell is styled and documented, but archive data binding is still being normalized
 
 ## Local Run

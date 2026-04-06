@@ -47,12 +47,19 @@
 }
 
 .note-detail__utility {
+  position: sticky;
+  top: var(--shell-topbar-height);
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
+  padding-top: var(--space-6);
   padding-bottom: var(--space-4);
+  background: rgb(17, 19, 23);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(67, 70, 83, 0.22);
+  box-shadow: 0 16px 30px rgba(9, 11, 14, 0.18);
 }
 
 .note-detail__breadcrumbs,
@@ -338,6 +345,7 @@
   gap: var(--space-8);
   margin-top: var(--space-16);
   padding-top: var(--space-8);
+  padding-bottom: var(--space-12);
   border-top: 1px solid rgba(67, 70, 83, 0.22);
 }
 
@@ -477,6 +485,13 @@
 
   .note-detail__rail {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .archive-content-view,
+  .archive-footer {
+    width: min(calc(100% - (var(--space-12) * 2)), 72rem);
   }
 }
 

@@ -35,6 +35,8 @@ const archiveState = {
   activeNotePath: null,
   copy: DEFAULT_ARCHIVE_COPY,
 };
+let javaCollectionNotesPromise = null;
+let archiveRenderRequestId = 0;
 
 function archiveTitle() {
   return document.getElementById("archive-title");
@@ -203,31 +205,25 @@ async function loadJavaCollectionNotes() {
   return notes;
 }
 
-function renderJavaLoadingState() {
-  window.IndexNoteDetail.setArchiveMode("list");
-  window.IndexNoteDetail.renderListFooterPanel();
-  const copy = archiveCopyForSelection("Technology", "JAVA");
+function getJavaCollectionNotes() {
+  if (!javaCollectionNotesPromise) {
+    javaCollectionNotesPromise = loadJavaCollectionNotes().catch((error) => {
+      javaCollectionNotesPromise = null;
+      throw error;
+    });
+  }
 
-  archiveTitle().textContent = copy.title;
-  archiveSummary().textContent = "Loading real notes from CATEGORIES/Technology/JAVA for the archive view.";
-  archivePageLabel().textContent = "Page 01 / --";
-  archiveNoteList().innerHTML = `
-<article class="note-card">
-<div class="note-card__body">
-<div class="note-card__meta">
-<span class="note-label note-label--accent">Technology</span>
-<span class="note-label note-label--muted">JAVA</span>
-</div>
-<h2 class="note-card__title">Loading JAVA notes...</h2>
-<p class="note-card__summary">Reading the current Markdown files and preparing the collection list.</p>
-</div>
-</article>`;
+  return javaCollectionNotesPromise;
 }
 
 async function renderJavaCollection() {
-  renderJavaLoadingState();
+  const requestId = ++archiveRenderRequestId;
+  const notes = await getJavaCollectionNotes();
 
-  const notes = await loadJavaCollectionNotes();
+  if (requestId !== archiveRenderRequestId) {
+    return;
+  }
+
   archiveState.notes = notes;
   archiveState.page = 1;
   archiveState.category = "Technology";
@@ -243,6 +239,7 @@ async function renderJavaCollection() {
 }
 
 function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
+  archiveRenderRequestId += 1;
   archiveState.notes = [];
   archiveState.page = 1;
   archiveState.activeNotePath = null;
@@ -404,6 +401,7 @@ function initializeArchiveFromLocation() {
   }
 
   const defaultCopy = archiveCopyForSelection(null, null);
+  archiveRenderRequestId += 1;
   archiveTitle().textContent = defaultCopy.title;
   archiveSummary().textContent = defaultCopy.summary;
   renderArchivePage();
@@ -436,4 +434,5 @@ window.addEventListener("popstate", () => {
 
 loadArchiveCopy().finally(() => {
   initializeArchiveFromLocation();
+  getJavaCollectionNotes().catch(() => {});
 });

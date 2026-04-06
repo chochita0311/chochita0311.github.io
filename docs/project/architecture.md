@@ -3,6 +3,7 @@
 ## Runtime Shape
 - The site is a static web app built with HTML, CSS, and JavaScript.
 - `index.html` is the published desktop archive shell.
+- `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `CATEGORIES/**/*.md`.
 - `assets/css/app.css` is the shell entry stylesheet imported by `index.html`.
 - `assets/js/sidebar-categories.js` renders the left category rail from the current archive snapshot.
 - `assets/js/archive-content.js` renders collection-driven note lists in the right content area.
