@@ -331,6 +331,10 @@
   cursor: pointer;
 }
 
+.note-card__link {
+  display: block;
+}
+
 .note-card__body {
   width: 100%;
 }

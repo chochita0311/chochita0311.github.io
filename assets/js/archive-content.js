@@ -16,12 +16,24 @@ const JAVA_COLLECTION_NOTES = [
 ];
 
 const DEFAULT_PAGE_SIZE = 10;
+const DEFAULT_DOCUMENT_TITLE = document.title;
+const DEFAULT_ARCHIVE_COPY = {
+  default: {
+    title: "Recent Archives",
+    summary:
+      "Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces.",
+  },
+  categories: {},
+  collections: {},
+};
 const archiveState = {
   notes: [],
   page: 1,
   pageSize: DEFAULT_PAGE_SIZE,
   category: null,
   collection: null,
+  activeNotePath: null,
+  copy: DEFAULT_ARCHIVE_COPY,
 };
 
 function archiveTitle() {
@@ -36,133 +48,46 @@ function archiveNoteList() {
   return document.getElementById("archive-note-list");
 }
 
-function archivePageLabel() {
-  return document.getElementById("archive-page-label");
-}
+async function loadArchiveCopy() {
+  try {
+    const response = await fetch("assets/config/archive-descriptions.json");
 
-function archivePrevButton() {
-  return document.getElementById("archive-prev-button");
-}
+    if (!response.ok) {
+      return;
+    }
 
-function archiveNextButton() {
-  return document.getElementById("archive-next-button");
+    archiveState.copy = {
+      ...DEFAULT_ARCHIVE_COPY,
+      ...(await response.json()),
+    };
+  } catch {
+    archiveState.copy = DEFAULT_ARCHIVE_COPY;
+  }
 }
 
 function escapeHtml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
+  return window.NoteDetailRenderer.escapeHtml(value);
 }
 
-function titleFromPath(path) {
-  return path.split("/").pop().replace(/\.md$/, "");
-}
+function archiveCopyForSelection(category, collection) {
+  const collectionKey =
+    category && collection ? `${category}/${collection}` : null;
 
-function slugToTitleCase(value) {
-  return value
-    .split("-")
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
-function parseFrontmatter(markdown) {
-  if (!markdown.startsWith("---\n")) {
-    return { attributes: {}, body: markdown };
+  if (collectionKey && archiveState.copy.collections[collectionKey]) {
+    return archiveState.copy.collections[collectionKey];
   }
 
-  const endIndex = markdown.indexOf("\n---\n", 4);
-
-  if (endIndex === -1) {
-    return { attributes: {}, body: markdown };
+  if (category && archiveState.copy.categories[category]) {
+    return archiveState.copy.categories[category];
   }
 
-  const rawFrontmatter = markdown.slice(4, endIndex).split("\n");
-  const body = markdown.slice(endIndex + 5);
-  const attributes = {};
-  let currentKey = null;
-
-  rawFrontmatter.forEach((line) => {
-    if (line.startsWith("  - ") && currentKey) {
-      if (!Array.isArray(attributes[currentKey])) {
-        attributes[currentKey] = [];
-      }
-
-      attributes[currentKey].push(line.replace("  - ", "").trim());
-      return;
-    }
-
-    const separatorIndex = line.indexOf(":");
-
-    if (separatorIndex === -1) {
-      return;
-    }
-
-    const key = line.slice(0, separatorIndex).trim();
-    const value = line.slice(separatorIndex + 1).trim();
-
-    currentKey = key;
-
-    if (!value) {
-      attributes[key] = [];
-      return;
-    }
-
-    attributes[key] = value.replace(/^"(.*)"$/, "$1");
-  });
-
-  return { attributes, body };
-}
-
-function isNoiseLine(line, title) {
-  const normalized = line.replace(/^-\s*/, "").trim();
-
-  if (!normalized) {
-    return true;
-  }
-
-  if (normalized === title) {
-    return true;
-  }
-
-  if (normalized.startsWith("http://") || normalized.startsWith("https://")) {
-    return true;
-  }
-
-  if (normalized.startsWith("[") && normalized.includes("](http")) {
-    return true;
-  }
-
-  return false;
-}
-
-function extractSummary(markdown, fallbackTitle) {
-  const lines = markdown
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-
-  for (const line of lines) {
-    if (line.startsWith("## ")) {
-      return line.replace(/^##\s+/, "").trim();
-    }
-  }
-
-  for (const line of lines) {
-    if (!isNoiseLine(line, fallbackTitle)) {
-      return line.replace(/^-\s*/, "").trim();
-    }
-  }
-
-  return `Study note in Technology / JAVA for ${fallbackTitle}.`;
+  return archiveState.copy.default;
 }
 
 function noteCardMarkup(note) {
   return `
 <article class="note-card" data-note-path="${escapeHtml(note.path)}">
+<a class="note-card__link" href="?category=${encodeURIComponent(note.category)}&collection=${encodeURIComponent(note.collection)}&note=${encodeURIComponent(note.path)}" data-note-link="true">
 <div class="note-card__body">
 <div class="note-card__meta">
 <span class="note-label note-label--accent">${escapeHtml(note.category)}</span>
@@ -176,7 +101,20 @@ ${note.tags
   .join("")}
 </div>
 </div>
+</a>
 </article>`;
+}
+
+function archivePageLabel() {
+  return document.getElementById("archive-page-label");
+}
+
+function archivePrevButton() {
+  return document.getElementById("archive-prev-button");
+}
+
+function archiveNextButton() {
+  return document.getElementById("archive-next-button");
 }
 
 function setPaginationButtonState(button, isEnabled) {
@@ -196,7 +134,37 @@ function setPaginationButtonState(button, isEnabled) {
   button.disabled = true;
 }
 
+function bindPaginationControls() {
+  archivePrevButton()?.addEventListener("click", () => {
+    if (archiveState.page <= 1) {
+      return;
+    }
+
+    archiveState.page -= 1;
+    renderArchivePage();
+  });
+
+  archiveNextButton()?.addEventListener("click", () => {
+    const totalPages = Math.max(
+      1,
+      Math.ceil(archiveState.notes.length / archiveState.pageSize),
+    );
+
+    if (archiveState.page >= totalPages) {
+      return;
+    }
+
+    archiveState.page += 1;
+    renderArchivePage();
+  });
+}
+
 function renderArchivePage() {
+  document.title = DEFAULT_DOCUMENT_TITLE;
+  window.IndexNoteDetail.setArchiveMode("list");
+  window.IndexNoteDetail.renderListFooterPanel();
+  bindPaginationControls();
+
   const totalPages = Math.max(
     1,
     Math.ceil(archiveState.notes.length / archiveState.pageSize),
@@ -217,21 +185,14 @@ function renderArchivePage() {
 async function loadJavaCollectionNotes() {
   const notes = await Promise.all(
     JAVA_COLLECTION_NOTES.map(async (path) => {
-      const response = await fetch(path);
-      const markdown = response.ok ? await response.text() : "";
-      const fallbackTitle = titleFromPath(path);
-      const { attributes, body } = parseFrontmatter(markdown);
-      const title = attributes.title || fallbackTitle;
-      const summary = attributes.summary || extractSummary(body, title);
+      const noteData = await window.NoteDetailRenderer.loadNoteData(path);
       const tags =
-        Array.isArray(attributes.tags) && attributes.tags.length > 0
-          ? attributes.tags.map(slugToTitleCase)
-          : ["Technology", "JAVA"];
+        noteData.tags.length > 0 ? noteData.tags : ["Technology", "JAVA"];
 
       return {
         path,
-        title,
-        summary,
+        title: noteData.title,
+        summary: noteData.summary,
         category: "Technology",
         collection: "JAVA",
         tags,
@@ -243,9 +204,12 @@ async function loadJavaCollectionNotes() {
 }
 
 function renderJavaLoadingState() {
-  archiveTitle().textContent = "JAVA";
-  archiveSummary().textContent =
-    "Loading real notes from CATEGORIES/Technology/JAVA for the archive view.";
+  window.IndexNoteDetail.setArchiveMode("list");
+  window.IndexNoteDetail.renderListFooterPanel();
+  const copy = archiveCopyForSelection("Technology", "JAVA");
+
+  archiveTitle().textContent = copy.title;
+  archiveSummary().textContent = "Loading real notes from CATEGORIES/Technology/JAVA for the archive view.";
   archivePageLabel().textContent = "Page 01 / --";
   archiveNoteList().innerHTML = `
 <article class="note-card">
@@ -268,39 +232,208 @@ async function renderJavaCollection() {
   archiveState.page = 1;
   archiveState.category = "Technology";
   archiveState.collection = "JAVA";
+  archiveState.activeNotePath = null;
 
-  archiveTitle().textContent = "JAVA";
-  archiveSummary().textContent = `${notes.length} notes from Technology / JAVA. Showing ${Math.min(notes.length, archiveState.pageSize)} notes per page.`;
+  const copy = archiveCopyForSelection("Technology", "JAVA");
+
+  archiveTitle().textContent = copy.title;
+  archiveSummary().textContent =
+    copy.summary || `${notes.length} notes from Technology / JAVA. Showing ${Math.min(notes.length, archiveState.pageSize)} notes per page.`;
   renderArchivePage();
 }
 
-archivePrevButton()?.addEventListener("click", () => {
-  if (archiveState.page <= 1) {
+function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
+  archiveState.notes = [];
+  archiveState.page = 1;
+  archiveState.activeNotePath = null;
+  document.title = DEFAULT_DOCUMENT_TITLE;
+  window.IndexNoteDetail.setArchiveMode("list");
+  window.IndexNoteDetail.renderListFooterPanel();
+  archiveTitle().textContent = title;
+  archiveSummary().textContent = summary;
+  archiveNoteList().innerHTML = `
+<article class="note-card">
+<div class="note-card__body">
+<div class="note-card__meta">
+<span class="note-label note-label--accent">${escapeHtml(title)}</span>
+<span class="note-label note-label--muted">${escapeHtml(metaLabel)}</span>
+</div>
+<h2 class="note-card__title">No notes yet</h2>
+<p class="note-card__summary">This area is ready for content, but there are no notes to render for the current selection.</p>
+</div>
+</article>`;
+  archivePageLabel().textContent = "Page 00 / 00";
+  setPaginationButtonState(archivePrevButton(), false);
+  setPaginationButtonState(archiveNextButton(), false);
+}
+
+function updateArchiveLocation({ notePath = null, replace = false } = {}) {
+  const url = new URL(window.location.href);
+
+  if (archiveState.category) {
+    url.searchParams.set("category", archiveState.category);
+  } else {
+    url.searchParams.delete("category");
+  }
+
+  if (archiveState.collection) {
+    url.searchParams.set("collection", archiveState.collection);
+  } else {
+    url.searchParams.delete("collection");
+  }
+
+  if (notePath) {
+    url.searchParams.set("note", notePath);
+  } else {
+    url.searchParams.delete("note");
+  }
+
+  if (replace) {
+    window.history.replaceState({}, "", url);
     return;
   }
 
-  archiveState.page -= 1;
-  renderArchivePage();
-});
+  window.history.pushState({}, "", url);
+}
 
-archiveNextButton()?.addEventListener("click", () => {
-  const totalPages = Math.max(
-    1,
-    Math.ceil(archiveState.notes.length / archiveState.pageSize),
-  );
+async function renderNoteDetail(notePath, options = {}) {
+  const noteData = await window.NoteDetailRenderer.loadNoteData(notePath);
+  const currentIndex = archiveState.notes.findIndex((note) => note.path === notePath);
+  const previousNote = currentIndex > 0 ? archiveState.notes[currentIndex - 1] : null;
+  const nextNote =
+    currentIndex >= 0 && currentIndex < archiveState.notes.length - 1
+      ? archiveState.notes[currentIndex + 1]
+      : null;
 
-  if (archiveState.page >= totalPages) {
+  archiveState.activeNotePath = notePath;
+  document.title = `${noteData.title} | Chochita Archive`;
+  archiveTitle().textContent = archiveState.collection || "Archive";
+  archiveSummary().textContent = `${archiveState.notes.length} notes from ${archiveState.category} / ${archiveState.collection}.`;
+  window.IndexNoteDetail.setArchiveMode("detail");
+  window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
+  window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
+  window.IndexNoteDetail.elements.detailPublished().textContent =
+    noteData.attributes.published || noteData.attributes.date || "Not set";
+  window.IndexNoteDetail.elements.detailTags().innerHTML =
+    noteData.tags.length > 0
+      ? noteData.tags
+          .map(
+            (tag) =>
+              `<span class="note-tag">${window.NoteDetailRenderer.escapeHtml(tag)}</span>`,
+          )
+          .join("")
+      : '<span class="note-detail__rail-empty">No tags</span>';
+  window.IndexNoteDetail.elements.detailReferences().innerHTML =
+    noteData.references.length > 0
+      ? noteData.references
+          .slice(0, 3)
+          .map(
+            (reference) =>
+              `<a class="note-detail__reference-link" href="${reference}" target="_blank" rel="noreferrer">${window.NoteDetailRenderer.escapeHtml(window.NoteDetailRenderer.shortenReference(reference))}</a>`,
+          )
+          .join("") +
+        (noteData.references.length > 3
+          ? `<span class="note-detail__rail-empty">+${noteData.references.length - 3} more</span>`
+          : "")
+      : '<span class="note-detail__rail-empty">No references</span>';
+  window.IndexNoteDetail.elements.detailContent().innerHTML = noteData.rendered.html;
+  window.IndexNoteDetail.renderOutline(noteData.rendered.outline);
+  window.IndexNoteDetail.updateBreadcrumbs(notePath);
+  window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (path) => {
+    renderNoteDetail(path);
+    updateArchiveLocation({ notePath: path });
+  });
+
+  if (!options.skipHistory) {
+    updateArchiveLocation({ notePath });
+  }
+}
+
+archiveNoteList()?.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-note-link='true']");
+
+  if (!link) {
     return;
   }
 
-  archiveState.page += 1;
-  renderArchivePage();
+  event.preventDefault();
+  renderNoteDetail(decodeURIComponent(link.closest(".note-card").dataset.notePath));
 });
+
+function initializeArchiveFromLocation() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+  const collection = params.get("collection");
+  const note = params.get("note");
+
+  if (category === "Technology" && collection === "JAVA") {
+    renderJavaCollection().then(() => {
+      updateArchiveLocation({ notePath: note, replace: true });
+
+      if (note) {
+        renderNoteDetail(note, { skipHistory: true });
+      }
+    });
+    return;
+  }
+
+  if (category === "Technology" && !collection) {
+    archiveState.category = "Technology";
+    archiveState.collection = null;
+    const copy = archiveCopyForSelection(category, null);
+    renderArchiveEmptyState(
+      copy.title,
+      copy.summary,
+      "Category",
+    );
+    updateArchiveLocation({ replace: true });
+    return;
+  }
+
+  if (category === "English" || category === "Design") {
+    archiveState.category = category;
+    archiveState.collection = collection;
+    const copy = archiveCopyForSelection(category, collection);
+    renderArchiveEmptyState(
+      copy.title,
+      copy.summary,
+      collection ? "Collection" : "Category",
+    );
+    updateArchiveLocation({ replace: true });
+    return;
+  }
+
+  const defaultCopy = archiveCopyForSelection(null, null);
+  archiveTitle().textContent = defaultCopy.title;
+  archiveSummary().textContent = defaultCopy.summary;
+  renderArchivePage();
+}
 
 window.addEventListener("archive:navigate", (event) => {
   const { category, collection } = event.detail;
 
   if (category === "Technology" && collection === "JAVA") {
-    renderJavaCollection();
+    renderJavaCollection().then(() => {
+      updateArchiveLocation({ replace: false });
+    });
+    return;
   }
+
+  archiveState.category = category;
+  archiveState.collection = collection;
+  const copy = archiveCopyForSelection(category, collection);
+  renderArchiveEmptyState(
+    copy.title,
+    copy.summary,
+    collection ? "Collection" : "Category",
+  );
+  updateArchiveLocation({ replace: false });
+});
+
+window.addEventListener("popstate", () => {
+  initializeArchiveFromLocation();
+});
+
+loadArchiveCopy().finally(() => {
+  initializeArchiveFromLocation();
 });

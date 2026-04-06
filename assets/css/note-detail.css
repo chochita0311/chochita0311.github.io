@@ -1,5 +1,44 @@
+.archive-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: var(--shell-topbar-height);
+}
+
+.archive-content-view,
+.archive-footer {
+  width: min(100%, 68rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.archive-footer {
+  margin-top: auto;
+}
+
+.archive-hero--sticky {
+  position: sticky;
+  top: var(--shell-topbar-height);
+  z-index: 10;
+  padding-bottom: var(--space-6);
+  background: rgb(17, 19, 23);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(67, 70, 83, 0.18);
+  box-shadow: 0 16px 30px rgba(9, 11, 14, 0.18);
+}
+
 .note-detail-page {
   padding-bottom: var(--space-24);
+}
+
+.note-detail--inline {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.note-detail--inline[hidden],
+.note-detail[hidden] {
+  display: none !important;
 }
 
 .note-detail__frame {
@@ -138,15 +177,30 @@
   font-size: 0.8125rem;
 }
 
-.note-detail__tag-list {
+.note-detail__tag-list,
+.note-detail__references {
   flex-wrap: wrap;
   gap: var(--space-2);
+}
+
+.note-detail__empty {
+  color: var(--page-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .note-detail__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 14rem;
   gap: var(--space-12);
+}
+
+.note-detail__footer-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+  width: min(42rem, 100%);
 }
 
 .note-detail__content {
@@ -220,6 +274,10 @@
   padding-left: 1.25rem;
 }
 
+.note-detail__list:not(.note-detail__list--ordered) {
+  list-style: disc;
+}
+
 .note-detail__list--ordered {
   list-style: decimal;
 }
@@ -263,6 +321,16 @@
   font-size: 0.875em;
 }
 
+.note-detail__content a {
+  color: var(--color-primary);
+}
+
+.note-detail__content a:hover,
+.note-detail__content a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .note-detail__footer {
   display: flex;
   align-items: flex-start;
@@ -271,6 +339,10 @@
   margin-top: var(--space-16);
   padding-top: var(--space-8);
   border-top: 1px solid rgba(67, 70, 83, 0.22);
+}
+
+.note-detail__footer:empty {
+  display: none;
 }
 
 .note-detail__nav {
@@ -282,6 +354,32 @@
 .note-detail__nav--next {
   text-align: right;
   justify-items: end;
+}
+
+.note-detail__nav--disabled .note-detail__nav-title,
+.note-detail__nav--disabled .note-detail__nav-label {
+  color: var(--page-text-muted);
+}
+
+.note-detail__page-footer {
+  margin-top: var(--space-12);
+}
+
+.page-watermark {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 30;
+  pointer-events: none;
+}
+
+.page-watermark__credit {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(17, 19, 23, 0.82);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-topbar);
 }
 
 .note-detail__nav-label {
@@ -326,6 +424,7 @@
 }
 
 .note-detail__rail a {
+  display: block;
   color: var(--page-text-muted);
   font-size: 0.875rem;
   line-height: 1.5;
@@ -335,6 +434,40 @@
 .note-detail__rail a:hover,
 .note-detail__rail a:focus-visible {
   color: var(--color-on-surface);
+}
+
+.note-detail__rail-link--child {
+  padding-left: var(--space-4);
+}
+
+.note-detail__rail-empty {
+  margin: 0;
+  color: var(--page-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.note-detail__reference-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-container);
+  color: var(--page-text-soft);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.note-detail__reference-link:hover,
+.note-detail__reference-link:focus-visible {
+  color: var(--color-primary);
+  background: var(--color-surface-container-high);
+  text-decoration: none;
 }
 
 @media (max-width: 1279px) {
@@ -359,7 +492,8 @@
 
 @media (max-width: 767px) {
   .note-detail__utility,
-  .note-detail__footer {
+  .note-detail__footer,
+  .note-detail__footer-panel {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -367,6 +501,11 @@
   .note-detail__nav--next {
     text-align: left;
     justify-items: start;
+  }
+
+  .page-watermark {
+    right: var(--space-4);
+    bottom: var(--space-4);
   }
 
   .note-detail__lead-quote,

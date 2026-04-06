@@ -69,6 +69,39 @@ Actual note body here.
   - `assets/data/notes-index.json`
 - This file should be created from Markdown frontmatter plus path-derived category and collection values.
 
+## Archive Copy Config
+- Keep list-view title and summary copy in a small runtime JSON file instead of hard-coding it in JavaScript.
+- Recommended file:
+  - `assets/config/archive-descriptions.json`
+- This file owns:
+  - default archive hero title and summary
+  - per-category empty-state copy
+  - per-collection summary copy for list views
+- This file is hand-editable content configuration, not generated note metadata.
+
+## Recommended Archive Copy Shape
+
+```json
+{
+  "default": {
+    "title": "Recent Archives",
+    "summary": "Curated overview copy for the landing archive."
+  },
+  "categories": {
+    "Technology": {
+      "title": "Technology",
+      "summary": "Choose a collection from the sidebar to open the notes in this category."
+    }
+  },
+  "collections": {
+    "Technology/JAVA": {
+      "title": "JAVA",
+      "summary": "Real Markdown notes from Technology / JAVA."
+    }
+  }
+}
+```
+
 ## Recommended Index Shape
 
 ```json

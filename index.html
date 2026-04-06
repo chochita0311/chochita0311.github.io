@@ -4,9 +4,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Digital Atelier | Editorial Archive</title>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/app.css" rel="stylesheet"/>
+<link href="assets/css/note-detail.css" rel="stylesheet"/>
 </head>
 <body>
 <!-- TopNavBar Implementation -->
@@ -96,7 +98,8 @@
 </aside>
 <!-- Main Content Canvas -->
 <main class="archive-main">
-<header class="archive-hero">
+<div class="archive-content-view" id="archive-list-view">
+<header class="archive-hero archive-hero--sticky">
 <h1 class="archive-hero__title" id="archive-title">Recent Archives</h1>
 <p class="archive-hero__summary" id="archive-summary">
             Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces.
@@ -156,9 +159,65 @@
 </div>
 </article>
 </section>
-<!-- Pagination (Asymmetric Style) -->
+</div>
+<section class="archive-content-view note-detail note-detail--inline" id="archive-detail-view" hidden>
+<header class="note-detail__utility">
+<nav aria-label="Breadcrumb" class="note-detail__breadcrumbs">
+<a href="#">Archive</a>
+<span class="material-symbols-outlined">chevron_right</span>
+<a href="#">Technology</a>
+<span class="material-symbols-outlined">chevron_right</span>
+<span>JAVA</span>
+</nav>
+<div class="note-detail__actions" aria-label="Note actions">
+<button class="note-detail__action" type="button">
+<span class="material-symbols-outlined">ios_share</span>
+</button>
+<button class="note-detail__action" type="button">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="note-detail__action" type="button">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</header>
+<article class="note-detail">
+<header class="note-detail__header">
+<h1 class="note-detail__title" id="note-title">Loading note...</h1>
+<p class="note-detail__summary" id="note-summary">Preparing the selected Markdown file for reading.</p>
+<dl class="note-detail__facts">
+<div>
+<dt>Published</dt>
+<dd id="note-published">Not set</dd>
+</div>
+<div>
+<dt>Tags</dt>
+<dd class="note-detail__tag-list" id="note-tags"></dd>
+</div>
+<div>
+<dt>References</dt>
+<dd class="note-detail__references" id="note-references"></dd>
+</div>
+</dl>
+</header>
+<div class="note-detail__layout">
+<div>
+<div class="note-detail__content" id="note-content">
+<p class="note-detail__empty">Select a note from the archive to load its Markdown content here.</p>
+</div>
+<footer class="note-detail__footer" id="note-detail-nav"></footer>
+</div>
+<aside class="note-detail__rail" aria-label="Table of contents">
+<p class="note-detail__rail-title">On This Note</p>
+<div id="note-outline">
+<p class="note-detail__rail-empty">Headings from the current note will appear here.</p>
+</div>
+</aside>
+</div>
+</article>
+</section>
 <footer class="archive-footer">
-<div class="archive-footer__nav">
+<div class="archive-footer__nav" id="archive-footer-panel">
 <span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
 <div class="pagination-controls">
 <button class="pagination-button pagination-button--disabled" id="archive-prev-button" type="button">
@@ -174,5 +233,7 @@
 </footer>
 </main>
 <script defer src="assets/js/sidebar-categories.js"></script>
+<script defer src="assets/js/note-detail-renderer.js"></script>
+<script defer src="assets/js/index-note-detail.js"></script>
 <script defer src="assets/js/archive-content.js"></script>
 </body></html>

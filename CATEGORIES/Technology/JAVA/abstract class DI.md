@@ -2,6 +2,7 @@
 id: technology-java-abstract-class-di
 title: "abstract class DI"
 summary: References and example code for applying Spring dependency injection patterns inside abstract classes.
+published: 2026-04-05
 tags:
   - java
   - spring

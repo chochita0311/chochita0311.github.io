@@ -2,6 +2,7 @@
 id: technology-java-with
 title: "@With"
 summary: Reference note on Lombok @With for cloning and updating immutable Java objects.
+published: 2026-04-05
 tags:
   - java
   - lombok

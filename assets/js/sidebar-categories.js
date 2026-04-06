@@ -70,6 +70,33 @@ ${collectionMarkup}
     .join("");
 
   const groups = Array.from(mount.querySelectorAll(".sidebar__group"));
+  const isNotePage = window.location.pathname.includes("/pages/note/");
+
+  const navigateArchive = ({ category, collection }) => {
+    if (isNotePage) {
+      const archiveUrl = new URL("../../index.html", window.location.href);
+
+      if (category) {
+        archiveUrl.searchParams.set("category", category);
+      }
+
+      if (collection) {
+        archiveUrl.searchParams.set("collection", collection);
+      }
+
+      window.location.href = archiveUrl.toString();
+      return;
+    }
+
+    window.dispatchEvent(
+      new CustomEvent("archive:navigate", {
+        detail: {
+          category,
+          collection,
+        },
+      }),
+    );
+  };
 
   const activateGroup = (group) => {
     groups.forEach((item) => {
@@ -104,28 +131,20 @@ ${collectionMarkup}
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
       activateGroup(group);
-      window.dispatchEvent(
-        new CustomEvent("archive:navigate", {
-          detail: {
-            category: group.dataset.categoryName,
-            collection: null,
-          },
-        }),
-      );
+      navigateArchive({
+        category: group.dataset.categoryName,
+        collection: null,
+      });
     });
 
     childLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
         activateGroup(group);
-        window.dispatchEvent(
-          new CustomEvent("archive:navigate", {
-            detail: {
-              category: group.dataset.categoryName,
-              collection: link.dataset.collectionName,
-            },
-          }),
-        );
+        navigateArchive({
+          category: group.dataset.categoryName,
+          collection: link.dataset.collectionName,
+        });
       });
     });
   });

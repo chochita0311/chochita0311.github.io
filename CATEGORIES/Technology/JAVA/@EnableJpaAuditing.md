@@ -2,6 +2,7 @@
 id: technology-java-enable-jpa-auditing
 title: "@EnableJpaAuditing"
 summary: References and implementation notes for enabling JPA auditing and handling audit overrides in Spring Data JPA.
+published: 2026-04-05
 tags:
   - java
   - spring-data-jpa

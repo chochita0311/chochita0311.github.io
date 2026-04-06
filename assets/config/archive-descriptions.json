@@ -1,0 +1,30 @@
+{
+  "default": {
+    "title": "Recent Archives",
+    "summary": "Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces."
+  },
+  "categories": {
+    "Technology": {
+      "title": "Technology",
+      "summary": "여기에 글자를 쓰면 반영됩니다"
+    },
+    "English": {
+      "title": "English",
+      "summary": "No rendered notes are configured yet for this category."
+    },
+    "Design": {
+      "title": "Design",
+      "summary": "No rendered notes are configured yet for this category."
+    }
+  },
+  "collections": {
+    "Technology/JAVA": {
+      "title": "JAVA",
+      "summary": "자바 문서 공부"
+    },
+    "English/Langs Studio": {
+      "title": "Langs Studio",
+      "summary": "No rendered notes are configured yet for English / Langs Studio."
+    }
+  }
+}
