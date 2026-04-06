@@ -2,7 +2,8 @@
 id: technology-java-apache-poi
 title: "Apache Poi"
 summary: Collected references for Apache POI write and read performance, streaming APIs, and spreadsheet format tradeoffs.
-published: 2026-04-05
+created: 2026-04-05
+updated: 2026-04-05
 tags:
   - java
   - apache-poi

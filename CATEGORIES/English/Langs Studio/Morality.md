@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-morality
+title: Morality
+summary: Speaking prompts and vocabulary about honesty, ethics, and modern moral dilemmas.
+created: 2025-09-25
+updated: 2025-09-25
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - morality
+  - ethics
+---
+
 1️⃣ **Personal Beliefs & Choices**
 
 **- Do you think people are naturally good or bad?**

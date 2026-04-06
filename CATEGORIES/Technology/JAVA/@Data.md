@@ -2,7 +2,8 @@
 id: technology-java-data
 title: "@Data"
 summary: Reference note on Lombok @Data usage and whether it should be used broadly in Java domain models.
-published: 2026-04-05
+created: 2026-04-05
+updated: 2026-04-05
 tags:
   - java
   - lombok

@@ -2,7 +2,8 @@
 id: technology-java-async-thread-pool
 title: "@Async & Thread Pool"
 summary: Notes and references on Java concurrency, Spring @Async usage, and rejected execution handling with thread pools.
-published: 2026-04-05
+created: 2026-04-05
+updated: 2026-04-05
 tags:
   - java
   - concurrency

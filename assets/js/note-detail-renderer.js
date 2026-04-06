@@ -151,6 +151,8 @@ function slugifyHeading(value) {
 function applyInlineMarkdown(value) {
   let output = escapeHtml(value);
 
+  output = output.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  output = output.replace(/_([^_]+)_/g, "<em>$1</em>");
   output = output.replace(
     /`([^`]+)`/g,
     '<code class="note-detail__inline-code">$1</code>',
@@ -182,6 +184,15 @@ function renderList(items, ordered) {
 
 function renderParagraph(lines) {
   return `<p>${applyInlineMarkdown(lines.join(" "))}</p>`;
+}
+
+function renderHeading(text, level) {
+  const id = slugifyHeading(text);
+
+  return {
+    html: `<h${level} id="${id}">${applyInlineMarkdown(text)}</h${level}>`,
+    outlineItem: { id, text, level },
+  };
 }
 
 function renderMarkdown(markdown) {
@@ -232,7 +243,9 @@ function renderMarkdown(markdown) {
   }
 
   lines.forEach((line) => {
-    if (line.startsWith("```")) {
+    const normalizedLine = line.replaceAll("\u200b", "");
+
+    if (normalizedLine.startsWith("```")) {
       flushParagraph();
       flushLists();
 
@@ -248,17 +261,17 @@ function renderMarkdown(markdown) {
     }
 
     if (inCodeBlock) {
-      codeLines.push(line);
+      codeLines.push(normalizedLine);
       return;
     }
 
-    if (!line.trim()) {
+    if (!normalizedLine.trim()) {
       flushParagraph();
       flushLists();
       return;
     }
 
-    const headingMatch = line.match(/^(#{2,3})\s+(.+)$/);
+    const headingMatch = normalizedLine.match(/^(#{2,3})\s+(.+)$/);
 
     if (headingMatch) {
       flushParagraph();
@@ -267,45 +280,104 @@ function renderMarkdown(markdown) {
 
       const level = headingMatch[1].length;
       const text = headingMatch[2].trim();
-      const id = slugifyHeading(text);
+      const renderedHeading = renderHeading(text, level);
 
-      outline.push({ id, text, level });
-      pushBlock(`<h${level} id="${id}">${applyInlineMarkdown(text)}</h${level}>`);
+      outline.push(renderedHeading.outlineItem);
+      pushBlock(renderedHeading.html);
       return;
     }
 
-    if (line.trim() === "---") {
+    const numberedBoldHeadingMatch = normalizedLine.match(
+      /^(?:[0-9]+(?:\)|️⃣)?\s*)?\*\*(.+?)\*\*$/u,
+    );
+
+    if (numberedBoldHeadingMatch && !numberedBoldHeadingMatch[1].trim().startsWith("-")) {
+      flushParagraph();
+      flushLists();
+      flushSection();
+
+      const text = numberedBoldHeadingMatch[1].trim();
+      const renderedHeading = renderHeading(text, 2);
+
+      outline.push(renderedHeading.outlineItem);
+      pushBlock(renderedHeading.html);
       return;
     }
 
-    if (line.startsWith("> ")) {
+    const boldQuestionMatch = normalizedLine.match(/^\*\*-\s*(.+?)\*\*$/u);
+
+    if (boldQuestionMatch) {
+      flushParagraph();
+      flushLists();
+      const text = boldQuestionMatch[1].trim();
+      const renderedHeading = renderHeading(text, 3);
+
+      outline.push(renderedHeading.outlineItem);
+      pushBlock(renderedHeading.html);
+      return;
+    }
+
+    const vocabHeadingMatch = normalizedLine.match(/^▪️\s*(.+)$/u);
+
+    if (vocabHeadingMatch) {
+      flushParagraph();
+      flushLists();
+      const text = vocabHeadingMatch[1].trim();
+      const renderedHeading = renderHeading(text, 3);
+
+      outline.push(renderedHeading.outlineItem);
+      pushBlock(renderedHeading.html);
+      return;
+    }
+
+    if (normalizedLine.startsWith(":")) {
+      flushParagraph();
+      flushLists();
+      pushBlock(renderParagraph([normalizedLine.replace(/^:\s*/, "").trim()]));
+      return;
+    }
+
+    if (normalizedLine.startsWith("💡")) {
+      flushParagraph();
+      flushLists();
+      pushBlock(
+        `<aside class="note-detail__callout"><p>${applyInlineMarkdown(normalizedLine.trim())}</p></aside>`,
+      );
+      return;
+    }
+
+    if (normalizedLine.trim() === "---") {
+      return;
+    }
+
+    if (normalizedLine.startsWith("> ")) {
       flushParagraph();
       flushLists();
       pushBlock(
         `<blockquote class="note-detail__lead-quote"><p>${applyInlineMarkdown(
-          line.replace(/^>\s+/, ""),
+          normalizedLine.replace(/^>\s+/, ""),
         )}</p></blockquote>`,
       );
       return;
     }
 
-    if (line.match(/^\d+\.\s+/)) {
+    if (normalizedLine.match(/^\d+\.\s+/)) {
       flushParagraph();
-      orderedItems.push(line.replace(/^\d+\.\s+/, ""));
+      orderedItems.push(normalizedLine.replace(/^\d+\.\s+/, ""));
       return;
     }
 
-    if (line.startsWith("- ")) {
+    if (normalizedLine.match(/^[-+]\s*/)) {
       flushParagraph();
-      listItems.push(line.replace(/^-+\s+/, ""));
+      listItems.push(normalizedLine.replace(/^[-+]\s*/, ""));
       return;
     }
 
-    if (line.startsWith("# ")) {
+    if (normalizedLine.startsWith("# ")) {
       return;
     }
 
-    paragraphLines.push(line.trim());
+    paragraphLines.push(normalizedLine.trim());
   });
 
   flushParagraph();

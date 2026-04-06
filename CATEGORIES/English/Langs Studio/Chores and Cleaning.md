@@ -1,4 +1,17 @@
-```text
+---
+id: english-langs-studio-chores-and-cleaning
+title: Chores and Cleaning
+summary: Vocabulary and speaking notes about chores, commuting, pets, and everyday cleaning routines.
+created: 2025-07-08
+updated: 2025-07-08
+tags:
+  - english
+  - langs-studio
+  - vocabulary
+  - chores
+  - cleaning
+---
+
 frustrating
 
 답답한, 짜증나는
@@ -296,4 +309,3 @@ watermelon rind
 "chores"를 집안일로 구체화한 표현.
 
 + I usually split house chores with my roommate.
-```

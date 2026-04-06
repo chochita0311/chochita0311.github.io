@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-bucket-list
+title: Bucket List
+summary: Speaking prompts and vocabulary about life goals, travel dreams, and long-term ambitions.
+created: 2025-10-14
+updated: 2025-10-14
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - bucket-list
+  - goals
+---
+
 1️⃣ **Travel & Adventure Goals**
 
 **-Which country do you most want to visit before you die?**

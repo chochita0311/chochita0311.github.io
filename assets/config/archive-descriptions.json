@@ -10,7 +10,7 @@
     },
     "English": {
       "title": "English",
-      "summary": "No rendered notes are configured yet for this category."
+      "summary": "Conversation topics, vocabulary sets, and practice notes for long-term English study."
     },
     "Design": {
       "title": "Design",
@@ -24,7 +24,7 @@
     },
     "English/Langs Studio": {
       "title": "Langs Studio",
-      "summary": "No rendered notes are configured yet for English / Langs Studio."
+      "summary": "Speaking prompts and vocabulary notes from Langs Studio sessions."
     }
   }
 }

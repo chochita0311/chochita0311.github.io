@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-accommodation
+title: Accommodation
+summary: Travel speaking prompts and useful expressions about hotels, guesthouses, and booking stays.
+created: 2025-07-22
+updated: 2025-07-22
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - travel
+  - accommodation
+---
+
 **1) Personal Experience**
 -What kind of accommodation do you usually choose when you travel?
 -Have you ever stayed in a guesthouse? How was it?

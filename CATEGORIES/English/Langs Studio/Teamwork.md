@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-teamwork
+title: Teamwork
+summary: Speaking prompts and vocabulary about collaboration, group projects, and team culture.
+created: 2025-08-26
+updated: 2025-08-26
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - teamwork
+  - collaboration
+---
+
 **1) Teamwork & Collaboration**
 
 **- What makes a team successful?**

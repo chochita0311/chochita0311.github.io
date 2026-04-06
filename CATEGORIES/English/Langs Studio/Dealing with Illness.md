@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-dealing-with-illness
+title: Dealing with Illness
+summary: Speaking prompts and vocabulary about symptoms, recovery habits, and health-related choices.
+created: 2025-10-16
+updated: 2025-10-16
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - health
+  - illness
+---
+
 1️⃣ **Personal Experiences**
 
 **- How do you usually deal with being sick — rest, medicine, or natural remedies?**

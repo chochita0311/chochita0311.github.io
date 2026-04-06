@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-family
+title: Family
+summary: Speaking prompts and vocabulary about parents, siblings, shared routines, and extended family.
+created: 2025-09-30
+updated: 2025-09-30
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - family
+  - relationships
+---
+
 1️⃣ **Family Background & Childhood**
 
 **-Did you resemble your mom or dad more when you were a child?**

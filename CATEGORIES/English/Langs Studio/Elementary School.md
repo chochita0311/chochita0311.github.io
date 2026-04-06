@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-elementary-school
+title: Elementary School
+summary: Speaking prompts and vocabulary about childhood school memories, teachers, and early friendships.
+created: 2025-09-02
+updated: 2025-09-02
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - school
+  - childhood
+---
+
 **1) School Life**
 
 **- What was your favorite subject in elementary school?**

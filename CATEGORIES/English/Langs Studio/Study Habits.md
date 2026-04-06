@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-study-habits
+title: Study Habits
+summary: Speaking prompts and vocabulary about study routines, techniques, and memorable learning experiences.
+created: 2025-09-09
+updated: 2025-09-09
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - study
+  - learning
+---
+
 **1) Study Habits & Routines**
 
 **- What kind of environment helps you study best?**

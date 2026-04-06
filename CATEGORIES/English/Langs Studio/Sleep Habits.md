@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-sleep-habits
+title: Sleep Habits
+summary: Speaking prompts, vocabulary, and example paragraphs about sleep quality, routines, and rest.
+created: 2025-08-28
+updated: 2025-08-28
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - sleep
+  - habits
+---
+
 **1) Quality of Sleep**
 
 **- Do you usually sleep through the night or wake up often?**

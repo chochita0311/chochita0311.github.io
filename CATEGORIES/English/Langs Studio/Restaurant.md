@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-restaurant
+title: Restaurant
+summary: Speaking prompts and vocabulary about eating out, ordering food, and memorable dining experiences.
+created: 2025-10-21
+updated: 2025-10-21
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - restaurant
+  - dining
+---
+
 1️⃣ **Eating Out Habits**
 
 **- How often do you eat out?**

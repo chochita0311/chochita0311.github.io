@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-job-interview
+title: Job Interview
+summary: Speaking prompts and vocabulary about personal strengths, work experience, and interview answers.
+created: 2025-10-28
+updated: 2025-10-28
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - career
+  - interview
+---
+
 1️⃣ **Personal Background**
 
 **- Can you tell me about yourself?**

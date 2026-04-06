@@ -2,7 +2,8 @@
 id: technology-java-utility-class
 title: "@UtilityClass"
 summary: References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.
-published: 2026-04-05
+created: 2026-04-05
+updated: 2026-04-05
 tags:
   - java
   - lombok

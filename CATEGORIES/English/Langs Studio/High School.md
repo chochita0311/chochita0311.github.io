@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-high-school
+title: High School
+summary: Speaking prompts and vocabulary about school life, classmates, teachers, and teenage memories.
+created: 2025-08-05
+updated: 2025-08-05
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - school
+  - high-school
+---
+
 **1) Daily Life at High School**
 
 **- Did you enjoy going to high school?**

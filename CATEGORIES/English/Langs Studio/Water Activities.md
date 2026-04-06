@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-water-activities
+title: Water Activities
+summary: Speaking prompts and vocabulary for swimming, water parks, beaches, and pool safety.
+created: 2025-07-31
+updated: 2025-07-31
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - leisure
+  - water-activities
+---
+
 **1) Personal Experience & Memories**
 - When did you first learn how to swim?
 - What’s your favorite water activity?

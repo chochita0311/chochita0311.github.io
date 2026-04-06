@@ -12,6 +12,7 @@
 - Path defines the archive taxonomy.
 - Frontmatter defines list, search, and UI metadata.
 - Generated JSON is derived output, not hand-edited content.
+- Dates belong in frontmatter, not in durable filenames. If a source note arrives with a leading `YYYYMMDD` filename, rename it to a topic-based note name and store the date in `created`.
 
 ## Recommended Note Shape
 - File path example:
@@ -27,7 +28,7 @@ tags:
   - java
   - spring-boot
   - lifecycle
-date: 2026-04-05
+created: 2026-04-05
 updated: 2026-04-05
 ---
 
@@ -37,6 +38,14 @@ Actual note body here.
 ```
 
 ## Frontmatter Fields
+- Strict field order:
+  - `id`
+  - `title`
+  - `summary`
+  - `tags`
+  - `created`
+  - `updated`
+- New and normalized notes must follow this order exactly.
 - Required:
   - `id`
     - stable, unique string
@@ -50,10 +59,15 @@ Actual note body here.
   - `tags`
     - array of normalized strings
     - lowercase kebab-case is the safest static filtering shape
-  - `date`
+  - `created`
     - original note date in `YYYY-MM-DD`
   - `updated`
     - last meaningful revision date in `YYYY-MM-DD`
+- Legacy compatibility only:
+  - `published`
+    - accepted alias when older notes have not been normalized yet
+  - `date`
+    - accepted alias when older notes have not been normalized yet
 - Avoid for now:
   - deep nested metadata that the current UI does not use
   - duplicate category or collection fields unless the generator needs overrides later

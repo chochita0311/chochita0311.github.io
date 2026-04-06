@@ -14,6 +14,28 @@ const JAVA_COLLECTION_NOTES = [
   "CATEGORIES/Technology/JAVA/ApplicationRunner.md",
   "CATEGORIES/Technology/JAVA/abstract class DI.md",
 ];
+const ENGLISH_LANGS_STUDIO_NOTES = [
+  "CATEGORIES/English/Langs Studio/Accommodation.md",
+  "CATEGORIES/English/Langs Studio/Birthday.md",
+  "CATEGORIES/English/Langs Studio/Bucket List.md",
+  "CATEGORIES/English/Langs Studio/Chores and Cleaning.md",
+  "CATEGORIES/English/Langs Studio/Dealing with Illness.md",
+  "CATEGORIES/English/Langs Studio/Elementary School.md",
+  "CATEGORIES/English/Langs Studio/Family.md",
+  "CATEGORIES/English/Langs Studio/Food Delivery.md",
+  "CATEGORIES/English/Langs Studio/Gifts.md",
+  "CATEGORIES/English/Langs Studio/Goals.md",
+  "CATEGORIES/English/Langs Studio/High School.md",
+  "CATEGORIES/English/Langs Studio/How Much Can You Handle.md",
+  "CATEGORIES/English/Langs Studio/Job Interview.md",
+  "CATEGORIES/English/Langs Studio/Money Management.md",
+  "CATEGORIES/English/Langs Studio/Morality.md",
+  "CATEGORIES/English/Langs Studio/Restaurant.md",
+  "CATEGORIES/English/Langs Studio/Sleep Habits.md",
+  "CATEGORIES/English/Langs Studio/Study Habits.md",
+  "CATEGORIES/English/Langs Studio/Teamwork.md",
+  "CATEGORIES/English/Langs Studio/Water Activities.md",
+];
 
 const DEFAULT_PAGE_SIZE = 10;
 const DEFAULT_DOCUMENT_TITLE = document.title;
@@ -36,6 +58,7 @@ const archiveState = {
   copy: DEFAULT_ARCHIVE_COPY,
 };
 let javaCollectionNotesPromise = null;
+let englishLangsStudioNotesPromise = null;
 let archiveRenderRequestId = 0;
 
 function archiveTitle() {
@@ -185,18 +208,33 @@ function renderArchivePage() {
 }
 
 async function loadJavaCollectionNotes() {
+  return loadCollectionNotes(JAVA_COLLECTION_NOTES, {
+    category: "Technology",
+    collection: "JAVA",
+    fallbackTags: ["technology", "java"],
+  });
+}
+
+async function loadEnglishLangsStudioNotes() {
+  return loadCollectionNotes(ENGLISH_LANGS_STUDIO_NOTES, {
+    category: "English",
+    collection: "Langs Studio",
+    fallbackTags: ["english", "langs-studio"],
+  });
+}
+
+async function loadCollectionNotes(paths, { category, collection, fallbackTags }) {
   const notes = await Promise.all(
-    JAVA_COLLECTION_NOTES.map(async (path) => {
+    paths.map(async (path) => {
       const noteData = await window.NoteDetailRenderer.loadNoteData(path);
-      const tags =
-        noteData.tags.length > 0 ? noteData.tags : ["Technology", "JAVA"];
+      const tags = noteData.tags.length > 0 ? noteData.tags : fallbackTags;
 
       return {
         path,
         title: noteData.title,
         summary: noteData.summary,
-        category: "Technology",
-        collection: "JAVA",
+        category,
+        collection,
         tags,
       };
     }),
@@ -216,9 +254,37 @@ function getJavaCollectionNotes() {
   return javaCollectionNotesPromise;
 }
 
+function getEnglishLangsStudioNotes() {
+  if (!englishLangsStudioNotesPromise) {
+    englishLangsStudioNotesPromise = loadEnglishLangsStudioNotes().catch(
+      (error) => {
+        englishLangsStudioNotesPromise = null;
+        throw error;
+      },
+    );
+  }
+
+  return englishLangsStudioNotesPromise;
+}
+
 async function renderJavaCollection() {
+  await renderCollection({
+    category: "Technology",
+    collection: "JAVA",
+    notes: await getJavaCollectionNotes(),
+  });
+}
+
+async function renderEnglishLangsStudioCollection() {
+  await renderCollection({
+    category: "English",
+    collection: "Langs Studio",
+    notes: await getEnglishLangsStudioNotes(),
+  });
+}
+
+async function renderCollection({ category, collection, notes }) {
   const requestId = ++archiveRenderRequestId;
-  const notes = await getJavaCollectionNotes();
 
   if (requestId !== archiveRenderRequestId) {
     return;
@@ -226,15 +292,16 @@ async function renderJavaCollection() {
 
   archiveState.notes = notes;
   archiveState.page = 1;
-  archiveState.category = "Technology";
-  archiveState.collection = "JAVA";
+  archiveState.category = category;
+  archiveState.collection = collection;
   archiveState.activeNotePath = null;
 
-  const copy = archiveCopyForSelection("Technology", "JAVA");
+  const copy = archiveCopyForSelection(category, collection);
 
   archiveTitle().textContent = copy.title;
   archiveSummary().textContent =
-    copy.summary || `${notes.length} notes from Technology / JAVA. Showing ${Math.min(notes.length, archiveState.pageSize)} notes per page.`;
+    copy.summary ||
+    `${notes.length} notes from ${category} / ${collection}. Showing ${Math.min(notes.length, archiveState.pageSize)} notes per page.`;
   renderArchivePage();
 }
 
@@ -310,7 +377,10 @@ async function renderNoteDetail(notePath, options = {}) {
   window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
   window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
   window.IndexNoteDetail.elements.detailPublished().textContent =
-    noteData.attributes.published || noteData.attributes.date || "Not set";
+    noteData.attributes.created ||
+    noteData.attributes.published ||
+    noteData.attributes.date ||
+    "Not set";
   window.IndexNoteDetail.elements.detailTags().innerHTML =
     noteData.tags.length > 0
       ? noteData.tags
@@ -374,6 +444,17 @@ function initializeArchiveFromLocation() {
     return;
   }
 
+  if (category === "English" && collection === "Langs Studio") {
+    renderEnglishLangsStudioCollection().then(() => {
+      updateArchiveLocation({ notePath: note, replace: true });
+
+      if (note) {
+        renderNoteDetail(note, { skipHistory: true });
+      }
+    });
+    return;
+  }
+
   if (category === "Technology" && !collection) {
     archiveState.category = "Technology";
     archiveState.collection = null;
@@ -417,6 +498,13 @@ window.addEventListener("archive:navigate", (event) => {
     return;
   }
 
+  if (category === "English" && collection === "Langs Studio") {
+    renderEnglishLangsStudioCollection().then(() => {
+      updateArchiveLocation({ replace: false });
+    });
+    return;
+  }
+
   archiveState.category = category;
   archiveState.collection = collection;
   const copy = archiveCopyForSelection(category, collection);
@@ -435,4 +523,5 @@ window.addEventListener("popstate", () => {
 loadArchiveCopy().finally(() => {
   initializeArchiveFromLocation();
   getJavaCollectionNotes().catch(() => {});
+  getEnglishLangsStudioNotes().catch(() => {});
 });

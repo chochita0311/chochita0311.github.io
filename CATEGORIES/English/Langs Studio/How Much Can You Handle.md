@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-how-much-can-you-handle
+title: How Much Can You Handle?
+summary: Speaking prompts and vocabulary about patience, endurance, and emotional limits.
+created: 2025-10-30
+updated: 2025-10-30
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - patience
+  - resilience
+---
+
 1️⃣ **Patience & Limits**
 
 **- How patient are you with slow people or situations?**

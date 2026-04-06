@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-money-management
+title: Money Management
+summary: Speaking prompts and vocabulary notes about budgeting, spending habits, and financial choices.
+created: 2025-07-16
+updated: 2025-07-16
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - money
+  - finance
+---
+
 **1) Personal Habits & Experience**
 - What strategies do you use to keep track of your monthly spending?
 - How do your spending habits change when you’re stressed or busy?

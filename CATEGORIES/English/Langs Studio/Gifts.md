@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-gifts
+title: Gifts
+summary: Speaking prompts and vocabulary about giving, receiving, and choosing meaningful gifts.
+created: 2025-08-12
+updated: 2025-08-12
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - gifts
+  - celebrations
+---
+
 **1) Personal Gift Experiences**
 
 **- What’s the best gift you’ve ever received?**

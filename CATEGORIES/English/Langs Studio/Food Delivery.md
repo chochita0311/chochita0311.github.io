@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-food-delivery
+title: Food Delivery
+summary: Speaking prompts and vocabulary about delivery apps, eating habits, and convenience versus cost.
+created: 2025-08-07
+updated: 2025-08-07
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - food
+  - delivery
+---
+
 **1) Personal Experience & Habits**
 
 **- How often do you order food delivery?**

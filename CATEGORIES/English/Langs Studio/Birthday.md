@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-birthday
+title: Birthday
+summary: Speaking prompts and vocabulary about birthday celebrations, gifts, and memorable moments.
+created: 2025-08-14
+updated: 2025-08-14
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - birthday
+  - celebrations
+---
+
 **1) Personal Experiences & Celebrations**
 
 **- How do you usually celebrate your birthday?**

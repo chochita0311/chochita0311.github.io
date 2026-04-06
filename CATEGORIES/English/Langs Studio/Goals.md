@@ -1,3 +1,17 @@
+---
+id: english-langs-studio-goals
+title: Goals
+summary: Speaking prompts and vocabulary about personal, academic, career, and health goals.
+created: 2025-07-29
+updated: 2025-07-29
+tags:
+  - english
+  - langs-studio
+  - speaking
+  - goals
+  - self-development
+---
+
 **1) Personal Goals**
 - What personal goals are you working on right now?
 - Have you ever set a goal and achieved it? What was it?
