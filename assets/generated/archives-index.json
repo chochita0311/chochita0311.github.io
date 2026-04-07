@@ -1,0 +1,585 @@
+[
+  {
+    "id": "english-langs-studio-how-much-can-you-handle",
+    "title": "How Much Can You Handle?",
+    "summary": "Speaking prompts and vocabulary about patience, endurance, and emotional limits.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "patience",
+      "resilience"
+    ],
+    "created": "2025-10-30",
+    "updated": "2025-10-30",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/How Much Can You Handle.md"
+  },
+  {
+    "id": "english-langs-studio-job-interview",
+    "title": "Job Interview",
+    "summary": "Speaking prompts and vocabulary about personal strengths, work experience, and interview answers.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "career",
+      "interview"
+    ],
+    "created": "2025-10-28",
+    "updated": "2025-10-28",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Job Interview.md"
+  },
+  {
+    "id": "english-langs-studio-restaurant",
+    "title": "Restaurant",
+    "summary": "Speaking prompts and vocabulary about eating out, ordering food, and memorable dining experiences.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "restaurant",
+      "dining"
+    ],
+    "created": "2025-10-21",
+    "updated": "2025-10-21",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Restaurant.md"
+  },
+  {
+    "id": "english-langs-studio-dealing-with-illness",
+    "title": "Dealing with Illness",
+    "summary": "Speaking prompts and vocabulary about symptoms, recovery habits, and health-related choices.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "health",
+      "illness"
+    ],
+    "created": "2025-10-16",
+    "updated": "2025-10-16",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Dealing with Illness.md"
+  },
+  {
+    "id": "english-langs-studio-bucket-list",
+    "title": "Bucket List",
+    "summary": "Speaking prompts and vocabulary about life goals, travel dreams, and long-term ambitions.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "bucket-list",
+      "goals"
+    ],
+    "created": "2025-10-14",
+    "updated": "2025-10-14",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Bucket List.md"
+  },
+  {
+    "id": "english-langs-studio-family",
+    "title": "Family",
+    "summary": "Speaking prompts and vocabulary about parents, siblings, shared routines, and extended family.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "family",
+      "relationships"
+    ],
+    "created": "2025-09-30",
+    "updated": "2025-09-30",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Family.md"
+  },
+  {
+    "id": "english-langs-studio-morality",
+    "title": "Morality",
+    "summary": "Speaking prompts and vocabulary about honesty, ethics, and modern moral dilemmas.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "morality",
+      "ethics"
+    ],
+    "created": "2025-09-25",
+    "updated": "2025-09-25",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Morality.md"
+  },
+  {
+    "id": "english-langs-studio-study-habits",
+    "title": "Study Habits",
+    "summary": "Speaking prompts and vocabulary about study routines, techniques, and memorable learning experiences.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "study",
+      "learning"
+    ],
+    "created": "2025-09-09",
+    "updated": "2025-09-09",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Study Habits.md"
+  },
+  {
+    "id": "english-langs-studio-elementary-school",
+    "title": "Elementary School",
+    "summary": "Speaking prompts and vocabulary about childhood school memories, teachers, and early friendships.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "school",
+      "childhood"
+    ],
+    "created": "2025-09-02",
+    "updated": "2025-09-02",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Elementary School.md"
+  },
+  {
+    "id": "english-langs-studio-sleep-habits",
+    "title": "Sleep Habits",
+    "summary": "Speaking prompts, vocabulary, and example paragraphs about sleep quality, routines, and rest.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "sleep",
+      "habits"
+    ],
+    "created": "2025-08-28",
+    "updated": "2025-08-28",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Sleep Habits.md"
+  },
+  {
+    "id": "english-langs-studio-teamwork",
+    "title": "Teamwork",
+    "summary": "Speaking prompts and vocabulary about collaboration, group projects, and team culture.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "teamwork",
+      "collaboration"
+    ],
+    "created": "2025-08-26",
+    "updated": "2025-08-26",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Teamwork.md"
+  },
+  {
+    "id": "english-langs-studio-birthday",
+    "title": "Birthday",
+    "summary": "Speaking prompts and vocabulary about birthday celebrations, gifts, and memorable moments.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "birthday",
+      "celebrations"
+    ],
+    "created": "2025-08-14",
+    "updated": "2025-08-14",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Birthday.md"
+  },
+  {
+    "id": "english-langs-studio-gifts",
+    "title": "Gifts",
+    "summary": "Speaking prompts and vocabulary about giving, receiving, and choosing meaningful gifts.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "gifts",
+      "celebrations"
+    ],
+    "created": "2025-08-12",
+    "updated": "2025-08-12",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Gifts.md"
+  },
+  {
+    "id": "english-langs-studio-food-delivery",
+    "title": "Food Delivery",
+    "summary": "Speaking prompts and vocabulary about delivery apps, eating habits, and convenience versus cost.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "food",
+      "delivery"
+    ],
+    "created": "2025-08-07",
+    "updated": "2025-08-07",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Food Delivery.md"
+  },
+  {
+    "id": "english-langs-studio-high-school",
+    "title": "High School",
+    "summary": "Speaking prompts and vocabulary about school life, classmates, teachers, and teenage memories.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "school",
+      "high-school"
+    ],
+    "created": "2025-08-05",
+    "updated": "2025-08-05",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/High School.md"
+  },
+  {
+    "id": "english-langs-studio-water-activities",
+    "title": "Water Activities",
+    "summary": "Speaking prompts and vocabulary for swimming, water parks, beaches, and pool safety.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "leisure",
+      "water-activities"
+    ],
+    "created": "2025-07-31",
+    "updated": "2025-07-31",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Water Activities.md"
+  },
+  {
+    "id": "english-langs-studio-goals",
+    "title": "Goals",
+    "summary": "Speaking prompts and vocabulary about personal, academic, career, and health goals.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "goals",
+      "self-development"
+    ],
+    "created": "2025-07-29",
+    "updated": "2025-07-29",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Goals.md"
+  },
+  {
+    "id": "english-langs-studio-accommodation",
+    "title": "Accommodation",
+    "summary": "Travel speaking prompts and useful expressions about hotels, guesthouses, and booking stays.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "travel",
+      "accommodation"
+    ],
+    "created": "2025-07-22",
+    "updated": "2025-07-22",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Accommodation.md"
+  },
+  {
+    "id": "english-langs-studio-money-management",
+    "title": "Money Management",
+    "summary": "Speaking prompts and vocabulary notes about budgeting, spending habits, and financial choices.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "speaking",
+      "money",
+      "finance"
+    ],
+    "created": "2025-07-16",
+    "updated": "2025-07-16",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Money Management.md"
+  },
+  {
+    "id": "english-langs-studio-chores-and-cleaning",
+    "title": "Chores and Cleaning",
+    "summary": "Vocabulary and speaking notes about chores, commuting, pets, and everyday cleaning routines.",
+    "tags": [
+      "english",
+      "langs-studio",
+      "vocabulary",
+      "chores",
+      "cleaning"
+    ],
+    "created": "2025-07-08",
+    "updated": "2025-07-08",
+    "category": "English",
+    "collection": "Langs Studio",
+    "path": "CATEGORIES/English/Langs Studio/Chores and Cleaning.md"
+  },
+  {
+    "id": "technology-java-async-thread-pool",
+    "title": "@Async & Thread Pool",
+    "summary": "Notes and references on Java concurrency, Spring @Async usage, and rejected execution handling with thread pools.",
+    "tags": [
+      "java",
+      "concurrency",
+      "async",
+      "thread-pool",
+      "spring"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@Async & Thread Pool.md"
+  },
+  {
+    "id": "technology-java-data",
+    "title": "@Data",
+    "summary": "Reference note on Lombok @Data usage and whether it should be used broadly in Java domain models.",
+    "tags": [
+      "java",
+      "lombok",
+      "data"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@Data.md"
+  },
+  {
+    "id": "technology-java-enable-jpa-auditing",
+    "title": "@EnableJpaAuditing",
+    "summary": "References and implementation notes for enabling JPA auditing and handling audit overrides in Spring Data JPA.",
+    "tags": [
+      "java",
+      "spring-data-jpa",
+      "auditing",
+      "jpa"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@EnableJpaAuditing.md"
+  },
+  {
+    "id": "technology-java-modifying",
+    "title": "@Modifying",
+    "summary": "Short reference note for Spring Data JPA @Modifying and update or delete query behavior.",
+    "tags": [
+      "java",
+      "spring-data-jpa",
+      "modifying",
+      "jpa"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@Modifying.md"
+  },
+  {
+    "id": "technology-java-notnull-size",
+    "title": "@NotNull @Size",
+    "summary": "Reference note on validation annotations and Hibernate column sizing considerations for @NotNull and @Size.",
+    "tags": [
+      "java",
+      "validation",
+      "hibernate",
+      "notnull",
+      "size"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@NotNull @Size.md"
+  },
+  {
+    "id": "technology-java-scheduled",
+    "title": "@Scheduled",
+    "summary": "Reference note for Spring scheduling and the @Scheduled annotation.",
+    "tags": [
+      "java",
+      "spring",
+      "scheduling",
+      "scheduled"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@Scheduled.md"
+  },
+  {
+    "id": "technology-java-sql-restriction",
+    "title": "@SQLRestriction",
+    "summary": "Reference note for Hibernate @SQLRestriction and row-level filtering behavior.",
+    "tags": [
+      "java",
+      "hibernate",
+      "sqlrestriction"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@SQLRestriction.md"
+  },
+  {
+    "id": "technology-java-superbuilder",
+    "title": "@SuperBuilder",
+    "summary": "Reference note on Lombok @SuperBuilder and builder inheritance patterns in Java.",
+    "tags": [
+      "java",
+      "lombok",
+      "builder",
+      "inheritance"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@SuperBuilder.md"
+  },
+  {
+    "id": "technology-java-utility-class",
+    "title": "@UtilityClass",
+    "summary": "References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.",
+    "tags": [
+      "java",
+      "lombok",
+      "utility-class",
+      "oop"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@UtilityClass.md"
+  },
+  {
+    "id": "technology-java-with",
+    "title": "@With",
+    "summary": "Reference note on Lombok @With for cloning and updating immutable Java objects.",
+    "tags": [
+      "java",
+      "lombok",
+      "immutable",
+      "with"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/@With.md"
+  },
+  {
+    "id": "technology-java-abstract-class-di",
+    "title": "abstract class DI",
+    "summary": "References and example code for applying Spring dependency injection patterns inside abstract classes.",
+    "tags": [
+      "java",
+      "spring",
+      "dependency-injection",
+      "abstract-class"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/abstract class DI.md"
+  },
+  {
+    "id": "technology-java-aop-self-invocation",
+    "title": "AOP & Self Invocation",
+    "summary": "References on Spring AOP, transaction boundaries, and why self invocation bypasses proxy-based behavior.",
+    "tags": [
+      "java",
+      "spring",
+      "aop",
+      "transaction",
+      "self-invocation"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/AOP & Self Invocation.md"
+  },
+  {
+    "id": "technology-java-apache-poi",
+    "title": "Apache Poi",
+    "summary": "Collected references for Apache POI write and read performance, streaming APIs, and spreadsheet format tradeoffs.",
+    "tags": [
+      "java",
+      "apache-poi",
+      "excel",
+      "xlsx",
+      "csv"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/Apache Poi.md"
+  },
+  {
+    "id": "technology-java-application-runner",
+    "title": "ApplicationRunner",
+    "summary": "Reference note on Spring Boot ApplicationRunner and related startup conditional execution patterns.",
+    "tags": [
+      "java",
+      "spring-boot",
+      "application-runner",
+      "startup"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "CATEGORIES/Technology/JAVA/ApplicationRunner.md"
+  },
+  {
+    "id": "technology-messaging-kafka",
+    "title": "Kafka",
+    "summary": "Kafka의 개념, 내부 구조, partition, consumer lag, 장애 대응, 활용 예시를 한 번에 복습할 수 있도록 정리한 노트.",
+    "tags": [
+      "kafka",
+      "messaging",
+      "event-streaming",
+      "distributed-system",
+      "pub-sub"
+    ],
+    "created": "2026-04-07",
+    "updated": "2026-04-07",
+    "category": "Technology",
+    "collection": "Messaging",
+    "path": "CATEGORIES/Technology/Messaging/Kafka.md"
+  }
+]

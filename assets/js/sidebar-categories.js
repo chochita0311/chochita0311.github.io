@@ -1,33 +1,58 @@
-const CATEGORY_ARCHIVE = [
-  {
-    name: "Design",
-    icon: "architecture",
-    totalNotes: 0,
-    collections: [],
-  },
-  {
-    name: "English",
-    icon: "menu_book",
-    totalNotes: 20,
-    collections: [
-      {
-        name: "Langs Studio",
-        noteCount: 20,
-      },
-    ],
-  },
-  {
-    name: "Technology",
-    icon: "memory",
-    totalNotes: 14,
-    collections: [
-      {
-        name: "JAVA",
-        noteCount: 14,
-      },
-    ],
-  },
-];
+(() => {
+const NOTES_INDEX_PATH = "assets/generated/archives-index.json";
+const CATEGORY_ICONS = {
+  English: "menu_book",
+  Technology: "memory",
+};
+
+function categorySelectionFromLocation() {
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    category: params.get("category"),
+    collection: params.get("collection"),
+  };
+}
+
+function buildCategoryArchive(notes) {
+  const categories = new Map();
+
+  notes.forEach((note) => {
+    if (!note.category || !note.collection) {
+      return;
+    }
+
+    if (!categories.has(note.category)) {
+      categories.set(note.category, {
+        name: note.category,
+        icon: CATEGORY_ICONS[note.category] || "folder",
+        totalNotes: 0,
+        collections: new Map(),
+      });
+    }
+
+    const category = categories.get(note.category);
+    category.totalNotes += 1;
+
+    if (!category.collections.has(note.collection)) {
+      category.collections.set(note.collection, {
+        name: note.collection,
+        noteCount: 0,
+      });
+    }
+
+    category.collections.get(note.collection).noteCount += 1;
+  });
+
+  return [...categories.values()]
+    .sort((left, right) => left.name.localeCompare(right.name))
+    .map((category) => ({
+      ...category,
+      collections: [...category.collections.values()].sort((left, right) =>
+        left.name.localeCompare(right.name),
+      ),
+    }));
+}
 
 function renderSidebarCategories(categories) {
   const mount = document.getElementById("sidebar-categories");
@@ -36,22 +61,33 @@ function renderSidebarCategories(categories) {
     return;
   }
 
+  const selection = categorySelectionFromLocation();
+
   mount.innerHTML = categories
-    .map((category, index) => {
+    .map((category) => {
       const hasCollections = category.collections.length > 0;
-      const categoryStateClass = index === 0 ? " sidebar-link--active" : "";
-      const groupStateClass = index === 0 && hasCollections ? " is-open" : "";
+      const isSelectedCategory =
+        selection.category === category.name;
+      const categoryStateClass = isSelectedCategory
+        ? " sidebar-link--active"
+        : "";
+      const groupStateClass =
+        isSelectedCategory && hasCollections ? " is-open" : "";
       const collectionMarkup = hasCollections
         ? `
 <div class="sidebar-sublist">
 ${category.collections
-  .map(
-    (collection) => `
-<a class="sidebar-sublist__item" href="#" data-collection-name="${collection.name}">
+  .map((collection) => {
+    const isSelectedCollection =
+      selection.category === category.name &&
+      selection.collection === collection.name;
+
+    return `
+<a class="sidebar-sublist__item${isSelectedCollection ? " sidebar-sublist__item--active" : ""}" href="#" data-collection-name="${collection.name}">
 <span class="sidebar-sublist__name">${collection.name}</span>
 <span class="sidebar-sublist__count">${collection.noteCount}</span>
-</a>`,
-  )
+</a>`;
+  })
   .join("")}
 </div>`
         : "";
@@ -101,10 +137,17 @@ ${collectionMarkup}
   const activateGroup = (group) => {
     groups.forEach((item) => {
       const itemTrigger = item.querySelector("[data-category-trigger='true']");
+      const childLinks = Array.from(
+        item.querySelectorAll(".sidebar-sublist__item"),
+      );
 
       if (itemTrigger) {
         itemTrigger.classList.remove("sidebar-link--active");
       }
+
+      childLinks.forEach((link) => {
+        link.classList.remove("sidebar-sublist__item--active");
+      });
 
       item.classList.remove("is-open");
     });
@@ -141,6 +184,7 @@ ${collectionMarkup}
       link.addEventListener("click", (event) => {
         event.preventDefault();
         activateGroup(group);
+        link.classList.add("sidebar-sublist__item--active");
         navigateArchive({
           category: group.dataset.categoryName,
           collection: link.dataset.collectionName,
@@ -150,4 +194,27 @@ ${collectionMarkup}
   });
 }
 
-renderSidebarCategories(CATEGORY_ARCHIVE);
+async function initializeSidebarCategories() {
+  const mount = document.getElementById("sidebar-categories");
+
+  if (!mount) {
+    return;
+  }
+
+  try {
+    const response = await fetch(NOTES_INDEX_PATH);
+
+    if (!response.ok) {
+      throw new Error("Unable to load notes index.");
+    }
+
+    const notes = await response.json();
+    renderSidebarCategories(buildCategoryArchive(notes));
+  } catch {
+    mount.innerHTML =
+      '<p class="note-detail__rail-empty">Categories are unavailable until the notes index is generated.</p>';
+  }
+}
+
+initializeSidebarCategories();
+})();

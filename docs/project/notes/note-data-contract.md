@@ -76,11 +76,14 @@ Actual note body here.
 - The Markdown body remains the note itself.
 - The first body heading can match `title`, but the UI should trust frontmatter `title` as the metadata owner.
 - Long-form reading content should stay in Markdown instead of moving into JSON.
+- Body rendering expectations and supported syntax are documented in `docs/project/notes/markdown-rendering-rules.md`.
 
 ## Generated Static Index
 - Generate one metadata index for the static UI.
-- Recommended file:
-  - `assets/data/notes-index.json`
+- Runtime file:
+  - `assets/generated/archives-index.json`
+- Generator script:
+  - `scripts/generate-archives-index.mjs`
 - This file should be created from Markdown frontmatter plus path-derived category and collection values.
 
 ## Archive Copy Config
@@ -186,5 +189,5 @@ Actual note body here.
 ## Practical Recommendation
 - Keep editing notes as Markdown files with frontmatter.
 - Do not hand-maintain per-note JSON wrappers.
-- Generate the archive index from Markdown when the data pipeline is added.
+- Regenerate the archive index from Markdown after note additions, moves, or metadata changes.
 - Treat the generated JSON as a runtime asset, not as the primary content store.

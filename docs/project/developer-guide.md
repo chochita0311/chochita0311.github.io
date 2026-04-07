@@ -19,8 +19,10 @@ Follow the local run instructions in `README.md`.
 
 ## Content Updates
 - Add durable note content under `CATEGORIES/` using the current pattern `CATEGORIES/<category>/<collection>/<note>.md`.
-- Use the note metadata contract in `docs/project/note-data-contract.md` when adding or normalizing note frontmatter.
+- Use the note metadata contract in `docs/project/notes/note-data-contract.md` when adding or normalizing note frontmatter.
+- Use `docs/project/notes/markdown-rendering-rules.md` when changing supported Markdown body syntax or note authoring expectations.
 - Keep folders and filenames searchable and understandable.
+- Regenerate `assets/generated/archives-index.json` with `node scripts/generate-archives-index.mjs` after note or folder changes.
 - Update the visible archive shell and owner docs when the category structure changes.
 
 ## Verification

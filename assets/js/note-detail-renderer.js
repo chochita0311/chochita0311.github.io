@@ -96,8 +96,8 @@ function extractSummary(markdown, fallbackTitle) {
     .filter(Boolean);
 
   for (const line of lines) {
-    if (line.startsWith("## ")) {
-      return line.replace(/^##\s+/, "").trim();
+    if (line.match(/^#{2,6}\s+/)) {
+      return line.replace(/^#{2,6}\s+/, "").trim();
     }
   }
 
@@ -143,7 +143,7 @@ function slugifyHeading(value) {
   return value
     .toLowerCase()
     .replaceAll(/[`"'.,/()]/g, "")
-    .replaceAll(/[^a-z0-9\s-]/g, "")
+    .replaceAll(/[^\p{Letter}\p{Number}\s-]/gu, "")
     .trim()
     .replaceAll(/\s+/g, "-");
 }
@@ -151,7 +151,11 @@ function slugifyHeading(value) {
 function applyInlineMarkdown(value) {
   let output = escapeHtml(value);
 
+  output = output.replace(/\*\*\*([^*]+)\*\*\*/g, "<strong><em>$1</em></strong>");
+  output = output.replace(/___([^_]+)___/g, "<strong><em>$1</em></strong>");
   output = output.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  output = output.replace(/__([^_]+)__/g, "<strong>$1</strong>");
+  output = output.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   output = output.replace(/_([^_]+)_/g, "<em>$1</em>");
   output = output.replace(
     /`([^`]+)`/g,
@@ -183,7 +187,48 @@ function renderList(items, ordered) {
 }
 
 function renderParagraph(lines) {
-  return `<p>${applyInlineMarkdown(lines.join(" "))}</p>`;
+  return `<p>${lines
+    .map((line) => applyInlineMarkdown(line.trimEnd()))
+    .join("<br>\n")}</p>`;
+}
+
+function parseTableCells(line) {
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function isTableSeparatorLine(line) {
+  return /^\|?(?:\s*:?-{3,}:?\s*\|)+\s*:?-{3,}:?\s*\|?$/.test(line.trim());
+}
+
+function isTableRowLine(line) {
+  const trimmed = line.trim();
+
+  return trimmed.includes("|") && trimmed.startsWith("|") && trimmed.endsWith("|");
+}
+
+function renderTable(tableLines) {
+  if (tableLines.length < 2 || !isTableSeparatorLine(tableLines[1])) {
+    return renderParagraph(tableLines);
+  }
+
+  const headers = parseTableCells(tableLines[0]);
+  const bodyRows = tableLines.slice(2).map(parseTableCells);
+
+  return `<div class="note-detail__table-wrap"><table class="note-detail__table"><thead><tr>${headers
+    .map((header) => `<th>${applyInlineMarkdown(header)}</th>`)
+    .join("")}</tr></thead><tbody>${bodyRows
+    .map(
+      (cells) =>
+        `<tr>${cells
+          .map((cell) => `<td>${applyInlineMarkdown(cell)}</td>`)
+          .join("")}</tr>`,
+    )
+    .join("")}</tbody></table></div>`;
 }
 
 function renderHeading(text, level) {
@@ -195,13 +240,45 @@ function renderHeading(text, level) {
   };
 }
 
-function renderMarkdown(markdown) {
+function parseSetextHeading(lines, index) {
+  if (index >= lines.length - 1) {
+    return null;
+  }
+
+  const textLine = lines[index].replaceAll("\u200b", "");
+  const markerLine = lines[index + 1].replaceAll("\u200b", "");
+
+  if (!textLine.trim() || textLine.trim().startsWith("#")) {
+    return null;
+  }
+
+  if (/^=+\s*$/.test(markerLine.trim())) {
+    return {
+      level: 1,
+      text: textLine.trim(),
+      consumedLines: 2,
+    };
+  }
+
+  if (/^-+\s*$/.test(markerLine.trim())) {
+    return {
+      level: 2,
+      text: textLine.trim(),
+      consumedLines: 2,
+    };
+  }
+
+  return null;
+}
+
+function renderMarkdown(markdown, options = {}) {
   const lines = markdown.replaceAll("\r\n", "\n").split("\n");
   const sections = [];
   const outline = [];
   let paragraphLines = [];
   let listItems = [];
   let orderedItems = [];
+  let tableLines = [];
   let codeLines = [];
   let inCodeBlock = false;
   let currentSectionParts = [];
@@ -242,12 +319,23 @@ function renderMarkdown(markdown) {
     }
   }
 
-  lines.forEach((line) => {
+  function flushTable() {
+    if (tableLines.length === 0) {
+      return;
+    }
+
+    pushBlock(renderTable(tableLines));
+    tableLines = [];
+  }
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
     const normalizedLine = line.replaceAll("\u200b", "");
 
     if (normalizedLine.startsWith("```")) {
       flushParagraph();
       flushLists();
+      flushTable();
 
       if (inCodeBlock) {
         pushBlock(renderCodeBlock(codeLines));
@@ -257,34 +345,83 @@ function renderMarkdown(markdown) {
         inCodeBlock = true;
       }
 
-      return;
+      continue;
     }
 
     if (inCodeBlock) {
       codeLines.push(normalizedLine);
-      return;
+      continue;
+    }
+
+    const setextHeading = parseSetextHeading(lines, index);
+
+    if (setextHeading) {
+      flushParagraph();
+      flushLists();
+      flushTable();
+      flushSection();
+
+      const renderedHeading = renderHeading(
+        setextHeading.text,
+        setextHeading.level,
+      );
+
+      if (
+        setextHeading.level === 1 &&
+        options.primaryTitle &&
+        setextHeading.text === options.primaryTitle
+      ) {
+        index += setextHeading.consumedLines - 1;
+        continue;
+      }
+
+      if (setextHeading.level >= 2) {
+        outline.push(renderedHeading.outlineItem);
+      }
+
+      pushBlock(renderedHeading.html);
+      index += setextHeading.consumedLines - 1;
+      continue;
     }
 
     if (!normalizedLine.trim()) {
       flushParagraph();
       flushLists();
-      return;
+      flushTable();
+      continue;
     }
 
-    const headingMatch = normalizedLine.match(/^(#{2,3})\s+(.+)$/);
+    if (isTableRowLine(normalizedLine) || (tableLines.length > 0 && isTableSeparatorLine(normalizedLine))) {
+      flushParagraph();
+      flushLists();
+      tableLines.push(normalizedLine);
+      continue;
+    }
+
+    flushTable();
+
+    const headingMatch = normalizedLine.match(/^(#{2,6})\s+(.+)$/);
 
     if (headingMatch) {
       flushParagraph();
       flushLists();
+      flushTable();
       flushSection();
 
       const level = headingMatch[1].length;
       const text = headingMatch[2].trim();
+
+      if (level === 1 && options.primaryTitle && text === options.primaryTitle) {
+        continue;
+      }
+
       const renderedHeading = renderHeading(text, level);
 
-      outline.push(renderedHeading.outlineItem);
+      if (level >= 2 && level <= 4) {
+        outline.push(renderedHeading.outlineItem);
+      }
       pushBlock(renderedHeading.html);
-      return;
+      continue;
     }
 
     const numberedBoldHeadingMatch = normalizedLine.match(
@@ -294,6 +431,7 @@ function renderMarkdown(markdown) {
     if (numberedBoldHeadingMatch && !numberedBoldHeadingMatch[1].trim().startsWith("-")) {
       flushParagraph();
       flushLists();
+      flushTable();
       flushSection();
 
       const text = numberedBoldHeadingMatch[1].trim();
@@ -301,7 +439,7 @@ function renderMarkdown(markdown) {
 
       outline.push(renderedHeading.outlineItem);
       pushBlock(renderedHeading.html);
-      return;
+      continue;
     }
 
     const boldQuestionMatch = normalizedLine.match(/^\*\*-\s*(.+?)\*\*$/u);
@@ -309,12 +447,13 @@ function renderMarkdown(markdown) {
     if (boldQuestionMatch) {
       flushParagraph();
       flushLists();
+      flushTable();
       const text = boldQuestionMatch[1].trim();
       const renderedHeading = renderHeading(text, 3);
 
       outline.push(renderedHeading.outlineItem);
       pushBlock(renderedHeading.html);
-      return;
+      continue;
     }
 
     const vocabHeadingMatch = normalizedLine.match(/^▪️\s*(.+)$/u);
@@ -322,66 +461,71 @@ function renderMarkdown(markdown) {
     if (vocabHeadingMatch) {
       flushParagraph();
       flushLists();
+      flushTable();
       const text = vocabHeadingMatch[1].trim();
       const renderedHeading = renderHeading(text, 3);
 
       outline.push(renderedHeading.outlineItem);
       pushBlock(renderedHeading.html);
-      return;
+      continue;
     }
 
     if (normalizedLine.startsWith(":")) {
       flushParagraph();
       flushLists();
+      flushTable();
       pushBlock(renderParagraph([normalizedLine.replace(/^:\s*/, "").trim()]));
-      return;
+      continue;
     }
 
     if (normalizedLine.startsWith("💡")) {
       flushParagraph();
       flushLists();
+      flushTable();
       pushBlock(
         `<aside class="note-detail__callout"><p>${applyInlineMarkdown(normalizedLine.trim())}</p></aside>`,
       );
-      return;
+      continue;
     }
 
     if (normalizedLine.trim() === "---") {
-      return;
+      continue;
     }
 
     if (normalizedLine.startsWith("> ")) {
       flushParagraph();
       flushLists();
+      flushTable();
       pushBlock(
         `<blockquote class="note-detail__lead-quote"><p>${applyInlineMarkdown(
           normalizedLine.replace(/^>\s+/, ""),
         )}</p></blockquote>`,
       );
-      return;
+      continue;
     }
 
     if (normalizedLine.match(/^\d+\.\s+/)) {
       flushParagraph();
       orderedItems.push(normalizedLine.replace(/^\d+\.\s+/, ""));
-      return;
+      continue;
     }
 
     if (normalizedLine.match(/^[-+]\s*/)) {
       flushParagraph();
       listItems.push(normalizedLine.replace(/^[-+]\s*/, ""));
-      return;
+      continue;
     }
 
     if (normalizedLine.startsWith("# ")) {
-      return;
+      continue;
     }
 
-    paragraphLines.push(normalizedLine.trim());
-  });
+    paragraphLines.push(normalizedLine);
+  }
 
   flushParagraph();
   flushLists();
+  flushTable();
   flushSection();
 
   return {
@@ -403,19 +547,20 @@ async function loadNoteData(notePath, fetchPrefix = "") {
   const markdown = await response.text();
   const fallbackTitle = titleFromPath(notePath);
   const { attributes, body } = parseFrontmatter(markdown);
+  const title = attributes.title || fallbackTitle;
 
   return {
     path: notePath,
     attributes,
     body,
-    title: attributes.title || fallbackTitle,
+    title,
     summary: attributes.summary || extractSummary(body, fallbackTitle),
     tags:
       Array.isArray(attributes.tags) && attributes.tags.length > 0
         ? attributes.tags.map(slugToTitleCase)
         : [],
     references: extractReferences(body),
-    rendered: renderMarkdown(body),
+    rendered: renderMarkdown(body, { primaryTitle: title }),
   };
 }
 

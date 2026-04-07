@@ -6,7 +6,7 @@
   "categories": {
     "Technology": {
       "title": "Technology",
-      "summary": "여기에 글자를 쓰면 반영됩니다"
+      "summary": "백엔드, 자바, 메시징, 시스템 설계 관련 노트를 모아두는 기술 아카이브."
     },
     "English": {
       "title": "English",
@@ -21,6 +21,10 @@
     "Technology/JAVA": {
       "title": "JAVA",
       "summary": "자바 문서 공부"
+    },
+    "Technology/Messaging": {
+      "title": "Messaging",
+      "summary": "Kafka, 메시징 시스템, 이벤트 흐름과 운영 이슈를 정리하는 컬렉션."
     },
     "English/Langs Studio": {
       "title": "Langs Studio",
