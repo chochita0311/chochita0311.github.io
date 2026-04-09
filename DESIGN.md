@@ -1,4 +1,8 @@
-# Design System Specification: High-End Scholarly Editorial
+# Design Brief: High-End Scholarly Editorial
+
+This document is the creative source for the design system: it captures the north star, visual rationale, and material direction extracted from the starting artifact.
+
+Concrete tokens, enforceable implementation rules, and durable system constraints belong in [docs/designs/design-constitution.md](./docs/designs/design-constitution.md).
 
 ## 1. Overview & Creative North Star
 **Creative North Star: "The Digital Curator"**
@@ -19,14 +23,14 @@ We are moving away from flat design into a world of **Ambient Occlusion**. This 
     *   `surface-container`: `#1e2024` (Standard content cards)
     *   `surface-container-high`: `#282a2e` (Elevated interaction states)
 
-### The "No-Line" Rule
-**Explicit Instruction:** Prohibit 1px solid borders for sectioning. 
-Boundaries must be defined solely through background color shifts or subtle tonal transitions. Use `surface-container-low` sections sitting on a `surface` background to denote change. If a container feels "lost," do not add a stroke; instead, adjust its elevation tier or increase the padding.
+### The "No-Line" Direction
+The visual system should avoid relying on 1px solid borders for sectioning.
+Boundaries should prefer background color shifts or subtle tonal transitions. If a container feels "lost," the first move should be adjusting elevation or padding rather than adding a stroke.
 
-### The "Glass & Gradient" Rule
-To elevate CTAs and Hero sections:
-*   **Glassmorphism:** Use semi-transparent surface colors (e.g., `surface_variant` at 60% opacity) with a `20px` backdrop-blur for floating navigation or overlays.
-*   **Signature Textures:** Apply a subtle linear gradient from `primary` (#b6c4ff) to `primary_container` (#0044cf) at a 135-degree angle for primary buttons to give them a "machined" metallic sheen.
+### The "Glass & Gradient" Direction
+To elevate CTAs and hero sections:
+*   **Glassmorphism:** Floating navigation or overlays may use semi-transparent surfaces with restrained blur to feel atmospheric rather than glossy.
+*   **Signature Textures:** Primary actions may use a subtle blue gradient to create a machined, editorial sheen.
 
 ---
 
@@ -51,25 +55,25 @@ Hierarchy is achieved through **Tonal Layering** rather than structural lines.
 
 ---
 
-## 5. Components
+## 5. Component Cues
 
 ### Buttons
-*   **Primary:** Gradient fill (Primary to Primary-Container), `xl` (0.75rem) corner radius. No border.
-*   **Secondary:** `surface-container-highest` fill with `primary` text.
-*   **Tertiary:** Ghost style. No background, `primary` text, transitions to a subtle `surface-bright` background on hover.
+*   **Primary:** Favor a gradient or strong accent fill with a soft architectural radius and no visible border.
+*   **Secondary:** Favor tonal fills with accent-led text treatment.
+*   **Tertiary:** Favor ghost styling with a restrained hover field.
 
 ### Cards & Lists
-*   **Rule:** Forbid divider lines. 
-*   **Execution:** Separate list items using `1rem` of vertical space. For scholarly citations or feed items, use a slight background shift (`surface-container`) on hover to define the interactive area.
-*   **Shape:** Use `lg` (0.5rem) roundedness for a modern, architectural feel.
+*   **Direction:** Avoid divider lines as the primary organizing device.
+*   **Execution:** Separate list items with vertical space and use slight tonal hover shifts to define interaction.
+*   **Shape:** Rounded surfaces should feel modern and architectural rather than soft or playful.
 
 ### Input Fields
-*   **Style:** Inset look. Use `surface-container-lowest` background. 
-*   **Focus State:** Do not use a heavy glow. Use a 2px `primary` bottom-border only, creating a sophisticated "underlined" focus that feels like a premium stationary form.
+*   **Style:** Inputs should feel inset and quiet rather than chrome-heavy.
+*   **Focus State:** Focus should feel precise and restrained, closer to an editorial underline than a loud glow.
 
 ### Scholarly "Pull-Quotes"
-*   **Component:** A unique component for this system. 
-*   **Style:** No quotation marks. Use a `3px` vertical bar of `primary_fixed` on the left, `headline-sm` italicized text, and generous `3rem` inset padding.
+*   **Component:** A distinctive editorial component for moments of emphasis.
+*   **Style:** It should avoid literal quotation marks and lean on a slim accent bar, italicized headline-scale text, and generous inset spacing.
 
 ---
 

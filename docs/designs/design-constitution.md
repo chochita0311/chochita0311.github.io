@@ -32,7 +32,7 @@
   - No decorative gradients except controlled action emphasis.
   - No “AI product” cues, assistant persona framing, or novelty ornament.
   - No visual drift toward admin dashboards, notification centers, or utility consoles.
-- Source of truth: This constitution is the durable rule set. [DESIGN.md](/Users/jungsoo/Projects/chochita0311.github.io/DESIGN.md) provides the visual north star and material rules. [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html) is a starting artifact, not a durable source by itself.
+- Source of truth: This constitution is the durable rule set. [DESIGN.md](../../DESIGN.md) provides the visual north star and material rules. [index.html](../../index.html) is a starting artifact, not a durable source by itself.
 - Reference boundaries: If a future screen conflicts with this constitution and `DESIGN.md`, update the constitution first instead of improvising screen-local styling.
 
 ## 4. Primitive Tokens
@@ -150,7 +150,7 @@
 - App shell pattern: Tonal layers plus a wide content canvas; navigation remains structurally stable while content shifts between archive, results, and reading modes.
 - Card and panel pattern: Use only where grouping materially helps comprehension; most archive content should remain list-led.
 - Button pattern: Actions are sparse, prominent when primary, and never multiplied just to fill space.
-- Navigation pattern: Category navigation, archive pivots, and search must feel coherent as one archive system. The current locked pattern is rail-led category browsing with lightweight top-level mode links.
+- Navigation pattern: Category navigation, archive pivots, and search must feel coherent as one archive system. The baseline pattern is structurally stable navigation paired with lightweight mode or context switching when needed.
 - List and table pattern: Lists are editorial and summary-led; dense table behavior is exceptional and secondary.
 - Form pattern: Inputs should feel like annotation tools or archive controls, not enterprise forms.
 - Filter and chip pattern: Filters are compact, textual, and easy to scan; they must not become a colorful badge cloud.
@@ -187,7 +187,7 @@
   - Lightweight archive maintenance or metadata review surfaces, if exposed in the UI later.
 - Why these families are fundamental: They map directly to the product scope of browsing, searching, reading, and long-term archive organization.
 - Family-specific constraints:
-  - Browse/list screens prioritize scan rhythm and category clarity, and they should map cleanly to the verified `English` and `Technology` category families plus nested collections such as `English - Langs Studio` and `JAVA`.
+  - Browse/list screens prioritize scan rhythm, category clarity, and clean mapping to the verified archive hierarchy.
   - Search/result screens prioritize fast narrowing without losing editorial calm.
   - Reading detail screens prioritize typography, note structure, and comfortable measure.
   - Maintenance-oriented surfaces must stay subordinate to the reading-first visual language.
