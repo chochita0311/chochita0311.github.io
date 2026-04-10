@@ -1,21 +1,21 @@
 # Design Document Governance
 
 ## Purpose
-- Define the ownership, hierarchy, and update rules for [DESIGN.md](../../DESIGN.md), [design-constitution.md](./design-constitution.md), and [plan.md](./plan.md).
+- Define the ownership, hierarchy, and update rules for [DESIGN.md](../../../DESIGN.md), [design-constitution.md](./design-constitution.md), and [design-plan.md](../../plans/design/design-plan.md).
 - Keep creative intent, durable design law, and active work clearly separated.
 - Prevent design drift as the product expands across screens, states, and features.
 
 ## Governance Model
-- [DESIGN.md](../../DESIGN.md) is the creative source.
+- [DESIGN.md](../../../DESIGN.md) is the creative source.
 - [design-constitution.md](./design-constitution.md) is the durable design source of truth.
-- [plan.md](./plan.md) is the active working document.
+- [design-plan.md](../../plans/design/design-plan.md) is the active working document.
 
 These files are related, but they are not peers. Each one owns a different type of information and should be updated for different reasons.
 
 ## Source Hierarchy
 1. [design-constitution.md](./design-constitution.md) governs implementation and evaluation.
-2. [DESIGN.md](../../DESIGN.md) provides intent, direction, and source material.
-3. [plan.md](./plan.md) tracks current scope, sequencing, and unresolved decisions.
+2. [DESIGN.md](../../../DESIGN.md) provides intent, direction, and source material.
+3. [design-plan.md](../../plans/design/design-plan.md) tracks current scope, sequencing, and unresolved decisions.
 
 If documents conflict:
 - The constitution wins for durable rules.
@@ -62,7 +62,7 @@ If documents conflict:
   - build order
   - unresolved uncertainty that belongs in the plan
 
-### `plan.md`
+### `design-plan.md`
 - Owns:
   - active design scope
   - sequencing
@@ -80,23 +80,23 @@ If documents conflict:
   - stable creative rationale already owned by `DESIGN.md`
 
 ## Update Rules
-- Update [DESIGN.md](../../DESIGN.md) when the creative direction, visual rationale, or source-material interpretation meaningfully changes.
+- Update [DESIGN.md](../../../DESIGN.md) when the creative direction, visual rationale, or source-material interpretation meaningfully changes.
 - Update [design-constitution.md](./design-constitution.md) when a durable rule changes.
-- Update [plan.md](./plan.md) when active scope, sequencing, or uncertainty changes.
+- Update [design-plan.md](../../plans/design/design-plan.md) when active scope, sequencing, or uncertainty changes.
 - Do not update all three documents by default. Update only the document that owns the change.
 
 ## Rule Promotion
 When new design input appears:
-1. Review the input against [DESIGN.md](../../DESIGN.md) and [design-constitution.md](./design-constitution.md).
+1. Review the input against [DESIGN.md](../../../DESIGN.md) and [design-constitution.md](./design-constitution.md).
 2. Identify what changed: intent, rule, or active work.
 3. Promote a change into the constitution only if it is durable, reusable, and likely to affect more than one screen, state, or component family.
 4. Keep one-off experiments, temporary polish, and sequencing decisions out of the constitution.
-5. Record active follow-up and unresolved implementation work in [plan.md](./plan.md).
+5. Record active follow-up and unresolved implementation work in [design-plan.md](../../plans/design/design-plan.md).
 
 ## Evaluation Rules
 - Evaluate implementation primarily against [design-constitution.md](./design-constitution.md).
-- Use [DESIGN.md](../../DESIGN.md) as supporting context for tone, intent, and rationale.
-- Use [plan.md](./plan.md) to understand current deltas and active work, not to redefine the system.
+- Use [DESIGN.md](../../../DESIGN.md) as supporting context for tone, intent, and rationale.
+- Use [design-plan.md](../../plans/design/design-plan.md) to understand current deltas and active work, not to redefine the system.
 
 ## Drift Prevention
 - Do not treat `DESIGN.md` and the constitution as equal sources of truth.
@@ -107,4 +107,4 @@ When new design input appears:
 ## Practical Summary
 - `DESIGN.md` explains why the design should feel this way.
 - `design-constitution.md` defines what the system must consistently obey.
-- `plan.md` defines what is being changed now.
+- `design-plan.md` defines what is being changed now.

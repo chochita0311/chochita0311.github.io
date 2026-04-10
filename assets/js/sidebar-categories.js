@@ -1,9 +1,15 @@
 (() => {
-const NOTES_INDEX_PATH = "assets/generated/archives-index.json";
+const { ICONS, renderIcon } = window.AppIcons;
 const CATEGORY_ICONS = {
-  English: "menu_book",
-  Technology: "memory",
+  English: ICONS.categories.english,
+  Technology: ICONS.categories.technology,
 };
+
+function notesIndexPath() {
+  return window.location.pathname.includes("/pages/note/")
+    ? "../../assets/generated/archives-index.json"
+    : "assets/generated/archives-index.json";
+}
 
 function categorySelectionFromLocation() {
   const params = new URLSearchParams(window.location.search);
@@ -25,7 +31,7 @@ function buildCategoryArchive(notes) {
     if (!categories.has(note.category)) {
       categories.set(note.category, {
         name: note.category,
-        icon: CATEGORY_ICONS[note.category] || "folder",
+        icon: CATEGORY_ICONS[note.category] || ICONS.categories.fallback,
         totalNotes: 0,
         collections: new Map(),
       });
@@ -96,7 +102,7 @@ ${category.collections
 <div class="sidebar__group${hasCollections ? " sidebar__group--has-children" : ""}${groupStateClass}" data-category-name="${category.name}">
 <a class="sidebar-link${categoryStateClass}" href="#" data-category-trigger="true">
 <div class="sidebar-link__content">
-<span class="material-symbols-outlined sidebar-link__icon">${category.icon}</span>
+${renderIcon(category.icon, { className: "sidebar-link__icon" })}
 <span class="sidebar-link__text">${category.name} (${String(category.totalNotes).padStart(2, "0")})</span>
 </div>
 </a>
@@ -202,7 +208,7 @@ async function initializeSidebarCategories() {
   }
 
   try {
-    const response = await fetch(NOTES_INDEX_PATH);
+    const response = await fetch(notesIndexPath());
 
     if (!response.ok) {
       throw new Error("Unable to load notes index.");

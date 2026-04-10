@@ -76,7 +76,7 @@ Actual note body here.
 - The Markdown body remains the note itself.
 - The first body heading can match `title`, but the UI should trust frontmatter `title` as the metadata owner.
 - Long-form reading content should stay in Markdown instead of moving into JSON.
-- Body rendering expectations and supported syntax are documented in `docs/project/notes/markdown-rendering-rules.md`.
+- Body rendering expectations and supported syntax are documented in `docs/policies/content/note/markdown-rendering.md`.
 
 ## Generated Static Index
 - Generate one metadata index for the static UI.

@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Ontological Drift | Chochita Archive</title>
-<link href="../../assets/favicon.png" rel="icon" type="image/png"/>
+<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/css/app.css" rel="stylesheet"/>
@@ -17,19 +17,19 @@
 <span class="brand-title">조치타의 메모장</span>
 <div class="topbar__nav">
 <div class="nav-dropdown">
-<button class="nav-link nav-link--active" type="button">Categories<br/><span class="material-symbols-outlined nav-link__icon">expand_more</span>
+<button class="nav-link nav-link--active" type="button">Categories<br/><span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-link__icon">expand_more</span>
 </button>
 <div class="nav-dropdown__panel nav-dropdown__panel--level-1">
 <div class="nav-menu">
 <div class="nav-menu__item nav-menu__item--branch">
 <div class="nav-menu__button">
-                                Philosophy <span class="material-symbols-outlined nav-menu__icon">chevron_right</span>
+                                Philosophy <span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-menu__icon">chevron_right</span>
 </div>
 <div class="nav-dropdown__panel nav-dropdown__panel--level-2">
 <div class="nav-menu nav-menu--narrow">
 <div class="nav-menu__item nav-menu__item--branch">
 <div class="nav-menu__button">
-                                            Ethics <span class="material-symbols-outlined nav-menu__icon">chevron_right</span>
+                                            Ethics <span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-menu__icon">chevron_right</span>
 </div>
 <div class="nav-dropdown__panel nav-dropdown__panel--level-3">
 <div class="nav-menu nav-menu--tight">
@@ -54,7 +54,7 @@
 <div class="topbar__end">
 <label class="search-field search-field--topbar">
 <input class="search-field__input" placeholder="Search archive..." type="text"/>
-<span class="material-symbols-outlined search-field__icon">search</span>
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined search-field__icon">search</span>
 </label>
 </div>
 </nav>
@@ -87,11 +87,11 @@
 </div>
 <div class="sidebar__footer">
 <a class="footer-link" href="#">
-<span class="material-symbols-outlined footer-link__icon">sell</span>
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined footer-link__icon">sell</span>
 <span class="footer-link__text">Tags</span>
 </a>
 <a class="footer-link" href="#">
-<span class="material-symbols-outlined footer-link__icon">bookmark</span>
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined footer-link__icon">bookmark</span>
 <span class="footer-link__text">Bookmarks</span>
 </a>
 </div>
@@ -102,18 +102,18 @@
 <header class="note-detail__utility">
 <nav aria-label="Breadcrumb" class="note-detail__breadcrumbs">
 <a href="../../index.html">Technology</a>
-<span class="material-symbols-outlined">chevron_right</span>
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">chevron_right</span>
 <span>JAVA</span>
 </nav>
 <div class="note-detail__actions" aria-label="Note actions">
-<button class="note-detail__action" type="button">
-<span class="material-symbols-outlined">ios_share</span>
+<button aria-label="Share note" class="note-detail__action" type="button">
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">ios_share</span>
 </button>
-<button class="note-detail__action" type="button">
-<span class="material-symbols-outlined">bookmark</span>
+<button aria-label="Bookmark note" class="note-detail__action" type="button">
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">bookmark</span>
 </button>
-<button class="note-detail__action" type="button">
-<span class="material-symbols-outlined">more_horiz</span>
+<button aria-label="More note actions" class="note-detail__action" type="button">
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">more_horiz</span>
 </button>
 </div>
 </header>
@@ -173,6 +173,7 @@
 </section>
 </main>
 
+<script defer src="../../assets/js/icons.js"></script>
 <script defer src="../../assets/js/sidebar-categories.js"></script>
 <script defer src="../../assets/js/page-footer.js"></script>
 <script defer src="../../assets/js/note-detail-renderer.js"></script>

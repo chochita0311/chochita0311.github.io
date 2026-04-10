@@ -3,12 +3,12 @@
 ## 1. Summary
 - Project: `chochita0311.github.io`
 - Current stage: Stabilizing the first visible archive shell into a reusable design system.
-- Starting artifact: [index.html](../../index.html) plus product and technical context from [DESIGN.md](../../DESIGN.md), [README.md](../../README.md), and the verified archive structure under `CATEGORIES/`.
+- Starting artifact: [index.html](../../../index.html) plus product and technical context from [DESIGN.md](../../../DESIGN.md), [README.md](../../../README.md), and the verified archive structure under `CATEGORIES/`.
 - Main design challenge: Keep the strong editorial shell while grounding navigation and list behavior in the actual category structure that already exists.
 - Recommended immediate direction: Treat the current shell as the stable browse baseline, and only expand into behaviors that `CATEGORIES/` already supports.
 
 ## 2. Constitution Status
-- Constitution exists: Yes. See [design-constitution.md](./design-constitution.md).
+- Constitution exists: Yes. See [design-constitution.md](../../policies/design/design-constitution.md).
 - Locked decisions already captured there:
   - Editorial dark-shell direction.
   - Tonal layering over border-led structure.

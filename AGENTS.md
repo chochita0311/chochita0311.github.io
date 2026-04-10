@@ -27,8 +27,8 @@
 ## Source Of Truth
 - Keep `AGENTS.md` short and operational
 - Keep first-time user overview and local usage in `README.md`
-- Keep project-specific detail under `docs/project/`
-- Keep design-specific detail out of `AGENTS.md` and in `docs/designs/`
+- Keep durable rules, definitions, contracts, and guides under `docs/policies/`
+- Keep execution tracks, active plans, and refactoring work under `docs/plans/`
 
 ## Working Rules
 - Prefer small, focused changes unless the task explicitly asks for a broader restructure
@@ -51,6 +51,7 @@
 - Remove duplicated guidance by keeping one owner doc and linking to it elsewhere
 - Link to adjacent docs instead of repeating their content
 - Prefer seamless doc navigation across entrance, overview, project, and design layers
+- Keep `docs/` split cleanly between policy ownership and plan ownership
 
 ## Planning And Ownership
 - Only the Product Manager defines plan and acceptance criteria when the repo is using the shared role/task workflow

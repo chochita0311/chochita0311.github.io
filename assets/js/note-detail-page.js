@@ -1,3 +1,35 @@
+function noteTitle() {
+  return document.getElementById("note-title");
+}
+
+function noteSummary() {
+  return document.getElementById("note-summary");
+}
+
+function notePublished() {
+  return document.getElementById("note-published");
+}
+
+function noteTags() {
+  return document.getElementById("note-tags");
+}
+
+function noteReferences() {
+  return document.getElementById("note-references");
+}
+
+function noteContent() {
+  return document.getElementById("note-content");
+}
+
+function noteOutline() {
+  return document.getElementById("note-outline");
+}
+
+function noteBreadcrumbs() {
+  return document.querySelector(".note-detail__breadcrumbs");
+}
+
 function renderOutline(items) {
   if (items.length === 0) {
     noteOutline().innerHTML =
@@ -13,6 +45,8 @@ function renderOutline(items) {
     .join("");
 }
 
+const { ICONS, renderIcon } = window.AppIcons;
+
 function updateBreadcrumbs(path) {
   const segments = path.split("/");
   const category = segments[1] || "Archive";
@@ -25,9 +59,9 @@ function updateBreadcrumbs(path) {
 
   mount.innerHTML = `
 <a href="../../index.html">Archive</a>
-<span class="material-symbols-outlined">chevron_right</span>
+${renderIcon(ICONS.navigation.breadcrumb)}
 <a href="../../index.html">${escapeHtml(category)}</a>
-<span class="material-symbols-outlined">chevron_right</span>
+${renderIcon(ICONS.navigation.breadcrumb)}
 <span>${escapeHtml(collection)}</span>`;
 }
 

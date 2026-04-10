@@ -63,6 +63,12 @@
 - Motion:
   - Subtle color, opacity, and translation changes only.
   - Hover and focus transitions should stay within 120-180 ms and never feel elastic.
+- Icons:
+  - Approved UI icon family: Material Symbols Outlined.
+  - Keep one icon family active in the published runtime; do not mix Rounded or Sharp variants casually.
+  - Treat icons as supporting editorial navigation and actions, not as decorative illustration.
+  - New UI icons should enter the shared registry before they are used in screen markup or JavaScript templates.
+  - Use SVG only when the icon must be custom, multi-tone, or materially different from the Material Symbols family.
 - States:
   - Hover uses brighter surface or accent text shift.
   - Focus uses clear primary emphasis with minimal glow.

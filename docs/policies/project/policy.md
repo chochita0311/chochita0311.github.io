@@ -27,4 +27,4 @@
 - Update the relevant documentation when product behavior, structure, or workflow changes.
 - Keep new rules in the most specific document that owns them instead of expanding `AGENTS.md`.
 - If guidance already exists elsewhere, link to it instead of copying it.
-- Use `docs/project/architecture.md` for implementation shape, `docs/project/developer-guide.md` for workflow, and `docs/project/roadmap.md` for planned direction.
+- Use `docs/policies/project/architecture.md` for implementation shape, `docs/policies/project/developer-guide.md` for workflow, and `docs/plans/project/roadmap.md` for planned direction.

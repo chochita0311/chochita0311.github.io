@@ -2,6 +2,8 @@ function archiveListView() {
   return document.getElementById("archive-list-view");
 }
 
+const { ICONS, renderIcon } = window.AppIcons;
+
 function archiveDetailView() {
   return document.getElementById("archive-detail-view");
 }
@@ -59,10 +61,10 @@ function renderListFooterPanel() {
 <span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
 <div class="pagination-controls">
 <button class="pagination-button pagination-button--disabled" id="archive-prev-button" type="button">
-<span class="material-symbols-outlined">chevron_left</span>
+${renderIcon(ICONS.navigation.previous)}
 </button>
 <button class="pagination-button pagination-button--primary" id="archive-next-button" type="button">
-<span class="material-symbols-outlined">chevron_right</span>
+${renderIcon(ICONS.navigation.next)}
 </button>
 </div>`;
 }
@@ -119,7 +121,7 @@ function updateBreadcrumbs(path) {
 
   detailBreadcrumbs().innerHTML = `
 <a href="#">${window.NoteDetailRenderer.escapeHtml(category)}</a>
-<span class="material-symbols-outlined">chevron_right</span>
+${renderIcon(ICONS.navigation.breadcrumb)}
 <span>${window.NoteDetailRenderer.escapeHtml(collection)}</span>`;
 }
 
