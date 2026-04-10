@@ -1,0 +1,6 @@
+**/.git/
+**/.playwright-mcp/
+**/node_modules/
+**/tmp/
+**/assets/generated/**
+favicon.ico

@@ -6,3 +6,10 @@
 
 # Local automation and browser tooling artifacts
 .playwright-mcp/
+
+# Node-based local tooling
+node_modules/
+npm-debug.log*
+
+# Local scratch output
+tmp/

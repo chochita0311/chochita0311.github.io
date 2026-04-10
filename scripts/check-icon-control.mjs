@@ -2,16 +2,8 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 
 const repoRoot = process.cwd();
-const runtimeRoots = [
-  "index.html",
-  "pages",
-  "assets/js",
-];
-const rawIconOwners = new Set([
-  "assets/js/icons.js",
-  "index.html",
-  "pages/note/index.html",
-]);
+const runtimeRoots = ["index.html", "pages", "assets/js"];
+const rawIconOwners = new Set(["assets/js/icons.js", "index.html", "pages/note/index.html"]);
 
 function walk(targetPath) {
   const absolutePath = path.join(repoRoot, targetPath);
@@ -70,10 +62,7 @@ runtimeFiles.forEach((filePath) => {
 
   if (!rawIconOwners.has(filePath)) {
     const rawIconMatches = iconNames.filter((iconName) => {
-      const quotedPattern = new RegExp(
-        `["'\`]${escapeRegExp(iconName)}["'\`]`,
-        "g",
-      );
+      const quotedPattern = new RegExp(`["'\`]${escapeRegExp(iconName)}["'\`]`, "g");
 
       return quotedPattern.test(source);
     });

@@ -178,9 +178,7 @@ async function buildNotesIndex() {
     notes.push({
       id:
         attributes.id ||
-        `${category}-${collection}-${fallbackTitle}`
-          .toLowerCase()
-          .replaceAll(/\s+/g, "-"),
+        `${category}-${collection}-${fallbackTitle}`.toLowerCase().replaceAll(/\s+/g, "-"),
       title: attributes.title || fallbackTitle,
       summary: attributes.summary || extractSummary(body, fallbackTitle),
       tags: Array.isArray(attributes.tags) ? attributes.tags : [],
@@ -201,7 +199,9 @@ async function main() {
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   await writeFile(OUTPUT_PATH, `${JSON.stringify(notesIndex, null, 2)}\n`, "utf8");
 
-  console.log(`Generated ${notesIndex.length} notes in ${toPosixPath(path.relative(ROOT_DIR, OUTPUT_PATH))}`);
+  console.log(
+    `Generated ${notesIndex.length} notes in ${toPosixPath(path.relative(ROOT_DIR, OUTPUT_PATH))}`,
+  );
 }
 
 main().catch((error) => {

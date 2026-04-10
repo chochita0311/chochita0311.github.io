@@ -24,6 +24,39 @@ Then open:
 http://localhost:8000
 ```
 
+## Lint And Format
+This repo uses lightweight frontend tooling for the site source:
+
+- `Prettier` formats the frontend source files and utility scripts
+- `ESLint` checks the site JavaScript and local `.mjs` scripts for common mistakes
+- Lint and format config is stored under `configs/lint/`
+
+Install local dev dependencies:
+
+```bash
+npm install
+```
+
+Run checks:
+
+```bash
+npm run lint
+```
+
+Auto-format files:
+
+```bash
+npm run format
+```
+
+Notes:
+
+- This setup is local development tooling only and does not affect GitHub Pages runtime output
+- `node_modules/` is ignored and should not be committed
+- Generated archive data under `assets/generated/` is excluded from lint and format checks
+- Archive note content under `CATEGORIES/` is intentionally outside this lint scope
+- Because config lives under `configs/lint/`, npm scripts pass explicit config paths instead of relying on root autodiscovery
+
 ## Update Archive Content
 - Add or reorganize Markdown files under `CATEGORIES/`
 - Keep category and collection names searchable and understandable

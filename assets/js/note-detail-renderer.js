@@ -157,10 +157,7 @@ function applyInlineMarkdown(value) {
   output = output.replace(/__([^_]+)__/g, "<strong>$1</strong>");
   output = output.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   output = output.replace(/_([^_]+)_/g, "<em>$1</em>");
-  output = output.replace(
-    /`([^`]+)`/g,
-    '<code class="note-detail__inline-code">$1</code>',
-  );
+  output = output.replace(/`([^`]+)`/g, '<code class="note-detail__inline-code">$1</code>');
   output = output.replace(
     /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
     '<a href="$2" target="_blank" rel="noreferrer">$1</a>',
@@ -187,9 +184,7 @@ function renderList(items, ordered) {
 }
 
 function renderParagraph(lines) {
-  return `<p>${lines
-    .map((line) => applyInlineMarkdown(line.trimEnd()))
-    .join("<br>\n")}</p>`;
+  return `<p>${lines.map((line) => applyInlineMarkdown(line.trimEnd())).join("<br>\n")}</p>`;
 }
 
 function parseTableCells(line) {
@@ -224,9 +219,7 @@ function renderTable(tableLines) {
     .join("")}</tr></thead><tbody>${bodyRows
     .map(
       (cells) =>
-        `<tr>${cells
-          .map((cell) => `<td>${applyInlineMarkdown(cell)}</td>`)
-          .join("")}</tr>`,
+        `<tr>${cells.map((cell) => `<td>${applyInlineMarkdown(cell)}</td>`).join("")}</tr>`,
     )
     .join("")}</tbody></table></div>`;
 }
@@ -361,10 +354,7 @@ function renderMarkdown(markdown, options = {}) {
       flushTable();
       flushSection();
 
-      const renderedHeading = renderHeading(
-        setextHeading.text,
-        setextHeading.level,
-      );
+      const renderedHeading = renderHeading(setextHeading.text, setextHeading.level);
 
       if (
         setextHeading.level === 1 &&
@@ -391,7 +381,10 @@ function renderMarkdown(markdown, options = {}) {
       continue;
     }
 
-    if (isTableRowLine(normalizedLine) || (tableLines.length > 0 && isTableSeparatorLine(normalizedLine))) {
+    if (
+      isTableRowLine(normalizedLine) ||
+      (tableLines.length > 0 && isTableSeparatorLine(normalizedLine))
+    ) {
       flushParagraph();
       flushLists();
       tableLines.push(normalizedLine);

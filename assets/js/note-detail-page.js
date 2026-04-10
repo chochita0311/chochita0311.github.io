@@ -46,6 +46,7 @@ function renderOutline(items) {
 }
 
 const { ICONS, renderIcon } = window.AppIcons;
+const { escapeHtml } = window.NoteDetailRenderer;
 
 function updateBreadcrumbs(path) {
   const segments = path.split("/");
@@ -100,8 +101,7 @@ async function loadNotePage() {
     noteData.tags.length > 0
       ? noteData.tags
           .map(
-            (tag) =>
-              `<span class="note-tag">${window.NoteDetailRenderer.escapeHtml(tag)}</span>`,
+            (tag) => `<span class="note-tag">${window.NoteDetailRenderer.escapeHtml(tag)}</span>`,
           )
           .join("")
       : '<span class="note-detail__rail-empty">No tags</span>';

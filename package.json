@@ -1,0 +1,18 @@
+{
+  "name": "chochita0311.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Lightweight static Markdown archive site for GitHub Pages.",
+  "scripts": {
+    "format": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"pages/**/*.html\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --write",
+    "format:check": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"pages/**/*.html\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --check",
+    "lint:js": "eslint --config configs/lint/eslint.config.js \"assets/js/**/*.js\" \"scripts/**/*.mjs\"",
+    "lint": "npm run format:check && npm run lint:js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.0.0"
+  }
+}

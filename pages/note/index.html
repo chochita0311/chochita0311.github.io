@@ -1,182 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Ontological Drift | Chochita Archive</title>
-<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/css/app.css" rel="stylesheet"/>
-<link href="../../assets/css/note-detail.css" rel="stylesheet"/>
-</head>
-<body>
-<nav class="topbar no-line-rule">
-<div class="topbar__start">
-<span class="brand-title">조치타의 메모장</span>
-<div class="topbar__nav">
-<div class="nav-dropdown">
-<button class="nav-link nav-link--active" type="button">Categories<br/><span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-link__icon">expand_more</span>
-</button>
-<div class="nav-dropdown__panel nav-dropdown__panel--level-1">
-<div class="nav-menu">
-<div class="nav-menu__item nav-menu__item--branch">
-<div class="nav-menu__button">
-                                Philosophy <span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-menu__icon">chevron_right</span>
-</div>
-<div class="nav-dropdown__panel nav-dropdown__panel--level-2">
-<div class="nav-menu nav-menu--narrow">
-<div class="nav-menu__item nav-menu__item--branch">
-<div class="nav-menu__button">
-                                            Ethics <span aria-hidden="true" class="icon icon--material material-symbols-outlined nav-menu__icon">chevron_right</span>
-</div>
-<div class="nav-dropdown__panel nav-dropdown__panel--level-3">
-<div class="nav-menu nav-menu--tight">
-<a class="nav-menu__link" href="#">Virtue Ethics</a>
-<a class="nav-menu__link" href="#">Stoicism</a>
-</div>
-</div>
-</div>
-<div class="nav-menu__item">Metaphysics</div>
-</div>
-</div>
-</div>
-<div class="nav-menu__item">Design Theory</div>
-</div>
-</div>
-</div>
-<a class="nav-link" href="#">Library</a>
-<a class="nav-link" href="#">Archive</a>
-<a class="nav-link" href="#">About</a>
-</div>
-</div>
-<div class="topbar__end">
-<label class="search-field search-field--topbar">
-<input class="search-field__input" placeholder="Search archive..." type="text"/>
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined search-field__icon">search</span>
-</label>
-</div>
-</nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Ontological Drift | Chochita Archive</title>
+    <link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/app.css" rel="stylesheet" />
+    <link href="../../assets/css/note-detail.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="topbar no-line-rule">
+      <div class="topbar__start">
+        <span class="brand-title">조치타의 메모장</span>
+        <div class="topbar__nav">
+          <div class="nav-dropdown">
+            <button class="nav-link nav-link--active" type="button">
+              Categories<br /><span
+                aria-hidden="true"
+                class="icon icon--material material-symbols-outlined nav-link__icon"
+                >expand_more</span
+              >
+            </button>
+            <div class="nav-dropdown__panel nav-dropdown__panel--level-1">
+              <div class="nav-menu">
+                <div class="nav-menu__item nav-menu__item--branch">
+                  <div class="nav-menu__button">
+                    Philosophy
+                    <span
+                      aria-hidden="true"
+                      class="icon icon--material material-symbols-outlined nav-menu__icon"
+                      >chevron_right</span
+                    >
+                  </div>
+                  <div class="nav-dropdown__panel nav-dropdown__panel--level-2">
+                    <div class="nav-menu nav-menu--narrow">
+                      <div class="nav-menu__item nav-menu__item--branch">
+                        <div class="nav-menu__button">
+                          Ethics
+                          <span
+                            aria-hidden="true"
+                            class="icon icon--material material-symbols-outlined nav-menu__icon"
+                            >chevron_right</span
+                          >
+                        </div>
+                        <div class="nav-dropdown__panel nav-dropdown__panel--level-3">
+                          <div class="nav-menu nav-menu--tight">
+                            <a class="nav-menu__link" href="#">Virtue Ethics</a>
+                            <a class="nav-menu__link" href="#">Stoicism</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="nav-menu__item">Metaphysics</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-menu__item">Design Theory</div>
+              </div>
+            </div>
+          </div>
+          <a class="nav-link" href="#">Library</a>
+          <a class="nav-link" href="#">Archive</a>
+          <a class="nav-link" href="#">About</a>
+        </div>
+      </div>
+      <div class="topbar__end">
+        <label class="search-field search-field--topbar">
+          <input class="search-field__input" placeholder="Search archive..." type="text" />
+          <span
+            aria-hidden="true"
+            class="icon icon--material material-symbols-outlined search-field__icon"
+            >search</span
+          >
+        </label>
+      </div>
+    </nav>
 
-<aside class="sidebar tonal-shift-only">
-<div class="sidebar__profile">
-<div class="profile-card">
-<div class="profile-card__avatar">
-<img alt="professional editorial portrait of a scholar in a library setting with warm ambient lighting" class="profile-card__image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkALiCIwS40wH9WC8J6sgYAkSmCuOQ96UXmlBN6fVYQIRGeBLtZegv2K1VaLbgWbUnRmke_U4_nRnPRvJxHATu4H0FVyJ9o5sGz0Kn-O5guek24bNcoWXQB2weFrAqcc6_hKyIVn6jGKI1Mpq7S_lBqZiTeoZw3BHFHqtCPMpX57uGcrhwNwKw7kRfzdfZSyct4J1HvwB2BF--0Uy88aRymdn1daoiVnKNO1t3Sdko0SHh1wrnEZYbKrzh7Gk7FxcsZJluFuVixLI"/>
-</div>
-<div>
-<h3 class="profile-card__name">Chocheetah</h3>
-<p class="profile-card__meta">Powered by AI</p>
-</div>
-</div>
-</div>
-<div class="sidebar__section">
-<p class="section-label section-label--spaced">Categories</p>
-<div class="sidebar__category-list" id="sidebar-categories"></div>
-</div>
-<div class="sidebar__tags">
-<p class="section-label">Popular Tags</p>
-<div class="tag-cloud">
-<span class="tag-chip">Typography</span>
-<span class="tag-chip">Ethics</span>
-<span class="tag-chip">AI</span>
-<span class="tag-chip">Post-Modernism</span>
-<span class="tag-chip">UX</span>
-</div>
-</div>
-<div class="sidebar__footer">
-<a class="footer-link" href="#">
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined footer-link__icon">sell</span>
-<span class="footer-link__text">Tags</span>
-</a>
-<a class="footer-link" href="#">
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined footer-link__icon">bookmark</span>
-<span class="footer-link__text">Bookmarks</span>
-</a>
-</div>
-</aside>
+    <aside class="sidebar tonal-shift-only">
+      <div class="sidebar__profile">
+        <div class="profile-card">
+          <div class="profile-card__avatar">
+            <img
+              alt="professional editorial portrait of a scholar in a library setting with warm ambient lighting"
+              class="profile-card__image"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkALiCIwS40wH9WC8J6sgYAkSmCuOQ96UXmlBN6fVYQIRGeBLtZegv2K1VaLbgWbUnRmke_U4_nRnPRvJxHATu4H0FVyJ9o5sGz0Kn-O5guek24bNcoWXQB2weFrAqcc6_hKyIVn6jGKI1Mpq7S_lBqZiTeoZw3BHFHqtCPMpX57uGcrhwNwKw7kRfzdfZSyct4J1HvwB2BF--0Uy88aRymdn1daoiVnKNO1t3Sdko0SHh1wrnEZYbKrzh7Gk7FxcsZJluFuVixLI"
+            />
+          </div>
+          <div>
+            <h3 class="profile-card__name">Chocheetah</h3>
+            <p class="profile-card__meta">Powered by AI</p>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar__section">
+        <p class="section-label section-label--spaced">Categories</p>
+        <div class="sidebar__category-list" id="sidebar-categories"></div>
+      </div>
+      <div class="sidebar__tags">
+        <p class="section-label">Popular Tags</p>
+        <div class="tag-cloud">
+          <span class="tag-chip">Typography</span>
+          <span class="tag-chip">Ethics</span>
+          <span class="tag-chip">AI</span>
+          <span class="tag-chip">Post-Modernism</span>
+          <span class="tag-chip">UX</span>
+        </div>
+      </div>
+      <div class="sidebar__footer">
+        <a class="footer-link" href="#">
+          <span
+            aria-hidden="true"
+            class="icon icon--material material-symbols-outlined footer-link__icon"
+            >sell</span
+          >
+          <span class="footer-link__text">Tags</span>
+        </a>
+        <a class="footer-link" href="#">
+          <span
+            aria-hidden="true"
+            class="icon icon--material material-symbols-outlined footer-link__icon"
+            >bookmark</span
+          >
+          <span class="footer-link__text">Bookmarks</span>
+        </a>
+      </div>
+    </aside>
 
-<main class="archive-main note-detail-page">
-<section class="note-detail__frame">
-<header class="note-detail__utility">
-<nav aria-label="Breadcrumb" class="note-detail__breadcrumbs">
-<a href="../../index.html">Technology</a>
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined">chevron_right</span>
-<span>JAVA</span>
-</nav>
-<div class="note-detail__actions" aria-label="Note actions">
-<button aria-label="Share note" class="note-detail__action" type="button">
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined">ios_share</span>
-</button>
-<button aria-label="Bookmark note" class="note-detail__action" type="button">
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined">bookmark</span>
-</button>
-<button aria-label="More note actions" class="note-detail__action" type="button">
-<span aria-hidden="true" class="icon icon--material material-symbols-outlined">more_horiz</span>
-</button>
-</div>
-</header>
+    <main class="archive-main note-detail-page">
+      <section class="note-detail__frame">
+        <header class="note-detail__utility">
+          <nav aria-label="Breadcrumb" class="note-detail__breadcrumbs">
+            <a href="../../index.html">Technology</a>
+            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+              >chevron_right</span
+            >
+            <span>JAVA</span>
+          </nav>
+          <div class="note-detail__actions" aria-label="Note actions">
+            <button aria-label="Share note" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+                >ios_share</span
+              >
+            </button>
+            <button aria-label="Bookmark note" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+                >bookmark</span
+              >
+            </button>
+            <button aria-label="More note actions" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+                >more_horiz</span
+              >
+            </button>
+          </div>
+        </header>
 
-<article class="note-detail">
-<header class="note-detail__header">
-<h1 class="note-detail__title" id="note-title">Loading note...</h1>
-<p class="note-detail__summary" id="note-summary">
-        Preparing the selected Markdown file for reading.
-      </p>
-<dl class="note-detail__facts">
-<div>
-<dt>Published</dt>
-<dd id="note-published">Not set</dd>
-</div>
-<div>
-<dt>Tags</dt>
-<dd class="note-detail__tag-list" id="note-tags"></dd>
-</div>
-<div>
-<dt>References</dt>
-<dd class="note-detail__references" id="note-references"></dd>
-</div>
-</dl>
-</header>
+        <article class="note-detail">
+          <header class="note-detail__header">
+            <h1 class="note-detail__title" id="note-title">Loading note...</h1>
+            <p class="note-detail__summary" id="note-summary">
+              Preparing the selected Markdown file for reading.
+            </p>
+            <dl class="note-detail__facts">
+              <div>
+                <dt>Published</dt>
+                <dd id="note-published">Not set</dd>
+              </div>
+              <div>
+                <dt>Tags</dt>
+                <dd class="note-detail__tag-list" id="note-tags"></dd>
+              </div>
+              <div>
+                <dt>References</dt>
+                <dd class="note-detail__references" id="note-references"></dd>
+              </div>
+            </dl>
+          </header>
 
-<div class="note-detail__layout">
-<div>
-<div class="note-detail__content" id="note-content">
-<p class="note-detail__empty">
-        Select a note from the archive to load its Markdown content here.
-      </p>
-</div>
+          <div class="note-detail__layout">
+            <div>
+              <div class="note-detail__content" id="note-content">
+                <p class="note-detail__empty">
+                  Select a note from the archive to load its Markdown content here.
+                </p>
+              </div>
 
-<footer class="note-detail__footer">
-<a class="note-detail__nav note-detail__nav--previous" href="#">
-<span class="note-detail__nav-label">Previous Note</span>
-<span class="note-detail__nav-title">AOP &amp; Self Invocation</span>
-</a>
-<a class="note-detail__nav note-detail__nav--next" href="#">
-<span class="note-detail__nav-label">Next Note</span>
-<span class="note-detail__nav-title">ApplicationRunner</span>
-</a>
-</footer>
+              <footer class="note-detail__footer">
+                <a class="note-detail__nav note-detail__nav--previous" href="#">
+                  <span class="note-detail__nav-label">Previous Note</span>
+                  <span class="note-detail__nav-title">AOP &amp; Self Invocation</span>
+                </a>
+                <a class="note-detail__nav note-detail__nav--next" href="#">
+                  <span class="note-detail__nav-label">Next Note</span>
+                  <span class="note-detail__nav-title">ApplicationRunner</span>
+                </a>
+              </footer>
 
-<div class="note-detail__page-footer" data-page-footer></div>
-</div>
+              <div class="note-detail__page-footer" data-page-footer></div>
+            </div>
 
-<aside class="note-detail__rail" aria-label="Table of contents">
-<p class="note-detail__rail-title">On This Note</p>
-<div id="note-outline">
-<p class="note-detail__rail-empty">Headings from the current note will appear here.</p>
-</div>
-</aside>
-</div>
-</article>
-</section>
-</main>
+            <aside class="note-detail__rail" aria-label="Table of contents">
+              <p class="note-detail__rail-title">On This Note</p>
+              <div id="note-outline">
+                <p class="note-detail__rail-empty">
+                  Headings from the current note will appear here.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </article>
+      </section>
+    </main>
 
-<script defer src="../../assets/js/icons.js"></script>
-<script defer src="../../assets/js/sidebar-categories.js"></script>
-<script defer src="../../assets/js/page-footer.js"></script>
-<script defer src="../../assets/js/note-detail-renderer.js"></script>
-<script defer src="../../assets/js/note-detail-page.js"></script>
-</body>
+    <script defer src="../../assets/js/icons.js"></script>
+    <script defer src="../../assets/js/sidebar-categories.js"></script>
+    <script defer src="../../assets/js/page-footer.js"></script>
+    <script defer src="../../assets/js/note-detail-renderer.js"></script>
+    <script defer src="../../assets/js/note-detail-page.js"></script>
+  </body>
 </html>
