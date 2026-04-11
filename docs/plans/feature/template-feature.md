@@ -20,15 +20,15 @@
 ### Product Feature Guidance
 - Define the user-visible result that must hold.
 - Example:
-  - when user switches view mode, the archive surface changes and the active mode remains clear
+  - when user switches display mode, the active surface changes and the selected mode remains clear
 
 ### Foundation Feature Guidance
 - Define the system-level contract that must hold.
 - Example:
-  - preview image source is owned by note frontmatter
-  - preview image value is a static asset path
-  - missing image fallback is deterministic
-  - downstream rendering features do not need to guess
+  - media source ownership is fixed
+  - value shape is fixed and documented
+  - fallback behavior is deterministic
+  - downstream features do not need to guess
 
 ## Scope Boundary
 - In:

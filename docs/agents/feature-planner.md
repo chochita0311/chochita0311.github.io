@@ -26,13 +26,14 @@
 ## Good Feature Unit Rules
 A good feature unit must satisfy all of the following:
 
-1. It has one clear user-visible outcome.
-2. It can be evaluated with explicit pass or fail checks.
-3. It avoids bundling unrelated interactions.
-4. It touches a limited and coherent set of files or system surfaces.
-5. It should usually converge within one to three build or fix loops.
-6. It minimizes dependency on future unfinished features.
-7. It preserves the normalized PRD scope without silent expansion.
+1. If it is a `product` feature, it has one clear user-visible outcome.
+2. If it is a `foundation` feature, it resolves one concrete contract, invariant, or ownership boundary.
+3. It can be evaluated with explicit pass or fail checks.
+4. It avoids bundling unrelated interactions or unresolved decisions.
+5. It touches a limited and coherent set of files or system surfaces.
+6. It should usually converge within one to three build or fix loops.
+7. It minimizes dependency on future unfinished features.
+8. It preserves the normalized PRD scope without silent expansion.
 
 ## Feature Type Inference
 
@@ -51,7 +52,7 @@ Prefer an explicit foundation feature over an implicit assumption when unresolve
 ## Completeness Check
 For each proposed feature, define:
 - entry point
-- main user-visible outcome
+- main user-visible outcome for `product` features, or main contract outcome for `foundation` features
 - exit or transition behavior when relevant
 - state expectations such as loading, empty, error, or disabled
 - dependency assumptions
@@ -67,7 +68,7 @@ Produce:
    - name
    - type
    - goal
-   - user-visible outcome
+   - user-visible outcome or system-level outcome
    - scope boundary
    - likely affected surfaces
    - dependencies
@@ -82,6 +83,28 @@ prd_summary:
   - add login to the current product flow
 
 features:
+  - name: auth session contract
+    type: foundation
+    goal: fix where session state is stored and how missing session state is handled
+    system_outcome: downstream auth features can proceed without guessing about session ownership
+    scope_boundary:
+      include:
+        - session ownership
+        - value shape
+        - fallback behavior
+      exclude:
+        - login UI
+        - signup flow
+    likely_surfaces:
+      - auth state module
+      - storage adapter
+      - session contract docs
+    dependencies: []
+    pass_fail_hints:
+      - session ownership is explicitly chosen
+      - value shape is fixed
+      - downstream features no longer need to guess
+
   - name: login entry view
     type: product
     goal: render the authentication form in the requested flow
@@ -118,12 +141,14 @@ features:
       - login state handling
       - status messaging
     dependencies:
+      - auth session contract
       - login entry view
     pass_fail_hints:
       - invalid login shows a visible failure state
       - successful login transitions to the intended next view
 
 recommended_order:
+  - auth session contract
   - login entry view
   - login submission feedback
 

@@ -33,8 +33,8 @@ Not every feature serves the same role in the harness workflow.
   - must define clear user-visible behavior
   - must be evaluable through interaction, presentation, or user-observable state
 - Examples:
-  - archive view mode toggle
-  - archive card image rendering
+  - authentication entry screen
+  - display mode toggle
 
 ### Foundation Feature
 - Purpose:
@@ -48,8 +48,8 @@ Not every feature serves the same role in the harness workflow.
   - fallback rule fixed
   - state model fixed
 - Examples:
-  - preview-image data contract
-  - archive index shape normalization
+  - media metadata contract
+  - session schema normalization
 
 ## Why This Split Exists
 - PRDs define direction, scope, exclusions, and acceptance envelope.
@@ -103,7 +103,8 @@ Not every feature serves the same role in the harness workflow.
 - An approved feature must be concrete enough to hand off to the spec agent without guesswork about scope, dependencies, user-visible outcome, data ownership, interaction behavior, or pass/fail checks.
 - If unclear, open, or weakly supported points remain in a feature boundary, ask the human owner direct clarification questions until the execution target is clear enough to approve.
 - Do not start spec or implementation work from a feature document that has not been boundary-locked.
-- A feature must have one clear user-visible outcome.
+- A product feature must have one clear user-visible outcome.
+- A foundation feature must have one clear system-level contract outcome.
 - A feature must be small enough to converge in one to three build or fix loops in normal cases.
 - A feature must explicitly define:
   - parent PRD

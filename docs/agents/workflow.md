@@ -10,6 +10,13 @@
 - It does not own the structural contract for PRDs or features.
 - Use `docs/policies/project/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
 
+## Workflow Assembly
+- Workflows are composable, not universal.
+- A project may use only the roles and steps it actually needs.
+- Some projects may stop at planning roles, while others may extend into spec, build, evaluator, and fixer loops.
+- Monorepo or multi-surface systems such as FE/BE stacks may require additional roles, gates, or parallel branches beyond the default sequence shown here.
+- The flow below is a strong general-purpose example, not a mandatory full pipeline for every repo.
+
 ## Step-By-Step Flow
 1. Human request
    - Provide the request, golden sources, and any strong constraints.

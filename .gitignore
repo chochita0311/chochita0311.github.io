@@ -4,6 +4,9 @@
 **/.DS_Store
 **/._.DS_Store
 
+# Local agent workspace artifacts and repo-specific experiments
+.agents/
+
 # Local automation and browser tooling artifacts
 .playwright-mcp/
 
