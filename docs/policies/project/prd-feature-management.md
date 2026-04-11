@@ -131,6 +131,10 @@ Use these statuses for PRD and feature documents:
   - do not silently implement it
   - decide whether it belongs in the parent PRD or the current feature
   - update the planning document first
+- If a PRD or feature changes materially enough that its current filename becomes misleading:
+  - rename the file when the ID should remain the same and the boundary is still the same planning object
+  - create a new PRD or feature and mark the old one `superseded` when the boundary itself has changed into a different planning object
+  - do not leave an active planning artifact with a semantically false filename
 - If a feature grows beyond a stable loop size:
   - split it into new feature documents
   - mark the old feature as `superseded`

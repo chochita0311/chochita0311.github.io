@@ -8,8 +8,10 @@
 - This document owns sequence.
 - Use it to understand the order of operations, stop points, and handoff moments between planning and execution.
 - It does not own the structural contract for PRDs or features.
+- It does not own the operator-facing run-start prompts.
 - Use `docs/policies/project/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
 - Use `docs/policies/project/execution-loop-governance.md` for fail classification, execution routing, heuristic handling, and execution-artifact ownership.
+- Use `docs/agents/runner.md` when you need to actually start or continue one run through prompts.
 
 ## Workflow Assembly
 - Workflows are composable, not universal.

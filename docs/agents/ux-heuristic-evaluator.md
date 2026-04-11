@@ -14,6 +14,14 @@
 - one active spec document
 - candidate implementation
 - golden sources or design rules when relevant
+- relevant interaction-quality policies when the feature changes visible behavior or navigation continuity
+
+## Capability Guidance
+- If browser automation or inspection tools are installed, prefer using them over pure static reasoning when checking live interaction clarity.
+- Recommended tools when available:
+  - Playwright MCP for user-flow interaction checks
+  - Chrome DevTools MCP for runtime inspection, layout inspection, and state observation
+- If those tools are not installed in the current environment, continue as a normal role and report heuristic findings from the available implementation evidence.
 
 ## Core Rules
 - Evaluate clarity within the approved feature boundary.

@@ -327,8 +327,78 @@
   line-height: 1.625;
 }
 
+.archive-view-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: 1px solid rgba(67, 70, 83, 0.26);
+  border-radius: var(--radius-full);
+  background: rgba(30, 32, 36, 0.72);
+  box-shadow: 0 10px 24px rgba(9, 11, 14, 0.16);
+}
+
+.archive-view-toggle__button {
+  min-width: 4.5rem;
+  padding: 0.45rem var(--space-4);
+  border-radius: var(--radius-full);
+  color: var(--page-text-soft);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-view-toggle__button:hover,
+.archive-view-toggle__button:focus-visible {
+  color: var(--color-on-surface);
+  background: rgba(40, 42, 46, 0.92);
+}
+
+.archive-view-toggle__button--active {
+  color: #fff;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-button);
+}
+
 .note-card {
   cursor: pointer;
+}
+
+.note-card--list {
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid rgba(67, 70, 83, 0.18);
+}
+
+.note-card--grid {
+  min-height: 100%;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 32, 36, 0.96) 0%,
+    rgba(26, 28, 32, 0.98) 100%
+  );
+  box-shadow: 0 18px 36px rgba(9, 11, 14, 0.18);
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.note-card--grid:hover,
+.note-card--grid:focus-within {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    180deg,
+    rgba(40, 42, 46, 0.98) 0%,
+    rgba(30, 32, 36, 1) 100%
+  );
+  box-shadow: 0 24px 44px rgba(9, 11, 14, 0.24);
 }
 
 .note-card__link {
@@ -337,9 +407,12 @@
 
 .note-card__body {
   width: 100%;
+  min-width: 0;
 }
 
 .note-card__meta {
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-bottom: var(--space-3);
 }
@@ -361,6 +434,7 @@
   font-size: var(--font-size-title-md);
   font-weight: var(--font-weight-extrabold);
   line-height: 2.25rem;
+  overflow-wrap: anywhere;
   transition: color var(--transition-fast);
 }
 
@@ -372,11 +446,67 @@
   line-height: 1.625;
 }
 
+.note-card--grid .note-card__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--space-8);
+}
+
+.note-card--grid .note-card__meta {
+  margin-bottom: var(--space-4);
+}
+
+.note-card--grid .note-card__title {
+  display: -webkit-box;
+  margin-bottom: var(--space-5);
+  overflow: hidden;
+  font-size: 1.75rem;
+  line-height: 2.1rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.note-card--grid .note-card__summary {
+  display: -webkit-box;
+  flex: 1 1 auto;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.note-card__footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-5);
+  margin-top: auto;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(67, 70, 83, 0.18);
+}
+
 .note-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
   gap: var(--space-2);
 }
 
+.note-card__collection {
+  margin: 0;
+  color: var(--page-text-soft);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.note-card--empty {
+  grid-column: 1 / -1;
+}
+
 .note-tag {
+  max-width: 100%;
   padding: var(--space-1) var(--space-3);
   border: 1px solid rgba(67, 70, 83, 0.3);
   border-radius: var(--radius-full);
@@ -385,6 +515,7 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .archive-footer__page,
@@ -443,11 +574,32 @@
     font-size: 1.25rem;
   }
 
+  .archive-view-toggle {
+    width: 100%;
+  }
+
+  .archive-view-toggle__button {
+    flex: 1 1 0;
+  }
+
   .archive-hero__title {
     font-size: 2.25rem;
   }
 
   .note-card__title {
     font-size: 1.75rem;
+  }
+
+  .note-card--grid .note-card__body {
+    padding: var(--space-6);
+  }
+
+  .note-card--grid .note-card__title {
+    font-size: 1.5rem;
+    line-height: 1.95rem;
+  }
+
+  .note-card__footer {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

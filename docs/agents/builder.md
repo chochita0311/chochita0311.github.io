@@ -21,6 +21,8 @@
 - If the spec is insufficient, stop and report the blocker instead of improvising.
 - Preserve existing regression surfaces named by the feature and spec.
 - Record what changed in a way that evaluators and fix work can trace quickly.
+- Do not use destructive DOM replacement on active interactive surfaces unless the spec clearly allows it and the resulting controls are fully rebound or otherwise kept functional.
+- If implementation replaces interactive nodes during rerender, verify that pagination, navigation, toggles, and repeated browse actions still work after the replacement.
 
 ## Required Output
 Report:

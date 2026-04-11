@@ -12,12 +12,15 @@
 - one active spec document
 - candidate implementation
 - relevant system contracts and runtime behavior context
+- relevant interaction-quality policies when visible state changes or flow continuity are in scope
 
 ## Core Rules
 - Evaluate only what the feature and spec actually require.
 - Check normal flow, failure flow, empty or loading states when they are in scope, and named regression surfaces.
 - Separate true behavioral defects from missing planned scope.
 - Prefer deterministic pass or fail language over vague QA commentary.
+- Recheck interaction continuity after rerendering surfaces, especially when controls are recreated through template or `innerHTML` updates.
+- Treat lost click handlers, dead pagination, broken toggles, or one-time-only controls as blocking defects.
 
 ## Required Output
 Produce:

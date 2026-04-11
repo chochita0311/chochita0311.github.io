@@ -24,6 +24,29 @@
 - Translate pass or fail checks into explicit implementation and evaluation targets.
 - Prefer concrete surfaces, states, and transitions over abstract intent wording.
 
+## Interaction Contract Rule
+- When the feature changes visible state, navigation, or rerender behavior, the spec should lock the interaction continuity rules needed for safe build and evaluation.
+- Examples:
+  - controls that must remain functional after rerender
+  - whether DOM replacement is allowed for the affected surface
+  - whether interaction handlers must survive or be rebound after rebuild
+  - whether URL state, pagination, or local mode state must persist across transitions
+
+## Visual Contract Rule
+- When the feature affects visible layout, the spec should lock the minimum visual containment rules needed for safe build and evaluation.
+- Examples:
+  - title wrapping or clamping behavior
+  - tag overflow handling
+  - footer or metadata placement inside the component bounds
+  - responsive column behavior
+  - empty-state containment inside the target surface
+
+## Routing Guidance
+- Return to `planning gap` instead of writing executable spec when the approved feature boundary is likely wrong.
+- Example:
+  - the approved feature says “replace list with grid,” but the actual intended behavior is “keep list as default and add a grid toggle”
+- Return to `spec gap` only after execution has started and the current spec proves too weak to guide build safely.
+
 ## Required Output
 Produce a spec that defines:
 

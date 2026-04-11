@@ -3,6 +3,8 @@
 ## Metadata
 - ID: `spec-0000`
 - Status: `draft`
+- Run ID:
+- Attempt:
 - Parent Feature: `[feat-0000-title](../feature/template-feature.md)`
 - Parent PRD: `[prd-0000-title](../prd/template-prd.md)`
 - Created: `YYYY-MM-DD`

@@ -3,6 +3,8 @@
 ## Metadata
 - ID: `fix-0000`
 - Status: `draft`
+- Run ID:
+- Attempt:
 - Feature: `[feat-0000-title](../feature/template-feature.md)`
 - Spec: `[spec-0000-title](../spec/template-spec.md)`
 - Created: `YYYY-MM-DD`

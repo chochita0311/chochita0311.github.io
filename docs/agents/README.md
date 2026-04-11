@@ -20,6 +20,7 @@
 
 ## Workflow
 - `docs/agents/workflow.md`: define the baton flow, stop points, and role composition options
+- `docs/agents/runner.md`: define how a human or harness starts and continues one run using prompts
 
 ## Related Local Docs
 - `docs/policies/project/prd-feature-management.md`: planning-governance rule for PRDs, features, approval, and traceability
@@ -27,11 +28,13 @@
 - `docs/plans/prd/template-prd.md`: local PRD template for bounded planning documents
 - `docs/plans/feature/template-feature.md`: local feature template for product and foundation features
 - `docs/plans/spec/template-spec.md`: local spec template for one approved execution target
+- `docs/plans/run/template-run.md`: local run template for one active execution pass
 
 ## Planning Artifact Placement
 - Store bounded PRD instances under `docs/plans/prd/`.
 - Store loop-sized feature instances under `docs/plans/feature/`.
 - Store implementation-facing spec instances under `docs/plans/spec/`.
+- Store run records under `docs/plans/run/`.
 - Store evaluator reports under `docs/plans/evaluation/`.
 - Store fix logs under `docs/plans/fix/`.
 - Store heuristic backlog records under `docs/plans/heuristic/`.
@@ -41,6 +44,10 @@
 - Treat `docs/agents/workflow.md` as a strong default example, not the only valid orchestration shape.
 - This repo may use smaller or larger workflows from the same role set depending on product scope, stack shape, and approval needs.
 - When the workflow expands, keep the role contracts stable and add variation through sequencing rather than rewriting every role.
+
+## Local Invocation
+- Initialize one execution pass from the approved feature document and the runner guide.
+- Treat the runner guide as the ordered prompt source for the current execution pass instead of generating runtime scaffolding files automatically.
 
 ## Packaging Rule
 - Treat `docs/agents/` as the working copy for role definitions being developed in this repo.

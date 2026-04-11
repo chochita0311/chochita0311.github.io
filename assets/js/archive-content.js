@@ -17,6 +17,7 @@
     notes: [],
     page: 1,
     pageSize: DEFAULT_PAGE_SIZE,
+    viewMode: "list",
     category: null,
     collection: null,
     activeNotePath: null,
@@ -24,7 +25,7 @@
   };
 
   let archiveRenderRequestId = 0;
-  let paginationBound = false;
+  let viewToggleBound = false;
 
   function archiveTitle() {
     return document.getElementById("archive-title");
@@ -40,6 +41,10 @@
 
   function archivePageLabel() {
     return document.getElementById("archive-page-label");
+  }
+
+  function archiveViewButtons() {
+    return document.querySelectorAll("[data-archive-view]");
   }
 
   function archivePrevButton() {
@@ -89,7 +94,8 @@
   }
 
   function archiveCopyForSelection(category, collection) {
-    const collectionKey = category && collection ? `${category}/${collection}` : null;
+    const collectionKey =
+      category && collection ? `${category}/${collection}` : null;
 
     if (collectionKey && archiveState.copy.collections[collectionKey]) {
       return archiveState.copy.collections[collectionKey];
@@ -110,23 +116,111 @@
       .join(" ");
   }
 
+  function formatArchiveDate(note) {
+    const rawDate = note.updated || note.created || "";
+
+    if (!rawDate) {
+      return "";
+    }
+
+    const parsed = new Date(rawDate);
+
+    if (Number.isNaN(parsed.getTime())) {
+      return rawDate;
+    }
+
+    return new Intl.DateTimeFormat("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }).format(parsed);
+  }
+
+  function buildNoteHref(note) {
+    const url = new URLSearchParams({
+      category: note.category,
+      collection: note.collection,
+      note: note.path,
+    });
+
+    if (archiveState.viewMode === "grid") {
+      url.set("view", "grid");
+    }
+
+    return `?${url.toString()}`;
+  }
+
   function noteCardMarkup(note) {
+    const dateLabel = formatArchiveDate(note);
+    const isGrid = archiveState.viewMode === "grid";
+    const secondaryMeta = isGrid ? dateLabel || note.collection : note.collection;
+    const tagMarkup = note.tags
+      .map(
+        (tag) =>
+          `<span class="note-tag">${escapeHtml(prettifyTag(tag))}</span>`,
+      )
+      .join("");
+    const cardClass = isGrid ? "note-card note-card--grid" : "note-card note-card--list";
+    const footerMarkup = isGrid
+      ? `<div class="note-card__footer">
+<div class="note-card__tags">
+${tagMarkup}
+</div>
+<p class="note-card__collection">${escapeHtml(note.collection)}</p>
+</div>`
+      : `<div class="note-card__footer">
+<div class="note-card__tags">
+${tagMarkup}
+</div>
+</div>`;
+
     return `
-<article class="note-card" data-note-path="${escapeHtml(note.path)}">
-<a class="note-card__link" href="?category=${encodeURIComponent(note.category)}&collection=${encodeURIComponent(note.collection)}&note=${encodeURIComponent(note.path)}" data-note-link="true">
+<article class="${cardClass}" data-note-path="${escapeHtml(note.path)}">
+<a class="note-card__link" href="${buildNoteHref(note)}" data-note-link="true">
 <div class="note-card__body">
 <div class="note-card__meta">
 <span class="note-label note-label--accent">${escapeHtml(note.category)}</span>
-<span class="note-label note-label--muted">${escapeHtml(note.collection)}</span>
+<span class="note-label note-label--muted">${escapeHtml(secondaryMeta)}</span>
 </div>
 <h2 class="note-card__title">${escapeHtml(note.title)}</h2>
 <p class="note-card__summary">${escapeHtml(note.summary)}</p>
-<div class="note-card__tags">
-${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}</span>`).join("")}
-</div>
+${footerMarkup}
 </div>
 </a>
 </article>`;
+  }
+
+  function applyViewModeToList() {
+    const noteList = archiveNoteList();
+
+    if (!noteList) {
+      return;
+    }
+
+    noteList.dataset.viewMode = archiveState.viewMode;
+  }
+
+  function syncViewToggleButtons() {
+    archiveViewButtons().forEach((button) => {
+      const isActive = button.dataset.archiveView === archiveState.viewMode;
+
+      button.classList.toggle("archive-view-toggle__button--active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function updateViewMode(mode, { replaceHistory = false } = {}) {
+    if (mode !== "list" && mode !== "grid") {
+      return;
+    }
+
+    archiveState.viewMode = mode;
+    syncViewToggleButtons();
+    renderArchivePage();
+    updateArchiveLocation({
+      notePath: archiveState.activeNotePath,
+      replace: replaceHistory,
+    });
   }
 
   function setPaginationButtonState(button, isEnabled) {
@@ -147,21 +241,26 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
   }
 
   function bindPaginationControls() {
-    if (paginationBound) {
-      return;
-    }
+    const prevButton = archivePrevButton();
+    const nextButton = archiveNextButton();
 
-    archivePrevButton()?.addEventListener("click", () => {
+    if (prevButton) {
+      prevButton.onclick = () => {
       if (archiveState.page <= 1) {
         return;
       }
 
       archiveState.page -= 1;
       renderArchivePage();
-    });
+      };
+    }
 
-    archiveNextButton()?.addEventListener("click", () => {
-      const totalPages = Math.max(1, Math.ceil(archiveState.notes.length / archiveState.pageSize));
+    if (nextButton) {
+      nextButton.onclick = () => {
+      const totalPages = Math.max(
+        1,
+        Math.ceil(archiveState.notes.length / archiveState.pageSize),
+      );
 
       if (archiveState.page >= totalPages) {
         return;
@@ -169,9 +268,28 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
 
       archiveState.page += 1;
       renderArchivePage();
+      };
+    }
+  }
+
+  function bindViewToggleControls() {
+    if (viewToggleBound) {
+      return;
+    }
+
+    archiveViewButtons().forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextMode = button.dataset.archiveView;
+
+        if (nextMode === archiveState.viewMode) {
+          return;
+        }
+
+        updateViewMode(nextMode);
+      });
     });
 
-    paginationBound = true;
+    viewToggleBound = true;
   }
 
   function compareDatesDesc(left, right) {
@@ -246,16 +364,28 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     window.IndexNoteDetail.setArchiveMode("list");
     window.IndexNoteDetail.renderListFooterPanel();
     bindPaginationControls();
+    bindViewToggleControls();
 
-    const totalPages = Math.max(1, Math.ceil(archiveState.notes.length / archiveState.pageSize));
+    const totalPages = Math.max(
+      1,
+      Math.ceil(archiveState.notes.length / archiveState.pageSize),
+    );
     const startIndex = (archiveState.page - 1) * archiveState.pageSize;
-    const visibleNotes = archiveState.notes.slice(startIndex, startIndex + archiveState.pageSize);
+    const visibleNotes = archiveState.notes.slice(
+      startIndex,
+      startIndex + archiveState.pageSize,
+    );
 
     archivePageLabel().textContent = `Page ${String(archiveState.page).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}`;
+    applyViewModeToList();
     archiveNoteList().innerHTML = visibleNotes.map(noteCardMarkup).join("");
+    syncViewToggleButtons();
 
     setPaginationButtonState(archivePrevButton(), archiveState.page > 1);
-    setPaginationButtonState(archiveNextButton(), archiveState.page < totalPages);
+    setPaginationButtonState(
+      archiveNextButton(),
+      archiveState.page < totalPages,
+    );
   }
 
   function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
@@ -266,10 +396,13 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     document.title = DEFAULT_DOCUMENT_TITLE;
     window.IndexNoteDetail.setArchiveMode("list");
     window.IndexNoteDetail.renderListFooterPanel();
+    bindViewToggleControls();
     archiveTitle().textContent = title;
     archiveSummary().textContent = summary;
+    applyViewModeToList();
+    syncViewToggleButtons();
     archiveNoteList().innerHTML = `
-<article class="note-card">
+<article class="note-card ${archiveState.viewMode === "grid" ? "note-card--grid" : "note-card--list"} note-card--empty">
 <div class="note-card__body">
 <div class="note-card__meta">
 <span class="note-label note-label--accent">${escapeHtml(title)}</span>
@@ -305,6 +438,12 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
       url.searchParams.delete("note");
     }
 
+    if (archiveState.viewMode === "grid") {
+      url.searchParams.set("view", "grid");
+    } else {
+      url.searchParams.delete("view");
+    }
+
     if (replace) {
       window.history.replaceState({}, "", url);
       return;
@@ -315,8 +454,11 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
 
   async function renderNoteDetail(notePath, options = {}) {
     const noteData = await window.NoteDetailRenderer.loadNoteData(notePath);
-    const currentIndex = archiveState.notes.findIndex((note) => note.path === notePath);
-    const previousNote = currentIndex > 0 ? archiveState.notes[currentIndex - 1] : null;
+    const currentIndex = archiveState.notes.findIndex(
+      (note) => note.path === notePath,
+    );
+    const previousNote =
+      currentIndex > 0 ? archiveState.notes[currentIndex - 1] : null;
     const nextNote =
       currentIndex >= 0 && currentIndex < archiveState.notes.length - 1
         ? archiveState.notes[currentIndex + 1]
@@ -324,7 +466,8 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
 
     archiveState.activeNotePath = notePath;
     document.title = `${noteData.title} | Chochita Archive`;
-    archiveTitle().textContent = archiveState.collection || archiveState.category || "Archive";
+    archiveTitle().textContent =
+      archiveState.collection || archiveState.category || "Archive";
     archiveSummary().textContent = fallbackSummary(
       archiveState.category,
       archiveState.collection,
@@ -332,7 +475,8 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     );
     window.IndexNoteDetail.setArchiveMode("detail");
     window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
-    window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
+    window.IndexNoteDetail.elements.detailSummary().textContent =
+      noteData.summary;
     window.IndexNoteDetail.elements.detailPublished().textContent =
       noteData.attributes.created ||
       noteData.attributes.published ||
@@ -342,7 +486,8 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
       noteData.tags.length > 0
         ? noteData.tags
             .map(
-              (tag) => `<span class="note-tag">${window.NoteDetailRenderer.escapeHtml(tag)}</span>`,
+              (tag) =>
+                `<span class="note-tag">${window.NoteDetailRenderer.escapeHtml(tag)}</span>`,
             )
             .join("")
         : '<span class="note-detail__rail-empty">No tags</span>';
@@ -359,13 +504,18 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
             ? `<span class="note-detail__rail-empty">+${noteData.references.length - 3} more</span>`
             : "")
         : '<span class="note-detail__rail-empty">No references</span>';
-    window.IndexNoteDetail.elements.detailContent().innerHTML = noteData.rendered.html;
+    window.IndexNoteDetail.elements.detailContent().innerHTML =
+      noteData.rendered.html;
     window.IndexNoteDetail.renderOutline(noteData.rendered.outline);
     window.IndexNoteDetail.updateBreadcrumbs(notePath);
-    window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (path) => {
-      renderNoteDetail(path);
-      updateArchiveLocation({ notePath: path });
-    });
+    window.IndexNoteDetail.renderDetailFooterPanel(
+      previousNote,
+      nextNote,
+      (path) => {
+        renderNoteDetail(path);
+        updateArchiveLocation({ notePath: path });
+      },
+    );
 
     if (!options.skipHistory) {
       updateArchiveLocation({ notePath });
@@ -387,8 +537,13 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     archiveState.activeNotePath = null;
 
     const copy = archiveCopyForSelection(category, collection);
-    const title = copy.title || collection || category || DEFAULT_ARCHIVE_COPY.default.title;
-    const summary = copy.summary || fallbackSummary(category, collection, notes);
+    const title =
+      copy.title ||
+      collection ||
+      category ||
+      DEFAULT_ARCHIVE_COPY.default.title;
+    const summary =
+      copy.summary || fallbackSummary(category, collection, notes);
 
     if (notes.length === 0) {
       renderArchiveEmptyState(
@@ -413,7 +568,11 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     let category = params.get("category");
     let collection = params.get("collection");
     const note = params.get("note");
+    const view = params.get("view");
     let resolvedNote = note;
+
+    archiveState.viewMode = view === "grid" ? "grid" : "list";
+    syncViewToggleButtons();
 
     if (note && (!category || !collection)) {
       const matchedNote = findNoteByPath(note);
@@ -442,7 +601,9 @@ ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}
     }
 
     event.preventDefault();
-    renderNoteDetail(decodeURIComponent(link.closest(".note-card").dataset.notePath));
+    renderNoteDetail(
+      decodeURIComponent(link.closest(".note-card").dataset.notePath),
+    );
   });
 
   window.addEventListener("archive:navigate", (event) => {

@@ -4,6 +4,13 @@
 - Control one bounded execution loop from approved feature to pass, escalation, or return.
 - Keep role sequencing, evaluator selection, and stop conditions explicit.
 
+## Ownership
+- This document owns the Orchestrator role contract.
+- It does not own the whole workflow sequence.
+- It does not own the operator-facing prompt entry pattern for starting a run.
+- Use `docs/agents/workflow.md` for the sequence model.
+- Use `docs/agents/runner.md` for run-start and run-continuation invocation prompts.
+
 ## When To Use
 - A feature has been approved and is ready to enter execution.
 - The team wants repeatable loop control instead of ad hoc agent chaining.
@@ -49,6 +56,11 @@
 
 ### Retry Escalation
 - If the same failure class repeats twice without meaningful progress, escalate instead of continuing the same loop shape blindly.
+
+### Capability-Aware Routing
+- If a role has relevant optional skills or tools available in the current environment, prefer using them before generic freeform execution.
+- Treat these as conditional accelerators, not hard prerequisites.
+- Do not block the loop solely because an optional skill or MCP tool is missing.
 
 ## Required Output
 Produce or update:

@@ -5,6 +5,8 @@
 - Status: `draft`
 - Evaluator Type: `design` | `functional` | `ux-heuristic`
 - Result: `PASS` | `PASS WITH SUGGESTIONS` | `FAIL`
+- Run ID:
+- Attempt:
 - Feature: `[feat-0000-title](../feature/template-feature.md)`
 - Spec: `[spec-0000-title](../spec/template-spec.md)`
 - Created: `YYYY-MM-DD`

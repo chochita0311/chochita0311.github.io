@@ -10,6 +10,7 @@
 - Use `docs/policies/project/prd-feature-management.md` for planning-layer rules and approval criteria.
 
 ## Execution Artifacts
+- `docs/plans/run/` owns active run records.
 - `docs/plans/spec/` owns implementation-facing specs.
 - `docs/plans/evaluation/` owns evaluator reports.
 - `docs/plans/fix/` owns fix logs.
@@ -21,6 +22,13 @@
 - Do not silently expand scope during build, evaluation, or fix.
 - Every execution artifact must reference the active feature ID and active spec ID.
 - If a blocker belongs to planning or spec, route upward instead of normalizing it as an implementation defect.
+
+## Optional Capability Rule
+- A role may have optional local skills or optional MCP tools that improve execution quality.
+- Document those capabilities in the role contract when omission would reduce consistency.
+- If the capability exists in the current environment and is relevant to the active feature, it should be used.
+- If the capability does not exist in the current environment, the role must still remain operable through its base contract.
+- Do not turn optional capabilities into hard blockers unless the project explicitly promotes them into required tooling.
 
 ## Dependency Depth Guidance
 - Prefer dependency depth of `2` or less for any active feature.
@@ -54,6 +62,19 @@ Every blocking finding should be classified as one of:
   - the feature is approved, but the active spec is too weak or contradictory to execute safely
 - `planning gap`
   - the issue changes approved scope, unresolved dependency meaning, or product-boundary intent
+
+## Classification Examples
+- `implementation bug`
+  - tags or titles spill outside an approved card even though the spec already requires stable containment
+  - a grid card click no longer opens note detail even though the spec preserves click-through
+  - pagination or other existing controls stop working because a rerender replaced the DOM nodes without preserving or rebinding their interaction handlers
+- `spec gap`
+  - the feature clearly needs stable card containment, but the spec failed to define title clamp, tag overflow, or breakpoint behavior
+  - the visual direction is approved, but the build has no precise rule for how summaries should compress inside the new card
+  - the feature changes a rerender path, but the spec never defined whether the affected controls must survive DOM replacement or be rebound after rebuild
+- `planning gap`
+  - execution reveals that the approved feature boundary was wrong, such as “replace list with grid” when the real intended scope was “keep list and add a grid toggle”
+  - execution reveals a missing user-visible mode or scope decision that should have been resolved before spec
 
 ## Return Path
 - `implementation bug`:
@@ -95,8 +116,11 @@ Do not start executable spec work when:
 ## Traceability Rules
 - Use one run identifier such as `run-YYYYMMDD-01` for each active execution pass.
 - Use one spec document per active feature loop.
+- A run may include multiple attempts when execution loops, fails, or returns upward.
+- Record attempt boundaries in the run document when one pass is invalidated, returned to planning, returned to spec, or retried after a blocking issue.
 - Use evaluator reports that name:
   - run ID
+  - attempt number when relevant
   - feature ID
   - spec ID
   - evaluator type
@@ -104,7 +128,15 @@ Do not start executable spec work when:
   - fail classification when blocked
 - Use fix logs that reference the evaluator reports they addressed.
 - Use fix logs that also reference the active run ID.
+- Use fix logs that reference the active attempt when the same run has multiple passes.
 - Use heuristic backlog entries for non-blocking suggestion accumulation.
+
+## Invalidation Rule
+- If later evidence proves that an earlier execution pass was based on a wrong feature boundary, wrong spec basis, or materially invalid assumption:
+  - do not keep the earlier pass implied as valid
+  - mark the run or continuity notes so the earlier pass is explicitly invalidated or replaced
+  - preserve the correction path clearly enough that later readers can see why the current truth changed
+- Normal project work should prefer explicit attempt history over rewriting the same pass invisibly.
 
 ## Termination Conditions
 - The loop may end with:
