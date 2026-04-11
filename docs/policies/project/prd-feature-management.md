@@ -14,6 +14,7 @@
 ## Planning Layers
 - `docs/plans/prd/` owns bounded PRD documents.
 - `docs/plans/feature/` owns loop-sized feature documents derived from approved PRDs.
+- `docs/plans/spec/` owns implementation-facing specs derived from approved features.
 - `docs/policies/` continues to own durable project rules and contracts.
 
 ## Core Model
@@ -161,7 +162,9 @@ Use these statuses for PRD and feature documents:
 ## Traceability Rules
 - Every PRD should have a stable ID such as `prd-0001`.
 - Every feature should have a stable ID such as `feat-0001`.
+- Every spec should have a stable ID such as `spec-0001`.
 - Feature documents must link to their parent PRD by path and ID.
+- Spec documents should link to exactly one parent feature and one parent PRD by path and ID.
 - Harness runs, evaluator reports, or fix notes should reference the active feature ID.
 - When a document is revised materially, add a short dated continuity note instead of rewriting history invisibly.
 
@@ -198,4 +201,6 @@ Split a product feature when one or more of these become true:
 ## Relationship To Agent Roles
 - `docs/agents/prd-normalizer.md` defines how to stabilize raw inputs into a bounded PRD.
 - `docs/agents/feature-planner.md` defines how to decompose an approved PRD into loop-sized features.
+- `docs/agents/spec-agent.md` defines how to convert one approved feature into a build-ready spec.
+- `docs/policies/project/execution-loop-governance.md` defines how approved features move through execution loops and how failures route upward.
 - This guide defines where those outputs live and how they stay traceable over time.

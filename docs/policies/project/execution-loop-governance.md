@@ -1,0 +1,114 @@
+# Execution Loop Governance
+
+## Purpose
+- Define how approved features move through spec, build, evaluation, fix, and escalation.
+- Keep execution loops traceable, bounded, and type-aware.
+
+## Ownership
+- This document owns execution-loop rules.
+- Use `docs/agents/workflow.md` for sequence examples.
+- Use `docs/policies/project/prd-feature-management.md` for planning-layer rules and approval criteria.
+
+## Execution Artifacts
+- `docs/plans/spec/` owns implementation-facing specs.
+- `docs/plans/evaluation/` owns evaluator reports.
+- `docs/plans/fix/` owns fix logs.
+- `docs/plans/heuristic/` owns heuristic backlog records.
+
+## Core Operating Rules
+- Only one feature should normally be `in-loop` at a time.
+- Do not execute from raw planner output.
+- Do not silently expand scope during build, evaluation, or fix.
+- Every execution artifact must reference the active feature ID and active spec ID.
+- If a blocker belongs to planning or spec, route upward instead of normalizing it as an implementation defect.
+
+## Dependency Depth Guidance
+- Prefer dependency depth of `2` or less for any active feature.
+- If dependency depth exceeds `2`, the planner or orchestrator should:
+  - justify why the deeper chain is still stable
+  - or split the feature or contract work before execution continues
+- Treat this as a warning rule, not a hard universal ban.
+
+## Feature-Type-Aware Loops
+- `foundation` feature default loop:
+  - Spec Agent
+  - Builder or contract updater
+  - Functional Evaluator
+  - Fix Agent
+  - re-evaluate
+- `product` feature default loop:
+  - Spec Agent
+  - Builder
+  - Design Evaluator when visual surfaces matter
+  - Functional Evaluator
+  - UX Heuristic Evaluator as side-channel
+  - Fix Agent
+  - re-evaluate
+
+## Fail Classification
+Every blocking finding should be classified as one of:
+
+- `implementation bug`
+  - the approved spec is clear and the code does not satisfy it
+- `spec gap`
+  - the feature is approved, but the active spec is too weak or contradictory to execute safely
+- `planning gap`
+  - the issue changes approved scope, unresolved dependency meaning, or product-boundary intent
+
+## Return Path
+- `implementation bug`:
+  - continue normal build or fix loop
+- `spec gap`:
+  - stop normal fix work
+  - return to spec review
+- `planning gap`:
+  - stop normal execution
+  - return to feature or PRD review
+
+## Heuristic Side-Channel Rule
+- `UX Heuristic Evaluator` is a signal emitter, not a default blocking gate.
+- It may return:
+  - `PASS`
+  - `PASS WITH SUGGESTIONS`
+  - `FAIL`
+- `PASS WITH SUGGESTIONS` does not block feature completion.
+- Suggestions should be recorded in heuristic backlog artifacts and considered in later planning.
+- `FAIL` should be reserved for:
+  - dead-end interaction
+  - severe orientation loss
+  - unrecoverable navigation confusion
+  - contradiction inside already approved scope
+- If a heuristic failure implies new scope, return to spec or planning instead of fixing ad hoc.
+
+## Heuristic Severity Guidance
+- `low` and `medium` heuristic findings should default to backlog suggestions.
+- `high` heuristic findings should still default to backlog unless they contradict the already approved feature contract.
+- Only clearly blocking heuristic failures should stop the active loop.
+
+## Spec Readiness Gate
+Do not start executable spec work when:
+- a required foundation feature is not `passed`
+- an open PRD item still changes the active feature
+- the user-visible outcome or contract outcome is still ambiguous
+- required fallback behavior is still undefined
+
+## Traceability Rules
+- Use one run identifier such as `run-YYYYMMDD-01` for each active execution pass.
+- Use one spec document per active feature loop.
+- Use evaluator reports that name:
+  - run ID
+  - feature ID
+  - spec ID
+  - evaluator type
+  - pass/fail result
+  - fail classification when blocked
+- Use fix logs that reference the evaluator reports they addressed.
+- Use fix logs that also reference the active run ID.
+- Use heuristic backlog entries for non-blocking suggestion accumulation.
+
+## Termination Conditions
+- The loop may end with:
+  - `passed`
+  - `blocked`
+  - `returned-to-spec`
+  - `returned-to-planning`
