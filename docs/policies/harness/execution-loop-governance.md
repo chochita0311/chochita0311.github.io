@@ -7,7 +7,7 @@
 ## Ownership
 - This document owns execution-loop rules.
 - Use `docs/agents/workflow.md` for sequence examples.
-- Use `docs/policies/project/prd-feature-management.md` for planning-layer rules and approval criteria.
+- Use `docs/policies/harness/prd-feature-management.md` for planning-layer rules and approval criteria.
 
 ## Execution Artifacts
 - `docs/plans/run/` owns active run records.

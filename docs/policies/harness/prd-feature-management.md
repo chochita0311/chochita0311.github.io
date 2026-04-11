@@ -206,5 +206,5 @@ Split a product feature when one or more of these become true:
 - `docs/agents/prd-normalizer.md` defines how to stabilize raw inputs into a bounded PRD.
 - `docs/agents/feature-planner.md` defines how to decompose an approved PRD into loop-sized features.
 - `docs/agents/spec-agent.md` defines how to convert one approved feature into a build-ready spec.
-- `docs/policies/project/execution-loop-governance.md` defines how approved features move through execution loops and how failures route upward.
+- `docs/policies/harness/execution-loop-governance.md` defines how approved features move through execution loops and how failures route upward.
 - This guide defines where those outputs live and how they stay traceable over time.

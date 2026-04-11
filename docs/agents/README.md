@@ -23,8 +23,8 @@
 - `docs/agents/runner.md`: define how a human or harness starts and continues one run using prompts
 
 ## Related Local Docs
-- `docs/policies/project/prd-feature-management.md`: planning-governance rule for PRDs, features, approval, and traceability
-- `docs/policies/project/execution-loop-governance.md`: execution-loop rules, fail classification, routing, and artifact ownership
+- `docs/policies/harness/prd-feature-management.md`: planning-governance rule for PRDs, features, approval, and traceability
+- `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail classification, routing, and artifact ownership
 - `docs/plans/prd/template-prd.md`: local PRD template for bounded planning documents
 - `docs/plans/feature/template-feature.md`: local feature template for product and foundation features
 - `docs/plans/spec/template-spec.md`: local spec template for one approved execution target
@@ -38,7 +38,7 @@
 - Store evaluator reports under `docs/plans/evaluation/`.
 - Store fix logs under `docs/plans/fix/`.
 - Store heuristic backlog records under `docs/plans/heuristic/`.
-- Keep the rules for those artifacts in `docs/policies/project/prd-feature-management.md` instead of repeating them in folder README files.
+- Keep the rules for those artifacts in `docs/policies/harness/prd-feature-management.md` instead of repeating them in folder README files.
 
 ## Workflow Variation
 - Treat `docs/agents/workflow.md` as a strong default example, not the only valid orchestration shape.

@@ -9,8 +9,8 @@
 - Use it to understand the order of operations, stop points, and handoff moments between planning and execution.
 - It does not own the structural contract for PRDs or features.
 - It does not own the operator-facing run-start prompts.
-- Use `docs/policies/project/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
-- Use `docs/policies/project/execution-loop-governance.md` for fail classification, execution routing, heuristic handling, and execution-artifact ownership.
+- Use `docs/policies/harness/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
+- Use `docs/policies/harness/execution-loop-governance.md` for fail classification, execution routing, heuristic handling, and execution-artifact ownership.
 - Use `docs/agents/runner.md` when you need to actually start or continue one run through prompts.
 
 ## Workflow Assembly
@@ -102,9 +102,9 @@
 - Approved features must be concrete enough for the spec agent to proceed without guesswork.
 - If material ambiguity remains during planning and would block safe feature planning or spec handoff, stop and ask the human owner instead of carrying the ambiguity forward.
 - If a later evaluator detects a likely missing behavior, it may suggest it, but that behavior must return to spec approval before implementation.
-- Use `docs/policies/project/prd-feature-management.md` as the operating rule for where PRDs and features live and how they change.
+- Use `docs/policies/harness/prd-feature-management.md` as the operating rule for where PRDs and features live and how they change.
 - Use `docs/plans/spec/` for implementation-facing specs tied to one approved feature.
-- Use `docs/policies/project/execution-loop-governance.md` for execution-layer fail classification and return paths.
+- Use `docs/policies/harness/execution-loop-governance.md` for execution-layer fail classification and return paths.
 
 ## Reusable Prompt Frame
 Use this framing when invoking the early planning roles:

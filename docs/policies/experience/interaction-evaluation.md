@@ -9,7 +9,7 @@
 - This document owns reusable interaction-evaluation checks and cautions.
 - Use [../../agents/functional-evaluator.md](../../agents/functional-evaluator.md) for the functional evaluation role contract.
 - Use [../../agents/ux-heuristic-evaluator.md](../../agents/ux-heuristic-evaluator.md) for the UX heuristic evaluation role contract.
-- Use [../project/execution-loop-governance.md](../project/execution-loop-governance.md) for fail routing and loop handling.
+- Use [../harness/execution-loop-governance.md](../harness/execution-loop-governance.md) for fail routing and loop handling.
 
 ## Use
 - Apply these rules when evaluating visible state changes, navigation continuity, or browse and read flows.
