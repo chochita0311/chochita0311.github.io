@@ -1,14 +1,14 @@
-# Purpose
+# Icon Control Refactor Plan
 
 Create one controlled icon system for the repo so icon choice, naming, accessibility, and future migration from font icons to SVG stay manageable without changing the app's current behavior.
 
-# Refactor Type
+## Refactor Type
 
 - Primary type: Structural
 - Secondary type: Semantic
 - Behavior target: Preserve current visuals and runtime behavior while introducing icon governance and a shared control point.
 
-# Scope
+## Scope
 
 - In scope:
   - Material Symbols usage in HTML, CSS, and JavaScript
@@ -28,14 +28,14 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Replacing Material Symbols in the current runtime
   - Visual redesign beyond icon control and consistency
 
-# Non-Goals
+## Non-Goals
 
 - Do not add a build step.
 - Do not change the site away from GitHub Pages compatible static delivery.
 - Do not redesign the archive shell just to accommodate icon cleanup.
 - Do not mix unrelated component refactors into this track.
 
-# Invariants
+## Invariants
 
 - Keep GitHub Pages compatibility.
 - Keep the app lightweight and static-first.
@@ -43,7 +43,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Preserve current visible icon appearance unless an explicit icon rename is approved.
 - Do not introduce style drift across archive and note pages while centralizing icon control.
 
-# Planned Work
+## Planned Work
 
 ## Phase 1: Inventory And Baseline
 
@@ -176,7 +176,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Status:
   - Completed on 2026-04-10 in the design constitution and developer guidance.
 
-# Validation Gates
+## Validation Gates
 
 - Search-based inventory confirms all current icon names and usage sites.
 - A shared registry exists before broader migration claims are made.
@@ -189,25 +189,25 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Browser smoke checks passed for `http://127.0.0.1:4173/index.html` and `http://127.0.0.1:4173/pages/note/index.html?note=CATEGORIES/English/Langs%20Studio/Goals.md`.
   - Console errors discovered during smoke testing exposed unrelated note-page/runtime path issues and were corrected in the same cycle because they blocked clean validation of the touched icon paths.
 
-# Intentional Deltas
+## Intentional Deltas
 
 - Introduce a semantic icon registry as the canonical control point.
 - Introduce a shared icon rendering and accessibility pattern.
 - Add explicit icon governance to design and developer documentation.
 - Reduce reliance on raw icon-name literals spread through UI files.
 
-# Risks / Open Questions
+## Risks / Open Questions
 
 - Some current icon names such as `ios_share` may be platform-flavored and may deserve later normalization.
 - Static HTML will likely retain some direct icon markup even after JS centralization unless more abstraction is intentionally added.
 - If the product later needs stronger brand distinction or custom motion, selected icons may need to migrate from font glyphs to SVG.
 - The current design constitution does not yet define icon-specific rules, so doc ownership must be made explicit during implementation.
 
-# Exit Goal
+## Exit Goal
 
 After this track, the repo has one approved icon source, one registry, one rendering pattern, and one documentation owner for icon policy. The current runtime remains behaviorally stable while future icon changes become deliberate and reviewable.
 
-# Handoff To Next Track
+## Handoff To Next Track
 
 - Optional future work:
   - normalize platform-flavored icon names such as `ios_share` if the product needs less platform-specific language

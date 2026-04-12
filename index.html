@@ -128,16 +128,26 @@
             </div>
           </div>
           <div class="archive-hero__controls">
-            <label class="archive-page-size" for="archive-page-size">
-              <span class="archive-page-size__label">Page size</span>
-              <select
+            <div class="archive-page-size" id="archive-page-size-root">
+              <button
+                aria-controls="archive-page-size-menu"
+                aria-expanded="false"
+                aria-haspopup="menu"
                 aria-label="Archive page size"
-                class="archive-page-size__select"
-                id="archive-page-size"
+                class="archive-page-size__trigger"
+                id="archive-page-size-trigger"
+                type="button"
               >
-                <option value="10">10</option>
-              </select>
-            </label>
+                <span class="archive-page-size__current" id="archive-page-size-current">10</span>
+                <span
+                  aria-hidden="true"
+                  class="icon icon--material material-symbols-outlined archive-page-size__icon"
+                  >expand_more</span
+                >
+              </button>
+              <div class="archive-page-size__menu" hidden id="archive-page-size-menu"></div>
+            </div>
+            <span aria-hidden="true" class="archive-controls__divider"></span>
             <div aria-label="Archive view mode" class="archive-view-toggle" role="group">
               <button
                 aria-label="List view"
@@ -148,7 +158,7 @@
                 type="button"
               >
                 <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
-                  >view_agenda</span
+                  >format_list_bulleted</span
                 >
               </button>
               <button

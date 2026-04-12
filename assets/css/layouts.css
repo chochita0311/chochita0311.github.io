@@ -112,6 +112,7 @@
 
 .archive-hero__controls {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   gap: var(--space-4);
   margin-top: var(--space-8);

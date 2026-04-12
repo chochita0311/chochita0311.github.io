@@ -49,6 +49,16 @@
 - Visual drift often appears first in `font-size`, `line-height`, `letter-spacing`, and reserved icon spacing rather than in the text labels themselves.
 - Hidden or conditional icons must not leave idle-state spacing that makes one navigation item look wider or visually misaligned than its peers.
 
+### 7. Card Footer Baseline Consistency
+- Repeated cards in the same grid should keep footer metadata on the same visual levels even when title or summary length differs.
+- Tag rows, collection labels, dates, or similar footer metadata must align card-to-card instead of drifting with content height.
+- If footer content belongs to a fixed metadata zone, that zone should be anchored to the card box rather than to the variable text block above it.
+
+### 8. Metadata Layer Separation
+- Distinct metadata layers inside a compact card should not visually occupy the same horizontal band.
+- Tag chips and collection or locator labels should read as separate rows or clearly separated zones, not as partially overlapping content.
+- Evaluators should check long-content cases, multi-tag cases, and short-summary cases to confirm the metadata hierarchy still reads cleanly.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.

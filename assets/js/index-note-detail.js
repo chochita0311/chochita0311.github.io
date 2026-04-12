@@ -2,8 +2,6 @@ function archiveListView() {
   return document.getElementById("archive-list-view");
 }
 
-const { ICONS, renderIcon } = window.AppIcons;
-
 function archiveDetailView() {
   return document.getElementById("archive-detail-view");
 }
@@ -61,10 +59,10 @@ function renderListFooterPanel() {
 <span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
 <div class="pagination-controls">
 <button class="pagination-button pagination-button--disabled" id="archive-prev-button" type="button">
-${renderIcon(ICONS.navigation.previous)}
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">chevron_left</span>
 </button>
 <button class="pagination-button pagination-button--primary" id="archive-next-button" type="button">
-${renderIcon(ICONS.navigation.next)}
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined">chevron_right</span>
 </button>
 </div>`;
 }

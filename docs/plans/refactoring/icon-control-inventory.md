@@ -1,8 +1,8 @@
-# Purpose
+# Icon Control Inventory
+
+## Purpose
 
 Record the verified baseline icon inventory for the icon-control refactor track so migration work can prove coverage instead of assuming it.
-
-# Inventory
 
 ## Approved Runtime Source
 

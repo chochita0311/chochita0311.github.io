@@ -90,8 +90,20 @@
     return document.getElementById("archive-page-label");
   }
 
-  function archivePageSizeSelect() {
-    return document.getElementById("archive-page-size");
+  function archivePageSizeRoot() {
+    return document.getElementById("archive-page-size-root");
+  }
+
+  function archivePageSizeTrigger() {
+    return document.getElementById("archive-page-size-trigger");
+  }
+
+  function archivePageSizeCurrent() {
+    return document.getElementById("archive-page-size-current");
+  }
+
+  function archivePageSizeMenu() {
+    return document.getElementById("archive-page-size-menu");
   }
 
   function archiveViewButtons() {
@@ -246,24 +258,37 @@
     return `${noteCount} notes tagged ${prettifyTag(archiveState.activeTag)} across the archive.`;
   }
 
+  function tagMarkup(tags, { compact = false } = {}) {
+    const visibleTags = compact ? tags.slice(0, 2) : tags;
+    const hiddenTagCount = compact ? Math.max(0, tags.length - visibleTags.length) : 0;
+    const chips = visibleTags.map((tag) => {
+      const prettyTag = prettifyTag(tag);
+      return `<span class="note-tag" title="${escapeHtml(prettyTag)}">${escapeHtml(prettyTag)}</span>`;
+    });
+
+    if (hiddenTagCount > 0) {
+      chips.push(`<span class="note-tag note-tag--more">+${String(hiddenTagCount)}</span>`);
+    }
+
+    return chips.join("");
+  }
+
   function noteCardMarkup(note) {
     const dateLabel = formatArchiveDate(note);
     const isGrid = archiveState.viewMode === "grid";
     const secondaryMeta = isGrid ? dateLabel || note.collection : note.collection;
-    const tagMarkup = note.tags
-      .map((tag) => `<span class="note-tag">${escapeHtml(prettifyTag(tag))}</span>`)
-      .join("");
+    const tagsMarkup = tagMarkup(note.tags, { compact: isGrid });
     const cardClass = isGrid ? "note-card note-card--grid" : "note-card note-card--list";
     const footerMarkup = isGrid
       ? `<div class="note-card__footer">
 <div class="note-card__tags">
-${tagMarkup}
+${tagsMarkup}
 </div>
 <p class="note-card__collection">${escapeHtml(note.collection)}</p>
 </div>`
       : `<div class="note-card__footer">
 <div class="note-card__tags">
-${tagMarkup}
+${tagsMarkup}
 </div>
 </div>`;
 
@@ -294,21 +319,35 @@ ${footerMarkup}
   }
 
   function syncPageSizeControl() {
-    const select = archivePageSizeSelect();
+    const current = archivePageSizeCurrent();
+    const menu = archivePageSizeMenu();
 
-    if (!select) {
+    if (!current || !menu) {
       return;
     }
 
     const options = pageSizeOptionsForView(archiveState.viewMode);
-
-    select.innerHTML = options
-      .map(
-        (value) =>
-          `<option value="${String(value)}"${value === archiveState.pageSize ? " selected" : ""}>${String(value)}</option>`,
-      )
+    current.textContent = String(archiveState.pageSize);
+    menu.innerHTML = options
+      .map((value) => {
+        const isSelected = value === archiveState.pageSize;
+        return `<button class="archive-page-size__option${isSelected ? " archive-page-size__option--selected" : ""}" data-archive-page-size="${String(value)}" role="menuitemradio" aria-checked="${isSelected ? "true" : "false"}" type="button"><span>${String(value)}</span>${isSelected ? '<span aria-hidden="true" class="icon icon--material material-symbols-outlined archive-page-size__check">check</span>' : ""}</button>`;
+      })
       .join("");
-    select.value = String(archiveState.pageSize);
+  }
+
+  function setPageSizeMenuOpen(isOpen) {
+    const root = archivePageSizeRoot();
+    const trigger = archivePageSizeTrigger();
+    const menu = archivePageSizeMenu();
+
+    if (!root || !trigger || !menu) {
+      return;
+    }
+
+    root.dataset.open = isOpen ? "true" : "false";
+    trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menu.hidden = !isOpen;
   }
 
   function syncViewToggleButtons() {
@@ -391,8 +430,27 @@ ${footerMarkup}
       return;
     }
 
-    archivePageSizeSelect()?.addEventListener("change", (event) => {
-      const nextPageSize = Number.parseInt(event.target.value, 10);
+    const root = archivePageSizeRoot();
+    const trigger = archivePageSizeTrigger();
+    const menu = archivePageSizeMenu();
+
+    if (!root || !trigger || !menu) {
+      return;
+    }
+
+    trigger.addEventListener("click", () => {
+      const isOpen = trigger.getAttribute("aria-expanded") === "true";
+      setPageSizeMenuOpen(!isOpen);
+    });
+
+    menu.addEventListener("click", (event) => {
+      const option = event.target.closest("[data-archive-page-size]");
+
+      if (!option) {
+        return;
+      }
+
+      const nextPageSize = Number.parseInt(option.dataset.archivePageSize, 10);
 
       if (!Number.isInteger(nextPageSize) || nextPageSize <= 0) {
         return;
@@ -400,7 +458,22 @@ ${footerMarkup}
 
       archiveState.pageSize = nextPageSize;
       archiveState.page = 1;
+      setPageSizeMenuOpen(false);
       renderArchivePage();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (root.contains(event.target)) {
+        return;
+      }
+
+      setPageSizeMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setPageSizeMenuOpen(false);
+      }
     });
 
     pageSizeBound = true;
@@ -741,7 +814,6 @@ ${footerMarkup}
     archiveNoteList().innerHTML = visibleNotes.map(noteCardMarkup).join("");
     syncPageSizeControl();
     syncViewToggleButtons();
-
     setPaginationButtonState(archivePrevButton(), archiveState.page > 1);
     setPaginationButtonState(archiveNextButton(), archiveState.page < totalPages);
   }
@@ -772,7 +844,7 @@ ${footerMarkup}
 <h2 class="note-card__title">No notes yet</h2>
 <p class="note-card__summary">This area is ready for content, but there are no notes to render for the current selection.</p>
 </div>
-</article>`;
+    </article>`;
     archivePageLabel().textContent = "Page 00 / 00";
     setPaginationButtonState(archivePrevButton(), false);
     setPaginationButtonState(archiveNextButton(), false);
