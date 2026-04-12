@@ -1,19 +1,27 @@
 # Agent Workflow
 
 ## Purpose
+
 - Define the baton flow for bounded, repeatable product work.
 - Keep creative scope decisions separate from implementation loops.
 
 ## Ownership
+
 - This document owns sequence.
 - Use it to understand the order of operations, stop points, and handoff moments between planning and execution.
 - It does not own the structural contract for PRDs or features.
 - It does not own the operator-facing run-start prompts.
 - Use `docs/policies/harness/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
 - Use `docs/policies/harness/execution-loop-governance.md` for fail classification, execution routing, heuristic handling, and execution-artifact ownership.
-- Use `docs/agents/runner.md` when you need to actually start or continue one run through prompts.
+- Use `docs/policies/harness/execution-loop-governance.md` as the owner for the explicit return model:
+  - continue in loop
+  - return to spec
+  - return to planning
+  - re-entry after correction
+- Use `docs/agents/operation/runner.md` when you need to actually start or continue one run through prompts.
 
 ## Workflow Assembly
+
 - Workflows are composable, not universal.
 - A project may use only the roles and steps it actually needs.
 - Some projects may stop at planning roles, while others may extend into spec, build, evaluator, and fixer loops.
@@ -22,6 +30,7 @@
 - Keep role contracts stable and vary the sequence, gates, or evaluator mix as the project grows.
 
 ## Step-By-Step Flow
+
 1. Human request
    - Provide the request, golden sources, and any strong constraints.
 2. `PRD Normalizer`
@@ -48,23 +57,46 @@
 9. Feature approval
    - Mark only the chosen execution target as `approved`.
 10. `Orchestrator`
-   - Select the active feature, active spec target, and evaluator set.
+
+- Select the active feature, active spec target, and evaluator set.
+
 11. `Spec Agent`
-   - Write or update one implementation-facing spec in `docs/plans/spec/`.
+
+- Write or update one implementation-facing spec in `docs/plans/spec/`.
+
 12. `Builder`
-   - Implement only the approved feature boundary from the active spec.
+
+- Implement only the approved feature boundary from the active spec.
+
 13. `Design Evaluator`
-   - Check source and design-surface fidelity when the feature is visually sensitive.
+
+- Check source and design-surface fidelity when the feature is visually sensitive.
+
 14. `Functional Evaluator`
-   - Check behavior, state handling, transitions, and regressions.
+
+- Check behavior, state handling, transitions, and regressions.
+
 15. `UX Heuristic Evaluator`
-   - Emit blocking UX failures or non-blocking suggestions.
+
+- Emit blocking UX failures or non-blocking suggestions.
+
 16. `Fix Agent`
-   - Fix only the approved feature defects surfaced by evaluators.
+
+- Fix only the approved feature defects surfaced by evaluators.
+
 17. Re-evaluate
-   - Repeat the needed evaluator and fix steps until pass or until the work must return to planning or spec review.
+
+- Repeat the needed evaluator and fix steps until pass or until the work must return to planning or spec review.
+
+## Return Model Reminder
+
+- If the defect is only in implementation, stay in the active loop.
+- If the feature is right but the spec is weak, return to spec.
+- If the approved boundary is wrong, return to feature or PRD review.
+- After correction, re-enter from the corrected layer instead of skipping forward.
 
 ## Role Boundaries
+
 - Human:
   - sets product direction
   - supplies or approves golden sources
@@ -96,6 +128,7 @@
   - returns to planning or spec review when findings expose boundary or contract problems
 
 ## Approval Rule
+
 - Planning output is not executable truth until a human locks the boundary.
 - PRD and feature planning should pause at their review steps instead of flowing forward automatically.
 - PRDs may carry explicitly recorded open items when they do not block safe feature planning.
@@ -107,6 +140,7 @@
 - Use `docs/policies/harness/execution-loop-governance.md` for execution-layer fail classification and return paths.
 
 ## Reusable Prompt Frame
+
 Use this framing when invoking the early planning roles:
 
 ```text
@@ -127,6 +161,7 @@ Process:
 ```
 
 ## Execution Loop Guidance
+
 - `Orchestrator` should keep only one feature in active loop unless the human owner explicitly opts into parallel execution.
 - `Spec Agent` is the first execution role and should create one spec per active feature.
 - `Builder` should work from the active spec, not directly from rough feature prose.
@@ -144,6 +179,7 @@ Process:
   - planning gap
 
 ## Example Variations
+
 - Planning-only:
   - Human -> PRD Normalizer -> PRD review -> Feature Planner -> feature review
 - Standard single-surface loop:
@@ -156,5 +192,6 @@ Process:
   - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> parallel FE/BE build branches -> evaluator set -> Fix Agent
 
 ## Design Note
+
 - A single golden screen can be enough to bootstrap later work if it yields a stable design grammar.
 - If later features introduce patterns that the sources do not cover, treat them as uncertainty and request more source material instead of improvising.

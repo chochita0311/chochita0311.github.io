@@ -1,5 +1,5 @@
 ---
-id: technology-java-with
+id: 30
 title: "@With"
 summary: Reference note on Lombok @With for cloning and updating immutable Java objects.
 created: 2026-04-05

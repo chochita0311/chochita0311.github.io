@@ -4,6 +4,32 @@ import path from "node:path";
 const ROOT_DIR = process.cwd();
 const CATEGORIES_DIR = path.join(ROOT_DIR, "CATEGORIES");
 const OUTPUT_PATH = path.join(ROOT_DIR, "assets", "generated", "archives-index.json");
+const SEARCH_INDEX_OUTPUT_PATH = path.join(
+  ROOT_DIR,
+  "assets",
+  "generated",
+  "archives-search-index.json",
+);
+const SEARCH_TOKEN_PATTERN = /[a-z0-9]+|[가-힣]+/g;
+const ENGLISH_STOPWORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "as",
+  "at",
+  "by",
+  "for",
+  "from",
+  "in",
+  "is",
+  "of",
+  "on",
+  "or",
+  "the",
+  "this",
+  "to",
+  "with",
+]);
 
 function toPosixPath(value) {
   return value.split(path.sep).join("/");
@@ -61,6 +87,16 @@ function titleFromPath(notePath) {
   return path.basename(notePath, ".md");
 }
 
+function parseNumericId(value, filePath) {
+  const normalized = String(value || "").trim();
+
+  if (!/^\d+$/.test(normalized)) {
+    throw new Error(`Note id must be a numeric integer in ${filePath}`);
+  }
+
+  return Number.parseInt(normalized, 10);
+}
+
 function isNoiseLine(line, title) {
   const normalized = line.replace(/^-\s*/, "").trim();
 
@@ -102,6 +138,104 @@ function extractSummary(markdown, fallbackTitle) {
   }
 
   return `Study note for ${fallbackTitle}.`;
+}
+
+function stripMarkdown(markdown) {
+  return markdown
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]*`/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/^#{1,6}\s+/gm, " ")
+    .replace(/^>\s?/gm, " ")
+    .replace(/^[-*+]\s+/gm, " ")
+    .replace(/^\d+\.\s+/gm, " ")
+    .replace(/\|/g, " ")
+    .replace(/[*_~]/g, " ")
+    .replace(/<[^>]+>/g, " ");
+}
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase();
+}
+
+function tokenizeText(value) {
+  const normalized = normalizeSearchText(value);
+  const matches = normalized.match(SEARCH_TOKEN_PATTERN);
+
+  return matches ? [...new Set(matches)] : [];
+}
+
+function isNumericOnlyToken(token) {
+  return /^\d+$/.test(token);
+}
+
+function shouldKeepSearchToken(token, { fromTag = false } = {}) {
+  if (!token) {
+    return false;
+  }
+
+  if (isNumericOnlyToken(token)) {
+    return false;
+  }
+
+  if (!fromTag && token.length <= 1) {
+    return false;
+  }
+
+  if (ENGLISH_STOPWORDS.has(token)) {
+    return false;
+  }
+
+  return true;
+}
+
+function buildSearchIndex(notes) {
+  const terms = new Map();
+
+  notes.forEach((note) => {
+    const addTokens = (tokens, options = {}) => {
+      tokens.forEach((token) => {
+        if (!shouldKeepSearchToken(token, options)) {
+          return;
+        }
+
+        if (!terms.has(token)) {
+          terms.set(token, new Set());
+        }
+
+        terms.get(token).add(note.id);
+      });
+    };
+
+    addTokens(tokenizeText(note.title));
+    note.tags.forEach((tag) => addTokens(tokenizeText(tag), { fromTag: true }));
+    addTokens(tokenizeText(stripMarkdown(note.body)));
+  });
+
+  return {
+    version: 1,
+    generatedAt: new Date().toISOString(),
+    tokenizer: {
+      normalization: "NFKC lowercase",
+      pattern: SEARCH_TOKEN_PATTERN.source,
+      partialMatch: false,
+      filters: {
+        excludeNumericOnly: true,
+        excludeSingleCharacter: true,
+        englishStopwords: [...ENGLISH_STOPWORDS].sort(),
+        shortTagException: true,
+      },
+    },
+    fields: ["title", "tags", "body"],
+    terms: Object.fromEntries(
+      [...terms.entries()]
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([token, noteIds]) => [token, [...noteIds].sort((left, right) => left - right)]),
+    ),
+  };
 }
 
 async function collectMarkdownFiles(directory) {
@@ -176,9 +310,7 @@ async function buildNotesIndex() {
     const { attributes, body } = parseFrontmatter(markdown);
 
     notes.push({
-      id:
-        attributes.id ||
-        `${category}-${collection}-${fallbackTitle}`.toLowerCase().replaceAll(/\s+/g, "-"),
+      id: parseNumericId(attributes.id, relativePath),
       title: attributes.title || fallbackTitle,
       summary: attributes.summary || extractSummary(body, fallbackTitle),
       tags: Array.isArray(attributes.tags) ? attributes.tags : [],
@@ -187,6 +319,7 @@ async function buildNotesIndex() {
       category,
       collection,
       path: relativePath,
+      body,
     });
   }
 
@@ -195,12 +328,18 @@ async function buildNotesIndex() {
 
 async function main() {
   const notesIndex = await buildNotesIndex();
+  const searchIndex = buildSearchIndex(notesIndex);
+  const runtimeNotesIndex = notesIndex.map(({ body: _body, ...note }) => note);
 
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await writeFile(OUTPUT_PATH, `${JSON.stringify(notesIndex, null, 2)}\n`, "utf8");
+  await writeFile(OUTPUT_PATH, `${JSON.stringify(runtimeNotesIndex, null, 2)}\n`, "utf8");
+  await writeFile(SEARCH_INDEX_OUTPUT_PATH, `${JSON.stringify(searchIndex, null, 2)}\n`, "utf8");
 
   console.log(
     `Generated ${notesIndex.length} notes in ${toPosixPath(path.relative(ROOT_DIR, OUTPUT_PATH))}`,
+  );
+  console.log(
+    `Generated search index in ${toPosixPath(path.relative(ROOT_DIR, SEARCH_INDEX_OUTPUT_PATH))}`,
   );
 }
 

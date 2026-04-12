@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-money-management
+id: 19
 title: Money Management
 summary: Speaking prompts and vocabulary notes about budgeting, spending habits, and financial choices.
 created: 2025-07-16
@@ -13,18 +13,21 @@ tags:
 ---
 
 **1) Personal Habits & Experience**
+
 - What strategies do you use to keep track of your monthly spending?
 - How do your spending habits change when you’re stressed or busy?
 - What’s the most valuable lesson you’ve learned about money from your past experience?
 - Tell me about a time when you saved money successfully. What helped you stay consistent?
 
 **2) Opinions & Values**
+
 - What does “financial freedom” mean to you, and how do you plan to reach it?
 - How do you decide whether something is worth spending money on or not?
 - What do you think is the biggest mistake people make with their money?
 - In your opinion, what role does money play in a happy life?
 
 **3) Hypothetical & Future Thinking**
+
 - Imagine you earn double your current income—how would your lifestyle change?
 - How would you help a teenager understand the importance of saving money?
 - Describe your ideal monthly budget. What would you prioritize?

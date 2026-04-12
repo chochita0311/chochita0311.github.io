@@ -1,5 +1,5 @@
 ---
-id: technology-java-modifying
+id: 24
 title: "@Modifying"
 summary: Short reference note for Spring Data JPA @Modifying and update or delete query behavior.
 created: 2026-04-05

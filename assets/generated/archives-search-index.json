@@ -1,0 +1,16163 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-12T03:33:42.289Z",
+  "tokenizer": {
+    "normalization": "NFKC lowercase",
+    "pattern": "[a-z0-9]+|[가-힣]+",
+    "partialMatch": false,
+    "filters": {
+      "excludeNumericOnly": true,
+      "excludeSingleCharacter": true,
+      "englishStopwords": [
+        "a",
+        "an",
+        "and",
+        "as",
+        "at",
+        "by",
+        "for",
+        "from",
+        "in",
+        "is",
+        "of",
+        "on",
+        "or",
+        "the",
+        "this",
+        "to",
+        "with"
+      ],
+      "shortTagException": true
+    }
+  },
+  "fields": [
+    "title",
+    "tags",
+    "body"
+  ],
+  "terms": {
+    "18th": [
+      12
+    ],
+    "1ouzapm0": [
+      33
+    ],
+    "2f62587ccb23": [
+      23
+    ],
+    "30th": [
+      12
+    ],
+    "34d04fb23fea": [
+      22
+    ],
+    "8a": [
+      32
+    ],
+    "8c": [
+      21,
+      22
+    ],
+    "8f": [
+      21
+    ],
+    "9a": [
+      21,
+      22,
+      32
+    ],
+    "9c": [
+      21,
+      32
+    ],
+    "9d": [
+      22,
+      32
+    ],
+    "9e": [
+      32
+    ],
+    "a0": [
+      32
+    ],
+    "a1office": [
+      33
+    ],
+    "a9": [
+      21,
+      22
+    ],
+    "ability": [
+      9
+    ],
+    "able": [
+      5
+    ],
+    "about": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12,
+      13,
+      15,
+      16,
+      19,
+      20
+    ],
+    "abroad": [
+      5,
+      8,
+      17
+    ],
+    "absolutely": [
+      5
+    ],
+    "abstract": [
+      31
+    ],
+    "ac": [
+      21,
+      22
+    ],
+    "academic": [
+      15,
+      17
+    ],
+    "academy": [
+      9
+    ],
+    "accessibility": [
+      8
+    ],
+    "accident": [
+      16
+    ],
+    "accommodation": [
+      3,
+      18
+    ],
+    "accomplishment": [
+      8
+    ],
+    "accountability": [
+      11
+    ],
+    "achieved": [
+      17
+    ],
+    "achievement": [
+      8,
+      9,
+      17
+    ],
+    "achievements": [
+      8
+    ],
+    "across": [
+      3,
+      5,
+      13,
+      14
+    ],
+    "acted": [
+      6
+    ],
+    "action": [
+      7
+    ],
+    "activities": [
+      16
+    ],
+    "activity": [
+      15,
+      16
+    ],
+    "actual": [
+      13
+    ],
+    "ad": [
+      7
+    ],
+    "adapt": [
+      2,
+      4,
+      5
+    ],
+    "adaptable": [
+      2
+    ],
+    "adaptation": [
+      8
+    ],
+    "add": [
+      14
+    ],
+    "addictive": [
+      14
+    ],
+    "adds": [
+      19
+    ],
+    "admit": [
+      2
+    ],
+    "adopted": [
+      20
+    ],
+    "ads": [
+      7
+    ],
+    "adult": [
+      9,
+      12
+    ],
+    "adults": [
+      12
+    ],
+    "advantage": [
+      2
+    ],
+    "adventure": [
+      5
+    ],
+    "adventurous": [
+      5
+    ],
+    "advice": [
+      8
+    ],
+    "affected": [
+      1
+    ],
+    "affection": [
+      5,
+      6
+    ],
+    "affordable": [
+      3
+    ],
+    "after": [
+      1,
+      3,
+      4,
+      6,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      17,
+      19,
+      20
+    ],
+    "against": [
+      6,
+      7
+    ],
+    "age": [
+      9,
+      12
+    ],
+    "agree": [
+      2
+    ],
+    "ai": [
+      7
+    ],
+    "aim": [
+      2
+    ],
+    "aiming": [
+      2
+    ],
+    "airbnb": [
+      18
+    ],
+    "aligns": [
+      2
+    ],
+    "alive": [
+      11
+    ],
+    "all": [
+      1,
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      13,
+      18,
+      20
+    ],
+    "allowance": [
+      19
+    ],
+    "allowed": [
+      6
+    ],
+    "almost": [
+      10,
+      14,
+      16
+    ],
+    "alone": [
+      1,
+      5,
+      8,
+      11,
+      18
+    ],
+    "along": [
+      6,
+      9,
+      13
+    ],
+    "already": [
+      10
+    ],
+    "also": [
+      7,
+      10,
+      11
+    ],
+    "alternative": [
+      29
+    ],
+    "although": [
+      8
+    ],
+    "always": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      18,
+      20
+    ],
+    "am": [
+      5
+    ],
+    "amazed": [
+      9
+    ],
+    "amazing": [
+      20
+    ],
+    "ambiance": [
+      3,
+      8
+    ],
+    "ambition": [
+      2
+    ],
+    "amenities": [
+      16
+    ],
+    "amount": [
+      14
+    ],
+    "ancient": [
+      15
+    ],
+    "andriymz": [
+      33
+    ],
+    "anniversary": [
+      3,
+      13
+    ],
+    "annotation": [
+      21,
+      24
+    ],
+    "annotations": [
+      27,
+      30
+    ],
+    "annoys": [
+      18
+    ],
+    "anxiety": [
+      11
+    ],
+    "any": [
+      2,
+      5,
+      7,
+      9,
+      10,
+      14
+    ],
+    "anymore": [
+      20
+    ],
+    "anything": [
+      4
+    ],
+    "anyway": [
+      13
+    ],
+    "anywhere": [
+      5,
+      8
+    ],
+    "aop": [
+      32
+    ],
+    "apache": [
+      33
+    ],
+    "apart": [
+      9,
+      15
+    ],
+    "api": [
+      33,
+      35
+    ],
+    "apidocs": [
+      33
+    ],
+    "app": [
+      14,
+      25
+    ],
+    "apparently": [
+      10
+    ],
+    "appearance": [
+      6,
+      7
+    ],
+    "append": [
+      35
+    ],
+    "apple": [
+      4
+    ],
+    "application": [
+      15,
+      34
+    ],
+    "applicationrunner": [
+      34
+    ],
+    "apply": [
+      5,
+      9
+    ],
+    "appointment": [
+      4
+    ],
+    "appreciation": [
+      13
+    ],
+    "approach": [
+      6,
+      8
+    ],
+    "apps": [
+      14
+    ],
+    "are": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17
+    ],
+    "area": [
+      7
+    ],
+    "argue": [
+      1
+    ],
+    "arguing": [
+      1
+    ],
+    "arise": [
+      2
+    ],
+    "arm": [
+      13
+    ],
+    "around": [
+      3,
+      4,
+      5,
+      6,
+      9
+    ],
+    "arrived": [
+      13
+    ],
+    "art": [
+      3,
+      15
+    ],
+    "articles": [
+      32
+    ],
+    "ask": [
+      2,
+      3
+    ],
+    "asked": [
+      2
+    ],
+    "asleep": [
+      10
+    ],
+    "assembly": [
+      15
+    ],
+    "assignment": [
+      9
+    ],
+    "assignments": [
+      7
+    ],
+    "async": [
+      21
+    ],
+    "atmosphere": [
+      2,
+      3,
+      5,
+      12
+    ],
+    "attendance": [
+      15
+    ],
+    "attention": [
+      3
+    ],
+    "audit": [
+      23
+    ],
+    "auditing": [
+      23
+    ],
+    "aunt": [
+      6
+    ],
+    "aunts": [
+      6
+    ],
+    "aurora": [
+      5
+    ],
+    "authentic": [
+      3
+    ],
+    "authenticity": [
+      9
+    ],
+    "autonomy": [
+      2,
+      11
+    ],
+    "autoscaling": [
+      35
+    ],
+    "autowired": [
+      31
+    ],
+    "average": [
+      10
+    ],
+    "avoid": [
+      4,
+      7,
+      29
+    ],
+    "award": [
+      17
+    ],
+    "awards": [
+      17
+    ],
+    "aware": [
+      4
+    ],
+    "awareness": [
+      4
+    ],
+    "away": [
+      4,
+      5,
+      8,
+      13,
+      15,
+      20
+    ],
+    "awkward": [
+      13
+    ],
+    "aws": [
+      35
+    ],
+    "b0": [
+      21,
+      32
+    ],
+    "b3": [
+      32
+    ],
+    "b4": [
+      22,
+      32
+    ],
+    "b8": [
+      21,
+      22,
+      32
+    ],
+    "b9": [
+      21
+    ],
+    "back": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      20
+    ],
+    "background": [
+      2,
+      6,
+      10
+    ],
+    "backlog": [
+      35
+    ],
+    "backpacking": [
+      5
+    ],
+    "backstroke": [
+      16
+    ],
+    "bad": [
+      1,
+      6,
+      7,
+      17
+    ],
+    "baeldung": [
+      21,
+      23,
+      24,
+      28,
+      29,
+      30,
+      31,
+      33
+    ],
+    "bag": [
+      13,
+      18
+    ],
+    "balance": [
+      6
+    ],
+    "banana": [
+      16
+    ],
+    "bar": [
+      2,
+      12
+    ],
+    "barely": [
+      10
+    ],
+    "bash": [
+      12
+    ],
+    "basics": [
+      8
+    ],
+    "bathhouse": [
+      16
+    ],
+    "bc": [
+      22
+    ],
+    "be": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      13,
+      14,
+      15,
+      17
+    ],
+    "beach": [
+      3
+    ],
+    "beaches": [
+      16
+    ],
+    "beans": [
+      32
+    ],
+    "bear": [
+      1,
+      13
+    ],
+    "beaten": [
+      5
+    ],
+    "became": [
+      6,
+      9
+    ],
+    "because": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      14,
+      15,
+      20
+    ],
+    "become": [
+      2,
+      5,
+      8
+    ],
+    "becomes": [
+      11
+    ],
+    "bed": [
+      10,
+      20
+    ],
+    "been": [
+      1,
+      5,
+      11,
+      20
+    ],
+    "before": [
+      1,
+      5,
+      7,
+      9,
+      10,
+      13
+    ],
+    "behavior": [
+      7
+    ],
+    "being": [
+      4,
+      6,
+      11
+    ],
+    "belated": [
+      12
+    ],
+    "beliefs": [
+      7
+    ],
+    "believe": [
+      3,
+      4,
+      7
+    ],
+    "believed": [
+      15
+    ],
+    "bend": [
+      7
+    ],
+    "bending": [
+      7
+    ],
+    "besides": [
+      15
+    ],
+    "best": [
+      2,
+      7,
+      8,
+      10,
+      12,
+      13,
+      15
+    ],
+    "better": [
+      4,
+      8,
+      10,
+      11,
+      14,
+      15,
+      33
+    ],
+    "between": [
+      7,
+      9,
+      14
+    ],
+    "big": [
+      1,
+      5,
+      11,
+      12,
+      13,
+      20
+    ],
+    "biggest": [
+      8,
+      15,
+      19
+    ],
+    "bird": [
+      10
+    ],
+    "birds": [
+      10
+    ],
+    "birthday": [
+      12,
+      13
+    ],
+    "birthdays": [
+      6,
+      12
+    ],
+    "bit": [
+      4,
+      19
+    ],
+    "bite": [
+      1
+    ],
+    "black": [
+      10
+    ],
+    "blend": [
+      11
+    ],
+    "block": [
+      6,
+      8,
+      10
+    ],
+    "blockers": [
+      7
+    ],
+    "blog": [
+      29,
+      33
+    ],
+    "blood": [
+      6
+    ],
+    "blow": [
+      9
+    ],
+    "blue": [
+      3,
+      13
+    ],
+    "boat": [
+      16
+    ],
+    "body": [
+      10
+    ],
+    "bond": [
+      6,
+      9,
+      11
+    ],
+    "bonding": [
+      15
+    ],
+    "bonds": [
+      6,
+      9
+    ],
+    "booking": [
+      18
+    ],
+    "books": [
+      8
+    ],
+    "boot": [
+      34
+    ],
+    "boring": [
+      15
+    ],
+    "both": [
+      1,
+      3
+    ],
+    "bothered": [
+      3
+    ],
+    "bought": [
+      13
+    ],
+    "bounce": [
+      8
+    ],
+    "bouncing": [
+      8
+    ],
+    "boundaries": [
+      1
+    ],
+    "boundary": [
+      1
+    ],
+    "box": [
+      9,
+      13
+    ],
+    "branch": [
+      3
+    ],
+    "brand": [
+      3
+    ],
+    "bravery": [
+      7
+    ],
+    "breach": [
+      7
+    ],
+    "bread": [
+      6
+    ],
+    "breadwinner": [
+      6
+    ],
+    "break": [
+      1,
+      2,
+      6,
+      9,
+      13,
+      15,
+      17
+    ],
+    "breakdown": [
+      1
+    ],
+    "breakfast": [
+      18
+    ],
+    "breaks": [
+      9
+    ],
+    "breakthrough": [
+      11,
+      17
+    ],
+    "bridge": [
+      20
+    ],
+    "bring": [
+      2,
+      5,
+      9
+    ],
+    "brings": [
+      2
+    ],
+    "broken": [
+      10,
+      19
+    ],
+    "broker": [
+      35
+    ],
+    "brother": [
+      3
+    ],
+    "bucket": [
+      5
+    ],
+    "budget": [
+      12,
+      19
+    ],
+    "build": [
+      1,
+      2,
+      5,
+      8
+    ],
+    "builder": [
+      28
+    ],
+    "built": [
+      5
+    ],
+    "bulk": [
+      35
+    ],
+    "burden": [
+      15
+    ],
+    "burn": [
+      1,
+      10
+    ],
+    "burning": [
+      10
+    ],
+    "burnout": [
+      4
+    ],
+    "burnt": [
+      4
+    ],
+    "burst": [
+      13
+    ],
+    "bus": [
+      10
+    ],
+    "business": [
+      3,
+      5
+    ],
+    "busy": [
+      5,
+      19
+    ],
+    "but": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18,
+      19,
+      20
+    ],
+    "buttons": [
+      1
+    ],
+    "buy": [
+      4
+    ],
+    "cabin": [
+      16
+    ],
+    "cafeteria": [
+      3,
+      15
+    ],
+    "caffeine": [
+      1
+    ],
+    "call": [
+      4,
+      9,
+      16
+    ],
+    "calm": [
+      1
+    ],
+    "came": [
+      13
+    ],
+    "can": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      19,
+      20
+    ],
+    "card": [
+      3,
+      13,
+      19
+    ],
+    "cardios": [
+      3
+    ],
+    "cards": [
+      13
+    ],
+    "care": [
+      3,
+      4,
+      5,
+      12
+    ],
+    "cared": [
+      15
+    ],
+    "career": [
+      2,
+      5,
+      17
+    ],
+    "carefree": [
+      9
+    ],
+    "careful": [
+      11
+    ],
+    "carry": [
+      2,
+      7,
+      11,
+      18
+    ],
+    "case": [
+      20
+    ],
+    "cash": [
+      13
+    ],
+    "catch": [
+      4,
+      8,
+      10,
+      35
+    ],
+    "catching": [
+      8
+    ],
+    "catnap": [
+      10
+    ],
+    "cdc": [
+      35
+    ],
+    "celebrate": [
+      6,
+      12
+    ],
+    "celebration": [
+      6,
+      12
+    ],
+    "celebrations": [
+      12,
+      13
+    ],
+    "ceremonial": [
+      13
+    ],
+    "certain": [
+      9
+    ],
+    "challenge": [
+      2
+    ],
+    "challenged": [
+      1
+    ],
+    "challenges": [
+      1,
+      2,
+      11
+    ],
+    "challenging": [
+      8
+    ],
+    "champion": [
+      17
+    ],
+    "chance": [
+      9,
+      11
+    ],
+    "change": [
+      19
+    ],
+    "changed": [
+      3,
+      4,
+      9,
+      12,
+      14,
+      17
+    ],
+    "changing": [
+      14
+    ],
+    "chaos": [
+      15
+    ],
+    "character": [
+      9
+    ],
+    "charge": [
+      14
+    ],
+    "charts": [
+      33
+    ],
+    "chatgpt": [
+      7
+    ],
+    "cheap": [
+      3
+    ],
+    "check": [
+      4,
+      18
+    ],
+    "checking": [
+      3
+    ],
+    "checks": [
+      15
+    ],
+    "cheer": [
+      11
+    ],
+    "cheered": [
+      6
+    ],
+    "cheese": [
+      3
+    ],
+    "cherish": [
+      13
+    ],
+    "chicken": [
+      13
+    ],
+    "child": [
+      6,
+      12
+    ],
+    "childhood": [
+      6,
+      9
+    ],
+    "children": [
+      6,
+      9,
+      12
+    ],
+    "chill": [
+      12
+    ],
+    "chip": [
+      6
+    ],
+    "choice": [
+      7,
+      13
+    ],
+    "choices": [
+      7,
+      9
+    ],
+    "choose": [
+      12,
+      18
+    ],
+    "choosing": [
+      16
+    ],
+    "chore": [
+      6
+    ],
+    "chores": [
+      6,
+      20
+    ],
+    "cities": [
+      5
+    ],
+    "city": [
+      5
+    ],
+    "civilizations": [
+      15
+    ],
+    "clarity": [
+      8,
+      11
+    ],
+    "clash": [
+      6
+    ],
+    "class": [
+      5,
+      9,
+      10,
+      15,
+      29,
+      31
+    ],
+    "classes": [
+      9,
+      29
+    ],
+    "classmates": [
+      15
+    ],
+    "cleaning": [
+      20
+    ],
+    "cleanliness": [
+      16
+    ],
+    "clear": [
+      11
+    ],
+    "clearly": [
+      5
+    ],
+    "climate": [
+      18
+    ],
+    "climb": [
+      5,
+      17
+    ],
+    "cloning": [
+      30
+    ],
+    "close": [
+      4,
+      6,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "closeness": [
+      6
+    ],
+    "closet": [
+      20
+    ],
+    "clothing": [
+      3
+    ],
+    "cloud": [
+      9
+    ],
+    "club": [
+      15
+    ],
+    "co": [
+      32,
+      33
+    ],
+    "code": [
+      15,
+      31
+    ],
+    "coding": [
+      21
+    ],
+    "coffee": [
+      13
+    ],
+    "cohesion": [
+      11
+    ],
+    "cold": [
+      4,
+      14
+    ],
+    "colds": [
+      4
+    ],
+    "collaboration": [
+      2,
+      8,
+      11
+    ],
+    "collaborative": [
+      2
+    ],
+    "collapses": [
+      11
+    ],
+    "college": [
+      15
+    ],
+    "column": [
+      25
+    ],
+    "com": [
+      21,
+      22,
+      23,
+      24,
+      28,
+      29,
+      30,
+      32,
+      33
+    ],
+    "come": [
+      2,
+      3,
+      4,
+      7,
+      13,
+      17
+    ],
+    "comes": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "comfort": [
+      1,
+      3,
+      10,
+      14,
+      18
+    ],
+    "comfortable": [
+      10
+    ],
+    "command": [
+      34
+    ],
+    "comments": [
+      1
+    ],
+    "commitment": [
+      11
+    ],
+    "common": [
+      16
+    ],
+    "communication": [
+      2,
+      15
+    ],
+    "commute": [
+      20
+    ],
+    "commuting": [
+      20
+    ],
+    "companionship": [
+      5,
+      6,
+      9
+    ],
+    "company": [
+      3,
+      5,
+      7
+    ],
+    "compassion": [
+      9
+    ],
+    "competition": [
+      15
+    ],
+    "complain": [
+      3
+    ],
+    "complained": [
+      3,
+      18
+    ],
+    "complete": [
+      9,
+      10
+    ],
+    "completely": [
+      8,
+      10,
+      19
+    ],
+    "complex": [
+      2,
+      8
+    ],
+    "complexity": [
+      8
+    ],
+    "complimentary": [
+      18
+    ],
+    "components": [
+      33
+    ],
+    "compost": [
+      20
+    ],
+    "composure": [
+      2
+    ],
+    "comprehension": [
+      8
+    ],
+    "compromise": [
+      11
+    ],
+    "concentration": [
+      8
+    ],
+    "concepts": [
+      8
+    ],
+    "concerns": [
+      14
+    ],
+    "concurrency": [
+      21
+    ],
+    "conditionalonproperty": [
+      34
+    ],
+    "conditions": [
+      14
+    ],
+    "confidence": [
+      1,
+      7,
+      11
+    ],
+    "confident": [
+      18
+    ],
+    "conflict": [
+      2,
+      7,
+      11
+    ],
+    "conflicts": [
+      2
+    ],
+    "confused": [
+      10
+    ],
+    "confusing": [
+      15
+    ],
+    "conglomerate": [
+      3
+    ],
+    "conglomerates": [
+      3
+    ],
+    "connection": [
+      5
+    ],
+    "conscience": [
+      7
+    ],
+    "consensus": [
+      11
+    ],
+    "consequence": [
+      9
+    ],
+    "consistent": [
+      19
+    ],
+    "constant": [
+      1
+    ],
+    "consumer": [
+      35
+    ],
+    "contact": [
+      2
+    ],
+    "contactless": [
+      14
+    ],
+    "contagious": [
+      4
+    ],
+    "context": [
+      7
+    ],
+    "contract": [
+      7
+    ],
+    "contribute": [
+      11
+    ],
+    "control": [
+      1,
+      18
+    ],
+    "convenience": [
+      14
+    ],
+    "convenient": [
+      13,
+      14
+    ],
+    "cook": [
+      3,
+      14
+    ],
+    "cooked": [
+      6,
+      14
+    ],
+    "cookies": [
+      13
+    ],
+    "cooking": [
+      5,
+      14
+    ],
+    "cool": [
+      1,
+      2,
+      9
+    ],
+    "cop": [
+      6
+    ],
+    "cope": [
+      2
+    ],
+    "cord": [
+      20
+    ],
+    "cordless": [
+      20
+    ],
+    "corners": [
+      7
+    ],
+    "corporate": [
+      5
+    ],
+    "cost": [
+      13,
+      14
+    ],
+    "could": [
+      7,
+      8,
+      9,
+      13,
+      15,
+      16
+    ],
+    "couldn": [
+      4,
+      13
+    ],
+    "council": [
+      15
+    ],
+    "count": [
+      5
+    ],
+    "counter": [
+      4
+    ],
+    "countries": [
+      14
+    ],
+    "country": [
+      5
+    ],
+    "courage": [
+      5,
+      7
+    ],
+    "cousin": [
+      6
+    ],
+    "cousins": [
+      6
+    ],
+    "cover": [
+      7
+    ],
+    "covering": [
+      7
+    ],
+    "covid": [
+      4
+    ],
+    "coworker": [
+      2
+    ],
+    "cpu": [
+      33,
+      35
+    ],
+    "crave": [
+      10
+    ],
+    "craving": [
+      14
+    ],
+    "crazy": [
+      1,
+      14
+    ],
+    "cream": [
+      4
+    ],
+    "creative": [
+      13
+    ],
+    "creators": [
+      7
+    ],
+    "credit": [
+      19
+    ],
+    "crime": [
+      6
+    ],
+    "crisis": [
+      7,
+      15
+    ],
+    "criticism": [
+      1
+    ],
+    "critics": [
+      3
+    ],
+    "cross": [
+      1,
+      2
+    ],
+    "crossed": [
+      20
+    ],
+    "crowd": [
+      11,
+      12
+    ],
+    "crowds": [
+      5
+    ],
+    "crucial": [
+      9
+    ],
+    "cry": [
+      13
+    ],
+    "crystal": [
+      11
+    ],
+    "csv": [
+      33
+    ],
+    "cuisine": [
+      3
+    ],
+    "culinary": [
+      3,
+      5
+    ],
+    "cultural": [
+      4,
+      8
+    ],
+    "culture": [
+      11,
+      13,
+      14
+    ],
+    "cultures": [
+      14
+    ],
+    "cup": [
+      15
+    ],
+    "cure": [
+      4
+    ],
+    "curiosity": [
+      3,
+      5
+    ],
+    "curious": [
+      2
+    ],
+    "current": [
+      19
+    ],
+    "curry": [
+      9
+    ],
+    "curve": [
+      8
+    ],
+    "custom": [
+      21
+    ],
+    "customer": [
+      3,
+      14
+    ],
+    "cut": [
+      3,
+      4,
+      7,
+      8,
+      20
+    ],
+    "cutting": [
+      1,
+      15
+    ],
+    "cycle": [
+      10
+    ],
+    "dad": [
+      6,
+      20
+    ],
+    "daily": [
+      6,
+      14,
+      15
+    ],
+    "dangerous": [
+      14
+    ],
+    "darkness": [
+      10
+    ],
+    "data": [
+      22,
+      23,
+      24
+    ],
+    "database": [
+      23
+    ],
+    "datajpa": [
+      23
+    ],
+    "dawn": [
+      10
+    ],
+    "day": [
+      4,
+      5,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15,
+      19,
+      20
+    ],
+    "days": [
+      4,
+      9,
+      10,
+      14,
+      20
+    ],
+    "db": [
+      35
+    ],
+    "deadline": [
+      1
+    ],
+    "deadlines": [
+      1
+    ],
+    "deal": [
+      1,
+      2,
+      4,
+      5,
+      9,
+      11,
+      12,
+      20
+    ],
+    "dealing": [
+      4,
+      11
+    ],
+    "dear": [
+      6
+    ],
+    "debate": [
+      11
+    ],
+    "debit": [
+      19
+    ],
+    "deceive": [
+      7
+    ],
+    "deception": [
+      7
+    ],
+    "deceptions": [
+      7
+    ],
+    "decide": [
+      14,
+      19
+    ],
+    "decided": [
+      3,
+      5,
+      13,
+      14
+    ],
+    "decision": [
+      11
+    ],
+    "decluttering": [
+      20
+    ],
+    "decor": [
+      3
+    ],
+    "dedication": [
+      5,
+      17
+    ],
+    "deep": [
+      9,
+      20
+    ],
+    "defense": [
+      20
+    ],
+    "defined": [
+      9
+    ],
+    "definitely": [
+      15
+    ],
+    "delay": [
+      1
+    ],
+    "delicious": [
+      13
+    ],
+    "delivery": [
+      3,
+      14
+    ],
+    "demand": [
+      14
+    ],
+    "department": [
+      2
+    ],
+    "depend": [
+      2,
+      11,
+      13
+    ],
+    "dependable": [
+      5
+    ],
+    "depended": [
+      15
+    ],
+    "dependency": [
+      31
+    ],
+    "depends": [
+      7
+    ],
+    "depth": [
+      8
+    ],
+    "describe": [
+      2,
+      19
+    ],
+    "deserve": [
+      13
+    ],
+    "design": [
+      16
+    ],
+    "desk": [
+      13,
+      18,
+      20
+    ],
+    "detail": [
+      2,
+      7
+    ],
+    "details": [
+      2,
+      18
+    ],
+    "determination": [
+      1
+    ],
+    "dev": [
+      33
+    ],
+    "developing": [
+      2
+    ],
+    "development": [
+      17
+    ],
+    "devkuma": [
+      29
+    ],
+    "di": [
+      31
+    ],
+    "diagnosis": [
+      4
+    ],
+    "diamond": [
+      13
+    ],
+    "did": [
+      6,
+      8,
+      9,
+      12,
+      15,
+      16,
+      17,
+      20
+    ],
+    "didn": [
+      1,
+      9,
+      13
+    ],
+    "die": [
+      5,
+      20
+    ],
+    "died": [
+      20
+    ],
+    "differ": [
+      9,
+      14
+    ],
+    "difference": [
+      9,
+      14,
+      33
+    ],
+    "differences": [
+      14
+    ],
+    "different": [
+      6,
+      14
+    ],
+    "differently": [
+      15
+    ],
+    "difficult": [
+      2,
+      6,
+      7,
+      9
+    ],
+    "difficulties": [
+      2
+    ],
+    "dig": [
+      13
+    ],
+    "digital": [
+      5,
+      7,
+      8,
+      10
+    ],
+    "dilemma": [
+      7
+    ],
+    "dilemmas": [
+      7
+    ],
+    "dine": [
+      14
+    ],
+    "dining": [
+      3,
+      14
+    ],
+    "dinner": [
+      3,
+      12,
+      13
+    ],
+    "direction": [
+      11
+    ],
+    "disagree": [
+      2
+    ],
+    "discipline": [
+      1,
+      9,
+      11,
+      15
+    ],
+    "discomfort": [
+      1,
+      3
+    ],
+    "discount": [
+      14
+    ],
+    "discover": [
+      5
+    ],
+    "discovery": [
+      11
+    ],
+    "discussion": [
+      11
+    ],
+    "dish": [
+      3,
+      6
+    ],
+    "dishes": [
+      3,
+      6,
+      14,
+      20
+    ],
+    "dislike": [
+      15
+    ],
+    "disposable": [
+      20
+    ],
+    "dissatisfaction": [
+      3
+    ],
+    "distance": [
+      9
+    ],
+    "distant": [
+      6
+    ],
+    "distracted": [
+      10
+    ],
+    "distraction": [
+      8,
+      10
+    ],
+    "distractions": [
+      8
+    ],
+    "distributed": [
+      35
+    ],
+    "diversity": [
+      8
+    ],
+    "division": [
+      11
+    ],
+    "dlq": [
+      35
+    ],
+    "do": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "doable": [
+      20
+    ],
+    "docs": [
+      21,
+      23,
+      26,
+      27,
+      29,
+      34
+    ],
+    "doctor": [
+      4,
+      10
+    ],
+    "does": [
+      2,
+      19
+    ],
+    "doesn": [
+      20
+    ],
+    "dog": [
+      20
+    ],
+    "doing": [
+      3,
+      16,
+      20
+    ],
+    "don": [
+      2,
+      10,
+      12,
+      20
+    ],
+    "done": [
+      5
+    ],
+    "double": [
+      7,
+      18,
+      19
+    ],
+    "down": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      17
+    ],
+    "downstream": [
+      35
+    ],
+    "doze": [
+      10
+    ],
+    "dozed": [
+      10
+    ],
+    "drain": [
+      1
+    ],
+    "drained": [
+      19
+    ],
+    "draw": [
+      2
+    ],
+    "dream": [
+      10,
+      17,
+      18
+    ],
+    "dreams": [
+      10
+    ],
+    "dress": [
+      15
+    ],
+    "drift": [
+      9,
+      10
+    ],
+    "drifted": [
+      15
+    ],
+    "drink": [
+      4,
+      14
+    ],
+    "drive": [
+      2
+    ],
+    "driven": [
+      2
+    ],
+    "drives": [
+      1,
+      2
+    ],
+    "drop": [
+      6
+    ],
+    "dropped": [
+      6
+    ],
+    "drove": [
+      18
+    ],
+    "duration": [
+      18
+    ],
+    "during": [
+      2,
+      6,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20
+    ],
+    "dwelling": [
+      1
+    ],
+    "dzone": [
+      32
+    ],
+    "ea": [
+      21,
+      32
+    ],
+    "each": [
+      11
+    ],
+    "earlier": [
+      8
+    ],
+    "early": [
+      10
+    ],
+    "earn": [
+      17,
+      19
+    ],
+    "earned": [
+      17
+    ],
+    "easily": [
+      1,
+      4,
+      10,
+      11
+    ],
+    "eat": [
+      3,
+      4,
+      6,
+      14
+    ],
+    "eater": [
+      3
+    ],
+    "eating": [
+      3,
+      14
+    ],
+    "eats": [
+      3
+    ],
+    "eb": [
+      21,
+      22,
+      32
+    ],
+    "ec": [
+      21,
+      22,
+      32
+    ],
+    "ed": [
+      21,
+      22,
+      32
+    ],
+    "edge": [
+      1
+    ],
+    "edged": [
+      7
+    ],
+    "education": [
+      15
+    ],
+    "effectively": [
+      8
+    ],
+    "effectiveness": [
+      8
+    ],
+    "efficiency": [
+      2,
+      10
+    ],
+    "ego": [
+      11
+    ],
+    "egos": [
+      11
+    ],
+    "elected": [
+      15
+    ],
+    "elementary": [
+      9
+    ],
+    "else": [
+      12,
+      13
+    ],
+    "email": [
+      2
+    ],
+    "embarrassing": [
+      10,
+      15
+    ],
+    "emotional": [
+      1,
+      5,
+      13
+    ],
+    "empathy": [
+      2,
+      5
+    ],
+    "emphasize": [
+      6
+    ],
+    "employees": [
+      17
+    ],
+    "employment": [
+      14
+    ],
+    "enable": [
+      23
+    ],
+    "enablejpaauditing": [
+      23
+    ],
+    "encouraged": [
+      11
+    ],
+    "encouragement": [
+      8
+    ],
+    "encourages": [
+      13
+    ],
+    "encouraging": [
+      16
+    ],
+    "end": [
+      3,
+      8,
+      13,
+      14
+    ],
+    "ended": [
+      13
+    ],
+    "endure": [
+      1
+    ],
+    "energy": [
+      1
+    ],
+    "engagement": [
+      8
+    ],
+    "engine": [
+      3
+    ],
+    "english": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "enjoy": [
+      5,
+      6,
+      11,
+      12,
+      13,
+      15
+    ],
+    "enjoys": [
+      10
+    ],
+    "enough": [
+      12,
+      18,
+      20
+    ],
+    "ensures": [
+      11
+    ],
+    "entered": [
+      12
+    ],
+    "enthusiasm": [
+      2
+    ],
+    "entire": [
+      11
+    ],
+    "entrance": [
+      15
+    ],
+    "environment": [
+      2,
+      8,
+      10
+    ],
+    "environments": [
+      2
+    ],
+    "envy": [
+      10
+    ],
+    "error": [
+      8
+    ],
+    "escape": [
+      4
+    ],
+    "especially": [
+      4,
+      6,
+      9
+    ],
+    "essential": [
+      7,
+      11,
+      15
+    ],
+    "essentials": [
+      18
+    ],
+    "etched": [
+      9
+    ],
+    "ethical": [
+      7
+    ],
+    "ethics": [
+      7
+    ],
+    "europe": [
+      5
+    ],
+    "even": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      20
+    ],
+    "event": [
+      35
+    ],
+    "events": [
+      13,
+      15
+    ],
+    "eventually": [
+      1,
+      6,
+      8
+    ],
+    "ever": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18
+    ],
+    "every": [
+      3,
+      6,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      19,
+      20
+    ],
+    "everyone": [
+      1,
+      4,
+      6,
+      11,
+      12
+    ],
+    "everything": [
+      14,
+      15,
+      18
+    ],
+    "everywhere": [
+      20
+    ],
+    "exam": [
+      8,
+      15
+    ],
+    "exams": [
+      14,
+      15
+    ],
+    "excel": [
+      15,
+      33
+    ],
+    "exchanged": [
+      13
+    ],
+    "exciting": [
+      13
+    ],
+    "excuse": [
+      4,
+      7
+    ],
+    "executor": [
+      21
+    ],
+    "exhausted": [
+      10
+    ],
+    "expected": [
+      9
+    ],
+    "expensive": [
+      3,
+      13,
+      14,
+      18
+    ],
+    "experience": [
+      2,
+      3,
+      8,
+      9,
+      11,
+      14,
+      16,
+      18,
+      19
+    ],
+    "experiences": [
+      3,
+      4,
+      8,
+      11,
+      12,
+      13
+    ],
+    "explain": [
+      8
+    ],
+    "explanations": [
+      8
+    ],
+    "explore": [
+      5
+    ],
+    "expression": [
+      2
+    ],
+    "extended": [
+      6,
+      23
+    ],
+    "extra": [
+      14
+    ],
+    "extravagant": [
+      13
+    ],
+    "eye": [
+      2,
+      3,
+      8
+    ],
+    "eyes": [
+      12
+    ],
+    "face": [
+      14
+    ],
+    "facial": [
+      2
+    ],
+    "facilities": [
+      16,
+      18
+    ],
+    "fact": [
+      32
+    ],
+    "fail": [
+      11,
+      14
+    ],
+    "faintest": [
+      10
+    ],
+    "fair": [
+      14,
+      15
+    ],
+    "fake": [
+      4
+    ],
+    "fall": [
+      6,
+      10
+    ],
+    "fallen": [
+      10
+    ],
+    "families": [
+      14
+    ],
+    "family": [
+      6,
+      14,
+      18
+    ],
+    "fancy": [
+      3
+    ],
+    "far": [
+      8
+    ],
+    "fascinated": [
+      15
+    ],
+    "fast": [
+      2,
+      4,
+      14
+    ],
+    "faster": [
+      9
+    ],
+    "fastexcel": [
+      33
+    ],
+    "father": [
+      6
+    ],
+    "fatigue": [
+      1
+    ],
+    "favorite": [
+      6,
+      9,
+      15,
+      16
+    ],
+    "fear": [
+      5
+    ],
+    "features": [
+      34
+    ],
+    "fee": [
+      14
+    ],
+    "feedback": [
+      1
+    ],
+    "feel": [
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      18,
+      20
+    ],
+    "feeling": [
+      4,
+      10
+    ],
+    "feelings": [
+      7,
+      12
+    ],
+    "feels": [
+      4,
+      5,
+      12,
+      13
+    ],
+    "fell": [
+      6,
+      16
+    ],
+    "felt": [
+      6,
+      9,
+      10,
+      15,
+      18,
+      19
+    ],
+    "festival": [
+      15
+    ],
+    "fever": [
+      4
+    ],
+    "fi": [
+      5
+    ],
+    "field": [
+      9,
+      15
+    ],
+    "fight": [
+      4
+    ],
+    "figure": [
+      8
+    ],
+    "film": [
+      17
+    ],
+    "final": [
+      14
+    ],
+    "finance": [
+      19
+    ],
+    "financial": [
+      15,
+      19
+    ],
+    "find": [
+      3,
+      5,
+      8,
+      10,
+      15
+    ],
+    "finding": [
+      2
+    ],
+    "fined": [
+      7
+    ],
+    "fingertips": [
+      8
+    ],
+    "finish": [
+      6,
+      8,
+      11
+    ],
+    "fired": [
+      2
+    ],
+    "first": [
+      1,
+      3,
+      9,
+      16
+    ],
+    "fit": [
+      18
+    ],
+    "fitness": [
+      17
+    ],
+    "five": [
+      17
+    ],
+    "fix": [
+      19
+    ],
+    "flavor": [
+      3,
+      6
+    ],
+    "float": [
+      16
+    ],
+    "floor": [
+      20
+    ],
+    "floors": [
+      20
+    ],
+    "flu": [
+      4
+    ],
+    "fly": [
+      5
+    ],
+    "focus": [
+      1,
+      2,
+      3,
+      8,
+      9,
+      15
+    ],
+    "focused": [
+      8
+    ],
+    "follow": [
+      2,
+      7,
+      11,
+      16
+    ],
+    "food": [
+      3,
+      4,
+      13,
+      14,
+      20
+    ],
+    "forcing": [
+      9
+    ],
+    "forever": [
+      13
+    ],
+    "forget": [
+      2,
+      12
+    ],
+    "forgetting": [
+      1
+    ],
+    "forgot": [
+      13
+    ],
+    "format": [
+      33
+    ],
+    "forward": [
+      2,
+      6,
+      11,
+      12,
+      15
+    ],
+    "found": [
+      3,
+      12
+    ],
+    "framework": [
+      21,
+      26
+    ],
+    "freedom": [
+      19
+    ],
+    "freestyle": [
+      16
+    ],
+    "frequency": [
+      3,
+      6,
+      14
+    ],
+    "fresh": [
+      10
+    ],
+    "friend": [
+      7,
+      9,
+      12,
+      13
+    ],
+    "friends": [
+      1,
+      5,
+      9,
+      10,
+      12,
+      15,
+      18
+    ],
+    "friendship": [
+      5,
+      15
+    ],
+    "friendships": [
+      9,
+      11
+    ],
+    "frightening": [
+      10
+    ],
+    "front": [
+      9,
+      18
+    ],
+    "frustrating": [
+      20
+    ],
+    "frustration": [
+      1
+    ],
+    "fulfillment": [
+      2,
+      17
+    ],
+    "full": [
+      3,
+      5
+    ],
+    "fun": [
+      10
+    ],
+    "functional": [
+      13
+    ],
+    "funny": [
+      13,
+      15
+    ],
+    "fusion": [
+      14
+    ],
+    "future": [
+      17,
+      19,
+      21
+    ],
+    "gathering": [
+      6,
+      12
+    ],
+    "gatherings": [
+      1,
+      12
+    ],
+    "gave": [
+      9,
+      11,
+      13
+    ],
+    "gear": [
+      14
+    ],
+    "gem": [
+      3
+    ],
+    "gems": [
+      3,
+      5
+    ],
+    "general": [
+      12
+    ],
+    "generation": [
+      33
+    ],
+    "genes": [
+      6
+    ],
+    "genuinely": [
+      15
+    ],
+    "gesture": [
+      2,
+      7,
+      12,
+      13
+    ],
+    "get": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      19,
+      20
+    ],
+    "gets": [
+      1,
+      3,
+      20
+    ],
+    "getting": [
+      4,
+      12
+    ],
+    "giant": [
+      13
+    ],
+    "gift": [
+      7,
+      12,
+      13
+    ],
+    "gifts": [
+      12,
+      13
+    ],
+    "gillog": [
+      21
+    ],
+    "github": [
+      30,
+      33
+    ],
+    "give": [
+      1,
+      8,
+      11,
+      12,
+      13,
+      19,
+      20
+    ],
+    "gives": [
+      2,
+      7,
+      17
+    ],
+    "giving": [
+      12,
+      13
+    ],
+    "gladly": [
+      13
+    ],
+    "go": [
+      3,
+      4,
+      6,
+      7,
+      9,
+      12,
+      14,
+      15,
+      16,
+      20
+    ],
+    "goal": [
+      2,
+      3,
+      5,
+      17
+    ],
+    "goals": [
+      2,
+      5,
+      11,
+      17
+    ],
+    "goes": [
+      13
+    ],
+    "goggles": [
+      16
+    ],
+    "going": [
+      3,
+      9,
+      15
+    ],
+    "gold": [
+      4
+    ],
+    "gone": [
+      20
+    ],
+    "good": [
+      6,
+      7,
+      11,
+      12,
+      14,
+      15,
+      19
+    ],
+    "google": [
+      3
+    ],
+    "got": [
+      20
+    ],
+    "gracefully": [
+      3
+    ],
+    "graduation": [
+      6,
+      13
+    ],
+    "grain": [
+      1
+    ],
+    "grandma": [
+      4,
+      20
+    ],
+    "grapple": [
+      7
+    ],
+    "gratitude": [
+      5,
+      7
+    ],
+    "gray": [
+      7
+    ],
+    "greasy": [
+      14
+    ],
+    "great": [
+      3,
+      12,
+      16,
+      18
+    ],
+    "greater": [
+      7
+    ],
+    "greatest": [
+      5
+    ],
+    "grew": [
+      15
+    ],
+    "grin": [
+      1,
+      13
+    ],
+    "ground": [
+      6
+    ],
+    "group": [
+      8,
+      11,
+      15,
+      35
+    ],
+    "groups": [
+      11
+    ],
+    "grow": [
+      6,
+      9,
+      12
+    ],
+    "growth": [
+      2,
+      9,
+      14
+    ],
+    "guess": [
+      10,
+      13
+    ],
+    "guest": [
+      12,
+      18
+    ],
+    "guesthouse": [
+      18
+    ],
+    "guests": [
+      12
+    ],
+    "guidance": [
+      6
+    ],
+    "guide": [
+      9
+    ],
+    "guided": [
+      7
+    ],
+    "guiding": [
+      5
+    ],
+    "guilt": [
+      14
+    ],
+    "habit": [
+      1,
+      8,
+      10,
+      14,
+      17
+    ],
+    "habits": [
+      3,
+      4,
+      8,
+      10,
+      14,
+      15,
+      16,
+      19
+    ],
+    "had": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+    ],
+    "hair": [
+      20
+    ],
+    "haircut": [
+      7
+    ],
+    "hairstyles": [
+      15
+    ],
+    "hand": [
+      7,
+      10,
+      11,
+      12,
+      13
+    ],
+    "handed": [
+      3
+    ],
+    "handing": [
+      12
+    ],
+    "handle": [
+      1,
+      2,
+      3
+    ],
+    "handmade": [
+      13
+    ],
+    "hang": [
+      1,
+      5,
+      6,
+      9,
+      12,
+      15
+    ],
+    "hanging": [
+      1,
+      6
+    ],
+    "hangout": [
+      15
+    ],
+    "happened": [
+      18
+    ],
+    "happy": [
+      13,
+      19
+    ],
+    "hard": [
+      1,
+      8,
+      10,
+      15,
+      16,
+      17,
+      20
+    ],
+    "harder": [
+      10,
+      11,
+      16
+    ],
+    "hardest": [
+      11
+    ],
+    "harmony": [
+      11
+    ],
+    "has": [
+      4,
+      5,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      17
+    ],
+    "hate": [
+      20
+    ],
+    "hats": [
+      2
+    ],
+    "have": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      20
+    ],
+    "haven": [
+      7
+    ],
+    "hawaii": [
+      16
+    ],
+    "he": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      15,
+      17,
+      20
+    ],
+    "head": [
+      2,
+      5
+    ],
+    "headcount": [
+      12
+    ],
+    "heads": [
+      8,
+      11
+    ],
+    "heal": [
+      4
+    ],
+    "healing": [
+      4
+    ],
+    "health": [
+      3,
+      4,
+      14,
+      15,
+      17
+    ],
+    "healthy": [
+      3,
+      4,
+      14,
+      17
+    ],
+    "heard": [
+      20
+    ],
+    "heart": [
+      3,
+      6,
+      13
+    ],
+    "heartfelt": [
+      13
+    ],
+    "heaven": [
+      5
+    ],
+    "heavily": [
+      7
+    ],
+    "heavy": [
+      4,
+      10
+    ],
+    "help": [
+      6,
+      8,
+      11,
+      13,
+      19,
+      33
+    ],
+    "helped": [
+      5,
+      11,
+      19
+    ],
+    "helper": [
+      29
+    ],
+    "helpful": [
+      8,
+      18
+    ],
+    "helping": [
+      11
+    ],
+    "helps": [
+      2,
+      3,
+      5,
+      6,
+      8,
+      10,
+      20
+    ],
+    "her": [
+      2,
+      5,
+      6,
+      8,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      20
+    ],
+    "herbal": [
+      4
+    ],
+    "heritage": [
+      9
+    ],
+    "hibernate": [
+      25,
+      27
+    ],
+    "hidden": [
+      3,
+      5,
+      14
+    ],
+    "high": [
+      2,
+      15,
+      17
+    ],
+    "higher": [
+      18
+    ],
+    "highlight": [
+      2,
+      12
+    ],
+    "highlighted": [
+      2
+    ],
+    "hilarious": [
+      13,
+      15
+    ],
+    "him": [
+      10,
+      11,
+      13
+    ],
+    "hindsight": [
+      9
+    ],
+    "hired": [
+      2
+    ],
+    "his": [
+      3,
+      6,
+      7,
+      10,
+      12,
+      17
+    ],
+    "history": [
+      6,
+      15
+    ],
+    "hit": [
+      1,
+      4,
+      8,
+      9,
+      13
+    ],
+    "hobby": [
+      12
+    ],
+    "hold": [
+      2,
+      7,
+      9,
+      13
+    ],
+    "holidays": [
+      13
+    ],
+    "home": [
+      4,
+      6,
+      10,
+      13,
+      14
+    ],
+    "homemade": [
+      13
+    ],
+    "homeroom": [
+      15
+    ],
+    "homestay": [
+      18
+    ],
+    "homework": [
+      7
+    ],
+    "honest": [
+      7
+    ],
+    "honestly": [
+      10,
+      13
+    ],
+    "honesty": [
+      6,
+      7
+    ],
+    "honey": [
+      4
+    ],
+    "honorable": [
+      7
+    ],
+    "honoree": [
+      12
+    ],
+    "hope": [
+      5
+    ],
+    "hosted": [
+      12
+    ],
+    "hosting": [
+      12
+    ],
+    "hot": [
+      16,
+      35
+    ],
+    "hotel": [
+      10,
+      18
+    ],
+    "hours": [
+      8,
+      10
+    ],
+    "house": [
+      6,
+      7,
+      20
+    ],
+    "household": [
+      6
+    ],
+    "housework": [
+      6,
+      20
+    ],
+    "how": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      33
+    ],
+    "html": [
+      21,
+      23,
+      26,
+      27,
+      30,
+      33,
+      34
+    ],
+    "https": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      32,
+      33,
+      34
+    ],
+    "huge": [
+      14
+    ],
+    "hurt": [
+      7
+    ],
+    "hygiene": [
+      4,
+      16
+    ],
+    "hyoun1202": [
+      33
+    ],
+    "hypothetical": [
+      19
+    ],
+    "ice": [
+      2
+    ],
+    "iceland": [
+      5
+    ],
+    "id": [
+      23,
+      35
+    ],
+    "idea": [
+      33
+    ],
+    "ideal": [
+      16,
+      19
+    ],
+    "ideas": [
+      8
+    ],
+    "idempotency": [
+      35
+    ],
+    "identical": [
+      13
+    ],
+    "identity": [
+      15
+    ],
+    "idle": [
+      35
+    ],
+    "if": [
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+    ],
+    "illness": [
+      4
+    ],
+    "imagine": [
+      19
+    ],
+    "immediately": [
+      10
+    ],
+    "immerse": [
+      8
+    ],
+    "immersed": [
+      8
+    ],
+    "immune": [
+      4
+    ],
+    "immutable": [
+      30
+    ],
+    "impact": [
+      2,
+      5,
+      11,
+      14
+    ],
+    "impatience": [
+      2
+    ],
+    "impersonal": [
+      13
+    ],
+    "importance": [
+      19
+    ],
+    "important": [
+      1,
+      12,
+      16
+    ],
+    "impressed": [
+      2
+    ],
+    "impression": [
+      2,
+      3,
+      9
+    ],
+    "impressions": [
+      3,
+      9
+    ],
+    "impressive": [
+      5
+    ],
+    "improve": [
+      3,
+      5,
+      16
+    ],
+    "improvement": [
+      5
+    ],
+    "improves": [
+      10
+    ],
+    "improving": [
+      2
+    ],
+    "include": [
+      16
+    ],
+    "included": [
+      11,
+      18
+    ],
+    "includes": [
+      18
+    ],
+    "income": [
+      19
+    ],
+    "increase": [
+      14
+    ],
+    "increased": [
+      2,
+      3
+    ],
+    "independence": [
+      8,
+      15
+    ],
+    "individual": [
+      18
+    ],
+    "individually": [
+      11
+    ],
+    "indulgent": [
+      13
+    ],
+    "industry": [
+      14
+    ],
+    "inflearn": [
+      32
+    ],
+    "influence": [
+      1
+    ],
+    "influencing": [
+      9
+    ],
+    "ingredient": [
+      6
+    ],
+    "inheritance": [
+      28
+    ],
+    "initiative": [
+      2,
+      11
+    ],
+    "injection": [
+      31
+    ],
+    "innocence": [
+      9
+    ],
+    "innovation": [
+      5
+    ],
+    "inside": [
+      15
+    ],
+    "insightful": [
+      2
+    ],
+    "insincere": [
+      13
+    ],
+    "insomnia": [
+      10
+    ],
+    "inspiration": [
+      5
+    ],
+    "inspires": [
+      5
+    ],
+    "inspiring": [
+      15
+    ],
+    "instantly": [
+      8
+    ],
+    "instead": [
+      4,
+      13
+    ],
+    "instilled": [
+      9
+    ],
+    "instructor": [
+      16
+    ],
+    "integration": [
+      21,
+      26
+    ],
+    "integrity": [
+      2,
+      5,
+      9
+    ],
+    "intention": [
+      7
+    ],
+    "interest": [
+      7,
+      19
+    ],
+    "interface": [
+      14
+    ],
+    "interior": [
+      3
+    ],
+    "international": [
+      17
+    ],
+    "internet": [
+      18
+    ],
+    "interview": [
+      2
+    ],
+    "interviewer": [
+      2
+    ],
+    "intimate": [
+      12
+    ],
+    "into": [
+      9,
+      13,
+      15,
+      18,
+      20
+    ],
+    "introvert": [
+      1
+    ],
+    "invest": [
+      3,
+      19
+    ],
+    "invocation": [
+      32
+    ],
+    "involved": [
+      16
+    ],
+    "io": [
+      21,
+      23,
+      26,
+      30,
+      33,
+      34
+    ],
+    "irregular": [
+      10
+    ],
+    "isn": [
+      7
+    ],
+    "it": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "item": [
+      14
+    ],
+    "items": [
+      14,
+      18
+    ],
+    "its": [
+      5,
+      11,
+      13,
+      20
+    ],
+    "itself": [
+      10
+    ],
+    "jack": [
+      5
+    ],
+    "java": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "javadocs": [
+      27
+    ],
+    "jboss": [
+      27
+    ],
+    "jetbrains": [
+      33
+    ],
+    "jiwondev": [
+      32
+    ],
+    "jizero": [
+      23
+    ],
+    "job": [
+      2,
+      17,
+      20
+    ],
+    "jogging": [
+      10
+    ],
+    "joined": [
+      11,
+      15
+    ],
+    "joining": [
+      11
+    ],
+    "joke": [
+      2,
+      13,
+      15
+    ],
+    "jonghne": [
+      33
+    ],
+    "jotting": [
+      8
+    ],
+    "jpa": [
+      23,
+      24
+    ],
+    "judgment": [
+      7
+    ],
+    "junk": [
+      4
+    ],
+    "just": [
+      2,
+      3,
+      4,
+      7,
+      10,
+      12,
+      13,
+      15,
+      16,
+      20
+    ],
+    "justified": [
+      7
+    ],
+    "justify": [
+      7
+    ],
+    "kafka": [
+      35
+    ],
+    "kakaocommerce": [
+      21
+    ],
+    "kapresoft": [
+      30
+    ],
+    "kdg": [
+      21
+    ],
+    "keep": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      19,
+      20
+    ],
+    "keeps": [
+      4,
+      10,
+      11
+    ],
+    "key": [
+      8,
+      35
+    ],
+    "kick": [
+      6
+    ],
+    "kim": [
+      15,
+      33
+    ],
+    "kind": [
+      2,
+      3,
+      5,
+      8,
+      9,
+      13,
+      16,
+      17,
+      18
+    ],
+    "kindness": [
+      5
+    ],
+    "kinds": [
+      1
+    ],
+    "km": [
+      23
+    ],
+    "knock": [
+      4
+    ],
+    "knocked": [
+      4
+    ],
+    "know": [
+      1,
+      9,
+      10,
+      12,
+      16
+    ],
+    "knowing": [
+      10
+    ],
+    "knowledge": [
+      8
+    ],
+    "korea": [
+      3
+    ],
+    "korean": [
+      3,
+      14
+    ],
+    "kr": [
+      32,
+      33
+    ],
+    "lack": [
+      10
+    ],
+    "ladder": [
+      5
+    ],
+    "lag": [
+      35
+    ],
+    "laid": [
+      6
+    ],
+    "lake": [
+      16
+    ],
+    "landscapes": [
+      5
+    ],
+    "lane": [
+      9,
+      16
+    ],
+    "lanes": [
+      16
+    ],
+    "langs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "laptop": [
+      5
+    ],
+    "large": [
+      11
+    ],
+    "largest": [
+      3
+    ],
+    "last": [
+      9,
+      13,
+      20
+    ],
+    "late": [
+      8,
+      10,
+      14
+    ],
+    "later": [
+      8
+    ],
+    "laughing": [
+      13,
+      16
+    ],
+    "laundry": [
+      18
+    ],
+    "lavish": [
+      12
+    ],
+    "law": [
+      7
+    ],
+    "laws": [
+      6
+    ],
+    "lay": [
+      6,
+      11
+    ],
+    "leader": [
+      2
+    ],
+    "leadership": [
+      2,
+      5,
+      7,
+      15,
+      17
+    ],
+    "leading": [
+      2
+    ],
+    "leads": [
+      10
+    ],
+    "lean": [
+      11,
+      13
+    ],
+    "learn": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      9,
+      15,
+      16
+    ],
+    "learned": [
+      3,
+      8,
+      19
+    ],
+    "learning": [
+      2,
+      8
+    ],
+    "least": [
+      20,
+      35
+    ],
+    "leave": [
+      2,
+      4,
+      5,
+      10
+    ],
+    "leaving": [
+      7
+    ],
+    "lecture": [
+      8
+    ],
+    "left": [
+      2,
+      5,
+      7,
+      9,
+      12,
+      13
+    ],
+    "leftovers": [
+      14,
+      20
+    ],
+    "leg": [
+      13
+    ],
+    "leisure": [
+      6,
+      16
+    ],
+    "lend": [
+      11
+    ],
+    "leniency": [
+      6
+    ],
+    "less": [
+      14
+    ],
+    "lesson": [
+      8,
+      19
+    ],
+    "let": [
+      3
+    ],
+    "letter": [
+      13
+    ],
+    "level": [
+      11
+    ],
+    "lie": [
+      7
+    ],
+    "lies": [
+      7
+    ],
+    "life": [
+      5,
+      6,
+      7,
+      9,
+      15,
+      17,
+      18,
+      19
+    ],
+    "lifeguards": [
+      16
+    ],
+    "lifelong": [
+      9,
+      11,
+      15
+    ],
+    "lifestyle": [
+      17,
+      19
+    ],
+    "lifetime": [
+      3,
+      5,
+      8,
+      9,
+      11
+    ],
+    "lift": [
+      5
+    ],
+    "light": [
+      5,
+      10
+    ],
+    "lightbulb": [
+      11
+    ],
+    "lights": [
+      5
+    ],
+    "like": [
+      1,
+      5,
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18,
+      20
+    ],
+    "liking": [
+      7
+    ],
+    "limit": [
+      1
+    ],
+    "limits": [
+      1,
+      5,
+      17
+    ],
+    "line": [
+      1,
+      9,
+      34
+    ],
+    "list": [
+      5,
+      12,
+      13
+    ],
+    "listen": [
+      1
+    ],
+    "literacy": [
+      15
+    ],
+    "literature": [
+      15
+    ],
+    "little": [
+      3,
+      7,
+      19
+    ],
+    "live": [
+      2,
+      3,
+      7,
+      9,
+      19,
+      33
+    ],
+    "lived": [
+      3
+    ],
+    "ll": [
+      12,
+      13
+    ],
+    "loan": [
+      19
+    ],
+    "local": [
+      3,
+      14,
+      18
+    ],
+    "location": [
+      18
+    ],
+    "log": [
+      8,
+      35
+    ],
+    "lombok": [
+      22,
+      28,
+      29,
+      30
+    ],
+    "lonely": [
+      5
+    ],
+    "long": [
+      2,
+      3,
+      6,
+      8,
+      11,
+      17,
+      18,
+      19,
+      20
+    ],
+    "longer": [
+      10
+    ],
+    "look": [
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      15,
+      16,
+      18
+    ],
+    "looked": [
+      6,
+      7,
+      9,
+      14,
+      15
+    ],
+    "looking": [
+      9,
+      11,
+      15
+    ],
+    "lose": [
+      1,
+      8,
+      11
+    ],
+    "lost": [
+      1,
+      7,
+      11,
+      14,
+      17,
+      20
+    ],
+    "lot": [
+      10,
+      20
+    ],
+    "love": [
+      1,
+      3,
+      5
+    ],
+    "loved": [
+      6,
+      13
+    ],
+    "low": [
+      3
+    ],
+    "lower": [
+      19
+    ],
+    "loyalty": [
+      7
+    ],
+    "luckily": [
+      10
+    ],
+    "lunch": [
+      9,
+      10,
+      14,
+      15
+    ],
+    "luxurious": [
+      13,
+      18
+    ],
+    "luxury": [
+      3,
+      13
+    ],
+    "lying": [
+      7
+    ],
+    "mad": [
+      20
+    ],
+    "made": [
+      2,
+      4,
+      5,
+      6,
+      10,
+      13,
+      16
+    ],
+    "main": [
+      8
+    ],
+    "maintain": [
+      17
+    ],
+    "maintained": [
+      18
+    ],
+    "make": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      12,
+      15,
+      18,
+      19,
+      20
+    ],
+    "makes": [
+      1,
+      3,
+      10,
+      11,
+      16,
+      19
+    ],
+    "making": [
+      3,
+      8,
+      11
+    ],
+    "management": [
+      15,
+      19
+    ],
+    "mandatory": [
+      15
+    ],
+    "manika09singh": [
+      23
+    ],
+    "many": [
+      2,
+      6,
+      9,
+      10,
+      13,
+      14,
+      16
+    ],
+    "marathon": [
+      1
+    ],
+    "mark": [
+      5
+    ],
+    "markup": [
+      14
+    ],
+    "master": [
+      5
+    ],
+    "match": [
+      5
+    ],
+    "material": [
+      8
+    ],
+    "math": [
+      8,
+      9,
+      15
+    ],
+    "matter": [
+      1,
+      3,
+      10,
+      11,
+      12
+    ],
+    "maximum": [
+      18
+    ],
+    "may": [
+      14,
+      19
+    ],
+    "me": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      19,
+      20
+    ],
+    "meal": [
+      3,
+      14
+    ],
+    "meals": [
+      6
+    ],
+    "mealtime": [
+      6
+    ],
+    "mean": [
+      2,
+      13,
+      19
+    ],
+    "measure": [
+      2
+    ],
+    "measured": [
+      10
+    ],
+    "media": [
+      8
+    ],
+    "medicine": [
+      3,
+      4,
+      7
+    ],
+    "medium": [
+      22,
+      23
+    ],
+    "meet": [
+      14
+    ],
+    "meeting": [
+      3,
+      10,
+      19
+    ],
+    "melonturtle": [
+      25
+    ],
+    "member": [
+      11
+    ],
+    "members": [
+      11
+    ],
+    "memorable": [
+      3,
+      4,
+      8,
+      11,
+      13,
+      15,
+      16
+    ],
+    "memories": [
+      9,
+      11,
+      15,
+      16
+    ],
+    "memory": [
+      8,
+      9,
+      10,
+      12,
+      15,
+      33
+    ],
+    "mental": [
+      1,
+      8,
+      15
+    ],
+    "mentor": [
+      5
+    ],
+    "menu": [
+      14
+    ],
+    "mesmerizing": [
+      5
+    ],
+    "messaging": [
+      35
+    ],
+    "met": [
+      6
+    ],
+    "method": [
+      23
+    ],
+    "michelin": [
+      3
+    ],
+    "microsoft": [
+      33
+    ],
+    "middle": [
+      8
+    ],
+    "midnight": [
+      10
+    ],
+    "might": [
+      12,
+      13
+    ],
+    "mild": [
+      4
+    ],
+    "milestone": [
+      8,
+      9,
+      12
+    ],
+    "mimul": [
+      29
+    ],
+    "mind": [
+      1,
+      9,
+      20
+    ],
+    "mindset": [
+      12
+    ],
+    "minimum": [
+      14
+    ],
+    "minute": [
+      13
+    ],
+    "misc": [
+      33
+    ],
+    "misconception": [
+      32
+    ],
+    "miss": [
+      13
+    ],
+    "missed": [
+      10
+    ],
+    "missing": [
+      14
+    ],
+    "mistake": [
+      3,
+      19
+    ],
+    "misunderstanding": [
+      3
+    ],
+    "mix": [
+      3
+    ],
+    "mo": [
+      22
+    ],
+    "mock": [
+      15
+    ],
+    "model": [
+      5
+    ],
+    "moderation": [
+      3
+    ],
+    "modern": [
+      4,
+      7
+    ],
+    "modifying": [
+      24
+    ],
+    "mom": [
+      6,
+      20
+    ],
+    "moment": [
+      6,
+      9,
+      11
+    ],
+    "moments": [
+      9
+    ],
+    "momentum": [
+      11
+    ],
+    "money": [
+      3,
+      13,
+      18,
+      19,
+      20
+    ],
+    "monitor": [
+      20
+    ],
+    "monitorjbl": [
+      33
+    ],
+    "month": [
+      19,
+      20
+    ],
+    "monthly": [
+      19
+    ],
+    "months": [
+      5
+    ],
+    "mood": [
+      14
+    ],
+    "moods": [
+      1
+    ],
+    "mop": [
+      20
+    ],
+    "moral": [
+      7
+    ],
+    "morality": [
+      7
+    ],
+    "more": [
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "morning": [
+      10,
+      13,
+      15,
+      20
+    ],
+    "mornings": [
+      10
+    ],
+    "most": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      15,
+      17,
+      18,
+      19,
+      20
+    ],
+    "mostly": [
+      15
+    ],
+    "motels": [
+      18
+    ],
+    "mother": [
+      5,
+      6
+    ],
+    "motivated": [
+      9,
+      15,
+      17
+    ],
+    "motivates": [
+      2,
+      11
+    ],
+    "motivation": [
+      2,
+      11,
+      17
+    ],
+    "mountain": [
+      17
+    ],
+    "move": [
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "moved": [
+      18
+    ],
+    "movement": [
+      10
+    ],
+    "movie": [
+      3
+    ],
+    "moving": [
+      11
+    ],
+    "mq": [
+      35
+    ],
+    "mr": [
+      15
+    ],
+    "much": [
+      1,
+      7,
+      10,
+      11,
+      14,
+      16,
+      20
+    ],
+    "muggy": [
+      20
+    ],
+    "mugs": [
+      13
+    ],
+    "music": [
+      9,
+      10,
+      13
+    ],
+    "must": [
+      13
+    ],
+    "mutual": [
+      11
+    ],
+    "my": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      19,
+      20
+    ],
+    "myself": [
+      2,
+      8,
+      12,
+      13
+    ],
+    "national": [
+      17
+    ],
+    "natural": [
+      4
+    ],
+    "naturally": [
+      7
+    ],
+    "nature": [
+      5,
+      7
+    ],
+    "naver": [
+      33
+    ],
+    "near": [
+      3,
+      6,
+      16
+    ],
+    "necessary": [
+      11,
+      16
+    ],
+    "necessity": [
+      12
+    ],
+    "necklace": [
+      13
+    ],
+    "need": [
+      1,
+      4,
+      5,
+      7,
+      8,
+      11,
+      14,
+      19,
+      20
+    ],
+    "needed": [
+      2,
+      5,
+      18
+    ],
+    "needing": [
+      1
+    ],
+    "negative": [
+      1
+    ],
+    "neighbor": [
+      13
+    ],
+    "neighborhoods": [
+      16
+    ],
+    "netlify": [
+      25
+    ],
+    "never": [
+      8,
+      12,
+      13
+    ],
+    "new": [
+      3,
+      5,
+      8,
+      9,
+      15,
+      20
+    ],
+    "next": [
+      1,
+      9,
+      17
+    ],
+    "nice": [
+      18
+    ],
+    "night": [
+      8,
+      10,
+      14,
+      20
+    ],
+    "nighter": [
+      8
+    ],
+    "nightly": [
+      18
+    ],
+    "nights": [
+      10
+    ],
+    "nine": [
+      9
+    ],
+    "no": [
+      3,
+      4,
+      6,
+      8,
+      10,
+      11,
+      18,
+      20
+    ],
+    "nod": [
+      10
+    ],
+    "noise": [
+      1,
+      10
+    ],
+    "nomad": [
+      5
+    ],
+    "nomads": [
+      5
+    ],
+    "nonverbal": [
+      2
+    ],
+    "noodles": [
+      3
+    ],
+    "northern": [
+      5
+    ],
+    "norway": [
+      5
+    ],
+    "nostalgia": [
+      9
+    ],
+    "not": [
+      1,
+      2,
+      4,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "notes": [
+      8
+    ],
+    "nothing": [
+      13
+    ],
+    "noticed": [
+      14
+    ],
+    "notnull": [
+      25
+    ],
+    "novel": [
+      17
+    ],
+    "novelty": [
+      12
+    ],
+    "now": [
+      3,
+      9,
+      13,
+      17
+    ],
+    "number": [
+      12
+    ],
+    "nutshell": [
+      2
+    ],
+    "objects": [
+      30
+    ],
+    "obligation": [
+      9
+    ],
+    "obligations": [
+      9
+    ],
+    "obstacles": [
+      11
+    ],
+    "occasion": [
+      3,
+      12
+    ],
+    "occupancy": [
+      18
+    ],
+    "ocean": [
+      5
+    ],
+    "off": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      16,
+      20
+    ],
+    "offer": [
+      3
+    ],
+    "offered": [
+      14
+    ],
+    "office": [
+      10
+    ],
+    "official": [
+      13
+    ],
+    "offset": [
+      35
+    ],
+    "often": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14
+    ],
+    "oil": [
+      10
+    ],
+    "okay": [
+      2,
+      4,
+      7,
+      20
+    ],
+    "okky": [
+      33
+    ],
+    "old": [
+      4,
+      6,
+      16,
+      20
+    ],
+    "older": [
+      12
+    ],
+    "once": [
+      3,
+      4,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      35
+    ],
+    "one": [
+      3,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "ones": [
+      13
+    ],
+    "online": [
+      7
+    ],
+    "only": [
+      3,
+      4,
+      10,
+      11,
+      35
+    ],
+    "onto": [
+      13
+    ],
+    "oop": [
+      29
+    ],
+    "open": [
+      2,
+      3,
+      4,
+      5,
+      9,
+      11,
+      12,
+      13,
+      15
+    ],
+    "opening": [
+      3,
+      8,
+      12
+    ],
+    "opinion": [
+      3,
+      7,
+      19
+    ],
+    "opinions": [
+      11,
+      13,
+      19
+    ],
+    "opportunity": [
+      6
+    ],
+    "options": [
+      15
+    ],
+    "orange": [
+      20
+    ],
+    "order": [
+      3,
+      12,
+      14,
+      19
+    ],
+    "ordering": [
+      3
+    ],
+    "ordinary": [
+      12
+    ],
+    "org": [
+      27,
+      33
+    ],
+    "organized": [
+      2,
+      15
+    ],
+    "oriented": [
+      2
+    ],
+    "orm": [
+      27
+    ],
+    "other": [
+      10
+    ],
+    "others": [
+      1,
+      5,
+      8
+    ],
+    "otherwise": [
+      10
+    ],
+    "our": [
+      6,
+      15,
+      16,
+      18,
+      20
+    ],
+    "out": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      19,
+      20,
+      35
+    ],
+    "outcome": [
+      2
+    ],
+    "outdoors": [
+      6
+    ],
+    "outing": [
+      6
+    ],
+    "over": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      19
+    ],
+    "overbooked": [
+      18
+    ],
+    "overnight": [
+      15
+    ],
+    "override": [
+      23
+    ],
+    "oversleep": [
+      10
+    ],
+    "oversleeping": [
+      10
+    ],
+    "overwhelming": [
+      7
+    ],
+    "owl": [
+      10
+    ],
+    "own": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "paced": [
+      2
+    ],
+    "packed": [
+      9
+    ],
+    "page": [
+      11
+    ],
+    "paid": [
+      3,
+      14
+    ],
+    "pandemic": [
+      4,
+      14
+    ],
+    "paper": [
+      13
+    ],
+    "paragraph": [
+      10
+    ],
+    "parallel": [
+      21
+    ],
+    "paralysis": [
+      10
+    ],
+    "parent": [
+      6
+    ],
+    "parenting": [
+      6
+    ],
+    "parents": [
+      6,
+      13,
+      15,
+      19
+    ],
+    "paris": [
+      3
+    ],
+    "park": [
+      12,
+      16
+    ],
+    "parks": [
+      16
+    ],
+    "part": [
+      11
+    ],
+    "particular": [
+      3
+    ],
+    "parties": [
+      12
+    ],
+    "partition": [
+      35
+    ],
+    "partner": [
+      18
+    ],
+    "partners": [
+      6
+    ],
+    "party": [
+      6,
+      12
+    ],
+    "pass": [
+      6,
+      8,
+      9,
+      20
+    ],
+    "passed": [
+      20
+    ],
+    "passion": [
+      5
+    ],
+    "passionate": [
+      15
+    ],
+    "past": [
+      12,
+      18,
+      19
+    ],
+    "patched": [
+      6
+    ],
+    "path": [
+      5
+    ],
+    "patience": [
+      1,
+      7,
+      17
+    ],
+    "patient": [
+      1,
+      16
+    ],
+    "pattern": [
+      10
+    ],
+    "pause": [
+      8
+    ],
+    "pausing": [
+      8
+    ],
+    "pay": [
+      2,
+      3,
+      8,
+      14
+    ],
+    "pays": [
+      8
+    ],
+    "peace": [
+      1,
+      8,
+      10
+    ],
+    "peel": [
+      20
+    ],
+    "peer": [
+      11,
+      15
+    ],
+    "peers": [
+      8
+    ],
+    "penny": [
+      3
+    ],
+    "people": [
+      1,
+      4,
+      6,
+      7,
+      10,
+      11,
+      14,
+      15,
+      19,
+      20
+    ],
+    "per": [
+      18
+    ],
+    "perception": [
+      3
+    ],
+    "perfect": [
+      1,
+      8,
+      18
+    ],
+    "perfectionism": [
+      2
+    ],
+    "perform": [
+      2
+    ],
+    "performed": [
+      9
+    ],
+    "perseverance": [
+      6
+    ],
+    "persistence": [
+      2,
+      11
+    ],
+    "person": [
+      2,
+      5,
+      10,
+      18
+    ],
+    "personal": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ],
+    "personality": [
+      2
+    ],
+    "personally": [
+      1
+    ],
+    "perspectives": [
+      4
+    ],
+    "phone": [
+      10,
+      15,
+      19
+    ],
+    "photography": [
+      15
+    ],
+    "physical": [
+      1,
+      7
+    ],
+    "pick": [
+      1,
+      12
+    ],
+    "picky": [
+      3
+    ],
+    "picture": [
+      8
+    ],
+    "pillow": [
+      10
+    ],
+    "pitch": [
+      10,
+      11
+    ],
+    "pizza": [
+      12,
+      14
+    ],
+    "place": [
+      10,
+      14,
+      18
+    ],
+    "places": [
+      3,
+      10,
+      14
+    ],
+    "plagiarism": [
+      7
+    ],
+    "plan": [
+      17,
+      19
+    ],
+    "planned": [
+      10,
+      12
+    ],
+    "platform": [
+      3,
+      14
+    ],
+    "play": [
+      2,
+      3,
+      6,
+      11,
+      13,
+      19
+    ],
+    "playground": [
+      9
+    ],
+    "please": [
+      9
+    ],
+    "plunge": [
+      5
+    ],
+    "pocket": [
+      20
+    ],
+    "poi": [
+      33
+    ],
+    "point": [
+      2,
+      3,
+      8,
+      9
+    ],
+    "polarizing": [
+      3
+    ],
+    "policy": [
+      7
+    ],
+    "polish": [
+      20
+    ],
+    "politeness": [
+      3
+    ],
+    "politicians": [
+      7
+    ],
+    "poll": [
+      35
+    ],
+    "polling": [
+      35
+    ],
+    "pool": [
+      16,
+      21
+    ],
+    "pools": [
+      16
+    ],
+    "poorly": [
+      18
+    ],
+    "popular": [
+      14
+    ],
+    "popularity": [
+      9
+    ],
+    "post": [
+      32
+    ],
+    "posture": [
+      2
+    ],
+    "potential": [
+      5
+    ],
+    "practical": [
+      2,
+      12,
+      13
+    ],
+    "practice": [
+      1,
+      9,
+      16
+    ],
+    "practiced": [
+      16
+    ],
+    "prank": [
+      13,
+      15
+    ],
+    "prefer": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      13,
+      16,
+      18
+    ],
+    "preference": [
+      7,
+      8
+    ],
+    "preferences": [
+      13,
+      16,
+      18
+    ],
+    "preferred": [
+      12
+    ],
+    "premiered": [
+      3
+    ],
+    "prepare": [
+      15
+    ],
+    "prescription": [
+      4
+    ],
+    "presents": [
+      8,
+      13
+    ],
+    "president": [
+      15
+    ],
+    "pressure": [
+      2,
+      15
+    ],
+    "pretended": [
+      13
+    ],
+    "prevention": [
+      4
+    ],
+    "price": [
+      13,
+      14,
+      18
+    ],
+    "pride": [
+      2,
+      9
+    ],
+    "prioritize": [
+      19
+    ],
+    "priority": [
+      12
+    ],
+    "private": [
+      9
+    ],
+    "proactive": [
+      2
+    ],
+    "problem": [
+      8,
+      32
+    ],
+    "problems": [
+      2,
+      11,
+      14
+    ],
+    "process": [
+      5,
+      7,
+      11
+    ],
+    "processor": [
+      20
+    ],
+    "producer": [
+      35
+    ],
+    "proficiency": [
+      5
+    ],
+    "progress": [
+      2
+    ],
+    "progression": [
+      2
+    ],
+    "project": [
+      2,
+      5,
+      6,
+      8,
+      11
+    ],
+    "projects": [
+      11
+    ],
+    "promoted": [
+      2
+    ],
+    "promotion": [
+      5,
+      14,
+      17
+    ],
+    "pronounce": [
+      3
+    ],
+    "property": [
+      18
+    ],
+    "protect": [
+      7
+    ],
+    "protections": [
+      14
+    ],
+    "proud": [
+      2,
+      8,
+      9
+    ],
+    "proudest": [
+      8
+    ],
+    "proves": [
+      8
+    ],
+    "pub": [
+      35
+    ],
+    "public": [
+      16
+    ],
+    "pull": [
+      4,
+      8,
+      9,
+      11,
+      13,
+      35
+    ],
+    "pulled": [
+      8
+    ],
+    "pulling": [
+      9,
+      11
+    ],
+    "pure": [
+      3
+    ],
+    "push": [
+      1,
+      2,
+      5,
+      11,
+      17,
+      35
+    ],
+    "pushed": [
+      15,
+      17
+    ],
+    "pushes": [
+      1,
+      11
+    ],
+    "put": [
+      1,
+      4,
+      7,
+      11,
+      12,
+      13
+    ],
+    "quality": [
+      6,
+      7,
+      10,
+      13
+    ],
+    "quantity": [
+      13
+    ],
+    "question": [
+      7
+    ],
+    "questions": [
+      2,
+      32,
+      33
+    ],
+    "queue": [
+      35
+    ],
+    "quick": [
+      4
+    ],
+    "quickly": [
+      3,
+      9
+    ],
+    "quiet": [
+      1,
+      8,
+      9,
+      10
+    ],
+    "quietly": [
+      9
+    ],
+    "quit": [
+      1
+    ],
+    "quite": [
+      10
+    ],
+    "quote": [
+      20
+    ],
+    "rabbitmq": [
+      35
+    ],
+    "rainbow": [
+      20
+    ],
+    "random": [
+      20
+    ],
+    "rare": [
+      9
+    ],
+    "rarely": [
+      3
+    ],
+    "rate": [
+      18,
+      19
+    ],
+    "rather": [
+      3,
+      5,
+      7,
+      13,
+      18
+    ],
+    "rating": [
+      18
+    ],
+    "ratings": [
+      3
+    ],
+    "re": [
+      2,
+      4,
+      9,
+      12,
+      14,
+      19,
+      20
+    ],
+    "reach": [
+      5,
+      9,
+      17,
+      19
+    ],
+    "reached": [
+      1,
+      11,
+      17
+    ],
+    "read": [
+      13,
+      33
+    ],
+    "reader": [
+      33
+    ],
+    "reading": [
+      8
+    ],
+    "real": [
+      1,
+      7,
+      10,
+      11,
+      15
+    ],
+    "realization": [
+      9
+    ],
+    "realize": [
+      5,
+      9
+    ],
+    "realized": [
+      8
+    ],
+    "really": [
+      1,
+      4,
+      10,
+      12,
+      13,
+      14,
+      15,
+      20
+    ],
+    "reason": [
+      13
+    ],
+    "rebalance": [
+      35
+    ],
+    "recall": [
+      10
+    ],
+    "receive": [
+      13,
+      14
+    ],
+    "received": [
+      3,
+      13
+    ],
+    "receiving": [
+      12
+    ],
+    "reception": [
+      12
+    ],
+    "recess": [
+      9
+    ],
+    "recharge": [
+      1
+    ],
+    "recognition": [
+      8,
+      9,
+      11
+    ],
+    "recognized": [
+      17
+    ],
+    "recollection": [
+      8
+    ],
+    "recommendation": [
+      3
+    ],
+    "recover": [
+      4
+    ],
+    "recovering": [
+      4
+    ],
+    "recovery": [
+      4
+    ],
+    "reference": [
+      21,
+      23,
+      26,
+      34
+    ],
+    "reflection": [
+      9
+    ],
+    "reflections": [
+      8,
+      12
+    ],
+    "reflective": [
+      15
+    ],
+    "refreshed": [
+      20
+    ],
+    "refund": [
+      3
+    ],
+    "regret": [
+      3,
+      8,
+      9,
+      15
+    ],
+    "regretted": [
+      3
+    ],
+    "regularly": [
+      3,
+      4,
+      14
+    ],
+    "reinforcement": [
+      8
+    ],
+    "rejected": [
+      2
+    ],
+    "rejectedexceptionhandler": [
+      21
+    ],
+    "rejectedexecutionhandler": [
+      21
+    ],
+    "rejection": [
+      1
+    ],
+    "relation": [
+      6
+    ],
+    "relationship": [
+      5,
+      6
+    ],
+    "relationships": [
+      6,
+      9,
+      15
+    ],
+    "relative": [
+      6
+    ],
+    "relatives": [
+      6
+    ],
+    "relax": [
+      16
+    ],
+    "relaxation": [
+      13
+    ],
+    "reliability": [
+      2
+    ],
+    "reliable": [
+      2
+    ],
+    "reliance": [
+      11
+    ],
+    "relive": [
+      9
+    ],
+    "reluctant": [
+      9
+    ],
+    "rely": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      14
+    ],
+    "relying": [
+      7
+    ],
+    "remain": [
+      9
+    ],
+    "remedies": [
+      4
+    ],
+    "remedy": [
+      4
+    ],
+    "remember": [
+      10,
+      13
+    ],
+    "remind": [
+      12
+    ],
+    "reminded": [
+      1
+    ],
+    "reminding": [
+      9
+    ],
+    "reminds": [
+      8
+    ],
+    "repair": [
+      10
+    ],
+    "repeated": [
+      15
+    ],
+    "repetitive": [
+      13
+    ],
+    "replay": [
+      35
+    ],
+    "repository": [
+      32
+    ],
+    "resemble": [
+      6
+    ],
+    "resilience": [
+      1,
+      15
+    ],
+    "resolution": [
+      11
+    ],
+    "resource": [
+      8
+    ],
+    "resourcefulness": [
+      2
+    ],
+    "resources": [
+      8
+    ],
+    "respect": [
+      11
+    ],
+    "responsibilities": [
+      4
+    ],
+    "responsibility": [
+      1,
+      11,
+      15
+    ],
+    "rest": [
+      4,
+      10,
+      14
+    ],
+    "restaurant": [
+      3
+    ],
+    "restaurants": [
+      3,
+      14
+    ],
+    "rested": [
+      10
+    ],
+    "restorative": [
+      10
+    ],
+    "results": [
+      5
+    ],
+    "retry": [
+      35
+    ],
+    "returning": [
+      7
+    ],
+    "revenue": [
+      7
+    ],
+    "review": [
+      8
+    ],
+    "reviews": [
+      3
+    ],
+    "rice": [
+      14
+    ],
+    "ride": [
+      16
+    ],
+    "right": [
+      3,
+      12,
+      13,
+      17
+    ],
+    "rights": [
+      14
+    ],
+    "rind": [
+      20
+    ],
+    "risk": [
+      3
+    ],
+    "risks": [
+      14
+    ],
+    "risky": [
+      15
+    ],
+    "rivalry": [
+      6
+    ],
+    "rock": [
+      5,
+      10
+    ],
+    "rode": [
+      16
+    ],
+    "role": [
+      5,
+      6,
+      19
+    ],
+    "roles": [
+      11
+    ],
+    "roll": [
+      10
+    ],
+    "rooftop": [
+      3,
+      12
+    ],
+    "room": [
+      3,
+      10,
+      12,
+      18,
+      20
+    ],
+    "roommate": [
+      20
+    ],
+    "rooms": [
+      16
+    ],
+    "routine": [
+      4,
+      10,
+      15
+    ],
+    "routines": [
+      8
+    ],
+    "rubber": [
+      13
+    ],
+    "rules": [
+      6,
+      7,
+      15,
+      16
+    ],
+    "run": [
+      1,
+      9
+    ],
+    "runner": [
+      34
+    ],
+    "sabarada": [
+      21
+    ],
+    "safe": [
+      3,
+      4
+    ],
+    "safety": [
+      14,
+      15,
+      16
+    ],
+    "said": [
+      6
+    ],
+    "salt": [
+      1
+    ],
+    "same": [
+      3,
+      7,
+      11,
+      13,
+      20
+    ],
+    "samsung": [
+      3
+    ],
+    "satisfaction": [
+      2
+    ],
+    "saturday": [
+      9
+    ],
+    "saunas": [
+      16
+    ],
+    "save": [
+      3,
+      13
+    ],
+    "saved": [
+      19
+    ],
+    "saving": [
+      14,
+      19
+    ],
+    "sax": [
+      33
+    ],
+    "say": [
+      3,
+      13,
+      20
+    ],
+    "saying": [
+      7
+    ],
+    "scale": [
+      35
+    ],
+    "scene": [
+      3
+    ],
+    "scheduled": [
+      26
+    ],
+    "scheduling": [
+      21,
+      26
+    ],
+    "scholarship": [
+      5
+    ],
+    "school": [
+      4,
+      8,
+      9,
+      15
+    ],
+    "science": [
+      15
+    ],
+    "score": [
+      19
+    ],
+    "screen": [
+      19
+    ],
+    "scroll": [
+      14
+    ],
+    "scrolling": [
+      8,
+      10
+    ],
+    "scrub": [
+      20
+    ],
+    "search": [
+      3
+    ],
+    "season": [
+      3
+    ],
+    "second": [
+      6
+    ],
+    "secret": [
+      6
+    ],
+    "secure": [
+      6
+    ],
+    "see": [
+      5,
+      6,
+      7
+    ],
+    "seem": [
+      19
+    ],
+    "seemed": [
+      6
+    ],
+    "seen": [
+      13
+    ],
+    "self": [
+      1,
+      4,
+      5,
+      8,
+      17,
+      32
+    ],
+    "seller": [
+      15
+    ],
+    "send": [
+      3
+    ],
+    "sense": [
+      2,
+      9,
+      17
+    ],
+    "sensitivity": [
+      1
+    ],
+    "sent": [
+      13
+    ],
+    "sentimental": [
+      13
+    ],
+    "seoarc": [
+      29
+    ],
+    "sequential": [
+      35
+    ],
+    "serious": [
+      4
+    ],
+    "seriously": [
+      15
+    ],
+    "serve": [
+      3
+    ],
+    "serves": [
+      3
+    ],
+    "service": [
+      3,
+      14,
+      18
+    ],
+    "services": [
+      14,
+      16
+    ],
+    "set": [
+      1,
+      2,
+      5,
+      6,
+      8,
+      12,
+      17,
+      23
+    ],
+    "settle": [
+      5,
+      10
+    ],
+    "several": [
+      10,
+      17,
+      18
+    ],
+    "shaped": [
+      9,
+      11
+    ],
+    "share": [
+      5
+    ],
+    "shared": [
+      2,
+      11,
+      12
+    ],
+    "sharing": [
+      18
+    ],
+    "she": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "shed": [
+      20
+    ],
+    "sheds": [
+      20
+    ],
+    "shine": [
+      20
+    ],
+    "shinining": [
+      20
+    ],
+    "shoes": [
+      20
+    ],
+    "shop": [
+      13
+    ],
+    "short": [
+      2,
+      10
+    ],
+    "shortcut": [
+      7
+    ],
+    "should": [
+      7,
+      14,
+      15
+    ],
+    "shouted": [
+      1
+    ],
+    "show": [
+      2,
+      3,
+      13
+    ],
+    "shower": [
+      20
+    ],
+    "showing": [
+      5
+    ],
+    "shows": [
+      8,
+      11
+    ],
+    "shut": [
+      1
+    ],
+    "siblings": [
+      6
+    ],
+    "sick": [
+      4
+    ],
+    "sickie": [
+      4
+    ],
+    "sickness": [
+      4
+    ],
+    "sides": [
+      7
+    ],
+    "sign": [
+      11
+    ],
+    "signature": [
+      6
+    ],
+    "signs": [
+      18
+    ],
+    "silence": [
+      9,
+      10
+    ],
+    "silent": [
+      8
+    ],
+    "silly": [
+      13
+    ],
+    "similar": [
+      18
+    ],
+    "since": [
+      3,
+      7,
+      13,
+      14
+    ],
+    "sincerity": [
+      5
+    ],
+    "sister": [
+      6,
+      10
+    ],
+    "sit": [
+      6
+    ],
+    "situation": [
+      7
+    ],
+    "situations": [
+      1,
+      6
+    ],
+    "size": [
+      25
+    ],
+    "skill": [
+      1,
+      2,
+      5
+    ],
+    "skilled": [
+      11
+    ],
+    "skills": [
+      2,
+      5,
+      11,
+      15
+    ],
+    "skim": [
+      8
+    ],
+    "skin": [
+      1,
+      20
+    ],
+    "skydiving": [
+      5
+    ],
+    "skyline": [
+      5
+    ],
+    "skyscraper": [
+      5
+    ],
+    "skyscrapers": [
+      5
+    ],
+    "sleep": [
+      8,
+      10
+    ],
+    "sleeper": [
+      10
+    ],
+    "sleeping": [
+      10
+    ],
+    "slow": [
+      1,
+      33
+    ],
+    "small": [
+      7,
+      8,
+      12,
+      13,
+      18,
+      19
+    ],
+    "smile": [
+      13
+    ],
+    "smoother": [
+      11
+    ],
+    "snacks": [
+      15
+    ],
+    "snapshot": [
+      23
+    ],
+    "snore": [
+      10
+    ],
+    "sns": [
+      20
+    ],
+    "so": [
+      1,
+      3,
+      5,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      18,
+      20
+    ],
+    "soccer": [
+      9,
+      11
+    ],
+    "social": [
+      1,
+      4,
+      8,
+      14
+    ],
+    "socializing": [
+      1
+    ],
+    "society": [
+      11
+    ],
+    "soft": [
+      10
+    ],
+    "solidifies": [
+      8
+    ],
+    "solitude": [
+      5
+    ],
+    "solo": [
+      5,
+      14
+    ],
+    "solution": [
+      2
+    ],
+    "solving": [
+      2,
+      8,
+      11
+    ],
+    "some": [
+      4,
+      7,
+      9,
+      10,
+      13,
+      14,
+      16,
+      20
+    ],
+    "someone": [
+      1,
+      5,
+      7,
+      12,
+      13,
+      16
+    ],
+    "something": [
+      3,
+      12,
+      13,
+      14,
+      19
+    ],
+    "sometimes": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16
+    ],
+    "sorry": [
+      4,
+      12
+    ],
+    "sort": [
+      2,
+      8
+    ],
+    "sorting": [
+      8
+    ],
+    "sound": [
+      10
+    ],
+    "sounds": [
+      20
+    ],
+    "soup": [
+      14
+    ],
+    "source": [
+      31
+    ],
+    "south": [
+      3
+    ],
+    "spa": [
+      13,
+      16
+    ],
+    "space": [
+      8,
+      20
+    ],
+    "speak": [
+      7
+    ],
+    "speaking": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "special": [
+      16
+    ],
+    "speechless": [
+      12
+    ],
+    "speed": [
+      14
+    ],
+    "spend": [
+      5,
+      6,
+      9,
+      14
+    ],
+    "spending": [
+      6,
+      19
+    ],
+    "spent": [
+      5
+    ],
+    "spilled": [
+      14
+    ],
+    "spirit": [
+      11
+    ],
+    "splash": [
+      13
+    ],
+    "split": [
+      8,
+      20
+    ],
+    "splurge": [
+      3,
+      13,
+      14
+    ],
+    "sponge": [
+      20
+    ],
+    "sponges": [
+      20
+    ],
+    "spontaneous": [
+      13
+    ],
+    "sports": [
+      11,
+      15
+    ],
+    "spot": [
+      15
+    ],
+    "spread": [
+      4,
+      13
+    ],
+    "spreadsheet": [
+      33
+    ],
+    "spring": [
+      21,
+      23,
+      24,
+      26,
+      31,
+      32,
+      34
+    ],
+    "sqlrestriction": [
+      27
+    ],
+    "sqs": [
+      35
+    ],
+    "squeegee": [
+      20
+    ],
+    "stable": [
+      27
+    ],
+    "stand": [
+      2,
+      5,
+      6,
+      8,
+      9,
+      11,
+      13
+    ],
+    "standard": [
+      7,
+      17
+    ],
+    "standards": [
+      7
+    ],
+    "stands": [
+      8,
+      11,
+      12
+    ],
+    "stars": [
+      18
+    ],
+    "start": [
+      1,
+      5
+    ],
+    "starting": [
+      5
+    ],
+    "startup": [
+      34
+    ],
+    "stay": [
+      1,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "stayed": [
+      18
+    ],
+    "staying": [
+      1,
+      2,
+      18
+    ],
+    "steady": [
+      5,
+      21
+    ],
+    "steam": [
+      9,
+      16
+    ],
+    "steep": [
+      8
+    ],
+    "step": [
+      1,
+      3,
+      11,
+      20
+    ],
+    "steps": [
+      8
+    ],
+    "stick": [
+      3,
+      4,
+      6,
+      9,
+      11,
+      12,
+      14
+    ],
+    "still": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      15,
+      16
+    ],
+    "stock": [
+      4,
+      13
+    ],
+    "stocks": [
+      3
+    ],
+    "stomach": [
+      4,
+      13
+    ],
+    "stone": [
+      33
+    ],
+    "stood": [
+      9,
+      13
+    ],
+    "stop": [
+      10
+    ],
+    "stopped": [
+      3
+    ],
+    "store": [
+      3,
+      15
+    ],
+    "stories": [
+      15
+    ],
+    "straightforward": [
+      13
+    ],
+    "strangers": [
+      9
+    ],
+    "strangest": [
+      10
+    ],
+    "strategies": [
+      8,
+      19
+    ],
+    "strategy": [
+      5,
+      11
+    ],
+    "stray": [
+      20
+    ],
+    "stream": [
+      21
+    ],
+    "streaming": [
+      33,
+      35
+    ],
+    "streams": [
+      21
+    ],
+    "street": [
+      3,
+      20
+    ],
+    "strength": [
+      2,
+      5
+    ],
+    "strengthen": [
+      6
+    ],
+    "strengths": [
+      2,
+      11
+    ],
+    "stress": [
+      1,
+      4,
+      10,
+      15
+    ],
+    "stressed": [
+      19
+    ],
+    "stresses": [
+      1
+    ],
+    "stressful": [
+      1,
+      10,
+      15
+    ],
+    "stretch": [
+      7
+    ],
+    "strict": [
+      6,
+      15
+    ],
+    "strictness": [
+      6
+    ],
+    "strong": [
+      2,
+      5,
+      6,
+      11
+    ],
+    "struck": [
+      6
+    ],
+    "struggle": [
+      8,
+      15
+    ],
+    "stuck": [
+      8
+    ],
+    "student": [
+      15,
+      17
+    ],
+    "students": [
+      7,
+      9
+    ],
+    "studied": [
+      8
+    ],
+    "studies": [
+      8
+    ],
+    "studio": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "study": [
+      5,
+      8,
+      23
+    ],
+    "studying": [
+      8,
+      15,
+      17
+    ],
+    "stuff": [
+      20
+    ],
+    "styles": [
+      6
+    ],
+    "stylish": [
+      3
+    ],
+    "sub": [
+      35
+    ],
+    "subject": [
+      8,
+      9,
+      15
+    ],
+    "subjects": [
+      9,
+      15
+    ],
+    "substantial": [
+      13
+    ],
+    "subway": [
+      10,
+      20
+    ],
+    "success": [
+      2
+    ],
+    "successful": [
+      11,
+      20
+    ],
+    "successfully": [
+      19
+    ],
+    "such": [
+      3
+    ],
+    "suddenly": [
+      19
+    ],
+    "suffer": [
+      10
+    ],
+    "sugarcoat": [
+      7
+    ],
+    "sum": [
+      2
+    ],
+    "summer": [
+      16
+    ],
+    "sunset": [
+      5
+    ],
+    "superbuilder": [
+      28
+    ],
+    "supplement": [
+      4
+    ],
+    "supplements": [
+      4
+    ],
+    "support": [
+      7,
+      8,
+      11
+    ],
+    "supportive": [
+      15
+    ],
+    "surf": [
+      16
+    ],
+    "surgery": [
+      4
+    ],
+    "surprise": [
+      12,
+      13
+    ],
+    "surreal": [
+      5
+    ],
+    "surviving": [
+      9
+    ],
+    "swear": [
+      3
+    ],
+    "sweater": [
+      13
+    ],
+    "sweet": [
+      10
+    ],
+    "swim": [
+      16
+    ],
+    "swimming": [
+      16
+    ],
+    "sword": [
+      7
+    ],
+    "sxssfworkbook": [
+      33
+    ],
+    "symptom": [
+      4
+    ],
+    "synergy": [
+      11
+    ],
+    "system": [
+      4,
+      35
+    ],
+    "tackling": [
+      8
+    ],
+    "take": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      12,
+      15,
+      20
+    ],
+    "takeaway": [
+      8
+    ],
+    "takeout": [
+      14
+    ],
+    "takes": [
+      3,
+      17
+    ],
+    "taking": [
+      4,
+      6,
+      12
+    ],
+    "talk": [
+      2,
+      10
+    ],
+    "talks": [
+      13
+    ],
+    "task": [
+      1,
+      9,
+      11,
+      21
+    ],
+    "taught": [
+      5,
+      6,
+      11
+    ],
+    "tea": [
+      4,
+      15
+    ],
+    "teach": [
+      8,
+      19
+    ],
+    "teacher": [
+      9,
+      15
+    ],
+    "teachers": [
+      15
+    ],
+    "teaching": [
+      8
+    ],
+    "team": [
+      2,
+      7,
+      9,
+      11
+    ],
+    "teams": [
+      11
+    ],
+    "teamwork": [
+      11,
+      15
+    ],
+    "tear": [
+      13
+    ],
+    "techcourse": [
+      32
+    ],
+    "technique": [
+      16
+    ],
+    "techniques": [
+      8
+    ],
+    "technology": [
+      8
+    ],
+    "tecoble": [
+      32
+    ],
+    "teenager": [
+      19
+    ],
+    "tell": [
+      2,
+      7,
+      8,
+      19
+    ],
+    "telling": [
+      7
+    ],
+    "temperature": [
+      3
+    ],
+    "temptation": [
+      8
+    ],
+    "tempts": [
+      8
+    ],
+    "tend": [
+      3
+    ],
+    "tendency": [
+      2,
+      7
+    ],
+    "term": [
+      2,
+      8,
+      11,
+      17
+    ],
+    "test": [
+      1,
+      9,
+      10,
+      15
+    ],
+    "tested": [
+      1
+    ],
+    "tests": [
+      1
+    ],
+    "text": [
+      12
+    ],
+    "textbooks": [
+      8
+    ],
+    "than": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16
+    ],
+    "thank": [
+      2
+    ],
+    "that": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16,
+      17,
+      20
+    ],
+    "their": [
+      3,
+      6,
+      7,
+      9,
+      11,
+      12,
+      13,
+      19,
+      20
+    ],
+    "them": [
+      8,
+      9,
+      12,
+      13
+    ],
+    "theme": [
+      12
+    ],
+    "then": [
+      1,
+      3,
+      17
+    ],
+    "there": [
+      3,
+      4,
+      9,
+      13,
+      15,
+      20
+    ],
+    "these": [
+      14,
+      20
+    ],
+    "they": [
+      3,
+      4,
+      6,
+      7,
+      9,
+      12,
+      13,
+      18,
+      20
+    ],
+    "thick": [
+      5
+    ],
+    "thicker": [
+      6
+    ],
+    "thin": [
+      5
+    ],
+    "thing": [
+      5,
+      8
+    ],
+    "things": [
+      1,
+      6,
+      15
+    ],
+    "think": [
+      1,
+      4,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19
+    ],
+    "thinking": [
+      9,
+      19
+    ],
+    "third": [
+      14
+    ],
+    "those": [
+      4,
+      5,
+      9
+    ],
+    "though": [
+      6,
+      7,
+      11,
+      14
+    ],
+    "thoughtful": [
+      13
+    ],
+    "thoughtless": [
+      13
+    ],
+    "thousand": [
+      8
+    ],
+    "thread": [
+      21
+    ],
+    "threadpool": [
+      21
+    ],
+    "three": [
+      2,
+      3,
+      4,
+      13
+    ],
+    "threshold": [
+      1
+    ],
+    "thrill": [
+      5
+    ],
+    "thrives": [
+      2
+    ],
+    "through": [
+      1,
+      2,
+      5,
+      7,
+      8,
+      10,
+      11,
+      13
+    ],
+    "throw": [
+      3,
+      4,
+      12
+    ],
+    "tidy": [
+      20
+    ],
+    "time": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9,
+      12,
+      14,
+      15,
+      19,
+      20
+    ],
+    "times": [
+      3,
+      10
+    ],
+    "tip": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      14
+    ],
+    "tipping": [
+      14
+    ],
+    "tired": [
+      10,
+      14
+    ],
+    "tiring": [
+      20
+    ],
+    "tistory": [
+      21,
+      23,
+      29,
+      32
+    ],
+    "title": [
+      17
+    ],
+    "today": [
+      4,
+      8,
+      9,
+      20
+    ],
+    "together": [
+      6,
+      11,
+      12,
+      14
+    ],
+    "toilet": [
+      20
+    ],
+    "tokens": [
+      13
+    ],
+    "tolerance": [
+      1
+    ],
+    "tomorrow": [
+      8,
+      9,
+      14
+    ],
+    "tongue": [
+      1
+    ],
+    "tonight": [
+      3
+    ],
+    "too": [
+      3,
+      7,
+      11,
+      13,
+      14
+    ],
+    "took": [
+      4,
+      5
+    ],
+    "topic": [
+      35
+    ],
+    "topics": [
+      8
+    ],
+    "torn": [
+      7
+    ],
+    "toss": [
+      10
+    ],
+    "total": [
+      10,
+      14
+    ],
+    "touch": [
+      6,
+      9,
+      15
+    ],
+    "tough": [
+      1,
+      11
+    ],
+    "toward": [
+      2,
+      5,
+      13
+    ],
+    "track": [
+      8,
+      14,
+      19
+    ],
+    "trades": [
+      5
+    ],
+    "tradition": [
+      12
+    ],
+    "traditional": [
+      4,
+      16
+    ],
+    "traffic": [
+      1,
+      7
+    ],
+    "train": [
+      11
+    ],
+    "trained": [
+      1
+    ],
+    "trait": [
+      2,
+      6,
+      7
+    ],
+    "traits": [
+      6
+    ],
+    "transaction": [
+      32
+    ],
+    "transformation": [
+      3
+    ],
+    "travel": [
+      5,
+      18
+    ],
+    "traveled": [
+      5
+    ],
+    "traveling": [
+      5,
+      10
+    ],
+    "treasured": [
+      13
+    ],
+    "treat": [
+      12,
+      13
+    ],
+    "treatment": [
+      14
+    ],
+    "tree": [
+      6
+    ],
+    "trial": [
+      8
+    ],
+    "tried": [
+      3,
+      13
+    ],
+    "trip": [
+      9,
+      12,
+      15,
+      18
+    ],
+    "true": [
+      2,
+      5,
+      7,
+      17
+    ],
+    "truly": [
+      3,
+      5,
+      7,
+      11,
+      13
+    ],
+    "trust": [
+      7
+    ],
+    "truth": [
+      7
+    ],
+    "try": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      10,
+      11,
+      14,
+      15,
+      18
+    ],
+    "trying": [
+      3
+    ],
+    "tube": [
+      16
+    ],
+    "tubs": [
+      16
+    ],
+    "turn": [
+      4,
+      9,
+      10,
+      20
+    ],
+    "turning": [
+      9
+    ],
+    "tutoring": [
+      9
+    ],
+    "tv": [
+      18
+    ],
+    "two": [
+      5,
+      7,
+      8,
+      11
+    ],
+    "types": [
+      14,
+      21
+    ],
+    "ultimate": [
+      5
+    ],
+    "umbrella": [
+      20
+    ],
+    "uncle": [
+      6
+    ],
+    "uncles": [
+      6
+    ],
+    "under": [
+      1,
+      2,
+      4
+    ],
+    "undercooked": [
+      3
+    ],
+    "understand": [
+      9,
+      19
+    ],
+    "underwater": [
+      16
+    ],
+    "unexpected": [
+      15
+    ],
+    "unfair": [
+      7
+    ],
+    "unforgettable": [
+      6,
+      15
+    ],
+    "uniforms": [
+      15
+    ],
+    "unique": [
+      13
+    ],
+    "university": [
+      11
+    ],
+    "unlike": [
+      10
+    ],
+    "unnecessarily": [
+      7
+    ],
+    "unusual": [
+      10,
+      13
+    ],
+    "up": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19,
+      20,
+      35
+    ],
+    "upbringing": [
+      2,
+      7,
+      20
+    ],
+    "upd": [
+      23
+    ],
+    "us": [
+      5,
+      6,
+      12,
+      18
+    ],
+    "usage": [
+      8
+    ],
+    "use": [
+      7,
+      8,
+      13,
+      19,
+      21,
+      31
+    ],
+    "used": [
+      3,
+      10,
+      13,
+      18,
+      20
+    ],
+    "useful": [
+      1
+    ],
+    "user": [
+      14
+    ],
+    "users": [
+      7
+    ],
+    "using": [
+      7,
+      10,
+      16,
+      20,
+      23,
+      30
+    ],
+    "usually": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      18,
+      20
+    ],
+    "utility": [
+      29
+    ],
+    "utilityclass": [
+      29
+    ],
+    "vacancy": [
+      18
+    ],
+    "vacation": [
+      5,
+      16
+    ],
+    "vacuum": [
+      13,
+      20
+    ],
+    "vacuuming": [
+      20
+    ],
+    "validation": [
+      25
+    ],
+    "valuable": [
+      19
+    ],
+    "value": [
+      2,
+      7,
+      8,
+      23
+    ],
+    "values": [
+      2,
+      6,
+      9,
+      15,
+      19
+    ],
+    "varied": [
+      13
+    ],
+    "variety": [
+      3
+    ],
+    "ve": [
+      1,
+      3,
+      5,
+      8,
+      11,
+      13,
+      17,
+      19,
+      20
+    ],
+    "vegan": [
+      3
+    ],
+    "velog": [
+      21,
+      33
+    ],
+    "venue": [
+      12
+    ],
+    "versatile": [
+      13
+    ],
+    "very": [
+      16
+    ],
+    "vibes": [
+      15
+    ],
+    "videos": [
+      8
+    ],
+    "view": [
+      3,
+      12,
+      18
+    ],
+    "violation": [
+      7,
+      15
+    ],
+    "violations": [
+      7,
+      15
+    ],
+    "virtue": [
+      7
+    ],
+    "visit": [
+      5,
+      6
+    ],
+    "visited": [
+      16
+    ],
+    "visiting": [
+      5,
+      6,
+      16
+    ],
+    "visits": [
+      4
+    ],
+    "visuals": [
+      8
+    ],
+    "vitamin": [
+      4
+    ],
+    "vitamins": [
+      4
+    ],
+    "vivid": [
+      9
+    ],
+    "vocabulary": [
+      20
+    ],
+    "vojtechruzicka": [
+      29
+    ],
+    "volunteer": [
+      11
+    ],
+    "volunteering": [
+      17
+    ],
+    "vs": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      29,
+      33
+    ],
+    "vu": [
+      13
+    ],
+    "wait": [
+      1
+    ],
+    "wake": [
+      9,
+      10
+    ],
+    "walk": [
+      8
+    ],
+    "wall": [
+      1
+    ],
+    "wallet": [
+      7
+    ],
+    "wanderlust": [
+      5
+    ],
+    "want": [
+      1,
+      5,
+      9,
+      13,
+      16,
+      20
+    ],
+    "wanted": [
+      3,
+      5
+    ],
+    "warm": [
+      3
+    ],
+    "warmth": [
+      5
+    ],
+    "warned": [
+      15
+    ],
+    "was": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "waste": [
+      20
+    ],
+    "watch": [
+      13
+    ],
+    "watching": [
+      8
+    ],
+    "water": [
+      6,
+      16,
+      20
+    ],
+    "watermelon": [
+      20
+    ],
+    "wavelength": [
+      11
+    ],
+    "waves": [
+      16
+    ],
+    "way": [
+      7,
+      9,
+      13,
+      14,
+      20
+    ],
+    "ways": [
+      9
+    ],
+    "we": [
+      3,
+      5,
+      6,
+      9,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      20
+    ],
+    "weaknesses": [
+      2
+    ],
+    "wear": [
+      2
+    ],
+    "weather": [
+      4,
+      14
+    ],
+    "web": [
+      23
+    ],
+    "wedding": [
+      6
+    ],
+    "week": [
+      1,
+      3,
+      4,
+      14
+    ],
+    "weekdays": [
+      10
+    ],
+    "weekend": [
+      6,
+      18
+    ],
+    "weekends": [
+      6,
+      10,
+      20
+    ],
+    "weekly": [
+      19
+    ],
+    "weigh": [
+      7
+    ],
+    "weighed": [
+      9
+    ],
+    "weight": [
+      11
+    ],
+    "well": [
+      10,
+      12
+    ],
+    "went": [
+      3,
+      12,
+      16
+    ],
+    "were": [
+      4,
+      6,
+      12,
+      14,
+      16
+    ],
+    "western": [
+      3
+    ],
+    "what": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "when": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      16,
+      18,
+      19,
+      20,
+      21
+    ],
+    "whenever": [
+      5,
+      6
+    ],
+    "where": [
+      11,
+      12
+    ],
+    "whereas": [
+      9
+    ],
+    "wherever": [
+      11
+    ],
+    "whether": [
+      7,
+      10,
+      19
+    ],
+    "which": [
+      5,
+      6,
+      9,
+      11,
+      18
+    ],
+    "while": [
+      1,
+      2,
+      4,
+      7,
+      8,
+      10,
+      12,
+      14
+    ],
+    "whip": [
+      6,
+      13
+    ],
+    "whipped": [
+      6,
+      13
+    ],
+    "whistleblowers": [
+      7
+    ],
+    "white": [
+      7,
+      10
+    ],
+    "who": [
+      2,
+      5,
+      6,
+      9,
+      10,
+      15
+    ],
+    "whole": [
+      9
+    ],
+    "why": [
+      10,
+      12,
+      15,
+      16,
+      17
+    ],
+    "wi": [
+      5
+    ],
+    "widely": [
+      3
+    ],
+    "will": [
+      13
+    ],
+    "willpower": [
+      1
+    ],
+    "win": [
+      17
+    ],
+    "wind": [
+      1,
+      10
+    ],
+    "windboy83": [
+      33
+    ],
+    "wipe": [
+      20
+    ],
+    "wire": [
+      20
+    ],
+    "wireless": [
+      20
+    ],
+    "wisdom": [
+      5
+    ],
+    "wisely": [
+      19
+    ],
+    "wish": [
+      13
+    ],
+    "wishlist": [
+      12
+    ],
+    "within": [
+      2,
+      9
+    ],
+    "without": [
+      1,
+      10,
+      11,
+      13,
+      18,
+      19
+    ],
+    "woke": [
+      10
+    ],
+    "won": [
+      17
+    ],
+    "wooden": [
+      13
+    ],
+    "word": [
+      3,
+      8
+    ],
+    "words": [
+      2,
+      8
+    ],
+    "work": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      11,
+      12,
+      13,
+      17
+    ],
+    "worker": [
+      14
+    ],
+    "workers": [
+      14
+    ],
+    "working": [
+      1,
+      5,
+      10,
+      11,
+      14,
+      16,
+      17
+    ],
+    "workplaces": [
+      13
+    ],
+    "works": [
+      10
+    ],
+    "world": [
+      3,
+      7,
+      15
+    ],
+    "worry": [
+      16
+    ],
+    "worth": [
+      3,
+      8,
+      14,
+      19
+    ],
+    "would": [
+      2,
+      5,
+      7,
+      8,
+      9,
+      13,
+      15,
+      16,
+      18,
+      19
+    ],
+    "wouldn": [
+      13
+    ],
+    "wrap": [
+      12,
+      13
+    ],
+    "wrapping": [
+      13
+    ],
+    "write": [
+      10,
+      17,
+      33,
+      35
+    ],
+    "writing": [
+      17
+    ],
+    "wrong": [
+      7,
+      14
+    ],
+    "www": [
+      21,
+      23,
+      24,
+      28,
+      29,
+      30,
+      32,
+      33
+    ],
+    "xlsx": [
+      33
+    ],
+    "xssf": [
+      33
+    ],
+    "xxeol": [
+      21
+    ],
+    "year": [
+      15,
+      20
+    ],
+    "years": [
+      2,
+      8,
+      9,
+      13,
+      17
+    ],
+    "yeoooo": [
+      30
+    ],
+    "yes": [
+      14
+    ],
+    "yet": [
+      3,
+      5,
+      7
+    ],
+    "you": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "young": [
+      9
+    ],
+    "younger": [
+      8
+    ],
+    "your": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "yourself": [
+      1,
+      2,
+      13
+    ],
+    "zetcode": [
+      33
+    ],
+    "zone": [
+      1,
+      3,
+      8,
+      20
+    ],
+    "zoned": [
+      8
+    ],
+    "zza": [
+      22
+    ],
+    "가격": [
+      14
+    ],
+    "가격이": [
+      3
+    ],
+    "가계도": [
+      6
+    ],
+    "가계도를": [
+      6
+    ],
+    "가까운": [
+      6
+    ],
+    "가깝다": [
+      35
+    ],
+    "가끔": [
+      14
+    ],
+    "가끔씩": [
+      3
+    ],
+    "가는": [
+      8,
+      9,
+      35
+    ],
+    "가능": [
+      35
+    ],
+    "가능성": [
+      35
+    ],
+    "가능성이": [
+      35
+    ],
+    "가능하게": [
+      13
+    ],
+    "가능하다": [
+      35
+    ],
+    "가능하지만": [
+      35
+    ],
+    "가능한": [
+      20,
+      35
+    ],
+    "가다": [
+      16
+    ],
+    "가르쳐야": [
+      8
+    ],
+    "가르치는": [
+      9
+    ],
+    "가방": [
+      18
+    ],
+    "가벼운": [
+      4
+    ],
+    "가볍게": [
+      1
+    ],
+    "가위": [
+      10
+    ],
+    "가장": [
+      6,
+      12,
+      35
+    ],
+    "가장이": [
+      6
+    ],
+    "가정": [
+      4,
+      6
+    ],
+    "가져가는": [
+      35
+    ],
+    "가족": [
+      6,
+      14
+    ],
+    "가족을": [
+      6
+    ],
+    "가족의": [
+      6
+    ],
+    "가족처럼": [
+      20
+    ],
+    "가지게": [
+      13
+    ],
+    "가지를": [
+      35
+    ],
+    "가진": [
+      15
+    ],
+    "가진다": [
+      11
+    ],
+    "가치가": [
+      14
+    ],
+    "각자": [
+      35
+    ],
+    "간단히": [
+      2
+    ],
+    "간식": [
+      15
+    ],
+    "간의": [
+      6
+    ],
+    "간직하다": [
+      13
+    ],
+    "갈등": [
+      2,
+      11
+    ],
+    "갈등하다": [
+      7
+    ],
+    "갈리는": [
+      3
+    ],
+    "감기": [
+      4
+    ],
+    "감당이": [
+      20
+    ],
+    "감사": [
+      2,
+      5,
+      7
+    ],
+    "감정을": [
+      1
+    ],
+    "감정적": [
+      1,
+      6
+    ],
+    "감정적인": [
+      13
+    ],
+    "갑니다": [
+      9
+    ],
+    "값에": [
+      35
+    ],
+    "강력한": [
+      35
+    ],
+    "강사": [
+      16
+    ],
+    "강의": [
+      8
+    ],
+    "강점": [
+      2,
+      35
+    ],
+    "강점을": [
+      2
+    ],
+    "강조하다": [
+      2
+    ],
+    "강조했습니다": [
+      2
+    ],
+    "강하다": [
+      35
+    ],
+    "강한": [
+      2,
+      6
+    ],
+    "강화": [
+      8,
+      35
+    ],
+    "같게": [
+      10
+    ],
+    "같다": [
+      4,
+      35
+    ],
+    "같은": [
+      6,
+      12,
+      13,
+      35
+    ],
+    "같이": [
+      35
+    ],
+    "같지는": [
+      35
+    ],
+    "개념": [
+      6,
+      35
+    ],
+    "개념과는": [
+      35
+    ],
+    "개방적으로": [
+      15
+    ],
+    "개선하다": [
+      2
+    ],
+    "개선하려는": [
+      2
+    ],
+    "개씩": [
+      35
+    ],
+    "개인": [
+      9
+    ],
+    "개인적": [
+      1,
+      2,
+      7
+    ],
+    "갱신하는": [
+      35
+    ],
+    "거리": [
+      1
+    ],
+    "거스르다": [
+      6
+    ],
+    "거예요": [
+      20
+    ],
+    "거의": [
+      14
+    ],
+    "건강": [
+      14,
+      15
+    ],
+    "건강식": [
+      14
+    ],
+    "건강에": [
+      14
+    ],
+    "건넜다고도": [
+      20
+    ],
+    "건네주다": [
+      12,
+      13
+    ],
+    "건드리다": [
+      1
+    ],
+    "건물": [
+      5
+    ],
+    "걸레질하다": [
+      20
+    ],
+    "걸렸어요": [
+      4
+    ],
+    "걸리다": [
+      3,
+      4
+    ],
+    "걸린": [
+      4,
+      5
+    ],
+    "검사하다": [
+      4
+    ],
+    "검색": [
+      3,
+      35
+    ],
+    "것도": [
+      35
+    ],
+    "것보단": [
+      8
+    ],
+    "것은": [
+      7
+    ],
+    "것을": [
+      13,
+      15
+    ],
+    "것이": [
+      1,
+      35
+    ],
+    "것인가": [
+      35
+    ],
+    "격려": [
+      8
+    ],
+    "격려하다": [
+      5
+    ],
+    "격식있는": [
+      20
+    ],
+    "견디다": [
+      1,
+      9
+    ],
+    "견학이나": [
+      9
+    ],
+    "결과": [
+      2,
+      9,
+      35
+    ],
+    "결과를": [
+      35
+    ],
+    "결국": [
+      3,
+      7,
+      13
+    ],
+    "결단력": [
+      1
+    ],
+    "결속": [
+      11
+    ],
+    "결실을": [
+      2
+    ],
+    "결정": [
+      11
+    ],
+    "결혼식에서": [
+      6
+    ],
+    "경우": [
+      12,
+      35
+    ],
+    "경우가": [
+      35
+    ],
+    "경우엔": [
+      20
+    ],
+    "경쟁": [
+      6,
+      15
+    ],
+    "경제": [
+      6
+    ],
+    "경제적으로": [
+      6
+    ],
+    "경향": [
+      2
+    ],
+    "경험": [
+      3,
+      8,
+      14
+    ],
+    "경험을": [
+      3
+    ],
+    "경험하다": [
+      3
+    ],
+    "곁을": [
+      9
+    ],
+    "계산": [
+      35
+    ],
+    "계속": [
+      2,
+      9,
+      35
+    ],
+    "계속되는": [
+      1
+    ],
+    "계속하다": [
+      11
+    ],
+    "계약": [
+      7
+    ],
+    "고객": [
+      14,
+      18
+    ],
+    "고급스러운": [
+      13
+    ],
+    "고급의": [
+      3
+    ],
+    "고독": [
+      5
+    ],
+    "고려": [
+      35
+    ],
+    "고르게": [
+      35
+    ],
+    "고르다": [
+      12
+    ],
+    "고무시켰다": [
+      11
+    ],
+    "고민하기": [
+      14
+    ],
+    "고발자는": [
+      7
+    ],
+    "고수하다": [
+      3,
+      6,
+      11,
+      14
+    ],
+    "고요": [
+      10
+    ],
+    "고용": [
+      14
+    ],
+    "고용되다": [
+      2
+    ],
+    "고장": [
+      19
+    ],
+    "고쳐야": [
+      19
+    ],
+    "고층": [
+      5
+    ],
+    "곤두서": [
+      1
+    ],
+    "골다": [
+      10
+    ],
+    "공간을": [
+      20
+    ],
+    "공감": [
+      5
+    ],
+    "공감력": [
+      2
+    ],
+    "공동": [
+      11
+    ],
+    "공백이": [
+      35
+    ],
+    "공부": [
+      8,
+      15
+    ],
+    "공부하거나": [
+      10
+    ],
+    "공부하다": [
+      8
+    ],
+    "공부합니다": [
+      8
+    ],
+    "공부해야": [
+      8
+    ],
+    "공손함": [
+      3
+    ],
+    "공정한": [
+      14,
+      15
+    ],
+    "과감히": [
+      5
+    ],
+    "과거": [
+      35
+    ],
+    "과도한": [
+      10
+    ],
+    "과목들": [
+      15
+    ],
+    "과목을": [
+      9
+    ],
+    "과외": [
+      9
+    ],
+    "과외를": [
+      9
+    ],
+    "과일": [
+      20
+    ],
+    "과장하다": [
+      7
+    ],
+    "과정": [
+      2,
+      8,
+      11
+    ],
+    "과정에": [
+      5
+    ],
+    "과정에는": [
+      11
+    ],
+    "과정에서": [
+      20
+    ],
+    "과제": [
+      9
+    ],
+    "과제를": [
+      6
+    ],
+    "과하게": [
+      3
+    ],
+    "관계": [
+      5,
+      6,
+      9
+    ],
+    "관대": [
+      6
+    ],
+    "관대함": [
+      6
+    ],
+    "관련된": [
+      5
+    ],
+    "관리": [
+      15,
+      35
+    ],
+    "관리적": [
+      6
+    ],
+    "관리해야": [
+      35
+    ],
+    "관리형": [
+      35
+    ],
+    "관심이": [
+      15
+    ],
+    "관점": [
+      35
+    ],
+    "괜찮습니다": [
+      2
+    ],
+    "교감": [
+      5
+    ],
+    "교묘히": [
+      4
+    ],
+    "교실을": [
+      9
+    ],
+    "교육": [
+      9,
+      15
+    ],
+    "교칙": [
+      15
+    ],
+    "구간을": [
+      35
+    ],
+    "구내식당": [
+      3
+    ],
+    "구두": [
+      20
+    ],
+    "구분": [
+      35
+    ],
+    "구분하는": [
+      35
+    ],
+    "구성": [
+      35
+    ],
+    "구성과": [
+      35
+    ],
+    "구조": [
+      2
+    ],
+    "구조에": [
+      35
+    ],
+    "구조와": [
+      35
+    ],
+    "구조의": [
+      35
+    ],
+    "구조적": [
+      35
+    ],
+    "구체화한": [
+      20
+    ],
+    "국한되지": [
+      20
+    ],
+    "군중": [
+      11,
+      12
+    ],
+    "굴리다": [
+      10
+    ],
+    "굴린다": [
+      19
+    ],
+    "권리": [
+      14
+    ],
+    "귀찮아서": [
+      3
+    ],
+    "귀찮을": [
+      1
+    ],
+    "규율": [
+      9
+    ],
+    "규정": [
+      15
+    ],
+    "규칙": [
+      7
+    ],
+    "그건": [
+      20
+    ],
+    "그녀는": [
+      2,
+      6,
+      8,
+      19
+    ],
+    "그녀의": [
+      11
+    ],
+    "그는": [
+      1,
+      2,
+      4,
+      6,
+      11
+    ],
+    "그대로": [
+      7
+    ],
+    "그래서": [
+      35
+    ],
+    "그렇게": [
+      20
+    ],
+    "그룹": [
+      35
+    ],
+    "그림": [
+      8
+    ],
+    "그만큼": [
+      35
+    ],
+    "그만한": [
+      14
+    ],
+    "그의": [
+      7
+    ],
+    "극광": [
+      5
+    ],
+    "극복하다": [
+      1,
+      11
+    ],
+    "근무": [
+      14
+    ],
+    "금액": [
+      14
+    ],
+    "금융": [
+      15
+    ],
+    "급식실": [
+      15
+    ],
+    "급식으로": [
+      9
+    ],
+    "급증": [
+      35
+    ],
+    "급증으로": [
+      35
+    ],
+    "급하게": [
+      13
+    ],
+    "급히": [
+      13
+    ],
+    "긋는": [
+      1
+    ],
+    "긋다": [
+      1
+    ],
+    "기간": [
+      18,
+      35
+    ],
+    "기관": [
+      9
+    ],
+    "기내": [
+      18
+    ],
+    "기념일": [
+      13
+    ],
+    "기다리다": [
+      1
+    ],
+    "기대": [
+      15
+    ],
+    "기대다": [
+      4
+    ],
+    "기대에": [
+      2
+    ],
+    "기대하다": [
+      6,
+      11,
+      12,
+      15
+    ],
+    "기록하고": [
+      35
+    ],
+    "기록해": [
+      35
+    ],
+    "기반": [
+      35
+    ],
+    "기반에서는": [
+      35
+    ],
+    "기반으로": [
+      35
+    ],
+    "기반이": [
+      35
+    ],
+    "기본": [
+      35
+    ],
+    "기분": [
+      14
+    ],
+    "기술": [
+      9,
+      15
+    ],
+    "기술을": [
+      16
+    ],
+    "기술적": [
+      2
+    ],
+    "기억": [
+      10
+    ],
+    "기억에": [
+      13,
+      15
+    ],
+    "기억할": [
+      13,
+      35
+    ],
+    "기운이": [
+      19
+    ],
+    "기울다": [
+      13
+    ],
+    "기존": [
+      35
+    ],
+    "기준": [
+      7,
+      18
+    ],
+    "기준으로": [
+      35
+    ],
+    "기준을": [
+      17
+    ],
+    "기진맥진하게": [
+      4
+    ],
+    "기프트": [
+      13
+    ],
+    "기회": [
+      15
+    ],
+    "긴장을": [
+      10
+    ],
+    "길거리": [
+      3,
+      20
+    ],
+    "길어요": [
+      20
+    ],
+    "길잡이": [
+      5
+    ],
+    "김에": [
+      20
+    ],
+    "깊은": [
+      2,
+      5,
+      13
+    ],
+    "깊이": [
+      9,
+      10
+    ],
+    "깜빡": [
+      10
+    ],
+    "깜짝": [
+      12,
+      13
+    ],
+    "깨는": [
+      10
+    ],
+    "깨다": [
+      2,
+      10
+    ],
+    "깨달음": [
+      9
+    ],
+    "깨달음을": [
+      9
+    ],
+    "깨어": [
+      10
+    ],
+    "깨어나다": [
+      10
+    ],
+    "깨지": [
+      10
+    ],
+    "깨진": [
+      19
+    ],
+    "껍질": [
+      20
+    ],
+    "껍질은": [
+      20
+    ],
+    "꾀병": [
+      4
+    ],
+    "꾸준히": [
+      4
+    ],
+    "꿀차예요": [
+      4
+    ],
+    "꿈이": [
+      17
+    ],
+    "끄다": [
+      10
+    ],
+    "끈기": [
+      2,
+      11
+    ],
+    "끊기다": [
+      8
+    ],
+    "끊다": [
+      7
+    ],
+    "끊어진": [
+      10
+    ],
+    "끌어내다": [
+      2
+    ],
+    "끝까지": [
+      1,
+      2,
+      7,
+      11
+    ],
+    "끝나는": [
+      35
+    ],
+    "끝내는": [
+      35
+    ],
+    "끝내려고": [
+      8
+    ],
+    "끝낼": [
+      11
+    ],
+    "끝에": [
+      11
+    ],
+    "나가다": [
+      3
+    ],
+    "나누고": [
+      35
+    ],
+    "나누다": [
+      8,
+      13
+    ],
+    "나누어": [
+      35
+    ],
+    "나눈": [
+      35
+    ],
+    "나눌": [
+      35
+    ],
+    "나눠": [
+      35
+    ],
+    "나다": [
+      13
+    ],
+    "나를": [
+      2,
+      15
+    ],
+    "나면": [
+      20
+    ],
+    "나쁜": [
+      4
+    ],
+    "나쁠": [
+      4,
+      5
+    ],
+    "나서": [
+      4
+    ],
+    "나아가게": [
+      2
+    ],
+    "나아가다": [
+      1,
+      2
+    ],
+    "나오지": [
+      35
+    ],
+    "나온": [
+      20
+    ],
+    "나요": [
+      1
+    ],
+    "나은": [
+      2
+    ],
+    "나의": [
+      2
+    ],
+    "나이는": [
+      12
+    ],
+    "나중에": [
+      35
+    ],
+    "나타내는": [
+      35
+    ],
+    "나타낸다": [
+      35
+    ],
+    "난이도": [
+      35
+    ],
+    "난장판": [
+      15
+    ],
+    "날씨": [
+      14
+    ],
+    "남겼습니다": [
+      2
+    ],
+    "남기다": [
+      2,
+      5
+    ],
+    "남는": [
+      13,
+      15
+    ],
+    "남다": [
+      9
+    ],
+    "남아서": [
+      14
+    ],
+    "남은": [
+      35
+    ],
+    "낫다": [
+      4,
+      8,
+      11
+    ],
+    "낮은": [
+      19
+    ],
+    "낮잠": [
+      10
+    ],
+    "내가": [
+      15
+    ],
+    "내내": [
+      1
+    ],
+    "내다": [
+      1,
+      4
+    ],
+    "내부": [
+      7,
+      15
+    ],
+    "내부에서는": [
+      35
+    ],
+    "내부에서만": [
+      35
+    ],
+    "내야": [
+      4
+    ],
+    "내일": [
+      8,
+      9
+    ],
+    "내향적인": [
+      1
+    ],
+    "냉정을": [
+      2
+    ],
+    "너무": [
+      1,
+      3,
+      9,
+      10,
+      14
+    ],
+    "넓히는": [
+      8
+    ],
+    "넘다": [
+      1
+    ],
+    "넘어서다": [
+      17
+    ],
+    "넣고": [
+      35
+    ],
+    "네트워크": [
+      35
+    ],
+    "노동자": [
+      14
+    ],
+    "노력은": [
+      8
+    ],
+    "노력을": [
+      2
+    ],
+    "노력하다": [
+      5,
+      8
+    ],
+    "논란을": [
+      3
+    ],
+    "논리적": [
+      35
+    ],
+    "논의": [
+      11
+    ],
+    "논의하다": [
+      2
+    ],
+    "놀라움": [
+      12
+    ],
+    "놀리다": [
+      13
+    ],
+    "농담": [
+      15
+    ],
+    "농담을": [
+      2
+    ],
+    "높은": [
+      2,
+      17,
+      35
+    ],
+    "놓치기": [
+      35
+    ],
+    "놓치다": [
+      13
+    ],
+    "놓친": [
+      35
+    ],
+    "누군가를": [
+      12
+    ],
+    "누군가에게": [
+      5
+    ],
+    "누군가의": [
+      1,
+      5
+    ],
+    "눈물이": [
+      13
+    ],
+    "눈에": [
+      8,
+      12,
+      13
+    ],
+    "눈치채다": [
+      1
+    ],
+    "눌림": [
+      10
+    ],
+    "느껴지다": [
+      10
+    ],
+    "느끼다": [
+      2
+    ],
+    "느끼도록": [
+      6
+    ],
+    "느낌": [
+      13
+    ],
+    "느닷없이": [
+      13
+    ],
+    "느린": [
+      35
+    ],
+    "느슨하게": [
+      35
+    ],
+    "능력": [
+      2
+    ],
+    "능력은": [
+      11
+    ],
+    "능숙한": [
+      5
+    ],
+    "늦게": [
+      10
+    ],
+    "늦게까지": [
+      10
+    ],
+    "늦더라도": [
+      8
+    ],
+    "늦어짐": [
+      35
+    ],
+    "늦은": [
+      12
+    ],
+    "늦잠": [
+      10
+    ],
+    "늦추다": [
+      1
+    ],
+    "다가가다": [
+      9
+    ],
+    "다가오다": [
+      4
+    ],
+    "다닙니다": [
+      9
+    ],
+    "다루기에": [
+      35
+    ],
+    "다루다": [
+      11
+    ],
+    "다르다": [
+      13
+    ],
+    "다른": [
+      2,
+      13,
+      35
+    ],
+    "다름": [
+      35
+    ],
+    "다방면에": [
+      5
+    ],
+    "다시": [
+      3,
+      9,
+      15,
+      35
+    ],
+    "다시는": [
+      3
+    ],
+    "다양성": [
+      3,
+      8
+    ],
+    "다양한": [
+      13
+    ],
+    "다용도의": [
+      13
+    ],
+    "다운": [
+      35
+    ],
+    "다운됨": [
+      35
+    ],
+    "다음과": [
+      35
+    ],
+    "다음날": [
+      14
+    ],
+    "다중": [
+      35
+    ],
+    "다투다": [
+      6
+    ],
+    "다하다": [
+      11
+    ],
+    "닦다": [
+      20
+    ],
+    "단계": [
+      35
+    ],
+    "단골": [
+      14
+    ],
+    "단순": [
+      32,
+      35
+    ],
+    "단순한": [
+      13,
+      35
+    ],
+    "단순히": [
+      35
+    ],
+    "단위": [
+      35
+    ],
+    "단위다": [
+      35
+    ],
+    "단위로": [
+      35
+    ],
+    "단위의": [
+      35
+    ],
+    "단위이자": [
+      35
+    ],
+    "단체": [
+      15
+    ],
+    "달려": [
+      2
+    ],
+    "닮다": [
+      6
+    ],
+    "담은": [
+      13,
+      20
+    ],
+    "담임": [
+      15
+    ],
+    "답답한": [
+      20
+    ],
+    "당황스러운": [
+      10
+    ],
+    "대규모": [
+      35
+    ],
+    "대기업": [
+      3
+    ],
+    "대대적으로": [
+      12
+    ],
+    "대량": [
+      35
+    ],
+    "대비": [
+      10
+    ],
+    "대신": [
+      20
+    ],
+    "대용량": [
+      35
+    ],
+    "대유행": [
+      4
+    ],
+    "대응": [
+      35
+    ],
+    "대응은": [
+      35
+    ],
+    "대접": [
+      12
+    ],
+    "대중": [
+      16
+    ],
+    "대참사": [
+      14
+    ],
+    "대처하다": [
+      1,
+      2,
+      3
+    ],
+    "대청소": [
+      20
+    ],
+    "대체재는": [
+      35
+    ],
+    "대출을": [
+      19
+    ],
+    "대표": [
+      35
+    ],
+    "대학": [
+      15
+    ],
+    "덕분에": [
+      11,
+      35
+    ],
+    "데는": [
+      10
+    ],
+    "데이터": [
+      35
+    ],
+    "데이터를": [
+      35
+    ],
+    "데자뷔": [
+      13
+    ],
+    "도달했다": [
+      11
+    ],
+    "도덕적": [
+      7
+    ],
+    "도시락": [
+      9
+    ],
+    "도움을": [
+      11
+    ],
+    "도움이": [
+      19
+    ],
+    "도저히": [
+      1
+    ],
+    "도전": [
+      2
+    ],
+    "도전하다": [
+      5
+    ],
+    "도중에": [
+      8
+    ],
+    "독감에서": [
+      4
+    ],
+    "독립성": [
+      8,
+      15
+    ],
+    "독립적으로": [
+      35
+    ],
+    "돈을": [
+      19
+    ],
+    "돈이": [
+      13,
+      19
+    ],
+    "돋보이다": [
+      2
+    ],
+    "돌려보내다": [
+      3
+    ],
+    "돌려주다": [
+      11
+    ],
+    "돌려준": [
+      7
+    ],
+    "돌보다": [
+      5,
+      6
+    ],
+    "돌아가시다": [
+      20
+    ],
+    "돌이켜": [
+      9
+    ],
+    "돌처럼": [
+      10
+    ],
+    "돌파구": [
+      17
+    ],
+    "돕다": [
+      11
+    ],
+    "돕습니다": [
+      6
+    ],
+    "동기부여해줬다": [
+      15
+    ],
+    "동료": [
+      11
+    ],
+    "동료들의": [
+      11
+    ],
+    "동료애": [
+      6
+    ],
+    "동료와의": [
+      5
+    ],
+    "동물": [
+      20
+    ],
+    "동물이": [
+      20
+    ],
+    "동물한테만": [
+      20
+    ],
+    "동반": [
+      5
+    ],
+    "동반자": [
+      5,
+      9
+    ],
+    "동시에": [
+      35
+    ],
+    "동아리": [
+      15
+    ],
+    "동안": [
+      4,
+      8
+    ],
+    "동의하는": [
+      13
+    ],
+    "동작": [
+      35
+    ],
+    "동지": [
+      6
+    ],
+    "동행": [
+      5
+    ],
+    "되는": [
+      14
+    ],
+    "되다": [
+      3,
+      5,
+      7,
+      9,
+      12,
+      13,
+      17,
+      20
+    ],
+    "되돌아보다": [
+      8,
+      9,
+      10,
+      12
+    ],
+    "되받아치고": [
+      1
+    ],
+    "되어서": [
+      23
+    ],
+    "되었습니다": [
+      6
+    ],
+    "되지만": [
+      20,
+      35
+    ],
+    "된다": [
+      19
+    ],
+    "된다는": [
+      35
+    ],
+    "두개는": [
+      20
+    ],
+    "두고": [
+      35
+    ],
+    "두껍고": [
+      20
+    ],
+    "두다": [
+      10
+    ],
+    "두드러지다": [
+      11
+    ],
+    "두려움": [
+      7
+    ],
+    "둘러보다": [
+      5
+    ],
+    "둥둥": [
+      16
+    ],
+    "뒤척이다": [
+      10
+    ],
+    "든든한": [
+      5
+    ],
+    "들게": [
+      10
+    ],
+    "들르다": [
+      6
+    ],
+    "들어": [
+      35
+    ],
+    "들어가기": [
+      9
+    ],
+    "들어가다": [
+      8
+    ],
+    "들어가도록": [
+      35
+    ],
+    "들어가면": [
+      8
+    ],
+    "들으며": [
+      10
+    ],
+    "들지": [
+      1
+    ],
+    "듯한": [
+      5
+    ],
+    "등을": [
+      20
+    ],
+    "디스크에": [
+      35
+    ],
+    "디지털": [
+      10
+    ],
+    "딜레마": [
+      7
+    ],
+    "따다": [
+      17
+    ],
+    "따라": [
+      13
+    ],
+    "따라가지": [
+      20,
+      35
+    ],
+    "따라잡다": [
+      8
+    ],
+    "따르다": [
+      7
+    ],
+    "딱딱한": [
+      20
+    ],
+    "때나": [
+      5
+    ],
+    "때도": [
+      20
+    ],
+    "때리다": [
+      20
+    ],
+    "때문에": [
+      1,
+      35
+    ],
+    "떠나다": [
+      5,
+      8
+    ],
+    "떠돌이": [
+      5
+    ],
+    "떠올리게": [
+      9
+    ],
+    "떠올리다": [
+      9
+    ],
+    "떨어지다": [
+      1
+    ],
+    "또는": [
+      35
+    ],
+    "또래": [
+      15
+    ],
+    "똑같은": [
+      13
+    ],
+    "뚝딱": [
+      6
+    ],
+    "뛰다": [
+      9
+    ],
+    "뛰어넘다": [
+      5
+    ],
+    "뜻은": [
+      19
+    ],
+    "띄다": [
+      8,
+      12,
+      13
+    ],
+    "라고": [
+      20,
+      35
+    ],
+    "라고는": [
+      20
+    ],
+    "라는": [
+      20,
+      35
+    ],
+    "라우팅": [
+      35
+    ],
+    "라우팅할": [
+      35
+    ],
+    "레인": [
+      16
+    ],
+    "레코드를": [
+      35
+    ],
+    "로그": [
+      35
+    ],
+    "로만": [
+      35
+    ],
+    "로직": [
+      35
+    ],
+    "리더십": [
+      15
+    ],
+    "리소스": [
+      35
+    ],
+    "마감이": [
+      1
+    ],
+    "마감일": [
+      1
+    ],
+    "마디": [
+      8
+    ],
+    "마세요": [
+      2
+    ],
+    "마음에": [
+      1,
+      6,
+      13
+    ],
+    "마음을": [
+      3,
+      4,
+      5,
+      9,
+      11,
+      13
+    ],
+    "마음이": [
+      11
+    ],
+    "막혔습니다": [
+      8
+    ],
+    "막히다": [
+      8
+    ],
+    "만났습니다": [
+      6
+    ],
+    "만능": [
+      35
+    ],
+    "만든": [
+      13
+    ],
+    "만든다": [
+      1,
+      11
+    ],
+    "만들": [
+      20
+    ],
+    "만들다": [
+      6,
+      13,
+      20
+    ],
+    "만들었습니다": [
+      6
+    ],
+    "만족": [
+      2
+    ],
+    "만족감": [
+      17
+    ],
+    "만회하다": [
+      10
+    ],
+    "많다": [
+      15
+    ],
+    "많아서": [
+      8,
+      20
+    ],
+    "많으면": [
+      35
+    ],
+    "많은": [
+      9
+    ],
+    "많이": [
+      20
+    ],
+    "말보다": [
+      8
+    ],
+    "말을": [
+      1
+    ],
+    "말하다": [
+      7
+    ],
+    "말하자면": [
+      2
+    ],
+    "말한다면": [
+      2
+    ],
+    "말할": [
+      7
+    ],
+    "말할땐": [
+      20
+    ],
+    "말할떄는": [
+      19
+    ],
+    "말해요": [
+      20
+    ],
+    "맛있게": [
+      13
+    ],
+    "맛있는": [
+      13
+    ],
+    "망가진": [
+      19
+    ],
+    "망가진걸": [
+      19
+    ],
+    "맞게": [
+      35
+    ],
+    "맞는": [
+      11,
+      12,
+      35
+    ],
+    "맞다": [
+      9
+    ],
+    "맞들면": [
+      11
+    ],
+    "맞서는": [
+      7
+    ],
+    "맞장구치다": [
+      13
+    ],
+    "맞춤": [
+      2
+    ],
+    "맞춰주다": [
+      13
+    ],
+    "매우": [
+      10,
+      11,
+      19
+    ],
+    "매일": [
+      14,
+      19
+    ],
+    "매점": [
+      15
+    ],
+    "매주": [
+      9
+    ],
+    "매혹적인": [
+      5
+    ],
+    "맺다": [
+      2
+    ],
+    "머리가": [
+      8
+    ],
+    "머릿속에": [
+      9
+    ],
+    "먹기": [
+      14
+    ],
+    "먹다": [
+      6,
+      13,
+      14
+    ],
+    "먹었습니다": [
+      9
+    ],
+    "먹을지": [
+      14
+    ],
+    "멀어지다": [
+      9,
+      15
+    ],
+    "멈추다": [
+      8
+    ],
+    "멈췄거나": [
+      35
+    ],
+    "멍하다": [
+      8
+    ],
+    "멍해졌습니다": [
+      8
+    ],
+    "멍해지다": [
+      8
+    ],
+    "메뉴": [
+      14,
+      15
+    ],
+    "메시지": [
+      35
+    ],
+    "메시지가": [
+      35
+    ],
+    "메시지를": [
+      35
+    ],
+    "메시지의": [
+      35
+    ],
+    "멜론처럼": [
+      20
+    ],
+    "면역": [
+      4
+    ],
+    "면접관에게": [
+      2
+    ],
+    "면접관이": [
+      2
+    ],
+    "면접에서": [
+      2
+    ],
+    "명단": [
+      12
+    ],
+    "명사이므로": [
+      20
+    ],
+    "명소": [
+      3
+    ],
+    "명언": [
+      20
+    ],
+    "명예로운": [
+      7
+    ],
+    "명이": [
+      8
+    ],
+    "명함": [
+      3
+    ],
+    "명확성": [
+      8,
+      11
+    ],
+    "명확한": [
+      11
+    ],
+    "모니터링": [
+      35
+    ],
+    "모델": [
+      35
+    ],
+    "모두": [
+      20,
+      35
+    ],
+    "모두가": [
+      6
+    ],
+    "모두를": [
+      11
+    ],
+    "모두에게": [
+      1
+    ],
+    "모든": [
+      11,
+      13
+    ],
+    "모르다": [
+      8
+    ],
+    "모른다": [
+      10
+    ],
+    "모아": [
+      19
+    ],
+    "모은": [
+      35
+    ],
+    "모의고사": [
+      15
+    ],
+    "모이는": [
+      15
+    ],
+    "모임": [
+      6,
+      12,
+      15
+    ],
+    "목록": [
+      12,
+      13
+    ],
+    "목록에": [
+      5
+    ],
+    "목욕탕": [
+      16
+    ],
+    "목적에": [
+      35
+    ],
+    "목적이": [
+      35
+    ],
+    "목차": [
+      35
+    ],
+    "목표로": [
+      2
+    ],
+    "목표를": [
+      2,
+      5
+    ],
+    "몫을": [
+      11
+    ],
+    "몰래": [
+      15
+    ],
+    "몰리면": [
+      35
+    ],
+    "몰림": [
+      35
+    ],
+    "몰입": [
+      8
+    ],
+    "몰입하다": [
+      8
+    ],
+    "몸살": [
+      4
+    ],
+    "몸을": [
+      10
+    ],
+    "몸이": [
+      4
+    ],
+    "몸짓": [
+      2
+    ],
+    "못하고": [
+      1
+    ],
+    "못하다": [
+      1,
+      20
+    ],
+    "못할": [
+      15,
+      35
+    ],
+    "못해요": [
+      20
+    ],
+    "무거운지": [
+      35
+    ],
+    "무료": [
+      18
+    ],
+    "무선": [
+      20
+    ],
+    "무선이라고": [
+      20
+    ],
+    "무엇인가": [
+      35
+    ],
+    "무지개다리를": [
+      20
+    ],
+    "묶어서": [
+      35
+    ],
+    "문제": [
+      35
+    ],
+    "문제를": [
+      8
+    ],
+    "문지르다": [
+      20
+    ],
+    "문질러": [
+      20
+    ],
+    "문화": [
+      13,
+      14
+    ],
+    "물기": [
+      20
+    ],
+    "물려주다": [
+      6
+    ],
+    "물보다": [
+      6
+    ],
+    "물어보다": [
+      3
+    ],
+    "물을": [
+      19
+    ],
+    "미덕": [
+      7
+    ],
+    "미루다": [
+      4,
+      7
+    ],
+    "미치는": [
+      14
+    ],
+    "미팅": [
+      20
+    ],
+    "민간요법": [
+      4
+    ],
+    "민간요법은": [
+      4
+    ],
+    "민감함": [
+      1
+    ],
+    "민망한": [
+      15
+    ],
+    "믿어주다": [
+      15
+    ],
+    "밀리는": [
+      35
+    ],
+    "밀리지": [
+      35
+    ],
+    "바나나보트": [
+      16
+    ],
+    "바로": [
+      8
+    ],
+    "바쁘고": [
+      35
+    ],
+    "바탕으로": [
+      35
+    ],
+    "반드시": [
+      20
+    ],
+    "반려": [
+      20
+    ],
+    "반려동물을": [
+      20
+    ],
+    "반려동물한테도": [
+      20
+    ],
+    "반복적인": [
+      13,
+      20
+    ],
+    "반입": [
+      18
+    ],
+    "반장": [
+      15
+    ],
+    "받고": [
+      13
+    ],
+    "받는": [
+      19
+    ],
+    "받다": [
+      17
+    ],
+    "받아": [
+      8
+    ],
+    "받아들이다": [
+      1
+    ],
+    "받아요": [
+      9
+    ],
+    "발견": [
+      11
+    ],
+    "발견하다": [
+      3,
+      13
+    ],
+    "발생한다": [
+      35
+    ],
+    "발전": [
+      2
+    ],
+    "발전시키다": [
+      8
+    ],
+    "발행하면": [
+      35
+    ],
+    "밤늦게": [
+      8
+    ],
+    "밤늦게까지": [
+      10
+    ],
+    "밤새": [
+      8
+    ],
+    "밤새도록": [
+      8
+    ],
+    "밤을": [
+      8
+    ],
+    "방과": [
+      9
+    ],
+    "방과후": [
+      15
+    ],
+    "방문합니다": [
+      6
+    ],
+    "방식": [
+      35
+    ],
+    "방식이": [
+      35
+    ],
+    "방해": [
+      10
+    ],
+    "방향": [
+      11,
+      35
+    ],
+    "방향으로": [
+      11
+    ],
+    "배낭여행": [
+      5
+    ],
+    "배달": [
+      14
+    ],
+    "배달비": [
+      14
+    ],
+    "배달시켜": [
+      14
+    ],
+    "배달앱에서": [
+      14
+    ],
+    "배달을": [
+      14
+    ],
+    "배달음식": [
+      14
+    ],
+    "배달집": [
+      14
+    ],
+    "배송": [
+      35
+    ],
+    "배수하다": [
+      19
+    ],
+    "배영": [
+      16
+    ],
+    "배우기": [
+      8
+    ],
+    "배우다": [
+      1,
+      3
+    ],
+    "배우자의": [
+      6
+    ],
+    "배운다": [
+      8
+    ],
+    "배울": [
+      8
+    ],
+    "배워서": [
+      2
+    ],
+    "배치": [
+      35
+    ],
+    "배포": [
+      35
+    ],
+    "백지장도": [
+      11
+    ],
+    "버리기": [
+      20
+    ],
+    "버티다": [
+      1
+    ],
+    "버팀목이": [
+      5
+    ],
+    "번다": [
+      19
+    ],
+    "번뜩임의": [
+      11
+    ],
+    "번뿐인": [
+      3,
+      11
+    ],
+    "번째": [
+      35
+    ],
+    "번호": [
+      35
+    ],
+    "벌금을": [
+      7
+    ],
+    "범위": [
+      35
+    ],
+    "법률": [
+      7
+    ],
+    "벗어나": [
+      9
+    ],
+    "벗어나다": [
+      1,
+      3,
+      5
+    ],
+    "벗어난": [
+      1
+    ],
+    "베개": [
+      10
+    ],
+    "변경": [
+      35
+    ],
+    "변명": [
+      7
+    ],
+    "변명을": [
+      20
+    ],
+    "변수": [
+      23
+    ],
+    "변화": [
+      3
+    ],
+    "변화를": [
+      9
+    ],
+    "별도로": [
+      23
+    ],
+    "병가": [
+      4
+    ],
+    "병가를": [
+      4
+    ],
+    "병렬": [
+      35
+    ],
+    "병렬로": [
+      35
+    ],
+    "병목": [
+      35
+    ],
+    "병에서": [
+      4
+    ],
+    "병이나": [
+      4
+    ],
+    "보거나": [
+      35
+    ],
+    "보관할": [
+      35
+    ],
+    "보기": [
+      35
+    ],
+    "보내는": [
+      2
+    ],
+    "보내다": [
+      12
+    ],
+    "보낸": [
+      35
+    ],
+    "보는": [
+      35
+    ],
+    "보다": [
+      6,
+      35
+    ],
+    "보다는": [
+      20
+    ],
+    "보면": [
+      9
+    ],
+    "보상받는다": [
+      8
+    ],
+    "보상받다": [
+      8
+    ],
+    "보상하다": [
+      3
+    ],
+    "보여도": [
+      19
+    ],
+    "보이지만": [
+      35
+    ],
+    "보장": [
+      35
+    ],
+    "보존": [
+      35
+    ],
+    "보존한다": [
+      35
+    ],
+    "보충제": [
+      4
+    ],
+    "보충하다": [
+      4
+    ],
+    "보충해야": [
+      4
+    ],
+    "보통": [
+      20,
+      35
+    ],
+    "복구": [
+      35
+    ],
+    "복구와": [
+      35
+    ],
+    "복잡성": [
+      8,
+      35
+    ],
+    "복장": [
+      15
+    ],
+    "복합기업": [
+      3
+    ],
+    "본성": [
+      7
+    ],
+    "봉투": [
+      13
+    ],
+    "봐요": [
+      20
+    ],
+    "부과받았습니다": [
+      7
+    ],
+    "부담": [
+      3,
+      35
+    ],
+    "부담감": [
+      1
+    ],
+    "부담돼요": [
+      1
+    ],
+    "부드럽게": [
+      20
+    ],
+    "부딪히다": [
+      1
+    ],
+    "부리다": [
+      4
+    ],
+    "부모": [
+      6
+    ],
+    "부모님의": [
+      15
+    ],
+    "부모와": [
+      6
+    ],
+    "부상이": [
+      4
+    ],
+    "부서진": [
+      19
+    ],
+    "부응하다": [
+      2,
+      9
+    ],
+    "부족": [
+      10,
+      35
+    ],
+    "부하가": [
+      35
+    ],
+    "분담": [
+      11,
+      35
+    ],
+    "분담을": [
+      11
+    ],
+    "분류하는": [
+      35
+    ],
+    "분리": [
+      35
+    ],
+    "분리할": [
+      35
+    ],
+    "분산": [
+      35
+    ],
+    "분산되게": [
+      35
+    ],
+    "분산하다": [
+      13
+    ],
+    "분석": [
+      35
+    ],
+    "분석에": [
+      35
+    ],
+    "분야에서": [
+      7
+    ],
+    "분위기": [
+      2,
+      3,
+      5,
+      8,
+      12,
+      15
+    ],
+    "분위기를": [
+      2
+    ],
+    "분포": [
+      35
+    ],
+    "분해돼서": [
+      20
+    ],
+    "분해되다": [
+      20
+    ],
+    "불가산": [
+      20
+    ],
+    "불과하다": [
+      12
+    ],
+    "불만": [
+      3
+    ],
+    "불면증": [
+      10
+    ],
+    "불쑥": [
+      13
+    ],
+    "불안": [
+      11
+    ],
+    "불쾌하지만": [
+      1
+    ],
+    "불쾌함": [
+      3
+    ],
+    "불편": [
+      35
+    ],
+    "불필요한": [
+      20
+    ],
+    "불합격되다": [
+      2
+    ],
+    "붕괴": [
+      1
+    ],
+    "붙일": [
+      35
+    ],
+    "브로커": [
+      35
+    ],
+    "비격식": [
+      4
+    ],
+    "비교": [
+      2
+    ],
+    "비교는": [
+      35
+    ],
+    "비대면": [
+      14
+    ],
+    "비동기": [
+      35
+    ],
+    "비밀": [
+      6
+    ],
+    "비싸다": [
+      13
+    ],
+    "비싼": [
+      14
+    ],
+    "비율": [
+      10
+    ],
+    "비축하다": [
+      13
+    ],
+    "비핵심": [
+      35
+    ],
+    "빈도": [
+      3,
+      6,
+      14
+    ],
+    "빈방": [
+      18
+    ],
+    "빌딩": [
+      5
+    ],
+    "빠르게": [
+      35
+    ],
+    "빠른": [
+      4
+    ],
+    "빠졌어": [
+      19
+    ],
+    "빠지다": [
+      15
+    ],
+    "빠지면": [
+      35
+    ],
+    "빠진": [
+      14,
+      19
+    ],
+    "빨래": [
+      6
+    ],
+    "빼내다": [
+      19
+    ],
+    "사건": [
+      9
+    ],
+    "사고방식": [
+      12
+    ],
+    "사과": [
+      4
+    ],
+    "사는": [
+      6
+    ],
+    "사다리를": [
+      5
+    ],
+    "사두다": [
+      4
+    ],
+    "사라지다": [
+      11
+    ],
+    "사람": [
+      1,
+      3,
+      5,
+      6,
+      10,
+      20
+    ],
+    "사람들": [
+      6
+    ],
+    "사람말고": [
+      20
+    ],
+    "사람보다": [
+      2
+    ],
+    "사람이": [
+      20
+    ],
+    "사려": [
+      13
+    ],
+    "사설": [
+      9
+    ],
+    "사용": [
+      35
+    ],
+    "사용된다": [
+      35
+    ],
+    "사용됨": [
+      4
+    ],
+    "사용됩니다": [
+      20
+    ],
+    "사용량": [
+      35
+    ],
+    "사용자": [
+      14,
+      35
+    ],
+    "사용하다": [
+      14
+    ],
+    "사용하면": [
+      35
+    ],
+    "사용할": [
+      20,
+      35
+    ],
+    "사이가": [
+      6
+    ],
+    "사이에서": [
+      7
+    ],
+    "사치": [
+      3
+    ],
+    "사치스러운": [
+      13
+    ],
+    "사항을": [
+      35
+    ],
+    "삭제": [
+      35
+    ],
+    "살리다": [
+      2
+    ],
+    "삼아": [
+      14
+    ],
+    "상당한": [
+      13
+    ],
+    "상대적으로": [
+      35
+    ],
+    "상을": [
+      17
+    ],
+    "상처나": [
+      4
+    ],
+    "상쾌해진": [
+      20
+    ],
+    "상태": [
+      10,
+      19,
+      35
+    ],
+    "상태를": [
+      4
+    ],
+    "상태만": [
+      35
+    ],
+    "상태에": [
+      8
+    ],
+    "상태와": [
+      35
+    ],
+    "상품": [
+      35
+    ],
+    "상품권": [
+      13
+    ],
+    "상호": [
+      11
+    ],
+    "상황": [
+      35
+    ],
+    "상황과": [
+      35
+    ],
+    "새겨진": [
+      9
+    ],
+    "새로운": [
+      3,
+      15,
+      35
+    ],
+    "새로움": [
+      12
+    ],
+    "새웠습니다": [
+      8
+    ],
+    "생각이": [
+      8,
+      11
+    ],
+    "생각하는": [
+      20
+    ],
+    "생각해내다": [
+      2
+    ],
+    "생기는": [
+      14,
+      15,
+      35
+    ],
+    "생길": [
+      35
+    ],
+    "생일": [
+      12
+    ],
+    "생활": [
+      15
+    ],
+    "생활을": [
+      5
+    ],
+    "샤워하고": [
+      20
+    ],
+    "서는": [
+      9
+    ],
+    "서로": [
+      8
+    ],
+    "서버": [
+      35
+    ],
+    "서비스": [
+      14,
+      35
+    ],
+    "서비스가": [
+      35
+    ],
+    "서서히": [
+      9
+    ],
+    "섞이다": [
+      11
+    ],
+    "선물": [
+      13
+    ],
+    "선물을": [
+      12
+    ],
+    "선물하다": [
+      13
+    ],
+    "선생님": [
+      15
+    ],
+    "선을": [
+      1,
+      7
+    ],
+    "선이": [
+      20
+    ],
+    "선택의": [
+      13
+    ],
+    "선택하다": [
+      3,
+      12
+    ],
+    "선호": [
+      8
+    ],
+    "설거지": [
+      20
+    ],
+    "설거지를": [
+      20
+    ],
+    "설계": [
+      35
+    ],
+    "설계를": [
+      35
+    ],
+    "설계하는": [
+      35
+    ],
+    "설계할": [
+      35
+    ],
+    "설계해야": [
+      35
+    ],
+    "설명": [
+      35
+    ],
+    "설명으로": [
+      8
+    ],
+    "설명하다": [
+      11
+    ],
+    "설정": [
+      35
+    ],
+    "설치하다": [
+      12
+    ],
+    "성격": [
+      2,
+      9
+    ],
+    "성공의": [
+      2
+    ],
+    "성공하게": [
+      11
+    ],
+    "성공하다": [
+      9,
+      12
+    ],
+    "성대한": [
+      12
+    ],
+    "성숙해지다": [
+      9
+    ],
+    "성의": [
+      13
+    ],
+    "성장": [
+      2,
+      14,
+      20
+    ],
+    "성질": [
+      7
+    ],
+    "성취": [
+      8,
+      9,
+      17
+    ],
+    "성취감": [
+      2
+    ],
+    "성향": [
+      7
+    ],
+    "세우다": [
+      2,
+      17
+    ],
+    "세탁": [
+      20
+    ],
+    "소규모": [
+      12
+    ],
+    "소리쳤습니다": [
+      1
+    ],
+    "소모시키다": [
+      1
+    ],
+    "소문이": [
+      3
+    ],
+    "소비": [
+      35
+    ],
+    "소비를": [
+      35
+    ],
+    "소비자": [
+      35
+    ],
+    "소비자가": [
+      35
+    ],
+    "소비할": [
+      35
+    ],
+    "소음": [
+      10
+    ],
+    "소음이": [
+      1
+    ],
+    "소중한": [
+      6
+    ],
+    "소중히": [
+      13
+    ],
+    "소통": [
+      15
+    ],
+    "소풍": [
+      15
+    ],
+    "소풍을": [
+      9
+    ],
+    "속도": [
+      14
+    ],
+    "속도를": [
+      1,
+      35
+    ],
+    "속에서": [
+      11
+    ],
+    "속에서도": [
+      7
+    ],
+    "속임수": [
+      7
+    ],
+    "손끝에": [
+      8
+    ],
+    "손님이": [
+      3
+    ],
+    "손짓": [
+      2
+    ],
+    "솔직하게": [
+      2
+    ],
+    "솔직히": [
+      7
+    ],
+    "수가": [
+      35
+    ],
+    "수만큼": [
+      35
+    ],
+    "수면": [
+      10
+    ],
+    "수박": [
+      20
+    ],
+    "수박이나": [
+      20
+    ],
+    "수수료": [
+      14
+    ],
+    "수업": [
+      8,
+      15
+    ],
+    "수업에": [
+      9
+    ],
+    "수업을": [
+      15
+    ],
+    "수영": [
+      16
+    ],
+    "수영하러": [
+      16
+    ],
+    "수요": [
+      14
+    ],
+    "수익": [
+      7
+    ],
+    "수중": [
+      16
+    ],
+    "수집": [
+      35
+    ],
+    "수학": [
+      8,
+      9
+    ],
+    "수학여행": [
+      15
+    ],
+    "수행하다": [
+      2
+    ],
+    "수행한다": [
+      35
+    ],
+    "숙련도": [
+      5
+    ],
+    "숙박": [
+      18
+    ],
+    "숙박시설": [
+      3
+    ],
+    "숙소": [
+      3
+    ],
+    "순간": [
+      3,
+      11,
+      12
+    ],
+    "순간적으로": [
+      35
+    ],
+    "순서": [
+      35
+    ],
+    "순서를": [
+      35
+    ],
+    "순수함": [
+      9
+    ],
+    "숨겨진": [
+      3,
+      14
+    ],
+    "숨기다": [
+      7
+    ],
+    "숫자에": [
+      12
+    ],
+    "쉬는": [
+      9
+    ],
+    "쉬다": [
+      1,
+      4,
+      6,
+      12
+    ],
+    "쉬움": [
+      35
+    ],
+    "쉽다": [
+      35
+    ],
+    "스냅샷": [
+      35
+    ],
+    "스릴": [
+      5
+    ],
+    "스퀴지로": [
+      20
+    ],
+    "스타일이": [
+      15
+    ],
+    "스트레스": [
+      10,
+      15
+    ],
+    "스트레스를": [
+      9
+    ],
+    "스트레스에는": [
+      4
+    ],
+    "스트리밍": [
+      35
+    ],
+    "스트림": [
+      35
+    ],
+    "스트림을": [
+      35
+    ],
+    "스폰지": [
+      20
+    ],
+    "습관": [
+      1,
+      4,
+      8,
+      10,
+      14
+    ],
+    "습득하다": [
+      8
+    ],
+    "승진": [
+      5
+    ],
+    "승진의": [
+      5
+    ],
+    "승진하다": [
+      2,
+      5
+    ],
+    "시각을": [
+      3
+    ],
+    "시간": [
+      6,
+      8,
+      9,
+      10,
+      14,
+      15,
+      35
+    ],
+    "시간관리": [
+      15
+    ],
+    "시간을": [
+      12
+    ],
+    "시간의": [
+      9,
+      10
+    ],
+    "시간이": [
+      19,
+      20
+    ],
+    "시간이고": [
+      8
+    ],
+    "시너지": [
+      11
+    ],
+    "시댁": [
+      6
+    ],
+    "시도하다": [
+      3,
+      15
+    ],
+    "시설": [
+      18
+    ],
+    "시스템": [
+      18,
+      35
+    ],
+    "시스템을": [
+      35
+    ],
+    "시스템이": [
+      35
+    ],
+    "시야를": [
+      8
+    ],
+    "시작하다": [
+      5,
+      6,
+      8
+    ],
+    "시점": [
+      12
+    ],
+    "시점부터": [
+      35
+    ],
+    "시청률": [
+      3
+    ],
+    "시켜서": [
+      14
+    ],
+    "시키다": [
+      14
+    ],
+    "시행착오": [
+      8
+    ],
+    "시험": [
+      14,
+      15
+    ],
+    "시험을": [
+      8,
+      9
+    ],
+    "시험하다": [
+      1
+    ],
+    "시험해": [
+      6
+    ],
+    "시험했습니다": [
+      1
+    ],
+    "식구들이": [
+      6
+    ],
+    "식문화": [
+      14
+    ],
+    "식사": [
+      6,
+      18
+    ],
+    "식사하다": [
+      6
+    ],
+    "식습관": [
+      14
+    ],
+    "식으로": [
+      35
+    ],
+    "식은": [
+      14
+    ],
+    "신경": [
+      3,
+      12
+    ],
+    "신경을": [
+      1
+    ],
+    "신경이": [
+      1
+    ],
+    "신규": [
+      35
+    ],
+    "신뢰성": [
+      2
+    ],
+    "신용": [
+      19
+    ],
+    "신중하게": [
+      11
+    ],
+    "실감나게": [
+      4
+    ],
+    "실무에서는": [
+      35
+    ],
+    "실생활에": [
+      15
+    ],
+    "실시간": [
+      35
+    ],
+    "실온": [
+      3
+    ],
+    "실용적인": [
+      13
+    ],
+    "실제": [
+      35
+    ],
+    "실제로": [
+      8,
+      10
+    ],
+    "실패": [
+      35
+    ],
+    "실패율": [
+      35
+    ],
+    "실패한": [
+      14
+    ],
+    "싫은": [
+      6,
+      20
+    ],
+    "심하게": [
+      35
+    ],
+    "싶다": [
+      3
+    ],
+    "싶었지만": [
+      1
+    ],
+    "싶은": [
+      1,
+      5,
+      13
+    ],
+    "쌓는": [
+      35
+    ],
+    "쌓다": [
+      1,
+      5,
+      8
+    ],
+    "쌓이는": [
+      35
+    ],
+    "써요": [
+      20
+    ],
+    "썩히거나": [
+      20
+    ],
+    "썩히다": [
+      20
+    ],
+    "쓰고": [
+      20
+    ],
+    "쓰는": [
+      14,
+      35
+    ],
+    "쓰는가": [
+      35
+    ],
+    "쓰다": [
+      3,
+      7,
+      12,
+      13
+    ],
+    "쓰더라구요": [
+      20
+    ],
+    "쓰레기": [
+      20
+    ],
+    "쓰세요": [
+      20
+    ],
+    "쓰여요": [
+      20
+    ],
+    "쓰이는": [
+      1,
+      2,
+      4,
+      35
+    ],
+    "쓰이며": [
+      20
+    ],
+    "쓰인다": [
+      35
+    ],
+    "씨름하다": [
+      7
+    ],
+    "아깝지": [
+      3
+    ],
+    "아끼다": [
+      13
+    ],
+    "아니라": [
+      4,
+      35
+    ],
+    "아닌": [
+      13,
+      15
+    ],
+    "아님": [
+      35
+    ],
+    "아래": [
+      35
+    ],
+    "아이들이": [
+      6
+    ],
+    "아이디어를": [
+      8
+    ],
+    "아주": [
+      13,
+      15
+    ],
+    "아침": [
+      18
+    ],
+    "아침형": [
+      10
+    ],
+    "아키텍처": [
+      35
+    ],
+    "아프고": [
+      4
+    ],
+    "아프다고": [
+      4
+    ],
+    "안에서": [
+      35
+    ],
+    "안에서는": [
+      35
+    ],
+    "안전": [
+      14
+    ],
+    "안전하게": [
+      3
+    ],
+    "안정감을": [
+      6
+    ],
+    "안정적으로": [
+      35
+    ],
+    "안하면": [
+      20
+    ],
+    "않고": [
+      10
+    ],
+    "않기로": [
+      3
+    ],
+    "않다": [
+      3,
+      12,
+      20,
+      35
+    ],
+    "않다고": [
+      20
+    ],
+    "않도록": [
+      35
+    ],
+    "않아도": [
+      35
+    ],
+    "않았지만": [
+      1
+    ],
+    "않은": [
+      3,
+      5,
+      12
+    ],
+    "않음": [
+      20,
+      35
+    ],
+    "알게": [
+      9
+    ],
+    "알려지지": [
+      5
+    ],
+    "알림": [
+      35
+    ],
+    "알맞은": [
+      3
+    ],
+    "압박": [
+      15
+    ],
+    "압박감": [
+      1
+    ],
+    "앞으로": [
+      2
+    ],
+    "앞장서다": [
+      11
+    ],
+    "애매한": [
+      7
+    ],
+    "애완동물에는": [
+      20
+    ],
+    "애정": [
+      5,
+      6
+    ],
+    "애정을": [
+      20
+    ],
+    "애플리케이션": [
+      35
+    ],
+    "애플리케이션이": [
+      35
+    ],
+    "야망": [
+      2
+    ],
+    "야식": [
+      14
+    ],
+    "약간": [
+      7
+    ],
+    "약뿐": [
+      4
+    ],
+    "약속": [
+      7
+    ],
+    "약점을": [
+      2
+    ],
+    "약초": [
+      4
+    ],
+    "얇은": [
+      20
+    ],
+    "양날의": [
+      7
+    ],
+    "양도하다": [
+      13
+    ],
+    "양보다": [
+      13
+    ],
+    "양심": [
+      7
+    ],
+    "양쪽": [
+      7
+    ],
+    "얘기가": [
+      20
+    ],
+    "어두운": [
+      10
+    ],
+    "어둠": [
+      10
+    ],
+    "어디까지": [
+      35
+    ],
+    "어떠한": [
+      7
+    ],
+    "어떤": [
+      35
+    ],
+    "어떻게": [
+      35
+    ],
+    "어려움을": [
+      11
+    ],
+    "어려워하다": [
+      15
+    ],
+    "어렵게": [
+      17
+    ],
+    "어린": [
+      13
+    ],
+    "어색한": [
+      2,
+      13
+    ],
+    "어울리다": [
+      1,
+      5,
+      6,
+      9,
+      12,
+      15
+    ],
+    "억제하다": [
+      2
+    ],
+    "억지로": [
+      13
+    ],
+    "얻다": [
+      2
+    ],
+    "얻은": [
+      17
+    ],
+    "엄격": [
+      6
+    ],
+    "엄격하지만": [
+      15
+    ],
+    "엄격한": [
+      15
+    ],
+    "엄격함": [
+      6
+    ],
+    "엄마가": [
+      20
+    ],
+    "엄청": [
+      13
+    ],
+    "없는": [
+      3,
+      13
+    ],
+    "없다": [
+      4,
+      10
+    ],
+    "없애다": [
+      20
+    ],
+    "없음": [
+      18
+    ],
+    "없이": [
+      4,
+      32,
+      35
+    ],
+    "에게": [
+      35
+    ],
+    "에너지": [
+      1
+    ],
+    "에너지가": [
+      19
+    ],
+    "에너지를": [
+      1
+    ],
+    "에만": [
+      35
+    ],
+    "에서": [
+      2,
+      5,
+      10,
+      35
+    ],
+    "에서는": [
+      35
+    ],
+    "엔진": [
+      3
+    ],
+    "엔티티": [
+      35
+    ],
+    "여가": [
+      6
+    ],
+    "여기는": [
+      13
+    ],
+    "여러": [
+      2,
+      35
+    ],
+    "여전히": [
+      4
+    ],
+    "여지": [
+      35
+    ],
+    "여행": [
+      9
+    ],
+    "여행욕구": [
+      5
+    ],
+    "역사": [
+      6
+    ],
+    "역할": [
+      11,
+      20,
+      35
+    ],
+    "역할을": [
+      2,
+      11
+    ],
+    "연결": [
+      35
+    ],
+    "연결하는": [
+      20
+    ],
+    "연동에": [
+      35
+    ],
+    "연락을": [
+      2,
+      6,
+      9,
+      15
+    ],
+    "연락하다": [
+      4,
+      5
+    ],
+    "연민": [
+      9
+    ],
+    "연습": [
+      9
+    ],
+    "연습이": [
+      1,
+      9
+    ],
+    "열다": [
+      3,
+      4,
+      5,
+      9,
+      11,
+      12,
+      13
+    ],
+    "열심히": [
+      8
+    ],
+    "열어주는": [
+      3
+    ],
+    "열정으로": [
+      2
+    ],
+    "열정을": [
+      15
+    ],
+    "영감": [
+      5
+    ],
+    "영감을": [
+      15
+    ],
+    "영역": [
+      3,
+      7
+    ],
+    "영향": [
+      1,
+      11,
+      14,
+      35
+    ],
+    "예를": [
+      35
+    ],
+    "예방이": [
+      4
+    ],
+    "예산": [
+      12
+    ],
+    "예상": [
+      12,
+      15
+    ],
+    "예시": [
+      35
+    ],
+    "예시는": [
+      35
+    ],
+    "예약": [
+      4
+    ],
+    "예약된": [
+      18
+    ],
+    "옛것이지만": [
+      4
+    ],
+    "오늘": [
+      9
+    ],
+    "오늘은": [
+      4
+    ],
+    "오래": [
+      3,
+      13
+    ],
+    "오랜만이야": [
+      6
+    ],
+    "오렌지": [
+      20
+    ],
+    "오로라": [
+      5
+    ],
+    "오르다": [
+      5
+    ],
+    "오해": [
+      3
+    ],
+    "온도": [
+      18
+    ],
+    "올빼미형": [
+      10
+    ],
+    "옳다": [
+      3
+    ],
+    "옳은": [
+      7
+    ],
+    "와닿다": [
+      13
+    ],
+    "와서": [
+      10
+    ],
+    "와의": [
+      35
+    ],
+    "완곡한": [
+      20
+    ],
+    "완료를": [
+      35
+    ],
+    "완벽을": [
+      1
+    ],
+    "완전": [
+      35
+    ],
+    "완전한": [
+      9
+    ],
+    "완전히": [
+      19,
+      35
+    ],
+    "왜곡하다": [
+      7
+    ],
+    "외모": [
+      7
+    ],
+    "외부": [
+      35
+    ],
+    "외식하다": [
+      3,
+      14
+    ],
+    "외출": [
+      6
+    ],
+    "요금": [
+      14,
+      18
+    ],
+    "요렇게도": [
+      20
+    ],
+    "요리의": [
+      5
+    ],
+    "요리하다": [
+      14
+    ],
+    "요법": [
+      4
+    ],
+    "요소": [
+      10,
+      35
+    ],
+    "요약하다": [
+      2
+    ],
+    "요약하면": [
+      35
+    ],
+    "요즘은": [
+      20
+    ],
+    "요청이": [
+      35
+    ],
+    "용기": [
+      5,
+      7
+    ],
+    "용기가": [
+      7
+    ],
+    "용도": [
+      35
+    ],
+    "용돈": [
+      19
+    ],
+    "우려": [
+      14
+    ],
+    "우리": [
+      4
+    ],
+    "우리말에서처럼": [
+      20
+    ],
+    "우선순위": [
+      12
+    ],
+    "우아하게": [
+      3
+    ],
+    "우연히": [
+      3,
+      13
+    ],
+    "우위": [
+      2
+    ],
+    "우정": [
+      9
+    ],
+    "운동": [
+      3
+    ],
+    "운동장": [
+      9
+    ],
+    "운동하다": [
+      3,
+      4
+    ],
+    "운동회": [
+      15
+    ],
+    "운영": [
+      35
+    ],
+    "운영에서": [
+      35
+    ],
+    "울리다": [
+      13
+    ],
+    "움직임": [
+      10
+    ],
+    "웃긴": [
+      13,
+      15
+    ],
+    "웃다": [
+      13
+    ],
+    "웃으며": [
+      1
+    ],
+    "원래": [
+      19
+    ],
+    "원인": [
+      35
+    ],
+    "원활하게": [
+      11
+    ],
+    "웨어하우스를": [
+      35
+    ],
+    "위기에서": [
+      7
+    ],
+    "위로가": [
+      14
+    ],
+    "위반": [
+      7,
+      15
+    ],
+    "위반으로": [
+      7
+    ],
+    "위생": [
+      4
+    ],
+    "위에": [
+      16
+    ],
+    "위의": [
+      20
+    ],
+    "위치": [
+      35
+    ],
+    "위치를": [
+      35
+    ],
+    "위치에": [
+      35
+    ],
+    "위한": [
+      35
+    ],
+    "위해": [
+      1,
+      6,
+      7,
+      8,
+      13,
+      35
+    ],
+    "위험에": [
+      7
+    ],
+    "위험을": [
+      3
+    ],
+    "유기견": [
+      20
+    ],
+    "유기묘는": [
+      20
+    ],
+    "유대": [
+      6,
+      9,
+      11
+    ],
+    "유대감": [
+      5,
+      6,
+      15
+    ],
+    "유대는": [
+      6
+    ],
+    "유도할": [
+      35
+    ],
+    "유독": [
+      35
+    ],
+    "유리하다": [
+      35
+    ],
+    "유리한": [
+      35
+    ],
+    "유목민": [
+      5
+    ],
+    "유산": [
+      9
+    ],
+    "유산소": [
+      3
+    ],
+    "유일한": [
+      13
+    ],
+    "유입": [
+      35
+    ],
+    "유전자": [
+      6
+    ],
+    "유지": [
+      35
+    ],
+    "유지하기": [
+      35
+    ],
+    "유지하다": [
+      2,
+      6,
+      8,
+      9,
+      11,
+      15
+    ],
+    "유지하세요": [
+      8
+    ],
+    "유치한": [
+      13
+    ],
+    "유혹": [
+      8
+    ],
+    "윤리": [
+      7
+    ],
+    "윤리적": [
+      7
+    ],
+    "으로": [
+      35
+    ],
+    "은유적": [
+      20
+    ],
+    "음식": [
+      3,
+      14
+    ],
+    "음식과": [
+      5
+    ],
+    "음식물": [
+      20
+    ],
+    "음식으로": [
+      14
+    ],
+    "음식이": [
+      13
+    ],
+    "응원하다": [
+      11
+    ],
+    "의견": [
+      2,
+      7,
+      11
+    ],
+    "의견이": [
+      3
+    ],
+    "의도": [
+      7
+    ],
+    "의례적인": [
+      13
+    ],
+    "의무": [
+      9
+    ],
+    "의미": [
+      1,
+      6,
+      35
+    ],
+    "의미로도": [
+      4
+    ],
+    "의미합니다": [
+      4
+    ],
+    "의사": [
+      11
+    ],
+    "의사가": [
+      4
+    ],
+    "의식": [
+      11
+    ],
+    "의식을": [
+      11
+    ],
+    "의존": [
+      11
+    ],
+    "의존하다": [
+      2,
+      7,
+      11,
+      14
+    ],
+    "의지력": [
+      1
+    ],
+    "의지로": [
+      1
+    ],
+    "의지하다": [
+      4,
+      5,
+      6,
+      11
+    ],
+    "의학과": [
+      7
+    ],
+    "이건": [
+      19
+    ],
+    "이겨내다": [
+      4
+    ],
+    "이끌어내다": [
+      2,
+      5
+    ],
+    "이끌었습니다": [
+      7
+    ],
+    "이나": [
+      20
+    ],
+    "이때": [
+      35
+    ],
+    "이렇게": [
+      35
+    ],
+    "이를": [
+      35
+    ],
+    "이름이다": [
+      35
+    ],
+    "이리저리": [
+      9
+    ],
+    "이메일을": [
+      2
+    ],
+    "이번": [
+      6
+    ],
+    "이벤트": [
+      35
+    ],
+    "이벤트가": [
+      35
+    ],
+    "이벤트로": [
+      35
+    ],
+    "이벤트를": [
+      35
+    ],
+    "이벤트만": [
+      35
+    ],
+    "이슈": [
+      35
+    ],
+    "이어지다": [
+      7
+    ],
+    "이유": [
+      35
+    ],
+    "이자율로": [
+      19
+    ],
+    "이정표": [
+      8
+    ],
+    "이해": [
+      7,
+      8
+    ],
+    "이해하면": [
+      35
+    ],
+    "이후": [
+      35
+    ],
+    "익숙한": [
+      1,
+      3
+    ],
+    "익숙해지다": [
+      10
+    ],
+    "익힌": [
+      2
+    ],
+    "인간": [
+      10
+    ],
+    "인간관계에": [
+      15
+    ],
+    "인격": [
+      9
+    ],
+    "인기": [
+      9,
+      14,
+      15,
+      35
+    ],
+    "인내심": [
+      1,
+      6
+    ],
+    "인내심을": [
+      1
+    ],
+    "인덱스": [
+      35
+    ],
+    "인물": [
+      6
+    ],
+    "인사": [
+      12
+    ],
+    "인상": [
+      3,
+      9,
+      14
+    ],
+    "인상을": [
+      2,
+      5
+    ],
+    "인생의": [
+      5
+    ],
+    "인스턴스": [
+      35
+    ],
+    "인식": [
+      3,
+      4
+    ],
+    "인용구": [
+      20
+    ],
+    "인용하다": [
+      20
+    ],
+    "인용할": [
+      20
+    ],
+    "인원": [
+      12
+    ],
+    "인정": [
+      8,
+      9,
+      11,
+      20
+    ],
+    "인정받다": [
+      17
+    ],
+    "인정하다": [
+      2
+    ],
+    "인정해도": [
+      2
+    ],
+    "인터페이스": [
+      14
+    ],
+    "인테리어": [
+      3
+    ],
+    "일반의약품": [
+      4
+    ],
+    "일반의약품으로": [
+      4
+    ],
+    "일반적": [
+      6
+    ],
+    "일반적이다": [
+      35
+    ],
+    "일반적인": [
+      7
+    ],
+    "일부": [
+      35
+    ],
+    "일상": [
+      4,
+      10,
+      14,
+      15
+    ],
+    "일상적": [
+      6
+    ],
+    "일상회화에서": [
+      4
+    ],
+    "일생에": [
+      8,
+      11
+    ],
+    "일시": [
+      35
+    ],
+    "일시적으로": [
+      35
+    ],
+    "일어나는": [
+      10
+    ],
+    "일어나다": [
+      10
+    ],
+    "일에": [
+      11
+    ],
+    "일으키는": [
+      3
+    ],
+    "일으키다": [
+      9
+    ],
+    "일을": [
+      11
+    ],
+    "일이": [
+      1
+    ],
+    "일정": [
+      35
+    ],
+    "일주일": [
+      1,
+      4
+    ],
+    "일치": [
+      11
+    ],
+    "일하다": [
+      10,
+      11
+    ],
+    "읽게": [
+      35
+    ],
+    "읽고": [
+      35
+    ],
+    "읽기": [
+      35
+    ],
+    "읽는": [
+      35
+    ],
+    "읽는다": [
+      35
+    ],
+    "읽어": [
+      35
+    ],
+    "읽어야": [
+      35
+    ],
+    "읽었는지": [
+      35
+    ],
+    "읽을": [
+      35
+    ],
+    "잃다": [
+      1
+    ],
+    "잃어버렸다": [
+      20
+    ],
+    "잃어버린": [
+      7
+    ],
+    "임금": [
+      14
+    ],
+    "임기응변": [
+      2
+    ],
+    "입시": [
+      15
+    ],
+    "입장을": [
+      6
+    ],
+    "있게": [
+      35
+    ],
+    "있고": [
+      20
+    ],
+    "있는": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14,
+      20,
+      35
+    ],
+    "있는지를": [
+      35
+    ],
+    "있다": [
+      1,
+      2,
+      8,
+      10,
+      13,
+      16,
+      35
+    ],
+    "있습니다": [
+      4,
+      9
+    ],
+    "있었다": [
+      11
+    ],
+    "있었습니다": [
+      1
+    ],
+    "있으므로": [
+      35
+    ],
+    "있음": [
+      35
+    ],
+    "잊고": [
+      1
+    ],
+    "잊지": [
+      2,
+      12,
+      15
+    ],
+    "자격이": [
+      13
+    ],
+    "자고": [
+      10
+    ],
+    "자기": [
+      6
+    ],
+    "자기계발": [
+      5
+    ],
+    "자기관리": [
+      15
+    ],
+    "자다": [
+      10
+    ],
+    "자동": [
+      35
+    ],
+    "자라다": [
+      12
+    ],
+    "자랑하다": [
+      13
+    ],
+    "자료": [
+      8
+    ],
+    "자리를": [
+      10
+    ],
+    "자리에서": [
+      20
+    ],
+    "자부심을": [
+      2
+    ],
+    "자세": [
+      2
+    ],
+    "자신감": [
+      1,
+      11
+    ],
+    "자신에게": [
+      13
+    ],
+    "자신은": [
+      10
+    ],
+    "자신의": [
+      1,
+      2,
+      11,
+      17
+    ],
+    "자연스러워요": [
+      20
+    ],
+    "자유를": [
+      13
+    ],
+    "자율성": [
+      2,
+      11
+    ],
+    "자잘하고": [
+      20
+    ],
+    "자존심": [
+      11
+    ],
+    "자주": [
+      1,
+      2,
+      4,
+      10,
+      14,
+      35
+    ],
+    "작동을": [
+      20
+    ],
+    "작동한다": [
+      32
+    ],
+    "작아": [
+      19
+    ],
+    "작업": [
+      11,
+      35
+    ],
+    "작업을": [
+      35
+    ],
+    "작업이": [
+      35
+    ],
+    "잘못된": [
+      14
+    ],
+    "잘하다": [
+      15
+    ],
+    "잠깐": [
+      6
+    ],
+    "잠꼬대를": [
+      10
+    ],
+    "잠든": [
+      10
+    ],
+    "잠들다": [
+      10
+    ],
+    "잠시": [
+      35
+    ],
+    "잠에서": [
+      10
+    ],
+    "잠을": [
+      10
+    ],
+    "잠이": [
+      10
+    ],
+    "잠재력을": [
+      2
+    ],
+    "잡다": [
+      10
+    ],
+    "잡동사니": [
+      20
+    ],
+    "장기적인": [
+      17
+    ],
+    "장난": [
+      15
+    ],
+    "장난꾸러기": [
+      6
+    ],
+    "장난치다": [
+      13
+    ],
+    "장비": [
+      14
+    ],
+    "장소": [
+      12,
+      15
+    ],
+    "장애": [
+      35
+    ],
+    "장애로": [
+      35
+    ],
+    "장이": [
+      8
+    ],
+    "장점은": [
+      35
+    ],
+    "잦으면": [
+      35
+    ],
+    "재검토": [
+      35
+    ],
+    "재고소진": [
+      19
+    ],
+    "재기동": [
+      35
+    ],
+    "재료": [
+      6
+    ],
+    "재분배": [
+      35
+    ],
+    "재사용": [
+      35
+    ],
+    "재사용할": [
+      35
+    ],
+    "재생": [
+      35
+    ],
+    "재생성": [
+      35
+    ],
+    "재생성할": [
+      35
+    ],
+    "재수신은": [
+      35
+    ],
+    "재처리": [
+      35
+    ],
+    "재처리가": [
+      35
+    ],
+    "재할당": [
+      35
+    ],
+    "재할당이": [
+      35
+    ],
+    "저는": [
+      6,
+      8,
+      9
+    ],
+    "저울질하다": [
+      7
+    ],
+    "저장": [
+      35
+    ],
+    "저장소나": [
+      35
+    ],
+    "저장하고": [
+      35
+    ],
+    "저장하는": [
+      35
+    ],
+    "저축하는": [
+      19
+    ],
+    "저축하다": [
+      13
+    ],
+    "적다": [
+      8
+    ],
+    "적용": [
+      35
+    ],
+    "적용되다": [
+      9
+    ],
+    "적응": [
+      8
+    ],
+    "적응하다": [
+      2,
+      4
+    ],
+    "적재": [
+      35
+    ],
+    "적합하다": [
+      35
+    ],
+    "적합할": [
+      35
+    ],
+    "전교생": [
+      15
+    ],
+    "전달": [
+      35
+    ],
+    "전달하고": [
+      35
+    ],
+    "전달하는": [
+      35
+    ],
+    "전략": [
+      5
+    ],
+    "전략을": [
+      35
+    ],
+    "전반": [
+      20
+    ],
+    "전송한다": [
+      35
+    ],
+    "전수하다": [
+      9
+    ],
+    "전에": [
+      9
+    ],
+    "전염병": [
+      4
+    ],
+    "전염성의": [
+      4
+    ],
+    "전원을": [
+      20
+    ],
+    "전체": [
+      35
+    ],
+    "전체가": [
+      35
+    ],
+    "전치사": [
+      8
+    ],
+    "전통": [
+      12
+    ],
+    "전파": [
+      35
+    ],
+    "전하다": [
+      8
+    ],
+    "전혀": [
+      10,
+      13
+    ],
+    "전환점": [
+      9
+    ],
+    "절대": [
+      12
+    ],
+    "절약": [
+      14
+    ],
+    "절제": [
+      3
+    ],
+    "점검": [
+      35
+    ],
+    "점수": [
+      19
+    ],
+    "점수는": [
+      19
+    ],
+    "점심": [
+      9,
+      15
+    ],
+    "점심시간": [
+      9
+    ],
+    "점심식사": [
+      9
+    ],
+    "점이다": [
+      35
+    ],
+    "점점": [
+      9
+    ],
+    "접근법": [
+      8
+    ],
+    "접근성": [
+      8
+    ],
+    "정규": [
+      9
+    ],
+    "정기적으로": [
+      14
+    ],
+    "정당화하다": [
+      7
+    ],
+    "정도로": [
+      20
+    ],
+    "정돈": [
+      20
+    ],
+    "정리": [
+      20,
+      35
+    ],
+    "정리하다": [
+      8
+    ],
+    "정리하면": [
+      35
+    ],
+    "정말": [
+      1
+    ],
+    "정상이나": [
+      35
+    ],
+    "정상처럼": [
+      35
+    ],
+    "정신": [
+      11,
+      15
+    ],
+    "정신이": [
+      11
+    ],
+    "정의": [
+      35
+    ],
+    "정직": [
+      6,
+      9
+    ],
+    "정직이": [
+      7
+    ],
+    "정착하다": [
+      5
+    ],
+    "정체성": [
+      15
+    ],
+    "정치인들은": [
+      7
+    ],
+    "정하다": [
+      1,
+      6
+    ],
+    "제가": [
+      20
+    ],
+    "제거": [
+      35
+    ],
+    "제거해야돼요": [
+      20
+    ],
+    "제공": [
+      35
+    ],
+    "제공하는": [
+      9
+    ],
+    "제대로": [
+      20
+    ],
+    "제스처": [
+      12
+    ],
+    "제출하다": [
+      7
+    ],
+    "조금씩": [
+      19
+    ],
+    "조급함": [
+      2
+    ],
+    "조심해서": [
+      4
+    ],
+    "조용한": [
+      8,
+      9,
+      10
+    ],
+    "조용히": [
+      9
+    ],
+    "조절": [
+      18
+    ],
+    "조정": [
+      35
+    ],
+    "조정하면": [
+      35
+    ],
+    "조화": [
+      11
+    ],
+    "조회는": [
+      32
+    ],
+    "족보": [
+      6
+    ],
+    "존경하다": [
+      5,
+      6,
+      9
+    ],
+    "존중": [
+      11
+    ],
+    "존중은": [
+      11
+    ],
+    "졸다": [
+      10
+    ],
+    "졸업": [
+      6
+    ],
+    "종류": [
+      35
+    ],
+    "좋게": [
+      7
+    ],
+    "좋네요": [
+      4
+    ],
+    "좋아하는": [
+      15
+    ],
+    "좋은": [
+      4,
+      11,
+      12,
+      15,
+      19
+    ],
+    "좋을": [
+      5
+    ],
+    "좌절": [
+      1
+    ],
+    "죄책감": [
+      14
+    ],
+    "주고받기": [
+      12
+    ],
+    "주고받다": [
+      8
+    ],
+    "주기": [
+      10
+    ],
+    "주는": [
+      2,
+      9,
+      13,
+      15
+    ],
+    "주다": [
+      11,
+      13
+    ],
+    "주도성": [
+      2,
+      11
+    ],
+    "주로": [
+      35
+    ],
+    "주말에": [
+      6
+    ],
+    "주면": [
+      35
+    ],
+    "주문": [
+      14,
+      35
+    ],
+    "주세요": [
+      9
+    ],
+    "주요": [
+      15
+    ],
+    "주의점": [
+      35
+    ],
+    "주의할": [
+      35
+    ],
+    "주인공": [
+      12
+    ],
+    "주체": [
+      35
+    ],
+    "죽었다를": [
+      20
+    ],
+    "죽었을": [
+      20
+    ],
+    "죽이": [
+      9
+    ],
+    "준비하다": [
+      6,
+      12
+    ],
+    "준비한": [
+      13
+    ],
+    "줄을": [
+      9
+    ],
+    "줄이다": [
+      3,
+      4,
+      8
+    ],
+    "중단": [
+      35
+    ],
+    "중독성": [
+      14
+    ],
+    "중복": [
+      35
+    ],
+    "중심": [
+      6
+    ],
+    "중요하다": [
+      3,
+      35
+    ],
+    "중요한": [
+      9,
+      12,
+      35
+    ],
+    "중요합니다": [
+      1
+    ],
+    "중인": [
+      2,
+      5,
+      35
+    ],
+    "즉흥적인": [
+      13
+    ],
+    "즐거운": [
+      12
+    ],
+    "즐기는": [
+      13
+    ],
+    "즐기다": [
+      15
+    ],
+    "증가": [
+      14,
+      35
+    ],
+    "증상": [
+      4
+    ],
+    "지갑을": [
+      7
+    ],
+    "지나면": [
+      19
+    ],
+    "지나면서": [
+      19
+    ],
+    "지내다": [
+      6,
+      9
+    ],
+    "지다": [
+      1
+    ],
+    "지도": [
+      6
+    ],
+    "지루한": [
+      15
+    ],
+    "지름길": [
+      7
+    ],
+    "지불하다": [
+      3
+    ],
+    "지어내다": [
+      4,
+      7
+    ],
+    "지역": [
+      14
+    ],
+    "지연": [
+      1,
+      14,
+      35
+    ],
+    "지원": [
+      11
+    ],
+    "지원하다": [
+      5,
+      7
+    ],
+    "지적하다": [
+      3,
+      8
+    ],
+    "지정되어야": [
+      15
+    ],
+    "지정함": [
+      23
+    ],
+    "지지하다": [
+      5
+    ],
+    "지지해주는": [
+      15
+    ],
+    "지치다": [
+      1
+    ],
+    "지친": [
+      19
+    ],
+    "지키다": [
+      9
+    ],
+    "지표는": [
+      35
+    ],
+    "지표다": [
+      35
+    ],
+    "지혜": [
+      5
+    ],
+    "직설적인": [
+      13
+    ],
+    "직업상의": [
+      17
+    ],
+    "직접": [
+      35
+    ],
+    "진단": [
+      4
+    ],
+    "진료": [
+      4
+    ],
+    "진실을": [
+      7
+    ],
+    "진심": [
+      13
+    ],
+    "진심이": [
+      13
+    ],
+    "진정성": [
+      2,
+      5,
+      9
+    ],
+    "진정하다": [
+      1,
+      9
+    ],
+    "진지하게": [
+      15
+    ],
+    "진하다": [
+      6
+    ],
+    "진행": [
+      5
+    ],
+    "진행되다": [
+      12
+    ],
+    "질문": [
+      35
+    ],
+    "질문을": [
+      2
+    ],
+    "집계": [
+      35
+    ],
+    "집만": [
+      10
+    ],
+    "집밥": [
+      14
+    ],
+    "집안일": [
+      6,
+      20
+    ],
+    "집안일로": [
+      20
+    ],
+    "집안일에만": [
+      20
+    ],
+    "집안일을": [
+      6
+    ],
+    "집에": [
+      6
+    ],
+    "집에서": [
+      13
+    ],
+    "집중": [
+      8
+    ],
+    "집중되어": [
+      8
+    ],
+    "집중될": [
+      35
+    ],
+    "집중됨": [
+      35
+    ],
+    "집중력": [
+      8
+    ],
+    "집중을": [
+      8
+    ],
+    "집중이": [
+      8
+    ],
+    "집중하다": [
+      3,
+      8,
+      9,
+      15
+    ],
+    "짜증": [
+      1
+    ],
+    "짜증나거나": [
+      1
+    ],
+    "짜증나게": [
+      1
+    ],
+    "짜증나는": [
+      20
+    ],
+    "짧은": [
+      10,
+      35
+    ],
+    "쪽으로": [
+      13
+    ],
+    "차단하다": [
+      1,
+      8,
+      10
+    ],
+    "차례대로": [
+      9
+    ],
+    "차이": [
+      14,
+      35
+    ],
+    "차이를": [
+      2,
+      35
+    ],
+    "참다": [
+      1,
+      11,
+      13
+    ],
+    "참아야": [
+      1
+    ],
+    "참여하다": [
+      11
+    ],
+    "참여했다": [
+      11
+    ],
+    "참을성": [
+      1
+    ],
+    "참지": [
+      1
+    ],
+    "창업하다": [
+      5
+    ],
+    "찾다": [
+      12
+    ],
+    "찾아보니까": [
+      20
+    ],
+    "찾아보다": [
+      8
+    ],
+    "책을": [
+      8
+    ],
+    "책임": [
+      11
+    ],
+    "책임감": [
+      11,
+      15
+    ],
+    "책임은": [
+      11
+    ],
+    "책임을": [
+      1
+    ],
+    "책임지는": [
+      6
+    ],
+    "챙기다": [
+      12
+    ],
+    "처가": [
+      6
+    ],
+    "처럼": [
+      4
+    ],
+    "처리": [
+      35
+    ],
+    "처리기": [
+      20
+    ],
+    "처리량에": [
+      35
+    ],
+    "처리량이": [
+      35
+    ],
+    "처리에": [
+      35
+    ],
+    "처리의": [
+      35
+    ],
+    "처리하기": [
+      35
+    ],
+    "처리하다": [
+      5,
+      9
+    ],
+    "처방전": [
+      4
+    ],
+    "척도": [
+      2
+    ],
+    "척하다": [
+      13
+    ],
+    "천생연분": [
+      5
+    ],
+    "첫인상이": [
+      3
+    ],
+    "청소": [
+      6,
+      20
+    ],
+    "체계": [
+      4
+    ],
+    "초고층": [
+      5
+    ],
+    "초과": [
+      18
+    ],
+    "초대": [
+      12
+    ],
+    "최고의": [
+      13
+    ],
+    "최대": [
+      35
+    ],
+    "최대한": [
+      15
+    ],
+    "최면에": [
+      5
+    ],
+    "최선이다": [
+      7
+    ],
+    "최소": [
+      14,
+      35
+    ],
+    "최적화": [
+      35
+    ],
+    "추가": [
+      35
+    ],
+    "추가되거나": [
+      35
+    ],
+    "추모글": [
+      20
+    ],
+    "추억": [
+      9,
+      11,
+      15
+    ],
+    "추억을": [
+      9
+    ],
+    "추적": [
+      35
+    ],
+    "추진력을": [
+      11
+    ],
+    "추천": [
+      3
+    ],
+    "축구팀": [
+      9
+    ],
+    "축제": [
+      15
+    ],
+    "축하": [
+      6,
+      12
+    ],
+    "출발하다": [
+      5
+    ],
+    "출퇴근": [
+      20
+    ],
+    "충돌": [
+      7
+    ],
+    "충돌도": [
+      7
+    ],
+    "충돌하다": [
+      6
+    ],
+    "충만감": [
+      17
+    ],
+    "충분하지": [
+      20
+    ],
+    "충분히": [
+      4,
+      10
+    ],
+    "취미": [
+      12
+    ],
+    "취침": [
+      10
+    ],
+    "치다": [
+      8
+    ],
+    "치료": [
+      4
+    ],
+    "치료법": [
+      4
+    ],
+    "치료보다": [
+      4
+    ],
+    "치우치지": [
+      35
+    ],
+    "친구": [
+      9,
+      15
+    ],
+    "친구나": [
+      5
+    ],
+    "친구들과": [
+      15
+    ],
+    "친밀한": [
+      12
+    ],
+    "친밀함": [
+      6
+    ],
+    "친절": [
+      5
+    ],
+    "친척": [
+      6
+    ],
+    "친척을": [
+      6
+    ],
+    "칠흑같이": [
+      10
+    ],
+    "침묵": [
+      9
+    ],
+    "침착함": [
+      2
+    ],
+    "침착함을": [
+      1
+    ],
+    "카드": [
+      13
+    ],
+    "카레를": [
+      9
+    ],
+    "카테고리": [
+      35
+    ],
+    "카페테리아": [
+      3
+    ],
+    "캐시": [
+      35
+    ],
+    "컨디션이": [
+      4
+    ],
+    "코드에서": [
+      35
+    ],
+    "코를": [
+      10
+    ],
+    "큐가": [
+      35
+    ],
+    "큐는": [
+      35
+    ],
+    "큐라기보다": [
+      35
+    ],
+    "큐의": [
+      35
+    ],
+    "크림은": [
+      4
+    ],
+    "큰돈을": [
+      13
+    ],
+    "클릭": [
+      35
+    ],
+    "키를": [
+      35
+    ],
+    "타다": [
+      16
+    ],
+    "타이틀을": [
+      17
+    ],
+    "타협": [
+      11
+    ],
+    "탈진": [
+      4
+    ],
+    "태도": [
+      2
+    ],
+    "태산이다": [
+      19
+    ],
+    "털갈이": [
+      20
+    ],
+    "테이블": [
+      35
+    ],
+    "토요일": [
+      9
+    ],
+    "토하다": [
+      3,
+      4
+    ],
+    "통계": [
+      35
+    ],
+    "통제하지": [
+      1
+    ],
+    "통찰력": [
+      2
+    ],
+    "통하다": [
+      20
+    ],
+    "통해": [
+      3
+    ],
+    "퇴비": [
+      20
+    ],
+    "퇴비로": [
+      20
+    ],
+    "투자하면": [
+      19
+    ],
+    "튜브": [
+      16
+    ],
+    "트래픽": [
+      35
+    ],
+    "특별한": [
+      3,
+      12,
+      13
+    ],
+    "특성": [
+      2,
+      7,
+      35
+    ],
+    "특정": [
+      9,
+      35
+    ],
+    "특징": [
+      6
+    ],
+    "틀어지다": [
+      6
+    ],
+    "틀을": [
+      1,
+      3
+    ],
+    "티끌": [
+      19
+    ],
+    "티끌모아태산": [
+      19
+    ],
+    "팀워크": [
+      15
+    ],
+    "팀워크를": [
+      11
+    ],
+    "팀워크에서": [
+      11
+    ],
+    "팀원들을": [
+      11
+    ],
+    "팀원은": [
+      11
+    ],
+    "팀원이": [
+      11
+    ],
+    "팀은": [
+      11
+    ],
+    "팀을": [
+      7
+    ],
+    "파도를": [
+      16
+    ],
+    "파이프라인": [
+      35
+    ],
+    "파티": [
+      12
+    ],
+    "파티를": [
+      12
+    ],
+    "파티션을": [
+      35
+    ],
+    "파티의": [
+      6
+    ],
+    "판단": [
+      7
+    ],
+    "판단이": [
+      7
+    ],
+    "판박이": [
+      6
+    ],
+    "패스트푸드": [
+      14
+    ],
+    "패턴": [
+      10
+    ],
+    "팬데믹": [
+      14
+    ],
+    "퍼뜨리다": [
+      4
+    ],
+    "퍼지다": [
+      3
+    ],
+    "펑펑": [
+      14
+    ],
+    "편리한": [
+      13,
+      14
+    ],
+    "편리함": [
+      14
+    ],
+    "편법을": [
+      7
+    ],
+    "편식하는": [
+      3
+    ],
+    "편안함": [
+      10
+    ],
+    "편중": [
+      35
+    ],
+    "편하게": [
+      12
+    ],
+    "편하다": [
+      35
+    ],
+    "평가": [
+      3
+    ],
+    "평균": [
+      10
+    ],
+    "평범하지": [
+      12
+    ],
+    "평생": [
+      3,
+      9,
+      15
+    ],
+    "평점": [
+      18
+    ],
+    "평화롭고": [
+      8,
+      10
+    ],
+    "평화를": [
+      1
+    ],
+    "포기하다": [
+      1
+    ],
+    "포장": [
+      14
+    ],
+    "포장하다": [
+      7,
+      12,
+      13
+    ],
+    "포함": [
+      20
+    ],
+    "폭소하다": [
+      13
+    ],
+    "표시": [
+      7
+    ],
+    "표절": [
+      7
+    ],
+    "표정": [
+      2
+    ],
+    "표현": [
+      1,
+      2,
+      4,
+      6,
+      9,
+      12,
+      15,
+      20
+    ],
+    "표현들": [
+      20
+    ],
+    "표현으로": [
+      20
+    ],
+    "표현은": [
+      20
+    ],
+    "표현을": [
+      20
+    ],
+    "표현할": [
+      20
+    ],
+    "표현해요": [
+      20
+    ],
+    "푼도": [
+      3
+    ],
+    "풀다": [
+      8,
+      9,
+      10
+    ],
+    "풀다가": [
+      8
+    ],
+    "풀었습니다": [
+      2
+    ],
+    "퓨전": [
+      14
+    ],
+    "프로모션": [
+      14
+    ],
+    "프로세스": [
+      35
+    ],
+    "프로젝트를": [
+      8,
+      11
+    ],
+    "플랫폼": [
+      3,
+      14,
+      35
+    ],
+    "플랫폼으로": [
+      35
+    ],
+    "피곤한": [
+      10
+    ],
+    "피는": [
+      6
+    ],
+    "피드백": [
+      1
+    ],
+    "피로": [
+      1
+    ],
+    "피로에서": [
+      4
+    ],
+    "피하다": [
+      3,
+      4
+    ],
+    "피해야": [
+      7
+    ],
+    "필수로": [
+      15
+    ],
+    "필수적이다": [
+      11
+    ],
+    "필수적입니다": [
+      7
+    ],
+    "필수품": [
+      12
+    ],
+    "필요": [
+      4,
+      35
+    ],
+    "필요하면": [
+      35
+    ],
+    "필요하지만": [
+      35
+    ],
+    "필요한": [
+      15,
+      35
+    ],
+    "필요한가": [
+      35
+    ],
+    "필요합니다": [
+      7
+    ],
+    "핑계": [
+      4
+    ],
+    "하게": [
+      3
+    ],
+    "하고": [
+      1,
+      3
+    ],
+    "하기": [
+      6,
+      20
+    ],
+    "하나다": [
+      35
+    ],
+    "하나면": [
+      4
+    ],
+    "하나에": [
+      35
+    ],
+    "하나의": [
+      35
+    ],
+    "하는": [
+      5,
+      8,
+      35
+    ],
+    "하는가": [
+      35
+    ],
+    "하다": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      9,
+      10,
+      11,
+      13,
+      20
+    ],
+    "하더라고요": [
+      20
+    ],
+    "하러": [
+      3
+    ],
+    "하면": [
+      35
+    ],
+    "하이라이트": [
+      12
+    ],
+    "하자면": [
+      20
+    ],
+    "하지": [
+      3,
+      20
+    ],
+    "학교에서": [
+      9
+    ],
+    "학생들이": [
+      9
+    ],
+    "학생회": [
+      15
+    ],
+    "학습을": [
+      9
+    ],
+    "학원": [
+      9
+    ],
+    "학원에": [
+      9
+    ],
+    "한가함": [
+      35
+    ],
+    "한계": [
+      1,
+      35
+    ],
+    "한계를": [
+      1,
+      5,
+      17
+    ],
+    "한계에": [
+      1
+    ],
+    "한계점": [
+      1
+    ],
+    "한국식": [
+      9
+    ],
+    "한눈에": [
+      35
+    ],
+    "한다": [
+      11,
+      13,
+      15,
+      35
+    ],
+    "한식": [
+      14
+    ],
+    "한약": [
+      4
+    ],
+    "한쪽은": [
+      6
+    ],
+    "한참": [
+      14
+    ],
+    "할머니의": [
+      4
+    ],
+    "할인": [
+      14
+    ],
+    "함께": [
+      2,
+      5,
+      6,
+      11,
+      20,
+      35
+    ],
+    "함께하다": [
+      6
+    ],
+    "함께하면": [
+      8
+    ],
+    "합니다": [
+      7,
+      8
+    ],
+    "합의": [
+      11
+    ],
+    "합의에": [
+      11
+    ],
+    "합치는": [
+      11
+    ],
+    "항목": [
+      35
+    ],
+    "항상": [
+      3
+    ],
+    "해결": [
+      11
+    ],
+    "해결책": [
+      4
+    ],
+    "해결책이": [
+      4
+    ],
+    "해결하다": [
+      2
+    ],
+    "해고되다": [
+      2
+    ],
+    "해내다": [
+      1,
+      2,
+      5
+    ],
+    "해보고": [
+      5
+    ],
+    "해서": [
+      2,
+      20,
+      35
+    ],
+    "해요": [
+      4,
+      20
+    ],
+    "해주는": [
+      35
+    ],
+    "해주다": [
+      12
+    ],
+    "핵심": [
+      1,
+      35
+    ],
+    "핵심은": [
+      35
+    ],
+    "핸드폰": [
+      19
+    ],
+    "했는데": [
+      20
+    ],
+    "했다": [
+      11
+    ],
+    "했더니": [
+      23
+    ],
+    "했습니다": [
+      1,
+      2,
+      4
+    ],
+    "행동": [
+      7,
+      35
+    ],
+    "행동은": [
+      7
+    ],
+    "행동이었습니다": [
+      7
+    ],
+    "행동하다": [
+      3,
+      5
+    ],
+    "행복하게": [
+      12
+    ],
+    "행복한": [
+      9
+    ],
+    "행사": [
+      12
+    ],
+    "행위": [
+      7
+    ],
+    "향상되다": [
+      11
+    ],
+    "향상시키다": [
+      1,
+      5,
+      16
+    ],
+    "향수": [
+      9
+    ],
+    "향하다": [
+      5
+    ],
+    "향해": [
+      2,
+      5
+    ],
+    "헌신": [
+      5,
+      11
+    ],
+    "헷갈리는": [
+      15
+    ],
+    "혁신": [
+      5
+    ],
+    "현명하게": [
+      19
+    ],
+    "현실": [
+      10
+    ],
+    "현실이": [
+      17
+    ],
+    "현장": [
+      9
+    ],
+    "현재": [
+      35
+    ],
+    "협력": [
+      2,
+      8,
+      11
+    ],
+    "협력이": [
+      11
+    ],
+    "형태로": [
+      35
+    ],
+    "호기심": [
+      3,
+      5
+    ],
+    "호출하지": [
+      35
+    ],
+    "호화로운": [
+      12
+    ],
+    "혹은": [
+      20
+    ],
+    "혼란": [
+      15
+    ],
+    "혼밥": [
+      14
+    ],
+    "혼자": [
+      5
+    ],
+    "화내요": [
+      20
+    ],
+    "화려한": [
+      3
+    ],
+    "화를": [
+      1
+    ],
+    "화면을": [
+      19
+    ],
+    "확보": [
+      35
+    ],
+    "확인": [
+      35
+    ],
+    "확장": [
+      35
+    ],
+    "확장성": [
+      35
+    ],
+    "확장으로": [
+      35
+    ],
+    "환경": [
+      8,
+      14
+    ],
+    "환불": [
+      3
+    ],
+    "환영회": [
+      12
+    ],
+    "활용": [
+      35
+    ],
+    "활용하다": [
+      15
+    ],
+    "활용해보세요": [
+      20
+    ],
+    "활용해야": [
+      35
+    ],
+    "회복": [
+      4
+    ],
+    "회복력": [
+      1,
+      15
+    ],
+    "회복성": [
+      10
+    ],
+    "회복하는": [
+      4
+    ],
+    "회복하다": [
+      4
+    ],
+    "회사는": [
+      7
+    ],
+    "회사에서": [
+      5
+    ],
+    "회상": [
+      8
+    ],
+    "회상하다": [
+      11
+    ],
+    "회용": [
+      20
+    ],
+    "회의": [
+      19
+    ],
+    "회의나": [
+      20
+    ],
+    "회화체에서는": [
+      20
+    ],
+    "효과": [
+      8
+    ],
+    "효율": [
+      10
+    ],
+    "후덥지근한": [
+      20
+    ],
+    "후속": [
+      2,
+      35
+    ],
+    "후에": [
+      9,
+      19
+    ],
+    "후회": [
+      3,
+      8,
+      9,
+      15
+    ],
+    "훈련": [
+      1,
+      11
+    ],
+    "훈련하다": [
+      11
+    ],
+    "훑어보다": [
+      8
+    ],
+    "휴식": [
+      10
+    ],
+    "휴식을": [
+      4
+    ],
+    "흐름": [
+      35
+    ],
+    "흔하게": [
+      20
+    ],
+    "흘려보내고": [
+      35
+    ],
+    "흘려보낼": [
+      35
+    ],
+    "흘리다": [
+      20
+    ],
+    "희망": [
+      12
+    ],
+    "힘든": [
+      8,
+      11
+    ],
+    "힘들": [
+      1
+    ],
+    "힘들어하다": [
+      8
+    ],
+    "힘을": [
+      11
+    ]
+  }
+}

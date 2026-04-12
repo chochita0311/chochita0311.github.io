@@ -1,12 +1,16 @@
 # Docs Map
 
 ## Structure
-- `docs/agents/`: reusable role definitions and baton workflow docs under active refinement
+
+- `docs/agents/`: agent package under active refinement, split into role, flow, and operation docs
 - `docs/policies/`: durable rules, definitions, contracts, guides, and governance docs
 - `docs/plans/`: active or historical planning tracks, execution plans, and refactoring work
 
 ## Current Packages
-- `docs/agents/`: general-purpose harness role docs for planning, spec, build, evaluation, and fix loops
+
+- `docs/agents/role/`: general-purpose harness role docs for planning, spec, build, evaluation, and fix loops
+- `docs/agents/flow/`: sequence and baton-flow docs that compose roles into workflows
+- `docs/agents/operation/`: run-start and run-continuation invocation docs
 - `docs/policies/project/`: project/runtime policy, architecture, and workflow rules
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail routing, and execution artifact ownership
 - `docs/policies/design/`: durable design rules, reusable design-evaluation assets, and design-document governance
@@ -26,12 +30,14 @@
 - `docs/plans/refactoring/`: refactor tracks, inventories, and implementation plans
 
 ## Navigation
+
 - Start with `README.md` for overview and local usage.
-- Use `docs/agents/` when you are refining reusable role definitions or baton workflow contracts.
-- Use `docs/agents/runner.md` when you need execution startup prompts and run-continuation rules.
+- Use `docs/agents/` when you are refining reusable agent packages and execution docs.
+- Use `docs/agents/operation/runner.md` when you need execution startup prompts and run-continuation rules.
 - Use `docs/policies/` when you need source-of-truth rules.
 - Use `docs/policies/harness/prd-feature-management.md` when you need the operating rules for PRD and feature traceability.
 - Use `docs/policies/harness/execution-loop-governance.md` when you need execution-loop routing, fail classification, or heuristic handling.
+- Use `docs/policies/harness/execution-loop-governance.md` when you need the explicit return model for local fix, return-to-spec, return-to-planning, and re-entry rules.
 - Use `docs/policies/experience/interaction-evaluation.md` when you need reusable rules for transition stability, navigation continuity, or interaction-quality review.
 - Use `docs/plans/prd/` for upper-boundary planning documents.
 - Use `docs/plans/feature/` for loop-sized execution targets.

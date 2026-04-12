@@ -1,5 +1,5 @@
 ---
-id: technology-java-superbuilder
+id: 28
 title: "@SuperBuilder"
 summary: Reference note on Lombok @SuperBuilder and builder inheritance patterns in Java.
 created: 2026-04-05

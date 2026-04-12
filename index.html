@@ -21,52 +21,29 @@
     <!-- TopNavBar Implementation -->
     <nav class="topbar no-line-rule">
       <div class="topbar__start">
-        <span class="brand-title">조치타의 메모장</span>
+        <a class="brand-title" href="index.html">조치타의 메모장</a>
         <div class="topbar__nav">
-          <div class="nav-dropdown">
-            <button class="nav-link nav-link--active" type="button">
-              Categories<br /><span
+          <div class="nav-dropdown" id="topbar-categories">
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="nav-link nav-dropdown__trigger"
+              id="topbar-categories-trigger"
+              type="button"
+            >
+              Categories
+              <span
                 aria-hidden="true"
                 class="icon icon--material material-symbols-outlined nav-link__icon"
                 >expand_more</span
               >
             </button>
-            <div class="nav-dropdown__panel nav-dropdown__panel--level-1">
-              <div class="nav-menu">
-                <div class="nav-menu__item nav-menu__item--branch">
-                  <div class="nav-menu__button">
-                    Philosophy
-                    <span
-                      aria-hidden="true"
-                      class="icon icon--material material-symbols-outlined nav-menu__icon"
-                      >chevron_right</span
-                    >
-                  </div>
-                  <div class="nav-dropdown__panel nav-dropdown__panel--level-2">
-                    <div class="nav-menu nav-menu--narrow">
-                      <div class="nav-menu__item nav-menu__item--branch">
-                        <div class="nav-menu__button">
-                          Ethics
-                          <span
-                            aria-hidden="true"
-                            class="icon icon--material material-symbols-outlined nav-menu__icon"
-                            >chevron_right</span
-                          >
-                        </div>
-                        <div
-                          class="nav-dropdown__panel nav-dropdown__panel--level-3"
-                        >
-                          <div class="nav-menu nav-menu--tight">
-                            <a class="nav-menu__link" href="#">Virtue Ethics</a>
-                            <a class="nav-menu__link" href="#">Stoicism</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="nav-menu__item">Metaphysics</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="nav-menu__item">Design Theory</div>
+            <div
+              class="nav-dropdown__panel nav-dropdown__panel--level-1"
+              id="topbar-categories-panel"
+            >
+              <div class="nav-menu nav-menu--loading">
+                <span class="nav-menu__empty">Loading categories...</span>
               </div>
             </div>
           </div>
@@ -78,6 +55,7 @@
       <div class="topbar__end">
         <label class="search-field search-field--topbar">
           <input
+            id="archive-search-input"
             class="search-field__input"
             placeholder="Search archive..."
             type="text"
@@ -113,12 +91,8 @@
       </div>
       <div class="sidebar__tags">
         <p class="section-label">Popular Tags</p>
-        <div class="tag-cloud">
-          <span class="tag-chip">Typography</span>
-          <span class="tag-chip">Ethics</span>
-          <span class="tag-chip">AI</span>
-          <span class="tag-chip">Post-Modernism</span>
-          <span class="tag-chip">UX</span>
+        <div class="tag-cloud" id="popular-tags">
+          <span class="tag-chip">Loading tags...</span>
         </div>
       </div>
       <div class="sidebar__footer">
@@ -146,35 +120,48 @@
         <header class="archive-hero archive-hero--sticky">
           <div class="archive-hero__head">
             <div class="archive-hero__copy">
-              <h1 class="archive-hero__title" id="archive-title">
-                Recent Archives
-              </h1>
+              <h1 class="archive-hero__title" id="archive-title">Recent Archives</h1>
               <p class="archive-hero__summary" id="archive-summary">
-                Exploring the intersection of humanistic philosophy and digital
-                infrastructure. A curated collection of long-form thought
-                pieces.
+                Exploring the intersection of humanistic philosophy and digital infrastructure. A
+                curated collection of long-form thought pieces.
               </p>
             </div>
-            <div
-              aria-label="Archive view mode"
-              class="archive-view-toggle"
-              role="group"
-            >
+          </div>
+          <div class="archive-hero__controls">
+            <label class="archive-page-size" for="archive-page-size">
+              <span class="archive-page-size__label">Page size</span>
+              <select
+                aria-label="Archive page size"
+                class="archive-page-size__select"
+                id="archive-page-size"
+              >
+                <option value="10">10</option>
+              </select>
+            </label>
+            <div aria-label="Archive view mode" class="archive-view-toggle" role="group">
               <button
+                aria-label="List view"
                 aria-pressed="true"
                 class="archive-view-toggle__button archive-view-toggle__button--active"
                 data-archive-view="list"
+                title="List view"
                 type="button"
               >
-                List
+                <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+                  >view_agenda</span
+                >
               </button>
               <button
+                aria-label="Grid view"
                 aria-pressed="false"
                 class="archive-view-toggle__button"
                 data-archive-view="grid"
+                title="Grid view"
                 type="button"
               >
-                Grid
+                <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+                  >grid_view</span
+                >
               </button>
             </div>
           </div>
@@ -192,10 +179,9 @@
                   The Digital Nomad’s Dilemma: Finding Stillness in Connectivity
                 </h2>
                 <p class="note-card__summary">
-                  As our work lives become untethered from physical geography,
-                  the boundaries between the "atelier" and the "world" blur. We
-                  explore how to maintain a studious mind in a landscape
-                  designed for constant distraction.
+                  As our work lives become untethered from physical geography, the boundaries
+                  between the "atelier" and the "world" blur. We explore how to maintain a studious
+                  mind in a landscape designed for constant distraction.
                 </p>
                 <div class="note-card__footer">
                   <div class="note-card__tags">
@@ -210,18 +196,15 @@
             <a class="note-card__link" href="#">
               <div class="note-card__body">
                 <div class="note-card__meta">
-                  <span class="note-label note-label--accent"
-                    >Design Theory</span
-                  >
+                  <span class="note-label note-label--accent">Design Theory</span>
                   <span class="note-label note-label--muted">Reading Notes</span>
                 </div>
                 <h2 class="note-card__title">
                   Typography as Architecture: Building Readable Digital Spaces
                 </h2>
                 <p class="note-card__summary">
-                  Type is not merely a medium for text; it is the physical
-                  structure of the digital experience. Exploring the
-                  relationship between Manrope's geometry and editorial
+                  Type is not merely a medium for text; it is the physical structure of the digital
+                  experience. Exploring the relationship between Manrope's geometry and editorial
                   authority in modern UI.
                 </p>
                 <div class="note-card__footer">
@@ -240,13 +223,10 @@
                   <span class="note-label note-label--accent">Technology</span>
                   <span class="note-label note-label--muted">Lab Notes</span>
                 </div>
-                <h2 class="note-card__title">
-                  The Ghost in the Large Language Model
-                </h2>
+                <h2 class="note-card__title">The Ghost in the Large Language Model</h2>
                 <p class="note-card__summary">
-                  An investigation into the emergent properties of neural
-                  networks and what they reveal about the human capacity for
-                  pattern recognition and narrative creation.
+                  An investigation into the emergent properties of neural networks and what they
+                  reveal about the human capacity for pattern recognition and narrative creation.
                 </p>
                 <div class="note-card__footer">
                   <div class="note-card__tags">
@@ -267,44 +247,24 @@
         <header class="note-detail__utility">
           <nav aria-label="Breadcrumb" class="note-detail__breadcrumbs">
             <a href="#">Technology</a>
-            <span
-              aria-hidden="true"
-              class="icon icon--material material-symbols-outlined"
+            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
               >chevron_right</span
             >
             <span>JAVA</span>
           </nav>
           <div class="note-detail__actions" aria-label="Note actions">
-            <button
-              aria-label="Share note"
-              class="note-detail__action"
-              type="button"
-            >
-              <span
-                aria-hidden="true"
-                class="icon icon--material material-symbols-outlined"
+            <button aria-label="Share note" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
                 >ios_share</span
               >
             </button>
-            <button
-              aria-label="Bookmark note"
-              class="note-detail__action"
-              type="button"
-            >
-              <span
-                aria-hidden="true"
-                class="icon icon--material material-symbols-outlined"
+            <button aria-label="Bookmark note" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
                 >bookmark</span
               >
             </button>
-            <button
-              aria-label="More note actions"
-              class="note-detail__action"
-              type="button"
-            >
-              <span
-                aria-hidden="true"
-                class="icon icon--material material-symbols-outlined"
+            <button aria-label="More note actions" class="note-detail__action" type="button">
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
                 >more_horiz</span
               >
             </button>
@@ -335,8 +295,7 @@
             <div>
               <div class="note-detail__content" id="note-content">
                 <p class="note-detail__empty">
-                  Select a note from the archive to load its Markdown content
-                  here.
+                  Select a note from the archive to load its Markdown content here.
                 </p>
               </div>
               <footer class="note-detail__footer" id="note-detail-nav"></footer>
@@ -354,18 +313,14 @@
       </section>
       <footer class="archive-footer">
         <div class="archive-footer__nav" id="archive-footer-panel">
-          <span class="archive-footer__page" id="archive-page-label"
-            >Page 01 / 14</span
-          >
+          <span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
           <div class="pagination-controls">
             <button
               class="pagination-button pagination-button--disabled"
               id="archive-prev-button"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="icon icon--material material-symbols-outlined"
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
                 >chevron_left</span
               >
             </button>
@@ -374,9 +329,7 @@
               id="archive-next-button"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="icon icon--material material-symbols-outlined"
+              <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
                 >chevron_right</span
               >
             </button>
@@ -387,6 +340,7 @@
     </main>
     <script defer src="assets/js/icons.js"></script>
     <script defer src="assets/js/sidebar-categories.js"></script>
+    <script defer src="assets/js/topbar-taxonomy.js"></script>
     <script defer src="assets/js/note-detail-renderer.js"></script>
     <script defer src="assets/js/index-note-detail.js"></script>
     <script defer src="assets/js/archive-content.js"></script>

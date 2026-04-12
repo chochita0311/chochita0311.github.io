@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-dealing-with-illness
+id: 4
 title: Dealing with Illness
 summary: Speaking prompts and vocabulary about symptoms, recovery habits, and health-related choices.
 created: 2025-10-16
@@ -41,7 +41,6 @@ knock me out → 기진맥진하게 하다
 
 _“That stomach flu really knocked me out — I couldn’t eat anything for three days.”_
 
-
 2️⃣ **Habits & Prevention**
 
 **- Do you take vitamins or supplements regularly?**
@@ -70,7 +69,6 @@ turn to → ~에 기대다
 old but gold → 옛것이지만 여전히 좋은
 
 _“I sometimes turn to herbal medicine when I catch a cold — those old but gold remedies still work.”_
-
 
 3️⃣ **Social & Cultural Perspectives**
 

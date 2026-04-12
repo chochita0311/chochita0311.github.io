@@ -1,5 +1,5 @@
 ---
-id: technology-java-utility-class
+id: 29
 title: "@UtilityClass"
 summary: References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.
 created: 2026-04-05

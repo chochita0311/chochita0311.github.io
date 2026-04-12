@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-birthday
+id: 12
 title: Birthday
 summary: Speaking prompts and vocabulary about birthday celebrations, gifts, and memorable moments.
 created: 2025-08-14
@@ -41,7 +41,6 @@ have a good time → 즐거운 시간을 보내다
 
 _“I prefer small gatherings where I can just hang out and have a good time with close friends.”_
 
-
 **2) Gifts & Giving**
 
 **- How do you usually choose a birthday gift for someone?**
@@ -70,7 +69,6 @@ wrap up → 포장하다
 out of the ordinary → 평범하지 않은, 특별한
 
 _“I usually go for practical gifts, but once in a while I like something out of the ordinary.”_
-
 
 **3) Feelings & Reflections**
 

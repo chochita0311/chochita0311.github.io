@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-accommodation
+id: 18
 title: Accommodation
 summary: Travel speaking prompts and useful expressions about hotels, guesthouses, and booking stays.
 created: 2025-07-22

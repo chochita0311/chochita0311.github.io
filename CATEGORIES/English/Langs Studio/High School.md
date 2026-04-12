@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-high-school
+id: 15
 title: High School
 summary: Speaking prompts and vocabulary about school life, classmates, teachers, and teenage memories.
 created: 2025-08-05
@@ -46,7 +46,6 @@ school cafeteria / school store - 급식실 / 매점
 lunch options / snacks / best seller - 점심 메뉴 / 간식 / 인기 간식
 hangout spot - 모이는 장소​
 
-
 **2) People & Relationships**
 
 **- Who was your favorite teacher in high school? Why?**
@@ -73,7 +72,6 @@ good vibes / unforgettable memories - 좋은 분위기 / 잊지 못할 추억
 주요 표현
 embarrassing / hilarious / unexpected - 민망한 / 아주 웃긴 / 예상 못 한
 inside joke / prank / group chaos - 내부 농담 / 장난 / 단체 난장판​
-
 
 **3) Looking Back & Reflective**
 

@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-teamwork
+id: 11
 title: Teamwork
 summary: Speaking prompts and vocabulary about collaboration, group projects, and team culture.
 created: 2025-08-26
@@ -50,7 +50,6 @@ two heads are better than one (백지장도 맞들면 낫다)
 
 _“Even though I enjoy autonomy, two heads are often better than one when solving tough problems.”_
 
-
 **2) Motivation & Goals in Teams**
 
 **- What motivates you the most in a team or group?**
@@ -88,7 +87,6 @@ discovery → 발견
 lightbulb moment → 번뜩임의 순간
 
 _“Working in a team gave me a lightbulb moment about my strengths.”_
-
 
 **3) Team Experiences & Culture**
 

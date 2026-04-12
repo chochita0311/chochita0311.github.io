@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-study-habits
+id: 8
 title: Study Habits
 summary: Speaking prompts and vocabulary about study routines, techniques, and memorable learning experiences.
 created: 2025-09-09
@@ -50,7 +50,6 @@ a steep learning curve → 배울 게 많아서 힘든 과정
 
 _“Math presents a steep learning curve for me, so I often struggle with concepts but eventually figure them out by catching up on the basics.”_
 
-
 **2) Study Strategies & Techniques**
 
 **- What study techniques work best for you?**
@@ -88,7 +87,6 @@ clarity → 명확성
 teach to learn → 가르쳐야 배운다
 
 _“When I walk my peers through concepts and pass on explanations, I find that teaching to learn solidifies my clarity far better than silent review.”_
-
 
 **3) Study Experiences & Reflections**
 

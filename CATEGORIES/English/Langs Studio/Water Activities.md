@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-water-activities
+id: 16
 title: Water Activities
 summary: Speaking prompts and vocabulary for swimming, water parks, beaches, and pool safety.
 created: 2025-07-31
@@ -13,12 +13,14 @@ tags:
 ---
 
 **1) Personal Experience & Memories**
+
 - When did you first learn how to swim?
 - What’s your favorite water activity?
 - How old were you when you first visited a water park? What was it like?
 - Do you have a memorable summer vacation that involved water activities? What made it special?
 
 **2) Facilities & Preferences**
+
 - What makes a great water park or public pool?
 - Do you prefer water parks or beaches? Why?
 - Do you like using hot tubs, saunas, or steam rooms?
@@ -26,6 +28,7 @@ tags:
 - What kind of amenities or services do you look for when choosing a swimming pool or spa?
 
 **3) Safety & Cleanliness**
+
 - Do you ever worry about hygiene or cleanliness at public swimming pools?
 - What hygiene habits are important when visiting public pools?
 - Have you or someone you know ever had an accident or close call in the water?

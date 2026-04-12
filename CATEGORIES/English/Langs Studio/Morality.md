@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-morality
+id: 7
 title: Morality
 summary: Speaking prompts and vocabulary about honesty, ethics, and modern moral dilemmas.
 created: 2025-09-25
@@ -41,7 +41,6 @@ for the greater good → 더 큰 선을 위해
 
 _"Sometimes small deceptions can be justified for the greater good, like covering up a detail to protect someone’s feelings."_
 
-
 2️⃣ **White Lies & Honesty**
 
 **- Do you think it’s okay to lie about liking a gift?**
@@ -70,7 +69,6 @@ speak up → 솔직히 말하다
 honesty is the best policy → 정직이 최선이다
 
 _"Even though honesty is the best policy, I sometimes hold back when speaking up could unnecessarily hurt my friend’s confidence."_
-
 
 3️⃣ **Modern Dilemmas**
 

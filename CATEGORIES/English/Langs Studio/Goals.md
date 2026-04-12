@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-goals
+id: 17
 title: Goals
 summary: Speaking prompts and vocabulary about personal, academic, career, and health goals.
 created: 2025-07-29
@@ -13,6 +13,7 @@ tags:
 ---
 
 **1) Personal Goals**
+
 - What personal goals are you working on right now?
 - Have you ever set a goal and achieved it? What was it?
 - Do you write down your personal goals? Why or why not?
@@ -20,12 +21,14 @@ tags:
 - What personal goal has changed your life the most?
 
 **2) Career & Academic Goals**
+
 - What career goals do you have for the next five years?
 - How do you plan to reach your dream job?
 - Have you ever changed your career goals? Why?
 - What kind of academic goals did you have as a student?
 
 **3) Lifestyle & Health Goals**
+
 - How do you plan to maintain a healthy lifestyle?
 - What’s one fitness goal you’ve achieved?
 - Have you ever set a goal to break a bad habit?

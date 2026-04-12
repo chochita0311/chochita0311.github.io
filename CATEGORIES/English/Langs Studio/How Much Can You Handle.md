@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-how-much-can-you-handle
+id: 1
 title: How Much Can You Handle?
 summary: Speaking prompts and vocabulary about patience, endurance, and emotional limits.
 created: 2025-10-30
@@ -41,7 +41,6 @@ practice makes perfect → 연습이 완벽을 만든다
 
 _“I’ve been working on staying calm in stressful situations — practice makes perfect when it comes to patience.”_
 
-
 2️⃣ **Challenges & Self-Tests**
 
 **- Have you ever challenged yourself to break a bad habit or endure discomfort?**
@@ -70,7 +69,6 @@ burn out → 지치다
 hit the wall → 한계에 부딪히다
 
 _“When I start forgetting things and can’t focus, I know I’ve hit the wall and need a real break.”_
-
 
 3️⃣ **Emotional & Social Limits**
 

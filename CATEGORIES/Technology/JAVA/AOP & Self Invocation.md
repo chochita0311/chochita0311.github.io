@@ -1,5 +1,5 @@
 ---
-id: technology-java-aop-self-invocation
+id: 32
 title: "AOP & Self Invocation"
 summary: References on Spring AOP, transaction boundaries, and why self invocation bypasses proxy-based behavior.
 created: 2026-04-05

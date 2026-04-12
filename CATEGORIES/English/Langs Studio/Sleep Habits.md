@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-sleep-habits
+id: 10
 title: Sleep Habits
 summary: Speaking prompts, vocabulary, and example paragraphs about sleep quality, routines, and rest.
 created: 2025-08-28
@@ -50,7 +50,6 @@ oversleep → 늦잠 자다
 
 _“On weekdays I usually lack sleep, so I try to catch up on rest during weekends.”_
 
-
 **2) Environment & Comfort**
 
 **- Do you prefer sleeping in silence or with background noise (like music or white noise)?**
@@ -79,7 +78,6 @@ get used to → 익숙해지다
 home sweet home → 집만 한 데는 없다
 
 _“No matter how comfortable the hotel is, I sleep best at home—home sweet home.”_
-
 
 **3) Fun & Personal**
 
@@ -159,26 +157,31 @@ _“Once I dozed off on the subway, and it was so embarrassing when I almost mis
 “Dream recall improves if you write down dreams immediately.”
 
 ---
+
 ### 💤 Paragraph 1 – Quality of Sleep
 
 On stressful days, I **toss and turn** so much that I barely **sleep through** the night. Sometimes I even **wake up** several times without knowing why. I think my **sleep pattern** is quite irregular, and on weekdays, I usually suffer from **lack of sleep**. That’s why I try to **catch up on rest** during weekends.
 
 ---
+
 ### 🛏️ Paragraph 2 – Environment & Comfort
 
 When it comes to comfort, I usually **fall asleep to** soft music because it helps me **wind down**. But if I’m really tired, I prefer complete **silence** and **peace and quiet**. I can only **rest** well when the room is **pitch black**, otherwise I **wake up to** even the faintest light. No matter how comfortable a hotel is, I always sleep best at home—**home sweet home**.
 
 ---
+
 ### 🌙 Paragraph 3 – Dreams & Sleep Habits
 
 I still **think back on** a dream that **felt so real** I was confused when I **woke up from** it. Apparently, I **snore** and sometimes **roll over** a lot at night, but I **don’t even know it**. I guess that makes me more of a **light sleeper**. On the other hand, my sister can **sleep like a rock** without any **broken sleep** at all.
 
 ---
+
 ### ⏰ Paragraph 4 – Morning or Night
 
 Honestly, I’m more of a **night owl**. I usually **stay up** late and often **burn the midnight oil**, whether I’m working or just distracted by my phone. That habit always **keeps me up** longer than I planned. I really envy **early birds** who **get up** at dawn feeling fresh and **well-rested**.
 
 ---
+
 ### 🚇 Paragraph 5 – Unusual Sleeping Places
 
 Once, I completely **dozed off** on the subway because I was so **exhausted**. It was really **embarrassing** when I almost missed my stop. Sometimes, I also **nod off** in the office after lunch, but luckily it’s usually just a short **catnap**.

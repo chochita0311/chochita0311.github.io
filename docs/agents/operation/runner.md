@@ -1,28 +1,37 @@
 # Runner
 
 ## Purpose
+
 - Define how a human or harness starts and continues one execution run using prompts.
 - Keep execution startup and continuation consistent without requiring repo-local automation scripts.
 
 ## Ownership
+
 - This document owns invocation.
 - Use it when you need the operator-facing entry pattern for one approved feature run.
 - It does not own the overall sequence model.
 - It does not own the Orchestrator role contract itself.
-- Use `docs/agents/workflow.md` for the sequence model.
-- Use `docs/agents/orchestrator.md` for loop-control responsibilities and routing logic.
+- Use `docs/agents/flow/workflow.md` for the sequence model.
+- Use `docs/agents/role/orchestrator.md` for loop-control responsibilities and routing logic.
+- Use `docs/policies/harness/execution-loop-governance.md` for the return model when a run fixes locally inside the loop and when post-run human review sends work back to spec or planning.
 
 ## When To Use
+
 - A feature document has already been approved.
 - You want to begin or continue the execution loop from that approved boundary.
 - You want reusable invocation prompts that work even when no local script or special runtime wrapper exists.
 
 ## Core Rule
+
 - Start execution from the approved feature and parent PRD, not from the original request.
 - Treat this document as the operator-facing execution entry guide.
 - Do not generate ad hoc startup flows per run unless the project explicitly needs them.
+- Treat one run as an automated unit.
+- Do not assume the human owner will interrupt a normal active run.
+- If the result should go back to spec or planning, report that at run completion so the human owner can make the next routing decision.
 
 ## Required Inputs
+
 - one approved feature document
 - its parent PRD
 - relevant golden sources
@@ -30,6 +39,7 @@
 - current implementation context
 
 ## Run Artifact
+
 - Record one active run document under `docs/plans/run/`.
 - Use one run identifier such as `run-YYYYMMDD-01` for each active execution pass.
 - If the same run loops or is corrected materially, record attempts inside the run document rather than implying one uninterrupted straight-line pass.
@@ -41,6 +51,7 @@
   - heuristic backlog entries
 
 ## Default Invocation Order
+
 1. Orchestrator
 2. Spec Agent
 3. Builder
@@ -51,6 +62,7 @@
 8. Re-run the needed evaluators
 
 ## Invocation Rules
+
 - Fresh execution should start with `Orchestrator`, not directly with `Builder`, evaluators, or `Fix Agent`.
 - Invoke one role at a time.
 - Always include:
@@ -60,11 +72,13 @@
   - active spec path once it exists
 - Keep the role prompt anchored to approved docs.
 - Do not restate the original request as the primary source once the feature is approved.
-- If a role reports `spec gap` or `planning gap`, stop normal execution and route upward.
+- If a role reports `spec gap` or `planning gap`, record it as a result for the run report unless a technical blocker prevents further continuation.
+- After post-run human review sends work upward and that layer is corrected, start a new run from the corrected layer rather than continuing as if the earlier attempt remained valid.
 - After the run exists, prefer continuing from the run document plus active spec and latest reports instead of re-invoking only from the feature path.
 - Direct role invocation without `Orchestrator` is an exception path for tightly controlled continuation work, not the default operating pattern.
 
 ## Prompt Frame
+
 Use this frame for every execution-role prompt:
 
 ```text
@@ -89,6 +103,7 @@ Task:
 ## Role Prompts
 
 ### Orchestrator
+
 ```text
 Run the execution loop for the approved feature below.
 
@@ -110,6 +125,7 @@ Task:
 ```
 
 ### Spec Agent
+
 ```text
 Read and execute as Spec Agent.
 
@@ -131,6 +147,7 @@ Write to:
 ```
 
 ### Builder
+
 ```text
 Read and execute as Builder.
 
@@ -148,6 +165,7 @@ Report changed files and blocker classification if needed.
 ```
 
 ### Design Evaluator
+
 ```text
 Read and execute as Design Evaluator.
 
@@ -168,6 +186,7 @@ Write findings to:
 ```
 
 ### Functional Evaluator
+
 ```text
 Read and execute as Functional Evaluator.
 
@@ -187,6 +206,7 @@ Write findings to:
 ```
 
 ### UX Heuristic Evaluator
+
 ```text
 Read and execute as UX Heuristic Evaluator.
 
@@ -208,6 +228,7 @@ Write to:
 ```
 
 ### Fix Agent
+
 ```text
 Read and execute as Fix Agent.
 
@@ -239,7 +260,18 @@ Write fix notes to:
   - `run docs/plans/feature/feat-####-slug.md as product loop`
   - `continue docs/plans/feature/feat-####-slug.md from fix`
 
+## Default Closing Sequence
+
+- When all related runs for the active feature or PRD increment are complete, do not jump straight to acceptance.
+- First summarize any reusable `design` or `interaction` evaluation candidates discovered during the run set.
+- Ask the human owner whether each candidate should be added or discarded.
+- After that decision, report that the related runs are complete and ask for:
+  - PRD or feature acceptance when relevant
+  - run acceptance
+  - final close or follow-up direction
+
 ### Fresh Run
+
 ```text
 run docs/plans/feature/feat-0001-archive-grid-view-replacement.md
 
@@ -260,6 +292,7 @@ Task:
 ```
 
 ### Continue Existing Run
+
 ```text
 continue docs/plans/feature/feat-0001-archive-grid-view-replacement.md from fix
 
@@ -286,6 +319,7 @@ Task:
 ```
 
 ### Continue From Run Record
+
 ```text
 continue docs/plans/run/run-20260411-01-archive-grid-view-replacement.md
 
@@ -299,9 +333,11 @@ Task:
 ```
 
 ## Environment Rule
+
 - If optional skills or MCP tools are available and relevant, roles should use them.
 - If they are not available, the roles must still remain operable through their base contract.
 
 ## Continuation Rule
+
 - Continue the loop from the latest approved feature, active spec, and latest evaluator or fix artifacts.
 - Do not restart from the raw request unless the work has been explicitly returned to planning.

@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-job-interview
+id: 2
 title: Job Interview
 summary: Speaking prompts and vocabulary about personal strengths, work experience, and interview answers.
 created: 2025-10-28
@@ -50,7 +50,6 @@ a work in progress → 발전 중인 것
 
 _“My perfectionism is still a work in progress—I’m learning to focus on impact, not just details.”_
 
-
 2️⃣ **Skills & Experience**
 
 **- Can you describe a project you’re proud of?**
@@ -79,7 +78,6 @@ empathy → 공감력
 agree to disagree → 의견 차이를 인정하다
 
 _“When conflicts arise, I try to agree to disagree and focus on the shared goal.”_
-
 
 3️⃣ **Goals & Motivation**
 

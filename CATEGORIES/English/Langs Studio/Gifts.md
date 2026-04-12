@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-gifts
+id: 13
 title: Gifts
 summary: Speaking prompts and vocabulary about giving, receiving, and choosing meaningful gifts.
 created: 2025-08-12
@@ -59,7 +59,6 @@ déjà vu → 데자뷔 같은 느낌
 
 _"I’ve ended up with three identical mugs over the years—it was like déjà vu every birthday."_
 
-
 **2) Gift Preferences & Opinions**
 
 **- Do you prefer practical gifts or sentimental gifts?**
@@ -106,7 +105,6 @@ wrap up → 포장하다
 the way to someone’s heart is through their stomach → 음식이 최고의 선물
 
 _"If it’s homemade, I’ll gladly dig into it—after all, the way to someone’s heart is through their stomach."_
-
 
 **3) Creative & Unusual Gifts**
 

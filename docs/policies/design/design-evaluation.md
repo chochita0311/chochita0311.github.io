@@ -44,6 +44,11 @@
 - When density rises, the system should preserve hierarchy and containment before adding more visible information.
 - A visually compact layout that causes clipping, overlap, or scan breakdown is a failure, not a stylistic preference.
 
+### 6. Topbar Parity Drift Check
+- When matching or preserving an existing topbar, evaluators should compare typography and spacing tokens before comparing copy or menu structure.
+- Visual drift often appears first in `font-size`, `line-height`, `letter-spacing`, and reserved icon spacing rather than in the text labels themselves.
+- Hidden or conditional icons must not leave idle-state spacing that makes one navigation item look wider or visually misaligned than its peers.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.

@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-family
+id: 6
 title: Family
 summary: Speaking prompts and vocabulary about parents, siblings, shared routines, and extended family.
 created: 2025-09-30
@@ -49,7 +49,6 @@ leniency → 관대함
 good cop, bad cop → 한쪽은 엄격, 한쪽은 관대
 
 _“Their parenting often seemed like a good cop, bad cop approach, but eventually they struck a balance.”_
-
 
 2️⃣ **Daily Family Life**
 

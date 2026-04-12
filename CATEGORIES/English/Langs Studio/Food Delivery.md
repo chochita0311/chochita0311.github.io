@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-food-delivery
+id: 14
 title: Food Delivery
 summary: Speaking prompts and vocabulary about delivery apps, eating habits, and convenience versus cost.
 created: 2025-08-07
@@ -42,7 +42,6 @@ cold food → 식은 음식
 missing item → 빠진 음식
 customer service → 고객 서비스
 
-
 **2) Convenience & Cost**
 
 **- How do you decide between delivery, takeout, and eating out?**
@@ -74,7 +73,6 @@ markup → 가격 인상
 discount → 할인
 in-app promotion → 앱 내 프로모션
 hidden fee → 숨겨진 요금
-
 
 **3) Culture & Social Impact**
 

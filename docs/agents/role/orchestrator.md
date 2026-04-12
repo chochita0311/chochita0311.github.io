@@ -8,8 +8,8 @@
 - This document owns the Orchestrator role contract.
 - It does not own the whole workflow sequence.
 - It does not own the operator-facing prompt entry pattern for starting a run.
-- Use `docs/agents/workflow.md` for the sequence model.
-- Use `docs/agents/runner.md` for run-start and run-continuation invocation prompts.
+- Use `docs/agents/flow/workflow.md` for the sequence model.
+- Use `docs/agents/operation/runner.md` for run-start and run-continuation invocation prompts.
 
 ## When To Use
 - A feature has been approved and is ready to enter execution.

@@ -60,6 +60,11 @@
       }));
   }
 
+  window.ArchiveTaxonomy = {
+    buildCategoryArchive,
+    notesIndexPath,
+  };
+
   function renderSidebarCategories(categories) {
     const mount = document.getElementById("sidebar-categories");
 
@@ -135,7 +140,7 @@ ${collectionMarkup}
       );
     };
 
-    const activateGroup = (group) => {
+    const clearSelection = () => {
       groups.forEach((item) => {
         const itemTrigger = item.querySelector("[data-category-trigger='true']");
         const childLinks = Array.from(item.querySelectorAll(".sidebar-sublist__item"));
@@ -150,6 +155,10 @@ ${collectionMarkup}
 
         item.classList.remove("is-open");
       });
+    };
+
+    const activateGroup = (group) => {
+      clearSelection();
 
       const trigger = group.querySelector("[data-category-trigger='true']");
 
@@ -190,6 +199,10 @@ ${collectionMarkup}
           });
         });
       });
+    });
+
+    window.addEventListener("sidebar:clear-selection", () => {
+      clearSelection();
     });
   }
 

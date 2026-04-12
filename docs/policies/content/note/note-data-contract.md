@@ -1,11 +1,13 @@
 # Note Data Contract
 
 ## Purpose
+
 - Keep Markdown as the durable source of truth.
 - Define the minimum metadata needed for archive browse, search, tag filtering, reading, and bookmarks on a static site.
 - Define the generated JSON shape that the static UI can consume without hand-maintained duplicate data.
 
 ## Source Of Truth
+
 - Canonical note content lives in Markdown files under `CATEGORIES/`.
 - Verified path pattern:
   - `CATEGORIES/<category>/<collection>/<note>.md`
@@ -15,13 +17,14 @@
 - Dates belong in frontmatter, not in durable filenames. If a source note arrives with a leading `YYYYMMDD` filename, rename it to a topic-based note name and store the date in `created`.
 
 ## Recommended Note Shape
+
 - File path example:
   - `CATEGORIES/Technology/JAVA/ApplicationRunner.md`
 - Frontmatter example:
 
 ```md
 ---
-id: technology-java-application-runner
+id: 34
 title: ApplicationRunner
 summary: How Spring Boot runs startup logic after the application context is ready.
 tags:
@@ -38,6 +41,7 @@ Actual note body here.
 ```
 
 ## Frontmatter Fields
+
 - Strict field order:
   - `id`
   - `title`
@@ -48,9 +52,11 @@ Actual note body here.
 - New and normalized notes must follow this order exactly.
 - Required:
   - `id`
-    - stable, unique string
-    - should not change once bookmarks or links may rely on it
-    - recommended pattern: lowercase slug combining category, collection, and note name
+    - stable, unique positive integer
+    - source-of-truth note identity
+    - generated outputs must use this numeric `id` directly
+    - existing notes are assigned in current menu order
+    - new notes must use the next available integer after the current maximum `id`
   - `title`
     - primary display title for lists and reading view
   - `summary`
@@ -73,20 +79,25 @@ Actual note body here.
   - duplicate category or collection fields unless the generator needs overrides later
 
 ## Body Rules
+
 - The Markdown body remains the note itself.
 - The first body heading can match `title`, but the UI should trust frontmatter `title` as the metadata owner.
 - Long-form reading content should stay in Markdown instead of moving into JSON.
 - Body rendering expectations and supported syntax are documented in `docs/policies/content/note/markdown-rendering.md`.
 
 ## Generated Static Index
-- Generate one metadata index for the static UI.
-- Runtime file:
-  - `assets/generated/archives-index.json`
+
+- Generate these runtime artifacts for the static UI:
+  - browse metadata index: `assets/generated/archives-index.json`
+  - reverse search index: `assets/generated/archives-search-index.json`
 - Generator script:
   - `scripts/generate-archives-index.mjs`
-- This file should be created from Markdown frontmatter plus path-derived category and collection values.
+- `archives-index.json` owns archive browse metadata derived from frontmatter and path-based taxonomy.
+- `archives-search-index.json` owns generated search lookup data derived from note source content.
+- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md).
 
 ## Archive Copy Config
+
 - Keep list-view title and summary copy in a small runtime JSON file instead of hard-coding it in JavaScript.
 - Recommended file:
   - `assets/config/archive-descriptions.json`
@@ -124,11 +135,11 @@ Actual note body here.
 ```json
 [
   {
-    "id": "technology-java-application-runner",
+    "id": 34,
     "title": "ApplicationRunner",
     "summary": "How Spring Boot runs startup logic after the application context is ready.",
     "tags": ["java", "spring-boot", "lifecycle"],
-    "date": "2026-04-05",
+    "created": "2026-04-05",
     "updated": "2026-04-05",
     "category": "Technology",
     "collection": "JAVA",
@@ -138,10 +149,12 @@ Actual note body here.
 ```
 
 ## Why This Shape Works
+
 - Browse:
   - category and collection lists can be built from `category` and `collection`
 - Search:
-  - query over `title`, `summary`, and `tags`
+  - archive metadata comes from `archives-index.json`
+  - exact token lookup comes from `archives-search-index.json`
 - Tag click:
   - filter notes by exact tag match
 - Reading:
@@ -151,27 +164,27 @@ Actual note body here.
   - store only note `id`s in browser storage and resolve them against the index
 
 ## Bookmark Contract
+
 - Store bookmark state in `localStorage`.
 - Recommended shape:
 
 ```json
-["technology-java-application-runner", "english-langs-studio-20250708"]
+[34, 2]
 ```
 
 - Do not store full note objects in bookmarks.
 - Bookmark resolution should always go through the latest generated note index.
 
-## Search Contract
+## Search Index Relationship
+
 - Search should be index-based and client-side.
-- Minimum searchable fields:
-  - `title`
-  - `summary`
-  - `tags`
-- Optional later:
-  - generated excerpt
-  - normalized keyword field
+- Search runtime behavior should consume:
+  - browse metadata from `archives-index.json`
+  - lookup terms from `archives-search-index.json`
+- Search index file shape and token rules belong in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md).
 
 ## Tag Contract
+
 - Tags should come from frontmatter.
 - Recommended normalization:
   - lowercase
@@ -180,14 +193,16 @@ Actual note body here.
 - The UI may display tags in a friendlier label format later, but the stored value should stay normalized.
 
 ## ID Rules
+
 - `id` must stay stable across renames where possible.
-- Recommended pattern:
-  - `<category>-<collection>-<note-slug>`
-- Example:
-  - `technology-java-application-runner`
+- `id` is a numeric source identifier, not a slug.
+- Existing notes were assigned numeric IDs in current menu order during the initial migration.
+- New notes should receive the next available integer after the current maximum `id`.
+- Do not keep a parallel `slug`, `legacy_id`, or other secondary identifier field unless a future approved plan adds it explicitly.
 
 ## Practical Recommendation
+
 - Keep editing notes as Markdown files with frontmatter.
-- Do not hand-maintain per-note JSON wrappers.
-- Regenerate the archive index from Markdown after note additions, moves, or metadata changes.
+- Do not hand-maintain per-note JSON wrappers or search index data.
+- Regenerate both archive indexes from Markdown after note additions, moves, metadata changes, or major body-content edits.
 - Treat the generated JSON as a runtime asset, not as the primary content store.

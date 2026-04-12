@@ -1,5 +1,5 @@
 ---
-id: technology-java-data
+id: 22
 title: "@Data"
 summary: Reference note on Lombok @Data usage and whether it should be used broadly in Java domain models.
 created: 2026-04-05

@@ -1,5 +1,5 @@
 ---
-id: technology-java-sql-restriction
+id: 27
 title: "@SQLRestriction"
 summary: Reference note for Hibernate @SQLRestriction and row-level filtering behavior.
 created: 2026-04-05

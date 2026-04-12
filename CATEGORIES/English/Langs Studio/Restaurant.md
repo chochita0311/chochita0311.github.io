@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-restaurant
+id: 3
 title: Restaurant
 summary: Speaking prompts and vocabulary about eating out, ordering food, and memorable dining experiences.
 created: 2025-10-21
@@ -50,7 +50,6 @@ word gets around → 소문이 퍼지다
 
 _“Once a restaurant serves great food, word gets around quickly.”_
 
-
 2️⃣ **Ordering & Dining Experience**
 
 **- Do you prefer ordering the same food or trying something new?**
@@ -88,7 +87,6 @@ impression → 인상
 once in a lifetime experience → 평생 한 번뿐인 경험
 
 _“Dining on a rooftop in Paris was truly a once-in-a-lifetime experience.”_
-
 
 3️⃣ **Memorable Food Experiences**
 

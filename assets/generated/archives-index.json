@@ -1,6 +1,6 @@
 [
   {
-    "id": "english-langs-studio-how-much-can-you-handle",
+    "id": 1,
     "title": "How Much Can You Handle?",
     "summary": "Speaking prompts and vocabulary about patience, endurance, and emotional limits.",
     "tags": [
@@ -17,7 +17,7 @@
     "path": "CATEGORIES/English/Langs Studio/How Much Can You Handle.md"
   },
   {
-    "id": "english-langs-studio-job-interview",
+    "id": 2,
     "title": "Job Interview",
     "summary": "Speaking prompts and vocabulary about personal strengths, work experience, and interview answers.",
     "tags": [
@@ -34,7 +34,7 @@
     "path": "CATEGORIES/English/Langs Studio/Job Interview.md"
   },
   {
-    "id": "english-langs-studio-restaurant",
+    "id": 3,
     "title": "Restaurant",
     "summary": "Speaking prompts and vocabulary about eating out, ordering food, and memorable dining experiences.",
     "tags": [
@@ -51,7 +51,7 @@
     "path": "CATEGORIES/English/Langs Studio/Restaurant.md"
   },
   {
-    "id": "english-langs-studio-dealing-with-illness",
+    "id": 4,
     "title": "Dealing with Illness",
     "summary": "Speaking prompts and vocabulary about symptoms, recovery habits, and health-related choices.",
     "tags": [
@@ -68,7 +68,7 @@
     "path": "CATEGORIES/English/Langs Studio/Dealing with Illness.md"
   },
   {
-    "id": "english-langs-studio-bucket-list",
+    "id": 5,
     "title": "Bucket List",
     "summary": "Speaking prompts and vocabulary about life goals, travel dreams, and long-term ambitions.",
     "tags": [
@@ -85,7 +85,7 @@
     "path": "CATEGORIES/English/Langs Studio/Bucket List.md"
   },
   {
-    "id": "english-langs-studio-family",
+    "id": 6,
     "title": "Family",
     "summary": "Speaking prompts and vocabulary about parents, siblings, shared routines, and extended family.",
     "tags": [
@@ -102,7 +102,7 @@
     "path": "CATEGORIES/English/Langs Studio/Family.md"
   },
   {
-    "id": "english-langs-studio-morality",
+    "id": 7,
     "title": "Morality",
     "summary": "Speaking prompts and vocabulary about honesty, ethics, and modern moral dilemmas.",
     "tags": [
@@ -119,7 +119,7 @@
     "path": "CATEGORIES/English/Langs Studio/Morality.md"
   },
   {
-    "id": "english-langs-studio-study-habits",
+    "id": 8,
     "title": "Study Habits",
     "summary": "Speaking prompts and vocabulary about study routines, techniques, and memorable learning experiences.",
     "tags": [
@@ -136,7 +136,7 @@
     "path": "CATEGORIES/English/Langs Studio/Study Habits.md"
   },
   {
-    "id": "english-langs-studio-elementary-school",
+    "id": 9,
     "title": "Elementary School",
     "summary": "Speaking prompts and vocabulary about childhood school memories, teachers, and early friendships.",
     "tags": [
@@ -153,7 +153,7 @@
     "path": "CATEGORIES/English/Langs Studio/Elementary School.md"
   },
   {
-    "id": "english-langs-studio-sleep-habits",
+    "id": 10,
     "title": "Sleep Habits",
     "summary": "Speaking prompts, vocabulary, and example paragraphs about sleep quality, routines, and rest.",
     "tags": [
@@ -170,7 +170,7 @@
     "path": "CATEGORIES/English/Langs Studio/Sleep Habits.md"
   },
   {
-    "id": "english-langs-studio-teamwork",
+    "id": 11,
     "title": "Teamwork",
     "summary": "Speaking prompts and vocabulary about collaboration, group projects, and team culture.",
     "tags": [
@@ -187,7 +187,7 @@
     "path": "CATEGORIES/English/Langs Studio/Teamwork.md"
   },
   {
-    "id": "english-langs-studio-birthday",
+    "id": 12,
     "title": "Birthday",
     "summary": "Speaking prompts and vocabulary about birthday celebrations, gifts, and memorable moments.",
     "tags": [
@@ -204,7 +204,7 @@
     "path": "CATEGORIES/English/Langs Studio/Birthday.md"
   },
   {
-    "id": "english-langs-studio-gifts",
+    "id": 13,
     "title": "Gifts",
     "summary": "Speaking prompts and vocabulary about giving, receiving, and choosing meaningful gifts.",
     "tags": [
@@ -221,7 +221,7 @@
     "path": "CATEGORIES/English/Langs Studio/Gifts.md"
   },
   {
-    "id": "english-langs-studio-food-delivery",
+    "id": 14,
     "title": "Food Delivery",
     "summary": "Speaking prompts and vocabulary about delivery apps, eating habits, and convenience versus cost.",
     "tags": [
@@ -238,7 +238,7 @@
     "path": "CATEGORIES/English/Langs Studio/Food Delivery.md"
   },
   {
-    "id": "english-langs-studio-high-school",
+    "id": 15,
     "title": "High School",
     "summary": "Speaking prompts and vocabulary about school life, classmates, teachers, and teenage memories.",
     "tags": [
@@ -255,7 +255,7 @@
     "path": "CATEGORIES/English/Langs Studio/High School.md"
   },
   {
-    "id": "english-langs-studio-water-activities",
+    "id": 16,
     "title": "Water Activities",
     "summary": "Speaking prompts and vocabulary for swimming, water parks, beaches, and pool safety.",
     "tags": [
@@ -272,7 +272,7 @@
     "path": "CATEGORIES/English/Langs Studio/Water Activities.md"
   },
   {
-    "id": "english-langs-studio-goals",
+    "id": 17,
     "title": "Goals",
     "summary": "Speaking prompts and vocabulary about personal, academic, career, and health goals.",
     "tags": [
@@ -289,7 +289,7 @@
     "path": "CATEGORIES/English/Langs Studio/Goals.md"
   },
   {
-    "id": "english-langs-studio-accommodation",
+    "id": 18,
     "title": "Accommodation",
     "summary": "Travel speaking prompts and useful expressions about hotels, guesthouses, and booking stays.",
     "tags": [
@@ -306,7 +306,7 @@
     "path": "CATEGORIES/English/Langs Studio/Accommodation.md"
   },
   {
-    "id": "english-langs-studio-money-management",
+    "id": 19,
     "title": "Money Management",
     "summary": "Speaking prompts and vocabulary notes about budgeting, spending habits, and financial choices.",
     "tags": [
@@ -323,7 +323,7 @@
     "path": "CATEGORIES/English/Langs Studio/Money Management.md"
   },
   {
-    "id": "english-langs-studio-chores-and-cleaning",
+    "id": 20,
     "title": "Chores and Cleaning",
     "summary": "Vocabulary and speaking notes about chores, commuting, pets, and everyday cleaning routines.",
     "tags": [
@@ -340,7 +340,7 @@
     "path": "CATEGORIES/English/Langs Studio/Chores and Cleaning.md"
   },
   {
-    "id": "technology-java-async-thread-pool",
+    "id": 21,
     "title": "@Async & Thread Pool",
     "summary": "Notes and references on Java concurrency, Spring @Async usage, and rejected execution handling with thread pools.",
     "tags": [
@@ -357,7 +357,7 @@
     "path": "CATEGORIES/Technology/JAVA/@Async & Thread Pool.md"
   },
   {
-    "id": "technology-java-data",
+    "id": 22,
     "title": "@Data",
     "summary": "Reference note on Lombok @Data usage and whether it should be used broadly in Java domain models.",
     "tags": [
@@ -372,7 +372,7 @@
     "path": "CATEGORIES/Technology/JAVA/@Data.md"
   },
   {
-    "id": "technology-java-enable-jpa-auditing",
+    "id": 23,
     "title": "@EnableJpaAuditing",
     "summary": "References and implementation notes for enabling JPA auditing and handling audit overrides in Spring Data JPA.",
     "tags": [
@@ -388,7 +388,7 @@
     "path": "CATEGORIES/Technology/JAVA/@EnableJpaAuditing.md"
   },
   {
-    "id": "technology-java-modifying",
+    "id": 24,
     "title": "@Modifying",
     "summary": "Short reference note for Spring Data JPA @Modifying and update or delete query behavior.",
     "tags": [
@@ -404,7 +404,7 @@
     "path": "CATEGORIES/Technology/JAVA/@Modifying.md"
   },
   {
-    "id": "technology-java-notnull-size",
+    "id": 25,
     "title": "@NotNull @Size",
     "summary": "Reference note on validation annotations and Hibernate column sizing considerations for @NotNull and @Size.",
     "tags": [
@@ -421,7 +421,7 @@
     "path": "CATEGORIES/Technology/JAVA/@NotNull @Size.md"
   },
   {
-    "id": "technology-java-scheduled",
+    "id": 26,
     "title": "@Scheduled",
     "summary": "Reference note for Spring scheduling and the @Scheduled annotation.",
     "tags": [
@@ -437,7 +437,7 @@
     "path": "CATEGORIES/Technology/JAVA/@Scheduled.md"
   },
   {
-    "id": "technology-java-sql-restriction",
+    "id": 27,
     "title": "@SQLRestriction",
     "summary": "Reference note for Hibernate @SQLRestriction and row-level filtering behavior.",
     "tags": [
@@ -452,7 +452,7 @@
     "path": "CATEGORIES/Technology/JAVA/@SQLRestriction.md"
   },
   {
-    "id": "technology-java-superbuilder",
+    "id": 28,
     "title": "@SuperBuilder",
     "summary": "Reference note on Lombok @SuperBuilder and builder inheritance patterns in Java.",
     "tags": [
@@ -468,7 +468,7 @@
     "path": "CATEGORIES/Technology/JAVA/@SuperBuilder.md"
   },
   {
-    "id": "technology-java-utility-class",
+    "id": 29,
     "title": "@UtilityClass",
     "summary": "References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.",
     "tags": [
@@ -484,7 +484,7 @@
     "path": "CATEGORIES/Technology/JAVA/@UtilityClass.md"
   },
   {
-    "id": "technology-java-with",
+    "id": 30,
     "title": "@With",
     "summary": "Reference note on Lombok @With for cloning and updating immutable Java objects.",
     "tags": [
@@ -500,7 +500,7 @@
     "path": "CATEGORIES/Technology/JAVA/@With.md"
   },
   {
-    "id": "technology-java-abstract-class-di",
+    "id": 31,
     "title": "abstract class DI",
     "summary": "References and example code for applying Spring dependency injection patterns inside abstract classes.",
     "tags": [
@@ -516,7 +516,7 @@
     "path": "CATEGORIES/Technology/JAVA/abstract class DI.md"
   },
   {
-    "id": "technology-java-aop-self-invocation",
+    "id": 32,
     "title": "AOP & Self Invocation",
     "summary": "References on Spring AOP, transaction boundaries, and why self invocation bypasses proxy-based behavior.",
     "tags": [
@@ -533,7 +533,7 @@
     "path": "CATEGORIES/Technology/JAVA/AOP & Self Invocation.md"
   },
   {
-    "id": "technology-java-apache-poi",
+    "id": 33,
     "title": "Apache Poi",
     "summary": "Collected references for Apache POI write and read performance, streaming APIs, and spreadsheet format tradeoffs.",
     "tags": [
@@ -550,7 +550,7 @@
     "path": "CATEGORIES/Technology/JAVA/Apache Poi.md"
   },
   {
-    "id": "technology-java-application-runner",
+    "id": 34,
     "title": "ApplicationRunner",
     "summary": "Reference note on Spring Boot ApplicationRunner and related startup conditional execution patterns.",
     "tags": [
@@ -566,7 +566,7 @@
     "path": "CATEGORIES/Technology/JAVA/ApplicationRunner.md"
   },
   {
-    "id": "technology-messaging-kafka",
+    "id": 35,
     "title": "Kafka",
     "summary": "Kafka의 개념, 내부 구조, partition, consumer lag, 장애 대응, 활용 예시를 한 번에 복습할 수 있도록 정리한 노트.",
     "tags": [

@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-bucket-list
+id: 5
 title: Bucket List
 summary: Speaking prompts and vocabulary about life goals, travel dreams, and long-term ambitions.
 created: 2025-10-14
@@ -50,7 +50,6 @@ off the beaten path → 잘 알려지지 않은 길
 
 _“I prefer to travel off the beaten path and find hidden gems away from crowds.”_
 
-
 2️⃣ **Career & Skill Goals**
 
 **-What’s your ultimate career goal?**
@@ -88,7 +87,6 @@ wisdom → 지혜
 a guiding light→ 인생의 길잡이
 
 _“My mentor has always been a guiding light who helps me see my potential clearly.”_
-
 
 3️⃣ **Relationship & Personal Connection Goals**
 

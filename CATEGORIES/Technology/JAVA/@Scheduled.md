@@ -1,5 +1,5 @@
 ---
-id: technology-java-scheduled
+id: 26
 title: "@Scheduled"
 summary: Reference note for Spring scheduling and the @Scheduled annotation.
 created: 2026-04-05

@@ -1,26 +1,29 @@
-# Agent Roles
+# Agent Package
 
 ## Purpose
-- Keep reusable role definitions for iterative harness work in one editable package.
-- Draft and refine the role contracts here before promoting them into shared assets.
-- Keep these role docs general-purpose unless a file is explicitly marked repo-local.
+- Keep reusable agent docs for iterative harness work in one editable package.
+- Separate role contracts from flow and operation docs so the package can grow into multiple workflows.
+- Draft and refine these docs here before promoting stable versions into shared assets.
 
-## Planning Roles
-- `docs/agents/prd-normalizer.md`: normalize chaotic product inputs into a bounded PRD package
-- `docs/agents/feature-planner.md`: decompose a normalized PRD into loop-sized product and foundation features
+## Role Package
+### Planning Roles
+- `docs/agents/role/prd-normalizer.md`: normalize chaotic product inputs into a bounded PRD package
+- `docs/agents/role/feature-planner.md`: decompose a normalized PRD into loop-sized product and foundation features
 
-## Execution Roles
-- `docs/agents/orchestrator.md`: control one bounded execution loop and route failures to the right layer
-- `docs/agents/spec-agent.md`: translate one approved feature into an implementation-facing spec
-- `docs/agents/builder.md`: implement one approved spec without expanding scope
-- `docs/agents/design-evaluator.md`: evaluate visual and design-surface correctness against sources and spec
-- `docs/agents/functional-evaluator.md`: evaluate behavioral correctness, state handling, and regressions
-- `docs/agents/ux-heuristic-evaluator.md`: evaluate interaction clarity and friction without inventing new scope
-- `docs/agents/fix-agent.md`: apply targeted corrections from approved evaluator findings
+### Execution Roles
+- `docs/agents/role/orchestrator.md`: control one bounded execution loop and route failures to the right layer
+- `docs/agents/role/spec-agent.md`: translate one approved feature into an implementation-facing spec
+- `docs/agents/role/builder.md`: implement one approved spec without expanding scope
+- `docs/agents/role/design-evaluator.md`: evaluate visual and design-surface correctness against sources and spec
+- `docs/agents/role/functional-evaluator.md`: evaluate behavioral correctness, state handling, and regressions
+- `docs/agents/role/ux-heuristic-evaluator.md`: evaluate interaction clarity and friction without inventing new scope
+- `docs/agents/role/fix-agent.md`: apply targeted corrections from approved evaluator findings
 
-## Workflow
-- `docs/agents/workflow.md`: define the baton flow, stop points, and role composition options
-- `docs/agents/runner.md`: define how a human or harness starts and continues one run using prompts
+## Flow Package
+- `docs/agents/flow/workflow.md`: define baton flow, stop points, and role composition options
+
+## Operation Package
+- `docs/agents/operation/runner.md`: define how a human or harness starts and continues one run using prompts
 
 ## Related Local Docs
 - `docs/policies/harness/prd-feature-management.md`: planning-governance rule for PRDs, features, approval, and traceability
@@ -41,15 +44,15 @@
 - Keep the rules for those artifacts in `docs/policies/harness/prd-feature-management.md` instead of repeating them in folder README files.
 
 ## Workflow Variation
-- Treat `docs/agents/workflow.md` as a strong default example, not the only valid orchestration shape.
+- Treat `docs/agents/flow/workflow.md` as a strong default example, not the only valid orchestration shape.
 - This repo may use smaller or larger workflows from the same role set depending on product scope, stack shape, and approval needs.
-- When the workflow expands, keep the role contracts stable and add variation through sequencing rather than rewriting every role.
+- When the workflow expands, keep the role contracts stable and add new flow docs through composition rather than rewriting every role.
 
 ## Local Invocation
 - Initialize one execution pass from the approved feature document and the runner guide.
 - Treat the runner guide as the ordered prompt source for the current execution pass instead of generating runtime scaffolding files automatically.
 
 ## Packaging Rule
-- Treat `docs/agents/` as the working copy for role definitions being developed in this repo.
+- Treat `docs/agents/` as the working copy for role, flow, and operation docs being developed in this repo.
 - Promote stable general-purpose role docs into `../ai-assets/agents/`.
 - Keep repo-specific operating rules in `AGENTS.md` or `docs/policies/`; do not hide them inside reusable role definitions.

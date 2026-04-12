@@ -40,6 +40,16 @@
 - Re-rendering markup without restoring event behavior is a blocking defect, not an acceptable implementation detail.
 - Pagination, mode toggles, navigation controls, and repeated browse actions should be explicitly rechecked after any DOM-replacement strategy.
 
+### 5. Scope Transition Reset Rule
+- When a scope change redefines the result set, explicit reset is usually safer than carrying forward the previous search or filter state.
+- If global filtering and scoped search would conflict, the interaction should clear one state before entering the other instead of leaving both implicitly active.
+- Evaluators should check whether query, tag, category, collection, or similar browse states are reset or preserved intentionally rather than by accident.
+
+### 6. Immediate Dropdown Dismissal
+- Hover-driven dropdowns should close immediately after the user makes a selection.
+- Leaving the dropdown open after selection slows recognition of the newly loaded destination state.
+- Evaluators should verify both the selected result and the menu-dismiss behavior, not just the navigation target.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable transitions, continuity, or no-leak behavior.
 - Usually classify as `spec gap` when the spec failed to define how view changes, loading behavior, or navigation continuity should work.

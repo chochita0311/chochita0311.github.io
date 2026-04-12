@@ -1,5 +1,5 @@
 ---
-id: english-langs-studio-elementary-school
+id: 9
 title: Elementary School
 summary: Speaking prompts and vocabulary about childhood school memories, teachers, and early friendships.
 created: 2025-09-02
@@ -50,7 +50,6 @@ hit it off → 죽이 잘 맞다
 
 _“It always amazed me how quickly children could hit it off with strangers and turn them into close friends within days.”_
 
-
 **2) School Memories**
 
 **- What is your most vivid memory from elementary school?**
@@ -88,7 +87,6 @@ recognition → 인정
 on cloud nine → 너무 행복한
 
 _“Pulling off a difficult task at a young age left me on cloud nine, and even now I look back on it with pride.”_
-
 
 **3) Reflection & Growth**
 

@@ -1,5 +1,5 @@
 ---
-id: technology-java-application-runner
+id: 34
 title: ApplicationRunner
 summary: Reference note on Spring Boot ApplicationRunner and related startup conditional execution patterns.
 created: 2026-04-05
@@ -13,4 +13,4 @@ tags:
 
 - https://docs.spring.io/spring-boot/reference/features/spring-application.html#features.spring-application.command-line-runner
 - [@ConditionalOnProperty](https://www.baeldung.com/spring-conditionalonproperty)
-- 
+-
