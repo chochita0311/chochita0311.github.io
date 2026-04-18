@@ -59,6 +59,16 @@
 - Tag chips and collection or locator labels should read as separate rows or clearly separated zones, not as partially overlapping content.
 - Evaluators should check long-content cases, multi-tag cases, and short-summary cases to confirm the metadata hierarchy still reads cleanly.
 
+### 9. Single Boundary Ownership
+- When two stacked surfaces meet, only one of them should own the boundary line unless a double-divider effect is explicitly intended.
+- Repeated items may keep internal separators, but the final item before a footer or next section should usually drop its divider if the following surface already provides the section boundary.
+- Evaluators should check last-item states, pagination edges, and empty states rather than validating only repeated middle items.
+
+### 10. Small Accent Token Consistency
+- Small accent surfaces such as category labels, chips, and compact action buttons should stay inside the approved token family before introducing custom in-between hex values.
+- When tone tuning is needed, prefer existing foreground and container tokens that already belong to the active palette over ad hoc near-matches.
+- Evaluators should compare compact accents against nearby chips, labels, and control states to catch subtle tonal drift that makes the interface feel less system-driven.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.

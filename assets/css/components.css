@@ -563,7 +563,7 @@
 }
 
 .note-card {
-  cursor: pointer;
+  cursor: default;
 }
 
 .note-card--list {
@@ -595,6 +595,9 @@
 
 .note-card__link {
   display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .note-card__body {
@@ -612,8 +615,8 @@
 .note-label--accent {
   padding: 0.125rem var(--space-2);
   border-radius: var(--radius-default);
-  color: var(--color-primary);
-  background: var(--color-primary-fixed);
+  color: var(--color-on-surface-variant);
+  background: var(--color-on-primary-fixed);
 }
 
 .note-label--muted {
@@ -645,10 +648,6 @@
   min-height: 100%;
   padding: var(--space-8);
   padding-bottom: 7rem;
-}
-
-.note-card--grid .note-card__link {
-  height: 100%;
 }
 
 .note-card--grid .note-card__meta {
@@ -806,14 +805,18 @@
 }
 
 .pagination-button--primary {
-  background: var(--color-primary);
+  background: var(--color-on-primary-fixed);
   color: #fff;
   box-shadow: var(--shadow-button);
 }
 
 .pagination-button--primary:hover,
 .pagination-button--primary:focus-visible {
-  background: var(--color-primary-container);
+  background: var(--color-on-primary-fixed);
+}
+
+.pagination-button--primary:active {
+  background: var(--color-primary);
 }
 
 @media (min-width: 1024px) {

@@ -240,17 +240,17 @@ ${tagsMarkup}
 
     return `
 <article class="${cardClass}" data-note-path="${escapeHtml(note.path)}">
-<a class="note-card__link" href="${buildNoteHref(note)}" data-note-link="true">
 <div class="note-card__body">
 <div class="note-card__meta">
 <span class="note-label note-label--accent">${escapeHtml(note.category)}</span>
 <span class="note-label note-label--muted">${escapeHtml(secondaryMeta)}</span>
 </div>
+<a class="note-card__link" href="${buildNoteHref(note)}" data-note-link="true">
 <h2 class="note-card__title">${escapeHtml(note.title)}</h2>
 <p class="note-card__summary">${escapeHtml(note.summary)}</p>
+</a>
 ${footerMarkup}
 </div>
-</a>
 </article>`;
   }
 
