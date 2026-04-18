@@ -8,6 +8,8 @@
 - `assets/css/app.css` is the shell entry stylesheet imported by `index.html`.
 - `assets/generated/archives-index.json` is the generated runtime archive index derived from `CATEGORIES/`.
 - `assets/generated/archives-search-index.json` is the generated reverse search index derived from Markdown title, tags, and body content.
+- `sitemap.xml` is the generated crawl-discovery file for the home page and standalone note URLs.
+- `robots.txt` is the crawl-entry file that keeps the published sitemap location discoverable to search crawlers.
 - `assets/js/sidebar-categories.js` renders the left category rail from the generated note index.
 - `assets/js/archive-content.js` renders archive and collection note lists from the generated note index.
 - `assets/js/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
@@ -30,6 +32,8 @@
 - `index.html`
 - `assets/generated/archives-index.json`
 - `assets/generated/archives-search-index.json`
+- `sitemap.xml`
+- `robots.txt`
 - `assets/js/sidebar-categories.js`
 - `assets/js/icons.js`
 - `assets/js/archive-content.js`
@@ -50,6 +54,8 @@
 - Keep the visible archive model aligned to `CATEGORIES/<category>/<collection>/<note>.md`.
 - Treat Markdown files as the only durable note content source.
 - Treat `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` as generated runtime output, not hand-edited source content.
+- Treat `sitemap.xml` as generated output aligned to the published URL shape, not hand-edited source content.
+- Keep `robots.txt` minimal and stable unless crawl restrictions or sitemap location change.
 - Keep the published shell desktop-first until product scope explicitly changes.
 - Keep shared icon naming and rendering aligned to `assets/js/icons.js` and `docs/policies/system/icon.md`.
 
@@ -57,5 +63,7 @@
 
 - Add or update notes under `CATEGORIES/`.
 - Regenerate `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` after note additions, moves, metadata changes, or content edits that affect search.
+- Regenerate `sitemap.xml` after note additions, moves, or note URL pattern changes.
+- Update `robots.txt` if the sitemap filename or published domain changes.
 - Keep the visible category and collection structure aligned with the archive tree.
 - Verify the app against a local HTTP server before publishing.

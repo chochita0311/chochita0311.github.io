@@ -14,6 +14,7 @@ Use a local server for consistent browser testing.
 
 ```bash
 node scripts/generate-archives-index.mjs
+node scripts/generate-sitemap.mjs
 node scripts/check-icon-control.mjs
 python3 -m http.server 8000
 ```
@@ -62,6 +63,8 @@ Notes:
 - Keep category and collection names searchable and understandable
 - Use `docs/policies/content/note/note-data-contract.md` for note frontmatter and static index expectations
 - Regenerate `assets/generated/archives-index.json` after note or folder changes with `node scripts/generate-archives-index.mjs`
+- Regenerate `sitemap.xml` after note additions, moves, or URL-shape changes with `node scripts/generate-sitemap.mjs`
+- Keep `robots.txt` aligned to the published sitemap location so crawlers can discover `sitemap.xml`
 - Update the UI or supporting docs in the same turn when the visible archive structure changes
 
 ## Documentation Map

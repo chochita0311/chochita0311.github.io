@@ -14,6 +14,8 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/agents/flow/`: sequence and baton-flow docs that compose roles into workflows
 - `docs/agents/operation/`: run-start and run-continuation invocation docs
 - `docs/policies/project/`: project/runtime policy, architecture, and workflow rules
+- `docs/policies/project/architecture.md`: runtime file ownership including generated crawl-discovery assets such as `sitemap.xml` and `robots.txt`
+- `docs/policies/project/developer-guide.md`: maintenance workflow including archive-index and sitemap regeneration steps
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail routing, and execution artifact ownership
 - `docs/policies/design/`: durable design rules, reusable design-evaluation assets, and design-document governance
 - `docs/policies/experience/`: reusable interaction-quality evaluation assets

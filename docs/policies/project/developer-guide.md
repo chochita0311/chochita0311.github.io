@@ -27,11 +27,15 @@ Follow the local run instructions in `README.md`.
 - Use `docs/policies/content/note/markdown-rendering.md` when changing supported Markdown body syntax or note authoring expectations.
 - Keep folders and filenames searchable and understandable.
 - Regenerate `assets/generated/archives-index.json` with `node scripts/generate-archives-index.mjs` after note or folder changes.
+- Regenerate `sitemap.xml` with `node scripts/generate-sitemap.mjs` after note additions, moves, or note URL-shape changes.
+- Keep `robots.txt` pointing at the published sitemap URL.
 - Update the visible archive shell and owner docs when the category structure changes.
 
 ## Verification
 - Run the simplest verification that matches the change.
 - Run `node scripts/check-icon-control.mjs` after icon, HTML shell, or icon-related JS changes.
+- When sitemap-related files change, verify that `sitemap.xml` is valid XML-shaped output with absolute site URLs and that `robots.txt` still points to the correct sitemap location.
+- After deployment, submit or recheck `https://chochita0311.github.io/sitemap.xml` in Google Search Console.
 - If required validation cannot run in the current environment, state that clearly.
 - Do not claim full validation when key commands could not be executed.
 
