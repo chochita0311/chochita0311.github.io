@@ -22,7 +22,7 @@ Follow the local run instructions in `README.md`.
 - Use `docs/policies/system/icon.md` for the detailed policy and approved inventory.
 
 ## Content Updates
-- Add durable note content under `CATEGORIES/` using the current pattern `CATEGORIES/<category>/<collection>/<note>.md`.
+- Add durable note content under `NOTES/` using the current pattern `NOTES/<category>/<collection>/<note>.md`.
 - Use the note metadata contract in `docs/policies/content/note/note-data-contract.md` when adding or normalizing note frontmatter.
 - Use `docs/policies/content/note/markdown-rendering.md` when changing supported Markdown body syntax or note authoring expectations.
 - Keep folders and filenames searchable and understandable.

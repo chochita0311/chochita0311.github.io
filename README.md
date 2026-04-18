@@ -4,8 +4,8 @@ Lightweight static Markdown archive site for browsing and reading personal study
 
 ## Overview
 - Desktop-first archive shell built with static HTML and layered CSS
-- Durable Markdown archive currently organized under `CATEGORIES/`
-- Current verified content shape: `CATEGORIES/<category>/<collection>/<note>.md`
+- Durable Markdown archive currently organized under `NOTES/`
+- Current verified content shape: `NOTES/<category>/<collection>/<note>.md`
 - GitHub Pages must serve the repo as static files so runtime `.md` fetches keep working
 - The published shell is styled and documented, but archive data binding is still being normalized
 
@@ -55,11 +55,11 @@ Notes:
 - This setup is local development tooling only and does not affect GitHub Pages runtime output
 - `node_modules/` is ignored and should not be committed
 - Generated archive data under `assets/generated/` is excluded from lint and format checks
-- Archive note content under `CATEGORIES/` is intentionally outside this lint scope
+- Archive note content under `NOTES/` is intentionally outside this lint scope
 - Because config lives under `configs/lint/`, npm scripts pass explicit config paths instead of relying on root autodiscovery
 
 ## Update Archive Content
-- Add or reorganize Markdown files under `CATEGORIES/`
+- Add or reorganize Markdown files under `NOTES/`
 - Keep category and collection names searchable and understandable
 - Use `docs/policies/content/note/note-data-contract.md` for note frontmatter and static index expectations
 - Regenerate `assets/generated/archives-index.json` after note or folder changes with `node scripts/generate-archives-index.mjs`

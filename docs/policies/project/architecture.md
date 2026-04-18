@@ -4,9 +4,9 @@
 
 - The site is a static web app built with HTML, CSS, and JavaScript.
 - `index.html` is the published desktop archive shell.
-- `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `CATEGORIES/**/*.md`.
+- `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `NOTES/**/*.md`.
 - `assets/css/app.css` is the shell entry stylesheet imported by `index.html`.
-- `assets/generated/archives-index.json` is the generated runtime archive index derived from `CATEGORIES/`.
+- `assets/generated/archives-index.json` is the generated runtime archive index derived from `NOTES/`.
 - `assets/generated/archives-search-index.json` is the generated reverse search index derived from Markdown title, tags, and body content.
 - `sitemap.xml` is the generated crawl-discovery file for the home page and standalone note URLs.
 - `robots.txt` is the crawl-entry file that keeps the published sitemap location discoverable to search crawlers.
@@ -19,8 +19,8 @@
 
 ## Content Shape
 
-- `CATEGORIES/` is the current durable Markdown archive.
-- The verified content shape is `CATEGORIES/<category>/<collection>/<note>.md`.
+- `NOTES/` is the current durable Markdown archive.
+- The verified content shape is `NOTES/<category>/<collection>/<note>.md`.
 - Source note identity is owned by numeric Markdown frontmatter `id` values.
 - Note metadata and generated static-index expectations are defined in `docs/policies/content/note/note-data-contract.md`.
 - Markdown body rendering behavior is defined in `docs/policies/content/note/markdown-rendering.md`.
@@ -43,7 +43,7 @@
 - `assets/css/components.css`
 - `assets/css/layouts.css`
 - `assets/css/app.css`
-- `CATEGORIES/`
+- `NOTES/`
 - `docs/policies/content/note/note-data-contract.md`
 - `docs/policies/content/note/markdown-rendering.md`
 - `docs/policies/system/icon.md`
@@ -51,7 +51,7 @@
 ## Constraints
 
 - Avoid introducing a build requirement for the published runtime.
-- Keep the visible archive model aligned to `CATEGORIES/<category>/<collection>/<note>.md`.
+- Keep the visible archive model aligned to `NOTES/<category>/<collection>/<note>.md`.
 - Treat Markdown files as the only durable note content source.
 - Treat `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` as generated runtime output, not hand-edited source content.
 - Treat `sitemap.xml` as generated output aligned to the published URL shape, not hand-edited source content.
@@ -61,7 +61,7 @@
 
 ## Maintenance Flow
 
-- Add or update notes under `CATEGORIES/`.
+- Add or update notes under `NOTES/`.
 - Regenerate `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` after note additions, moves, metadata changes, or content edits that affect search.
 - Regenerate `sitemap.xml` after note additions, moves, or note URL pattern changes.
 - Update `robots.txt` if the sitemap filename or published domain changes.

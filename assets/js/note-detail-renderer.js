@@ -530,20 +530,25 @@ function renderMarkdown(markdown, options = {}) {
   };
 }
 
+function normalizeNotePath(notePath) {
+  return String(notePath || "").replace(/^CATEGORIES\//, "NOTES/");
+}
+
 async function loadNoteData(notePath, fetchPrefix = "") {
-  const response = await fetch(`${fetchPrefix}${notePath}`);
+  const normalizedNotePath = normalizeNotePath(notePath);
+  const response = await fetch(`${fetchPrefix}${normalizedNotePath}`);
 
   if (!response.ok) {
-    throw new Error(`Unable to load note: ${notePath}`);
+    throw new Error(`Unable to load note: ${normalizedNotePath}`);
   }
 
   const markdown = await response.text();
-  const fallbackTitle = titleFromPath(notePath);
+  const fallbackTitle = titleFromPath(normalizedNotePath);
   const { attributes, body } = parseFrontmatter(markdown);
   const title = attributes.title || fallbackTitle;
 
   return {
-    path: notePath,
+    path: normalizedNotePath,
     attributes,
     body,
     title,
@@ -560,5 +565,6 @@ async function loadNoteData(notePath, fetchPrefix = "") {
 window.NoteDetailRenderer = {
   escapeHtml,
   loadNoteData,
+  normalizeNotePath,
   shortenReference,
 };

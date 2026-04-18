@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-12T03:33:42.289Z",
+  "generatedAt": "2026-04-18T06:26:28.133Z",
   "tokenizer": {
     "normalization": "NFKC lowercase",
     "pattern": "[a-z0-9]+|[가-힣]+",

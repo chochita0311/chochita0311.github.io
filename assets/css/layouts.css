@@ -16,7 +16,8 @@
 .topbar__start,
 .topbar__nav,
 .topbar__end,
-.archive-footer__nav,
+.archive-footer__controls,
+.archive-footer__pagination,
 .pagination-controls {
   display: flex;
   align-items: center;
@@ -129,19 +130,27 @@
 
 .note-list[data-view-mode="grid"] {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
 .archive-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  gap: var(--space-5);
   margin-top: auto;
   padding-top: var(--space-12);
   border-top: 1px solid var(--surface-divider);
 }
 
-.archive-footer__nav {
-  gap: var(--space-8);
+.archive-footer__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.archive-footer__pagination {
+  position: relative;
+  justify-self: center;
 }
 
 .pagination-controls {
@@ -200,10 +209,22 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .archive-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-6);
+  .archive-footer__controls {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+  }
+
+  .archive-footer__pagination,
+  .archive-page-size {
+    justify-self: stretch;
+  }
+
+  .archive-footer__pagination {
+    justify-content: center;
+  }
+
+  .pagination-controls {
+    justify-content: center;
   }
 
   .archive-footer__credit {

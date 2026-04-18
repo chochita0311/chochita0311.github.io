@@ -2,7 +2,7 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const ROOT_DIR = process.cwd();
-const CATEGORIES_DIR = path.join(ROOT_DIR, "CATEGORIES");
+const NOTES_DIR = path.join(ROOT_DIR, "NOTES");
 const OUTPUT_PATH = path.join(ROOT_DIR, "assets", "generated", "archives-index.json");
 const SEARCH_INDEX_OUTPUT_PATH = path.join(
   ROOT_DIR,
@@ -293,7 +293,7 @@ function sortNotes(notes) {
 }
 
 async function buildNotesIndex() {
-  const markdownFiles = await collectMarkdownFiles(CATEGORIES_DIR);
+  const markdownFiles = await collectMarkdownFiles(NOTES_DIR);
   const notes = [];
 
   for (const filePath of markdownFiles) {

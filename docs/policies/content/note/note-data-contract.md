@@ -8,9 +8,9 @@
 
 ## Source Of Truth
 
-- Canonical note content lives in Markdown files under `CATEGORIES/`.
+- Canonical note content lives in Markdown files under `NOTES/`.
 - Verified path pattern:
-  - `CATEGORIES/<category>/<collection>/<note>.md`
+  - `NOTES/<category>/<collection>/<note>.md`
 - Path defines the archive taxonomy.
 - Frontmatter defines list, search, and UI metadata.
 - Generated JSON is derived output, not hand-edited content.
@@ -19,7 +19,7 @@
 ## Recommended Note Shape
 
 - File path example:
-  - `CATEGORIES/Technology/JAVA/ApplicationRunner.md`
+  - `NOTES/Technology/JAVA/ApplicationRunner.md`
 - Frontmatter example:
 
 ```md
@@ -109,7 +109,7 @@ Actual note body here.
     "updated": "2026-04-05",
     "category": "Technology",
     "collection": "JAVA",
-    "path": "CATEGORIES/Technology/JAVA/ApplicationRunner.md"
+    "path": "NOTES/Technology/JAVA/ApplicationRunner.md"
   }
 ]
 ```

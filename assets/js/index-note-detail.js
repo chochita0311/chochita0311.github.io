@@ -1,3 +1,5 @@
+const { ICONS, renderIcon } = window.AppIcons;
+
 function archiveListView() {
   return document.getElementById("archive-list-view");
 }
@@ -56,6 +58,14 @@ function setArchiveMode(mode) {
 function renderListFooterPanel() {
   detailNavMount().innerHTML = "";
   archiveFooterPanel().innerHTML = `
+<div class="archive-page-size" id="archive-page-size-root">
+<button aria-controls="archive-page-size-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Archive page size" class="archive-page-size__trigger" id="archive-page-size-trigger" type="button">
+<span class="archive-page-size__current" id="archive-page-size-current">10</span>
+<span aria-hidden="true" class="icon icon--material material-symbols-outlined archive-page-size__icon">expand_more</span>
+</button>
+<div class="archive-page-size__menu" hidden id="archive-page-size-menu"></div>
+</div>
+<div class="archive-footer__pagination">
 <span class="archive-footer__page" id="archive-page-label">Page 01 / 14</span>
 <div class="pagination-controls">
 <button class="pagination-button pagination-button--disabled" id="archive-prev-button" type="button">
@@ -64,6 +74,7 @@ function renderListFooterPanel() {
 <button class="pagination-button pagination-button--primary" id="archive-next-button" type="button">
 <span aria-hidden="true" class="icon icon--material material-symbols-outlined">chevron_right</span>
 </button>
+</div>
 </div>`;
 }
 
@@ -114,7 +125,7 @@ function renderOutline(items) {
 
 function updateBreadcrumbs(path) {
   const segments = path.split("/");
-  const category = segments[1] || "Archive";
+  const category = segments[1] || "Notes";
   const collection = segments[2] || "Notes";
 
   detailBreadcrumbs().innerHTML = `

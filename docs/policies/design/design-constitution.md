@@ -5,16 +5,16 @@
 - Primary users: The site owner as curator and repeat reader, plus occasional visitors reading individual notes or browsing categories.
 - Primary jobs to be done: Browse notes by category or archive structure, search for a note quickly, read long-form Markdown content without distraction.
 - Device priority: Desktop-first reading and archive navigation, with mobile adaptation that preserves reading comfort and navigation clarity.
-- Technical constraints: Static HTML/CSS/JavaScript runtime, GitHub Pages compatibility, note content remains durable under `CATEGORIES/`, avoid heavy framework or build-tool dependence.
+- Technical constraints: Static HTML/CSS/JavaScript runtime, GitHub Pages compatibility, note content remains durable under `NOTES/`, avoid heavy framework or build-tool dependence.
 - Starting artifact type: screen-plus-context.
 
 ## 2. Compatibility Constraints
-- Data model constraints: UI must tolerate note metadata such as title, path, category, tags, date, excerpt, and missing preview fields without collapsing the layout. The currently verified archive shape is `CATEGORIES/<top-level-category>/<collection>/<note>.md`.
+- Data model constraints: UI must tolerate note metadata such as title, path, category, tags, date, excerpt, and missing preview fields without collapsing the layout. The currently verified archive shape is `NOTES/<top-level-category>/<collection>/<note>.md`.
 - Role and permission constraints: Public runtime is effectively single-role read access; authoring and archive maintenance happen outside the published UI.
 - Status/state constraints: The system must support empty archive, no search results, loading, fetch failure, long titles, and missing tags. Deeper taxonomy states beyond the currently observed two-level category structure should not define the baseline yet.
 - Form and validation constraints: Search and filter controls should remain lightweight, forgiving, and keyboard-usable; avoid dense form-heavy patterns.
 - Mobile and responsive constraints: Large editorial hierarchy must compress without becoming a dashboard; navigation can simplify, but reading width and content order must remain legible.
-- Future expansion constraints: Additional screen families may include note detail, archive search results, category drill-down, and lightweight maintenance views without adding a new visual language. If a structure does not exist in `CATEGORIES/` yet, keep the current baseline behavior instead of creating speculative UI.
+- Future expansion constraints: Additional screen families may include note detail, archive search results, category drill-down, and lightweight maintenance views without adding a new visual language. If a structure does not exist in `NOTES/` yet, keep the current baseline behavior instead of creating speculative UI.
 
 ## 3. Design DNA
 - Tone keywords: Editorial, scholarly, atmospheric, deliberate, quiet, archival, premium, restrained.

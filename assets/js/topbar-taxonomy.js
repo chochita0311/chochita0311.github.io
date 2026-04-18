@@ -167,7 +167,7 @@
       renderTopbarCategories(categories);
     } catch {
       panel.innerHTML =
-        '<div class="nav-menu"><span class="nav-menu__empty">Categories are unavailable.</span></div>';
+        '<div class="nav-menu"><span class="nav-menu__empty">Notes are unavailable.</span></div>';
     }
   }
 

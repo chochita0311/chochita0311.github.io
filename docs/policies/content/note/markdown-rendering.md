@@ -24,7 +24,7 @@
   - `assets/css/note-detail.css`
 
 ## General Model
-- Notes are stored as Markdown files under `CATEGORIES/`.
+- Notes are stored as Markdown files under `NOTES/`.
 - Frontmatter is parsed separately from the body.
 - The body is rendered through a lightweight custom renderer, not a full CommonMark or GitHub Flavored Markdown implementation.
 - Supported syntax should be treated as an explicit allowlist.

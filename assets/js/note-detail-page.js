@@ -50,7 +50,7 @@ const { escapeHtml } = window.NoteDetailRenderer;
 
 function updateBreadcrumbs(path) {
   const segments = path.split("/");
-  const category = segments[1] || "Archive";
+  const category = segments[1] || "Notes";
   const collection = segments[2] || "Notes";
   const mount = noteBreadcrumbs();
 
@@ -59,7 +59,7 @@ function updateBreadcrumbs(path) {
   }
 
   mount.innerHTML = `
-<a href="../../index.html">Archive</a>
+<a href="../../index.html">Notes</a>
 ${renderIcon(ICONS.navigation.breadcrumb)}
 <a href="../../index.html">${escapeHtml(category)}</a>
 ${renderIcon(ICONS.navigation.breadcrumb)}
@@ -74,7 +74,7 @@ async function loadNotePage() {
     noteSummary().textContent =
       "Open this page from a note in the archive so the target Markdown file can be loaded.";
     noteContent().innerHTML =
-      '<p class="note-detail__empty">Add a `note` query parameter that points to a Markdown file under `CATEGORIES/`.</p>';
+      '<p class="note-detail__empty">Add a `note` query parameter that points to a Markdown file under `NOTES/`.</p>';
     return;
   }
 
@@ -120,7 +120,7 @@ async function loadNotePage() {
       : '<span class="note-detail__rail-empty">No references</span>';
   noteContent().innerHTML = noteData.rendered.html;
   renderOutline(noteData.rendered.outline);
-  updateBreadcrumbs(notePath);
+  updateBreadcrumbs(noteData.path);
 }
 
 loadNotePage();

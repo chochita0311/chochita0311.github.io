@@ -21,7 +21,7 @@
 - Ownership:
   - generated only
   - not hand-edited
-  - derived from Markdown source under `CATEGORIES/`
+  - derived from Markdown source under `NOTES/`
 
 ## Searchable Sources
 

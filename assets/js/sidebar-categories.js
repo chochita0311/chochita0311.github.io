@@ -224,7 +224,7 @@ ${collectionMarkup}
       renderSidebarCategories(buildCategoryArchive(notes));
     } catch {
       mount.innerHTML =
-        '<p class="note-detail__rail-empty">Categories are unavailable until the notes index is generated.</p>';
+        '<p class="note-detail__rail-empty">Notes are unavailable until the notes index is generated.</p>';
     }
   }
 

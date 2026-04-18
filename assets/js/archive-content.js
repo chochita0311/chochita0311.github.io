@@ -207,13 +207,16 @@
   function tagMarkup(tags, { compact = false } = {}) {
     const visibleTags = compact ? tags.slice(0, 2) : tags;
     const hiddenTagCount = compact ? Math.max(0, tags.length - visibleTags.length) : 0;
+    const hiddenTags = compact ? tags.slice(2).map(prettifyTag) : [];
     const chips = visibleTags.map((tag) => {
       const prettyTag = prettifyTag(tag);
       return `<span class="note-tag" title="${escapeHtml(prettyTag)}">${escapeHtml(prettyTag)}</span>`;
     });
 
     if (hiddenTagCount > 0) {
-      chips.push(`<span class="note-tag note-tag--more">+${String(hiddenTagCount)}</span>`);
+      chips.push(
+        `<span class="note-tag note-tag--more" tabindex="0">+${String(hiddenTagCount)}<span class="note-tag__tooltip" role="tooltip">${hiddenTags.map((tag) => `<span class="note-tag__tooltip-chip">${escapeHtml(tag)}</span>`).join("")}</span></span>`,
+      );
     }
 
     return chips.join("");
@@ -339,23 +342,44 @@ ${footerMarkup}
     button.disabled = true;
   }
 
+  function preserveFooterAnchor(anchorElement, renderAction) {
+    const beforeTop = anchorElement?.getBoundingClientRect().top;
+
+    renderAction();
+
+    if (typeof beforeTop !== "number") {
+      return;
+    }
+
+    const nextAnchor = document.getElementById(anchorElement.id);
+
+    if (!nextAnchor) {
+      return;
+    }
+
+    const afterTop = nextAnchor.getBoundingClientRect().top;
+    window.scrollBy(0, afterTop - beforeTop);
+  }
+
   function bindPaginationControls() {
     const prevButton = archivePrevButton();
     const nextButton = archiveNextButton();
 
     if (prevButton) {
-      prevButton.onclick = () => {
+      prevButton.onclick = (event) => {
         if (archiveState.page <= 1) {
           return;
         }
 
         archiveState.page -= 1;
-        renderArchivePage();
+        preserveFooterAnchor(event.currentTarget, () => {
+          renderArchivePage();
+        });
       };
     }
 
     if (nextButton) {
-      nextButton.onclick = () => {
+      nextButton.onclick = (event) => {
         const totalPages = Math.max(
           1,
           Math.ceil(archiveState.notes.length / archiveState.pageSize),
@@ -366,16 +390,14 @@ ${footerMarkup}
         }
 
         archiveState.page += 1;
-        renderArchivePage();
+        preserveFooterAnchor(event.currentTarget, () => {
+          renderArchivePage();
+        });
       };
     }
   }
 
   function bindPageSizeControl() {
-    if (pageSizeBound) {
-      return;
-    }
-
     const root = archivePageSizeRoot();
     const trigger = archivePageSizeTrigger();
     const menu = archivePageSizeMenu();
@@ -384,45 +406,55 @@ ${footerMarkup}
       return;
     }
 
-    trigger.addEventListener("click", () => {
-      const isOpen = trigger.getAttribute("aria-expanded") === "true";
-      setPageSizeMenuOpen(!isOpen);
-    });
+    if (root.dataset.bound !== "true") {
+      trigger.addEventListener("click", () => {
+        const isOpen = trigger.getAttribute("aria-expanded") === "true";
+        setPageSizeMenuOpen(!isOpen);
+      });
 
-    menu.addEventListener("click", (event) => {
-      const option = event.target.closest("[data-archive-page-size]");
+      menu.addEventListener("click", (event) => {
+        const option = event.target.closest("[data-archive-page-size]");
 
-      if (!option) {
-        return;
-      }
+        if (!option) {
+          return;
+        }
 
-      const nextPageSize = Number.parseInt(option.dataset.archivePageSize, 10);
+        const nextPageSize = Number.parseInt(option.dataset.archivePageSize, 10);
 
-      if (!Number.isInteger(nextPageSize) || nextPageSize <= 0) {
-        return;
-      }
+        if (!Number.isInteger(nextPageSize) || nextPageSize <= 0) {
+          return;
+        }
 
-      archiveState.pageSize = nextPageSize;
-      archiveState.page = 1;
-      setPageSizeMenuOpen(false);
-      renderArchivePage();
-    });
-
-    document.addEventListener("click", (event) => {
-      if (root.contains(event.target)) {
-        return;
-      }
-
-      setPageSizeMenuOpen(false);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+        archiveState.pageSize = nextPageSize;
+        archiveState.page = 1;
         setPageSizeMenuOpen(false);
-      }
-    });
+        preserveFooterAnchor(trigger, () => {
+          renderArchivePage();
+        });
+      });
 
-    pageSizeBound = true;
+      root.dataset.bound = "true";
+    }
+
+    if (!pageSizeBound) {
+      document.addEventListener("click", (event) => {
+        const currentRoot = archivePageSizeRoot();
+
+        if (!currentRoot || currentRoot.contains(event.target)) {
+          return;
+        }
+
+        setPageSizeMenuOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setPageSizeMenuOpen(false);
+        }
+      });
+
+      pageSizeBound = true;
+    }
   }
 
   function bindViewToggleControls() {
@@ -828,15 +860,16 @@ ${footerMarkup}
   }
 
   async function renderNoteDetail(notePath, options = {}) {
-    const noteData = await window.NoteDetailRenderer.loadNoteData(notePath);
-    const currentIndex = archiveState.notes.findIndex((note) => note.path === notePath);
+    const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(notePath);
+    const noteData = await window.NoteDetailRenderer.loadNoteData(normalizedPath);
+    const currentIndex = archiveState.notes.findIndex((note) => note.path === normalizedPath);
     const previousNote = currentIndex > 0 ? archiveState.notes[currentIndex - 1] : null;
     const nextNote =
       currentIndex >= 0 && currentIndex < archiveState.notes.length - 1
         ? archiveState.notes[currentIndex + 1]
         : null;
 
-    archiveState.activeNotePath = notePath;
+    archiveState.activeNotePath = normalizedPath;
     document.title = `${noteData.title} | Chochita Archive`;
     window.IndexNoteDetail.setArchiveMode("detail");
     window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
@@ -869,14 +902,14 @@ ${footerMarkup}
         : '<span class="note-detail__rail-empty">No references</span>';
     window.IndexNoteDetail.elements.detailContent().innerHTML = noteData.rendered.html;
     window.IndexNoteDetail.renderOutline(noteData.rendered.outline);
-    window.IndexNoteDetail.updateBreadcrumbs(notePath);
+    window.IndexNoteDetail.updateBreadcrumbs(normalizedPath);
     window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (path) => {
       renderNoteDetail(path);
       updateArchiveLocation({ notePath: path });
     });
 
     if (!options.skipHistory) {
-      updateArchiveLocation({ notePath });
+      updateArchiveLocation({ notePath: normalizedPath });
     }
   }
 
@@ -914,7 +947,8 @@ ${footerMarkup}
   }
 
   function findNoteByPath(path) {
-    return archiveState.allNotes.find((note) => note.path === path) || null;
+    const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(path);
+    return archiveState.allNotes.find((note) => note.path === normalizedPath) || null;
   }
 
   function buildPopularTags(notes) {
@@ -927,7 +961,7 @@ ${footerMarkup}
     });
 
     return [...tagCounts.entries()]
-      .filter(([, count]) => count >= 2)
+      .filter(([, count]) => count >= 5)
       .sort((left, right) => {
         if (right[1] !== left[1]) {
           return right[1] - left[1];
@@ -1013,7 +1047,7 @@ ${footerMarkup}
     let collection = params.get("collection");
     const note = params.get("note");
     const view = params.get("view");
-    let resolvedNote = note;
+    let resolvedNote = note ? window.NoteDetailRenderer.normalizeNotePath(note) : note;
 
     archiveState.viewMode = view === "grid" ? "grid" : "list";
     archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
