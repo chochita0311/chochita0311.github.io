@@ -567,8 +567,12 @@
 }
 
 .note-card--list {
-  padding-bottom: var(--space-16);
+  padding-bottom: var(--space-10);
   border-bottom: 1px solid rgba(67, 70, 83, 0.18);
+}
+
+.note-list[data-view-mode="list"] .note-card--list:last-child {
+  border-bottom: 0;
 }
 
 .note-card--grid {

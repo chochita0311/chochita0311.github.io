@@ -36,16 +36,6 @@
     grid: 6,
   };
   const DEFAULT_DOCUMENT_TITLE = document.title;
-  const DEFAULT_ARCHIVE_COPY = {
-    default: {
-      title: "Recent Archives",
-      summary:
-        "Exploring the intersection of humanistic philosophy and digital infrastructure. A curated collection of long-form thought pieces.",
-    },
-    categories: {},
-    collections: {},
-  };
-
   const archiveState = {
     allNotes: [],
     notes: [],
@@ -57,7 +47,6 @@
     searchQuery: "",
     activeTag: null,
     activeNotePath: null,
-    copy: DEFAULT_ARCHIVE_COPY,
     searchIndex: {
       terms: {},
       tokenizer: {
@@ -73,14 +62,6 @@
   let pageSizeBound = false;
   let searchControlBound = false;
   let searchDebounceTimer = null;
-
-  function archiveTitle() {
-    return document.getElementById("archive-title");
-  }
-
-  function archiveSummary() {
-    return document.getElementById("archive-summary");
-  }
 
   function archiveNoteList() {
     return document.getElementById("archive-note-list");
@@ -126,23 +107,6 @@
     return document.getElementById("archive-next-button");
   }
 
-  async function loadArchiveCopy() {
-    try {
-      const response = await fetch("assets/config/archive-descriptions.json");
-
-      if (!response.ok) {
-        return;
-      }
-
-      archiveState.copy = {
-        ...DEFAULT_ARCHIVE_COPY,
-        ...(await response.json()),
-      };
-    } catch {
-      archiveState.copy = DEFAULT_ARCHIVE_COPY;
-    }
-  }
-
   async function loadNotesIndex() {
     const response = await fetch(NOTES_INDEX_PATH);
 
@@ -184,20 +148,6 @@
 
   function escapeHtml(value) {
     return window.NoteDetailRenderer.escapeHtml(String(value));
-  }
-
-  function archiveCopyForSelection(category, collection) {
-    const collectionKey = category && collection ? `${category}/${collection}` : null;
-
-    if (collectionKey && archiveState.copy.collections[collectionKey]) {
-      return archiveState.copy.collections[collectionKey];
-    }
-
-    if (category && archiveState.copy.categories[category]) {
-      return archiveState.copy.categories[category];
-    }
-
-    return archiveState.copy.default;
   }
 
   function pageSizeOptionsForView(viewMode) {
@@ -248,10 +198,6 @@
     }
 
     return `?${url.toString()}`;
-  }
-
-  function activeTagTitle() {
-    return `Tag: ${prettifyTag(archiveState.activeTag)}`;
   }
 
   function activeTagSummary(noteCount) {
@@ -673,8 +619,6 @@ ${footerMarkup}
       return;
     }
 
-    archiveTitle().textContent = title;
-    archiveSummary().textContent = summary;
     renderArchivePage();
     renderPopularTags();
   }
@@ -829,8 +773,6 @@ ${footerMarkup}
     bindPageSizeControl();
     bindViewToggleControls();
     bindSearchControl();
-    archiveTitle().textContent = title;
-    archiveSummary().textContent = summary;
     applyViewModeToList();
     syncPageSizeControl();
     syncViewToggleButtons();
@@ -842,7 +784,7 @@ ${footerMarkup}
 <span class="note-label note-label--muted">${escapeHtml(metaLabel)}</span>
 </div>
 <h2 class="note-card__title">No notes yet</h2>
-<p class="note-card__summary">This area is ready for content, but there are no notes to render for the current selection.</p>
+<p class="note-card__summary">${escapeHtml(summary || "This area is ready for content, but there are no notes to render for the current selection.")}</p>
 </div>
     </article>`;
     archivePageLabel().textContent = "Page 00 / 00";
@@ -896,12 +838,6 @@ ${footerMarkup}
 
     archiveState.activeNotePath = notePath;
     document.title = `${noteData.title} | Chochita Archive`;
-    archiveTitle().textContent = archiveState.collection || archiveState.category || "Archive";
-    archiveSummary().textContent = fallbackSummary(
-      archiveState.category,
-      archiveState.collection,
-      archiveState.notes.length,
-    );
     window.IndexNoteDetail.setArchiveMode("detail");
     window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
     window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
@@ -960,9 +896,8 @@ ${footerMarkup}
     archiveState.collection = collection;
     archiveState.activeNotePath = null;
 
-    const copy = archiveCopyForSelection(category, collection);
-    const title = copy.title || collection || category || DEFAULT_ARCHIVE_COPY.default.title;
-    const summary = copy.summary || fallbackSummary(category, collection, notes);
+    const title = collection || category || "Archive";
+    const summary = fallbackSummary(category, collection, notes);
 
     if (notes.length === 0) {
       renderArchiveEmptyState(
@@ -974,8 +909,6 @@ ${footerMarkup}
       return;
     }
 
-    archiveTitle().textContent = title;
-    archiveSummary().textContent = summary;
     renderArchivePage();
     renderPopularTags();
   }
@@ -1040,8 +973,6 @@ ${footerMarkup}
 
         const notes = notesForSelection(null, null);
         archiveState.notes = notes;
-        archiveTitle().textContent = activeTagTitle();
-        archiveSummary().textContent = activeTagSummary(notes.length);
         renderArchivePage();
         renderPopularTags();
         updateArchiveLocation({ replace: false });
@@ -1135,7 +1066,7 @@ ${footerMarkup}
     initializeArchiveFromLocation();
   });
 
-  Promise.all([loadArchiveCopy(), loadNotesIndex(), loadSearchIndex()])
+  Promise.all([loadNotesIndex(), loadSearchIndex()])
     .then(() => {
       renderPopularTags();
       bindBrandResetLinks();

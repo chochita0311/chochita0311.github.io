@@ -96,40 +96,6 @@ Actual note body here.
 - `archives-search-index.json` owns generated search lookup data derived from note source content.
 - Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md).
 
-## Archive Copy Config
-
-- Keep list-view title and summary copy in a small runtime JSON file instead of hard-coding it in JavaScript.
-- Recommended file:
-  - `assets/config/archive-descriptions.json`
-- This file owns:
-  - default archive hero title and summary
-  - per-category empty-state copy
-  - per-collection summary copy for list views
-- This file is hand-editable content configuration, not generated note metadata.
-
-## Recommended Archive Copy Shape
-
-```json
-{
-  "default": {
-    "title": "Recent Archives",
-    "summary": "Curated overview copy for the landing archive."
-  },
-  "categories": {
-    "Technology": {
-      "title": "Technology",
-      "summary": "Choose a collection from the sidebar to open the notes in this category."
-    }
-  },
-  "collections": {
-    "Technology/JAVA": {
-      "title": "JAVA",
-      "summary": "Real Markdown notes from Technology / JAVA."
-    }
-  }
-}
-```
-
 ## Recommended Index Shape
 
 ```json
