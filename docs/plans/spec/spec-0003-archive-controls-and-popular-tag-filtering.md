@@ -30,7 +30,7 @@
   - current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - Relevant policies or contracts:
   - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
+  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
 
 ## Implementation Goal
 

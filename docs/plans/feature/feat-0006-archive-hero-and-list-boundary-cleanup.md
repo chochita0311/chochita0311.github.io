@@ -89,7 +89,7 @@
 - [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
 - [developer-guide.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/developer-guide.md)
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
+- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
 - `stale/`
 
 ## Pass Or Fail Checks

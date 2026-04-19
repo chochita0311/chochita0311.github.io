@@ -5,6 +5,11 @@
 - Lightweight personal notes site for browsing, searching, and preserving long-term study materials
 - Optimize for long-term maintainability as the note archive grows
 
+## Use This File For
+- quick repository orientation
+- top-level working rules
+- source-of-truth routing into `README.md`, `docs/policies/`, and `docs/plans/`
+
 ## Product Scope
 - In scope:
   - note browsing
@@ -19,7 +24,7 @@
 
 ## Codebase Map
 - Scan the project root first before making structural assumptions
-- `CATEGORIES/`: current long-term Markdown archive
+- `NOTES/`: current long-term Markdown archive
 - `assets/`: frontend assets for the static app
 - `docs/`: documentation map, project guides, design docs, and deeper references
 - `index.html`: current static entry page
@@ -40,7 +45,7 @@
 - Do not revert unrelated user changes
 
 ## Notes And Data Rules
-- New durable note content belongs under `CATEGORIES/`
+- New durable note content belongs under `NOTES/`
 - Keep folders and filenames easy to search and understand
 - If the UI still depends on local JSON preview data, keep that data aligned when a task requires parity
 
@@ -56,6 +61,8 @@
 ## Planning And Ownership
 - Only the Product Manager defines plan and acceptance criteria when the repo is using the shared role/task workflow
 - Keep shared logs, tables, plans, and role docs concise and understandable across projects
-
-## this is a temporary memo but do not change (just ignore when change this file, always keep these below)
-- currently ignore `docs/agents`, `docs/logs`, `docs/tables`, `docs/tasks`, `docs/screen-parity`
+- When the request is to create or revise a `PRD`, treat it as planning-only work: write or update the PRD, then stop.
+- Do not start feature planning, spec work, code changes, or evaluation from a `draft` PRD.
+- Do not start spec work, code changes, or evaluation until one feature boundary is explicitly approved.
+- If open points could still change scope, acceptance, dependency, or user-visible behavior, stop and ask instead of implementing.
+- Do not reinterpret a planning request as implementation approval unless the user explicitly says to proceed with implementation.

@@ -30,7 +30,7 @@
 - Relevant policies:
   - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
   - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
+  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
 - Optional skills or tools expected:
   - `screen-alignment` when available for design evaluation
   - Playwright MCP or Chrome DevTools MCP when available for UX heuristic evaluation

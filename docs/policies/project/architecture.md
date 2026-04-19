@@ -17,6 +17,7 @@
 - `assets/js/main-landing.js` owns the landing-first shell lifecycle for the archive entry view.
 - `assets/js/archive/search.js` owns shared archive search control and execution orchestration.
 - `assets/js/archive/content.js` renders archive and collection note lists from the generated note index.
+- `assets/js/index-note-detail.js` owns note-detail utility interactions such as breadcrumb handoff, copy-body action wiring, and table-of-contents focus behavior.
 - `assets/js/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
 - `assets/css/` owns the current screen through extracted token, base, semantic, layout, and component layers.
 - The published shell no longer depends on Tailwind runtime output.
@@ -27,8 +28,8 @@
 - `NOTES/` is the current durable Markdown archive.
 - The verified content shape is `NOTES/<category>/<collection>/<note>.md`.
 - Source note identity is owned by numeric Markdown frontmatter `id` values.
-- Note metadata and generated static-index expectations are defined in `docs/policies/content/note/note-data-contract.md`.
-- Markdown body rendering behavior is defined in `docs/policies/content/note/markdown-rendering.md`.
+- Note metadata and generated static-index expectations are defined in `docs/policies/archive/note/note-data-contract.md`.
+- Markdown body rendering behavior is defined in `docs/policies/archive/note/markdown-rendering.md`.
 - The published shell reads a generated note index plus Markdown source files at runtime.
 - Search features should read the generated reverse index rather than scanning Markdown on demand in the browser.
 
@@ -54,8 +55,8 @@
 - `assets/css/layouts.css`
 - `assets/css/app.css`
 - `NOTES/`
-- `docs/policies/content/note/note-data-contract.md`
-- `docs/policies/content/note/markdown-rendering.md`
+- `docs/policies/archive/note/note-data-contract.md`
+- `docs/policies/archive/note/markdown-rendering.md`
 - `docs/policies/system/icon.md`
 
 ## Constraints

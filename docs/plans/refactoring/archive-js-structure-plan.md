@@ -31,7 +31,7 @@ Prepare the archive runtime for continued growth by splitting `assets/js/archive
 - Do not introduce a build step.
 - Do not migrate the site to ESM-only loading if that complicates GitHub Pages compatibility.
 - Do not change search semantics, route semantics, or landing rules as part of the structural split.
-- Do not mix route-flash fixes from `prd-0007` into this track unless a split requires a tiny compatibility adjustment.
+- Do not mix route-flash fixes from `prd-0008` into this track unless a split requires a tiny compatibility adjustment.
 
 ## Invariants
 

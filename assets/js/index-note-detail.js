@@ -48,8 +48,68 @@ function detailOutline() {
   return document.getElementById("note-outline");
 }
 
+function detailRail() {
+  return document.querySelector(".note-detail__rail");
+}
+
 function detailBreadcrumbs() {
   return document.querySelector(".note-detail__breadcrumbs");
+}
+
+function detailUtility() {
+  return document.querySelector(".note-detail__utility");
+}
+
+function detailActionButtons() {
+  return document.querySelectorAll("[data-note-action]");
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+async function writeClipboardText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const fallback = document.createElement("textarea");
+  fallback.value = text;
+  fallback.setAttribute("readonly", "");
+  fallback.style.position = "fixed";
+  fallback.style.top = "0";
+  fallback.style.left = "0";
+  fallback.style.opacity = "0";
+  document.body.append(fallback);
+  fallback.select();
+  document.execCommand("copy");
+  fallback.remove();
+}
+
+function noteDetailScrollOffset() {
+  const utilityBottom = detailUtility()?.getBoundingClientRect()?.bottom || 0;
+  return utilityBottom + 8;
+}
+
+function syncNoteDetailScrollOffset() {
+  document.documentElement.style.setProperty(
+    "--note-detail-scroll-offset",
+    `${String(noteDetailScrollOffset())}px`,
+  );
+}
+
+let noteDetailScrollOffsetBound = false;
+
+function bindNoteDetailScrollOffsetSync() {
+  if (noteDetailScrollOffsetBound) {
+    syncNoteDetailScrollOffset();
+    return;
+  }
+
+  noteDetailScrollOffsetBound = true;
+  syncNoteDetailScrollOffset();
+  window.addEventListener("resize", syncNoteDetailScrollOffset);
 }
 
 function setArchiveMode(mode) {
@@ -87,16 +147,16 @@ function renderDetailFooterPanel(previousNote, nextNote, onNavigate) {
   archiveFooter().hidden = false;
   const previousMarkup = previousNote
     ? `<a class="note-detail__nav note-detail__nav--previous" href="${window.ArchiveRoutes.buildNoteDetailPath(previousNote.id)}" data-note-nav="${String(previousNote.id)}">
-<span class="note-detail__nav-label">Previous Note</span>
+<span class="note-detail__nav-label">Previous</span>
 <span class="note-detail__nav-title">${window.NoteDetailRenderer.escapeHtml(previousNote.title)}</span>
 </a>`
-    : '<div class="note-detail__nav note-detail__nav--previous note-detail__nav--disabled"><span class="note-detail__nav-label">Previous Note</span><span class="note-detail__nav-title">None</span></div>';
+    : '<div class="note-detail__nav note-detail__nav--previous note-detail__nav--disabled"><span class="note-detail__nav-label">Previous</span><span class="note-detail__nav-title">None</span></div>';
   const nextMarkup = nextNote
     ? `<a class="note-detail__nav note-detail__nav--next" href="${window.ArchiveRoutes.buildNoteDetailPath(nextNote.id)}" data-note-nav="${String(nextNote.id)}">
-<span class="note-detail__nav-label">Next Note</span>
+<span class="note-detail__nav-label">Next</span>
 <span class="note-detail__nav-title">${window.NoteDetailRenderer.escapeHtml(nextNote.title)}</span>
 </a>`
-    : '<div class="note-detail__nav note-detail__nav--next note-detail__nav--disabled"><span class="note-detail__nav-label">Next Note</span><span class="note-detail__nav-title">None</span></div>';
+    : '<div class="note-detail__nav note-detail__nav--next note-detail__nav--disabled"><span class="note-detail__nav-label">Next</span><span class="note-detail__nav-title">None</span></div>';
 
   detailNavMount().innerHTML = `
 ${previousMarkup}
@@ -124,9 +184,31 @@ function renderOutline(items) {
   detailOutline().innerHTML = items
     .map(
       (item) =>
-        `<a href="#${item.id}"${item.level === 3 ? ' class="note-detail__rail-link--child"' : ""}>${window.NoteDetailRenderer.escapeHtml(item.text)}</a>`,
+        `<button type="button" data-note-outline-target="${window.NoteDetailRenderer.escapeHtml(item.id)}" data-note-outline-level="${String(item.level)}">${window.NoteDetailRenderer.escapeHtml(item.text)}</button>`,
     )
     .join("");
+
+  detailOutline()
+    .querySelectorAll("[data-note-outline-target]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.getElementById(button.dataset.noteOutlineTarget);
+
+        if (!target) {
+          return;
+        }
+
+        syncNoteDetailScrollOffset();
+        target.setAttribute("tabindex", "-1");
+        target.scrollIntoView({
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+          block: "start",
+        });
+        window.setTimeout(() => {
+          target.focus({ preventScroll: true });
+        }, prefersReducedMotion() ? 0 : 180);
+      });
+    });
 }
 
 function updateBreadcrumbs(path) {
@@ -137,9 +219,86 @@ function updateBreadcrumbs(path) {
   const collectionHref = window.ArchiveRoutes.buildCollectionPath(category, collection);
 
   detailBreadcrumbs().innerHTML = `
-<a href="${categoryHref}">${window.NoteDetailRenderer.escapeHtml(category)}</a>
+<a href="${categoryHref}" data-note-breadcrumb="category" data-category="${window.NoteDetailRenderer.escapeHtml(category)}">${window.NoteDetailRenderer.escapeHtml(category)}</a>
 ${renderIcon(ICONS.navigation.breadcrumb)}
-<a href="${collectionHref}">${window.NoteDetailRenderer.escapeHtml(collection)}</a>`;
+<a href="${collectionHref}" data-note-breadcrumb="collection" data-category="${window.NoteDetailRenderer.escapeHtml(category)}" data-collection="${window.NoteDetailRenderer.escapeHtml(collection)}">${window.NoteDetailRenderer.escapeHtml(collection)}</a>`;
+}
+
+function bindBreadcrumbs(onNavigate) {
+  detailBreadcrumbs()
+    .querySelectorAll("[data-note-breadcrumb]")
+    .forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (typeof onNavigate !== "function") {
+          return;
+        }
+
+        event.preventDefault();
+        onNavigate({
+          type: link.dataset.noteBreadcrumb,
+          category: link.dataset.category || null,
+          collection: link.dataset.collection || null,
+        });
+      });
+    });
+}
+
+function bindCopyAction(getText) {
+  detailActionButtons().forEach((button) => {
+    if (button.dataset.noteAction !== "copy") {
+      return;
+    }
+
+    const icon = button.querySelector(".material-symbols-outlined");
+
+    function resetCopyState() {
+      button.dataset.copyState = "idle";
+
+      if (icon) {
+        icon.textContent = "content_copy";
+      }
+    }
+
+    button.addEventListener("mouseleave", () => {
+      if (button.dataset.copyState === "copied") {
+        resetCopyState();
+      }
+    });
+
+    button.addEventListener("blur", () => {
+      if (button.dataset.copyState === "copied") {
+        resetCopyState();
+      }
+    });
+
+    button.onclick = async () => {
+      const text = typeof getText === "function" ? getText() : "";
+
+      if (!text) {
+        return;
+      }
+
+      const originalLabel = button.getAttribute("aria-label") || "Copy note body";
+
+      try {
+        await writeClipboardText(text);
+        button.setAttribute("aria-label", "Copied note body");
+
+        if (icon) {
+          icon.textContent = "check";
+        }
+
+        button.dataset.copyState = "copied";
+      } catch {
+        button.setAttribute("aria-label", "Copy note body failed");
+        resetCopyState();
+      }
+
+      window.setTimeout(() => {
+        button.setAttribute("aria-label", originalLabel);
+      }, 1500);
+    };
+  });
 }
 
 window.IndexNoteDetail = {
@@ -148,6 +307,9 @@ window.IndexNoteDetail = {
   renderOutline,
   setArchiveMode,
   updateBreadcrumbs,
+  bindBreadcrumbs,
+  bindCopyAction,
+  bindNoteDetailScrollOffsetSync,
   elements: {
     detailTitle,
     detailSummary,

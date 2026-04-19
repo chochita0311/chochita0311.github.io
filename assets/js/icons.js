@@ -8,6 +8,7 @@
       search: "search",
     },
     actions: {
+      copy: "content_copy",
       share: "ios_share",
       bookmark: "bookmark",
       more: "more_horiz",

@@ -24,7 +24,7 @@
   - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
   - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
   - [archive-route-path-migration-plan.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/refactoring/archive-route-path-migration-plan.md)
-  - [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md)
+  - [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
 - Current implementation references:
   - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
   - [assets/js/main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js)
@@ -87,8 +87,8 @@
 - Remove legacy query-route ownership once the path model is live rather than keeping two long-term canonical route systems in parallel.
 - Use note primary keys as canonical detail identifiers under `/archive/note?id=<note-id>`; do not introduce slug-based canonical ownership in this track.
 - Do not preserve `pages/note/` as a runtime route surface after canonical note-detail ownership moves under `/archive/note?id=<note-id>`.
-- Defer `404.html`-based deep-link recovery strategy to [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md); this track should prefer explicit static entry files first.
-- If route/runtime boundaries such as `archive-router` or `archive-render` need to change to support the canonical path model, treat that structure change as part of this PRD rather than as part of `prd-0007`.
+- Defer `404.html`-based deep-link recovery strategy to [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md); this track should prefer explicit static entry files first.
+- If route/runtime boundaries such as `archive-router` or `archive-render` need to change to support the canonical path model, treat that structure change as part of this PRD rather than as part of `prd-0008`.
 
 ## Acceptance Envelope
 
@@ -101,7 +101,7 @@
 - The chosen route shape remains statically hostable on GitHub Pages and supports refresh and direct entry.
 - Legacy query routes no longer remain as an equal canonical route system after the migration is complete.
 - Route parsing and runtime ownership are clean enough that follow-up flash work does not need to keep solving around the old query-driven route contract.
-- The resulting route model makes follow-up work such as [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md) easier to reason about.
+- The resulting route model makes follow-up work such as [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) easier to reason about.
 
 ## Candidate Features
 
@@ -113,10 +113,10 @@
 ## Continuity Notes
 
 - `2026-04-19`: initial draft created from route-ownership cleanup discussion and linked to the active refactor plan for staged migration work
-- `2026-04-19`: positioned ahead of `prd-0007` because route ownership cleanup may be the cleaner prerequisite for later route-flash elimination work
+- `2026-04-19`: positioned ahead of `prd-0008` because route ownership cleanup may be the cleaner prerequisite for later route-flash elimination work
 - `2026-04-19`: route family decisions were narrowed so archive kinds live under `/archive/<kind>/`, the current note archive shell moves to `/archive/note/`, note browse filters live under `/archive/note` query parameters, and canonical note detail moves to `/archive/note?id=<note-id>`
-- `2026-04-19`: archive implementation direction was narrowed further so archive-kind shells are expected under root-level `archive/<kind>/`, `/archive/` remains the archive family entry but currently defaults to the note list, legacy query ownership should be removed after migration completion, and `404` fallback strategy is deferred to `prd-0007`
-- `2026-04-19`: route-related planning that had been mixed into `prd-0007` was consolidated here so `prd-0007` can stay focused on boot gating, flash elimination, and optional `404.html` recovery only
+- `2026-04-19`: archive implementation direction was narrowed further so archive-kind shells are expected under root-level `archive/<kind>/`, `/archive/` remains the archive family entry but currently defaults to the note list, legacy query ownership should be removed after migration completion, and `404` fallback strategy is deferred to `prd-0008`
+- `2026-04-19`: route-related planning that had been mixed into `prd-0008` was consolidated here so `prd-0008` can stay focused on boot gating, flash elimination, and optional `404.html` recovery only
 - `2026-04-19`: note-detail canonical identity was fixed to note primary keys rather than slugs, `pages/note/` was retired from runtime ownership, and legacy route code removal was constrained to the end of the full refactoring after unused-path verification
 - `2026-04-19`: approval granted after route family, note-detail identity, `/archive/` default behavior, and legacy removal policy were all fixed tightly enough for execution
 - `2026-04-19`: implementation completed with canonical `/`, `/archive/`, `/archive/note/`, `/archive/note?category=...&collection=...`, and `/archive/note?id=...` ownership live, former `entry=archive` landing-bypass behavior retired, and former `pages/note/` runtime ownership removed

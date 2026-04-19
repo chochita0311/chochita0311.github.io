@@ -11,12 +11,12 @@
 - Use [design-constitution.md](./design-constitution.md) for broader durable design law.
 - Use [design-document-governance.md](./design-document-governance.md) for document hierarchy.
 
-## Use
+## How To Use This Document
 - Apply these notes when evaluating visible implementation work.
 - Add new entries when the same class of design failure proves reusable beyond one feature.
 - Promote an entry into the constitution only when it becomes a broader product-wide visual law.
 
-## Reusable Evaluation Notes
+## Reusable Evaluation Checks
 
 ### 1. Card Content Containment
 - Text must not escape card bounds.
@@ -94,7 +94,7 @@
 - Headline scale should also stay proportionate across those same ranges; smaller laptop widths should not make the same title feel meaningfully larger or heavier than intended when the surrounding shell typography remains stable.
 - Evaluators should compare at least one narrower laptop-sized viewport and one wider desktop viewport and confirm both the copy position and headline scale still match the intended composition.
 
-## Classification Guidance
+## How To Classify Findings
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.
 - Classify as `planning gap` when the visual failure reveals that the approved feature boundary itself was wrong.

@@ -72,7 +72,7 @@
 - Current archive runtime in [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js), [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js), and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - Current taxonomy and topbar behavior in [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - Current generators in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs) and [generate-sitemap.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-sitemap.mjs)
-- Current content and contract docs in [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md), [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md), and [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
+- Current content and contract docs in [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md), [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md), and [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
 
 ## Likely Affected Surfaces
 
@@ -89,7 +89,7 @@
 - [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md)
 - [docs/policies/project/architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
 - [docs/policies/project/developer-guide.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/developer-guide.md)
-- [docs/policies/content/note/note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
+- [docs/policies/archive/note/note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
 
 ## Pass Or Fail Checks
 

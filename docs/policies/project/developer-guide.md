@@ -23,8 +23,8 @@ Follow the local run instructions in `README.md`.
 
 ## Content Updates
 - Add durable note content under `NOTES/` using the current pattern `NOTES/<category>/<collection>/<note>.md`.
-- Use the note metadata contract in `docs/policies/content/note/note-data-contract.md` when adding or normalizing note frontmatter.
-- Use `docs/policies/content/note/markdown-rendering.md` when changing supported Markdown body syntax or note authoring expectations.
+- Use the note metadata contract in `docs/policies/archive/note/note-data-contract.md` when adding or normalizing note frontmatter.
+- Use `docs/policies/archive/note/markdown-rendering.md` when changing supported Markdown body syntax or note authoring expectations.
 - Keep folders and filenames searchable and understandable.
 - Regenerate `assets/generated/archives-index.json` with `node scripts/generate-archives-index.mjs` after note or folder changes.
 - Regenerate `sitemap.xml` with `node scripts/generate-sitemap.mjs` after note additions, moves, or note URL-shape changes.
@@ -33,7 +33,7 @@ Follow the local run instructions in `README.md`.
 
 ## Verification
 - Run the simplest verification that matches the change.
-- Run `node scripts/check-icon-control.mjs` after icon, HTML shell, or icon-related JS changes.
+- After icon, HTML shell, or icon-related JS changes, run `node scripts/check-icon-control.mjs` if the script matches the current runtime structure; otherwise use a targeted manual icon audit and record the fallback clearly.
 - When sitemap-related files change, verify that `sitemap.xml` is valid XML-shaped output with absolute site URLs and that `robots.txt` still points to the correct sitemap location.
 - After deployment, submit or recheck `https://chochita0311.github.io/sitemap.xml` in Google Search Console.
 - If required validation cannot run in the current environment, state that clearly.

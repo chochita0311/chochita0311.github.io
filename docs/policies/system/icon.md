@@ -38,7 +38,7 @@
 
 ## Current Approved Inventory
 - Navigation: `expand_more`, `chevron_left`, `chevron_right`, `search`
-- Actions: `ios_share`, `bookmark`, `more_horiz`, `sell`
+- Actions: `content_copy`, `ios_share`, `bookmark`, `more_horiz`, `sell`
 - Categories: `menu_book`, `memory`, `folder`
 
 ## Change Workflow

@@ -221,12 +221,17 @@
             <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
               >chevron_right</span
             >
-            <span>JAVA</span>
+            <a href="#">JAVA</a>
           </nav>
           <div class="note-detail__actions" aria-label="Note actions">
-            <button aria-label="Share note" class="note-detail__action" type="button">
+            <button
+              aria-label="Copy note body"
+              class="note-detail__action"
+              data-note-action="copy"
+              type="button"
+            >
               <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
-                >ios_share</span
+                >content_copy</span
               >
             </button>
             <button aria-label="Bookmark note" class="note-detail__action" type="button">
@@ -243,10 +248,12 @@
         </header>
         <article class="note-detail">
           <header class="note-detail__header">
-            <h1 class="note-detail__title" id="note-title">Loading note...</h1>
-            <p class="note-detail__summary" id="note-summary">
-              Preparing the selected Markdown file for reading.
-            </p>
+            <div class="note-detail__headline">
+              <h1 class="note-detail__title" id="note-title">Loading note...</h1>
+              <p class="note-detail__summary" id="note-summary">
+                Preparing the selected Markdown file for reading.
+              </p>
+            </div>
             <dl class="note-detail__facts">
               <div>
                 <dt>Published</dt>
@@ -269,7 +276,6 @@
                   Select a note from the archive to load its Markdown content here.
                 </p>
               </div>
-              <footer class="note-detail__footer" id="note-detail-nav"></footer>
             </div>
             <aside class="note-detail__rail" aria-label="Table of contents">
               <p class="note-detail__rail-title">On This Note</p>
@@ -279,6 +285,9 @@
                 </p>
               </div>
             </aside>
+          </div>
+          <div class="note-detail__footer-layer">
+            <footer class="note-detail__footer" id="note-detail-nav"></footer>
           </div>
         </article>
       </section>

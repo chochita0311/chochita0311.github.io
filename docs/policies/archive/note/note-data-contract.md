@@ -83,7 +83,7 @@ Actual note body here.
 - The Markdown body remains the note itself.
 - The first body heading can match `title`, but the UI should trust frontmatter `title` as the metadata owner.
 - Long-form reading content should stay in Markdown instead of moving into JSON.
-- Body rendering expectations and supported syntax are documented in `docs/policies/content/note/markdown-rendering.md`.
+- Body rendering expectations and supported syntax are documented in `docs/policies/archive/note/markdown-rendering.md`.
 
 ## Generated Static Index
 
@@ -94,7 +94,7 @@ Actual note body here.
   - `scripts/generate-archives-index.mjs`
 - `archives-index.json` owns archive browse metadata derived from frontmatter and path-based taxonomy.
 - `archives-search-index.json` owns generated search lookup data derived from note source content.
-- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md).
+- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
 
 ## Recommended Index Shape
 
@@ -147,7 +147,7 @@ Actual note body here.
 - Search runtime behavior should consume:
   - browse metadata from `archives-index.json`
   - lookup terms from `archives-search-index.json`
-- Search index file shape and token rules belong in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md).
+- Search index file shape and token rules belong in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
 
 ## Tag Contract
 

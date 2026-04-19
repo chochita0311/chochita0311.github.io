@@ -858,6 +858,13 @@ ${footerMarkup}
     return findNoteByPath(noteInput);
   }
 
+  function scrollNoteDetailToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  }
+
   async function renderNoteDetail(noteInput, options = {}) {
     archiveListView().hidden = true;
     const noteRecord = resolveNoteRecord(noteInput);
@@ -883,6 +890,7 @@ ${footerMarkup}
     archiveState.activeNotePath = normalizedPath;
     document.title = `${noteData.title} | Chochita Archive`;
     window.IndexNoteDetail.setArchiveMode("detail");
+    window.IndexNoteDetail.bindNoteDetailScrollOffsetSync();
     syncLandingVisibility("detail");
     window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
     window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
@@ -915,13 +923,31 @@ ${footerMarkup}
     window.IndexNoteDetail.elements.detailContent().innerHTML = noteData.rendered.html;
     window.IndexNoteDetail.renderOutline(noteData.rendered.outline);
     window.IndexNoteDetail.updateBreadcrumbs(normalizedPath);
+    window.IndexNoteDetail.bindBreadcrumbs(({ type, category, collection }) => {
+      if (type === "category" && category) {
+        renderSelection({ category, collection: null });
+        updateArchiveLocation({ category });
+        return;
+      }
+
+      if (type === "collection" && category && collection) {
+        renderSelection({ category, collection });
+        updateArchiveLocation({ category, collection });
+      }
+    });
+    window.IndexNoteDetail.bindCopyAction(() => noteData.body.replace(/^\s+/, ""));
     window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (nextNoteId) => {
-      renderNoteDetail(nextNoteId);
-      updateArchiveLocation({ noteId: nextNoteId });
+      renderNoteDetail(nextNoteId, { scrollToTop: true });
     });
 
     if (!options.skipHistory) {
       updateArchiveLocation({ noteId: noteRecord.id });
+    }
+
+    if (options.scrollToTop) {
+      window.requestAnimationFrame(() => {
+        scrollNoteDetailToTop();
+      });
     }
   }
 

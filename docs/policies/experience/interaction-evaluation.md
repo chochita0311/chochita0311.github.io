@@ -11,12 +11,12 @@
 - Use [../../agents/ux-heuristic-evaluator.md](../../agents/ux-heuristic-evaluator.md) for the UX heuristic evaluation role contract.
 - Use [../harness/execution-loop-governance.md](../harness/execution-loop-governance.md) for fail routing and loop handling.
 
-## Use
+## How To Use This Document
 - Apply these rules when evaluating visible state changes, navigation continuity, or browse and read flows.
 - Add new entries when the same class of interaction failure proves reusable beyond one feature.
 - Promote an entry elsewhere only when it becomes broader product law rather than an evaluation asset.
 
-## Reusable Evaluation Notes
+## Reusable Evaluation Checks
 
 ### 1. Interaction Stability
 - Click-driven view changes should swap to the next state only when the destination content is ready enough to avoid visible flicker, flash, or placeholder-only intermediate states.
@@ -75,7 +75,7 @@
 - Visual overlay alone is not sufficient evidence of isolation; evaluators should explicitly check `inert`, focus order, `aria-hidden`, or equivalent interaction-blocking behavior on deferred surfaces.
 - A feature may still pass if downstream content remains visually mounted for continuity, but only after evaluators confirm that the inactive layer cannot steal interaction before the handoff.
 
-## Classification Guidance
+## How To Classify Findings
 - Usually classify as `implementation bug` when the spec already requires stable transitions, continuity, or no-leak behavior.
 - Usually classify as `spec gap` when the spec failed to define how view changes, loading behavior, or navigation continuity should work.
 - Classify as `planning gap` when the interaction failure reveals a missing mode, missing flow definition, or wrong approved feature boundary.

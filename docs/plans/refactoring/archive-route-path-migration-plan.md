@@ -4,7 +4,7 @@
 
 - Replace the former query-driven landing and archive route ownership with clearer archive-entry-oriented structure so landing visibility no longer depends on scattered root-shell query checks.
 - Reduce coupling between landing state, archive browse state, and note-detail state while preserving current user-visible behavior during migration.
-- Prepare a safer foundation for [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md) by simplifying route intent before deeper boot-gating or render-gating changes.
+- Prepare a safer foundation for [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) by simplifying route intent before deeper boot-gating or render-gating changes.
 
 ## Refactor Type
 
@@ -141,7 +141,7 @@
   - Remove only compatibility code whose replacement has already passed refresh, direct-entry, and history validation.
   - Delete legacy route code only after the full refactoring is complete and there is no active runtime surface still using it.
   - Do not preserve a second long-term canonical route system in parallel with the path model.
-  - Keep [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md) behavior-preserving relative to the new final route model.
+- Keep [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) behavior-preserving relative to the new final route model.
 - Targets
   - residual query checks in landing and archive route parsing
   - documentation that still treats query state as the canonical route contract
@@ -161,9 +161,9 @@
   - refresh behavior checks for migrated entry URLs
   - popstate/history traversal checks for migrated entry URLs
   - link-source audit for sidebar, topbar, brand, landing search, and note navigation emitters
-  - static-hosting compatibility check for explicit entry-file strategy first; defer `404.html` fallback strategy to [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md)
+  - static-hosting compatibility check for explicit entry-file strategy first; defer `404.html` fallback strategy to [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
 - Full-track checkpoint:
-  - rerun [prd-0007-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0007-initial-route-render-flash-elimination.md) flash-focused evaluation scenarios against the new route model before declaring the migration safe to continue or safe to merge
+  - rerun [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) flash-focused evaluation scenarios against the new route model before declaring the migration safe to continue or safe to merge
 
 ## Intentional Deltas
 

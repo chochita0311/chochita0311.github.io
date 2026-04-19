@@ -2,6 +2,11 @@
 
 This directory holds the repository's durable policy docs and active planning artifacts.
 
+## Start Here
+- Start with `README.md` for project overview and local usage.
+- Use `AGENTS.md` for repo-local operational rules and source-of-truth routing.
+- Use this file when you need to find the owning doc layer quickly.
+
 ## What Lives Here
 
 - `docs/agents/`: agent package under active refinement, split into role, flow, and operation docs
@@ -19,7 +24,7 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail routing, and execution artifact ownership
 - `docs/policies/design/`: durable design rules, reusable design-evaluation assets, and design-document governance
 - `docs/policies/experience/`: reusable interaction-quality evaluation assets
-- `docs/policies/content/`: content contracts, note schemas, and rendering rules
+- `docs/policies/archive/`: archive-domain contracts, note schemas, search contracts, and rendering rules
 - `docs/policies/system/`: cross-cutting shared system policy such as icon governance
 - `docs/policies/harness/prd-feature-management.md`: durable planning-governance rule for PRD and feature traceability
 - `docs/plans/prd/`: bounded PRD documents and PRD template
@@ -33,9 +38,8 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/plans/design/`: active design sequencing and open design decisions
 - `docs/plans/refactoring/`: refactor tracks, inventories, and implementation plans
 
-## How To Navigate
+## Navigation Shortcuts
 
-- Start with `README.md` for overview and local usage.
 - Use `docs/agents/` when you are refining reusable agent packages and execution docs.
 - Use `docs/agents/operation/runner.md` when you need execution startup prompts and run-continuation rules.
 - Use `docs/policies/` when you need source-of-truth rules.

@@ -1,8 +1,8 @@
-# PRD-0007: Initial Route Render Flash Elimination
+# PRD-0008: Initial Route Render Flash Elimination
 
 ## Metadata
 
-- ID: `prd-0007`
+- ID: `prd-0008`
 - Status: `draft`
 - Owner role: `human`
 - Created: `2026-04-19`
@@ -114,3 +114,4 @@
 - `2026-04-19`: expanded draft scope to also capture a future topbar-search debounce feedback pass so search typing feels responsive without introducing misleading intermediate UI
 - `2026-04-19`: renumbered from `prd-0006` to `prd-0007` after route path migration became the earlier prerequisite planning track
 - `2026-04-19`: route-model and route-orchestration planning was moved into `prd-0006`; this PRD now retains only boot-stability, flash-elimination, and optional `404.html` recovery concerns
+- `2026-04-19`: deferred behind `prd-0007-note-detail-utility-and-reading-polish.md` and renumbered to `prd-0008`
