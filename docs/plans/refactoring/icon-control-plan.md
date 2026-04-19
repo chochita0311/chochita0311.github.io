@@ -18,7 +18,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Current implementation points verified in this track:
   - `index.html`
   - `pages/note/index.html`
-  - `assets/js/sidebar-categories.js`
+  - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
   - `assets/js/note-detail-page.js`
   - `assets/css/base.css`
@@ -56,7 +56,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Targets:
   - `index.html`
   - `pages/note/index.html`
-  - `assets/js/sidebar-categories.js`
+  - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
   - `assets/js/note-detail-page.js`
 - Validation:
@@ -99,7 +99,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Do not force a full HTML abstraction if simple static markup is sufficient for now.
 - Targets:
   - New runtime-owned registry file under `assets/js/` or `assets/config/`
-  - `assets/js/sidebar-categories.js`
+  - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
   - `assets/js/note-detail-page.js`
 - Validation:
@@ -144,7 +144,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Targets:
   - `index.html`
   - `pages/note/index.html`
-  - `assets/js/sidebar-categories.js`
+  - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
   - `assets/js/note-detail-page.js`
 - Validation:
@@ -185,7 +185,7 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Documentation updates land in the same work cycle as the implementation changes they describe.
 - Validation status:
   - Completed on 2026-04-10.
-  - `node --check` passed for `assets/js/icons.js`, `assets/js/sidebar-categories.js`, `assets/js/index-note-detail.js`, and `assets/js/note-detail-page.js`.
+  - `node --check` passed for `assets/js/icons.js`, `assets/js/sidebar.js`, `assets/js/index-note-detail.js`, and `assets/js/note-detail-page.js`.
   - Browser smoke checks passed for `http://127.0.0.1:4173/index.html` and `http://127.0.0.1:4173/pages/note/index.html?note=CATEGORIES/English/Langs%20Studio/Goals.md`.
   - Console errors discovered during smoke testing exposed unrelated note-page/runtime path issues and were corrected in the same cycle because they blocked clean validation of the touched icon paths.
 

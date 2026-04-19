@@ -44,7 +44,7 @@ Record the verified baseline icon inventory for the icon-control refactor track 
   - footer links
   - note breadcrumbs
   - note action buttons
-- `assets/js/sidebar-categories.js`
+- `assets/js/sidebar.js`
   - category icons for English and Technology
   - category fallback icon
 - `assets/js/index-note-detail.js`

@@ -70,6 +70,11 @@
 - If a menu opens downward, its cue should remain stable or reinforce downward attachment rather than flipping into an upward state on open.
 - Evaluators should check both closed and expanded states and confirm that the visual cue, placement, and expanded panel all tell the same directional story.
 
+### 11. First-State Interaction Isolation
+- If a landing, modal, overlay, or other first-entry surface is meant to be the active state, downstream interactive surfaces must not remain keyboard-focusable, pointer-active, or screen-reader-visible during that phase.
+- Visual overlay alone is not sufficient evidence of isolation; evaluators should explicitly check `inert`, focus order, `aria-hidden`, or equivalent interaction-blocking behavior on deferred surfaces.
+- A feature may still pass if downstream content remains visually mounted for continuity, but only after evaluators confirm that the inactive layer cannot steal interaction before the handoff.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable transitions, continuity, or no-leak behavior.
 - Usually classify as `spec gap` when the spec failed to define how view changes, loading behavior, or navigation continuity should work.

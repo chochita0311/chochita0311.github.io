@@ -10,7 +10,10 @@
 - `assets/generated/archives-search-index.json` is the generated reverse search index derived from Markdown title, tags, and body content.
 - `sitemap.xml` is the generated crawl-discovery file for the home page and standalone note URLs.
 - `robots.txt` is the crawl-entry file that keeps the published sitemap location discoverable to search crawlers.
-- `assets/js/sidebar-categories.js` renders the left category rail from the generated note index.
+- `assets/js/sidebar.js` renders the left category rail from the generated note index.
+- `assets/js/topbar.js` renders the topbar notes taxonomy menu from the generated note index.
+- `assets/js/main-landing.js` owns the landing-first shell lifecycle for the archive entry view.
+- `assets/js/archive-search.js` owns shared archive search control and execution orchestration.
 - `assets/js/archive-content.js` renders archive and collection note lists from the generated note index.
 - `assets/js/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
 - `assets/css/` owns the current screen through extracted token, base, semantic, layout, and component layers.
@@ -34,7 +37,10 @@
 - `assets/generated/archives-search-index.json`
 - `sitemap.xml`
 - `robots.txt`
-- `assets/js/sidebar-categories.js`
+- `assets/js/sidebar.js`
+- `assets/js/topbar.js`
+- `assets/js/main-landing.js`
+- `assets/js/archive-search.js`
 - `assets/js/icons.js`
 - `assets/js/archive-content.js`
 - `assets/css/tokens.css`

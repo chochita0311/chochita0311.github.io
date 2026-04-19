@@ -37,7 +37,7 @@
     <!-- TopNavBar Implementation -->
     <nav class="topbar no-line-rule">
       <div class="topbar__start">
-        <a class="brand-title" href="index.html">조치타의 잡동사니</a>
+        <a class="brand-title" href="index.html?entry=archive">조치타의 잡동사니</a>
         <div class="topbar__nav">
           <div class="nav-dropdown" id="topbar-categories">
             <button
@@ -133,7 +133,47 @@
     </aside>
     <!-- Main Content Canvas -->
     <main class="archive-main">
-      <div class="archive-content-view" id="archive-list-view">
+      <section class="landing-entry" id="landing-entry" hidden>
+        <div class="landing-entry__stage">
+          <div class="landing-entry__media">
+            <video
+              aria-hidden="true"
+              class="landing-entry__video"
+              id="landing-entry-video"
+              muted
+              playsinline
+              preload="metadata"
+            >
+              <source src="assets/landing-entry-motion.mp4" type="video/mp4" />
+            </video>
+            <div class="landing-entry__veil"></div>
+          </div>
+          <div class="landing-entry__inner">
+            <div class="landing-entry__copy">
+              <h1 class="landing-entry__title">무엇을 찾고 있나요?</h1>
+              <label class="landing-entry__search-field">
+                <input
+                  class="landing-entry__search-input"
+                  placeholder="노트, 프로젝트, 디자인 기록을 검색해보세요"
+                  type="text"
+                />
+                <button
+                  aria-label="Search archive"
+                  class="landing-entry__search-submit"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="icon icon--material material-symbols-outlined landing-entry__search-icon"
+                    >search</span
+                  >
+                </button>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="archive-content-view" id="archive-list-view" hidden>
         <header class="archive-hero archive-hero--sticky">
           <div class="archive-hero__controls">
             <div aria-label="Archive view mode" class="archive-view-toggle" role="group">
@@ -165,77 +205,7 @@
           </div>
         </header>
         <!-- Archive Note List -->
-        <section class="note-list" id="archive-note-list">
-          <article class="note-card note-card--list">
-            <a class="note-card__link" href="#">
-              <div class="note-card__body">
-                <div class="note-card__meta">
-                  <span class="note-label note-label--accent">Technology</span>
-                  <span class="note-label note-label--muted">Digital Essays</span>
-                </div>
-                <h2 class="note-card__title">
-                  The Digital Nomad’s Dilemma: Finding Stillness in Connectivity
-                </h2>
-                <p class="note-card__summary">
-                  As our work lives become untethered from physical geography, the boundaries
-                  between the "atelier" and the "world" blur. We explore how to maintain a studious
-                  mind in a landscape designed for constant distraction.
-                </p>
-                <div class="note-card__footer">
-                  <div class="note-card__tags">
-                    <span class="note-tag">Sociology</span>
-                    <span class="note-tag">Productivity</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="note-card note-card--list">
-            <a class="note-card__link" href="#">
-              <div class="note-card__body">
-                <div class="note-card__meta">
-                  <span class="note-label note-label--accent">Design Theory</span>
-                  <span class="note-label note-label--muted">Reading Notes</span>
-                </div>
-                <h2 class="note-card__title">
-                  Typography as Architecture: Building Readable Digital Spaces
-                </h2>
-                <p class="note-card__summary">
-                  Type is not merely a medium for text; it is the physical structure of the digital
-                  experience. Exploring the relationship between Manrope's geometry and editorial
-                  authority in modern UI.
-                </p>
-                <div class="note-card__footer">
-                  <div class="note-card__tags">
-                    <span class="note-tag">Manrope</span>
-                    <span class="note-tag">UI Design</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="note-card note-card--list">
-            <a class="note-card__link" href="#">
-              <div class="note-card__body">
-                <div class="note-card__meta">
-                  <span class="note-label note-label--accent">Technology</span>
-                  <span class="note-label note-label--muted">Lab Notes</span>
-                </div>
-                <h2 class="note-card__title">The Ghost in the Large Language Model</h2>
-                <p class="note-card__summary">
-                  An investigation into the emergent properties of neural networks and what they
-                  reveal about the human capacity for pattern recognition and narrative creation.
-                </p>
-                <div class="note-card__footer">
-                  <div class="note-card__tags">
-                    <span class="note-tag">AI</span>
-                    <span class="note-tag">Future</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-        </section>
+        <section class="note-list" id="archive-note-list"></section>
       </div>
       <section
         class="archive-content-view note-detail note-detail--inline"
@@ -309,7 +279,7 @@
           </div>
         </article>
       </section>
-      <footer class="archive-footer">
+      <footer class="archive-footer" hidden>
         <div class="archive-footer__controls" id="archive-footer-panel">
           <div class="archive-page-size" id="archive-page-size-root">
             <button
@@ -358,10 +328,12 @@
       </footer>
     </main>
     <script defer src="assets/js/icons.js"></script>
-    <script defer src="assets/js/sidebar-categories.js"></script>
-    <script defer src="assets/js/topbar-taxonomy.js"></script>
+    <script defer src="assets/js/sidebar.js"></script>
+    <script defer src="assets/js/topbar.js"></script>
     <script defer src="assets/js/note-detail-renderer.js"></script>
     <script defer src="assets/js/index-note-detail.js"></script>
+    <script defer src="assets/js/main-landing.js"></script>
+    <script defer src="assets/js/archive-search.js"></script>
     <script defer src="assets/js/archive-content.js"></script>
   </body>
 </html>

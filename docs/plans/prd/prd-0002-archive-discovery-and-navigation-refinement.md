@@ -58,7 +58,7 @@
 - Current implementation references:
   - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
   - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
-  - [sidebar-categories.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar-categories.js)
+  - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 
 ## Product Intent
 

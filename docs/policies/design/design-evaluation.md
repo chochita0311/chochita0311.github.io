@@ -84,6 +84,11 @@
 - The expanded panel should align to its trigger in a predictable direction and should not imply a different disclosure direction than the control actually uses.
 - Hidden metadata chips shown in the disclosure should size to their own content unless a stronger system rule explicitly requires uniform widths.
 
+### 14. First-State Surface Separation
+- When a feature introduces a landing-first or overlay-first entry state inside an existing shell, the first-state surface should read as the primary canvas until the handoff completes.
+- Downstream browse or read surfaces may remain technically mounted, but they should not visually compete so strongly that the first state feels like a weak layer floating over the real screen.
+- Evaluators should inspect initial load, mid-transition, and handoff moments separately rather than judging only the static landing composition.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.

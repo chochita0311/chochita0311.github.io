@@ -54,8 +54,8 @@
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
-- [sidebar-categories.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar-categories.js)
-- [topbar-taxonomy.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar-taxonomy.js)
+- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
+- [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
 - generated [archives-search-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-search-index.json)
 

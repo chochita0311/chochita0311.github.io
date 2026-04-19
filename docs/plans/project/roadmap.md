@@ -5,6 +5,9 @@
 - Keep the static app easy to browse, search, read, and maintain.
 
 ## Near-Term Priorities
+- Define a landing-first entry experience before archive browsing begins.
+- Rebalance the sidebar-to-content spacing on large monitors so the archive shell reads less left-weighted.
+- Draft a route-boot stabilization pass so refresh and direct-entry URLs do not flash misleading intermediate archive states before the correct state is ready.
 - Reduce ambiguity between Markdown archive content and UI preview data.
 - Keep the generated note index simple for now while preparing the runtime for future archive growth.
 - Keep the generated archive index field set under review so it stays lean for current browse needs without blocking future features such as bookmarks, tag search, and richer sorting.

@@ -71,7 +71,7 @@
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - [pages/note/index.html](/Users/jungsoo/Projects/chochita0311.github.io/pages/note/index.html)
 - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
-- [sidebar-categories.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar-categories.js)
+- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
 - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 

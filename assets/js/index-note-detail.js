@@ -12,6 +12,10 @@ function archiveFooterPanel() {
   return document.getElementById("archive-footer-panel");
 }
 
+function archiveFooter() {
+  return document.querySelector(".archive-footer");
+}
+
 function detailNavMount() {
   return document.getElementById("note-detail-nav");
 }
@@ -56,6 +60,7 @@ function setArchiveMode(mode) {
 }
 
 function renderListFooterPanel() {
+  archiveFooter().hidden = false;
   detailNavMount().innerHTML = "";
   archiveFooterPanel().innerHTML = `
 <div class="archive-page-size" id="archive-page-size-root">
@@ -79,6 +84,7 @@ function renderListFooterPanel() {
 }
 
 function renderDetailFooterPanel(previousNote, nextNote, onNavigate) {
+  archiveFooter().hidden = false;
   const previousMarkup = previousNote
     ? `<a class="note-detail__nav note-detail__nav--previous" href="#" data-note-nav="${encodeURIComponent(previousNote.path)}">
 <span class="note-detail__nav-label">Previous Note</span>

@@ -36,6 +36,8 @@
     grid: 6,
   };
   const DEFAULT_DOCUMENT_TITLE = document.title;
+  const mainLanding = window.MainLanding;
+  const archiveSearchApi = window.ArchiveSearch;
   const archiveState = {
     allNotes: [],
     notes: [],
@@ -60,11 +62,33 @@
   let archiveRenderRequestId = 0;
   let viewToggleBound = false;
   let pageSizeBound = false;
-  let searchControlBound = false;
-  let searchDebounceTimer = null;
+  const LANDING_SEARCH_PLACEHOLDER_DEFAULT = "노트, 프로젝트, 디자인 기록을 검색해보세요";
+  const LANDING_SEARCH_PLACEHOLDER_PENDING = "찾는 중...";
+  let archiveSearch = null;
 
   function archiveNoteList() {
     return document.getElementById("archive-note-list");
+  }
+
+  function archiveListView() {
+    return document.getElementById("archive-list-view");
+  }
+
+  function setArchiveListInteractive(isInteractive) {
+    const listView = archiveListView();
+
+    if (!listView) {
+      return;
+    }
+
+    if (isInteractive) {
+      listView.removeAttribute("inert");
+      listView.removeAttribute("aria-hidden");
+      return;
+    }
+
+    listView.setAttribute("inert", "");
+    listView.setAttribute("aria-hidden", "true");
   }
 
   function archivePageLabel() {
@@ -95,6 +119,18 @@
     return document.getElementById("archive-search-input");
   }
 
+  function landingSearchInput() {
+    return mainLanding?.elements.searchInput() || null;
+  }
+
+  function landingSearchField() {
+    return mainLanding?.elements.searchField() || null;
+  }
+
+  function landingSearchSubmit() {
+    return mainLanding?.elements.searchSubmit() || null;
+  }
+
   function popularTagsMount() {
     return document.getElementById("popular-tags");
   }
@@ -105,6 +141,24 @@
 
   function archiveNextButton() {
     return document.getElementById("archive-next-button");
+  }
+
+  function setLandingSearchActive(isActive) {
+    mainLanding?.setSearchActive(isActive);
+  }
+
+  function setLandingSearchPending(isPending) {
+    mainLanding?.setSearchPending(isPending, {
+      defaultPlaceholder: LANDING_SEARCH_PLACEHOLDER_DEFAULT,
+      pendingPlaceholder: LANDING_SEARCH_PLACEHOLDER_PENDING,
+    });
+  }
+
+  function syncLandingVisibility(mode = archiveState.activeNotePath ? "detail" : "list") {
+    mainLanding?.syncVisibility(mode);
+    setArchiveListInteractive(
+      !(mode === "list" && document.body.classList.contains("has-landing-entry")),
+    );
   }
 
   async function loadNotesIndex() {
@@ -491,7 +545,7 @@ ${footerMarkup}
 
     if (rerender) {
       if (archiveState.searchQuery) {
-        renderSearchResults(archiveState.searchQuery).then(() => {
+        archiveSearch.renderSearchResults(archiveState.searchQuery).then(() => {
           updateArchiveLocation({ replace: false });
         });
       } else {
@@ -517,183 +571,8 @@ ${footerMarkup}
     return "the archive";
   }
 
-  function searchPattern() {
-    const source = archiveState.searchIndex.tokenizer?.pattern || FALLBACK_SEARCH_PATTERN;
-
-    return new RegExp(source, "g");
-  }
-
-  function normalizeSearchText(value) {
-    return String(value || "")
-      .normalize("NFKC")
-      .toLowerCase();
-  }
-
-  function tokenizeSearchQuery(value) {
-    const normalized = normalizeSearchText(value);
-    const matches = normalized.match(searchPattern()) || [];
-    const filters = archiveState.searchIndex.tokenizer?.filters || FALLBACK_SEARCH_FILTERS;
-    const stopwords = new Set(filters.englishStopwords || []);
-
-    return [...new Set(matches)].filter((token) => {
-      if (filters.excludeNumericOnly && /^\d+$/.test(token)) {
-        return false;
-      }
-
-      if (filters.excludeSingleCharacter && token.length <= 1) {
-        return false;
-      }
-
-      if (stopwords.has(token)) {
-        return false;
-      }
-
-      return true;
-    });
-  }
-
-  function matchingNoteIdsForQuery(query) {
-    const tokens = tokenizeSearchQuery(query);
-    const matchedIds = new Set();
-
-    tokens.forEach((token) => {
-      const noteIds = archiveState.searchIndex.terms[token] || [];
-
-      noteIds.forEach((noteId) => {
-        matchedIds.add(noteId);
-      });
-    });
-
-    return {
-      matchedIds,
-      tokens,
-    };
-  }
-
-  function searchNotesForSelection(query, category, collection) {
-    const { matchedIds, tokens } = matchingNoteIdsForQuery(query);
-
-    if (tokens.length === 0) {
-      return {
-        notes: [],
-        tokens,
-      };
-    }
-
-    return {
-      notes: sortNotes(
-        archiveState.allNotes.filter((note) => {
-          if (!matchedIds.has(note.id)) {
-            return false;
-          }
-
-          if (category && note.category !== category) {
-            return false;
-          }
-
-          if (collection && note.collection !== collection) {
-            return false;
-          }
-
-          return true;
-        }),
-      ),
-      tokens,
-    };
-  }
-
-  function searchSummary(query, count, category, collection) {
-    return `${count} results for "${query}" in ${searchScopeLabel(category, collection)}.`;
-  }
-
-  async function renderSearchResults(query) {
-    const trimmedQuery = query.trim();
-    const requestId = ++archiveRenderRequestId;
-
-    archiveState.searchQuery = trimmedQuery;
-    archiveState.activeTag = null;
-    renderPopularTags();
-
-    if (archiveState.searchIndexUnavailable) {
-      renderArchiveEmptyState(
-        "Search unavailable",
-        "The generated search index is unavailable, so archive search cannot run right now.",
-        "Search",
-      );
-      return;
-    }
-
-    const { notes } = searchNotesForSelection(
-      trimmedQuery,
-      archiveState.category,
-      archiveState.collection,
-    );
-
-    if (requestId !== archiveRenderRequestId) {
-      return;
-    }
-
-    archiveState.notes = notes;
-    archiveState.page = 1;
-    archiveState.activeNotePath = null;
-
-    const title = "Search Results";
-    const summary = searchSummary(
-      trimmedQuery,
-      notes.length,
-      archiveState.category,
-      archiveState.collection,
-    );
-
-    if (notes.length === 0) {
-      renderArchiveEmptyState(title, summary, "Search");
-      renderPopularTags();
-      return;
-    }
-
-    renderArchivePage();
-    renderPopularTags();
-  }
-
-  function applySearchInputValue(value) {
-    const nextQuery = value.trim();
-
-    if (!nextQuery) {
-      archiveState.searchQuery = "";
-      renderSelection({
-        category: archiveState.category,
-        collection: archiveState.collection,
-      }).then(() => {
-        updateArchiveLocation({ replace: false });
-      });
-      return;
-    }
-
-    if (archiveState.activeTag) {
-      clearSidebarSelection();
-      archiveState.category = null;
-      archiveState.collection = null;
-      clearActiveTag();
-    }
-
-    renderSearchResults(nextQuery).then(() => {
-      updateArchiveLocation({ replace: false });
-    });
-  }
-
   function bindSearchControl() {
-    if (searchControlBound) {
-      return;
-    }
-
-    archiveSearchInput()?.addEventListener("input", (event) => {
-      window.clearTimeout(searchDebounceTimer);
-      searchDebounceTimer = window.setTimeout(() => {
-        applySearchInputValue(event.target.value);
-      }, SEARCH_DEBOUNCE_MS);
-    });
-
-    searchControlBound = true;
+    archiveSearch?.bindControls();
   }
 
   function compareDatesDesc(left, right) {
@@ -774,6 +653,7 @@ ${footerMarkup}
   function renderArchivePage() {
     document.title = DEFAULT_DOCUMENT_TITLE;
     window.IndexNoteDetail.setArchiveMode("list");
+    syncLandingVisibility("list");
     window.IndexNoteDetail.renderListFooterPanel();
     bindPaginationControls();
     bindPageSizeControl();
@@ -785,6 +665,7 @@ ${footerMarkup}
     const startIndex = (archiveState.page - 1) * archiveState.pageSize;
     const visibleNotes = archiveState.notes.slice(startIndex, startIndex + archiveState.pageSize);
 
+    archiveListView().hidden = false;
     archivePageLabel().textContent = `Page ${String(archiveState.page).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}`;
     applyViewModeToList();
     archiveNoteList().innerHTML = visibleNotes.map(noteCardMarkup).join("");
@@ -801,6 +682,7 @@ ${footerMarkup}
     archiveState.activeNotePath = null;
     document.title = DEFAULT_DOCUMENT_TITLE;
     window.IndexNoteDetail.setArchiveMode("list");
+    syncLandingVisibility("list");
     window.IndexNoteDetail.renderListFooterPanel();
     bindPageSizeControl();
     bindViewToggleControls();
@@ -808,6 +690,7 @@ ${footerMarkup}
     applyViewModeToList();
     syncPageSizeControl();
     syncViewToggleButtons();
+    archiveListView().hidden = false;
     archiveNoteList().innerHTML = `
 <article class="note-card ${archiveState.viewMode === "grid" ? "note-card--grid" : "note-card--list"} note-card--empty">
 <div class="note-card__body">
@@ -851,6 +734,12 @@ ${footerMarkup}
       url.searchParams.delete("view");
     }
 
+    if (mainLanding?.isDismissed() || mainLanding?.isBypassRequested()) {
+      url.searchParams.set("entry", "archive");
+    } else {
+      url.searchParams.delete("entry");
+    }
+
     if (replace) {
       window.history.replaceState({}, "", url);
       return;
@@ -860,6 +749,7 @@ ${footerMarkup}
   }
 
   async function renderNoteDetail(notePath, options = {}) {
+    archiveListView().hidden = true;
     const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(notePath);
     const noteData = await window.NoteDetailRenderer.loadNoteData(normalizedPath);
     const currentIndex = archiveState.notes.findIndex((note) => note.path === normalizedPath);
@@ -872,6 +762,7 @@ ${footerMarkup}
     archiveState.activeNotePath = normalizedPath;
     document.title = `${noteData.title} | Chochita Archive`;
     window.IndexNoteDetail.setArchiveMode("detail");
+    syncLandingVisibility("detail");
     window.IndexNoteDetail.elements.detailTitle().textContent = noteData.title;
     window.IndexNoteDetail.elements.detailSummary().textContent = noteData.summary;
     window.IndexNoteDetail.elements.detailPublished().textContent =
@@ -1022,6 +913,13 @@ ${footerMarkup}
         }
 
         event.preventDefault();
+        const url = new URL(window.location.href);
+        url.searchParams.set("entry", "archive");
+        url.searchParams.delete("category");
+        url.searchParams.delete("collection");
+        url.searchParams.delete("note");
+        url.searchParams.delete("view");
+        window.history.pushState({}, "", url);
         archiveState.viewMode = "list";
         archiveState.pageSize = defaultPageSizeForView("list");
         archiveState.page = 1;
@@ -1035,7 +933,8 @@ ${footerMarkup}
         }
         clearSidebarSelection();
         renderSelection({ category: null, collection: null }).then(() => {
-          updateArchiveLocation({ replace: false });
+          updateArchiveLocation({ replace: true });
+          window.scrollTo({ top: 0, behavior: "auto" });
         });
       });
     });
@@ -1051,8 +950,12 @@ ${footerMarkup}
 
     archiveState.viewMode = view === "grid" ? "grid" : "list";
     archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
+    if (mainLanding) {
+      mainLanding.setDismissed(mainLanding.isBypassRequested());
+    }
     syncViewToggleButtons();
     syncPageSizeControl();
+    syncLandingVisibility(note ? "detail" : "list");
 
     if (note && (!category || !collection)) {
       const matchedNote = findNoteByPath(note);
@@ -1100,10 +1003,44 @@ ${footerMarkup}
     initializeArchiveFromLocation();
   });
 
+  window.addEventListener("archive:landing-state", () => {
+    setArchiveListInteractive(!document.body.classList.contains("has-landing-entry"));
+  });
+
   Promise.all([loadNotesIndex(), loadSearchIndex()])
     .then(() => {
+      mainLanding?.bindControls();
       renderPopularTags();
       bindBrandResetLinks();
+      archiveSearch = archiveSearchApi?.createController({
+        beginRenderRequest() {
+          archiveRenderRequestId += 1;
+          return archiveRenderRequestId;
+        },
+        clearActiveTag,
+        clearSidebarSelection,
+        completeLanding: () => mainLanding?.complete(),
+        dismissLandingImmediately: () => mainLanding?.dismissImmediately(),
+        fallbackSearchFilters: FALLBACK_SEARCH_FILTERS,
+        fallbackSearchPattern: FALLBACK_SEARCH_PATTERN,
+        getArchiveState() {
+          archiveState.__renderRequestId = () => archiveRenderRequestId;
+          return archiveState;
+        },
+        getLandingInput: landingSearchInput,
+        getLandingSubmit: landingSearchSubmit,
+        getTopbarInput: archiveSearchInput,
+        isLandingActive: () => document.body.classList.contains("has-landing-entry"),
+        onLandingSearchActive: setLandingSearchActive,
+        onLandingSearchPending: setLandingSearchPending,
+        renderArchiveEmptyState,
+        renderArchivePage,
+        renderPopularTags,
+        renderSelection,
+        scopeLabel: searchScopeLabel,
+        sortNotes,
+        updateArchiveLocation,
+      });
       initializeArchiveFromLocation();
     })
     .catch(() => {

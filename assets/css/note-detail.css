@@ -58,7 +58,7 @@
   padding-bottom: var(--space-4);
   background: rgb(17, 19, 23);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(67, 70, 83, 0.22);
+  border-bottom: 1px solid rgba(67, 70, 83, 0.18);
   box-shadow: 0 16px 30px rgba(9, 11, 14, 0.18);
 }
 
@@ -548,20 +548,20 @@
   .note-detail__frame {
     width: min(calc(100% - (var(--space-12) * 2)), 74rem);
     margin-left: auto;
-    margin-right: 0;
+    margin-right: auto;
   }
 
   .note-detail--inline {
-    width: 100%;
+    width: min(calc(100% - (var(--space-12) * 2)), 74rem);
     max-width: none;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .note-detail--inline > .note-detail__utility,
   .note-detail--inline > .note-detail {
-    width: calc(100% - (var(--space-12) * 2));
-    margin-left: calc(var(--space-12) * 2);
+    width: 100%;
+    margin-left: 0;
     margin-right: 0;
   }
 }
