@@ -198,6 +198,16 @@
     syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
   }
 
+  function shouldInitializeArchiveOnBoot() {
+    const route = window.ArchiveRoutes.parseCurrentLocation();
+
+    if (route.type !== "landing") {
+      return true;
+    }
+
+    return window.innerWidth < 1024;
+  }
+
   async function loadNotesIndex() {
     const response = await fetch(NOTES_INDEX_PATH);
 
@@ -1120,7 +1130,7 @@ ${footerMarkup}
   createArchiveSearchController();
   void ensureArchiveRuntimeReady();
 
-  if (window.ArchiveRoutes.parseCurrentLocation().type !== "landing") {
+  if (shouldInitializeArchiveOnBoot()) {
     void initializeArchiveFromLocation().catch(() => {
       renderArchiveEmptyState(
         "Archive unavailable",
