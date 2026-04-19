@@ -229,7 +229,6 @@
   height: 2rem;
   overflow: hidden;
   border-radius: 999px;
-  background: var(--color-primary-container);
 }
 
 .profile-card__image {

@@ -18,8 +18,10 @@
   - the landing hero should reuse only the structural pattern of `tmp/sample.html`'s targeted section
   - the landing hero must sit below the fixed topbar and inside the current shell
   - the landing tone should align with the current archive shell and stay closer to the quieter concept
-  - `Video_Generation_With_Specific_Effects.mp4` should drive a slow scroll-based background motion
-  - the video should sit behind the landing hero at about `50%` transparency
+  - `assets/landing-entry-main.mp4` should drive the landing motion treatment
+  - the video should span the full landing content canvas as a background treatment
+  - the video should auto-play when the landing is visible without scroll-driven scrubbing
+  - the title animation should replay independently every `20` seconds while the landing remains visible
   - scrolling through the landing should hand off into the current archive list
   - clicking `조치타의 잡동사니` should bypass landing and open the current archive list directly
 - Parent feature:
@@ -35,7 +37,7 @@
 
 ## Implementation Goal
 
-- Add a landing-first root experience inside the existing archive shell that occupies the current content canvas below the fixed topbar, uses a semi-transparent scroll-scrubbed video background, and hands off into the existing archive list while preserving a direct brand-title path to the list view.
+- Add a landing-first root experience inside the existing archive shell that occupies the current content canvas below the fixed topbar, uses a semi-transparent auto-playing full-background video treatment, and hands off into the existing archive list while preserving a direct brand-title path to the list view.
 
 ## In-Scope Behavior
 
@@ -44,9 +46,10 @@
 - Keep the landing section below the fixed topbar and within the content area offset created by the fixed sidebar.
 - Keep the topbar and sidebar visible while the landing is shown.
 - Use the current shell color palette and typography tone for the landing hero.
-- Add a background media layer for the landing hero that uses `Video_Generation_With_Specific_Effects.mp4` or a repository-local derivative of it.
-- Start the landing media layer at roughly `50%` opacity so foreground content remains readable.
-- Tie landing media progression to scroll position through the landing section so the motion advances with scroll instead of free-running.
+- Add a full-background media treatment for the landing hero that uses `assets/landing-entry-main.mp4`.
+- Keep the landing media visually restrained so foreground content remains readable while covering the full landing canvas.
+- Start the landing media automatically when the landing is shown instead of tying playback to scroll position.
+- Replay the title animation on an independent `20`-second cycle while the landing remains visible.
 - After the landing section is fully traversed, reveal the existing archive list as the natural continuation of the page.
 - Only show the landing-first state on the root archive route without a bypass flag.
 - Add a deterministic bypass path so clicking the brand title on the root shell goes directly to the current archive list state.
@@ -84,9 +87,10 @@
   - the landing section height fills the current visible content canvas below the topbar
   - the landing section must not slide underneath the topbar
 - Landing media state:
-  - background video or derivative media is positioned behind the hero content
-  - media opacity is approximately `0.5`
-  - media motion is scrubbed by landing-section scroll progress from start to end
+  - video is positioned behind the hero content across the full landing canvas
+  - media starts automatically when the landing is shown and may loop while visible
+- Landing title state:
+  - title animation may replay independently every `20` seconds while landing is visible
 - Scroll handoff state:
   - the landing section ends directly before the current archive list section
   - scrolling beyond the landing section exposes the archive list without requiring a second CTA-only interaction
@@ -96,7 +100,7 @@
 ## Data And Contract Assumptions
 
 - Root archive route already uses query parameters for archive state, so one additional root-only entry flag can be added without changing the broader routing model.
-- The landing feature may consume `tmp/` media during local exploration, but production implementation should prefer a repository-local owned asset path if runtime delivery from `tmp/` is unsuitable.
+- The landing feature should use the owned runtime asset `assets/landing-entry-main.mp4`.
 - Archive list and note-detail initialization contracts remain owned by the current archive runtime and must not be redefined by landing code.
 - The landing section owns only root-entry presentation and handoff, not note-loading logic.
 
@@ -111,9 +115,10 @@
 - Tone alignment:
   - landing styling follows current shell colors and quiet-archive direction
 - Video treatment:
-  - semi-transparent video background at about `50%` opacity
-- Scroll-driven motion:
-  - scroll position advances the landing media
+  - semi-transparent full-background video treatment using `assets/landing-entry-main.mp4`
+- Motion behavior:
+  - landing media auto-plays when visible and is not scrubbed by scroll
+  - landing video playback is slowed to `0.8x`
 - Handoff:
   - end of landing flows into the current archive list
 - Brand bypass:
@@ -143,3 +148,5 @@
 ## Continuity Notes
 
 - `2026-04-18`: initial spec created from approved feat-0010 with root-only landing entry, scroll-scrubbed media, and brand-title bypass behavior locked
+- `2026-04-19`: updated again so the landing motion uses `assets/landing-entry-main.mp4`, auto-plays on visibility, and covers the full landing canvas as a background treatment
+- `2026-04-19`: updated so landing video playback runs at `0.8x` and title animation replays independently every `20` seconds while landing remains visible

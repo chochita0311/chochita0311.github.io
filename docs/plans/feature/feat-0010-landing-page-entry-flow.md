@@ -20,8 +20,9 @@
 - The landing state lives only inside the current content canvas and does not overlap the fixed topbar or fixed left sidebar.
 - The landing hero tone aligns with the repository's current dark archive shell and stays closer to the quieter `Quiet Archive` concept than to the more luminous explorations.
 - Only the structural pattern of `tmp/sample.html`'s targeted hero section is reused; the sample page as a whole is not copied.
-- The landing hero uses a semi-transparent background video treatment derived from `Video_Generation_With_Specific_Effects.mp4`.
-- Landing motion advances in sync with scroll progress through the landing section rather than behaving like a loud autonomous splash playback.
+- The landing hero uses a semi-transparent full-background video treatment sourced from `assets/landing-entry-main.mp4`.
+- Landing motion plays automatically when the landing becomes visible instead of being scrubbed by scroll progress.
+- The landing title animation repeats independently on a `20`-second cycle while the landing remains visible.
 - After the landing section is fully traversed, the existing archive list becomes the visible downstream browse state.
 - Clicking the top-left brand title `조치타의 잡동사니` on the root archive shell bypasses the landing state and opens the current archive list view directly.
 
@@ -32,8 +33,8 @@
   - landing hero section inside the current `archive-main` canvas
   - reuse of only the targeted structural pattern from [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
   - quiet-archive hero styling aligned to the existing shell
-  - semi-transparent video background treatment derived from [Video_Generation_With_Specific_Effects.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Video_Generation_With_Specific_Effects.mp4)
-  - scroll-driven motion progression through the landing section
+  - semi-transparent full-background video treatment sourced from [landing-entry-main.mp4](/Users/jungsoo/Projects/chochita0311.github.io/assets/landing-entry-main.mp4)
+  - auto-playing landing motion while the landing is visible
   - landing-to-list handoff at the end of the landing section
   - root-route and brand-title behavior separation
 - Out:
@@ -45,7 +46,7 @@
 
 ## User-Visible Outcome
 
-- Users arriving at `/` see a quieter, motion-backed landing hero inside the existing shell, scroll through it as the background motion progresses, and then continue naturally into the same archive list they use today.
+- Users arriving at `/` see a quieter, motion-backed landing hero inside the existing shell, with the motion covering the full landing content canvas behind the primary copy and playing automatically while the landing is visible.
 
 ## Entry And Exit
 
@@ -96,8 +97,9 @@
 - The landing hero is contained within the current content canvas and does not overlap the topbar or sidebar.
 - The implemented hero borrows only the targeted section structure from `tmp/sample.html`.
 - The landing hero remains visually aligned with the current archive shell color and tone.
-- A semi-transparent video treatment is visible behind the landing hero content.
-- Scrolling through the landing section advances the background motion progressively rather than replaying as an unrelated autoplay loop.
+- A semi-transparent video treatment is visible across the landing background without crowding the primary copy.
+- The landing video starts automatically when the landing becomes visible and does not depend on scroll position to progress.
+- The landing title animation replays independently at a `20`-second interval while the landing is visible.
 - Reaching the end of the landing section reveals the existing archive list as the downstream state.
 - Clicking `조치타의 잡동사니` on the root archive shell opens the current list view directly instead of replaying landing.
 - If motion media fails, users can still read the landing content and reach the archive list.
@@ -122,3 +124,5 @@
 - `2026-04-18`: initial draft created from approved PRD-0005
 - `2026-04-19`: remained in-loop after design review passed with suggestions but functional and UX evaluation returned the feature for interaction-isolation fixes
 - `2026-04-19`: passed after landing-state interaction isolation was added and evaluation rerun confirmed root landing, brand bypass, and downstream archive handoff behavior
+- `2026-04-19`: landing media source changed again to `assets/landing-entry-main.mp4`, scroll-scrub playback was removed, and the landing returned to a full-background auto-playing treatment
+- `2026-04-19`: landing video playback was tuned to `0.8x` and the title animation was set to replay independently every `20` seconds while the landing stays visible

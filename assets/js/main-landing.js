@@ -1,9 +1,13 @@
 (() => {
+  const TITLE_REPEAT_INTERVAL_MS = 20000;
+  const TITLE_PROMPT_BLINK_CYCLES = 3;
+  const TITLE_PROMPT_BLINK_DURATION_MS = 840 * TITLE_PROMPT_BLINK_CYCLES;
+
   let entryBound = false;
-  let progress = 0;
   let exitTimer = null;
   let dismissed = false;
   let titleTimer = null;
+  let titleCycleTimer = null;
 
   function emitStateChange() {
     window.dispatchEvent(
@@ -105,7 +109,9 @@
     const title = landingEntryTitle();
 
     window.clearTimeout(titleTimer);
+    window.clearTimeout(titleCycleTimer);
     titleTimer = null;
+    titleCycleTimer = null;
 
     if (!title) {
       return;
@@ -136,6 +142,15 @@
     title.dataset.fullText = fullText;
     renderLandingTitleText(title, "", { showPrompt: true });
     title.classList.add("landing-entry__title--typing");
+    window.clearTimeout(titleCycleTimer);
+    titleCycleTimer = window.setTimeout(() => {
+      if (!document.body.classList.contains("has-landing-entry")) {
+        return;
+      }
+
+      stopLandingTitleAnimation();
+      startLandingTitleAnimation();
+    }, TITLE_REPEAT_INTERVAL_MS);
 
     let index = 0;
     const pauseMap = new Map([
@@ -173,7 +188,7 @@
         titleTimer = window.setTimeout(() => {
           renderLandingTitleText(title, fullText);
           title.classList.remove("landing-entry__title--prompt");
-        }, 1760);
+        }, TITLE_PROMPT_BLINK_DURATION_MS);
       }, 700);
     };
 
@@ -205,37 +220,23 @@
     return blockingParams.every((key) => !url.searchParams.has(key));
   }
 
-  function setProgress(nextProgress) {
-    const section = landingEntrySection();
+  function playLandingVideo({ reset = false } = {}) {
     const video = landingEntryVideo();
 
-    progress = Math.max(0, Math.min(1, nextProgress));
-
-    if (!section || section.hidden) {
+    if (!video) {
       return;
     }
 
-    const fadeProgress = Math.max(0, (progress - 0.7) / 0.3);
-    const contentOpacity = Math.max(0, 1 - fadeProgress * 1.12);
-    const contentShift = `${Math.min(30, fadeProgress * 30)}px`;
+    video.playbackRate = 0.8;
 
-    section.style.setProperty("--landing-entry-fade", String(0.18 + fadeProgress * 0.82));
-    section.style.setProperty("--landing-entry-content-opacity", String(contentOpacity));
-    section.style.setProperty("--landing-entry-content-shift", contentShift);
-
-    if (Number.isFinite(video?.duration) && video.duration > 0) {
-      video.currentTime = video.duration * progress;
-    }
-  }
-
-  function syncScrollProgress() {
-    const section = landingEntrySection();
-
-    if (!section || section.hidden) {
-      return;
+    if (reset) {
+      video.currentTime = 0;
     }
 
-    setProgress(progress);
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
   }
 
   function setSearchActive(isActive) {
@@ -312,18 +313,15 @@
     if (!section.hidden) {
       document.body.classList.remove("landing-entry-exit");
       window.clearTimeout(exitTimer);
-      progress = 0;
-      syncScrollProgress();
       stopLandingTitleAnimation();
       startLandingTitleAnimation();
+      playLandingVideo({ reset: true });
       emitStateChange();
       return;
     }
 
+    landingEntryVideo()?.pause();
     stopLandingTitleAnimation({ revealFullText: true });
-    section.style.removeProperty("--landing-entry-fade");
-    section.style.removeProperty("--landing-entry-content-opacity");
-    section.style.removeProperty("--landing-entry-content-shift");
     document.body.classList.remove("landing-entry-exit");
     document.body.style.removeProperty("overflow");
     emitStateChange();
@@ -340,33 +338,18 @@
 
     const video = landingEntryVideo();
     if (video) {
-      video.addEventListener("loadedmetadata", syncScrollProgress);
+      video.addEventListener("loadedmetadata", () => {
+        if (document.body.classList.contains("has-landing-entry")) {
+          playLandingVideo({ reset: true });
+        }
+      });
     }
-
-    window.addEventListener(
-      "wheel",
-      (event) => {
-        if (!document.body.classList.contains("has-landing-entry")) {
-          return;
-        }
-
-        event.preventDefault();
-        setProgress(progress + event.deltaY / 420);
-
-        if (progress >= 1) {
-          complete();
-        }
-      },
-      { passive: false },
-    );
 
     window.addEventListener("resize", () => {
       if (!isViewportEligible() && document.body.classList.contains("has-landing-entry")) {
         complete();
         return;
       }
-
-      syncScrollProgress();
     });
 
     entryBound = true;

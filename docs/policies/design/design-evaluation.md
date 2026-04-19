@@ -89,6 +89,11 @@
 - Downstream browse or read surfaces may remain technically mounted, but they should not visually compete so strongly that the first state feels like a weak layer floating over the real screen.
 - Evaluators should inspect initial load, mid-transition, and handoff moments separately rather than judging only the static landing composition.
 
+### 15. Viewport-Range Hero Anchor Stability
+- When a hero or first-state surface intentionally anchors primary copy to a specific vertical band, that anchor should remain perceptually stable across common laptop and desktop viewport ranges rather than drifting because of mixed `vh` and `vw` tuning.
+- Headline scale should also stay proportionate across those same ranges; smaller laptop widths should not make the same title feel meaningfully larger or heavier than intended when the surrounding shell typography remains stable.
+- Evaluators should compare at least one narrower laptop-sized viewport and one wider desktop viewport and confirm both the copy position and headline scale still match the intended composition.
+
 ## Classification Guidance
 - Usually classify as `implementation bug` when the spec already requires stable containment or shell preservation.
 - Usually classify as `spec gap` when the spec failed to define wrapping, truncation, breakpoint behavior, or shell-boundary expectations clearly enough.
