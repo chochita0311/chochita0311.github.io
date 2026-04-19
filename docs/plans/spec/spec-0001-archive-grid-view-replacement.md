@@ -64,7 +64,7 @@
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 
 ## State And Interaction Contract
 

@@ -19,7 +19,7 @@
   - [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Golden sources:
   - current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+  - current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - Relevant policies or contracts:
   - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
   - [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/archive-search-contract.md)
@@ -53,7 +53,7 @@
 ## Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)

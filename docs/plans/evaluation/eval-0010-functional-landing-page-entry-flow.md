@@ -24,9 +24,9 @@
 ## Checks
 
 - Verified that `/index.html` initializes with the landing section active.
-- Verified that `/index.html?entry=archive` initializes directly into the archive list.
+- Verified that `/archive/` initializes directly into the archive list.
 - Verified that clicking a note from the archive list still opens inline detail.
-- Verified that brand-title links target the archive-bypass URL.
+- Verified that brand-title links target `/archive/`.
 - Inspected root-page interaction state while landing is active.
 
 ## Findings

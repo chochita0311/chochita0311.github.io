@@ -31,7 +31,7 @@
   - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
   - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
   - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+  - [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
   - [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
 
 ## Product Intent

@@ -66,13 +66,13 @@
 ## Dependencies
 
 - Parent PRD [prd-0004-archive-navigation-and-label-polish.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
-- Current archive rendering in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- Current archive rendering in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - Current grid-card styling in [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css) and [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - Current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 
 ## Likely Affected Surfaces
 
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
 - [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)

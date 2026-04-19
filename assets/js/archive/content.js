@@ -1,6 +1,6 @@
 (() => {
-  const NOTES_INDEX_PATH = "assets/generated/archives-index.json";
-  const SEARCH_INDEX_PATH = "assets/generated/archives-search-index.json";
+  const NOTES_INDEX_PATH = "/assets/generated/archives-index.json";
+  const SEARCH_INDEX_PATH = "/assets/generated/archives-search-index.json";
   const SEARCH_DEBOUNCE_MS = 250;
   const FALLBACK_SEARCH_PATTERN = "[a-z0-9]+|[가-힣]+";
   const FALLBACK_SEARCH_FILTERS = {
@@ -143,6 +143,20 @@
     return document.getElementById("archive-next-button");
   }
 
+  function canonicalLinkElement() {
+    return document.querySelector("link[rel='canonical']");
+  }
+
+  function syncCanonicalLink(path) {
+    const canonicalLink = canonicalLinkElement();
+
+    if (!canonicalLink) {
+      return;
+    }
+
+    canonicalLink.href = window.ArchiveRoutes.canonicalUrl(path);
+  }
+
   function setLandingSearchActive(isActive) {
     mainLanding?.setSearchActive(isActive);
   }
@@ -159,6 +173,14 @@
     setArchiveListInteractive(
       !(mode === "list" && document.body.classList.contains("has-landing-entry")),
     );
+  }
+
+  function dismissLandingForShellInteraction() {
+    if (!document.body.classList.contains("has-landing-entry")) {
+      return;
+    }
+
+    mainLanding?.dismissImmediately();
   }
 
   async function loadNotesIndex() {
@@ -241,17 +263,7 @@
   }
 
   function buildNoteHref(note) {
-    const url = new URLSearchParams({
-      category: note.category,
-      collection: note.collection,
-      note: note.path,
-    });
-
-    if (archiveState.viewMode === "grid") {
-      url.set("view", "grid");
-    }
-
-    return `?${url.toString()}`;
+    return window.ArchiveRoutes.buildNoteDetailPath(note.id);
   }
 
   function activeTagSummary(noteCount) {
@@ -296,7 +308,7 @@ ${tagsMarkup}
 </div>`;
 
     return `
-<article class="${cardClass}" data-note-path="${escapeHtml(note.path)}">
+<article class="${cardClass}" data-note-id="${String(note.id)}">
 <div class="note-card__body">
 <div class="note-card__meta">
 <span class="note-label note-label--accent">${escapeHtml(note.category)}</span>
@@ -707,50 +719,74 @@ ${footerMarkup}
     setPaginationButtonState(archiveNextButton(), false);
   }
 
-  function updateArchiveLocation({ notePath = null, replace = false } = {}) {
-    const url = new URL(window.location.href);
+  function updateArchiveLocation({
+    notePath = null,
+    noteId = null,
+    replace = false,
+    archiveHome = null,
+  } = {}) {
+    let resolvedNoteId = noteId;
 
-    if (archiveState.category) {
-      url.searchParams.set("category", archiveState.category);
-    } else {
-      url.searchParams.delete("category");
+    if (resolvedNoteId === null && notePath) {
+      resolvedNoteId = findNoteByPath(notePath)?.id ?? null;
     }
 
-    if (archiveState.collection) {
-      url.searchParams.set("collection", archiveState.collection);
-    } else {
-      url.searchParams.delete("collection");
-    }
-
-    if (notePath) {
-      url.searchParams.set("note", notePath);
-    } else {
-      url.searchParams.delete("note");
-    }
-
-    if (archiveState.viewMode === "grid") {
-      url.searchParams.set("view", "grid");
-    } else {
-      url.searchParams.delete("view");
-    }
-
-    if (mainLanding?.isDismissed() || mainLanding?.isBypassRequested()) {
-      url.searchParams.set("entry", "archive");
-    } else {
-      url.searchParams.delete("entry");
-    }
+    const nextUrl = window.ArchiveRoutes.buildPathForState({
+      category: resolvedNoteId ? null : archiveState.category,
+      collection: resolvedNoteId ? null : archiveState.collection,
+      noteId: resolvedNoteId,
+      viewMode: archiveState.viewMode,
+      archiveHome:
+        archiveHome ??
+        (resolvedNoteId === null &&
+          !archiveState.category &&
+          !archiveState.collection &&
+          !archiveState.activeTag &&
+          !archiveState.searchQuery),
+    });
 
     if (replace) {
-      window.history.replaceState({}, "", url);
+      syncCanonicalLink(nextUrl);
+      window.history.replaceState({}, "", nextUrl);
       return;
     }
 
-    window.history.pushState({}, "", url);
+    syncCanonicalLink(nextUrl);
+    window.history.pushState({}, "", nextUrl);
   }
 
-  async function renderNoteDetail(notePath, options = {}) {
+  function findNoteById(noteId) {
+    const normalizedId = Number.parseInt(String(noteId), 10);
+
+    if (!Number.isInteger(normalizedId)) {
+      return null;
+    }
+
+    return archiveState.allNotes.find((note) => note.id === normalizedId) || null;
+  }
+
+  function resolveNoteRecord(noteInput) {
+    if (typeof noteInput === "number" || /^\d+$/.test(String(noteInput || ""))) {
+      return findNoteById(noteInput);
+    }
+
+    return findNoteByPath(noteInput);
+  }
+
+  async function renderNoteDetail(noteInput, options = {}) {
     archiveListView().hidden = true;
-    const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(notePath);
+    const noteRecord = resolveNoteRecord(noteInput);
+
+    if (!noteRecord) {
+      renderArchiveEmptyState(
+        "Note unavailable",
+        "The requested note could not be resolved from the archive index.",
+        "Note",
+      );
+      return;
+    }
+
+    const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(noteRecord.path);
     const noteData = await window.NoteDetailRenderer.loadNoteData(normalizedPath);
     const currentIndex = archiveState.notes.findIndex((note) => note.path === normalizedPath);
     const previousNote = currentIndex > 0 ? archiveState.notes[currentIndex - 1] : null;
@@ -794,13 +830,13 @@ ${footerMarkup}
     window.IndexNoteDetail.elements.detailContent().innerHTML = noteData.rendered.html;
     window.IndexNoteDetail.renderOutline(noteData.rendered.outline);
     window.IndexNoteDetail.updateBreadcrumbs(normalizedPath);
-    window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (path) => {
-      renderNoteDetail(path);
-      updateArchiveLocation({ notePath: path });
+    window.IndexNoteDetail.renderDetailFooterPanel(previousNote, nextNote, (nextNoteId) => {
+      renderNoteDetail(nextNoteId);
+      updateArchiveLocation({ noteId: nextNoteId });
     });
 
     if (!options.skipHistory) {
-      updateArchiveLocation({ notePath: normalizedPath });
+      updateArchiveLocation({ noteId: noteRecord.id });
     }
   }
 
@@ -889,6 +925,7 @@ ${footerMarkup}
 
     mount.querySelectorAll("[data-popular-tag]").forEach((button) => {
       button.addEventListener("click", () => {
+        dismissLandingForShellInteraction();
         archiveState.activeTag = button.dataset.popularTag;
         archiveState.category = null;
         archiveState.collection = null;
@@ -908,18 +945,8 @@ ${footerMarkup}
   function bindBrandResetLinks() {
     document.querySelectorAll(".brand-title").forEach((link) => {
       link.addEventListener("click", (event) => {
-        if (!window.location.pathname.endsWith("/index.html") && window.location.pathname !== "/") {
-          return;
-        }
-
         event.preventDefault();
-        const url = new URL(window.location.href);
-        url.searchParams.set("entry", "archive");
-        url.searchParams.delete("category");
-        url.searchParams.delete("collection");
-        url.searchParams.delete("note");
-        url.searchParams.delete("view");
-        window.history.pushState({}, "", url);
+        window.history.pushState({}, "", window.ArchiveRoutes.buildArchiveHomePath());
         archiveState.viewMode = "list";
         archiveState.pageSize = defaultPageSizeForView("list");
         archiveState.page = 1;
@@ -933,7 +960,7 @@ ${footerMarkup}
         }
         clearSidebarSelection();
         renderSelection({ category: null, collection: null }).then(() => {
-          updateArchiveLocation({ replace: true });
+          updateArchiveLocation({ replace: true, archiveHome: true });
           window.scrollTo({ top: 0, behavior: "auto" });
         });
       });
@@ -941,35 +968,38 @@ ${footerMarkup}
   }
 
   async function initializeArchiveFromLocation() {
-    const params = new URLSearchParams(window.location.search);
-    let category = params.get("category");
-    let collection = params.get("collection");
-    const note = params.get("note");
-    const view = params.get("view");
-    let resolvedNote = note ? window.NoteDetailRenderer.normalizeNotePath(note) : note;
+    const route = window.ArchiveRoutes.parseCurrentLocation();
+    let category = route.category;
+    let collection = route.collection;
+    let resolvedNote = null;
 
-    archiveState.viewMode = view === "grid" ? "grid" : "list";
+    archiveState.viewMode = route.viewMode;
     archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
     if (mainLanding) {
-      mainLanding.setDismissed(mainLanding.isBypassRequested());
+      mainLanding.setDismissed(route.type !== "landing");
     }
     syncViewToggleButtons();
     syncPageSizeControl();
-    syncLandingVisibility(note ? "detail" : "list");
+    syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
 
-    if (note && (!category || !collection)) {
-      const matchedNote = findNoteByPath(note);
+    if (route.type === "note-detail") {
+      const matchedNote = findNoteById(route.noteId);
 
       if (matchedNote) {
         category = matchedNote.category;
         collection = matchedNote.collection;
-      } else {
-        resolvedNote = null;
+        resolvedNote = window.NoteDetailRenderer.normalizeNotePath(matchedNote.path);
       }
     }
 
     await renderSelection({ category, collection });
-    updateArchiveLocation({ notePath: resolvedNote, replace: true });
+    if (route.type !== "landing") {
+      updateArchiveLocation({
+        notePath: resolvedNote,
+        replace: true,
+        archiveHome: route.type === "archive-home",
+      });
+    }
 
     if (resolvedNote && findNoteByPath(resolvedNote)) {
       await renderNoteDetail(resolvedNote, { skipHistory: true });
@@ -984,11 +1014,13 @@ ${footerMarkup}
     }
 
     event.preventDefault();
-    renderNoteDetail(decodeURIComponent(link.closest(".note-card").dataset.notePath));
+    renderNoteDetail(link.closest(".note-card").dataset.noteId);
   });
 
   window.addEventListener("archive:navigate", (event) => {
     const { category, collection } = event.detail;
+
+    dismissLandingForShellInteraction();
 
     if (archiveSearchInput()) {
       archiveSearchInput().value = "";

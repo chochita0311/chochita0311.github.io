@@ -72,13 +72,13 @@
 - Parent PRD [prd-0004-archive-navigation-and-label-polish.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
 - Current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - Current footer and control styles in [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css) and [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- Current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js) and [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
+- Current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js) and [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - Placement reference only in [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
 
 ## Likely Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)

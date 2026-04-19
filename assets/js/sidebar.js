@@ -6,17 +6,15 @@
   };
 
   function notesIndexPath() {
-    return window.location.pathname.includes("/pages/note/")
-      ? "../../assets/generated/archives-index.json"
-      : "assets/generated/archives-index.json";
+    return "/assets/generated/archives-index.json";
   }
 
   function categorySelectionFromLocation() {
-    const params = new URLSearchParams(window.location.search);
+    const route = window.ArchiveRoutes.parseCurrentLocation();
 
     return {
-      category: params.get("category"),
-      collection: params.get("collection"),
+      category: route.category,
+      collection: route.collection,
     };
   }
 
@@ -112,24 +110,7 @@ ${collectionMarkup}
       .join("");
 
     const groups = Array.from(mount.querySelectorAll(".sidebar__group"));
-    const isNotePage = window.location.pathname.includes("/pages/note/");
-
     const navigateArchive = ({ category, collection }) => {
-      if (isNotePage) {
-        const archiveUrl = new URL("../../index.html", window.location.href);
-
-        if (category) {
-          archiveUrl.searchParams.set("category", category);
-        }
-
-        if (collection) {
-          archiveUrl.searchParams.set("collection", collection);
-        }
-
-        window.location.href = archiveUrl.toString();
-        return;
-      }
-
       window.dispatchEvent(
         new CustomEvent("archive:navigate", {
           detail: {

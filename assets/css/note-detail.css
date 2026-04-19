@@ -27,10 +27,6 @@
   box-shadow: 0 16px 30px rgba(9, 11, 14, 0.18);
 }
 
-.note-detail-page {
-  padding-bottom: var(--space-24);
-}
-
 .note-detail--inline {
   display: grid;
   gap: var(--space-12);

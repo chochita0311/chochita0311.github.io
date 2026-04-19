@@ -27,7 +27,7 @@
 - Current implementation references:
   - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
   - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 
 ## Product Intent
 - Keep archive notes readable in the current list-first browse surface while adding a secondary grid view for denser scanning.

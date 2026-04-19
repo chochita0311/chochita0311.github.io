@@ -23,6 +23,7 @@
 - The landing hero uses a semi-transparent full-background video treatment sourced from `assets/landing-entry-main.mp4`.
 - Landing motion plays automatically when the landing becomes visible instead of being scrubbed by scroll progress.
 - The landing title animation repeats independently on a `20`-second cycle while the landing remains visible.
+- Shell interactions outside the landing surface, such as sidebar or topbar archive navigation, immediately bypass landing and continue in archive mode.
 - After the landing section is fully traversed, the existing archive list becomes the visible downstream browse state.
 - Clicking the top-left brand title `조치타의 잡동사니` on the root archive shell bypasses the landing state and opens the current archive list view directly.
 
@@ -55,6 +56,7 @@
 - Exit or transition behavior:
   - scrolling through the landing section progresses the background motion and hands off into the existing archive list
   - clicking the top-left brand title bypasses landing and resets directly into the current list view
+  - using sidebar or topbar archive navigation while landing is visible bypasses landing immediately and opens the requested archive state
 
 ## State Expectations
 
@@ -75,7 +77,7 @@
 
 - Parent PRD [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Current shell structure in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- Current archive initialization and brand reset behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- Current archive initialization and brand reset behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - Current list/detail state toggling in [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - Current layout ownership in [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css) and [note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
 - Structural reference in [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
@@ -84,7 +86,7 @@
 ## Likely Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
@@ -102,6 +104,7 @@
 - The landing title animation replays independently at a `20`-second interval while the landing is visible.
 - Reaching the end of the landing section reveals the existing archive list as the downstream state.
 - Clicking `조치타의 잡동사니` on the root archive shell opens the current list view directly instead of replaying landing.
+- Sidebar and topbar archive navigation do not leave the landing surface visible over the requested archive state.
 - If motion media fails, users can still read the landing content and reach the archive list.
 
 ## Regression Surfaces
@@ -126,3 +129,4 @@
 - `2026-04-19`: passed after landing-state interaction isolation was added and evaluation rerun confirmed root landing, brand bypass, and downstream archive handoff behavior
 - `2026-04-19`: landing media source changed again to `assets/landing-entry-main.mp4`, scroll-scrub playback was removed, and the landing returned to a full-background auto-playing treatment
 - `2026-04-19`: landing video playback was tuned to `0.8x` and the title animation was set to replay independently every `20` seconds while the landing stays visible
+- `2026-04-19`: shell navigation outside the landing surface was updated to bypass landing immediately so sidebar and topbar archive navigation no longer leave landing visible over archive states

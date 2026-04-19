@@ -65,14 +65,14 @@
 ## Dependencies
 
 - Existing archive-note data contract in [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
-- Existing archive rendering flow in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- Existing archive rendering flow in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - Existing shell and layout structure in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html) and [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 
 ## Likely Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
 - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 
 ## Pass Or Fail Checks
 

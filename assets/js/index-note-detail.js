@@ -86,13 +86,13 @@ function renderListFooterPanel() {
 function renderDetailFooterPanel(previousNote, nextNote, onNavigate) {
   archiveFooter().hidden = false;
   const previousMarkup = previousNote
-    ? `<a class="note-detail__nav note-detail__nav--previous" href="#" data-note-nav="${encodeURIComponent(previousNote.path)}">
+    ? `<a class="note-detail__nav note-detail__nav--previous" href="${window.ArchiveRoutes.buildNoteDetailPath(previousNote.id)}" data-note-nav="${String(previousNote.id)}">
 <span class="note-detail__nav-label">Previous Note</span>
 <span class="note-detail__nav-title">${window.NoteDetailRenderer.escapeHtml(previousNote.title)}</span>
 </a>`
     : '<div class="note-detail__nav note-detail__nav--previous note-detail__nav--disabled"><span class="note-detail__nav-label">Previous Note</span><span class="note-detail__nav-title">None</span></div>';
   const nextMarkup = nextNote
-    ? `<a class="note-detail__nav note-detail__nav--next" href="#" data-note-nav="${encodeURIComponent(nextNote.path)}">
+    ? `<a class="note-detail__nav note-detail__nav--next" href="${window.ArchiveRoutes.buildNoteDetailPath(nextNote.id)}" data-note-nav="${String(nextNote.id)}">
 <span class="note-detail__nav-label">Next Note</span>
 <span class="note-detail__nav-title">${window.NoteDetailRenderer.escapeHtml(nextNote.title)}</span>
 </a>`
@@ -109,7 +109,7 @@ ${nextMarkup}`;
     .forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        onNavigate(decodeURIComponent(link.dataset.noteNav));
+        onNavigate(Number.parseInt(link.dataset.noteNav, 10));
       });
     });
 }
@@ -133,11 +133,13 @@ function updateBreadcrumbs(path) {
   const segments = path.split("/");
   const category = segments[1] || "Notes";
   const collection = segments[2] || "Notes";
+  const categoryHref = window.ArchiveRoutes.buildCategoryPath(category);
+  const collectionHref = window.ArchiveRoutes.buildCollectionPath(category, collection);
 
   detailBreadcrumbs().innerHTML = `
-<a href="#">${window.NoteDetailRenderer.escapeHtml(category)}</a>
+<a href="${categoryHref}">${window.NoteDetailRenderer.escapeHtml(category)}</a>
 ${renderIcon(ICONS.navigation.breadcrumb)}
-<span>${window.NoteDetailRenderer.escapeHtml(collection)}</span>`;
+<a href="${collectionHref}">${window.NoteDetailRenderer.escapeHtml(collection)}</a>`;
 }
 
 window.IndexNoteDetail = {

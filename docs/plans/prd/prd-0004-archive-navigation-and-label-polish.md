@@ -38,11 +38,11 @@
   - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
 - Current implementation references:
   - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+  - [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
   - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
   - [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
   - [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-  - [note-detail-page.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/note-detail-page.js)
+  - [archive/note/index.html](/Users/jungsoo/Projects/chochita0311.github.io/archive/note/index.html)
   - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
   - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 

@@ -536,7 +536,10 @@ function normalizeNotePath(notePath) {
 
 async function loadNoteData(notePath, fetchPrefix = "") {
   const normalizedNotePath = normalizeNotePath(notePath);
-  const response = await fetch(`${fetchPrefix}${normalizedNotePath}`);
+  const resolvedPath = /^(?:[a-z]+:)?\//i.test(normalizedNotePath)
+    ? normalizedNotePath
+    : `${fetchPrefix || window.ArchiveRoutes?.siteRoot?.() || ""}${normalizedNotePath}`;
+  const response = await fetch(resolvedPath);
 
   if (!response.ok) {
     throw new Error(`Unable to load note: ${normalizedNotePath}`);

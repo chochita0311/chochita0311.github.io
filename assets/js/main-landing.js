@@ -25,7 +25,7 @@
   }
 
   function isRootArchivePath() {
-    return window.location.pathname === "/" || window.location.pathname.endsWith("/index.html");
+    return window.ArchiveRoutes.parseCurrentLocation().type === "landing";
   }
 
   function landingEntrySection() {
@@ -195,15 +195,11 @@
     tick();
   }
 
-  function isBypassRequested(url = currentArchiveUrl()) {
-    return url.searchParams.get("entry") === "archive";
-  }
-
   function isViewportEligible() {
     return window.innerWidth >= 1024;
   }
 
-  function shouldShow(url = currentArchiveUrl()) {
+  function shouldShow() {
     if (!isRootArchivePath()) {
       return false;
     }
@@ -212,12 +208,11 @@
       return false;
     }
 
-    if (dismissed || isBypassRequested(url)) {
+    if (dismissed) {
       return false;
     }
 
-    const blockingParams = ["category", "collection", "note", "view"];
-    return blockingParams.every((key) => !url.searchParams.has(key));
+    return true;
   }
 
   function playLandingVideo({ reset = false } = {}) {
@@ -263,9 +258,7 @@
       return;
     }
 
-    const url = new URL(window.location.href);
-    url.searchParams.set("entry", "archive");
-    window.history.replaceState({}, "", url);
+    window.history.replaceState({}, "", window.ArchiveRoutes.buildArchiveHomePath());
     dismissed = true;
     stopLandingTitleAnimation({ revealFullText: true });
 
@@ -287,9 +280,7 @@
       return;
     }
 
-    const url = new URL(window.location.href);
-    url.searchParams.set("entry", "archive");
-    window.history.replaceState({}, "", url);
+    window.history.replaceState({}, "", window.ArchiveRoutes.buildArchiveHomePath());
     dismissed = true;
 
     window.clearTimeout(exitTimer);
@@ -359,7 +350,6 @@
     bindControls,
     complete,
     dismissImmediately,
-    isBypassRequested,
     isDismissed: () => dismissed,
     isViewportEligible,
     setDismissed(value) {

@@ -69,7 +69,7 @@
 ## Dependencies
 
 - Parent PRD [prd-0004-archive-navigation-and-label-polish.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
-- Current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js), [note-detail-page.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/note-detail-page.js), and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
+- Current archive runtime in [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js), [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js), and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - Current taxonomy and topbar behavior in [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - Current generators in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs) and [generate-sitemap.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-sitemap.mjs)
 - Current content and contract docs in [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md), [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md), and [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/content/note/note-data-contract.md)
@@ -77,8 +77,8 @@
 ## Likely Affected Surfaces
 
 - `NOTES/` and former `CATEGORIES/`
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
-- [assets/js/note-detail-page.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/note-detail-page.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
 - [scripts/generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)

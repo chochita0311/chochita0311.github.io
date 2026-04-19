@@ -78,12 +78,12 @@
   - `feat-0002-numeric-source-note-ids-and-search-contract`
   - `feat-0004-static-search-index-foundation`
 - Existing archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- Existing archive and navigation behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js) and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
+- Existing archive and navigation behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js) and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 
 ## Likely Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
 - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)

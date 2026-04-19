@@ -22,6 +22,7 @@
   - the video should span the full landing content canvas as a background treatment
   - the video should auto-play when the landing is visible without scroll-driven scrubbing
   - the title animation should replay independently every `20` seconds while the landing remains visible
+  - shell navigation outside the landing surface should bypass landing immediately instead of leaving the landing layer visible over archive state changes
   - scrolling through the landing should hand off into the current archive list
   - clicking `조치타의 잡동사니` should bypass landing and open the current archive list directly
 - Parent feature:
@@ -50,9 +51,10 @@
 - Keep the landing media visually restrained so foreground content remains readable while covering the full landing canvas.
 - Start the landing media automatically when the landing is shown instead of tying playback to scroll position.
 - Replay the title animation on an independent `20`-second cycle while the landing remains visible.
+- Treat sidebar and topbar archive navigation as archive-mode interactions rather than as landing-owned actions.
 - After the landing section is fully traversed, reveal the existing archive list as the natural continuation of the page.
-- Only show the landing-first state on the root archive route without a bypass flag.
-- Add a deterministic bypass path so clicking the brand title on the root shell goes directly to the current archive list state.
+- Only show the landing-first state on the root archive route `/`.
+- Add a deterministic bypass path so clicking the brand title on the root shell goes directly to `/archive/`.
 - Preserve current archive reset behavior when bypassing to the list view.
 - Fail safely to a readable static landing hero if the video treatment cannot initialize.
 
@@ -60,14 +62,14 @@
 
 - Reworking archive list rendering, grid-card density, or note-detail layout
 - Replacing topbar labels or sidebar taxonomy behavior
-- Introducing new routes outside the current root archive shell
+- Introducing landing ownership outside `/` or changing the canonical archive route family owned by `prd-0006`
 - Full-page shell redesign or separate marketing homepage
 - Wide-screen spacing changes for the list and detail canvas
 
 ## Affected Surfaces
 
 - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
 - [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
 - [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
@@ -76,13 +78,12 @@
 ## State And Interaction Contract
 
 - Root-entry state:
-  - when `pathname` resolves to the root archive shell and no explicit bypass flag is present, the landing section is shown first
+  - when `pathname` resolves to `/`, the landing section is shown first
   - the archive list remains mounted downstream so a normal page scroll can reach it
 - Bypass-entry state:
-  - when an explicit archive-entry flag is present in the root archive URL, the page initializes directly into the archive list state and skips the landing hero
-  - use a root-only query flag such as `?entry=archive` so bypass behavior is deterministic and compatible with existing query parsing
+  - when the user enters `/archive/`, the page initializes directly into the archive list state and skips the landing hero
 - Brand-title behavior:
-  - clicking `조치타의 잡동사니` on the root archive shell navigates to the root archive shell with the bypass flag and resets archive filters and view state to the current default list behavior
+  - clicking `조치타의 잡동사니` on the root archive shell navigates to `/archive/` and resets archive filters and view state to the current default list behavior
 - Landing layout state:
   - the landing section height fills the current visible content canvas below the topbar
   - the landing section must not slide underneath the topbar
@@ -91,6 +92,9 @@
   - media starts automatically when the landing is shown and may loop while visible
 - Landing title state:
   - title animation may replay independently every `20` seconds while landing is visible
+- Shell navigation bypass state:
+  - sidebar or topbar archive navigation while landing is visible dismisses landing immediately
+  - the requested archive category or collection state renders without leaving the landing layer active
 - Scroll handoff state:
   - the landing section ends directly before the current archive list section
   - scrolling beyond the landing section exposes the archive list without requiring a second CTA-only interaction
@@ -99,7 +103,7 @@
 
 ## Data And Contract Assumptions
 
-- Root archive route already uses query parameters for archive state, so one additional root-only entry flag can be added without changing the broader routing model.
+- Landing ownership is limited to `/`, while archive list ownership belongs to `/archive/` and the broader archive route family.
 - The landing feature should use the owned runtime asset `assets/landing-entry-main.mp4`.
 - Archive list and note-detail initialization contracts remain owned by the current archive runtime and must not be redefined by landing code.
 - The landing section owns only root-entry presentation and handoff, not note-loading logic.
@@ -119,10 +123,12 @@
 - Motion behavior:
   - landing media auto-plays when visible and is not scrubbed by scroll
   - landing video playback is slowed to `0.8x`
+- Shell interaction behavior:
+  - non-landing shell navigation bypasses landing immediately and does not leave landing visually active over archive state changes
 - Handoff:
   - end of landing flows into the current archive list
 - Brand bypass:
-  - brand-title click initializes directly into the list view through the bypass route
+  - brand-title click initializes directly into the list view through `/archive/`
 - Resilience:
   - failed media still leaves a readable landing and accessible archive list
 
@@ -135,9 +141,9 @@
   - restraint of glow and motion treatment
 - Functional evaluation should inspect:
   - `/` landing initialization
-  - `?entry=archive` direct list initialization
+  - `/archive/` direct list initialization
   - brand-title bypass behavior
-  - scroll-scrubbed motion progression
+  - auto-playing landing motion behavior
   - landing-to-list handoff
   - safe fallback when media cannot initialize
 
@@ -150,3 +156,5 @@
 - `2026-04-18`: initial spec created from approved feat-0010 with root-only landing entry, scroll-scrubbed media, and brand-title bypass behavior locked
 - `2026-04-19`: updated again so the landing motion uses `assets/landing-entry-main.mp4`, auto-plays on visibility, and covers the full landing canvas as a background treatment
 - `2026-04-19`: updated so landing video playback runs at `0.8x` and title animation replays independently every `20` seconds while landing remains visible
+- `2026-04-19`: updated so sidebar and topbar archive navigation bypass landing immediately instead of leaving the landing surface active after archive-state navigation
+- `2026-04-19`: updated so landing bypass is owned by canonical `/archive/` entry routing instead of by a root-only `entry=archive` query flag

@@ -44,10 +44,102 @@ function latestArchiveDate(notes) {
   return dates.at(-1) || null;
 }
 
-function buildNoteUrl(notePath) {
-  const url = new URL("/pages/note/", SITE_URL);
-  url.search = new URLSearchParams({ note: notePath }).toString();
-  return url.toString();
+function encodeSegment(segment) {
+  return encodeURIComponent(String(segment ?? "").trim());
+}
+
+function buildAbsoluteUrl(pathname) {
+  return new URL(pathname, SITE_URL).toString();
+}
+
+function buildNoteUrl(noteId) {
+  return buildAbsoluteUrl(`/archive/note?id=${encodeSegment(noteId)}`);
+}
+
+function buildCategoryUrl(category) {
+  return buildAbsoluteUrl(`/archive/note?category=${encodeSegment(category)}`);
+}
+
+function buildCollectionUrl(category, collection) {
+  return buildAbsoluteUrl(
+    `/archive/note?category=${encodeSegment(category)}&collection=${encodeSegment(collection)}`,
+  );
+}
+
+function latestDateForNotes(notes) {
+  return latestArchiveDate(notes);
+}
+
+function groupedNotes(notes, keyBuilder) {
+  const groups = new Map();
+
+  for (const note of notes) {
+    const key = keyBuilder(note);
+
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+
+    groups.get(key).push(note);
+  }
+
+  return groups;
+}
+
+function buildCategoryEntries(notes) {
+  return [...groupedNotes(notes, (note) => note.category).entries()].map(([category, items]) => ({
+    loc: buildCategoryUrl(category),
+    lastmod: latestDateForNotes(items),
+  }));
+}
+
+function buildCollectionEntries(notes) {
+  return [...groupedNotes(notes, (note) => `${note.category}::${note.collection}`).entries()].map(
+    ([key, items]) => {
+      const [category, collection] = key.split("::");
+
+      return {
+        loc: buildCollectionUrl(category, collection),
+        lastmod: latestDateForNotes(items),
+      };
+    },
+  );
+}
+
+function dedupeEntries(entries) {
+  const seen = new Set();
+
+  return entries.filter((entry) => {
+    if (seen.has(entry.loc)) {
+      return false;
+    }
+
+    seen.add(entry.loc);
+    return true;
+  });
+}
+
+function sortEntries(entries) {
+  return [...entries].sort((left, right) => left.loc.localeCompare(right.loc));
+}
+
+function buildArchiveEntries(notes) {
+  return [
+    {
+      loc: buildAbsoluteUrl("/archive/"),
+      lastmod: latestArchiveDate(notes),
+    },
+    {
+      loc: buildAbsoluteUrl("/archive/note/"),
+      lastmod: latestArchiveDate(notes),
+    },
+    ...buildCategoryEntries(notes),
+    ...buildCollectionEntries(notes),
+    ...notes.map((note) => ({
+      loc: buildNoteUrl(note.id),
+      lastmod: normalizeDate(note.updated || note.created || note.date),
+    })),
+  ];
 }
 
 function buildUrlEntry({ loc, lastmod }) {
@@ -65,16 +157,15 @@ async function main() {
   const rawIndex = await readFile(ARCHIVE_INDEX_PATH, "utf8");
   const notes = JSON.parse(rawIndex);
   const homeLastmod = latestArchiveDate(notes);
-  const urls = [
-    {
-      loc: SITE_URL,
-      lastmod: homeLastmod,
-    },
-    ...notes.map((note) => ({
-      loc: buildNoteUrl(note.path),
-      lastmod: normalizeDate(note.updated || note.created || note.date),
-    })),
-  ];
+  const urls = sortEntries(
+    dedupeEntries([
+      {
+        loc: SITE_URL,
+        lastmod: homeLastmod,
+      },
+      ...buildArchiveEntries(notes),
+    ]),
+  );
 
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',

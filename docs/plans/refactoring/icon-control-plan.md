@@ -17,10 +17,10 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Design and developer documentation for icon usage
 - Current implementation points verified in this track:
   - `index.html`
-  - `pages/note/index.html`
+  - `archive/index.html`
+  - `archive/note/index.html`
   - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
-  - `assets/js/note-detail-page.js`
   - `assets/css/base.css`
 - Out of scope for this track:
   - Full SVG migration
@@ -55,10 +55,10 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Record both icon name and usage context.
 - Targets:
   - `index.html`
-  - `pages/note/index.html`
+  - `archive/index.html`
+  - `archive/note/index.html`
   - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
-  - `assets/js/note-detail-page.js`
 - Validation:
   - Generate a deduplicated list of icon names in current use.
   - Confirm each icon has at least one verified source location.
@@ -101,7 +101,6 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - New runtime-owned registry file under `assets/js/` or `assets/config/`
   - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
-  - `assets/js/note-detail-page.js`
 - Validation:
   - JS-rendered icons read from the shared registry.
   - Category fallback icon behavior remains intact.
@@ -122,7 +121,8 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Targets:
   - `assets/css/base.css`
   - `index.html`
-  - `pages/note/index.html`
+  - `archive/index.html`
+  - `archive/note/index.html`
   - Any new shared JS helper added for icon rendering
 - Validation:
   - One canonical icon class pattern exists.
@@ -143,10 +143,10 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
   - Do not fold unrelated content or layout edits into the migration.
 - Targets:
   - `index.html`
-  - `pages/note/index.html`
+  - `archive/index.html`
+  - `archive/note/index.html`
   - `assets/js/sidebar.js`
   - `assets/js/index-note-detail.js`
-  - `assets/js/note-detail-page.js`
 - Validation:
   - Local browser smoke check for archive and note pages.
   - Search confirms raw icon literals are minimized to the registry and any approved static exceptions.
@@ -185,9 +185,9 @@ Create one controlled icon system for the repo so icon choice, naming, accessibi
 - Documentation updates land in the same work cycle as the implementation changes they describe.
 - Validation status:
   - Completed on 2026-04-10.
-  - `node --check` passed for `assets/js/icons.js`, `assets/js/sidebar.js`, `assets/js/index-note-detail.js`, and `assets/js/note-detail-page.js`.
-  - Browser smoke checks passed for `http://127.0.0.1:4173/index.html` and `http://127.0.0.1:4173/pages/note/index.html?note=CATEGORIES/English/Langs%20Studio/Goals.md`.
-  - Console errors discovered during smoke testing exposed unrelated note-page/runtime path issues and were corrected in the same cycle because they blocked clean validation of the touched icon paths.
+  - `node --check` passed for `assets/js/icons.js`, `assets/js/sidebar.js`, and `assets/js/index-note-detail.js`.
+  - Browser smoke checks passed for the archive runtime surfaces that were active when the refactor was completed.
+  - Console errors discovered during smoke testing exposed unrelated runtime path issues and were corrected in the same cycle because they blocked clean validation of the touched icon paths.
 
 ## Intentional Deltas
 

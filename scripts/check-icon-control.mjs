@@ -3,7 +3,7 @@ import path from "node:path";
 
 const repoRoot = process.cwd();
 const runtimeRoots = ["index.html", "pages", "assets/js"];
-const rawIconOwners = new Set(["assets/js/icons.js", "index.html", "pages/note/index.html"]);
+const rawIconOwners = new Set(["assets/js/icons.js", "index.html"]);
 
 function walk(targetPath) {
   const absolutePath = path.join(repoRoot, targetPath);

@@ -8,7 +8,8 @@ Record the verified baseline icon inventory for the icon-control refactor track 
 
 - Google Material Symbols Outlined loaded from Google Fonts in:
   - `index.html`
-  - `pages/note/index.html`
+  - `archive/index.html`
+  - `archive/note/index.html`
 
 ## Verified Icon Names In Current Use
 
@@ -37,7 +38,15 @@ Record the verified baseline icon inventory for the icon-control refactor track 
   - note breadcrumbs
   - note action buttons
   - pagination buttons
-- `pages/note/index.html`
+- `archive/index.html`
+  - top navigation disclosure
+  - nested menu chevrons
+  - topbar search field
+  - footer links
+  - note breadcrumbs
+  - note action buttons
+  - pagination buttons
+- `archive/note/index.html`
   - top navigation disclosure
   - nested menu chevrons
   - topbar search field
@@ -50,8 +59,6 @@ Record the verified baseline icon inventory for the icon-control refactor track 
 - `assets/js/index-note-detail.js`
   - archive footer pagination
   - inline detail breadcrumbs
-- `assets/js/note-detail-page.js`
-  - note page breadcrumbs
 
 ## Notes
 

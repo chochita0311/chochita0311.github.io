@@ -73,7 +73,7 @@
 
 ## Likely Affected Surfaces
 
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive-content.js)
+- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
 - [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
 - [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
 - generated static search-index asset under `assets/generated/`

@@ -3,18 +3,20 @@
 ## Runtime Shape
 
 - The site is a static web app built with HTML, CSS, and JavaScript.
-- `index.html` is the published desktop archive shell.
+- `index.html` is the published root landing shell.
+- `archive/index.html` and `archive/note/index.html` are the static archive entry shells for canonical archive browse paths.
 - `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `NOTES/**/*.md`.
 - `assets/css/app.css` is the shell entry stylesheet imported by `index.html`.
 - `assets/generated/archives-index.json` is the generated runtime archive index derived from `NOTES/`.
 - `assets/generated/archives-search-index.json` is the generated reverse search index derived from Markdown title, tags, and body content.
-- `sitemap.xml` is the generated crawl-discovery file for the home page and standalone note URLs.
+- `sitemap.xml` is the generated crawl-discovery file for the root landing plus canonical archive browse and note-detail URLs.
 - `robots.txt` is the crawl-entry file that keeps the published sitemap location discoverable to search crawlers.
+- `assets/js/archive/route.js` owns canonical archive path parsing and URL generation for the browser runtime.
 - `assets/js/sidebar.js` renders the left category rail from the generated note index.
 - `assets/js/topbar.js` renders the topbar notes taxonomy menu from the generated note index.
 - `assets/js/main-landing.js` owns the landing-first shell lifecycle for the archive entry view.
-- `assets/js/archive-search.js` owns shared archive search control and execution orchestration.
-- `assets/js/archive-content.js` renders archive and collection note lists from the generated note index.
+- `assets/js/archive/search.js` owns shared archive search control and execution orchestration.
+- `assets/js/archive/content.js` renders archive and collection note lists from the generated note index.
 - `assets/js/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
 - `assets/css/` owns the current screen through extracted token, base, semantic, layout, and component layers.
 - The published shell no longer depends on Tailwind runtime output.
@@ -33,16 +35,18 @@
 ## Main Paths
 
 - `index.html`
+- `archive/`
 - `assets/generated/archives-index.json`
 - `assets/generated/archives-search-index.json`
 - `sitemap.xml`
 - `robots.txt`
+- `assets/js/archive/route.js`
 - `assets/js/sidebar.js`
 - `assets/js/topbar.js`
 - `assets/js/main-landing.js`
-- `assets/js/archive-search.js`
+- `assets/js/archive/search.js`
 - `assets/js/icons.js`
-- `assets/js/archive-content.js`
+- `assets/js/archive/content.js`
 - `assets/css/tokens.css`
 - `assets/css/semantic.css`
 - `assets/css/base.css`
@@ -60,6 +64,7 @@
 - Keep the visible archive model aligned to `NOTES/<category>/<collection>/<note>.md`.
 - Treat Markdown files as the only durable note content source.
 - Treat `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` as generated runtime output, not hand-edited source content.
+- Treat `archive/index.html` and `archive/note/index.html` as owned runtime entry files aligned to the canonical archive route contract.
 - Treat `sitemap.xml` as generated output aligned to the published URL shape, not hand-edited source content.
 - Keep `robots.txt` minimal and stable unless crawl restrictions or sitemap location change.
 - Keep the published shell desktop-first until product scope explicitly changes.
