@@ -13,6 +13,7 @@
     clearSidebarSelection,
     completeLanding,
     dismissLandingImmediately,
+    ensureArchiveReady,
     fallbackSearchFilters,
     fallbackSearchPattern,
     getArchiveState,
@@ -195,12 +196,21 @@
       });
     }
 
-    function submitSearchValue(value, { fromLanding = false, fromTopbar = false } = {}) {
+    async function submitSearchValue(value, { fromLanding = false, fromTopbar = false } = {}) {
       window.clearTimeout(debounceTimer);
       const nextQuery = value.trim();
 
       if (fromLanding) {
         onLandingSearchPending(Boolean(nextQuery));
+      }
+
+      if (fromLanding && !nextQuery) {
+        onLandingSearchActive(false);
+        return;
+      }
+
+      if (nextQuery) {
+        await ensureArchiveReady?.();
       }
 
       if (fromTopbar && nextQuery && isLandingActive()) {
@@ -221,7 +231,7 @@
         window.clearTimeout(debounceTimer);
         const nextValue = event.target.value;
         debounceTimer = window.setTimeout(() => {
-          submitSearchValue(nextValue, { fromTopbar: true });
+          void submitSearchValue(nextValue, { fromTopbar: true });
         }, DEFAULT_SEARCH_DEBOUNCE_MS);
       });
 
@@ -238,11 +248,11 @@
           return;
         }
 
-        submitSearchValue(event.currentTarget.value, { fromLanding: true });
+        void submitSearchValue(event.currentTarget.value, { fromLanding: true });
       });
 
       getLandingSubmit()?.addEventListener("click", () => {
-        submitSearchValue(getLandingInput()?.value || "", { fromLanding: true });
+        void submitSearchValue(getLandingInput()?.value || "", { fromLanding: true });
       });
 
       controlBound = true;

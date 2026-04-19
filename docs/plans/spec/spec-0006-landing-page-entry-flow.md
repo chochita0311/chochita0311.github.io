@@ -90,6 +90,8 @@
 - Landing media state:
   - video is positioned behind the hero content across the full landing canvas
   - media starts automatically when the landing is shown and may loop while visible
+  - landing shell visibility must not wait on archive note-index or search-index fetch completion
+  - archive note/search data may preload in the background while landing is visible so landing handoff and search can respond promptly
 - Landing title state:
   - title animation may replay independently every `20` seconds while landing is visible
 - Shell navigation bypass state:
@@ -107,6 +109,7 @@
 - The landing feature should use the owned runtime asset `assets/landing-entry-main.mp4`.
 - Archive list and note-detail initialization contracts remain owned by the current archive runtime and must not be redefined by landing code.
 - The landing section owns only root-entry presentation and handoff, not note-loading logic.
+- Archive note-index and search-index loading may preload in the background, as long as landing shell visibility on `/` does not wait for their completion.
 
 ## Acceptance Mapping
 
@@ -158,3 +161,4 @@
 - `2026-04-19`: updated so landing video playback runs at `0.8x` and title animation replays independently every `20` seconds while landing remains visible
 - `2026-04-19`: updated so sidebar and topbar archive navigation bypass landing immediately instead of leaving the landing surface active after archive-state navigation
 - `2026-04-19`: updated so landing bypass is owned by canonical `/archive/` entry routing instead of by a root-only `entry=archive` query flag
+- `2026-04-19`: updated so landing shell boot is independent from archive data boot, allowing `/` to render landing immediately while archive note/search data may preload in the background

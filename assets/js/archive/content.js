@@ -62,6 +62,8 @@
   let archiveRenderRequestId = 0;
   let viewToggleBound = false;
   let pageSizeBound = false;
+  let archiveBootstrapPromise = null;
+  let archiveRuntimeReady = false;
   const LANDING_SEARCH_PLACEHOLDER_DEFAULT = "노트, 프로젝트, 디자인 기록을 검색해보세요";
   const LANDING_SEARCH_PLACEHOLDER_PENDING = "찾는 중...";
   let archiveSearch = null;
@@ -181,6 +183,19 @@
     }
 
     mainLanding?.dismissImmediately();
+  }
+
+  function initializeLandingShellState() {
+    const route = window.ArchiveRoutes.parseCurrentLocation();
+
+    if (mainLanding) {
+      mainLanding.setDismissed(route.type !== "landing");
+      mainLanding.bindControls();
+    }
+
+    syncViewToggleButtons();
+    syncPageSizeControl();
+    syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
   }
 
   async function loadNotesIndex() {
@@ -587,6 +602,66 @@ ${footerMarkup}
     archiveSearch?.bindControls();
   }
 
+  function createArchiveSearchController() {
+    if (archiveSearch) {
+      return archiveSearch;
+    }
+
+    archiveSearch = archiveSearchApi?.createController({
+      beginRenderRequest() {
+        archiveRenderRequestId += 1;
+        return archiveRenderRequestId;
+      },
+      clearActiveTag,
+      clearSidebarSelection,
+      completeLanding: () => mainLanding?.complete(),
+      dismissLandingImmediately: () => mainLanding?.dismissImmediately(),
+      ensureArchiveReady: ensureArchiveRuntimeReady,
+      fallbackSearchFilters: FALLBACK_SEARCH_FILTERS,
+      fallbackSearchPattern: FALLBACK_SEARCH_PATTERN,
+      getArchiveState() {
+        archiveState.__renderRequestId = () => archiveRenderRequestId;
+        return archiveState;
+      },
+      getLandingInput: landingSearchInput,
+      getLandingSubmit: landingSearchSubmit,
+      getTopbarInput: archiveSearchInput,
+      isLandingActive: () => document.body.classList.contains("has-landing-entry"),
+      onLandingSearchActive: setLandingSearchActive,
+      onLandingSearchPending: setLandingSearchPending,
+      renderArchiveEmptyState,
+      renderArchivePage,
+      renderPopularTags,
+      renderSelection,
+      scopeLabel: searchScopeLabel,
+      sortNotes,
+      updateArchiveLocation,
+    });
+
+    archiveSearch?.bindControls();
+    return archiveSearch;
+  }
+
+  async function ensureArchiveRuntimeReady() {
+    if (archiveRuntimeReady) {
+      return;
+    }
+
+    if (!archiveBootstrapPromise) {
+      archiveBootstrapPromise = Promise.all([loadNotesIndex(), loadSearchIndex()])
+        .then(() => {
+          archiveRuntimeReady = true;
+          renderPopularTags();
+        })
+        .catch((error) => {
+          archiveBootstrapPromise = null;
+          throw error;
+        });
+    }
+
+    await archiveBootstrapPromise;
+  }
+
   function compareDatesDesc(left, right) {
     const leftDate = left || "";
     const rightDate = right || "";
@@ -944,9 +1019,10 @@ ${footerMarkup}
 
   function bindBrandResetLinks() {
     document.querySelectorAll(".brand-title").forEach((link) => {
-      link.addEventListener("click", (event) => {
+      link.addEventListener("click", async (event) => {
         event.preventDefault();
         window.history.pushState({}, "", window.ArchiveRoutes.buildArchiveHomePath());
+        await ensureArchiveRuntimeReady();
         archiveState.viewMode = "list";
         archiveState.pageSize = defaultPageSizeForView("list");
         archiveState.page = 1;
@@ -968,6 +1044,8 @@ ${footerMarkup}
   }
 
   async function initializeArchiveFromLocation() {
+    await ensureArchiveRuntimeReady();
+
     const route = window.ArchiveRoutes.parseCurrentLocation();
     let category = route.category;
     let collection = route.collection;
@@ -975,9 +1053,6 @@ ${footerMarkup}
 
     archiveState.viewMode = route.viewMode;
     archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
-    if (mainLanding) {
-      mainLanding.setDismissed(route.type !== "landing");
-    }
     syncViewToggleButtons();
     syncPageSizeControl();
     syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
@@ -1017,10 +1092,11 @@ ${footerMarkup}
     renderNoteDetail(link.closest(".note-card").dataset.noteId);
   });
 
-  window.addEventListener("archive:navigate", (event) => {
+  window.addEventListener("archive:navigate", async (event) => {
     const { category, collection } = event.detail;
 
     dismissLandingForShellInteraction();
+    await ensureArchiveRuntimeReady();
 
     if (archiveSearchInput()) {
       archiveSearchInput().value = "";
@@ -1032,54 +1108,25 @@ ${footerMarkup}
   });
 
   window.addEventListener("popstate", () => {
-    initializeArchiveFromLocation();
+    void initializeArchiveFromLocation();
   });
 
   window.addEventListener("archive:landing-state", () => {
     setArchiveListInteractive(!document.body.classList.contains("has-landing-entry"));
   });
 
-  Promise.all([loadNotesIndex(), loadSearchIndex()])
-    .then(() => {
-      mainLanding?.bindControls();
-      renderPopularTags();
-      bindBrandResetLinks();
-      archiveSearch = archiveSearchApi?.createController({
-        beginRenderRequest() {
-          archiveRenderRequestId += 1;
-          return archiveRenderRequestId;
-        },
-        clearActiveTag,
-        clearSidebarSelection,
-        completeLanding: () => mainLanding?.complete(),
-        dismissLandingImmediately: () => mainLanding?.dismissImmediately(),
-        fallbackSearchFilters: FALLBACK_SEARCH_FILTERS,
-        fallbackSearchPattern: FALLBACK_SEARCH_PATTERN,
-        getArchiveState() {
-          archiveState.__renderRequestId = () => archiveRenderRequestId;
-          return archiveState;
-        },
-        getLandingInput: landingSearchInput,
-        getLandingSubmit: landingSearchSubmit,
-        getTopbarInput: archiveSearchInput,
-        isLandingActive: () => document.body.classList.contains("has-landing-entry"),
-        onLandingSearchActive: setLandingSearchActive,
-        onLandingSearchPending: setLandingSearchPending,
-        renderArchiveEmptyState,
-        renderArchivePage,
-        renderPopularTags,
-        renderSelection,
-        scopeLabel: searchScopeLabel,
-        sortNotes,
-        updateArchiveLocation,
-      });
-      initializeArchiveFromLocation();
-    })
-    .catch(() => {
+  initializeLandingShellState();
+  bindBrandResetLinks();
+  createArchiveSearchController();
+  void ensureArchiveRuntimeReady();
+
+  if (window.ArchiveRoutes.parseCurrentLocation().type !== "landing") {
+    void initializeArchiveFromLocation().catch(() => {
       renderArchiveEmptyState(
         "Archive unavailable",
         "Generate the notes index to browse Markdown content from the static archive.",
         "Runtime",
       );
     });
+  }
 })();

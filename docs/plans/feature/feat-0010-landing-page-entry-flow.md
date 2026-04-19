@@ -48,6 +48,7 @@
 ## User-Visible Outcome
 
 - Users arriving at `/` see a quieter, motion-backed landing hero inside the existing shell, with the motion covering the full landing content canvas behind the primary copy and playing automatically while the landing is visible.
+- Landing-first shell state should become visible immediately on root entry without waiting for archive note or search index fetch completion; archive note/search data may preload in the background so landing handoff and search stay responsive.
 
 ## Entry And Exit
 
@@ -130,3 +131,4 @@
 - `2026-04-19`: landing media source changed again to `assets/landing-entry-main.mp4`, scroll-scrub playback was removed, and the landing returned to a full-background auto-playing treatment
 - `2026-04-19`: landing video playback was tuned to `0.8x` and the title animation was set to replay independently every `20` seconds while the landing stays visible
 - `2026-04-19`: shell navigation outside the landing surface was updated to bypass landing immediately so sidebar and topbar archive navigation no longer leave landing visible over archive states
+- `2026-04-19`: landing shell boot was separated from archive data boot so root landing can render immediately, while archive note and search data may preload in the background for faster landing handoff and search responsiveness
