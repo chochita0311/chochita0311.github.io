@@ -7,7 +7,7 @@
 - Type: `product`
 - Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
-- Updated: `2026-04-19`
+- Updated: `2026-04-20`
 
 ## Goal
 
@@ -100,3 +100,4 @@
 
 - `2026-04-18`: initial draft created from approved PRD-0005
 - `2026-04-19`: passed after large-screen spacing and list/detail left-edge alignment were verified through design and functional evaluation
+- `2026-04-20`: desktop-and-up shell sizing was adjusted again so the content canvas centers within the remaining area after the fixed sidebar instead of feeling left-pinned on very wide monitors

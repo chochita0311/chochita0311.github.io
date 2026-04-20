@@ -8,7 +8,7 @@
 - Parent Feature: [feat-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0001-archive-grid-view-replacement.md)
 - Parent PRD: [prd-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
 - Created: `2026-04-11`
-- Updated: `2026-04-11`
+- Updated: `2026-04-20`
 
 ## Source Set
 
@@ -76,7 +76,8 @@
   - grid becomes active only after explicit user selection
 - Responsive:
   - list view stays single-column across widths
-  - grid view uses one column on narrow widths
+  - mobile widths hide the view toggle and keep list view as the only browse mode
+  - grid view uses one column on narrow non-mobile widths where the toggle remains available
   - grid view uses two columns on medium widths where space allows
   - grid view uses three columns on wide desktop widths where the current content width supports it
 - Card content:
@@ -142,3 +143,4 @@
 
 - `2026-04-11`: executable spec generated from approved feature boundary
 - `2026-04-11`: rewritten in place after the earlier replacement-only interpretation was classified as a planning gap
+- `2026-04-20`: mobile behavior tightened so the archive hides the view toggle and normalizes to list mode instead of exposing an awkward one-column grid toggle state

@@ -1,3 +1,23 @@
+/* Shared component typography lives here so semantic.css can stay token-only. */
+.brand-title,
+.archive-hero__title,
+.profile-card__name {
+  letter-spacing: var(--tracking-title);
+}
+
+.section-label,
+.nav-link,
+.nav-menu__button,
+.nav-menu__item,
+.nav-menu__link,
+.profile-card__meta,
+.note-label,
+.archive-footer__page,
+.archive-footer__credit,
+.tag-chip {
+  text-transform: uppercase;
+}
+
 .brand-title {
   display: inline-flex;
   align-items: center;
@@ -21,6 +41,17 @@
   line-height: 1.5;
   cursor: pointer;
   transition: color var(--transition-fast);
+}
+
+.section-label,
+.nav-link,
+.nav-menu__button,
+.profile-card__meta,
+.nav-menu__item,
+.nav-menu__link {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
 }
 
 .nav-link:hover,
@@ -609,6 +640,12 @@
   margin-bottom: var(--space-3);
 }
 
+.note-label {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-label);
+}
+
 .note-label--accent {
   padding: 0.125rem var(--space-2);
   border-radius: var(--radius-default);
@@ -816,15 +853,25 @@
   top: 50%;
   right: calc(100% + var(--space-4));
   transform: translateY(-50%);
-  letter-spacing: 0.2em;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-page);
   line-height: 1.5;
   white-space: nowrap;
 }
 
 .archive-footer__credit {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: right;
+}
+
+.tag-chip {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: normal;
 }
 
 .pagination-button {
@@ -872,7 +919,7 @@
   }
 
   .archive-view-toggle {
-    width: auto;
+    display: none;
   }
 
   .archive-page-size {

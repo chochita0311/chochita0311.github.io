@@ -9,7 +9,7 @@
 - Parent Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
 - Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
-- Updated: `2026-04-18`
+- Updated: `2026-04-20`
 
 ## Source Set
 
@@ -106,3 +106,4 @@
 ## Continuity Notes
 
 - `2026-04-18`: initial spec created from approved feat-0011 with current-breakpoint spacing updates and list/detail parity locked
+- `2026-04-20`: large-monitor shell centering was tightened so `archive-main` no longer stays left-clamped by a desktop max-width and the list/detail canvas centers within the post-sidebar content region on non-mobile layouts

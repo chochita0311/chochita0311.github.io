@@ -7,7 +7,7 @@
 - Type: `product`
 - Parent PRD: [prd-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
 - Created: `2026-04-11`
-- Updated: `2026-04-11`
+- Updated: `2026-04-20`
 
 ## Goal
 
@@ -53,6 +53,8 @@
   - archive notes render in the stable list-first browse layout
 - Alternate:
   - user can switch to a stable grid card layout
+- Mobile:
+  - archive stays in list mode and does not expose the list-grid toggle
 - Loading:
   - existing archive loading behavior remains intact unless current implementation has no separate loading state
 - Empty:
@@ -110,3 +112,4 @@
 - `2026-04-11`: entered execution loop with run-20260411-01 and spec-0001
 - `2026-04-11`: execution exposed a planning gap because list should remain default and grid should be a toggle
 - `2026-04-11`: corrected in place and passed after rebuilt toggle-based implementation and re-evaluation
+- `2026-04-20`: mobile browse was narrowed to list-only so the archive no longer shows an oversized toggle for a one-column grid state on small screens

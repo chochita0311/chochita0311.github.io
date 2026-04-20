@@ -82,11 +82,13 @@
 .archive-main {
   display: flex;
   flex-direction: column;
-  max-width: var(--shell-content-max);
+  width: calc(100% - var(--shell-sidebar-width));
+  max-width: none;
   min-height: 100vh;
   --archive-main-pad-x: var(--space-12);
   margin-left: var(--shell-sidebar-width);
   padding: var(--shell-topbar-height) var(--archive-main-pad-x) var(--space-24);
+  box-sizing: border-box;
 }
 
 .archive-content-view,
@@ -94,6 +96,17 @@
   width: min(100%, 68rem);
   margin-right: auto;
   margin-left: auto;
+}
+
+.archive-hero--sticky {
+  position: sticky;
+  top: var(--shell-topbar-height);
+  z-index: 10;
+  padding-bottom: var(--space-6);
+  background: rgb(17, 19, 23);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(67, 70, 83, 0.18);
+  box-shadow: 0 16px 30px rgba(9, 11, 14, 0.18);
 }
 
 .landing-entry {
@@ -514,6 +527,13 @@ body.landing-entry-exit .landing-entry {
   }
 }
 
+@media (min-width: 1200px) {
+  .archive-content-view,
+  .archive-footer {
+    width: min(calc(100% - (var(--space-12) * 2)), 74rem);
+  }
+}
+
 @media (max-width: 1023px) {
   .topbar {
     padding: 0 var(--space-6);
@@ -535,6 +555,7 @@ body.landing-entry-exit .landing-entry {
   }
 
   .archive-main {
+    width: auto;
     margin-left: 0;
     --archive-main-pad-x: var(--space-6);
     padding: var(--space-12) var(--space-6) var(--space-16);

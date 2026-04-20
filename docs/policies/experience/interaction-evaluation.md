@@ -80,6 +80,11 @@
 - Route interpretation, first-state visibility, and destination rendering should converge as one coherent handoff rather than exposing a frame where the old first state briefly competes with the chosen destination.
 - Evaluators should test narrow and wide viewport cases, direct-link entry, and shell-driven navigation to confirm that a hidden landing or overlay does not resurface because dismissal state lags behind routing or render order.
 
+### 13. Breakpoint Control-State Compatibility
+- If a responsive breakpoint hides or removes a mode switch, toggle, or similar state-changing control, the interface must also normalize into a state that remains supported without that control.
+- A hidden control must not leave the user stranded in a now-invisible or no-longer-supported mode merely because URL state, previous viewport state, or persisted runtime state still points there.
+- Evaluators should resize into and out of the affected breakpoint and also test direct-link entry with stateful query parameters to confirm that the visible controls and active runtime mode still match.
+
 ## How To Classify Findings
 - Usually classify as `implementation bug` when the spec already requires stable transitions, continuity, or no-leak behavior.
 - Usually classify as `spec gap` when the spec failed to define how view changes, loading behavior, or navigation continuity should work.

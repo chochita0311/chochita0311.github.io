@@ -36,6 +36,7 @@
     grid: 6,
   };
   const DEFAULT_DOCUMENT_TITLE = document.title;
+  const MOBILE_LIST_ONLY_MAX_WIDTH = 767;
   const mainLanding = window.MainLanding;
   const archiveSearchApi = window.ArchiveSearch;
   const archiveState = {
@@ -254,11 +255,23 @@
   }
 
   function pageSizeOptionsForView(viewMode) {
-    return VIEW_PAGE_SIZES[viewMode] || VIEW_PAGE_SIZES.list;
+    return VIEW_PAGE_SIZES[normalizeArchiveViewMode(viewMode)] || VIEW_PAGE_SIZES.list;
   }
 
   function defaultPageSizeForView(viewMode) {
-    return DEFAULT_PAGE_SIZE_BY_VIEW[viewMode] || DEFAULT_PAGE_SIZE_BY_VIEW.list;
+    return DEFAULT_PAGE_SIZE_BY_VIEW[normalizeArchiveViewMode(viewMode)] || DEFAULT_PAGE_SIZE_BY_VIEW.list;
+  }
+
+  function isMobileListOnlyViewport() {
+    return window.innerWidth <= MOBILE_LIST_ONLY_MAX_WIDTH;
+  }
+
+  function normalizeArchiveViewMode(viewMode) {
+    if (isMobileListOnlyViewport()) {
+      return "list";
+    }
+
+    return viewMode === "grid" ? "grid" : "list";
   }
 
   function prettifyTag(tag) {
@@ -357,7 +370,7 @@ ${footerMarkup}
       return;
     }
 
-    noteList.dataset.viewMode = archiveState.viewMode;
+    noteList.dataset.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
   }
 
   function syncPageSizeControl() {
@@ -394,7 +407,7 @@ ${footerMarkup}
 
   function syncViewToggleButtons() {
     archiveViewButtons().forEach((button) => {
-      const isActive = button.dataset.archiveView === archiveState.viewMode;
+      const isActive = button.dataset.archiveView === normalizeArchiveViewMode(archiveState.viewMode);
 
       button.classList.toggle("archive-view-toggle__button--active", isActive);
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
@@ -402,12 +415,14 @@ ${footerMarkup}
   }
 
   function updateViewMode(mode, { replaceHistory = false } = {}) {
-    if (mode !== "list" && mode !== "grid") {
+    const normalizedMode = normalizeArchiveViewMode(mode);
+
+    if (normalizedMode !== "list" && normalizedMode !== "grid") {
       return;
     }
 
-    archiveState.viewMode = mode;
-    archiveState.pageSize = defaultPageSizeForView(mode);
+    archiveState.viewMode = normalizedMode;
+    archiveState.pageSize = defaultPageSizeForView(normalizedMode);
     archiveState.page = 1;
     syncViewToggleButtons();
     syncPageSizeControl();
@@ -750,6 +765,7 @@ ${footerMarkup}
   }
 
   function renderArchivePage() {
+    archiveState.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
     document.title = DEFAULT_DOCUMENT_TITLE;
     window.IndexNoteDetail.setArchiveMode("list");
     syncLandingVisibility("list");
@@ -776,6 +792,7 @@ ${footerMarkup}
 
   function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
     archiveRenderRequestId += 1;
+    archiveState.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
     archiveState.notes = [];
     archiveState.page = 1;
     archiveState.activeNotePath = null;
@@ -1089,7 +1106,7 @@ ${footerMarkup}
     let collection = route.collection;
     let resolvedNote = null;
 
-    archiveState.viewMode = route.viewMode;
+    archiveState.viewMode = normalizeArchiveViewMode(route.viewMode);
     archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
     syncViewToggleButtons();
     syncPageSizeControl();
@@ -1147,6 +1164,14 @@ ${footerMarkup}
 
   window.addEventListener("popstate", () => {
     void initializeArchiveFromLocation();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isMobileListOnlyViewport() || archiveState.viewMode === "list") {
+      return;
+    }
+
+    updateViewMode("list", { replaceHistory: true });
   });
 
   window.addEventListener("archive:landing-state", () => {

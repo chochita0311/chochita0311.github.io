@@ -20,6 +20,11 @@
 - `assets/js/index-note-detail.js` owns note-detail utility interactions such as breadcrumb handoff, copy-body action wiring, and table-of-contents focus behavior.
 - `assets/js/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
 - `assets/css/` owns the current screen through extracted token, base, semantic, layout, and component layers.
+- `assets/css/tokens.css` owns raw scales and reusable primitive values such as spacing, color bases, radius, typography scale, and shell dimensions.
+- `assets/css/semantic.css` owns semantic variable mapping only, such as page-role colors and surfaces derived from tokens.
+- `assets/css/layouts.css` owns shell, page, and responsive layout structure, including shared archive canvas sizing and sticky shell regions.
+- `assets/css/components.css` owns reusable UI selectors and shared component typography behavior.
+- `assets/css/note-detail.css` owns note-detail-specific presentation and should not redefine shared archive shell layout.
 - The published shell no longer depends on Tailwind runtime output.
 - Future browse, search, tag, and bookmark flows should consume a generated note index rather than hand-maintained UI-only data.
 
