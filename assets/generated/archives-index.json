@@ -340,73 +340,349 @@
     "path": "NOTES/English/Langs Studio/Chores and Cleaning.md"
   },
   {
-    "id": 21,
-    "title": "@Async & Thread Pool",
-    "summary": "Notes and references on Java concurrency, Spring @Async usage, and rejected execution handling with thread pools.",
+    "id": 36,
+    "title": "MySQL Index and Query Planning",
+    "summary": "MySQL에서 인덱스 활용 조건, `GROUP BY` 정렬 비용, 부분 문자열 검색 전략을 실행 계획 관점에서 정리한 노트.",
     "tags": [
-      "java",
-      "concurrency",
-      "async",
-      "thread-pool",
-      "spring"
+      "technology",
+      "database",
+      "mysql",
+      "indexing",
+      "query-optimization"
     ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "DATABASE",
+    "path": "NOTES/Technology/DATABASE/MySQL Index and Query Planning.md"
+  },
+  {
+    "id": 37,
+    "title": "Call by Value",
+    "summary": "Java가 항상 call by value인 이유와 객체를 넘길 때 call by reference처럼 보이는 이유를 예제로 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/@Async & Thread Pool.md"
+    "path": "NOTES/Technology/JAVA/Call By Value.md"
+  },
+  {
+    "id": 43,
+    "title": "HashTable vs. ConcurrentHashMap",
+    "summary": "`Hashtable`과 `ConcurrentHashMap`의 동시성 모델 차이와 실무에서 `ConcurrentHashMap`이 기본 선택이 되는 이유를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/HashTable vs. ConcurrentHashMap.md"
+  },
+  {
+    "id": 44,
+    "title": "Initialize New HashMap",
+    "summary": "HashMap 초기화 방식을 mutable과 immutable 관점에서 나누고 double-brace initialization을 피해야 하는 이유를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Initialize New HashMap.md"
+  },
+  {
+    "id": 39,
+    "title": "Java Email Validation",
+    "summary": "Java에서 이메일 형식을 regex로 검증할 때의 범위, 한계, 실제 유효성 확인과의 차이를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Email Validation.md"
+  },
+  {
+    "id": 40,
+    "title": "Java File IO Basics",
+    "summary": "Java 파일 입출력에서 try-with-resources, `Files` API, 디렉터리 생성과 자원 정리의 기본 원칙을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java File IO Basics.md"
+  },
+  {
+    "id": 42,
+    "title": "Java File Size in Bytes",
+    "summary": "Java에서 파일 크기를 byte 단위로 구하는 대표 방법과 새 코드에서 `Files.size()`를 기본으로 보는 이유를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java File Size in Bytes.md"
+  },
+  {
+    "id": 47,
+    "title": "Java final Keyword",
+    "summary": "`final`이 변수 재할당 제한, 메서드 오버라이드 금지, 클래스 확장 금지에 각각 어떤 의미를 가지는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java final keyword.md"
+  },
+  {
+    "id": 41,
+    "title": "Java Generics Basics",
+    "summary": "Java generics의 기본 개념, 타입 안전성, wildcard와 type erasure까지 복습용으로 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Generics Basics.md"
+  },
+  {
+    "id": 45,
+    "title": "Java Inner Interfaces",
+    "summary": "Java 내부 인터페이스가 캡슐화와 API 경계 표현에 어떻게 쓰이는지와 언제 top-level 타입으로 분리해야 하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Inner Interfaces.md"
+  },
+  {
+    "id": 51,
+    "title": "Java Records",
+    "summary": "Java record가 줄여주는 보일러플레이트와 record를 데이터 캐리어에 우선 적용하는 이유를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Records.md"
+  },
+  {
+    "id": 52,
+    "title": "Java Reflection Tradeoffs",
+    "summary": "Java Reflection의 장점과 성능·안전성 비용, 직접 사용 범위를 어떻게 제한할지 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Reflection Tradeoffs.md"
+  },
+  {
+    "id": 54,
+    "title": "Java Stream Pitfalls",
+    "summary": "Java Stream에서 `peek()` 남용과 `Collectors.toMap()` 충돌 처리처럼 자주 실수하는 지점을 예제와 함께 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Stream Pitfalls.md"
+  },
+  {
+    "id": 56,
+    "title": "Java Switch and Pattern Matching",
+    "summary": "전통적인 switch가 switch expression과 pattern matching으로 확장된 흐름과 실무 주의점을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Switch and Pattern Matching.md"
+  },
+  {
+    "id": 57,
+    "title": "Java Varargs",
+    "summary": "Java varargs의 편의성, 배열 기반 구현 특성, 오버로딩과 성능 주의점을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Java Varargs.md"
+  },
+  {
+    "id": 38,
+    "title": "JVM DNS Cache TTL",
+    "summary": "JVM DNS cache와 TTL 설정이 주소 갱신 반영 시간, failover, 외부 의존성 장애 대응에 어떤 영향을 주는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/JVM DNS Cache TTL.md"
+  },
+  {
+    "id": 46,
+    "title": "JVM Option Basics",
+    "summary": "JVM 옵션을 시스템 속성, 메모리, GC, 진단 플래그 관점에서 분류해 읽는 기준을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/JVM Option Basics.md"
+  },
+  {
+    "id": 48,
+    "title": "MultiLine String",
+    "summary": "Java 멀티라인 문자열 처리 방식과 text block을 기본 선택지로 보는 이유를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/MultiLine String.md"
+  },
+  {
+    "id": 49,
+    "title": "No-Args Constructor",
+    "summary": "JPA에서 기본 생성자가 왜 요구되는지와 프록시/리플렉션 관점의 배경, 실무 타협점을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/No Args Constructor.md"
+  },
+  {
+    "id": 50,
+    "title": "OrElse vs OrElseGet",
+    "summary": "`Optional.orElse()`와 `orElseGet()`의 eager/lazy 평가 차이와 부작용 위험을 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/OrElse vs OrElseGet.md"
+  },
+  {
+    "id": 53,
+    "title": "Stream vs For Loop",
+    "summary": "Stream과 for-loop를 성능, 가독성, 디버깅 관점에서 어떻게 나눠 볼지 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Stream vs For Loop.md"
+  },
+  {
+    "id": 55,
+    "title": "String.join StringBuilder Efficiency",
+    "summary": "문자열 연결에서 `StringBuilder`, `String.join()`, `+`의 선택 기준과 반복 연결 시 비용 차이를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/String.join StringBuilder Efficiency.md"
+  },
+  {
+    "id": 58,
+    "title": "Void vs void",
+    "summary": "`void`와 `Void`의 차이, 제네릭과 비동기 API에서 `Void`가 필요한 경우를 정리한 노트.",
+    "tags": [
+      "technology",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "JAVA",
+    "path": "NOTES/Technology/JAVA/Void vs void.md"
   },
   {
     "id": 22,
     "title": "@Data",
-    "summary": "Reference note on Lombok @Data usage and whether it should be used broadly in Java domain models.",
+    "summary": "Lombok `@Data`가 실제로 생성하는 코드, DTO와 엔티티에서의 적합성 차이, 실무 사용 기준을 정리한 노트.",
     "tags": [
       "java",
       "lombok",
       "data"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/@Data.md"
   },
   {
-    "id": 23,
-    "title": "@EnableJpaAuditing",
-    "summary": "References and implementation notes for enabling JPA auditing and handling audit overrides in Spring Data JPA.",
-    "tags": [
-      "java",
-      "spring-data-jpa",
-      "auditing",
-      "jpa"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/@EnableJpaAuditing.md"
-  },
-  {
-    "id": 24,
-    "title": "@Modifying",
-    "summary": "Short reference note for Spring Data JPA @Modifying and update or delete query behavior.",
-    "tags": [
-      "java",
-      "spring-data-jpa",
-      "modifying",
-      "jpa"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/@Modifying.md"
-  },
-  {
     "id": 25,
     "title": "@NotNull @Size",
-    "summary": "Reference note on validation annotations and Hibernate column sizing considerations for @NotNull and @Size.",
+    "summary": "Bean Validation의 `@NotNull`, `@Size`와 JPA `@Column`이 각각 어느 레이어를 책임지는지 정리한 노트.",
     "tags": [
       "java",
       "validation",
@@ -415,46 +691,15 @@
       "size"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/@NotNull @Size.md"
   },
   {
-    "id": 26,
-    "title": "@Scheduled",
-    "summary": "Reference note for Spring scheduling and the @Scheduled annotation.",
-    "tags": [
-      "java",
-      "spring",
-      "scheduling",
-      "scheduled"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/@Scheduled.md"
-  },
-  {
-    "id": 27,
-    "title": "@SQLRestriction",
-    "summary": "Reference note for Hibernate @SQLRestriction and row-level filtering behavior.",
-    "tags": [
-      "java",
-      "hibernate",
-      "sqlrestriction"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/@SQLRestriction.md"
-  },
-  {
     "id": 28,
     "title": "@SuperBuilder",
-    "summary": "Reference note on Lombok @SuperBuilder and builder inheritance patterns in Java.",
+    "summary": "상속 구조에서 Lombok `@SuperBuilder`가 해결하는 문제, 일반 `@Builder`와의 차이, 사용 한계를 정리한 노트.",
     "tags": [
       "java",
       "lombok",
@@ -462,7 +707,7 @@
       "inheritance"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/@SuperBuilder.md"
@@ -470,7 +715,7 @@
   {
     "id": 29,
     "title": "@UtilityClass",
-    "summary": "References on Lombok @UtilityClass and broader tradeoffs around utility classes versus object-oriented alternatives.",
+    "summary": "Lombok `@UtilityClass`가 실제로 만드는 코드와 정적 유틸리티 남용이 설계를 약하게 만드는 이유를 정리한 노트.",
     "tags": [
       "java",
       "lombok",
@@ -478,7 +723,7 @@
       "oop"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/@UtilityClass.md"
@@ -486,7 +731,7 @@
   {
     "id": 30,
     "title": "@With",
-    "summary": "Reference note on Lombok @With for cloning and updating immutable Java objects.",
+    "summary": "Lombok `@With`가 불변 객체 복사-수정 패턴을 어떻게 단순화하는지와 builder와의 역할 차이를 정리한 노트.",
     "tags": [
       "java",
       "lombok",
@@ -494,48 +739,15 @@
       "with"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/@With.md"
   },
   {
-    "id": 31,
-    "title": "abstract class DI",
-    "summary": "References and example code for applying Spring dependency injection patterns inside abstract classes.",
-    "tags": [
-      "java",
-      "spring",
-      "dependency-injection",
-      "abstract-class"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/abstract class DI.md"
-  },
-  {
-    "id": 32,
-    "title": "AOP & Self Invocation",
-    "summary": "References on Spring AOP, transaction boundaries, and why self invocation bypasses proxy-based behavior.",
-    "tags": [
-      "java",
-      "spring",
-      "aop",
-      "transaction",
-      "self-invocation"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/AOP & Self Invocation.md"
-  },
-  {
     "id": 33,
-    "title": "Apache Poi",
-    "summary": "Collected references for Apache POI write and read performance, streaming APIs, and spreadsheet format tradeoffs.",
+    "title": "Apache POI",
+    "summary": "Apache POI로 대용량 Excel을 읽고 쓸 때의 메모리 비용, SXSSF/SAX 기반 스트리밍 전략, CSV 대안까지 정리한 노트.",
     "tags": [
       "java",
       "apache-poi",
@@ -544,26 +756,10 @@
       "csv"
     ],
     "created": "2026-04-05",
-    "updated": "2026-04-05",
+    "updated": "2026-04-20",
     "category": "Technology",
     "collection": "JAVA",
     "path": "NOTES/Technology/JAVA/Apache Poi.md"
-  },
-  {
-    "id": 34,
-    "title": "ApplicationRunner",
-    "summary": "Reference note on Spring Boot ApplicationRunner and related startup conditional execution patterns.",
-    "tags": [
-      "java",
-      "spring-boot",
-      "application-runner",
-      "startup"
-    ],
-    "created": "2026-04-05",
-    "updated": "2026-04-05",
-    "category": "Technology",
-    "collection": "JAVA",
-    "path": "NOTES/Technology/JAVA/ApplicationRunner.md"
   },
   {
     "id": 35,
@@ -581,5 +777,621 @@
     "category": "Technology",
     "collection": "Messaging",
     "path": "NOTES/Technology/Messaging/Kafka.md"
+  },
+  {
+    "id": 61,
+    "title": "BootstrapMode for JPA",
+    "summary": "Spring Data JPA repository bootstrap mode가 startup 시간과 초기화 시점에 어떤 영향을 주는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "spring-data-jpa",
+      "startup",
+      "bootstrap"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/BootstrapMode for JPA.md"
+  },
+  {
+    "id": 62,
+    "title": "Composite PK",
+    "summary": "JPA에서 복합 기본 키를 모델링할 때 @IdClass와 @EmbeddedId를 어떻게 비교해야 하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jpa",
+      "primary-key",
+      "entity-design"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Composite PK.md"
+  },
+  {
+    "id": 63,
+    "title": "Custom Repository Implementations",
+    "summary": "Spring Data JPA에서 기본 CRUD repository에 커스텀 동작을 붙일 때 fragment 기반으로 확장하는 방식을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "spring-data-jpa",
+      "repository",
+      "extension"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Custom Repository Implementations.md"
+  },
+  {
+    "id": 64,
+    "title": "Customizing the Nature of a Bean",
+    "summary": "빈 생성 순서, 초기화와 종료 콜백, SmartLifecycle, 의존 순서를 조합해 빈의 생애주기를 제어하는 방법을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Customizing the Nature of a Bean.md"
+  },
+  {
+    "id": 66,
+    "title": "Formatting JSON Dates",
+    "summary": "Spring Boot에서 JSON 날짜 포맷을 필드 단위와 전역 설정 단위로 어떻게 제어할지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jackson",
+      "json",
+      "datetime"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Formatting JSON Dates.md"
+  },
+  {
+    "id": 67,
+    "title": "Hibernate Parameter Padding",
+    "summary": "IN clause parameter padding이 왜 statement cache 효율에 도움이 되는지와 언제 켜 볼 만한지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "hibernate",
+      "query-optimization"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Hibernate parameter padding.md"
+  },
+  {
+    "id": 70,
+    "title": "Jackson Annotations",
+    "summary": "Jackson 어노테이션으로 JSON 직렬화/역직렬화 형태를 어떻게 제어하는지 핵심만 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jackson",
+      "json"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Jackson Annotations.md"
+  },
+  {
+    "id": 71,
+    "title": "JDBC Batch",
+    "summary": "Spring JDBC batch 작업의 기본 동작, 배치 크기와 커넥션 풀 조정 포인트, MySQL/HikariCP 실무 설정을 함께 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Jdbc Batch.md"
+  },
+  {
+    "id": 59,
+    "title": "JPA AttributeConverter",
+    "summary": "JPA `AttributeConverter`가 필요한 이유와 enum·커스텀 값 매핑에서 `@Enumerated`와 어떻게 다른지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jpa",
+      "hibernate",
+      "attribute-converter"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/JPA AttributeConverter.md"
+  },
+  {
+    "id": 69,
+    "title": "JPA Properties",
+    "summary": "Spring Boot에서 JPA와 Hibernate 관련 properties를 어떻게 보고, SQL 로그를 어떤 조합으로 켤지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jpa",
+      "hibernate",
+      "logging"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/JPA properties.md"
+  },
+  {
+    "id": 72,
+    "title": "MapStruct Mapper Customization",
+    "summary": "MapStruct에서 커스텀 매핑 로직을 붙이는 방법과 단순 필드 복사 이상이 필요할 때 보는 지점을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "mapstruct",
+      "mapper"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/MapStruct Mapper Customization.md"
+  },
+  {
+    "id": 73,
+    "title": "Max Http Request Header Size",
+    "summary": "Spring Boot에서 요청 헤더 크기 제한이 왜 걸리고, 어떤 설정으로 조정하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "http",
+      "server",
+      "spring-boot"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Max Http Request Header Size.md"
+  },
+  {
+    "id": 74,
+    "title": "Open Session in View",
+    "summary": "OSIV(Open Session in View)가 무엇이고 왜 편하지만 위험한 기본값으로 취급되는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "jpa",
+      "hibernate",
+      "osiv"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Open Session in View.md"
+  },
+  {
+    "id": 75,
+    "title": "Persist a JSON Object",
+    "summary": "JPA/Hibernate에서 JSON 데이터를 문자열 컨버터나 JSON 타입 매핑으로 저장하는 방법과 선택 기준을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Persist a json Object.md"
+  },
+  {
+    "id": 76,
+    "title": "Projections",
+    "summary": "Spring Data JPA projection으로 필요한 필드만 조회할 때 interface 기반과 DTO 기반을 어떻게 볼지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "spring-data-jpa",
+      "projection"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Projections.md"
+  },
+  {
+    "id": 77,
+    "title": "Qualifier",
+    "summary": "같은 타입 bean이 여러 개 있을 때 @Qualifier로 주입 대상을 어떻게 명시하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "bean",
+      "di"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Qualifier.md"
+  },
+  {
+    "id": 78,
+    "title": "Querydsl with Spring Data JPA",
+    "summary": "Querydsl의 타입 안전한 쿼리 모델과 Spring Data JPA와의 연결 방식을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Querydsl with Spring Data JPA.md"
+  },
+  {
+    "id": 79,
+    "title": "ReferenceById",
+    "summary": "findById와 getById/getReferenceById가 어떤 차이로 쓰이는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "spring-data-jpa",
+      "entity"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/ReferenceById.md"
+  },
+  {
+    "id": 81,
+    "title": "RestTemplate with Apache HttpClient",
+    "summary": "RestTemplate를 Apache HttpClient와 함께 쓸 때의 연결 풀, timeout, 요청 API 선택 기준을 실무 관점에서 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/RestTemplate with Apache HttpClient.md"
+  },
+  {
+    "id": 60,
+    "title": "Spring Bean Validation",
+    "summary": "Spring에서 Bean Validation을 붙이는 방식과 `@Valid`, 커스텀 제약의 적용 범위를 실무 관점에서 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "validation",
+      "bean-validation",
+      "spring-mvc"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Bean Validation.md"
+  },
+  {
+    "id": 82,
+    "title": "Spring Cloud AWS",
+    "summary": "Spring Cloud AWS가 어떤 starter들로 구성되고, Spring Boot에서 AWS 서비스를 어떻게 통합하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "aws",
+      "cloud",
+      "spring-cloud-aws"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Cloud AWS.md"
+  },
+  {
+    "id": 68,
+    "title": "Spring Data JPA Query Methods",
+    "summary": "Spring Data JPA의 query derivation, `@Query`, projection 방식을 비교하고 어떤 상황에서 어느 표현이 적절한지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Data JPA Query Methods.md"
+  },
+  {
+    "id": 65,
+    "title": "Spring Event Publishing",
+    "summary": "Spring event publishing과 `@TransactionalEventListener`가 트랜잭션 경계와 함께 어떻게 동작하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "event",
+      "transaction"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Event Publishing.md"
+  },
+  {
+    "id": 80,
+    "title": "Spring Request Mapping",
+    "summary": "Spring request mapping이 path, method, consumes, produces 조건으로 어떻게 라우팅되는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "web",
+      "controller"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Request Mapping.md"
+  },
+  {
+    "id": 83,
+    "title": "Spring Session with Redis",
+    "summary": "서블릿 세션과 Spring Session의 차이, Redis 기반 세션 저장 구조, 세션 ID 전파 방식을 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Session with Redis.md"
+  },
+  {
+    "id": 86,
+    "title": "Spring Unit Testing",
+    "summary": "Spring unit testing에서 프레임워크 지원 도구를 어떻게 보고 어디까지 pure unit test로 가져갈지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "test",
+      "unit-test"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Unit Testing.md"
+  },
+  {
+    "id": 84,
+    "title": "StringRedisTemplate",
+    "summary": "Spring에서 Redis를 문자열 중심으로 다룰 때 StringRedisTemplate을 어떻게 보는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "redis",
+      "template"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/StringRedisTemplate.md"
+  },
+  {
+    "id": 85,
+    "title": "Swagger and springdoc",
+    "summary": "Spring Boot에서 Swagger/OpenAPI 문서를 springdoc으로 붙일 때 핵심 의존성과 용도를 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java",
+      "openapi",
+      "swagger"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Swagger and springdoc.md"
+  },
+  {
+    "id": 87,
+    "title": "TransactionSynchronizationManager",
+    "summary": "Spring 트랜잭션 동기화의 핵심 객체인 `TransactionSynchronizationManager`가 무엇을 보관하고 언제 써야 하는지 정리한 노트.",
+    "tags": [
+      "technology",
+      "spring",
+      "java"
+    ],
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/TransactionSynchronizationManager.md"
+  },
+  {
+    "id": 21,
+    "title": "@Async & Thread Pool",
+    "summary": "Spring `@Async`와 thread pool을 사용할 때 executor 설정, 병렬성 한계, queue 포화 시 처리 전략까지 같이 봐야 하는 이유를 정리한 노트.",
+    "tags": [
+      "java",
+      "concurrency",
+      "async",
+      "thread-pool",
+      "spring"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/@Async & Thread Pool.md"
+  },
+  {
+    "id": 23,
+    "title": "@EnableJpaAuditing",
+    "summary": "Spring Data JPA auditing을 활성화하고 생성·수정 메타데이터를 자동 채우는 기본 구성을 정리한 노트.",
+    "tags": [
+      "java",
+      "spring-data-jpa",
+      "auditing",
+      "jpa"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/@EnableJpaAuditing.md"
+  },
+  {
+    "id": 24,
+    "title": "@Modifying",
+    "summary": "Spring Data JPA에서 @Query로 update/delete를 실행할 때 @Modifying이 왜 필요한지와 persistence context 주의점을 정리한 노트.",
+    "tags": [
+      "java",
+      "spring-data-jpa",
+      "modifying",
+      "jpa"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/@Modifying.md"
+  },
+  {
+    "id": 26,
+    "title": "@Scheduled",
+    "summary": "Spring `@Scheduled`의 실행 방식과 주기 작업 설계 시 주의할 점을 정리한 노트.",
+    "tags": [
+      "java",
+      "spring",
+      "scheduling",
+      "scheduled"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/@Scheduled.md"
+  },
+  {
+    "id": 27,
+    "title": "@SQLRestriction",
+    "summary": "Hibernate `@SQLRestriction`으로 엔티티 조회 시 항상 붙는 필터 조건을 다루는 방법을 정리한 노트.",
+    "tags": [
+      "java",
+      "hibernate",
+      "sqlrestriction"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/@SQLRestriction.md"
+  },
+  {
+    "id": 31,
+    "title": "Abstract Class DI",
+    "summary": "추상 클래스에서 Spring DI를 적용할 때 가능한 방식과 권장되지 않는 패턴을 정리한 노트.",
+    "tags": [
+      "java",
+      "spring",
+      "dependency-injection",
+      "abstract-class"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/abstract class DI.md"
+  },
+  {
+    "id": 32,
+    "title": "AOP & Self Invocation",
+    "summary": "Spring AOP가 프록시 기반으로 동작하기 때문에 self invocation에서 왜 빠지는지 정리한 노트.",
+    "tags": [
+      "java",
+      "spring",
+      "aop",
+      "transaction",
+      "self-invocation"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/AOP & Self Invocation.md"
+  },
+  {
+    "id": 34,
+    "title": "Spring Boot ApplicationRunner",
+    "summary": "Spring Boot startup 직후 한 번 실행되는 작업을 `ApplicationRunner`로 구성할 때의 기준을 정리한 노트.",
+    "tags": [
+      "java",
+      "spring-boot",
+      "application-runner",
+      "startup"
+    ],
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "category": "Technology",
+    "collection": "Spring",
+    "path": "NOTES/Technology/Spring/Spring Boot ApplicationRunner.md"
   }
 ]

@@ -75,6 +75,11 @@
 - Visual overlay alone is not sufficient evidence of isolation; evaluators should explicitly check `inert`, focus order, `aria-hidden`, or equivalent interaction-blocking behavior on deferred surfaces.
 - A feature may still pass if downstream content remains visually mounted for continuity, but only after evaluators confirm that the inactive layer cannot steal interaction before the handoff.
 
+### 12. First-State Handoff Consistency
+- When shell navigation, direct URL entry, or other scope-changing interaction hands off from a first-entry state to a downstream surface, the first-entry state must be dismissed early enough that it cannot visually reappear during the same transition.
+- Route interpretation, first-state visibility, and destination rendering should converge as one coherent handoff rather than exposing a frame where the old first state briefly competes with the chosen destination.
+- Evaluators should test narrow and wide viewport cases, direct-link entry, and shell-driven navigation to confirm that a hidden landing or overlay does not resurface because dismissal state lags behind routing or render order.
+
 ## How To Classify Findings
 - Usually classify as `implementation bug` when the spec already requires stable transitions, continuity, or no-leak behavior.
 - Usually classify as `spec gap` when the spec failed to define how view changes, loading behavior, or navigation continuity should work.

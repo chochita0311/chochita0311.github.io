@@ -77,8 +77,11 @@ System.out.println("hello");
 ```
 ~~~~
 
-- The renderer does not currently apply language-specific syntax highlighting.
-- The opening fence language label is ignored for styling behavior.
+- The opening fence language label is used as a visual label in the rendered code block chrome.
+- Shell-like labels such as `bash`, `sh`, `zsh`, `shell`, `console`, and `terminal` render with a terminal-style card treatment.
+- The renderer applies lightweight syntax highlighting for `bash`-style fences, `java`, `json`, `yml` / `yaml`, `sql`, and `diff`.
+- Highlighting is intentionally partial and regex-based rather than full parser-level highlighting.
+- Other labels render as generic code cards with the label shown in the header.
 
 ### Inline Formatting
 - Supported:
@@ -139,7 +142,7 @@ tags:
   - footnotes
   - definition lists
   - reliable nested or multi-paragraph blockquote behavior
-  - language-aware code highlighting
+  - broad language-aware code highlighting beyond the current lightweight `bash` / `java` / `json` / `yml` / `yaml` / `sql` / `diff` support
   - table cell alignment styling
   - multi-line table cells
 
@@ -148,6 +151,8 @@ tags:
 - Use frontmatter `summary` instead of relying on body extraction when the note matters for browse quality.
 - Use `##`, `###`, and `####` headings for structure that should appear in the reading outline.
 - Keep tables simple and single-line per row.
+- Use fenced code blocks in the note body when you want terminal-style or code-card presentation in the reading view.
+- Prefer ` ```bash ` or a similar shell label for command snippets that should look like terminal examples.
 - Avoid depending on advanced GitHub-specific Markdown features unless the renderer is upgraded first.
 
 ## Compatibility Rule

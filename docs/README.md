@@ -21,10 +21,12 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/policies/project/`: project/runtime policy, architecture, and workflow rules
 - `docs/policies/project/architecture.md`: runtime file ownership including generated crawl-discovery assets such as `sitemap.xml` and `robots.txt`
 - `docs/policies/project/developer-guide.md`: maintenance workflow including archive-index and sitemap regeneration steps
+- `docs/policies/archive/`: archive-domain workflow, contracts, search rules, and rendering rules
+- `docs/policies/archive/note/note-maintenance-workflow.md`: single workflow for adding, importing, moving, and regrouping notes
+- `docs/policies/archive/note/note-data-contract.md`: note schema, `id` rules, and generated-data contract
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail routing, and execution artifact ownership
 - `docs/policies/design/`: durable design rules, reusable design-evaluation assets, and design-document governance
 - `docs/policies/experience/`: reusable interaction-quality evaluation assets
-- `docs/policies/archive/`: archive-domain contracts, note schemas, search contracts, and rendering rules
 - `docs/policies/system/`: cross-cutting shared system policy such as icon governance
 - `docs/policies/harness/prd-feature-management.md`: durable planning-governance rule for PRD and feature traceability
 - `docs/plans/prd/`: bounded PRD documents and PRD template

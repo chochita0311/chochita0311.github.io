@@ -178,6 +178,8 @@
   }
 
   function dismissLandingForShellInteraction() {
+    mainLanding?.setDismissed(true);
+
     if (!document.body.classList.contains("has-landing-entry")) {
       return;
     }

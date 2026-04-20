@@ -5,6 +5,18 @@
 - Keep Markdown as the durable source of truth.
 - Define the minimum metadata needed for archive browse, search, tag filtering, reading, and bookmarks on a static site.
 - Define the generated JSON shape that the static UI can consume without hand-maintained duplicate data.
+- Keep this document focused on the note schema and generated-data contract.
+
+## Use This Doc For
+
+- note field definitions
+- `id` rules and frontmatter expectations
+- generated runtime data expectations
+
+## Workflow Routing
+
+- Use [note-maintenance-workflow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-maintenance-workflow.md) for the operational steps to add, import, move, or regroup notes.
+- Use this document when you need field definitions, ID rules, or generated-data expectations.
 
 ## Source Of Truth
 
@@ -16,7 +28,7 @@
 - Generated JSON is derived output, not hand-edited content.
 - Dates belong in frontmatter, not in durable filenames. If a source note arrives with a leading `YYYYMMDD` filename, rename it to a topic-based note name and store the date in `created`.
 
-## Recommended Note Shape
+## Note Shape
 
 - File path example:
   - `NOTES/Technology/JAVA/ApplicationRunner.md`
@@ -40,7 +52,7 @@ updated: 2026-04-05
 Actual note body here.
 ```
 
-## Frontmatter Fields
+## Frontmatter Contract
 
 - Strict field order:
   - `id`
@@ -83,9 +95,12 @@ Actual note body here.
 - The Markdown body remains the note itself.
 - The first body heading can match `title`, but the UI should trust frontmatter `title` as the metadata owner.
 - Long-form reading content should stay in Markdown instead of moving into JSON.
+- If a note includes source or supporting links, collect them in a final `## References` section at the end of the note body.
+- Do not leave raw link dumps at the top or in the middle of the main explanation once the note has been normalized.
+- Keep explanatory content in the main body and keep reference links grouped under `## References`.
 - Body rendering expectations and supported syntax are documented in `docs/policies/archive/note/markdown-rendering.md`.
 
-## Generated Static Index
+## Generated Data Contract
 
 - Generate these runtime artifacts for the static UI:
   - browse metadata index: `assets/generated/archives-index.json`
@@ -96,7 +111,7 @@ Actual note body here.
 - `archives-search-index.json` owns generated search lookup data derived from note source content.
 - Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
 
-## Recommended Index Shape
+## Generated Index Shape
 
 ```json
 [
@@ -114,7 +129,7 @@ Actual note body here.
 ]
 ```
 
-## Why This Shape Works
+## Runtime Use
 
 - Browse:
   - category and collection lists can be built from `category` and `collection`
@@ -141,7 +156,7 @@ Actual note body here.
 - Do not store full note objects in bookmarks.
 - Bookmark resolution should always go through the latest generated note index.
 
-## Search Index Relationship
+## Search Relationship
 
 - Search should be index-based and client-side.
 - Search runtime behavior should consume:
@@ -166,9 +181,8 @@ Actual note body here.
 - New notes should receive the next available integer after the current maximum `id`.
 - Do not keep a parallel `slug`, `legacy_id`, or other secondary identifier field unless a future approved plan adds it explicitly.
 
-## Practical Recommendation
+## Working Guidance
 
 - Keep editing notes as Markdown files with frontmatter.
 - Do not hand-maintain per-note JSON wrappers or search index data.
-- Regenerate both archive indexes from Markdown after note additions, moves, metadata changes, or major body-content edits.
 - Treat the generated JSON as a runtime asset, not as the primary content store.

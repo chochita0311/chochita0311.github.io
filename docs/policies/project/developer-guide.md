@@ -21,13 +21,14 @@ Follow the local run instructions in `README.md`.
 - Decorative icons should be hidden from assistive technology by default, and icon-only buttons must carry an `aria-label`.
 - Use `docs/policies/system/icon.md` for the detailed policy and approved inventory.
 
-## Content Updates
+## Note Content Updates
 - Add durable note content under `NOTES/` using the current pattern `NOTES/<category>/<collection>/<note>.md`.
+- Use `docs/policies/archive/note/note-maintenance-workflow.md` for the operational add/move/import workflow.
 - Use the note metadata contract in `docs/policies/archive/note/note-data-contract.md` when adding or normalizing note frontmatter.
 - Use `docs/policies/archive/note/markdown-rendering.md` when changing supported Markdown body syntax or note authoring expectations.
 - Keep folders and filenames searchable and understandable.
 - Regenerate `assets/generated/archives-index.json` with `node scripts/generate-archives-index.mjs` after note or folder changes.
-- Regenerate `sitemap.xml` with `node scripts/generate-sitemap.mjs` after note additions, moves, or note URL-shape changes.
+- Regenerate `sitemap.xml` with `node scripts/generate-sitemap.mjs` after note additions, moves, or note URL-shape changes, and only after the archive index is current.
 - Keep `robots.txt` pointing at the published sitemap URL.
 - Update the visible archive shell and owner docs when the category structure changes.
 

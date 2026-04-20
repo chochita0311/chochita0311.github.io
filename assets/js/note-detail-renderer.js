@@ -170,8 +170,278 @@ function applyInlineMarkdown(value) {
   return output;
 }
 
-function renderCodeBlock(lines) {
-  return `<pre class="note-detail__code"><code>${escapeHtml(lines.join("\n"))}</code></pre>`;
+function normalizeCodeFenceLabel(rawLabel) {
+  if (!rawLabel) {
+    return "";
+  }
+
+  return rawLabel.trim().toLowerCase();
+}
+
+function getCodeBlockPresentation(label) {
+  const normalized = normalizeCodeFenceLabel(label);
+
+  if (["bash", "sh", "zsh", "shell", "console", "terminal"].includes(normalized)) {
+    return {
+      label: "Terminal",
+      variantClass: " note-detail__code-block--terminal",
+    };
+  }
+
+  if (!normalized) {
+    return {
+      label: "Code",
+      variantClass: "",
+    };
+  }
+
+  return {
+    label: normalized === "md" ? "Markdown" : normalized.toUpperCase(),
+    variantClass: "",
+  };
+}
+
+function wrapCodeToken(className, value) {
+  return `<span class="${className}">${value}</span>`;
+}
+
+function applyTokenPlaceholders(value, matchers) {
+  const placeholders = [];
+  let output = value;
+
+  matchers.forEach(({ pattern, className }) => {
+    output = output.replace(pattern, (match) => {
+      const placeholder = `__CODE_TOKEN_${placeholders.length}__`;
+      placeholders.push({
+        placeholder,
+        html: wrapCodeToken(className, match),
+      });
+      return placeholder;
+    });
+  });
+
+  return { output, placeholders };
+}
+
+function restoreTokenPlaceholders(value, placeholders) {
+  return placeholders.reduce(
+    (output, token) => output.replaceAll(token.placeholder, token.html),
+    value,
+  );
+}
+
+function highlightJavaCode(escapedCode) {
+  const { output, placeholders } = applyTokenPlaceholders(escapedCode, [
+    {
+      pattern: /\/\*[\s\S]*?\*\//g,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /\/\/.*$/gm,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /&quot;(?:\\.|[^&])*?&quot;/g,
+      className: "note-detail__code-string",
+    },
+    {
+      pattern: /&#39;(?:\\.|[^&])*?&#39;/g,
+      className: "note-detail__code-string",
+    },
+  ]);
+
+  let highlighted = output;
+
+  highlighted = highlighted.replace(
+    /\b(package|import|class|interface|enum|record|public|protected|private|static|final|abstract|extends|implements|new|return|void|if|else|switch|case|default|for|while|do|try|catch|finally|throw|throws|this|super|instanceof|break|continue|null|true|false)\b/g,
+    '<span class="note-detail__code-keyword">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /\b(\d[\d_]*(?:\.\d+)?)\b/g,
+    '<span class="note-detail__code-number">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /(@[A-Za-z_]\w*)/g,
+    '<span class="note-detail__code-annotation">$1</span>',
+  );
+
+  return restoreTokenPlaceholders(highlighted, placeholders);
+}
+
+function highlightBashCode(escapedCode) {
+  const { output, placeholders } = applyTokenPlaceholders(escapedCode, [
+    {
+      pattern: /#.*$/gm,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /&quot;(?:\\.|[^&])*?&quot;/g,
+      className: "note-detail__code-string",
+    },
+    {
+      pattern: /&#39;(?:\\.|[^&])*?&#39;/g,
+      className: "note-detail__code-string",
+    },
+  ]);
+
+  let highlighted = output;
+
+  highlighted = highlighted.replace(
+    /\b(if|then|else|fi|for|in|do|done|case|esac|while|function|export|local|unset|return|source)\b/g,
+    '<span class="note-detail__code-keyword">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /(^|\s)(--?[a-zA-Z0-9-]+)/gm,
+    '$1<span class="note-detail__code-attr">$2</span>',
+  );
+  highlighted = highlighted.replace(
+    /(\$\w+|\$\{[^}]+\})/g,
+    '<span class="note-detail__code-variable">$1</span>',
+  );
+
+  return restoreTokenPlaceholders(highlighted, placeholders);
+}
+
+function highlightJsonCode(escapedCode) {
+  let highlighted = escapedCode.replace(
+    /(&quot;(?:\\.|[^&])*?&quot;)(\s*:)/g,
+    '<span class="note-detail__code-attr">$1</span>$2',
+  );
+
+  highlighted = highlighted.replace(
+    /(:\s*)(&quot;(?:\\.|[^&])*?&quot;)/g,
+    '$1<span class="note-detail__code-string">$2</span>',
+  );
+  highlighted = highlighted.replace(
+    /\b(-?\d[\d_]*(?:\.\d+)?)\b/g,
+    '<span class="note-detail__code-number">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /\b(true|false|null)\b/g,
+    '<span class="note-detail__code-keyword">$1</span>',
+  );
+
+  return highlighted;
+}
+
+function highlightYamlCode(escapedCode) {
+  const { output, placeholders } = applyTokenPlaceholders(escapedCode, [
+    {
+      pattern: /#.*$/gm,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /&quot;(?:\\.|[^&])*?&quot;/g,
+      className: "note-detail__code-string",
+    },
+    {
+      pattern: /&#39;(?:\\.|[^&])*?&#39;/g,
+      className: "note-detail__code-string",
+    },
+  ]);
+
+  let highlighted = output;
+
+  highlighted = highlighted.replace(
+    /^(\s*[\w.-]+)(\s*:)/gm,
+    '<span class="note-detail__code-attr">$1</span>$2',
+  );
+  highlighted = highlighted.replace(
+    /\b(true|false|null|yes|no|on|off)\b/g,
+    '<span class="note-detail__code-keyword">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /\b(-?\d[\d_]*(?:\.\d+)?)\b/g,
+    '<span class="note-detail__code-number">$1</span>',
+  );
+
+  return restoreTokenPlaceholders(highlighted, placeholders);
+}
+
+function highlightSqlCode(escapedCode) {
+  const { output, placeholders } = applyTokenPlaceholders(escapedCode, [
+    {
+      pattern: /--.*$/gm,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /\/\*[\s\S]*?\*\//g,
+      className: "note-detail__code-comment",
+    },
+    {
+      pattern: /&#39;(?:\\.|[^&])*?&#39;/g,
+      className: "note-detail__code-string",
+    },
+  ]);
+
+  let highlighted = output;
+
+  highlighted = highlighted.replace(
+    /\b(SELECT|FROM|WHERE|GROUP|BY|ORDER|HAVING|LIMIT|INSERT|INTO|VALUES|UPDATE|SET|DELETE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|AS|AND|OR|NOT|NULL|IS|IN|LIKE|EXISTS|DISTINCT|CREATE|ALTER|DROP|TABLE|INDEX|VIEW|UNION|ALL)\b/gi,
+    '<span class="note-detail__code-keyword">$1</span>',
+  );
+  highlighted = highlighted.replace(
+    /\b(\d[\d_]*(?:\.\d+)?)\b/g,
+    '<span class="note-detail__code-number">$1</span>',
+  );
+
+  return restoreTokenPlaceholders(highlighted, placeholders);
+}
+
+function highlightDiffCode(escapedCode) {
+  return escapedCode
+    .replace(/^(\+.*)$/gm, '<span class="note-detail__code-diff-add">$1</span>')
+    .replace(/^(-.*)$/gm, '<span class="note-detail__code-diff-remove">$1</span>')
+    .replace(/^(@@.*)$/gm, '<span class="note-detail__code-diff-meta">$1</span>');
+}
+
+function highlightCode(escapedCode, label) {
+  const normalized = normalizeCodeFenceLabel(label);
+
+  if (["bash", "sh", "zsh", "shell", "console", "terminal"].includes(normalized)) {
+    return highlightBashCode(escapedCode);
+  }
+
+  if (normalized === "java") {
+    return highlightJavaCode(escapedCode);
+  }
+
+  if (normalized === "json") {
+    return highlightJsonCode(escapedCode);
+  }
+
+  if (["yml", "yaml"].includes(normalized)) {
+    return highlightYamlCode(escapedCode);
+  }
+
+  if (normalized === "sql") {
+    return highlightSqlCode(escapedCode);
+  }
+
+  if (normalized === "diff") {
+    return highlightDiffCode(escapedCode);
+  }
+
+  return escapedCode;
+}
+
+function renderCodeBlock(lines, label = "") {
+  const presentation = getCodeBlockPresentation(label);
+  const escapedLabel = escapeHtml(presentation.label);
+  const escapedCode = escapeHtml(lines.join("\n"));
+  const highlightedCode = highlightCode(escapedCode, label);
+
+  return `
+    <figure class="note-detail__code-block${presentation.variantClass}">
+      <figcaption class="note-detail__code-header">
+        <span class="note-detail__code-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="note-detail__code-label">${escapedLabel}</span>
+      </figcaption>
+      <pre class="note-detail__code"><code>${highlightedCode}</code></pre>
+    </figure>
+  `;
 }
 
 function renderList(items, ordered) {
@@ -274,6 +544,7 @@ function renderMarkdown(markdown, options = {}) {
   let tableLines = [];
   let codeLines = [];
   let inCodeBlock = false;
+  let codeFenceLabel = "";
   let currentSectionParts = [];
 
   function pushBlock(html) {
@@ -331,11 +602,13 @@ function renderMarkdown(markdown, options = {}) {
       flushTable();
 
       if (inCodeBlock) {
-        pushBlock(renderCodeBlock(codeLines));
+        pushBlock(renderCodeBlock(codeLines, codeFenceLabel));
         codeLines = [];
         inCodeBlock = false;
+        codeFenceLabel = "";
       } else {
         inCodeBlock = true;
+        codeFenceLabel = normalizedLine.slice(3).trim();
       }
 
       continue;

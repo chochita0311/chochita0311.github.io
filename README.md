@@ -59,21 +59,22 @@ Notes:
 - Archive note content under `NOTES/` is intentionally outside this lint scope
 - Because config lives under `configs/lint/`, npm scripts pass explicit config paths instead of relying on root autodiscovery
 
-## Archive Maintenance
-- Add or reorganize Markdown files under `NOTES/`
-- Keep category and collection names searchable and understandable
-- Use `docs/policies/archive/note/note-data-contract.md` for note frontmatter and static index expectations
-- Regenerate `assets/generated/archives-index.json` after note or folder changes with `node scripts/generate-archives-index.mjs`
-- Regenerate `sitemap.xml` after note additions, moves, or URL-shape changes with `node scripts/generate-sitemap.mjs`
-- Keep `robots.txt` aligned to the published sitemap location so crawlers can discover `sitemap.xml`
-- Update the UI or supporting docs in the same turn when the visible archive structure changes
+## Note Maintenance
+- Add or reorganize Markdown files under `NOTES/`.
+- Keep category and collection names searchable and understandable.
+- Use `docs/policies/archive/note/note-maintenance-workflow.md` for add, move, import, and regeneration steps.
+- Use `docs/policies/archive/note/note-data-contract.md` for note frontmatter and generated-data expectations.
+- Regenerate `assets/generated/archives-index.json` after note or folder changes with `node scripts/generate-archives-index.mjs`.
+- Regenerate `sitemap.xml` after note additions, moves, or URL-shape changes with `node scripts/generate-sitemap.mjs`.
+- Keep `robots.txt` aligned to the published sitemap location so crawlers can discover `sitemap.xml`.
+- Update the UI or supporting docs in the same turn when the visible archive structure changes.
 
 ## Documentation Entry Points
 - `AGENTS.md`: operational entrance doc for repo-local rules and source-of-truth routing
 - `docs/README.md`: documentation map for policies, plans, and agent-package docs
 - `docs/policies/project/policy.md`: product direction and scope
 - `docs/policies/project/developer-guide.md`: maintenance, verification, and documentation-update workflow
-- `docs/policies/archive/note/`: note contract and Markdown rendering rules
+- `docs/policies/archive/note/`: note workflow, note contract, and Markdown rendering rules
 - `docs/plans/project/roadmap.md`: current and future direction
 
 For deeper policy ownership, use `docs/README.md` instead of treating this file as the full docs index.
