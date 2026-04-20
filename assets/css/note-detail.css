@@ -169,6 +169,10 @@
   background: var(--color-surface-container-low);
 }
 
+.note-detail__facts > div {
+  min-width: 0;
+}
+
 .note-detail__facts dt {
   margin-bottom: var(--space-2);
   color: var(--page-text-soft);
@@ -180,9 +184,12 @@
 
 .note-detail__facts dd {
   margin: 0;
+  min-width: 0;
   color: var(--color-on-surface);
   font-size: var(--font-size-body-sm);
   line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .note-detail__facts code {
@@ -192,6 +199,7 @@
 
 .note-detail__tag-list,
 .note-detail__references {
+  min-width: 0;
   flex-wrap: wrap;
   gap: var(--space-2);
 }
@@ -417,6 +425,8 @@
 
 .note-detail__content a {
   color: var(--color-primary);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .note-detail__content a:hover,
@@ -534,6 +544,8 @@
   line-height: 1.5;
   text-align: left;
   cursor: pointer;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   transition: color var(--transition-fast);
 }
 
@@ -571,6 +583,7 @@
   display: inline-flex;
   align-items: center;
   max-width: 100%;
+  min-width: 0;
   padding: 0.125rem 0.5rem;
   border-radius: var(--radius-full);
   background: var(--color-surface-container);
@@ -578,6 +591,8 @@
   font-size: 0.75rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   transition:
     color var(--transition-fast),
     background-color var(--transition-fast);
