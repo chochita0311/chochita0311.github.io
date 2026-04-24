@@ -8,8 +8,8 @@
 - Result: `PASS`
 - Run ID: `run-20260411-02`
 - Attempt: `1`
-- Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
-- Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
+- Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
+- Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
 - Created: `2026-04-11`
 
 ## Scope

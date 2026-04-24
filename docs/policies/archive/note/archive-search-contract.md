@@ -9,8 +9,8 @@
 ## Ownership
 
 - This document owns search-index tokenization and filtering rules for note search.
-- Use [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md) for note metadata ownership and generated artifact presence.
-- Use [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md) for runtime placement and regeneration flow.
+- Use [note-data-contract.md](docs/policies/archive/note/note-data-contract.md) for note metadata ownership and generated artifact presence.
+- Use [architecture.md](docs/policies/project/architecture.md) for runtime placement and regeneration flow.
 
 ## Runtime Artifact
 

@@ -5,7 +5,7 @@
 - ID: `feat-0003`
 - Status: `passed`
 - Type: `product`
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -70,18 +70,18 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Current archive rendering in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- Current sidebar category rendering in [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- Current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Current archive rendering in [archive-content.js](assets/js/archive/content.js)
+- Current sidebar category rendering in [sidebar.js](assets/js/sidebar.js)
+- Current archive shell in [index.html](index.html)
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
+- [index.html](index.html)
+- [archive-content.js](assets/js/archive/content.js)
+- [sidebar.js](assets/js/sidebar.js)
+- [layouts.css](assets/css/layouts.css)
+- [components.css](assets/css/components.css)
 
 ## Pass Or Fail Checks
 
@@ -107,8 +107,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
-- Latest evaluator report: [eval-0003-functional-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0003-functional-archive-controls-and-popular-tag-filtering.md)
+- Active spec doc: [spec-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
+- Latest evaluator report: [eval-0003-functional-archive-controls-and-popular-tag-filtering.md](docs/plans/evaluation/eval-0003-functional-archive-controls-and-popular-tag-filtering.md)
 - Latest fix note:
 
 ## Continuity Notes

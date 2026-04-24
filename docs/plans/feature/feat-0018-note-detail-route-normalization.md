@@ -5,7 +5,7 @@
 - ID: `feat-0018`
 - Status: `completed`
 - Type: `product`
-- Parent PRD: [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
+- Parent PRD: [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
 - Created: `2026-04-19`
 - Updated: `2026-04-19`
 
@@ -64,14 +64,14 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
-- Browse-path feature [feat-0017-note-archive-path-routing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0017-note-archive-path-routing.md)
-- Route execution plan [archive-route-path-migration-plan.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/refactoring/archive-route-path-migration-plan.md)
+- Parent PRD [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
+- Browse-path feature [feat-0017-note-archive-path-routing.md](docs/plans/feature/feat-0017-note-archive-path-routing.md)
+- Route execution plan [archive-route-path-migration-plan.md](docs/plans/refactoring/archive-route-path-migration-plan.md)
 
 ## Likely Affected Surfaces
 
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
 - `archive/note/`
 - sitemap and canonical link sources
 

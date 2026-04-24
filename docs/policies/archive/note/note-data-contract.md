@@ -15,7 +15,7 @@
 
 ## Workflow Routing
 
-- Use [note-maintenance-workflow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-maintenance-workflow.md) for the operational steps to add, import, move, or regroup notes.
+- Use [note-maintenance-workflow.md](docs/policies/archive/note/note-maintenance-workflow.md) for the operational steps to add, import, move, or regroup notes.
 - Use this document when you need field definitions, ID rules, or generated-data expectations.
 
 ## Source Of Truth
@@ -109,7 +109,7 @@ Actual note body here.
   - `scripts/generate-archives-index.mjs`
 - `archives-index.json` owns archive browse metadata derived from frontmatter and path-based taxonomy.
 - `archives-search-index.json` owns generated search lookup data derived from note source content.
-- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
+- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md).
 
 ## Generated Index Shape
 
@@ -162,7 +162,7 @@ Actual note body here.
 - Search runtime behavior should consume:
   - browse metadata from `archives-index.json`
   - lookup terms from `archives-search-index.json`
-- Search index file shape and token rules belong in [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
+- Search index file shape and token rules belong in [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md).
 
 ## Tag Contract
 

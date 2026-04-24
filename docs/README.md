@@ -9,15 +9,16 @@ This directory holds the repository's durable policy docs and active planning ar
 
 ## What Lives Here
 
-- `docs/agents/`: agent package under active refinement, split into role, flow, and operation docs
+- `docs/agents/`: installed agent package, split into roles, flows, operations, and execution profiles
 - `docs/policies/`: durable rules, definitions, contracts, guides, and governance docs
 - `docs/plans/`: active or historical planning tracks, execution plans, and refactoring work
 
 ## Package Guide
 
-- `docs/agents/role/`: general-purpose harness role docs for planning, spec, build, evaluation, and fix loops
-- `docs/agents/flow/`: sequence and baton-flow docs that compose roles into workflows
-- `docs/agents/operation/`: run-start and run-continuation invocation docs
+- `docs/agents/roles/`: general-purpose harness role docs for planning, spec, build, evaluation, and fix loops
+- `docs/agents/flows/`: sequence and baton-flow docs that compose roles into workflows
+- `docs/agents/operations/`: run-start and run-continuation invocation docs
+- `docs/agents/profiles/`: execution-profile presets for frontend, backend, fullstack, contract, infrastructure, and docs/content work
 - `docs/policies/project/`: project/runtime policy, architecture, and workflow rules
 - `docs/policies/project/architecture.md`: runtime file ownership including generated crawl-discovery assets such as `sitemap.xml` and `robots.txt`
 - `docs/policies/project/developer-guide.md`: maintenance workflow including archive-index and sitemap regeneration steps
@@ -25,6 +26,8 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/policies/archive/note/note-maintenance-workflow.md`: single workflow for adding, importing, moving, and regrouping notes
 - `docs/policies/archive/note/note-data-contract.md`: note schema, `id` rules, and generated-data contract
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail routing, and execution artifact ownership
+- `docs/policies/harness/execution-profiles.md`: profile selection, surface-lane, and evaluator routing rules
+- `docs/policies/harness/traceability-and-link-hygiene.md`: portable path, link, and source-of-truth reference rules
 - `docs/policies/design/`: durable design rules, reusable design-evaluation assets, and design-document governance
 - `docs/policies/experience/`: reusable interaction-quality evaluation assets
 - `docs/policies/system/`: cross-cutting shared system policy such as icon governance
@@ -43,10 +46,12 @@ This directory holds the repository's durable policy docs and active planning ar
 ## Navigation Shortcuts
 
 - Use `docs/agents/` when you are refining reusable agent packages and execution docs.
-- Use `docs/agents/operation/runner.md` when you need execution startup prompts and run-continuation rules.
+- Use `docs/agents/operations/runner.md` when you need execution startup prompts and run-continuation rules.
 - Use `docs/policies/` when you need source-of-truth rules.
 - Use `docs/policies/harness/prd-feature-management.md` when you need the operating rules for PRD and feature traceability.
 - Use `docs/policies/harness/execution-loop-governance.md` when you need execution-loop routing, fail classification, heuristic handling, or the explicit return model for local fix, return-to-spec, return-to-planning, and re-entry.
+- Use `docs/policies/harness/execution-profiles.md` when you need to choose execution profile, surface lanes, or evaluator routing.
+- Use `docs/policies/harness/traceability-and-link-hygiene.md` when planning or execution artifacts need portable links, source/generated ownership, or stale-reference checks.
 - Use `docs/policies/experience/interaction-evaluation.md` when you need reusable rules for transition stability, navigation continuity, or interaction-quality review.
 - Use `docs/plans/prd/` for upper-boundary planning documents.
 - Use `docs/plans/feature/` for loop-sized execution targets.

@@ -22,15 +22,15 @@
 - Golden sources:
   - none yet
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-  - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-  - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
+  - [index.html](index.html)
+  - [archive-content.js](assets/js/archive/content.js)
+  - [index-note-detail.js](assets/js/index-note-detail.js)
+  - [layouts.css](assets/css/layouts.css)
+  - [components.css](assets/css/components.css)
 
 ## Product Intent
 
@@ -38,7 +38,7 @@
 
 ## Confirmed Scope
 
-- Address first-load and refresh flashes after the canonical route model from [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md) is in place or sufficiently fixed for boot work.
+- Address first-load and refresh flashes after the canonical route model from [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md) is in place or sufficiently fixed for boot work.
 - Cover canonical landing, archive, category, collection, and note-detail entries after route ownership is settled.
 - Eliminate flashes of incorrect landing visibility, default archive list state, default archive footer state, and other route-sensitive placeholder UI that should not appear before the route is resolved.
 - Consider topbar-search debounce feedback as part of the same route-stability track so topbar typing can feel responsive without showing misleading intermediate route states.
@@ -46,7 +46,7 @@
 - Allow `404.html`-based deep-link recovery planning if explicit static entry files alone are insufficient for GitHub Pages refresh stability on canonical nested paths.
 - Keep the final rendered state unchanged once boot completes; this work is about initial stability, not redesigning the archive UI.
 - Preserve the current static GitHub Pages runtime and client-rendered archive architecture.
-- Keep route-model definition, route-parser cleanup, and legacy query-route removal in [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md), with `404.html` fallback retained here only if canonical nested-path recovery still needs it.
+- Keep route-model definition, route-parser cleanup, and legacy query-route removal in [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md), with `404.html` fallback retained here only if canonical nested-path recovery still needs it.
 
 ## Excluded Scope
 

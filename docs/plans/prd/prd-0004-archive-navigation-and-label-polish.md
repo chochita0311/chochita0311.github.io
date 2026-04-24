@@ -33,18 +33,18 @@
 - Golden sources:
   - None supplied beyond the human request.
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [policy.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/policy.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [policy.md](docs/policies/project/policy.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-  - [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
-  - [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-  - [archive/note/index.html](/Users/jungsoo/Projects/chochita0311.github.io/archive/note/index.html)
-  - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-  - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
+  - [index.html](index.html)
+  - [archive/content.js](assets/js/archive/content.js)
+  - [sidebar.js](assets/js/sidebar.js)
+  - [topbar.js](assets/js/topbar.js)
+  - [index-note-detail.js](assets/js/index-note-detail.js)
+  - [archive/note/index.html](archive/note/index.html)
+  - [components.css](assets/css/components.css)
+  - [layouts.css](assets/css/layouts.css)
 
 ## Product Intent
 

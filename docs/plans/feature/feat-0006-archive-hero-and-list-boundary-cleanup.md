@@ -5,7 +5,7 @@
 - ID: `feat-0006`
 - Status: `draft`
 - Type: `product`
-- Parent PRD: [prd-0003-archive-list-density-and-footer-separator-cleanup.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0003-archive-list-density-and-footer-separator-cleanup.md)
+- Parent PRD: [prd-0003-archive-list-density-and-footer-separator-cleanup.md](docs/plans/prd/prd-0003-archive-list-density-and-footer-separator-cleanup.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-18`
 
@@ -71,25 +71,25 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0003-archive-list-density-and-footer-separator-cleanup.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0003-archive-list-density-and-footer-separator-cleanup.md)
-- Current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- Current archive styles in [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css) and [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- Current archive browse runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js) and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- Current generated archive browse artifact in [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
-- Current generator script in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- Removed hero-copy config formerly in [archive-descriptions.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/config/archive-descriptions.json)
+- Parent PRD [prd-0003-archive-list-density-and-footer-separator-cleanup.md](docs/plans/prd/prd-0003-archive-list-density-and-footer-separator-cleanup.md)
+- Current archive shell in [index.html](index.html)
+- Current archive styles in [layouts.css](assets/css/layouts.css) and [components.css](assets/css/components.css)
+- Current archive browse runtime in [archive-content.js](assets/js/archive/content.js) and [sidebar.js](assets/js/sidebar.js)
+- Current generated archive browse artifact in [archives-index.json](assets/generated/archives-index.json)
+- Current generator script in [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- Removed hero-copy config now preserved at [archive-descriptions.json](stale/assets/config/archive-descriptions.json)
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
-- [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-- [developer-guide.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/developer-guide.md)
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+- [index.html](index.html)
+- [layouts.css](assets/css/layouts.css)
+- [components.css](assets/css/components.css)
+- [archive-content.js](assets/js/archive/content.js)
+- [sidebar.js](assets/js/sidebar.js)
+- [topbar.js](assets/js/topbar.js)
+- [architecture.md](docs/policies/project/architecture.md)
+- [developer-guide.md](docs/policies/project/developer-guide.md)
+- [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 - `stale/`
 
 ## Pass Or Fail Checks

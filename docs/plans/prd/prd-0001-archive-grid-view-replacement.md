@@ -19,15 +19,15 @@
   - Left, top, and bottom areas must remain unchanged.
   - Do not add currently missing features or data arbitrarily.
 - Golden sources:
-  - [`./tmp/ai-generated-grid.html`](/Users/jungsoo/Projects/chochita0311.github.io/tmp/ai-generated-grid.html)
+  - `tmp/ai-generated-grid.html`
 - Supporting docs:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [design-constitution.md](docs/policies/design/design-constitution.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+  - [index.html](index.html)
+  - [layouts.css](assets/css/layouts.css)
+  - [archive-content.js](assets/js/archive/content.js)
 
 ## Product Intent
 - Keep archive notes readable in the current list-first browse surface while adding a secondary grid view for denser scanning.

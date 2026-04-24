@@ -8,8 +8,8 @@
 - Result: `PASS`
 - Run ID: `run-20260418-02`
 - Attempt: `1`
-- Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
-- Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
+- Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
+- Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
 - Created: `2026-04-19`
 
 ## Scope

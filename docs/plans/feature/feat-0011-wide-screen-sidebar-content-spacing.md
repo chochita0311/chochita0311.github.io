@@ -5,7 +5,7 @@
 - ID: `feat-0011`
 - Status: `passed`
 - Type: `product`
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-20`
 
@@ -61,18 +61,18 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
-- Current shell layout in [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- Current note-detail layout in [note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
-- Current archive shell structure in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+- Parent PRD [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Current shell layout in [layouts.css](assets/css/layouts.css)
+- Current note-detail layout in [note-detail.css](assets/css/note-detail.css)
+- Current archive shell structure in [index.html](index.html)
 
 ## Likely Affected Surfaces
 
-- [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [assets/css/note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
-- [assets/css/tokens.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/tokens.css)
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [docs/plans/spec/](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec)
+- [assets/css/layouts.css](assets/css/layouts.css)
+- [assets/css/note-detail.css](assets/css/note-detail.css)
+- [assets/css/tokens.css](assets/css/tokens.css)
+- [index.html](index.html)
+- [docs/plans/spec/](docs/plans/spec)
 
 ## Pass Or Fail Checks
 
@@ -92,8 +92,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0007-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
-- Latest evaluator report: [eval-0011-functional-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0011-functional-wide-screen-sidebar-content-spacing.md)
+- Active spec doc: [spec-0007-wide-screen-sidebar-content-spacing.md](docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
+- Latest evaluator report: [eval-0011-functional-wide-screen-sidebar-content-spacing.md](docs/plans/evaluation/eval-0011-functional-wide-screen-sidebar-content-spacing.md)
 - Latest fix note:
 
 ## Continuity Notes

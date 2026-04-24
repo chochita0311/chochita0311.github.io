@@ -1,27 +1,26 @@
 # PRD And Feature Management
 
 ## Purpose
-
 - Define how PRDs and feature plans are created, approved, updated, and traced during harness-driven work.
 - Keep planning artifacts strict enough that later spec, build, evaluator, and fix loops can reference them without guesswork.
 - Separate product-boundary decisions from per-feature implementation loops.
 
 ## Ownership
-
-- This document owns rules.
-- Use it to understand what PRDs and features are, what they must contain, what may remain open, what must be clear before approval, and how traceability and change control work.
-- It does not own the full step-by-step baton sequence.
-- Use `docs/agents/flow/workflow.md` for the ordered flow, pause points, and handoff timing between planning and execution.
+- This document owns the lifecycle, required content, approval gates, and change control rules for PRD and feature artifacts.
+- Use it to understand what PRDs and features are, what they must contain, what may remain open, and what must be clear before approval.
+- It does not own the full step-by-step baton sequence, execution-profile routing, execution return model, or portable link rules.
+- Use `docs/agents/flows/workflow.md` for the ordered flow, pause points, and handoff timing between planning and execution.
+- Use `docs/policies/harness/execution-profiles.md` for surfaces, lanes, profiles, and evaluator routing.
+- Use `docs/policies/harness/execution-loop-governance.md` for execution return paths.
+- Use `docs/policies/harness/traceability-and-link-hygiene.md` for portable links and source/generated artifact reference rules.
 
 ## Planning Layers
-
 - `docs/plans/prd/` owns bounded PRD documents.
 - `docs/plans/feature/` owns loop-sized feature documents derived from approved PRDs.
 - `docs/plans/spec/` owns implementation-facing specs derived from approved features.
 - `docs/policies/` continues to own durable project rules and contracts.
 
 ## Core Model
-
 - A `PRD` is the upper planning boundary for one coherent product increment.
 - A `Feature` is the execution unit for one harness loop target.
 - A harness run should always be traceable back to exactly one feature plan.
@@ -32,7 +31,6 @@
 Not every feature serves the same role in the harness workflow.
 
 ### Product Feature
-
 - Purpose:
   - deliver a user-visible outcome
 - Requirement:
@@ -43,7 +41,6 @@ Not every feature serves the same role in the harness workflow.
   - display mode toggle
 
 ### Foundation Feature
-
 - Purpose:
   - remove downstream ambiguity by fixing a contract, invariant, or ownership boundary
 - Requirement:
@@ -59,26 +56,18 @@ Not every feature serves the same role in the harness workflow.
   - session schema normalization
 
 ## Why This Split Exists
-
 - PRDs define direction, scope, exclusions, and acceptance envelope.
 - Feature plans define loop-sized implementation targets, dependencies, and pass or fail checks.
 - Scope changes belong in the PRD layer, not inside evaluator feedback or implementation notes.
 
-## Creation Flow
-
-1. Gather the user request and golden sources.
-2. Run `PRD Normalizer` and write or update a PRD document.
-3. Stop and review the PRD with the human owner.
-4. Resolve unclear points, exclusions, and uncertainty until the PRD boundary is acceptable.
-5. Mark the PRD as `approved`.
-6. Run `Feature Planner` against the approved PRD.
-7. Stop and review the proposed feature boundaries with the human owner.
-8. Split, merge, defer, or reject features until the boundary is acceptable.
-9. Mark the chosen feature documents as `approved`.
-10. Run spec, build, evaluate, and fix loops against a single approved feature document at a time.
+## Planning Gate Summary
+- PRD drafting starts from the human request, golden sources, and relevant existing docs.
+- PRD review must stop until confirmed scope, exclusions, uncertainty, constraints, and acceptance envelope are acceptable.
+- Feature planning starts only from an approved PRD.
+- Feature review must stop until the chosen feature boundary, dependencies, execution profile, surface, and pass/fail checks are concrete enough for spec handoff.
+- Execution starts only from one approved feature at a time unless the human owner explicitly approves parallel execution.
 
 ## PRD Rules
-
 - Create a new PRD when the requested increment introduces a new upper scope boundary.
 - Update an existing PRD when the request is still part of the same bounded increment.
 - Human intervention is expected and desirable while a PRD is still `draft`.
@@ -101,18 +90,19 @@ Not every feature serves the same role in the harness workflow.
 
 - Keep an item in the PRD when it is still an open question or unresolved planning ambiguity.
 - Create a foundation feature when the intended direction is chosen and now needs a bounded, traceable contract artifact.
-- Move the rule to `docs/policies/` instead when it becomes a durable repo-wide rule rather than a request-local planning outcome.
+- Move the rule into `docs/policies/` instead when it becomes a durable repo-wide rule rather than a request-local planning outcome.
 
 ## Feature Rules
-
 - Create one feature document for each loop-sized unit approved from a PRD.
 - Human intervention is expected and desirable while feature boundaries are still being proposed.
 - Proposed features may be split, merged, reordered, deferred, or rejected before approval.
 - Every feature should declare a `Type` of `product` or `foundation`.
-- Foundation and product outcomes must be tracked in separate feature documents.
+- Every feature should declare a `Surface` and `Execution Profile` before spec handoff.
+- Multi-surface features should declare explicit `Surface Lanes`.
 - A foundation feature must produce one concrete contract or invariant, not a vague preparation step.
+- Foundation and product outcomes must be tracked in separate feature documents when the foundation outcome is a prerequisite contract.
 - A product feature should not absorb unresolved contract questions that belong in a foundation feature.
-- A product feature must not absorb required foundation implementation even when that foundation is only needed for one immediate downstream UI feature.
+- A product feature must not absorb required foundation implementation even when that foundation is only needed for one immediate downstream product feature.
 - An approved feature must be concrete enough to hand off to the spec agent without guesswork about scope, dependencies, user-visible outcome, data ownership, interaction behavior, or pass/fail checks.
 - If unclear, open, or weakly supported points remain in a feature boundary, ask the human owner direct clarification questions until the execution target is clear enough to approve.
 - Do not start spec or implementation work from a feature document that has not been boundary-locked.
@@ -121,15 +111,17 @@ Not every feature serves the same role in the harness workflow.
 - A feature must be small enough to converge in one to three build or fix loops in normal cases.
 - A feature must explicitly define:
   - parent PRD
+  - type, surface, and execution profile
+  - surface lanes when relevant
   - scope boundary
   - dependencies
+  - contract surfaces when relevant
   - pass or fail checks
   - regression surfaces
   - harness-trace fields
 - A feature must not silently absorb missing scope discovered later.
 
 ## Status Model
-
 Use these statuses for PRD and feature documents:
 
 - `draft`: being prepared and not yet approved for downstream use
@@ -140,7 +132,6 @@ Use these statuses for PRD and feature documents:
 - `superseded`: replaced by a newer document or narrower split
 
 ## Change Control
-
 - If evaluator output reveals a missing but desirable behavior:
   - do not silently implement it
   - decide whether it belongs in the parent PRD or the current feature
@@ -157,28 +148,23 @@ Use these statuses for PRD and feature documents:
   - then re-check linked feature documents
 
 ## Human Review Rights
-
 - The human owner may interrupt and revise planning output at any time before PRD approval.
 - The human owner may interrupt and revise feature boundaries at any time before feature approval.
 - Questions, objections, and clarifications should be resolved in the planning layer instead of being pushed into spec or implementation.
 - After approval, scope changes must return to the planning layer instead of being absorbed ad hoc during execution.
 
 ## Clarification Rule
-
 - A PRD may be approved with explicitly recorded open items when those items do not block safe feature planning.
 - Do not approve a feature boundary while material ambiguity remains.
 - If the next planning or execution step depends on an unclear point, stop and ask the human owner.
 - Prefer a short direct question over silent assumption when the ambiguity could change scope, dependency order, data ownership, interaction behavior, or acceptance checks.
-
-## Source-Of-Truth Clarification Rule
-
-- When the human owner asks to change an identifier, field, or contract value, first determine whether the request targets:
+- When the human owner asks to change an identifier, field, contract value, generated artifact, route, command output, or schema, clarify whether the request targets:
   - source content or source metadata
   - generated artifacts
   - runtime-only derived state
+  - producer or consumer contract behavior
 - Do not reinterpret a source-of-truth request as a generated-output-only change.
-- If a request could reasonably mean either source change or generated-output change, clarify it in planning before approving the affected feature.
-- This rule applies especially to note identity, frontmatter fields, generated indexes, and other contracts that exist in both source and derived forms.
+- Use `traceability-and-link-hygiene.md` for broader source/generated artifact ownership and stale-reference rules.
 
 ## Feature Approval Rule Extension
 
@@ -189,9 +175,9 @@ Use these statuses for PRD and feature documents:
 - A product feature may enter spec generation only after its required foundation features are `approved`.
 - A product feature should enter build only after its required foundation features are `passed` when the dependency affects data shape, ownership, or acceptance logic.
 - Do not approve a mixed feature boundary that combines a new foundation dependency with a downstream product outcome in the same execution target.
+- Do not approve multi-surface execution until lane dependencies and evaluator ownership are explicit enough for the orchestrator to route the run.
 
 ## Traceability Rules
-
 - Every PRD should have a stable ID such as `prd-0001`.
 - Every feature should have a stable ID such as `feat-0001`.
 - Every spec should have a stable ID such as `spec-0001`.
@@ -205,7 +191,7 @@ Use these statuses for PRD and feature documents:
 - For product features:
   - validate user-visible behavior, interaction, layout, state transitions, and regression
 - For foundation features:
-  - validate contract completeness
+  - validate contract completeness through Contract Evaluator
   - validate absence of blocking ambiguity
   - validate readiness for spec handoff
 - Evaluators must not:
@@ -213,13 +199,11 @@ Use these statuses for PRD and feature documents:
   - silently upgrade uncertainty into confirmed scope
 
 ## Naming Guidance
-
 - Use filenames in the form `prd-####-slug.md` and `feat-####-slug.md`.
 - Keep slugs short and outcome-focused.
 - Prefer stable IDs over conversational filenames.
 
 ## Minimal Operating Pattern
-
 - One PRD can yield several feature documents.
 - Only one feature should normally be `in-loop` at a time unless the user explicitly wants parallel execution.
 - Previous passed features become regression surfaces for later features.
@@ -227,16 +211,16 @@ Use these statuses for PRD and feature documents:
 ## Split Trigger For Product Features
 
 Split a product feature when one or more of these become true:
-
-- list and grid or other modes require substantially different structure
+- multiple surfaces, modes, or lanes require substantially different structure
 - fallback behavior diverges by surface
-- evaluator failures cluster into different UI surfaces
+- evaluator failures cluster into different surfaces or contracts
+- the feature absorbs a foundation contract that should pass before product behavior starts
 - the feature repeatedly fails to converge within one to three loops
 
 ## Relationship To Agent Roles
-
-- `docs/agents/role/prd-normalizer.md` defines how to stabilize raw inputs into a bounded PRD.
-- `docs/agents/role/feature-planner.md` defines how to decompose an approved PRD into loop-sized features.
-- `docs/agents/role/spec-agent.md` defines how to convert one approved feature into a build-ready spec.
+- `docs/agents/roles/prd-normalizer.md` defines how to stabilize raw inputs into a bounded PRD.
+- `docs/agents/roles/feature-planner.md` defines how to decompose an approved PRD into loop-sized features.
+- `docs/agents/roles/spec-agent.md` defines how to convert one approved feature into a build-ready spec.
 - `docs/policies/harness/execution-loop-governance.md` defines how approved features move through execution loops and how failures route upward.
+- `docs/policies/harness/execution-profiles.md` defines how surfaces, lanes, profiles, and evaluator sets are selected.
 - This guide defines where those outputs live and how they stay traceable over time.

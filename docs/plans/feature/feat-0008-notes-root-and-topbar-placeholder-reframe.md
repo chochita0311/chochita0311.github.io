@@ -5,7 +5,7 @@
 - ID: `feat-0008`
 - Status: `draft`
 - Type: `foundation`
-- Parent PRD: [prd-0004-archive-navigation-and-label-polish.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
+- Parent PRD: [prd-0004-archive-navigation-and-label-polish.md](docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-18`
 
@@ -68,28 +68,28 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0004-archive-navigation-and-label-polish.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
-- Current archive runtime in [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js), [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js), and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- Current taxonomy and topbar behavior in [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
-- Current generators in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs) and [generate-sitemap.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-sitemap.mjs)
-- Current content and contract docs in [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md), [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md), and [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+- Parent PRD [prd-0004-archive-navigation-and-label-polish.md](docs/plans/prd/prd-0004-archive-navigation-and-label-polish.md)
+- Current archive runtime in [archive/content.js](assets/js/archive/content.js), [index-note-detail.js](assets/js/index-note-detail.js), and [sidebar.js](assets/js/sidebar.js)
+- Current taxonomy and topbar behavior in [topbar.js](assets/js/topbar.js)
+- Current generators in [generate-archives-index.mjs](scripts/generate-archives-index.mjs) and [generate-sitemap.mjs](scripts/generate-sitemap.mjs)
+- Current content and contract docs in [README.md](README.md), [architecture.md](docs/policies/project/architecture.md), and [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 
 ## Likely Affected Surfaces
 
 - `NOTES/` and former `CATEGORIES/`
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-- [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
-- [scripts/generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- [scripts/generate-sitemap.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-sitemap.mjs)
-- [assets/generated/archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
-- [assets/generated/archives-search-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-search-index.json)
-- [sitemap.xml](/Users/jungsoo/Projects/chochita0311.github.io/sitemap.xml)
-- [README.md](/Users/jungsoo/Projects/chochita0311.github.io/README.md)
-- [docs/policies/project/architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-- [docs/policies/project/developer-guide.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/developer-guide.md)
-- [docs/policies/archive/note/note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
+- [assets/js/sidebar.js](assets/js/sidebar.js)
+- [assets/js/topbar.js](assets/js/topbar.js)
+- [scripts/generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- [scripts/generate-sitemap.mjs](scripts/generate-sitemap.mjs)
+- [assets/generated/archives-index.json](assets/generated/archives-index.json)
+- [assets/generated/archives-search-index.json](assets/generated/archives-search-index.json)
+- [sitemap.xml](sitemap.xml)
+- [README.md](README.md)
+- [docs/policies/project/architecture.md](docs/policies/project/architecture.md)
+- [docs/policies/project/developer-guide.md](docs/policies/project/developer-guide.md)
+- [docs/policies/archive/note/note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 
 ## Pass Or Fail Checks
 

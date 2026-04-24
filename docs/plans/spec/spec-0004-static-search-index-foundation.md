@@ -6,23 +6,23 @@
 - Status: `approved`
 - Run ID: `run-20260412-02`
 - Attempt: `2`
-- Parent Feature: [feat-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0004-static-search-index-foundation.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent Feature: [feat-0004-static-search-index-foundation.md](docs/plans/feature/feat-0004-static-search-index-foundation.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-12`
 - Updated: `2026-04-12`
 
 ## Source Set
 
 - Human-approved feature:
-  - [feat-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0004-static-search-index-foundation.md)
+  - [feat-0004-static-search-index-foundation.md](docs/plans/feature/feat-0004-static-search-index-foundation.md)
 - Parent PRD:
-  - [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+  - [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Golden sources:
-  - current generator in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
+  - current generator in [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
 - Relevant policies or contracts:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 
 ## Implementation Goal
 
@@ -51,11 +51,11 @@
 
 ## Affected Surfaces
 
-- [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
-- generated [archives-search-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-search-index.json)
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+- [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- [archives-index.json](assets/generated/archives-index.json)
+- generated [archives-search-index.json](assets/generated/archives-search-index.json)
+- [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- [architecture.md](docs/policies/project/architecture.md)
 
 ## State And Contract Rules
 
@@ -64,7 +64,7 @@
 - Markdown body should be reduced to plain searchable text before token extraction.
 - Search index tokens should be unique per note per term.
 - Empty source sets should still emit a valid empty reverse-index structure.
-- Search token filtering must align with [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md).
+- Search token filtering must align with [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md).
 
 ## Acceptance Mapping
 

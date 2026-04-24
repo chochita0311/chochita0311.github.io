@@ -52,13 +52,13 @@
 - Golden sources:
   - None supplied beyond the human request.
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
+  - [index.html](index.html)
+  - [archive-content.js](assets/js/archive/content.js)
+  - [sidebar.js](assets/js/sidebar.js)
 
 ## Product Intent
 

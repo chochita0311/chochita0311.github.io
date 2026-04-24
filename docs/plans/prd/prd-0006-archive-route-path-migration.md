@@ -21,17 +21,17 @@
 - Golden sources:
   - none yet
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [archive-route-path-migration-plan.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/refactoring/archive-route-path-migration-plan.md)
-  - [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [archive-route-path-migration-plan.md](docs/plans/refactoring/archive-route-path-migration-plan.md)
+  - [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [assets/js/main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js)
-  - [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [assets/js/archive/search.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/search.js)
-  - [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-  - [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
+  - [index.html](index.html)
+  - [assets/js/main-landing.js](assets/js/main-landing.js)
+  - [assets/js/archive/content.js](assets/js/archive/content.js)
+  - [assets/js/archive/search.js](assets/js/archive/search.js)
+  - [assets/js/sidebar.js](assets/js/sidebar.js)
+  - [assets/js/topbar.js](assets/js/topbar.js)
 
 ## Product Intent
 
@@ -87,7 +87,7 @@
 - Remove legacy query-route ownership once the path model is live rather than keeping two long-term canonical route systems in parallel.
 - Use note primary keys as canonical detail identifiers under `/archive/note?id=<note-id>`; do not introduce slug-based canonical ownership in this track.
 - Do not preserve `pages/note/` as a runtime route surface after canonical note-detail ownership moves under `/archive/note?id=<note-id>`.
-- Defer `404.html`-based deep-link recovery strategy to [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md); this track should prefer explicit static entry files first.
+- Defer `404.html`-based deep-link recovery strategy to [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md); this track should prefer explicit static entry files first.
 - If route/runtime boundaries such as `archive-router` or `archive-render` need to change to support the canonical path model, treat that structure change as part of this PRD rather than as part of `prd-0008`.
 
 ## Acceptance Envelope
@@ -101,7 +101,7 @@
 - The chosen route shape remains statically hostable on GitHub Pages and supports refresh and direct entry.
 - Legacy query routes no longer remain as an equal canonical route system after the migration is complete.
 - Route parsing and runtime ownership are clean enough that follow-up flash work does not need to keep solving around the old query-driven route contract.
-- The resulting route model makes follow-up work such as [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) easier to reason about.
+- The resulting route model makes follow-up work such as [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) easier to reason about.
 
 ## Candidate Features
 

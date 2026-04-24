@@ -8,8 +8,8 @@
 - Result: `PASS WITH SUGGESTIONS`
 - Run ID: `run-20260418-01`
 - Attempt: `1`
-- Feature: [feat-0010-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0010-landing-page-entry-flow.md)
-- Spec: [spec-0006-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0006-landing-page-entry-flow.md)
+- Feature: [feat-0010-landing-page-entry-flow.md](docs/plans/feature/feat-0010-landing-page-entry-flow.md)
+- Spec: [spec-0006-landing-page-entry-flow.md](docs/plans/spec/spec-0006-landing-page-entry-flow.md)
 - Created: `2026-04-19`
 
 ## Scope

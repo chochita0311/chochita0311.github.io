@@ -5,7 +5,7 @@
 - ID: `feat-0004`
 - Status: `passed`
 - Type: `foundation`
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-12`
 
@@ -66,19 +66,19 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Required foundation feature: `feat-0002-numeric-source-note-ids-and-search-contract`
-- Archive generator in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- Note source contract in [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+- Archive generator in [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- Note source contract in [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 
 ## Likely Affected Surfaces
 
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
+- [archive-content.js](assets/js/archive/content.js)
+- [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- [archives-index.json](assets/generated/archives-index.json)
 - generated static search-index asset under `assets/generated/`
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+- [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- [architecture.md](docs/policies/project/architecture.md)
 
 ## Pass Or Fail Checks
 
@@ -97,8 +97,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0004-static-search-index-foundation.md)
-- Latest evaluator report: [eval-0004-functional-static-search-index-filter-alignment.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0004-functional-static-search-index-filter-alignment.md)
+- Active spec doc: [spec-0004-static-search-index-foundation.md](docs/plans/spec/spec-0004-static-search-index-foundation.md)
+- Latest evaluator report: [eval-0004-functional-static-search-index-filter-alignment.md](docs/plans/evaluation/eval-0004-functional-static-search-index-filter-alignment.md)
 - Latest fix note:
 
 ## Continuity Notes

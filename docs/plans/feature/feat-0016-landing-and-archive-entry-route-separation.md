@@ -5,7 +5,7 @@
 - ID: `feat-0016`
 - Status: `completed`
 - Type: `foundation`
-- Parent PRD: [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
+- Parent PRD: [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
 - Created: `2026-04-19`
 - Updated: `2026-04-19`
 
@@ -62,18 +62,18 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
-- Active refactor track [archive-route-path-migration-plan.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/refactoring/archive-route-path-migration-plan.md)
-- Current entry ownership in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html), [main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js), and [content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+- Parent PRD [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
+- Active refactor track [archive-route-path-migration-plan.md](docs/plans/refactoring/archive-route-path-migration-plan.md)
+- Current entry ownership in [index.html](index.html), [main-landing.js](assets/js/main-landing.js), and [content.js](assets/js/archive/content.js)
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js)
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/archive/search.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/search.js)
-- [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
+- [index.html](index.html)
+- [assets/js/main-landing.js](assets/js/main-landing.js)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/archive/search.js](assets/js/archive/search.js)
+- [assets/js/sidebar.js](assets/js/sidebar.js)
+- [assets/js/topbar.js](assets/js/topbar.js)
 - `archive/`
 
 ## Pass Or Fail Checks

@@ -4,7 +4,7 @@
 
 - Replace the former query-driven landing and archive route ownership with clearer archive-entry-oriented structure so landing visibility no longer depends on scattered root-shell query checks.
 - Reduce coupling between landing state, archive browse state, and note-detail state while preserving current user-visible behavior during migration.
-- Prepare a safer foundation for [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) by simplifying route intent before deeper boot-gating or render-gating changes.
+- Prepare a safer foundation for [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) by simplifying route intent before deeper boot-gating or render-gating changes.
 
 ## Refactor Type
 
@@ -23,16 +23,16 @@
   - category and collection note archive entry
   - note detail entry
 - Route parsing and history handling across:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [assets/js/main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js)
-  - [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [assets/js/archive/search.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/search.js)
-  - [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-  - [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
+  - [index.html](index.html)
+  - [assets/js/main-landing.js](assets/js/main-landing.js)
+  - [assets/js/archive/content.js](assets/js/archive/content.js)
+  - [assets/js/archive/search.js](assets/js/archive/search.js)
+  - [assets/js/sidebar.js](assets/js/sidebar.js)
+  - [assets/js/topbar.js](assets/js/topbar.js)
 - Static-hosting compatibility work required by GitHub Pages path handling.
 - Related architecture and planning docs when the route model changes materially.
 - Parent planning track:
-  - [prd-0006-archive-route-path-migration.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0006-archive-route-path-migration.md)
+  - [prd-0006-archive-route-path-migration.md](docs/plans/prd/prd-0006-archive-route-path-migration.md)
 
 ## Non-Goals
 
@@ -71,9 +71,9 @@
   - Introduce `/archive/` and `/archive/note/` ownership before deeper browse-path work.
   - Keep `/archive/` as the archive family entry path, but default its resolved experience to the note list until future kinds such as `design` and `project` need their own first-class surfaces.
 - Targets
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [assets/js/main-landing.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/main-landing.js)
-  - [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+  - [index.html](index.html)
+  - [assets/js/main-landing.js](assets/js/main-landing.js)
+  - [assets/js/archive/content.js](assets/js/archive/content.js)
   - new static archive entry files under `archive/`
   - route links in sidebar, topbar, and brand reset flows
 - Validation
@@ -97,8 +97,8 @@
   - Treat the `/archive/note` route family as canonical and keep only former root-shell query support transitional.
   - Remove former root-shell query ownership after the migration completes instead of keeping a parallel long-term route system.
 - Targets
-  - archive route parsing inside [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - navigation emitters in [assets/js/sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js) and [assets/js/topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
+  - archive route parsing inside [assets/js/archive/content.js](assets/js/archive/content.js)
+  - navigation emitters in [assets/js/sidebar.js](assets/js/sidebar.js) and [assets/js/topbar.js](assets/js/topbar.js)
   - sitemap and route-generation scripts if browse URLs become published paths
   - archive note entry files under `archive/note/`
 - Validation
@@ -121,8 +121,8 @@
   - Remove `pages/note/` runtime ownership during this step rather than preserving it as a second permanent route surface.
   - Do not change note identity or note file structure as part of this step.
 - Targets
-  - [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
+  - [assets/js/archive/content.js](assets/js/archive/content.js)
+  - [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
   - sitemap generation and canonical URL handling
 - Validation
   - direct `/archive/note?id=<note-id>` entry resolves without showing wrong intermediate list or landing state
@@ -141,7 +141,7 @@
   - Remove only compatibility code whose replacement has already passed refresh, direct-entry, and history validation.
   - Delete legacy route code only after the full refactoring is complete and there is no active runtime surface still using it.
   - Do not preserve a second long-term canonical route system in parallel with the path model.
-- Keep [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) behavior-preserving relative to the new final route model.
+- Keep [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) behavior-preserving relative to the new final route model.
 - Targets
   - residual query checks in landing and archive route parsing
   - documentation that still treats query state as the canonical route contract
@@ -161,9 +161,9 @@
   - refresh behavior checks for migrated entry URLs
   - popstate/history traversal checks for migrated entry URLs
   - link-source audit for sidebar, topbar, brand, landing search, and note navigation emitters
-  - static-hosting compatibility check for explicit entry-file strategy first; defer `404.html` fallback strategy to [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
+  - static-hosting compatibility check for explicit entry-file strategy first; defer `404.html` fallback strategy to [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md)
 - Full-track checkpoint:
-  - rerun [prd-0008-initial-route-render-flash-elimination.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) flash-focused evaluation scenarios against the new route model before declaring the migration safe to continue or safe to merge
+  - rerun [prd-0008-initial-route-render-flash-elimination.md](docs/plans/prd/prd-0008-initial-route-render-flash-elimination.md) flash-focused evaluation scenarios against the new route model before declaring the migration safe to continue or safe to merge
 
 ## Intentional Deltas
 

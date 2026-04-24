@@ -4,9 +4,9 @@
 
 - ID: `run-20260418-02`
 - Status: `passed`
-- Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
-- Active Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
+- Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Active Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-19`
 
@@ -25,17 +25,17 @@
 ## Invocation Context
 
 - Golden sources:
-  - current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+  - current archive shell in [index.html](index.html)
 - Relevant policies:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Optional skills or tools expected:
   - none
 
 ## Current Artifacts
 
-- Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
-- Design evaluation: [eval-0011-design-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0011-design-wide-screen-sidebar-content-spacing.md)
-- Functional evaluation: [eval-0011-functional-wide-screen-sidebar-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0011-functional-wide-screen-sidebar-content-spacing.md)
+- Spec: [spec-0007-wide-screen-sidebar-content-spacing.md](docs/plans/spec/spec-0007-wide-screen-sidebar-content-spacing.md)
+- Design evaluation: [eval-0011-design-wide-screen-sidebar-content-spacing.md](docs/plans/evaluation/eval-0011-design-wide-screen-sidebar-content-spacing.md)
+- Functional evaluation: [eval-0011-functional-wide-screen-sidebar-content-spacing.md](docs/plans/evaluation/eval-0011-functional-wide-screen-sidebar-content-spacing.md)
 - UX heuristic evaluation:
 - Fix log:
 - Heuristic backlog:

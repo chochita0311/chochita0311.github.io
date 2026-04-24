@@ -36,13 +36,13 @@
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive/index.html](/Users/jungsoo/Projects/chochita0311.github.io/archive/index.html)
-- [archive/note/index.html](/Users/jungsoo/Projects/chochita0311.github.io/archive/note/index.html)
-- [assets/css/note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
-- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/icons.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/icons.js)
+- [index.html](index.html)
+- [archive/index.html](archive/index.html)
+- [archive/note/index.html](archive/note/index.html)
+- [assets/css/note-detail.css](assets/css/note-detail.css)
+- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/icons.js](assets/js/icons.js)
 
 ## Continuity Notes
 

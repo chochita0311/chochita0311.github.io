@@ -4,9 +4,9 @@
 
 - ID: `run-20260418-01`
 - Status: `passed`
-- Feature: [feat-0010-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0010-landing-page-entry-flow.md)
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
-- Active Spec: [spec-0006-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0006-landing-page-entry-flow.md)
+- Feature: [feat-0010-landing-page-entry-flow.md](docs/plans/feature/feat-0010-landing-page-entry-flow.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Active Spec: [spec-0006-landing-page-entry-flow.md](docs/plans/spec/spec-0006-landing-page-entry-flow.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-19`
 
@@ -25,20 +25,20 @@
 ## Invocation Context
 
 - Golden sources:
-  - [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
-  - [Video_Generation_With_Specific_Effects.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Video_Generation_With_Specific_Effects.mp4)
+  - `tmp/sample.html`
+  - `tmp/Video_Generation_With_Specific_Effects.mp4`
 - Relevant policies:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [design-constitution.md](docs/policies/design/design-constitution.md)
 - Optional skills or tools expected:
   - Stitch references already generated in the current exploration thread
 
 ## Current Artifacts
 
-- Spec: [spec-0006-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0006-landing-page-entry-flow.md)
-- Design evaluation: [eval-0010-design-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0010-design-landing-page-entry-flow.md)
-- Functional evaluation: [eval-0010-functional-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0010-functional-landing-page-entry-flow.md)
-- UX heuristic evaluation: [eval-0010-ux-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0010-ux-landing-page-entry-flow.md)
+- Spec: [spec-0006-landing-page-entry-flow.md](docs/plans/spec/spec-0006-landing-page-entry-flow.md)
+- Design evaluation: [eval-0010-design-landing-page-entry-flow.md](docs/plans/evaluation/eval-0010-design-landing-page-entry-flow.md)
+- Functional evaluation: [eval-0010-functional-landing-page-entry-flow.md](docs/plans/evaluation/eval-0010-functional-landing-page-entry-flow.md)
+- UX heuristic evaluation: [eval-0010-ux-landing-page-entry-flow.md](docs/plans/evaluation/eval-0010-ux-landing-page-entry-flow.md)
 - Fix log:
 - Heuristic backlog:
 

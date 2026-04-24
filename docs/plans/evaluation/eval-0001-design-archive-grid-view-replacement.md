@@ -7,8 +7,8 @@
 - Evaluator Type: `design`
 - Result: `PASS`
 - Run ID: `run-20260411-01`
-- Feature: [feat-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0001-archive-grid-view-replacement.md)
-- Spec: [spec-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
+- Feature: [feat-0001-archive-grid-view-replacement.md](docs/plans/feature/feat-0001-archive-grid-view-replacement.md)
+- Spec: [spec-0001-archive-grid-view-replacement.md](docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
 - Created: `2026-04-11`
 
 ## Scope

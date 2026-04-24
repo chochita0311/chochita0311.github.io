@@ -4,9 +4,9 @@
 
 - ID: `run-20260411-02`
 - Status: `passed`
-- Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Active Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
+- Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Active Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -24,18 +24,18 @@
 ## Invocation Context
 
 - Golden sources:
-  - [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
+  - [archives-index.json](assets/generated/archives-index.json)
 - Relevant policies:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Optional skills or tools expected:
   - none
 
 ## Current Artifacts
 
-- Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
+- Spec: [spec-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
 - Design evaluation:
-- Functional evaluation: [eval-0002-functional-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0002-functional-numeric-source-note-ids-and-search-contract.md)
+- Functional evaluation: [eval-0002-functional-numeric-source-note-ids-and-search-contract.md](docs/plans/evaluation/eval-0002-functional-numeric-source-note-ids-and-search-contract.md)
 - UX heuristic evaluation:
 - Fix log:
 - Heuristic backlog:

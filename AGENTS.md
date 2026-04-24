@@ -59,7 +59,7 @@
 - Keep `docs/` split cleanly between policy ownership and plan ownership
 
 ## Planning And Ownership
-- Only the Product Manager defines plan and acceptance criteria when the repo is using the shared role/task workflow
+- Only the human owner defines plan and acceptance criteria when the repo is using the shared role/task workflow; treat Product Manager as that owner only when explicitly assigned
 - Keep shared logs, tables, plans, and role docs concise and understandable across projects
 - When the request is to create or revise a `PRD`, treat it as planning-only work: write or update the PRD, then stop.
 - Do not start feature planning, spec work, code changes, or evaluation from a `draft` PRD.

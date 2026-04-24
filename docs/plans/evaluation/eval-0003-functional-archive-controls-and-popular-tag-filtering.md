@@ -8,8 +8,8 @@
 - Result: `PASS`
 - Run ID: `run-20260411-03`
 - Attempt: `1`
-- Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
-- Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
+- Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
+- Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
 - Created: `2026-04-11`
 
 ## Scope

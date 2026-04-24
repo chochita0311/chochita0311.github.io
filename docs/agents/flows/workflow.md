@@ -1,36 +1,28 @@
 # Agent Workflow
 
 ## Purpose
-
 - Define the baton flow for bounded, repeatable product work.
 - Keep creative scope decisions separate from implementation loops.
 
 ## Ownership
-
 - This document owns sequence.
 - Use it to understand the order of operations, stop points, and handoff moments between planning and execution.
 - It does not own the structural contract for PRDs or features.
 - It does not own the operator-facing run-start prompts.
 - Use `docs/policies/harness/prd-feature-management.md` for required document content, approval criteria, traceability rules, allowed ambiguity, and change control.
 - Use `docs/policies/harness/execution-loop-governance.md` for fail classification, execution routing, heuristic handling, and execution-artifact ownership.
-- Use `docs/policies/harness/execution-loop-governance.md` as the owner for the explicit return model:
-  - continue in loop
-  - return to spec
-  - return to planning
-  - re-entry after correction
-- Use `docs/agents/operation/runner.md` when you need to actually start or continue one run through prompts.
+- Use `docs/policies/harness/execution-profiles.md` for profile selection, surface lanes, and evaluator routing.
+- Use `docs/agents/operations/runner.md` when you need to actually start or continue one run through prompts.
 
 ## Workflow Assembly
-
 - Workflows are composable, not universal.
 - A project may use only the roles and steps it actually needs.
 - Some projects may stop at planning roles, while others may extend into spec, build, evaluator, and fixer loops.
-- Monorepo or multi-surface systems such as FE/BE stacks may require additional roles, gates, or parallel branches beyond the default sequence shown here.
+- Monorepo or multi-surface systems may require additional lanes, gates, or parallel branches beyond the default sequence shown here.
 - The flow below is a strong general-purpose example, not a mandatory full pipeline for every repo.
-- Keep role contracts stable and vary the sequence, gates, or evaluator mix as the project grows.
+- Keep role contracts stable and vary profiles, sequence, gates, lanes, or evaluator mix as the project grows.
 
 ## Step-By-Step Flow
-
 1. Human request
    - Provide the request, golden sources, and any strong constraints.
 2. `PRD Normalizer`
@@ -57,46 +49,28 @@
 9. Feature approval
    - Mark only the chosen execution target as `approved`.
 10. `Orchestrator`
-
-- Select the active feature, active spec target, and evaluator set.
-
+   - Select the active feature, active spec target, execution profile, surface lanes, and evaluator set.
 11. `Spec Agent`
-
-- Write or update one implementation-facing spec in `docs/plans/spec/`.
-
+   - Write or update one implementation-facing spec in `docs/plans/spec/`.
 12. `Builder`
-
-- Implement only the approved feature boundary from the active spec.
-
-13. `Design Evaluator`
-
-- Check source and design-surface fidelity when the feature is visually sensitive.
-
-14. `Functional Evaluator`
-
-- Check behavior, state handling, transitions, and regressions.
-
-15. `UX Heuristic Evaluator`
-
-- Emit blocking UX failures or non-blocking suggestions.
-
-16. `Fix Agent`
-
-- Fix only the approved feature defects surfaced by evaluators.
-
-17. Re-evaluate
-
-- Repeat the needed evaluator and fix steps until pass or until the work must return to planning or spec review.
-
-## Return Model Reminder
-
-- If the defect is only in implementation, stay in the active loop.
-- If the feature is right but the spec is weak, return to spec.
-- If the approved boundary is wrong, return to feature or PRD review.
-- After correction, re-enter from the corrected layer instead of skipping forward.
+   - Implement only the approved feature boundary from the active spec.
+13. `Contract Evaluator`
+   - Check contract, schema, generated-output, route, command, source-of-truth, or integration boundaries when they matter.
+14. `Design Evaluator`
+   - Check source and design-surface fidelity when the feature is visually sensitive.
+15. `Functional Evaluator`
+   - Check behavior, state handling, transitions, and regressions.
+16. `UX Heuristic Evaluator`
+   - Emit blocking UX failures or non-blocking suggestions.
+17. `Fix Agent`
+   - Fix only the approved feature defects surfaced by evaluators.
+18. Re-evaluate
+   - Repeat the needed evaluator and fix steps until pass or until the work must return to planning or spec review.
+19. Post-run human review
+   - After the automated run reports its result, the human owner decides whether to accept, return to spec, or return to planning.
+   - Start a new run from the corrected layer instead of treating that return as an in-progress interruption to the earlier run.
 
 ## Role Boundaries
-
 - Human:
   - sets product direction
   - supplies or approves golden sources
@@ -108,7 +82,7 @@
   - proposes loop-sized feature units and dependency order
   - does not own final scope decisions
 - Orchestrator:
-  - controls the active loop and evaluator set
+  - controls the active loop, execution profile, lane order, and evaluator set
   - routes failures to fix, spec review, or planning review
 - Spec Agent:
   - translates one approved feature into implementation-ready execution detail
@@ -116,6 +90,8 @@
 - Builder:
   - implements one approved spec
   - does not add adjacent scope opportunistically
+- Contract Evaluator:
+  - checks APIs, schemas, messages, generated outputs, source-of-truth ownership, and integration boundaries
 - Design Evaluator:
   - checks visual fidelity, responsive behavior, and presentation regressions
 - Functional Evaluator:
@@ -128,19 +104,17 @@
   - returns to planning or spec review when findings expose boundary or contract problems
 
 ## Approval Rule
-
 - Planning output is not executable truth until a human locks the boundary.
 - PRD and feature planning should pause at their review steps instead of flowing forward automatically.
 - PRDs may carry explicitly recorded open items when they do not block safe feature planning.
 - Approved features must be concrete enough for the spec agent to proceed without guesswork.
 - If material ambiguity remains during planning and would block safe feature planning or spec handoff, stop and ask the human owner instead of carrying the ambiguity forward.
 - If a later evaluator detects a likely missing behavior, it may suggest it, but that behavior must return to spec approval before implementation.
-- Use `docs/policies/harness/prd-feature-management.md` as the operating rule for where PRDs and features live and how they change.
+- Use this repo's planning-governance policy as the operating rule for where PRDs and features live and how they change.
 - Use `docs/plans/spec/` for implementation-facing specs tied to one approved feature.
-- Use `docs/policies/harness/execution-loop-governance.md` for execution-layer fail classification and return paths.
+- Use this repo's execution-loop governance policy for execution-layer fail classification and return paths.
 
 ## Reusable Prompt Frame
-
 Use this framing when invoking the early planning roles:
 
 ```text
@@ -161,15 +135,17 @@ Process:
 ```
 
 ## Execution Loop Guidance
-
 - `Orchestrator` should keep only one feature in active loop unless the human owner explicitly opts into parallel execution.
+- `Orchestrator` should choose one execution profile for the run and declare surface lanes when the feature spans multiple surfaces.
 - `Spec Agent` is the first execution role and should create one spec per active feature.
 - `Builder` should work from the active spec, not directly from rough feature prose.
 - Use only the evaluators needed by the feature:
-  - design-sensitive `product` features may need design, functional, and heuristic evaluation
-  - `foundation` features usually need functional evaluation only
+  - `foundation` features usually need contract evaluation, with functional evaluation only when runtime behavior also changes
+  - product features with contract surfaces need contract evaluation
+  - design-sensitive product features may need design, functional, and heuristic evaluation
 - `Fix Agent` should consume findings from the active evaluator set and preserve the same feature boundary.
-- If any evaluator finds what is really a planning or spec gap, pause the loop and return to the owning layer instead of normalizing the gap as a defect.
+- If any evaluator finds what is really a planning or spec gap, report that result for post-run human routing instead of normalizing the gap as a defect.
+- If execution changes a source-of-truth contract, identity model, or generated-data contract, add a stale-assumption check before closing the run.
 - `UX Heuristic Evaluator` should operate as a side-channel by default:
   - `PASS WITH SUGGESTIONS` does not block the loop
   - only severe blocking UX contradictions should stop execution
@@ -179,7 +155,6 @@ Process:
   - planning gap
 
 ## Example Variations
-
 - Planning-only:
   - Human -> PRD Normalizer -> PRD review -> Feature Planner -> feature review
 - Standard single-surface loop:
@@ -187,11 +162,10 @@ Process:
 - UI-heavy loop:
   - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> Builder -> Design Evaluator -> Functional Evaluator -> UX Heuristic Evaluator -> Fix Agent
 - Foundation contract loop:
-  - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> Builder or contract updater -> Functional Evaluator -> Fix Agent
-- Expanded FE/BE loop:
-  - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> parallel FE/BE build branches -> evaluator set -> Fix Agent
+  - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> Builder or contract updater -> Contract Evaluator -> Fix Agent
+- Multi-surface product loop:
+  - Human -> PRD Normalizer -> Feature Planner -> Orchestrator -> Spec Agent -> ordered or parallel surface lanes -> Contract Evaluator -> needed evaluator set -> Fix Agent
 
 ## Design Note
-
 - A single golden screen can be enough to bootstrap later work if it yields a stable design grammar.
 - If later features introduce patterns that the sources do not cover, treat them as uncertainty and request more source material instead of improvising.

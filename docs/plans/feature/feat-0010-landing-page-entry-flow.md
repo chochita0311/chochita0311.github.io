@@ -5,7 +5,7 @@
 - ID: `feat-0010`
 - Status: `passed`
 - Type: `product`
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-19`
 
@@ -32,9 +32,9 @@
 - In:
   - landing-first root entry behavior for `chochita0311.github.io/`
   - landing hero section inside the current `archive-main` canvas
-  - reuse of only the targeted structural pattern from [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
+  - reuse of only the targeted structural pattern from `tmp/sample.html`
   - quiet-archive hero styling aligned to the existing shell
-  - semi-transparent full-background video treatment sourced from [landing-entry-main.mp4](/Users/jungsoo/Projects/chochita0311.github.io/assets/landing-entry-main.mp4)
+  - semi-transparent full-background video treatment sourced from [landing-entry-main.mp4](assets/landing-entry-main.mp4)
   - auto-playing landing motion while the landing is visible
   - landing-to-list handoff at the end of the landing section
   - root-route and brand-title behavior separation
@@ -76,23 +76,23 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
-- Current shell structure in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- Current archive initialization and brand reset behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- Current list/detail state toggling in [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-- Current layout ownership in [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css) and [note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
-- Structural reference in [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
-- Motion reference in [Video_Generation_With_Specific_Effects.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Video_Generation_With_Specific_Effects.mp4)
+- Parent PRD [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Current shell structure in [index.html](index.html)
+- Current archive initialization and brand reset behavior in [archive-content.js](assets/js/archive/content.js)
+- Current list/detail state toggling in [index-note-detail.js](assets/js/index-note-detail.js)
+- Current layout ownership in [layouts.css](assets/css/layouts.css) and [note-detail.css](assets/css/note-detail.css)
+- Structural reference in `tmp/sample.html`
+- Motion reference in `tmp/Video_Generation_With_Specific_Effects.mp4`
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-- [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- [assets/css/app.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/app.css)
-- [docs/plans/spec/](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec)
+- [index.html](index.html)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
+- [assets/css/layouts.css](assets/css/layouts.css)
+- [assets/css/components.css](assets/css/components.css)
+- [assets/css/app.css](assets/css/app.css)
+- [docs/plans/spec/](docs/plans/spec)
 
 ## Pass Or Fail Checks
 
@@ -119,8 +119,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0006-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0006-landing-page-entry-flow.md)
-- Latest evaluator report: [eval-0010-functional-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0010-functional-landing-page-entry-flow.md)
+- Active spec doc: [spec-0006-landing-page-entry-flow.md](docs/plans/spec/spec-0006-landing-page-entry-flow.md)
+- Latest evaluator report: [eval-0010-functional-landing-page-entry-flow.md](docs/plans/evaluation/eval-0010-functional-landing-page-entry-flow.md)
 - Latest fix note:
 
 ## Continuity Notes

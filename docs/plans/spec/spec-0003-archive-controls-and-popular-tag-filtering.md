@@ -6,8 +6,8 @@
 - Status: `approved`
 - Run ID: `run-20260411-03`
 - Attempt: `1`
-- Parent Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -23,14 +23,14 @@
   - when popular tag filtering is active, sidebar category focus should clear
   - brand title should return to the default home state
 - Parent feature:
-  - [feat-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
+  - [feat-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
 - Parent PRD:
-  - [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+  - [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Golden sources:
-  - current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+  - current archive shell in [index.html](index.html)
 - Relevant policies or contracts:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 
 ## Implementation Goal
 
@@ -68,12 +68,12 @@
 
 ## Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive/note/index.html](/Users/jungsoo/Projects/chochita0311.github.io/archive/note/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
+- [index.html](index.html)
+- [archive/note/index.html](archive/note/index.html)
+- [archive-content.js](assets/js/archive/content.js)
+- [sidebar.js](assets/js/sidebar.js)
+- [components.css](assets/css/components.css)
+- [layouts.css](assets/css/layouts.css)
 
 ## State And Interaction Contract
 

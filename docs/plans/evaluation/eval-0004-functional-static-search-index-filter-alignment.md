@@ -8,8 +8,8 @@
 - Result: `PASS`
 - Run ID: `run-20260412-02`
 - Attempt: `2`
-- Feature: [feat-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0004-static-search-index-foundation.md)
-- Spec: [spec-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0004-static-search-index-foundation.md)
+- Feature: [feat-0004-static-search-index-foundation.md](docs/plans/feature/feat-0004-static-search-index-foundation.md)
+- Spec: [spec-0004-static-search-index-foundation.md](docs/plans/spec/spec-0004-static-search-index-foundation.md)
 - Created: `2026-04-12`
 
 ## Scope

@@ -5,7 +5,7 @@
 - ID: `feat-0002`
 - Status: `passed`
 - Type: `foundation`
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -63,15 +63,15 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Existing note metadata guidance in [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- Existing generator entry point in [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
+- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Existing note metadata guidance in [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- Existing generator entry point in [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
 
 ## Likely Affected Surfaces
 
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-- [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
+- [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- [architecture.md](docs/policies/project/architecture.md)
+- [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
 - `CATEGORIES/**/*.md`
 - `assets/generated/archives-index.json`
 
@@ -93,8 +93,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
-- Latest evaluator report: [eval-0002-functional-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0002-functional-numeric-source-note-ids-and-search-contract.md)
+- Active spec doc: [spec-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/spec/spec-0002-numeric-source-note-ids-and-search-contract.md)
+- Latest evaluator report: [eval-0002-functional-numeric-source-note-ids-and-search-contract.md](docs/plans/evaluation/eval-0002-functional-numeric-source-note-ids-and-search-contract.md)
 - Latest fix note:
 
 ## Continuity Notes

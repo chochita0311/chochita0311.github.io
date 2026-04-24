@@ -4,9 +4,9 @@
 
 - ID: `run-20260412-03`
 - Status: `passed`
-- Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Active Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
+- Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Active Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
 - Created: `2026-04-12`
 - Updated: `2026-04-12`
 
@@ -25,19 +25,19 @@
 ## Invocation Context
 
 - Golden sources:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+  - [index.html](index.html)
 - Relevant policies:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Optional skills or tools expected:
   - none
 
 ## Current Artifacts
 
-- Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
-- Design evaluation: [eval-0005-design-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0005-design-topbar-taxonomy-and-scoped-search.md)
-- Functional evaluation: [eval-0005-functional-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0005-functional-topbar-taxonomy-and-scoped-search.md)
+- Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
+- Design evaluation: [eval-0005-design-topbar-taxonomy-and-scoped-search.md](docs/plans/evaluation/eval-0005-design-topbar-taxonomy-and-scoped-search.md)
+- Functional evaluation: [eval-0005-functional-topbar-taxonomy-and-scoped-search.md](docs/plans/evaluation/eval-0005-functional-topbar-taxonomy-and-scoped-search.md)
 - UX heuristic evaluation:
 - Fix log:
 - Heuristic backlog:

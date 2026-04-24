@@ -30,19 +30,19 @@
   - The landing motion should use video as a half-transparent background layer.
   - As the user scrolls down, the background motion should advance through frames from the current MP4 reference.
 - Golden sources:
-  - [Website_Visuals_and_Video_Generation.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Website_Visuals_and_Video_Generation.mp4)
-  - [Video_Generation_With_Specific_Effects.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Video_Generation_With_Specific_Effects.mp4)
+  - `tmp/Website_Visuals_and_Video_Generation.mp4`
+  - `tmp/Video_Generation_With_Specific_Effects.mp4`
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [design-constitution.md](docs/policies/design/design-constitution.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-  - [note-detail.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/note-detail.css)
-  - [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-  - [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
+  - [index.html](index.html)
+  - [layouts.css](assets/css/layouts.css)
+  - [note-detail.css](assets/css/note-detail.css)
+  - [archive-content.js](assets/js/archive/content.js)
+  - [index-note-detail.js](assets/js/index-note-detail.js)
+  - `tmp/sample.html`
 
 ## Product Intent
 

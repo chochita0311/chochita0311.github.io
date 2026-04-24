@@ -4,9 +4,9 @@
 
 - ID: `run-20260411-03`
 - Status: `passed`
-- Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Active Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
+- Feature: [feat-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/feature/feat-0003-archive-controls-and-popular-tag-filtering.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Active Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -25,18 +25,18 @@
 ## Invocation Context
 
 - Golden sources:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
+  - [index.html](index.html)
 - Relevant policies:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 - Optional skills or tools expected:
   - none
 
 ## Current Artifacts
 
-- Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
-- Design evaluation: [eval-0003-design-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0003-design-archive-controls-and-popular-tag-filtering.md)
-- Functional evaluation: [eval-0003-functional-archive-controls-and-popular-tag-filtering.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0003-functional-archive-controls-and-popular-tag-filtering.md)
+- Spec: [spec-0003-archive-controls-and-popular-tag-filtering.md](docs/plans/spec/spec-0003-archive-controls-and-popular-tag-filtering.md)
+- Design evaluation: [eval-0003-design-archive-controls-and-popular-tag-filtering.md](docs/plans/evaluation/eval-0003-design-archive-controls-and-popular-tag-filtering.md)
+- Functional evaluation: [eval-0003-functional-archive-controls-and-popular-tag-filtering.md](docs/plans/evaluation/eval-0003-functional-archive-controls-and-popular-tag-filtering.md)
 - UX heuristic evaluation:
 - Fix log:
 - Heuristic backlog:

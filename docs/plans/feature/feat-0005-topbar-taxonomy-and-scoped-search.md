@@ -5,7 +5,7 @@
 - ID: `feat-0005`
 - Status: `passed`
 - Type: `product`
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-12`
 - Updated: `2026-04-12`
 
@@ -73,20 +73,20 @@
 
 ## Dependencies
 
-- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent PRD [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Required foundation features:
   - `feat-0002-numeric-source-note-ids-and-search-contract`
   - `feat-0004-static-search-index-foundation`
-- Existing archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- Existing archive and navigation behavior in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js) and [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
+- Existing archive shell in [index.html](index.html)
+- Existing archive and navigation behavior in [archive-content.js](assets/js/archive/content.js) and [sidebar.js](assets/js/sidebar.js)
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
+- [index.html](index.html)
+- [archive-content.js](assets/js/archive/content.js)
+- [sidebar.js](assets/js/sidebar.js)
+- [layouts.css](assets/css/layouts.css)
+- [components.css](assets/css/components.css)
 - generated static search-index asset under `assets/generated/`
 
 ## Pass Or Fail Checks
@@ -114,8 +114,8 @@
 
 ## Harness Trace
 
-- Active spec doc: [spec-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
-- Latest evaluator report: [eval-0005-functional-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0005-functional-topbar-taxonomy-and-scoped-search.md)
+- Active spec doc: [spec-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
+- Latest evaluator report: [eval-0005-functional-topbar-taxonomy-and-scoped-search.md](docs/plans/evaluation/eval-0005-functional-topbar-taxonomy-and-scoped-search.md)
 - Latest fix note:
 
 ## Continuity Notes

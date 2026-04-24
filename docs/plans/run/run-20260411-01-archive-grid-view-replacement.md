@@ -4,9 +4,9 @@
 
 - ID: `run-20260411-01`
 - Status: `passed`
-- Feature: [feat-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0001-archive-grid-view-replacement.md)
-- Parent PRD: [prd-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
-- Active Spec: [spec-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
+- Feature: [feat-0001-archive-grid-view-replacement.md](docs/plans/feature/feat-0001-archive-grid-view-replacement.md)
+- Parent PRD: [prd-0001-archive-grid-view-replacement.md](docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
+- Active Spec: [spec-0001-archive-grid-view-replacement.md](docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -26,21 +26,21 @@
 ## Invocation Context
 
 - Golden sources:
-  - [ai-generated-grid.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/ai-generated-grid.html)
+  - `tmp/ai-generated-grid.html`
 - Relevant policies:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [design-constitution.md](docs/policies/design/design-constitution.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
 - Optional skills or tools expected:
   - `screen-alignment` when available for design evaluation
   - Playwright MCP or Chrome DevTools MCP when available for UX heuristic evaluation
 
 ## Current Artifacts
 
-- Spec: [spec-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
-- Design evaluation: [eval-0001-design-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-design-archive-grid-view-replacement.md)
-- Functional evaluation: [eval-0001-functional-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-functional-archive-grid-view-replacement.md)
-- UX heuristic evaluation: [eval-0001-ux-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-ux-archive-grid-view-replacement.md)
+- Spec: [spec-0001-archive-grid-view-replacement.md](docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
+- Design evaluation: [eval-0001-design-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-design-archive-grid-view-replacement.md)
+- Functional evaluation: [eval-0001-functional-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-functional-archive-grid-view-replacement.md)
+- UX heuristic evaluation: [eval-0001-ux-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-ux-archive-grid-view-replacement.md)
 - Fix log:
 - Heuristic backlog:
 

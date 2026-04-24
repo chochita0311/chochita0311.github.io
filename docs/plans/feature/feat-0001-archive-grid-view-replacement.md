@@ -5,7 +5,7 @@
 - ID: `feat-0001`
 - Status: `passed`
 - Type: `product`
-- Parent PRD: [prd-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
+- Parent PRD: [prd-0001-archive-grid-view-replacement.md](docs/plans/prd/prd-0001-archive-grid-view-replacement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-20`
 
@@ -66,15 +66,15 @@
 
 ## Dependencies
 
-- Existing archive-note data contract in [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- Existing archive rendering flow in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- Existing shell and layout structure in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html) and [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
+- Existing archive-note data contract in [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- Existing archive rendering flow in [archive-content.js](assets/js/archive/content.js)
+- Existing shell and layout structure in [index.html](index.html) and [layouts.css](assets/css/layouts.css)
 
 ## Likely Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+- [index.html](index.html)
+- [layouts.css](assets/css/layouts.css)
+- [archive-content.js](assets/js/archive/content.js)
 
 ## Pass Or Fail Checks
 
@@ -98,12 +98,12 @@
 
 ## Harness Trace
 
-- Active run doc: [run-20260411-01-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/run/run-20260411-01-archive-grid-view-replacement.md)
-- Active spec doc: [spec-0001-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
+- Active run doc: [run-20260411-01-archive-grid-view-replacement.md](docs/plans/run/run-20260411-01-archive-grid-view-replacement.md)
+- Active spec doc: [spec-0001-archive-grid-view-replacement.md](docs/plans/spec/spec-0001-archive-grid-view-replacement.md)
 - Latest evaluator reports:
-  - [eval-0001-design-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-design-archive-grid-view-replacement.md)
-  - [eval-0001-functional-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-functional-archive-grid-view-replacement.md)
-  - [eval-0001-ux-archive-grid-view-replacement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0001-ux-archive-grid-view-replacement.md)
+  - [eval-0001-design-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-design-archive-grid-view-replacement.md)
+  - [eval-0001-functional-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-functional-archive-grid-view-replacement.md)
+  - [eval-0001-ux-archive-grid-view-replacement.md](docs/plans/evaluation/eval-0001-ux-archive-grid-view-replacement.md)
 - Latest fix note:
 
 ## Continuity Notes

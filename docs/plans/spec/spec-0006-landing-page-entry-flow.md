@@ -6,8 +6,8 @@
 - Status: `approved`
 - Run ID: `run-20260418-01`
 - Attempt: `1`
-- Parent Feature: [feat-0010-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0010-landing-page-entry-flow.md)
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Parent Feature: [feat-0010-landing-page-entry-flow.md](docs/plans/feature/feat-0010-landing-page-entry-flow.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-18`
 
@@ -26,15 +26,15 @@
   - scrolling through the landing should hand off into the current archive list
   - clicking `조치타의 잡동사니` should bypass landing and open the current archive list directly
 - Parent feature:
-  - [feat-0010-landing-page-entry-flow.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0010-landing-page-entry-flow.md)
+  - [feat-0010-landing-page-entry-flow.md](docs/plans/feature/feat-0010-landing-page-entry-flow.md)
 - Parent PRD:
-  - [prd-0005-landing-entry-and-wide-screen-content-spacing.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+  - [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Golden sources:
-  - [sample.html](/Users/jungsoo/Projects/chochita0311.github.io/tmp/sample.html)
-  - [Video_Generation_With_Specific_Effects.mp4](/Users/jungsoo/Projects/chochita0311.github.io/tmp/Video_Generation_With_Specific_Effects.mp4)
+  - `tmp/sample.html`
+  - `tmp/Video_Generation_With_Specific_Effects.mp4`
 - Relevant policies or contracts:
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
-  - [design-constitution.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/design/design-constitution.md)
+  - [architecture.md](docs/policies/project/architecture.md)
+  - [design-constitution.md](docs/policies/design/design-constitution.md)
 
 ## Implementation Goal
 
@@ -68,12 +68,12 @@
 
 ## Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [assets/js/archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [assets/js/index-note-detail.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/index-note-detail.js)
-- [assets/css/layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-- [assets/css/components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- [assets/css/app.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/app.css)
+- [index.html](index.html)
+- [assets/js/archive/content.js](assets/js/archive/content.js)
+- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
+- [assets/css/layouts.css](assets/css/layouts.css)
+- [assets/css/components.css](assets/css/components.css)
+- [assets/css/app.css](assets/css/app.css)
 
 ## State And Interaction Contract
 

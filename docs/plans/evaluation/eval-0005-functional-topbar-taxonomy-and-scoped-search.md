@@ -8,8 +8,8 @@
 - Result: `PASS`
 - Run ID: `run-20260412-03`
 - Attempt: `1`
-- Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
-- Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
+- Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
+- Spec: [spec-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/spec/spec-0005-topbar-taxonomy-and-scoped-search.md)
 - Created: `2026-04-12`
 
 ## Scope

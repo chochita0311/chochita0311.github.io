@@ -4,9 +4,9 @@
 
 - ID: `run-20260412-02`
 - Status: `passed`
-- Feature: [feat-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0004-static-search-index-foundation.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
-- Active Spec: [spec-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0004-static-search-index-foundation.md)
+- Feature: [feat-0004-static-search-index-foundation.md](docs/plans/feature/feat-0004-static-search-index-foundation.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Active Spec: [spec-0004-static-search-index-foundation.md](docs/plans/spec/spec-0004-static-search-index-foundation.md)
 - Created: `2026-04-12`
 - Updated: `2026-04-12`
 
@@ -24,19 +24,19 @@
 ## Invocation Context
 
 - Golden sources:
-  - [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
+  - [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
 - Relevant policies:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Optional skills or tools expected:
   - none
 
 ## Current Artifacts
 
-- Spec: [spec-0004-static-search-index-foundation.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/spec/spec-0004-static-search-index-foundation.md)
+- Spec: [spec-0004-static-search-index-foundation.md](docs/plans/spec/spec-0004-static-search-index-foundation.md)
 - Design evaluation:
-- Functional evaluation: [eval-0004-functional-static-search-index-filter-alignment.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/evaluation/eval-0004-functional-static-search-index-filter-alignment.md)
+- Functional evaluation: [eval-0004-functional-static-search-index-filter-alignment.md](docs/plans/evaluation/eval-0004-functional-static-search-index-filter-alignment.md)
 - UX heuristic evaluation:
 - Fix log:
 - Heuristic backlog:

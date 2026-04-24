@@ -6,8 +6,8 @@
 - Status: `approved`
 - Run ID: `run-20260411-02`
 - Attempt: `1`
-- Parent Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent Feature: [feat-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-11`
 - Updated: `2026-04-11`
 
@@ -18,14 +18,14 @@
   - generated outputs such as `archives-index.json` should use that numeric `id` directly
   - legacy slug-shaped string IDs should be removed rather than preserved in a parallel field
 - Parent feature:
-  - [feat-0002-numeric-source-note-ids-and-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
+  - [feat-0002-numeric-source-note-ids-and-search-contract.md](docs/plans/feature/feat-0002-numeric-source-note-ids-and-search-contract.md)
 - Parent PRD:
-  - [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+  - [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Golden sources:
-  - current generated archive ordering in [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
+  - current generated archive ordering in [archives-index.json](assets/generated/archives-index.json)
 - Relevant policies or contracts:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 
 ## Implementation Goal
 
@@ -54,10 +54,10 @@
 ## Affected Surfaces
 
 - `CATEGORIES/**/*.md`
-- [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
-- [archives-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-index.json)
-- [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-- [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+- [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
+- [archives-index.json](assets/generated/archives-index.json)
+- [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+- [architecture.md](docs/policies/project/architecture.md)
 
 ## State And Interaction Contract
 

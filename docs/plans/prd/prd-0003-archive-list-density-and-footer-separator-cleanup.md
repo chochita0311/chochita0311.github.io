@@ -23,16 +23,16 @@
   - Reduce the margin or visual gap between note cards in list view.
   - Remove the two-line effect created by the last list card divider plus the archive footer divider.
 - Golden sources:
-  - [s1.png](/Users/jungsoo/Projects/chochita0311.github.io/tmp/s1.png)
+  - `tmp/s1.png`
 - Supporting docs:
-  - [roadmap.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/project/roadmap.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [roadmap.md](docs/plans/project/roadmap.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 - Current implementation references:
-  - [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - [layouts.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/layouts.css)
-  - [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-  - [archive/content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-  - [generate-archives-index.mjs](/Users/jungsoo/Projects/chochita0311.github.io/scripts/generate-archives-index.mjs)
+  - [index.html](index.html)
+  - [layouts.css](assets/css/layouts.css)
+  - [components.css](assets/css/components.css)
+  - [archive/content.js](assets/js/archive/content.js)
+  - [generate-archives-index.mjs](scripts/generate-archives-index.mjs)
 
 ## Product Intent
 

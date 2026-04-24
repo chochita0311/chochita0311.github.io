@@ -6,24 +6,24 @@
 - Status: `approved`
 - Run ID: `run-20260412-03`
 - Attempt: `1`
-- Parent Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
-- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+- Parent Feature: [feat-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
+- Parent PRD: [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Created: `2026-04-12`
 - Updated: `2026-04-12`
 
 ## Source Set
 
 - Human-approved feature:
-  - [feat-0005-topbar-taxonomy-and-scoped-search.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
+  - [feat-0005-topbar-taxonomy-and-scoped-search.md](docs/plans/feature/feat-0005-topbar-taxonomy-and-scoped-search.md)
 - Parent PRD:
-  - [prd-0002-archive-discovery-and-navigation-refinement.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
+  - [prd-0002-archive-discovery-and-navigation-refinement.md](docs/plans/prd/prd-0002-archive-discovery-and-navigation-refinement.md)
 - Golden sources:
-  - current archive shell in [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-  - current archive runtime in [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
+  - current archive shell in [index.html](index.html)
+  - current archive runtime in [archive-content.js](assets/js/archive/content.js)
 - Relevant policies or contracts:
-  - [note-data-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/note-data-contract.md)
-  - [archive-search-contract.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/archive/note/archive-search-contract.md)
-  - [architecture.md](/Users/jungsoo/Projects/chochita0311.github.io/docs/policies/project/architecture.md)
+  - [note-data-contract.md](docs/policies/archive/note/note-data-contract.md)
+  - [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md)
+  - [architecture.md](docs/policies/project/architecture.md)
 
 ## Implementation Goal
 
@@ -52,12 +52,12 @@
 
 ## Affected Surfaces
 
-- [index.html](/Users/jungsoo/Projects/chochita0311.github.io/index.html)
-- [archive-content.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/archive/content.js)
-- [sidebar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/sidebar.js)
-- [topbar.js](/Users/jungsoo/Projects/chochita0311.github.io/assets/js/topbar.js)
-- [components.css](/Users/jungsoo/Projects/chochita0311.github.io/assets/css/components.css)
-- generated [archives-search-index.json](/Users/jungsoo/Projects/chochita0311.github.io/assets/generated/archives-search-index.json)
+- [index.html](index.html)
+- [archive-content.js](assets/js/archive/content.js)
+- [sidebar.js](assets/js/sidebar.js)
+- [topbar.js](assets/js/topbar.js)
+- [components.css](assets/css/components.css)
+- generated [archives-search-index.json](assets/generated/archives-search-index.json)
 
 ## State And Interaction Contract
 
