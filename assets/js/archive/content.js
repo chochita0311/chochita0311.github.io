@@ -36,7 +36,7 @@
     grid: 6,
   };
   const DEFAULT_DOCUMENT_TITLE = document.title;
-  const MOBILE_LIST_ONLY_MAX_WIDTH = 767;
+  const MOBILE_LIST_ONLY_MAX_WIDTH = 1023;
   const mainLanding = window.MainLanding;
   const archiveSearchApi = window.ArchiveSearch;
   const archiveState = {
@@ -65,6 +65,7 @@
   let pageSizeBound = false;
   let archiveBootstrapPromise = null;
   let archiveRuntimeReady = false;
+  let archiveLocationInitializing = false;
   const LANDING_SEARCH_PLACEHOLDER_DEFAULT = "노트, 프로젝트, 디자인 기록을 검색해보세요";
   const LANDING_SEARCH_PLACEHOLDER_PENDING = "찾는 중...";
   let archiveSearch = null;
@@ -1133,40 +1134,50 @@ ${footerMarkup}
   }
 
   async function initializeArchiveFromLocation() {
-    await ensureArchiveRuntimeReady();
+    if (archiveLocationInitializing) {
+      return;
+    }
 
-    const route = window.ArchiveRoutes.parseCurrentLocation();
-    let category = route.category;
-    let collection = route.collection;
-    let resolvedNote = null;
+    archiveLocationInitializing = true;
 
-    archiveState.viewMode = normalizeArchiveViewMode(route.viewMode);
-    archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
-    syncViewToggleButtons();
-    syncPageSizeControl();
-    syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
+    try {
+      await ensureArchiveRuntimeReady();
 
-    if (route.type === "note-detail") {
-      const matchedNote = findNoteById(route.noteId);
+      const route = window.ArchiveRoutes.parseCurrentLocation();
+      let category = route.category;
+      let collection = route.collection;
+      let resolvedNote = null;
 
-      if (matchedNote) {
-        category = matchedNote.category;
-        collection = matchedNote.collection;
-        resolvedNote = window.NoteDetailRenderer.normalizeNotePath(matchedNote.path);
+      archiveState.viewMode = normalizeArchiveViewMode(route.viewMode);
+      archiveState.pageSize = defaultPageSizeForView(archiveState.viewMode);
+      syncViewToggleButtons();
+      syncPageSizeControl();
+      syncLandingVisibility(route.type === "note-detail" ? "detail" : "list");
+
+      if (route.type === "note-detail") {
+        const matchedNote = findNoteById(route.noteId);
+
+        if (matchedNote) {
+          category = matchedNote.category;
+          collection = matchedNote.collection;
+          resolvedNote = window.NoteDetailRenderer.normalizeNotePath(matchedNote.path);
+        }
       }
-    }
 
-    await renderSelection({ category, collection });
-    if (route.type !== "landing") {
-      updateArchiveLocation({
-        notePath: resolvedNote,
-        replace: true,
-        archiveHome: route.type === "archive-home",
-      });
-    }
+      await renderSelection({ category, collection });
+      if (route.type !== "landing") {
+        updateArchiveLocation({
+          notePath: resolvedNote,
+          replace: true,
+          archiveHome: route.type === "archive-home",
+        });
+      }
 
-    if (resolvedNote && findNoteByPath(resolvedNote)) {
-      await renderNoteDetail(resolvedNote, { skipHistory: true });
+      if (resolvedNote && findNoteByPath(resolvedNote)) {
+        await renderNoteDetail(resolvedNote, { skipHistory: true });
+      }
+    } finally {
+      archiveLocationInitializing = false;
     }
   }
 
@@ -1210,7 +1221,27 @@ ${footerMarkup}
   });
 
   window.addEventListener("archive:landing-state", () => {
-    setArchiveListInteractive(!document.body.classList.contains("has-landing-entry"));
+    const isLandingActive = document.body.classList.contains("has-landing-entry");
+
+    setArchiveListInteractive(!isLandingActive);
+
+    if (isLandingActive || archiveLocationInitializing || archiveNoteList()?.children.length) {
+      return;
+    }
+
+    const route = window.ArchiveRoutes.parseCurrentLocation();
+
+    if (!["archive-home", "note-list", "landing"].includes(route.type)) {
+      return;
+    }
+
+    void initializeArchiveFromLocation().catch(() => {
+      renderArchiveEmptyState(
+        "Archive unavailable",
+        "Generate the notes index to browse Markdown content from the static archive.",
+        "Runtime",
+      );
+    });
   });
 
   initializeLandingShellState();

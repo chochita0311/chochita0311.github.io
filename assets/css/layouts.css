@@ -198,7 +198,7 @@
   right: var(--archive-main-pad-x);
   display: grid;
   gap: var(--space-8);
-  width: min(100%, 56rem);
+  width: min(100%, 48rem);
   min-width: 0;
 }
 
@@ -217,7 +217,7 @@
   margin: 0;
   color: var(--color-on-surface);
   font-family: var(--font-family-display);
-  font-size: clamp(4.2rem, 5.6rem, 6.4rem);
+  font-size: clamp(3.4rem, 4.7rem, 5.4rem);
   font-weight: var(--font-weight-extrabold);
   letter-spacing: var(--tracking-title);
   line-height: 1.02;

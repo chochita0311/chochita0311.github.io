@@ -923,13 +923,15 @@
   }
 }
 
+@media (max-width: 1023px) {
+  .archive-view-toggle {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .brand-title {
     font-size: 1.25rem;
-  }
-
-  .archive-view-toggle {
-    display: none;
   }
 
   .archive-page-size {
