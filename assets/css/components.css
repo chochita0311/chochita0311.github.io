@@ -22,6 +22,7 @@
   display: inline-flex;
   align-items: center;
   color: var(--page-brand);
+  font-family: var(--font-family-display);
   font-size: 1.5rem;
   font-weight: var(--font-weight-extrabold);
   line-height: 2rem;
@@ -44,13 +45,18 @@
 }
 
 .section-label,
-.nav-link,
 .nav-menu__button,
 .profile-card__meta,
 .nav-menu__item,
 .nav-menu__link {
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+}
+
+.nav-link {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-regular);
   letter-spacing: 0.05em;
 }
 
@@ -72,7 +78,6 @@
 
 .nav-link--active {
   position: relative;
-  top: -3px;
   color: var(--page-brand-strong);
   border-bottom: 2px solid var(--page-brand-strong);
 }
@@ -133,7 +138,6 @@
 .nav-dropdown:not([data-locked-closed="true"]):hover > .nav-dropdown__trigger,
 .nav-dropdown:not([data-locked-closed="true"]):focus-within > .nav-dropdown__trigger {
   position: relative;
-  top: -3px;
   color: var(--page-brand-strong);
   border-bottom: 2px solid var(--page-brand-strong);
 }
@@ -201,7 +205,7 @@
   background: transparent;
   font-family: var(--font-family-base);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.5;
   text-align: left;
 }
@@ -272,7 +276,7 @@
   color: var(--page-brand-on-light);
   font-size: 1.125rem;
   line-height: 1;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   margin: 0;
 }
 
@@ -331,7 +335,7 @@
 .sidebar-link__text,
 .footer-link__text {
   font-size: var(--font-size-body-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
 }
 
 .sidebar-sublist {
@@ -360,14 +364,18 @@
   color: var(--color-primary);
 }
 
+.sidebar-sublist__item--active {
+  color: var(--color-primary);
+}
+
 .sidebar-sublist__name {
   font-size: 0.75rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
 }
 
 .sidebar-sublist__count {
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .tag-cloud,
@@ -410,12 +418,13 @@
 .tag-chip__count {
   color: inherit;
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .archive-hero__title {
   margin: 0 0 var(--space-4);
   color: var(--color-primary);
+  font-family: var(--font-family-display);
   font-size: var(--font-size-title-xl);
   font-weight: var(--font-weight-extrabold);
   line-height: 3rem;
@@ -426,7 +435,7 @@
   margin: 0;
   color: var(--page-text-muted);
   font-size: var(--font-size-body-md);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   line-height: 1.625;
 }
 
@@ -452,7 +461,7 @@
   color: var(--page-text-soft);
   font-family: var(--font-family-base);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.5;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -468,7 +477,7 @@
   min-width: 0;
   text-align: right;
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .archive-page-size__icon {
@@ -509,7 +518,7 @@
   color: var(--page-text-muted);
   font-family: var(--font-family-base);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.5;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -565,7 +574,7 @@
   border-radius: var(--radius-lg);
   color: var(--page-text-soft);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition:
@@ -642,7 +651,7 @@
 
 .note-label {
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-label);
 }
 
@@ -658,6 +667,7 @@
 }
 
 .note-card__title {
+  font-family: var(--font-family-display);
   margin: 0 0 var(--space-4);
   color: var(--color-on-surface);
   font-size: var(--font-size-title-md);
@@ -671,7 +681,7 @@
   margin: 0 0 var(--space-6);
   color: var(--page-text-muted);
   font-size: var(--font-size-body-md);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   line-height: 1.625;
 }
 
@@ -728,7 +738,7 @@
   margin: 0;
   color: var(--page-text-soft);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -747,7 +757,7 @@
   border-radius: var(--radius-full);
   color: var(--page-text-muted);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -786,7 +796,7 @@
   background: rgba(182, 196, 255, 0.12);
   color: var(--color-on-surface);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -854,7 +864,7 @@
   right: calc(100% + var(--space-4));
   transform: translateY(-50%);
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-page);
   line-height: 1.5;
   white-space: nowrap;
@@ -862,7 +872,7 @@
 
 .archive-footer__credit {
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: right;
@@ -870,7 +880,7 @@
 
 .tag-chip {
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: normal;
 }
 

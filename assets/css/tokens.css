@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary-fixed-dim: #b6c4ff;
   --color-primary-container: #0044cf;
@@ -55,19 +71,21 @@
   --radius-xl: 0.5rem;
   --radius-full: 0.75rem;
 
-  --font-family-base: "Manrope", sans-serif;
-  --font-size-label: 0.625rem;
+  --font-family-base: "Inter", "Noto Sans KR", sans-serif;
+  --font-family-display: "Satoshi", "Inter", "Noto Sans KR", sans-serif;
+  --font-family-code: ui-monospace, monospace;
+  --font-size-label: 0.75rem;
   --font-size-body-sm: 0.875rem;
   --font-size-body-md: 1rem;
   --font-size-title-md: 1.875rem;
   --font-size-title-xl: 3rem;
 
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
   --font-weight-extrabold: 800;
 
   --tracking-label: 0.16em;
-  --tracking-title: -0.025em;
+  --tracking-title: 0;
   --tracking-page: 0.2em;
 
   --space-1: 0.25rem;

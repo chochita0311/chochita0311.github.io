@@ -150,6 +150,17 @@ function slugifyHeading(value) {
 
 function applyInlineMarkdown(value) {
   let output = escapeHtml(value);
+  const linkPlaceholders = [];
+
+  function renderExternalLink(url, label = url) {
+    return `<a href="${url}" target="_blank" rel="noreferrer">${label}</a>`;
+  }
+
+  function stashLink(html) {
+    const placeholder = `__NOTE_DETAIL_LINK_${linkPlaceholders.length}__`;
+    linkPlaceholders.push({ placeholder, html });
+    return placeholder;
+  }
 
   output = output.replace(/\*\*\*([^*]+)\*\*\*/g, "<strong><em>$1</em></strong>");
   output = output.replace(/___([^_]+)___/g, "<strong><em>$1</em></strong>");
@@ -158,16 +169,20 @@ function applyInlineMarkdown(value) {
   output = output.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   output = output.replace(/_([^_]+)_/g, "<em>$1</em>");
   output = output.replace(/`([^`]+)`/g, '<code class="note-detail__inline-code">$1</code>');
-  output = output.replace(
-    /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
-    '<a href="$2" target="_blank" rel="noreferrer">$1</a>',
+  output = output.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, label, url) =>
+    stashLink(renderExternalLink(url, label)),
   );
-  output = output.replace(
-    /(https?:\/\/[^\s<]+)/g,
-    '<a href="$1" target="_blank" rel="noreferrer">$1</a>',
-  );
+  output = output.replace(/(https?:\/\/[^\s<]+)/g, (url) => {
+    const trailingPunctuation = url.match(/[.,;:!?]+$/)?.[0] || "";
+    const cleanUrl = trailingPunctuation ? url.slice(0, -trailingPunctuation.length) : url;
 
-  return output;
+    return `${renderExternalLink(cleanUrl)}${trailingPunctuation}`;
+  });
+
+  return linkPlaceholders.reduce(
+    (currentOutput, link) => currentOutput.replaceAll(link.placeholder, link.html),
+    output,
+  );
 }
 
 function normalizeCodeFenceLabel(rawLabel) {

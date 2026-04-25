@@ -259,7 +259,10 @@
   }
 
   function defaultPageSizeForView(viewMode) {
-    return DEFAULT_PAGE_SIZE_BY_VIEW[normalizeArchiveViewMode(viewMode)] || DEFAULT_PAGE_SIZE_BY_VIEW.list;
+    return (
+      DEFAULT_PAGE_SIZE_BY_VIEW[normalizeArchiveViewMode(viewMode)] ||
+      DEFAULT_PAGE_SIZE_BY_VIEW.list
+    );
   }
 
   function isMobileListOnlyViewport() {
@@ -407,7 +410,8 @@ ${footerMarkup}
 
   function syncViewToggleButtons() {
     archiveViewButtons().forEach((button) => {
-      const isActive = button.dataset.archiveView === normalizeArchiveViewMode(archiveState.viewMode);
+      const isActive =
+        button.dataset.archiveView === normalizeArchiveViewMode(archiveState.viewMode);
 
       button.classList.toggle("archive-view-toggle__button--active", isActive);
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
@@ -587,6 +591,31 @@ ${footerMarkup}
 
   function clearSidebarSelection() {
     window.dispatchEvent(new CustomEvent("sidebar:clear-selection"));
+  }
+
+  function setSidebarSelection({ category = null, collection = null } = {}) {
+    window.dispatchEvent(
+      new CustomEvent("sidebar:set-selection", {
+        detail: {
+          category,
+          collection,
+        },
+      }),
+    );
+  }
+
+  function scrollArchiveListToTop() {
+    window.requestAnimationFrame(() => {
+      const listView = archiveListView();
+      const top = listView
+        ? Math.max(0, listView.getBoundingClientRect().top + window.scrollY - 8)
+        : 0;
+
+      window.scrollTo({
+        top,
+        behavior: "auto",
+      });
+    });
   }
 
   function clearActiveTag({ rerender = false } = {}) {
@@ -907,6 +936,10 @@ ${footerMarkup}
         : null;
 
     archiveState.activeNotePath = normalizedPath;
+    setSidebarSelection({
+      category: noteRecord.category,
+      collection: noteRecord.collection,
+    });
     document.title = `${noteData.title} | Chochita Archive`;
     window.IndexNoteDetail.setArchiveMode("detail");
     window.IndexNoteDetail.bindNoteDetailScrollOffsetSync();
@@ -985,6 +1018,7 @@ ${footerMarkup}
     archiveState.category = category;
     archiveState.collection = collection;
     archiveState.activeNotePath = null;
+    setSidebarSelection({ category, collection });
 
     const title = collection || category || "Archive";
     const summary = fallbackSummary(category, collection, notes);
@@ -1159,6 +1193,7 @@ ${footerMarkup}
     renderSelection({ category, collection }).then(() => {
       renderPopularTags();
       updateArchiveLocation({ replace: false });
+      scrollArchiveListToTop();
     });
   });
 

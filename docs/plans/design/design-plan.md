@@ -12,7 +12,7 @@
 - Locked decisions already captured there:
   - Editorial dark-shell direction.
   - Tonal layering over border-led structure.
-  - Manrope-led hierarchy and asymmetrical layout rules.
+  - Inter, Noto Sans KR, and Satoshi-led hierarchy and asymmetrical layout rules.
   - Durable screen families for browse, search, and reading.
 - Sections that still need to be written or revised: Future revisions should only happen if the app shell, token families, or major screen families change.
 

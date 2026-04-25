@@ -63,6 +63,44 @@
     notesIndexPath,
   };
 
+  let pendingSelection = null;
+
+  function selectedCategoryAndCollection() {
+    return pendingSelection || categorySelectionFromLocation();
+  }
+
+  function applySidebarSelection(selection = selectedCategoryAndCollection()) {
+    const mount = document.getElementById("sidebar-categories");
+
+    if (!mount) {
+      return;
+    }
+
+    const groups = Array.from(mount.querySelectorAll(".sidebar__group"));
+
+    groups.forEach((group) => {
+      const trigger = group.querySelector("[data-category-trigger='true']");
+      const childLinks = Array.from(group.querySelectorAll(".sidebar-sublist__item"));
+      const isSelectedCategory = selection.category === group.dataset.categoryName;
+
+      if (trigger) {
+        trigger.classList.toggle("sidebar-link--active", isSelectedCategory);
+      }
+
+      group.classList.toggle(
+        "is-open",
+        isSelectedCategory && group.classList.contains("sidebar__group--has-children"),
+      );
+
+      childLinks.forEach((link) => {
+        link.classList.toggle(
+          "sidebar-sublist__item--active",
+          isSelectedCategory && selection.collection === link.dataset.collectionName,
+        );
+      });
+    });
+  }
+
   function renderSidebarCategories(categories) {
     const mount = document.getElementById("sidebar-categories");
 
@@ -70,7 +108,7 @@
       return;
     }
 
-    const selection = categorySelectionFromLocation();
+    const selection = selectedCategoryAndCollection();
 
     mount.innerHTML = categories
       .map((category) => {
@@ -122,6 +160,10 @@ ${collectionMarkup}
     };
 
     const clearSelection = () => {
+      pendingSelection = {
+        category: null,
+        collection: null,
+      };
       groups.forEach((item) => {
         const itemTrigger = item.querySelector("[data-category-trigger='true']");
         const childLinks = Array.from(item.querySelectorAll(".sidebar-sublist__item"));
@@ -162,6 +204,10 @@ ${collectionMarkup}
 
       trigger.addEventListener("click", (event) => {
         event.preventDefault();
+        pendingSelection = {
+          category: group.dataset.categoryName,
+          collection: null,
+        };
         activateGroup(group);
         navigateArchive({
           category: group.dataset.categoryName,
@@ -172,6 +218,10 @@ ${collectionMarkup}
       childLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
           event.preventDefault();
+          pendingSelection = {
+            category: group.dataset.categoryName,
+            collection: link.dataset.collectionName,
+          };
           activateGroup(group);
           link.classList.add("sidebar-sublist__item--active");
           navigateArchive({
@@ -185,7 +235,17 @@ ${collectionMarkup}
     window.addEventListener("sidebar:clear-selection", () => {
       clearSelection();
     });
+
+    applySidebarSelection();
   }
+
+  window.addEventListener("sidebar:set-selection", (event) => {
+    pendingSelection = {
+      category: event.detail?.category || null,
+      collection: event.detail?.collection || null,
+    };
+    applySidebarSelection();
+  });
 
   async function initializeSidebarCategories() {
     const mount = document.getElementById("sidebar-categories");
