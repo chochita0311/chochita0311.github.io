@@ -198,7 +198,7 @@
   right: var(--archive-main-pad-x);
   display: grid;
   gap: var(--space-8);
-  width: min(100%, 48rem);
+  width: min(100%, 56rem);
   min-width: 0;
 }
 
@@ -224,6 +224,15 @@
   min-height: 1.1em;
 }
 
+.landing-entry__title-char {
+  display: inline-block;
+}
+
+.landing-entry__title-prompt-group {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .landing-entry__title--typing::after {
   content: none;
 }
@@ -242,6 +251,7 @@
   margin-left: -0.01em;
   color: rgba(226, 226, 231, 0.9);
   transform: translateY(-0.02em);
+  white-space: nowrap;
 }
 
 .landing-entry__title--prompt .landing-entry__title-prompt {

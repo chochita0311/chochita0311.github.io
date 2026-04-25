@@ -52,7 +52,11 @@
     return document.querySelector(".landing-entry__search-submit");
   }
 
-  function renderLandingTitleText(title, text, { showPrompt = false, animateLastChar = false } = {}) {
+  function renderLandingTitleText(
+    title,
+    text,
+    { showPrompt = false, animateLastChar = false } = {},
+  ) {
     if (!title) {
       return;
     }
@@ -71,21 +75,29 @@
       return;
     }
 
-    if (animateLastChar && text.length > 1) {
+    if (animateLastChar && text.length > 1 && !showPrompt) {
       title.append(document.createTextNode(text.slice(0, -1)));
       const lastChar = document.createElement("span");
       lastChar.className = "landing-entry__title-char landing-entry__title-char--fresh";
       lastChar.textContent = text.slice(-1);
       title.append(lastChar);
     } else {
-      title.append(document.createTextNode(text));
-    }
+      title.append(document.createTextNode(text.slice(0, -1)));
+      const promptGroup = document.createElement("span");
+      promptGroup.className = "landing-entry__title-prompt-group";
+      const lastChar = document.createElement("span");
+      lastChar.className = "landing-entry__title-char";
+      lastChar.textContent = text.slice(-1);
+      promptGroup.append(lastChar);
 
-    if (showPrompt) {
-      const prompt = document.createElement("span");
-      prompt.className = "landing-entry__title-prompt";
-      prompt.textContent = "_";
-      title.append(prompt);
+      if (showPrompt) {
+        const prompt = document.createElement("span");
+        prompt.className = "landing-entry__title-prompt";
+        prompt.textContent = "_";
+        promptGroup.append(prompt);
+      }
+
+      title.append(promptGroup);
     }
   }
 
