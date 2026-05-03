@@ -20,10 +20,6 @@
     );
   }
 
-  function currentArchiveUrl() {
-    return new URL(window.location.href);
-  }
-
   function isRootArchivePath() {
     return window.ArchiveRoutes.parseCurrentLocation().type === "landing";
   }

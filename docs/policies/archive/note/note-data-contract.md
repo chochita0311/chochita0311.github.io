@@ -15,7 +15,7 @@
 
 ## Workflow Routing
 
-- Use [note-maintenance-workflow.md](docs/policies/archive/note/note-maintenance-workflow.md) for the operational steps to add, import, move, or regroup notes.
+- Use [note-maintenance-workflow.md](./note-maintenance-workflow.md) for the operational steps to add, import, move, or regroup notes.
 - Use this document when you need field definitions, ID rules, or generated-data expectations.
 
 ## Source Of Truth
@@ -98,7 +98,7 @@ Actual note body here.
 - If a note includes source or supporting links, collect them in a final `## References` section at the end of the note body.
 - Do not leave raw link dumps at the top or in the middle of the main explanation once the note has been normalized.
 - Keep explanatory content in the main body and keep reference links grouped under `## References`.
-- Body rendering expectations and supported syntax are documented in `docs/policies/archive/note/markdown-rendering.md`.
+- Body rendering expectations and supported syntax are documented in [markdown-rendering.md](./markdown-rendering.md).
 
 ## Generated Data Contract
 
@@ -109,7 +109,7 @@ Actual note body here.
   - `scripts/generate-archives-index.mjs`
 - `archives-index.json` owns archive browse metadata derived from frontmatter and path-based taxonomy.
 - `archives-search-index.json` owns generated search lookup data derived from note source content.
-- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md).
+- Search index behavior, filtering, and token rules are defined in [archive-search-contract.md](./archive-search-contract.md).
 
 ## Generated Index Shape
 
@@ -162,7 +162,7 @@ Actual note body here.
 - Search runtime behavior should consume:
   - browse metadata from `archives-index.json`
   - lookup terms from `archives-search-index.json`
-- Search index file shape and token rules belong in [archive-search-contract.md](docs/policies/archive/note/archive-search-contract.md).
+- Search index file shape and token rules belong in [archive-search-contract.md](./archive-search-contract.md).
 
 ## Tag Contract
 

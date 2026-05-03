@@ -11,7 +11,7 @@
 - Do not add image-based PNG icon assets for normal UI controls.
 
 ## Canonical Runtime Owner
-- `assets/js/icons.js` owns the shared icon registry and the default Material Symbols rendering helper.
+- `assets/js/shared/icons.js` owns the shared icon registry and the default Material Symbols rendering helper.
 - Use semantic registry keys before adding a new raw glyph name to page code.
 
 ## Registry Rules
@@ -42,7 +42,7 @@
 - Categories: `menu_book`, `memory`, `folder`
 
 ## Change Workflow
-- Add or change the icon in `assets/js/icons.js`.
+- Add or change the icon in `assets/js/shared/icons.js`.
 - Update any touched static markup to the canonical class and accessibility pattern.
 - Run `node scripts/check-icon-control.mjs`.
 - Update this doc and any design-system rule that changed in the same turn.

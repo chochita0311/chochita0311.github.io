@@ -48,10 +48,6 @@ function detailOutline() {
   return document.getElementById("note-outline");
 }
 
-function detailRail() {
-  return document.querySelector(".note-detail__rail");
-}
-
 function detailBreadcrumbs() {
   return document.querySelector(".note-detail__breadcrumbs");
 }
@@ -258,7 +254,7 @@ function bindCopyAction(getText) {
       button.dataset.copyState = "idle";
 
       if (icon) {
-        icon.textContent = "content_copy";
+        icon.textContent = ICONS.actions.copy;
       }
     }
 

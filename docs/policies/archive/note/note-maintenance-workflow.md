@@ -17,8 +17,8 @@
 ## Source Of Truth
 
 - Markdown files under `NOTES/` are the durable content source.
-- Note metadata shape is owned by [note-data-contract.md](docs/policies/archive/note/note-data-contract.md).
-- Markdown syntax and rendering expectations are owned by [markdown-rendering.md](docs/policies/archive/note/markdown-rendering.md).
+- Note metadata shape is owned by [note-data-contract.md](./note-data-contract.md).
+- Markdown syntax and rendering expectations are owned by [markdown-rendering.md](./markdown-rendering.md).
 - Generated runtime files are derived output and must not become the primary editing surface.
 
 ## Working Shape

@@ -11,10 +11,6 @@
     }
   }
 
-  function encodeSegment(segment) {
-    return encodeURIComponent(String(segment ?? "").trim());
-  }
-
   function normalizePathname(pathname = window.location.pathname) {
     let path = String(pathname || "/").trim();
 

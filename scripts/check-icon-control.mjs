@@ -2,8 +2,14 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 
 const repoRoot = process.cwd();
-const runtimeRoots = ["index.html", "pages", "assets/js"];
-const rawIconOwners = new Set(["assets/js/icons.js", "index.html"]);
+const runtimeRoots = ["index.html", "archive", "assets/js"];
+const rawIconOwners = new Set([
+  "assets/js/shared/icons.js",
+  "index.html",
+  "archive/index.html",
+  "archive/note/index.html",
+  "archive/design/index.html",
+]);
 
 function walk(targetPath) {
   const absolutePath = path.join(repoRoot, targetPath);
@@ -52,7 +58,7 @@ function reportFailures(failures) {
   process.exit(1);
 }
 
-const registryFile = "assets/js/icons.js";
+const registryFile = "assets/js/shared/icons.js";
 const iconNames = collectRegistryIcons(registryFile);
 const runtimeFiles = collectRuntimeFiles();
 const failures = [];

@@ -22,8 +22,8 @@
     />
     <meta content="https://chochita0311.github.io/assets/og-cheetah.jpg" name="twitter:image" />
     <link href="https://chochita0311.github.io/" rel="canonical" />
-    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <script src="/assets/js/shell-bootstrap.js"></script>
+    <link href="/assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <script src="/assets/js/shell/bootstrap.js"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -34,8 +34,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="assets/css/app.css" rel="stylesheet" />
-    <link href="assets/css/note-detail.css" rel="stylesheet" />
+    <link href="/assets/css/app.css" rel="stylesheet" />
+    <link href="/assets/css/note-detail.css" rel="stylesheet" />
   </head>
   <body>
     <!-- TopNavBar Implementation -->
@@ -98,7 +98,7 @@
             <img
               alt="Chocheetah favicon mark"
               class="profile-card__image"
-              src="assets/favicon.svg"
+              src="/assets/favicon.svg"
             />
           </div>
           <div>
@@ -151,7 +151,7 @@
               playsinline
               preload="auto"
             >
-              <source src="assets/landing-entry-main.mp4" type="video/mp4" />
+              <source src="/assets/landing-entry-main.mp4" type="video/mp4" />
             </video>
             <div class="landing-entry__veil"></div>
           </div>
@@ -343,15 +343,18 @@
         <p class="archive-footer__credit">Curated by CHOCHEETAH © 2026</p>
       </footer>
     </main>
-    <script defer src="assets/js/icons.js"></script>
-    <script defer src="assets/js/archive/route.js"></script>
-    <script defer src="assets/js/sidebar.js"></script>
-    <script defer src="assets/js/topbar.js"></script>
-    <script defer src="assets/js/shell-handoff.js"></script>
-    <script defer src="assets/js/note-detail-renderer.js"></script>
-    <script defer src="assets/js/index-note-detail.js"></script>
-    <script defer src="assets/js/main-landing.js"></script>
-    <script defer src="assets/js/archive/search.js"></script>
-    <script defer src="assets/js/archive/content.js"></script>
+    <script defer src="/assets/js/shared/icons.js"></script>
+    <script defer src="/assets/js/archive/route.js"></script>
+    <script defer src="/assets/js/shell/sidebar.js"></script>
+    <script defer src="/assets/js/shell/topbar.js"></script>
+    <script defer src="/assets/js/shell/handoff.js"></script>
+    <script defer src="/assets/js/note/detail-renderer.js"></script>
+    <script defer src="/assets/js/note/detail-controller.js"></script>
+    <script defer src="/assets/js/landing/main.js"></script>
+    <script defer src="/assets/js/note/search.js"></script>
+    <script defer src="/assets/js/note/view-controls.js"></script>
+    <script defer src="/assets/js/note/list-renderer.js"></script>
+    <script defer src="/assets/js/note/popular-tags.js"></script>
+    <script defer src="/assets/js/note/archive-controller.js"></script>
   </body>
 </html>

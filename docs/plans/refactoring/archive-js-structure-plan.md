@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Prepare the archive runtime for continued growth by splitting `assets/js/archive/content.js` into clearer ownership boundaries before the current monolith becomes too risky to extend.
+Prepare the note archive runtime for continued growth by splitting the note browse/read controller into clearer ownership boundaries before the current orchestrator becomes too risky to extend.
 
 ## Refactor Type
 
@@ -18,7 +18,7 @@ Prepare the archive runtime for continued growth by splitting `assets/js/archive
   - Script loading order updates needed to support new split files
   - Minimal documentation for the refactor track
 - Initial verified targets:
-  - `assets/js/archive/content.js`
+  - `assets/js/note/archive-controller.js`
   - `index.html`
   - Any newly added archive runtime files under `assets/js/`
 - Out of scope for this track:
@@ -45,14 +45,14 @@ Prepare the archive runtime for continued growth by splitting `assets/js/archive
 
 ## Phase 1: Extract Landing Lifecycle
 
-- Goal: Move landing-specific runtime logic out of `archive-content.js` into a dedicated archive landing module.
+- Goal: Move landing-specific runtime logic out of the note archive controller into a dedicated archive landing module.
 - Why this grouping: The landing logic is the clearest bounded slice and already has strong DOM and lifecycle cohesion.
 - Guardrails:
   - Preserve the current landing DOM contract in `index.html`.
   - Keep the API small and explicit rather than moving unrelated archive logic into the new file.
   - Do not change landing visuals or route behavior intentionally.
 - Targets:
-  - `assets/js/archive/content.js`
+  - `assets/js/note/archive-controller.js`
   - New `assets/js/main-landing.js`
   - `index.html`
 - Validation:
@@ -61,7 +61,7 @@ Prepare the archive runtime for continued growth by splitting `assets/js/archive
   - `/archive/` still bypasses landing.
   - Landing search controls still function.
 - Exit gate:
-  - Landing lifecycle code is no longer defined inline in `archive-content.js`, and the archive orchestrator depends on a clear landing API instead.
+  - Landing lifecycle code is no longer defined inline in the note archive controller, and the archive orchestrator depends on a clear landing API instead.
 - Status:
   - Completed on 2026-04-19 through `assets/js/main-landing.js`.
 
@@ -74,32 +74,43 @@ Prepare the archive runtime for continued growth by splitting `assets/js/archive
   - Avoid duplicating topbar and landing search implementations.
   - Preserve current debounce and manual-submit behaviors.
 - Targets:
-  - `assets/js/archive/content.js`
-  - New `assets/js/archive/search.js`
+  - `assets/js/note/archive-controller.js`
+  - New `assets/js/note/search.js`
 - Validation:
   - Search still works from topbar and landing.
   - Route updates and search results remain unchanged.
 - Exit gate:
   - Search control and search execution no longer live in the main archive orchestration file.
 - Status:
-  - Completed on 2026-04-19 through `assets/js/archive/search.js`.
+  - Completed on 2026-04-19 through the search module, later moved to `assets/js/note/search.js`.
 
 ## Phase 3: Split Archive Routing And Rendering
 
-- Goal: Reduce `archive-content.js` to a thin entry orchestrator with rendering and route-state concerns moved behind clearer file boundaries.
+- Goal: Reduce `assets/js/note/archive-controller.js` to a thin entry orchestrator with rendering and route-state concerns moved behind clearer file boundaries.
 - Why this grouping: Rendering and route orchestration are the remaining heavy responsibilities once landing and search are separated.
 - Guardrails:
   - Preserve current state model unless an explicit child track approves a change.
   - Keep rendering ownership understandable: list, detail handoff, pagination, and location sync should have explicit homes.
   - Avoid creating several new opaque files without clear purpose.
 - Targets:
-  - `assets/js/archive/content.js`
-  - New route/render helper files under `assets/js/`
+  - `assets/js/note/archive-controller.js`
+  - `assets/js/note/list-renderer.js`
+  - `assets/js/note/view-controls.js`
+  - `assets/js/note/popular-tags.js`
 - Validation:
   - List view, grid view, detail view, pagination, and category navigation still work.
   - Browser smoke checks cover representative archive flows.
 - Exit gate:
-  - `archive-content.js` acts mainly as boot/orchestration glue rather than the main implementation home for every archive concern.
+  - `assets/js/note/archive-controller.js` acts mainly as boot/orchestration glue rather than the main implementation home for every note browse/read concern.
+- Status:
+  - Partial structural alignment completed on 2026-05-03 through the broader runtime-domain move.
+  - The already split landing and search modules were moved to `assets/js/landing/main.js` and `assets/js/note/search.js`.
+  - The former `assets/js/archive/content.js` moved to `assets/js/note/archive-controller.js` so archive-wide routing can stay separate from note-specific browse/search behavior.
+  - Additional Phase 3 split completed on 2026-05-03:
+    - `assets/js/note/list-renderer.js` owns note card markup, empty-state markup, and list page rendering.
+    - `assets/js/note/view-controls.js` owns view mode, page-size, mobile list fallback, and pagination controls.
+    - `assets/js/note/popular-tags.js` owns repeated-tag counting, tag chip rendering, and tag-filter click behavior.
+  - `assets/js/note/archive-controller.js` now remains the state/data/location orchestration owner; deeper detail-route extraction can continue as a later smaller slice.
 
 ## Validation Gates
 

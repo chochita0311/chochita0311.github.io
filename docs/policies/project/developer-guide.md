@@ -14,7 +14,7 @@ Follow the local run instructions in `README.md`.
 - Use `docs/policies/experience/interaction-evaluation.md` for reusable interaction-quality evaluation rules.
 
 ## Icon Changes
-- Use `assets/js/icons.js` as the canonical runtime owner for approved icon names.
+- Use `assets/js/shared/icons.js` as the canonical runtime owner for approved icon names.
 - Add new icons to the shared registry before using them in JavaScript-rendered markup.
 - Keep the published runtime on Material Symbols Outlined unless the design docs explicitly approve another family.
 - Static HTML should follow the shared `icon icon--material material-symbols-outlined` class pattern.

@@ -1,7 +1,6 @@
 (() => {
   const NOTES_INDEX_PATH = "/assets/generated/archives-index.json";
   const SEARCH_INDEX_PATH = "/assets/generated/archives-search-index.json";
-  const SEARCH_DEBOUNCE_MS = 250;
   const FALLBACK_SEARCH_PATTERN = "[a-z0-9]+|[가-힣]+";
   const FALLBACK_SEARCH_FILTERS = {
     excludeNumericOnly: true,
@@ -27,23 +26,15 @@
     ],
     shortTagException: true,
   };
-  const VIEW_PAGE_SIZES = {
-    list: [5, 10, 20],
-    grid: [6, 12, 18],
-  };
-  const DEFAULT_PAGE_SIZE_BY_VIEW = {
-    list: 10,
-    grid: 6,
-  };
   const DEFAULT_DOCUMENT_TITLE = document.title;
-  const MOBILE_LIST_ONLY_MAX_WIDTH = 1023;
   const mainLanding = window.MainLanding;
-  const archiveSearchApi = window.ArchiveSearch;
+  const noteSearchApi = window.NoteSearch || window.ArchiveSearch;
+  const noteControlsApi = window.NoteArchiveControls;
   const archiveState = {
     allNotes: [],
     notes: [],
     page: 1,
-    pageSize: DEFAULT_PAGE_SIZE_BY_VIEW.list,
+    pageSize: noteControlsApi.defaultPageSizeForView("list"),
     viewMode: "list",
     category: null,
     collection: null,
@@ -61,8 +52,6 @@
   };
 
   let archiveRenderRequestId = 0;
-  let viewToggleBound = false;
-  let pageSizeBound = false;
   let archiveBootstrapPromise = null;
   let archiveRuntimeReady = false;
   let archiveLocationInitializing = false;
@@ -127,10 +116,6 @@
     return mainLanding?.elements.searchInput() || null;
   }
 
-  function landingSearchField() {
-    return mainLanding?.elements.searchField() || null;
-  }
-
   function landingSearchSubmit() {
     return mainLanding?.elements.searchSubmit() || null;
   }
@@ -145,6 +130,55 @@
 
   function archiveNextButton() {
     return document.getElementById("archive-next-button");
+  }
+
+  const archiveElements = {
+    listView: archiveListView,
+    nextButton: archiveNextButton,
+    noteList: archiveNoteList,
+    pageLabel: archivePageLabel,
+    pageSizeCurrent: archivePageSizeCurrent,
+    pageSizeMenu: archivePageSizeMenu,
+    pageSizeRoot: archivePageSizeRoot,
+    pageSizeTrigger: archivePageSizeTrigger,
+    prevButton: archivePrevButton,
+    viewButtons: archiveViewButtons,
+  };
+
+  const noteControls = noteControlsApi.createController({
+    state: archiveState,
+    elements: archiveElements,
+    renderArchivePage,
+    updateViewMode,
+  });
+
+  const noteListRenderer = window.NoteArchiveListRenderer.createRenderer({
+    beginRenderRequest: beginArchiveRenderRequest,
+    bindSearchControl,
+    controls: noteControls,
+    defaultDocumentTitle: DEFAULT_DOCUMENT_TITLE,
+    detailRenderer: window.NoteDetailRenderer,
+    elements: archiveElements,
+    routes: window.ArchiveRoutes,
+    state: archiveState,
+    syncLandingVisibility,
+  });
+
+  const popularTagController = window.NoteArchivePopularTags.createController({
+    clearSidebarSelection,
+    dismissLandingForShellInteraction,
+    escapeHtml: noteListRenderer.escapeHtml,
+    mount: popularTagsMount,
+    notesForSelection,
+    prettifyTag: noteListRenderer.prettifyTag,
+    renderArchivePage,
+    state: archiveState,
+    updateArchiveLocation,
+  });
+
+  function beginArchiveRenderRequest() {
+    archiveRenderRequestId += 1;
+    return archiveRenderRequestId;
   }
 
   function canonicalLinkElement() {
@@ -251,172 +285,40 @@
     }
   }
 
-  function escapeHtml(value) {
-    return window.NoteDetailRenderer.escapeHtml(String(value));
-  }
-
-  function pageSizeOptionsForView(viewMode) {
-    return VIEW_PAGE_SIZES[normalizeArchiveViewMode(viewMode)] || VIEW_PAGE_SIZES.list;
-  }
-
   function defaultPageSizeForView(viewMode) {
-    return (
-      DEFAULT_PAGE_SIZE_BY_VIEW[normalizeArchiveViewMode(viewMode)] ||
-      DEFAULT_PAGE_SIZE_BY_VIEW.list
-    );
+    return noteControls.defaultPageSizeForView(viewMode);
   }
 
   function isMobileListOnlyViewport() {
-    return window.innerWidth <= MOBILE_LIST_ONLY_MAX_WIDTH;
+    return noteControls.isMobileListOnlyViewport();
   }
 
   function normalizeArchiveViewMode(viewMode) {
-    if (isMobileListOnlyViewport()) {
-      return "list";
-    }
-
-    return viewMode === "grid" ? "grid" : "list";
-  }
-
-  function prettifyTag(tag) {
-    return tag
-      .split("-")
-      .filter(Boolean)
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join(" ");
-  }
-
-  function formatArchiveDate(note) {
-    const rawDate = note.updated || note.created || "";
-
-    if (!rawDate) {
-      return "";
-    }
-
-    const parsed = new Date(rawDate);
-
-    if (Number.isNaN(parsed.getTime())) {
-      return rawDate;
-    }
-
-    return new Intl.DateTimeFormat("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    }).format(parsed);
-  }
-
-  function buildNoteHref(note) {
-    return window.ArchiveRoutes.buildNoteDetailPath(note.id);
+    return noteControls.normalizeArchiveViewMode(viewMode);
   }
 
   function activeTagSummary(noteCount) {
-    return `${noteCount} notes tagged ${prettifyTag(archiveState.activeTag)} across the archive.`;
-  }
-
-  function tagMarkup(tags, { compact = false } = {}) {
-    const visibleTags = compact ? tags.slice(0, 2) : tags;
-    const hiddenTagCount = compact ? Math.max(0, tags.length - visibleTags.length) : 0;
-    const hiddenTags = compact ? tags.slice(2).map(prettifyTag) : [];
-    const chips = visibleTags.map((tag) => {
-      const prettyTag = prettifyTag(tag);
-      return `<span class="note-tag" title="${escapeHtml(prettyTag)}">${escapeHtml(prettyTag)}</span>`;
-    });
-
-    if (hiddenTagCount > 0) {
-      chips.push(
-        `<span class="note-tag note-tag--more" tabindex="0">+${String(hiddenTagCount)}<span class="note-tag__tooltip" role="tooltip">${hiddenTags.map((tag) => `<span class="note-tag__tooltip-chip">${escapeHtml(tag)}</span>`).join("")}</span></span>`,
-      );
-    }
-
-    return chips.join("");
-  }
-
-  function noteCardMarkup(note) {
-    const dateLabel = formatArchiveDate(note);
-    const isGrid = archiveState.viewMode === "grid";
-    const secondaryMeta = isGrid ? dateLabel || note.collection : note.collection;
-    const tagsMarkup = tagMarkup(note.tags, { compact: isGrid });
-    const cardClass = isGrid ? "note-card note-card--grid" : "note-card note-card--list";
-    const footerMarkup = isGrid
-      ? `<div class="note-card__footer">
-<div class="note-card__tags">
-${tagsMarkup}
-</div>
-<p class="note-card__collection">${escapeHtml(note.collection)}</p>
-</div>`
-      : `<div class="note-card__footer">
-<div class="note-card__tags">
-${tagsMarkup}
-</div>
-</div>`;
-
-    return `
-<article class="${cardClass}" data-note-id="${String(note.id)}">
-<div class="note-card__body">
-<div class="note-card__meta">
-<span class="note-label note-label--accent">${escapeHtml(note.category)}</span>
-<span class="note-label note-label--muted">${escapeHtml(secondaryMeta)}</span>
-</div>
-<a class="note-card__link" href="${buildNoteHref(note)}" data-note-link="true">
-<h2 class="note-card__title">${escapeHtml(note.title)}</h2>
-<p class="note-card__summary">${escapeHtml(note.summary)}</p>
-</a>
-${footerMarkup}
-</div>
-</article>`;
-  }
-
-  function applyViewModeToList() {
-    const noteList = archiveNoteList();
-
-    if (!noteList) {
-      return;
-    }
-
-    noteList.dataset.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
+    return noteListRenderer.activeTagSummary(noteCount);
   }
 
   function syncPageSizeControl() {
-    const current = archivePageSizeCurrent();
-    const menu = archivePageSizeMenu();
-
-    if (!current || !menu) {
-      return;
-    }
-
-    const options = pageSizeOptionsForView(archiveState.viewMode);
-    current.textContent = String(archiveState.pageSize);
-    menu.innerHTML = options
-      .map((value) => {
-        const isSelected = value === archiveState.pageSize;
-        return `<button class="archive-page-size__option${isSelected ? " archive-page-size__option--selected" : ""}" data-archive-page-size="${String(value)}" role="menuitemradio" aria-checked="${isSelected ? "true" : "false"}" type="button"><span>${String(value)}</span>${isSelected ? '<span aria-hidden="true" class="icon icon--material material-symbols-outlined archive-page-size__check">check</span>' : ""}</button>`;
-      })
-      .join("");
-  }
-
-  function setPageSizeMenuOpen(isOpen) {
-    const root = archivePageSizeRoot();
-    const trigger = archivePageSizeTrigger();
-    const menu = archivePageSizeMenu();
-
-    if (!root || !trigger || !menu) {
-      return;
-    }
-
-    root.dataset.open = isOpen ? "true" : "false";
-    trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    menu.hidden = !isOpen;
+    noteControls.syncPageSizeControl();
   }
 
   function syncViewToggleButtons() {
-    archiveViewButtons().forEach((button) => {
-      const isActive =
-        button.dataset.archiveView === normalizeArchiveViewMode(archiveState.viewMode);
+    noteControls.syncViewToggleButtons();
+  }
 
-      button.classList.toggle("archive-view-toggle__button--active", isActive);
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
+  function renderArchivePage() {
+    noteListRenderer.renderArchivePage();
+  }
+
+  function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
+    noteListRenderer.renderArchiveEmptyState(title, summary, metaLabel);
+  }
+
+  function renderPopularTags() {
+    popularTagController.renderPopularTags();
   }
 
   function updateViewMode(mode, { replaceHistory = false } = {}) {
@@ -436,158 +338,6 @@ ${footerMarkup}
       notePath: archiveState.activeNotePath,
       replace: replaceHistory,
     });
-  }
-
-  function setPaginationButtonState(button, isEnabled) {
-    if (!button) {
-      return;
-    }
-
-    if (isEnabled) {
-      button.classList.add("pagination-button--primary");
-      button.classList.remove("pagination-button--disabled");
-      button.disabled = false;
-      return;
-    }
-
-    button.classList.add("pagination-button--disabled");
-    button.classList.remove("pagination-button--primary");
-    button.disabled = true;
-  }
-
-  function preserveFooterAnchor(anchorElement, renderAction) {
-    const beforeTop = anchorElement?.getBoundingClientRect().top;
-
-    renderAction();
-
-    if (typeof beforeTop !== "number") {
-      return;
-    }
-
-    const nextAnchor = document.getElementById(anchorElement.id);
-
-    if (!nextAnchor) {
-      return;
-    }
-
-    const afterTop = nextAnchor.getBoundingClientRect().top;
-    window.scrollBy(0, afterTop - beforeTop);
-  }
-
-  function bindPaginationControls() {
-    const prevButton = archivePrevButton();
-    const nextButton = archiveNextButton();
-
-    if (prevButton) {
-      prevButton.onclick = (event) => {
-        if (archiveState.page <= 1) {
-          return;
-        }
-
-        archiveState.page -= 1;
-        preserveFooterAnchor(event.currentTarget, () => {
-          renderArchivePage();
-        });
-      };
-    }
-
-    if (nextButton) {
-      nextButton.onclick = (event) => {
-        const totalPages = Math.max(
-          1,
-          Math.ceil(archiveState.notes.length / archiveState.pageSize),
-        );
-
-        if (archiveState.page >= totalPages) {
-          return;
-        }
-
-        archiveState.page += 1;
-        preserveFooterAnchor(event.currentTarget, () => {
-          renderArchivePage();
-        });
-      };
-    }
-  }
-
-  function bindPageSizeControl() {
-    const root = archivePageSizeRoot();
-    const trigger = archivePageSizeTrigger();
-    const menu = archivePageSizeMenu();
-
-    if (!root || !trigger || !menu) {
-      return;
-    }
-
-    if (root.dataset.bound !== "true") {
-      trigger.addEventListener("click", () => {
-        const isOpen = trigger.getAttribute("aria-expanded") === "true";
-        setPageSizeMenuOpen(!isOpen);
-      });
-
-      menu.addEventListener("click", (event) => {
-        const option = event.target.closest("[data-archive-page-size]");
-
-        if (!option) {
-          return;
-        }
-
-        const nextPageSize = Number.parseInt(option.dataset.archivePageSize, 10);
-
-        if (!Number.isInteger(nextPageSize) || nextPageSize <= 0) {
-          return;
-        }
-
-        archiveState.pageSize = nextPageSize;
-        archiveState.page = 1;
-        setPageSizeMenuOpen(false);
-        preserveFooterAnchor(trigger, () => {
-          renderArchivePage();
-        });
-      });
-
-      root.dataset.bound = "true";
-    }
-
-    if (!pageSizeBound) {
-      document.addEventListener("click", (event) => {
-        const currentRoot = archivePageSizeRoot();
-
-        if (!currentRoot || currentRoot.contains(event.target)) {
-          return;
-        }
-
-        setPageSizeMenuOpen(false);
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          setPageSizeMenuOpen(false);
-        }
-      });
-
-      pageSizeBound = true;
-    }
-  }
-
-  function bindViewToggleControls() {
-    if (viewToggleBound) {
-      return;
-    }
-
-    archiveViewButtons().forEach((button) => {
-      button.addEventListener("click", () => {
-        const nextMode = button.dataset.archiveView;
-
-        if (nextMode === archiveState.viewMode) {
-          return;
-        }
-
-        updateViewMode(nextMode);
-      });
-    });
-
-    viewToggleBound = true;
   }
 
   function clearSidebarSelection() {
@@ -664,11 +414,8 @@ ${footerMarkup}
       return archiveSearch;
     }
 
-    archiveSearch = archiveSearchApi?.createController({
-      beginRenderRequest() {
-        archiveRenderRequestId += 1;
-        return archiveRenderRequestId;
-      },
+    archiveSearch = noteSearchApi?.createController({
+      beginRenderRequest: beginArchiveRenderRequest,
       clearActiveTag,
       clearSidebarSelection,
       completeLanding: () => mainLanding?.complete(),
@@ -792,65 +539,6 @@ ${footerMarkup}
     }
 
     return `${count} notes across the archive.`;
-  }
-
-  function renderArchivePage() {
-    archiveState.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
-    document.title = DEFAULT_DOCUMENT_TITLE;
-    window.IndexNoteDetail.setArchiveMode("list");
-    syncLandingVisibility("list");
-    window.IndexNoteDetail.renderListFooterPanel();
-    bindPaginationControls();
-    bindPageSizeControl();
-    bindViewToggleControls();
-    bindSearchControl();
-
-    const totalPages = Math.max(1, Math.ceil(archiveState.notes.length / archiveState.pageSize));
-    archiveState.page = Math.min(archiveState.page, totalPages);
-    const startIndex = (archiveState.page - 1) * archiveState.pageSize;
-    const visibleNotes = archiveState.notes.slice(startIndex, startIndex + archiveState.pageSize);
-
-    archiveListView().hidden = false;
-    archivePageLabel().textContent = `Page ${String(archiveState.page).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}`;
-    applyViewModeToList();
-    archiveNoteList().innerHTML = visibleNotes.map(noteCardMarkup).join("");
-    syncPageSizeControl();
-    syncViewToggleButtons();
-    setPaginationButtonState(archivePrevButton(), archiveState.page > 1);
-    setPaginationButtonState(archiveNextButton(), archiveState.page < totalPages);
-  }
-
-  function renderArchiveEmptyState(title, summary, metaLabel = "Archive") {
-    archiveRenderRequestId += 1;
-    archiveState.viewMode = normalizeArchiveViewMode(archiveState.viewMode);
-    archiveState.notes = [];
-    archiveState.page = 1;
-    archiveState.activeNotePath = null;
-    document.title = DEFAULT_DOCUMENT_TITLE;
-    window.IndexNoteDetail.setArchiveMode("list");
-    syncLandingVisibility("list");
-    window.IndexNoteDetail.renderListFooterPanel();
-    bindPageSizeControl();
-    bindViewToggleControls();
-    bindSearchControl();
-    applyViewModeToList();
-    syncPageSizeControl();
-    syncViewToggleButtons();
-    archiveListView().hidden = false;
-    archiveNoteList().innerHTML = `
-<article class="note-card ${archiveState.viewMode === "grid" ? "note-card--grid" : "note-card--list"} note-card--empty">
-<div class="note-card__body">
-<div class="note-card__meta">
-<span class="note-label note-label--accent">${escapeHtml(title)}</span>
-<span class="note-label note-label--muted">${escapeHtml(metaLabel)}</span>
-</div>
-<h2 class="note-card__title">No notes yet</h2>
-<p class="note-card__summary">${escapeHtml(summary || "This area is ready for content, but there are no notes to render for the current selection.")}</p>
-</div>
-    </article>`;
-    archivePageLabel().textContent = "Page 00 / 00";
-    setPaginationButtonState(archivePrevButton(), false);
-    setPaginationButtonState(archiveNextButton(), false);
   }
 
   function updateArchiveLocation({
@@ -1041,70 +729,6 @@ ${footerMarkup}
   function findNoteByPath(path) {
     const normalizedPath = window.NoteDetailRenderer.normalizeNotePath(path);
     return archiveState.allNotes.find((note) => note.path === normalizedPath) || null;
-  }
-
-  function buildPopularTags(notes) {
-    const tagCounts = new Map();
-
-    notes.forEach((note) => {
-      [...new Set(note.tags)].forEach((tag) => {
-        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
-      });
-    });
-
-    return [...tagCounts.entries()]
-      .filter(([, count]) => count >= 5)
-      .sort((left, right) => {
-        if (right[1] !== left[1]) {
-          return right[1] - left[1];
-        }
-
-        return left[0].localeCompare(right[0]);
-      })
-      .map(([tag, count]) => ({ tag, count }));
-  }
-
-  function renderPopularTags() {
-    const mount = popularTagsMount();
-
-    if (!mount) {
-      return;
-    }
-
-    const tags = buildPopularTags(archiveState.allNotes);
-
-    if (tags.length === 0) {
-      mount.innerHTML = '<span class="note-detail__rail-empty">No repeated tags yet.</span>';
-      return;
-    }
-
-    mount.innerHTML = tags
-      .map(
-        ({ tag, count }) => `
-<button class="tag-chip${archiveState.activeTag === tag ? " tag-chip--active" : ""}" type="button" data-popular-tag="${escapeHtml(tag)}">
-<span>${escapeHtml(prettifyTag(tag))}</span>
-<span class="tag-chip__count">${String(count)}</span>
-</button>`,
-      )
-      .join("");
-
-    mount.querySelectorAll("[data-popular-tag]").forEach((button) => {
-      button.addEventListener("click", () => {
-        dismissLandingForShellInteraction();
-        archiveState.activeTag = button.dataset.popularTag;
-        archiveState.category = null;
-        archiveState.collection = null;
-        archiveState.activeNotePath = null;
-        archiveState.page = 1;
-        clearSidebarSelection();
-
-        const notes = notesForSelection(null, null);
-        archiveState.notes = notes;
-        renderArchivePage();
-        renderPopularTags();
-        updateArchiveLocation({ replace: false });
-      });
-    });
   }
 
   function bindBrandResetLinks() {

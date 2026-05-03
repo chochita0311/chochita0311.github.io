@@ -19,7 +19,7 @@
 
 ## Renderer Owner
 - Source file:
-  - `assets/js/note-detail-renderer.js`
+  - `assets/js/note/detail-renderer.js`
 - Primary styles:
   - `assets/css/note-detail.css`
 
@@ -37,8 +37,8 @@
   - `## Heading`
   - `### Heading`
   - `#### Heading`
-- `##### Heading`
-- `###### Heading`
+  - `##### Heading`
+  - `###### Heading`
 - A body `# Heading` is supported, but if the first level 1 heading matches frontmatter `title`, the renderer suppresses it to avoid duplicating the reading view title.
 - `##`, `###`, and `####` headings are added to the note outline rail.
 - For compatibility, always put a space after the `#` markers.
@@ -156,5 +156,5 @@ tags:
 - Avoid depending on advanced GitHub-specific Markdown features unless the renderer is upgraded first.
 
 ## Compatibility Rule
-- If rendering behavior changes in `assets/js/note-detail-renderer.js`, update this document in the same change.
+- If rendering behavior changes in `assets/js/note/detail-renderer.js`, update this document in the same change.
 - If note authoring guidance changes, update [note-data-contract.md](./note-data-contract.md) only when the change affects note structure or metadata expectations.

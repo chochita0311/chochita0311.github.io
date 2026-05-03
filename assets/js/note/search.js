@@ -264,7 +264,10 @@
     };
   }
 
-  window.ArchiveSearch = {
+  const noteSearchApi = {
     createController,
   };
+
+  window.NoteSearch = noteSearchApi;
+  window.ArchiveSearch = noteSearchApi;
 })();
