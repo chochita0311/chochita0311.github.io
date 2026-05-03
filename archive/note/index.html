@@ -20,6 +20,7 @@
     <meta content="https://chochita0311.github.io/assets/og-cheetah.jpg" name="twitter:image" />
     <link href="https://chochita0311.github.io/archive/note/" rel="canonical" />
     <link href="/assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <script src="/assets/js/shell-bootstrap.js"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -44,6 +45,7 @@
               aria-expanded="false"
               aria-haspopup="true"
               class="nav-link nav-dropdown__trigger"
+              data-notes-route="/archive/note/"
               id="topbar-categories-trigger"
               type="button"
             >
@@ -64,7 +66,7 @@
             </div>
           </div>
           <a class="nav-link" href="#">Projects</a>
-          <a class="nav-link" href="#">Design</a>
+          <a class="nav-link" data-design-route href="/archive/design/">Design</a>
           <a class="nav-link" href="#">Game</a>
           <a class="nav-link" href="#">About</a>
         </div>
@@ -342,6 +344,7 @@
     <script defer src="/assets/js/archive/route.js"></script>
     <script defer src="/assets/js/sidebar.js"></script>
     <script defer src="/assets/js/topbar.js"></script>
+    <script defer src="/assets/js/shell-handoff.js"></script>
     <script defer src="/assets/js/note-detail-renderer.js"></script>
     <script defer src="/assets/js/index-note-detail.js"></script>
     <script defer src="/assets/js/main-landing.js"></script>

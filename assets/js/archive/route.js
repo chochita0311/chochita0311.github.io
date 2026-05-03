@@ -39,11 +39,7 @@
       return [];
     }
 
-    return normalized
-      .slice(1)
-      .split("/")
-      .filter(Boolean)
-      .map(decodeSegment);
+    return normalized.slice(1).split("/").filter(Boolean).map(decodeSegment);
   }
 
   function buildLandingPath() {
@@ -56,6 +52,10 @@
 
   function buildNoteListPath() {
     return "/archive/note/";
+  }
+
+  function buildDesignPath() {
+    return "/archive/design/";
   }
 
   function buildNoteQueryBasePath() {
@@ -254,6 +254,7 @@
     buildArchiveHomePath,
     buildCategoryPath,
     buildCollectionPath,
+    buildDesignPath,
     buildLandingPath,
     buildNoteDetailPath,
     buildNoteListPath,

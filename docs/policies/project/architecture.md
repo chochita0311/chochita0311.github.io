@@ -4,7 +4,7 @@
 
 - The site is a static web app built with HTML, CSS, and JavaScript.
 - `index.html` is the published root landing shell.
-- `archive/index.html` and `archive/note/index.html` are the static archive entry shells for canonical archive browse paths.
+- `archive/index.html`, `archive/note/index.html`, and `archive/design/index.html` are the static archive entry shells for canonical archive browse paths and first-pass archive-kind surfaces.
 - `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `NOTES/**/*.md`.
 - `assets/css/app.css` is the shell entry stylesheet imported by `index.html`.
 - `assets/generated/archives-index.json` is the generated runtime archive index derived from `NOTES/`.
@@ -12,8 +12,11 @@
 - `sitemap.xml` is the generated crawl-discovery file for the root landing plus canonical archive browse and note-detail URLs.
 - `robots.txt` is the crawl-entry file that keeps the published sitemap location discoverable to search crawlers.
 - `assets/js/archive/route.js` owns canonical archive path parsing and URL generation for the browser runtime.
+- `archive/design/index.html` owns the first-pass `Design` archive-kind surface at `/archive/design/`.
+- `assets/js/design-cards.js` owns the first-pass static 20-card specimen set and orbital-slide card browser behavior for `/archive/design/`.
 - `assets/js/sidebar.js` renders the left category rail from the generated note index.
 - `assets/js/topbar.js` renders the topbar notes taxonomy menu from the generated note index.
+- `assets/js/shell-handoff.js` owns Notes/Design route handoff timing, shell transition classes, and topbar handoff coordination.
 - `assets/js/main-landing.js` owns the landing-first shell lifecycle for the archive entry view.
 - `assets/js/archive/search.js` owns shared archive search control and execution orchestration.
 - `assets/js/archive/content.js` renders archive and collection note lists from the generated note index.
@@ -25,6 +28,7 @@
 - `assets/css/layouts.css` owns shell, page, and responsive layout structure, including shared archive canvas sizing and sticky shell regions.
 - `assets/css/components.css` owns reusable UI selectors and shared component typography behavior.
 - `assets/css/note-detail.css` owns note-detail-specific presentation and should not redefine shared archive shell layout.
+- `assets/css/design.css` owns the first-pass design-card surface presentation and should not alter note archive list or note-detail presentation.
 - The published shell no longer depends on Tailwind runtime output.
 - Future browse, search, tag, and bookmark flows should consume a generated note index rather than hand-maintained UI-only data.
 
@@ -42,13 +46,16 @@
 
 - `index.html`
 - `archive/`
+- `archive/design/`
 - `assets/generated/archives-index.json`
 - `assets/generated/archives-search-index.json`
 - `sitemap.xml`
 - `robots.txt`
 - `assets/js/archive/route.js`
+- `assets/js/design-cards.js`
 - `assets/js/sidebar.js`
 - `assets/js/topbar.js`
+- `assets/js/shell-handoff.js`
 - `assets/js/main-landing.js`
 - `assets/js/archive/search.js`
 - `assets/js/icons.js`
@@ -59,6 +66,7 @@
 - `assets/css/components.css`
 - `assets/css/layouts.css`
 - `assets/css/app.css`
+- `assets/css/design.css`
 - `NOTES/`
 - `docs/policies/archive/note/note-data-contract.md`
 - `docs/policies/archive/note/markdown-rendering.md`
@@ -70,7 +78,7 @@
 - Keep the visible archive model aligned to `NOTES/<category>/<collection>/<note>.md`.
 - Treat Markdown files as the only durable note content source.
 - Treat `assets/generated/archives-index.json` and `assets/generated/archives-search-index.json` as generated runtime output, not hand-edited source content.
-- Treat `archive/index.html` and `archive/note/index.html` as owned runtime entry files aligned to the canonical archive route contract.
+- Treat `archive/index.html`, `archive/note/index.html`, and `archive/design/index.html` as owned runtime entry files aligned to the canonical archive route contract.
 - Treat `sitemap.xml` as generated output aligned to the published URL shape, not hand-edited source content.
 - Keep `robots.txt` minimal and stable unless crawl restrictions or sitemap location change.
 - Keep the published shell desktop-first until product scope explicitly changes.

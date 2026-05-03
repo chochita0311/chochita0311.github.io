@@ -11,9 +11,105 @@
     return document.getElementById("topbar-categories-panel");
   }
 
-  function dispatchArchiveNavigate(category, collection = null) {
+  function topbar() {
+    return document.querySelector(".topbar");
+  }
+
+  function shouldDeferNotesDropdown() {
+    return (
+      document.documentElement.dataset.notesReturn === "true" ||
+      document.body.classList.contains("is-notes-return")
+    );
+  }
+
+  function setTopbarHold(holdTarget) {
+    const topbarElement = topbar();
+
+    document.documentElement.dataset.topbarHold = holdTarget;
+
+    if (topbarElement) {
+      topbarElement.dataset.topbarHold = holdTarget;
+    }
+  }
+
+  function clearTopbarHold(holdTarget) {
+    const topbarElement = topbar();
+
+    if (document.documentElement.dataset.topbarHold === holdTarget) {
+      delete document.documentElement.dataset.topbarHold;
+    }
+
+    if (topbarElement?.dataset.topbarHold === holdTarget) {
+      delete topbarElement.dataset.topbarHold;
+    }
+  }
+
+  function topbarHoldElement(holdTarget) {
+    if (holdTarget === "design") {
+      return document.querySelector("[data-design-route]");
+    }
+
+    if (holdTarget === "notes") {
+      return topbarCategoriesTrigger();
+    }
+
+    return null;
+  }
+
+  function canHoldStateInherit(holdTarget) {
+    const holdElement = topbarHoldElement(holdTarget);
+
+    return Boolean(
+      holdElement &&
+      (holdElement.matches(":hover") || holdElement.contains(document.activeElement)),
+    );
+  }
+
+  function releaseTopbarCategoriesHandoff({ blurTrigger = false, forceOpen = false } = {}) {
+    const root = topbarCategoriesRoot();
+    const trigger = topbarCategoriesTrigger();
+    const panel = topbarCategoriesPanel();
+
+    if (!root || !trigger || !panel) {
+      return;
+    }
+
+    if (blurTrigger) {
+      trigger.blur();
+    }
+
+    const canOpenDropdown =
+      !document.body.classList.contains("design-page") &&
+      root.dataset.taxonomyReady === "true" &&
+      !shouldDeferNotesDropdown();
+    const shouldStayOpen =
+      canOpenDropdown &&
+      (forceOpen || root.matches(":hover") || root.contains(document.activeElement));
+
+    delete root.dataset.handoffOpen;
+    delete root.dataset.lockedClosed;
+    trigger.setAttribute("aria-expanded", shouldStayOpen ? "true" : "false");
+    panel.hidden = !shouldStayOpen;
+  }
+
+  function releaseTopbarHold(holdTarget, { blurElement = false } = {}) {
+    const holdElement = topbarHoldElement(holdTarget);
+
+    clearTopbarHold(holdTarget);
+
+    if (holdTarget === "notes") {
+      releaseTopbarCategoriesHandoff({ blurTrigger: blurElement });
+      return;
+    }
+
+    if (blurElement) {
+      holdElement?.blur?.();
+    }
+  }
+
+  function dispatchTopbarArchiveSelection(category, collection = null) {
     window.dispatchEvent(
-      new CustomEvent("archive:navigate", {
+      new CustomEvent("topbar:archive-selection", {
         detail: {
           category,
           collection,
@@ -26,13 +122,25 @@
     const trigger = topbarCategoriesTrigger();
     const panel = topbarCategoriesPanel();
 
-    if (!root || !trigger || !panel) {
+    if (!root || !trigger || !panel || root.dataset.hoverBound === "true") {
       return;
     }
 
+    root.dataset.hoverBound = "true";
+
     const setExpandedState = (isExpanded) => {
-      trigger.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      panel.hidden = !isExpanded;
+      if (!isExpanded && root.dataset.handoffOpen === "true") {
+        return;
+      }
+
+      const canOpenDropdown =
+        !document.body.classList.contains("design-page") &&
+        root.dataset.taxonomyReady === "true" &&
+        !shouldDeferNotesDropdown();
+      const shouldExpand = canOpenDropdown && isExpanded;
+
+      trigger.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+      panel.hidden = !shouldExpand;
     };
 
     const unlockClosedState = () => {
@@ -73,6 +181,7 @@
     }
 
     root.dataset.lockedClosed = "true";
+    delete root.dataset.handoffOpen;
     trigger.setAttribute("aria-expanded", "false");
     panel.hidden = true;
     trigger.blur();
@@ -80,9 +189,10 @@
 
   function renderTopbarCategories(categories) {
     const root = topbarCategoriesRoot();
+    const trigger = topbarCategoriesTrigger();
     const panel = topbarCategoriesPanel();
 
-    if (!root || !panel) {
+    if (!root || !trigger || !panel) {
       return;
     }
 
@@ -124,20 +234,31 @@
       })
       .join("");
 
-    panel.hidden = true;
+    root.dataset.taxonomyReady = "true";
+
+    const shouldKeepPanelOpen =
+      !document.body.classList.contains("design-page") &&
+      root.dataset.taxonomyReady === "true" &&
+      !shouldDeferNotesDropdown() &&
+      (root.dataset.handoffOpen === "true" ||
+        root.matches(":hover") ||
+        root.contains(document.activeElement));
+
+    trigger.setAttribute("aria-expanded", shouldKeepPanelOpen ? "true" : "false");
+    panel.hidden = !shouldKeepPanelOpen;
     panel.innerHTML = `<div class="nav-menu">${categoryMarkup}</div>`;
 
     panel.querySelectorAll("[data-topbar-category]").forEach((button) => {
       button.addEventListener("click", () => {
         closeTopbarCategories();
-        dispatchArchiveNavigate(button.dataset.topbarCategory, null);
+        dispatchTopbarArchiveSelection(button.dataset.topbarCategory, null);
       });
     });
 
     panel.querySelectorAll("[data-topbar-collection]").forEach((button) => {
       button.addEventListener("click", () => {
         closeTopbarCategories();
-        dispatchArchiveNavigate(
+        dispatchTopbarArchiveSelection(
           button.dataset.topbarCategoryParent,
           button.dataset.topbarCollection,
         );
@@ -148,10 +269,15 @@
   }
 
   async function initializeTopbarTaxonomy() {
+    const root = topbarCategoriesRoot();
     const panel = topbarCategoriesPanel();
 
     if (!panel || !window.ArchiveTaxonomy) {
       return;
+    }
+
+    if (root) {
+      delete root.dataset.taxonomyReady;
     }
 
     try {
@@ -166,10 +292,26 @@
 
       renderTopbarCategories(categories);
     } catch {
+      if (root) {
+        root.dataset.taxonomyReady = "true";
+        bindTopbarHoverState(root);
+      }
+
       panel.innerHTML =
         '<div class="nav-menu"><span class="nav-menu__empty">Notes are unavailable.</span></div>';
     }
   }
+
+  window.TopbarController = {
+    canHoldStateInherit,
+    getCategoriesRoot: topbarCategoriesRoot,
+    getCategoriesTrigger: topbarCategoriesTrigger,
+    getHoldElement: topbarHoldElement,
+    isNotesDropdownDeferred: shouldDeferNotesDropdown,
+    releaseCategoriesHandoff: releaseTopbarCategoriesHandoff,
+    releaseHold: releaseTopbarHold,
+    setHold: setTopbarHold,
+  };
 
   initializeTopbarTaxonomy();
 })();

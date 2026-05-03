@@ -204,9 +204,12 @@ function renderOutline(items) {
           behavior: prefersReducedMotion() ? "auto" : "smooth",
           block: "start",
         });
-        window.setTimeout(() => {
-          target.focus({ preventScroll: true });
-        }, prefersReducedMotion() ? 0 : 180);
+        window.setTimeout(
+          () => {
+            target.focus({ preventScroll: true });
+          },
+          prefersReducedMotion() ? 0 : 180,
+        );
       });
     });
 }

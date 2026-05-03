@@ -1,0 +1,148 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Design | Chochita Archive</title>
+    <meta content="Browse design specimens in the Chochita archive." name="description" />
+    <meta content="Design | Chochita Archive" property="og:title" />
+    <meta content="Browse design specimens in the Chochita archive." property="og:description" />
+    <meta content="website" property="og:type" />
+    <meta content="https://chochita0311.github.io/archive/design/" property="og:url" />
+    <meta content="https://chochita0311.github.io/assets/og-cheetah.jpg" property="og:image" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Design | Chochita Archive" name="twitter:title" />
+    <meta content="Browse design specimens in the Chochita archive." name="twitter:description" />
+    <meta content="https://chochita0311.github.io/assets/og-cheetah.jpg" name="twitter:image" />
+    <link href="https://chochita0311.github.io/archive/design/" rel="canonical" />
+    <link href="/assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <script src="/assets/js/shell-bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/app.css" rel="stylesheet" />
+  </head>
+  <body class="design-page">
+    <nav class="topbar no-line-rule">
+      <div class="topbar__start">
+        <a class="brand-title" href="/archive/">조치타의 잡동사니</a>
+        <div class="topbar__nav" aria-label="Primary">
+          <div class="nav-dropdown" id="topbar-categories">
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="nav-link nav-dropdown__trigger"
+              data-notes-route="/archive/note/"
+              id="topbar-categories-trigger"
+              type="button"
+            >
+              Notes
+              <span
+                aria-hidden="true"
+                class="icon icon--material material-symbols-outlined nav-link__icon"
+                >expand_more</span
+              >
+            </button>
+            <div
+              class="nav-dropdown__panel nav-dropdown__panel--level-1"
+              id="topbar-categories-panel"
+            >
+              <div class="nav-menu nav-menu--loading">
+                <span class="nav-menu__empty">Loading notes...</span>
+              </div>
+            </div>
+          </div>
+          <a class="nav-link" href="#">Projects</a>
+          <a class="nav-link" data-design-route href="/archive/design/">Design</a>
+          <a class="nav-link" href="#">Game</a>
+          <a class="nav-link" href="#">About</a>
+        </div>
+      </div>
+      <div class="topbar__end topbar__end--reserved" aria-hidden="true">
+        <label class="search-field search-field--topbar">
+          <input
+            class="search-field__input"
+            disabled
+            placeholder="Search archive..."
+            tabindex="-1"
+            type="text"
+          />
+          <span
+            aria-hidden="true"
+            class="icon icon--material material-symbols-outlined search-field__icon"
+            >search</span
+          >
+        </label>
+      </div>
+    </nav>
+    <main class="design-main" data-design-browser>
+      <section class="design-stage" aria-labelledby="design-stage-title">
+        <div class="design-stage__header">
+          <p class="design-stage__eyebrow">Design Archive</p>
+          <h1 class="design-stage__title" id="design-stage-title">Orbital Slide Specimens</h1>
+          <p class="design-stage__summary">
+            Twenty static card specimens arranged as a finite golden-ratio reel.
+          </p>
+        </div>
+        <div
+          class="design-orbit"
+          data-design-stage
+          tabindex="0"
+          aria-roledescription="carousel"
+          aria-label="Design card specimens"
+        >
+          <div class="design-orbit__rings" aria-hidden="true">
+            <span class="design-orbit__ring design-orbit__ring--outer"></span>
+            <span class="design-orbit__ring design-orbit__ring--middle"></span>
+            <span class="design-orbit__ring design-orbit__ring--inner"></span>
+          </div>
+          <div class="design-orbit__cards" data-design-cards></div>
+        </div>
+        <div class="design-controls" aria-label="Design card controls">
+          <button
+            class="design-control design-control--previous"
+            type="button"
+            data-design-previous
+            aria-label="Previous design card"
+          >
+            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+              >chevron_left</span
+            >
+          </button>
+          <div class="design-index">
+            <p class="design-index__label">Specimen</p>
+            <p class="design-index__value" data-design-index>01 / 20</p>
+          </div>
+          <button
+            class="design-control design-control--next"
+            type="button"
+            data-design-next
+            aria-label="Next design card"
+          >
+            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
+              >chevron_right</span
+            >
+          </button>
+        </div>
+        <div class="design-position-rail" aria-label="Design card position" data-design-rail></div>
+        <p class="design-live-status" data-design-status aria-live="polite">
+          Showing design specimen 1 of 20.
+        </p>
+      </section>
+    </main>
+    <script defer src="/assets/js/icons.js"></script>
+    <script defer src="/assets/js/archive/route.js"></script>
+    <script defer src="/assets/js/sidebar.js"></script>
+    <script defer src="/assets/js/topbar.js"></script>
+    <script defer src="/assets/js/shell-handoff.js"></script>
+    <script defer src="/assets/js/design-cards.js"></script>
+  </body>
+</html>

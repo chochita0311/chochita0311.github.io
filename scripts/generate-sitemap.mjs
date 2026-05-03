@@ -133,6 +133,10 @@ function buildArchiveEntries(notes) {
       loc: buildAbsoluteUrl("/archive/note/"),
       lastmod: latestArchiveDate(notes),
     },
+    {
+      loc: buildAbsoluteUrl("/archive/design/"),
+      lastmod: latestArchiveDate(notes),
+    },
     ...buildCategoryEntries(notes),
     ...buildCollectionEntries(notes),
     ...notes.map((note) => ({

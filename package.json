@@ -5,8 +5,8 @@
   "description": "Lightweight static Markdown archive site for GitHub Pages.",
   "scripts": {
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
-    "format": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"pages/**/*.html\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --write",
-    "format:check": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"pages/**/*.html\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --check",
+    "format": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --write",
+    "format:check": "prettier \"index.html\" \"assets/**/*.{html,css,js,json}\" \"scripts/**/*.mjs\" --config configs/lint/prettier.config.json --ignore-path configs/lint/prettier.ignore --check",
     "lint:js": "eslint --config configs/lint/eslint.config.js \"assets/js/**/*.js\" \"scripts/**/*.mjs\"",
     "lint": "npm run format:check && npm run lint:js"
   },

@@ -3,3 +3,101 @@
 @import url("./semantic.css");
 @import url("./layouts.css");
 @import url("./components.css");
+@import url("./design.css");
+
+body.is-design-handoff {
+  overscroll-behavior: none;
+}
+
+body.is-design-handoff .sidebar {
+  opacity: 0.08;
+  pointer-events: none;
+  filter: blur(3px);
+}
+
+body.is-design-handoff .archive-main {
+  opacity: 0.08;
+  filter: blur(3px);
+  transform: scale(0.985);
+  transform-origin: center;
+}
+
+body.is-design-handoff .landing-entry {
+  opacity: 0.08;
+  filter: blur(3px);
+  transform: scale(0.985);
+  transform-origin: center;
+}
+
+body.is-design-handoff .topbar__end {
+  opacity: 0;
+}
+
+body.is-notes-handoff {
+  overscroll-behavior: none;
+}
+
+body.is-notes-handoff .design-main {
+  animation: design-surface-exit 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+body.is-notes-return .sidebar,
+body.is-notes-return .archive-main {
+  animation: notes-shell-enter 620ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+:root[data-notes-return="true"] .sidebar,
+:root[data-notes-return="true"] .archive-main {
+  opacity: 0;
+  filter: blur(3px);
+  transform: scale(0.985);
+  transform-origin: center;
+}
+
+:root[data-notes-return="true"] .topbar__end {
+  opacity: 0;
+}
+
+body.is-notes-return .topbar__end {
+  animation: topbar-end-enter 360ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes notes-shell-enter {
+  0% {
+    opacity: 0;
+    filter: blur(3px);
+    transform: scale(0.985);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes design-surface-exit {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.982);
+  }
+}
+
+@keyframes topbar-end-enter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
