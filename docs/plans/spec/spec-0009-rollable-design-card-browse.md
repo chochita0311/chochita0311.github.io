@@ -15,6 +15,10 @@
 - Created: `2026-05-02`
 - Updated: `2026-05-02`
 
+## Runtime History Note
+
+This spec records the approved first-pass orbital browser. Later owner-directed work replaced the routed content with a constellation collection browser; see [Design Collection Session Summary](../design/design-collection-session-summary.md) for the current implementation and verification. The original acceptance contract remains historical evidence.
+
 ## Source Set
 
 - Human request:
@@ -62,8 +66,8 @@
 
 - [archive/design/index.html](../../../archive/design/index.html)
 - [assets/css/app.css](../../../assets/css/app.css)
-- [assets/css/design.css](../../../assets/css/design.css)
-- [assets/js/design-cards.js](../../../assets/js/design-cards.js)
+- [assets/css/design/cards.css](../../../assets/css/design/cards.css)
+- [assets/js/design/cards.js](../../../assets/js/design/cards.js)
 - [assets/js/archive/route.js](../../../assets/js/archive/route.js)
 
 ## State And Interaction Contract

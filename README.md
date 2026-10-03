@@ -4,6 +4,7 @@ Lightweight static Markdown archive site for browsing and reading personal study
 
 ## Project Overview
 - Desktop-first archive shell built with static HTML and layered CSS
+- The `Design` tab opens a constellation collection browser with an Andromeda specimen canvas and a collection sidebar
 - Durable Markdown archive currently organized under `NOTES/`
 - Current verified content shape: `NOTES/<category>/<collection>/<note>.md`
 - GitHub Pages must serve the repo as static files so runtime `.md` fetches keep working
@@ -76,5 +77,6 @@ Notes:
 - `docs/policies/project/developer-guide.md`: maintenance, verification, and documentation-update workflow
 - `docs/policies/archive/note/`: note workflow, note contract, and Markdown rendering rules
 - `docs/plans/project/roadmap.md`: current and future direction
+- [Design Collection Session Summary](docs/plans/design/design-collection-session-summary.md): Design implementation and verification history
 
 For deeper policy ownership, use `docs/README.md` instead of treating this file as the full docs index.

@@ -315,6 +315,7 @@
       stopLandingTitleAnimation();
       startLandingTitleAnimation();
       playLandingVideo({ reset: true });
+      window.ShellHandoff?.preloadDesignSurface?.();
       emitStateChange();
       return;
     }

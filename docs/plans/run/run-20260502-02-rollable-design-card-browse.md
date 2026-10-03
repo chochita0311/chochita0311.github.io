@@ -13,6 +13,10 @@
 - Created: `2026-05-02`
 - Updated: `2026-05-02`
 
+## Runtime History Note
+
+This passed run records the earlier orbital-card implementation, not the current constellation canvas. Later owner-directed changes are recorded in [Design Collection Session Summary](../design/design-collection-session-summary.md).
+
 ## Goal
 
 - Execute the first-pass rollable design-card browser using 20 static specimen cards.

@@ -12,7 +12,7 @@
 - `index.html` is the published root landing shell.
 - `archive/index.html` is the canonical archive browse shell.
 - `archive/note/index.html` is the canonical note-list and note-detail shell.
-- `archive/design/index.html` owns the first-pass `Design` archive-kind surface at `/archive/design/`.
+- `archive/design/index.html` owns the `Design` collection archive surface at `/archive/design/`.
 - `.nojekyll` keeps GitHub Pages from transforming note Markdown into `.html`, which preserves runtime fetches to `NOTES/**/*.md`.
 - The published shell no longer depends on Tailwind runtime output.
 
@@ -32,9 +32,9 @@
   - `assets/js/shell/bootstrap.js` applies early shell state from session storage before deferred scripts load.
   - `assets/js/shell/sidebar.js` renders the left category rail from the generated note index.
   - `assets/js/shell/topbar.js` renders the topbar notes taxonomy menu from the generated note index.
-  - `assets/js/shell/handoff.js` owns Notes/Design route handoff timing, shell transition classes, and topbar handoff coordination.
+  - `assets/js/shell/handoff.js` owns Notes/Design route handoff timing, shell transition classes, topbar handoff coordination, and Design route prefetch hints.
 - Landing:
-  - `assets/js/landing/main.js` owns the landing-first shell lifecycle for the archive entry view.
+  - `assets/js/landing/main.js` owns the landing-first shell lifecycle for the archive entry view and asks the shell handoff layer to warm the Design route after the entrance is visible.
 - Notes:
   - `assets/js/note/archive-controller.js` owns note archive state, data boot, location synchronization, sidebar handoff, and list/detail orchestration.
   - `assets/js/note/list-renderer.js` owns note list card markup, empty-state markup, and list page rendering.
@@ -44,7 +44,8 @@
   - `assets/js/note/detail-renderer.js` owns note Markdown parsing and rendered body construction.
   - `assets/js/note/detail-controller.js` owns note-detail utility interactions such as breadcrumb handoff, copy-body action wiring, and table-of-contents focus behavior.
 - Design:
-  - `assets/js/design/cards.js` owns the first-pass static 20-card specimen set and orbital-slide card browser behavior for `/archive/design/`.
+  - `assets/js/design/archive-controller.js` owns the `/archive/design/` collection list, active collection metadata, and design collection selection events.
+  - `assets/js/design/collection-browser.js` owns the current constellation-style collection canvas behavior for the active design collection.
 - Shared:
   - `assets/js/shared/icons.js` owns the shared icon registry and Material Symbols rendering helper used by the runtime.
 
@@ -56,8 +57,20 @@
 - `assets/css/semantic.css` owns semantic variable mapping only, such as page-role colors and surfaces derived from tokens.
 - `assets/css/layouts.css` owns shell, page, and responsive layout structure, including shared archive canvas sizing and sticky shell regions.
 - `assets/css/components.css` owns reusable UI selectors and shared component typography behavior.
-- `assets/css/note-detail.css` owns note-detail-specific presentation and should not redefine shared archive shell layout.
-- `assets/css/design.css` owns the first-pass design-card surface presentation and should not alter note archive list or note-detail presentation.
+- `assets/css/note/detail.css` owns note-detail-specific presentation and should not redefine shared archive shell layout.
+- `assets/css/design/cards.css` retains the first-pass orbital-card styles and the shared Design page-entry presentation imported by `app.css`; the routed collection browser adds its own content styles.
+- `assets/css/design/collection-browser.css` owns the routed design collection content area and must not style the shared topbar.
+
+## Design Collection Runtime
+
+- `/archive/design/` presents a collection sidebar beside the bounded constellation canvas. Andromeda is the implemented collection; Orion and Lyra are disabled future slots, not working alternate canvases.
+- The Design archive controller owns collection selection and metadata. The collection browser owns specimen focus, pan/zoom, route geometry, and travel feedback. These names describe responsibilities rather than one constellation or identical implementations across Notes and Design.
+- Specimens are a static fixture in `assets/js/design/collection-browser.js`, not durable note records or a generated Design index. Card activation selects and focuses a specimen; it does not open a separate detail route.
+- View movement starts from the current pan/zoom state and interpolates directly toward the selected destination. A separate glow follows the shortest connected route weighted by world-coordinate distance, using one continuous path and a trailing completion phase.
+- The browser clamps scale and translation to its viewport and finite world bounds during manual navigation, automatic focusing, reset, and resize. Reduced motion applies the destination immediately.
+- The background asset is `assets/design/andromeda_galaxy.jpg`; its tone and overlay are owned by the collection stylesheet. The bottom-center minimap and its viewport rectangle are removed; the main canvas viewport and zoom/reset controls remain.
+- Design asset warming uses best-effort prefetch hints from `assets/js/shell/handoff.js`, scheduled after landing entry and triggered by Design-link intent. It does not guarantee completed loading before navigation.
+- `assets/js/design/cards.js` remains the earlier orbital browser source and is no longer loaded by the Design entry. The implementation and verification history is recorded in [design-collection-session-summary.md](../../plans/design/design-collection-session-summary.md).
 
 ## Content Shape
 
@@ -82,7 +95,8 @@
   - `robots.txt`
 - JavaScript:
   - `assets/js/archive/route.js`
-  - `assets/js/design/cards.js`
+  - `assets/js/design/archive-controller.js`
+  - `assets/js/design/collection-browser.js`
   - `assets/js/landing/main.js`
   - `assets/js/note/archive-controller.js`
   - `assets/js/note/list-renderer.js`
@@ -103,8 +117,9 @@
   - `assets/css/semantic.css`
   - `assets/css/layouts.css`
   - `assets/css/components.css`
-  - `assets/css/note-detail.css`
-  - `assets/css/design.css`
+  - `assets/css/note/detail.css`
+  - `assets/css/design/collection-browser.css`
+  - `assets/css/design/cards.css`
 - Content and owner docs:
   - `NOTES/`
   - `docs/policies/archive/note/note-data-contract.md`

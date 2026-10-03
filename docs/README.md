@@ -40,7 +40,8 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/plans/fix/`: fix logs tied to evaluator findings
 - `docs/plans/heuristic/`: heuristic suggestion backlog records
 - `docs/plans/project/`: project direction and roadmap planning
-- `docs/plans/design/`: active design sequencing and open design decisions
+- `docs/plans/design/`: design sequencing, open decisions, and implementation history
+- [Design Collection Session Summary](plans/design/design-collection-session-summary.md): owner-directed Design canvas changes and their verification history
 - `docs/plans/refactoring/`: refactor tracks, inventories, and implementation plans
 
 ## Navigation Shortcuts

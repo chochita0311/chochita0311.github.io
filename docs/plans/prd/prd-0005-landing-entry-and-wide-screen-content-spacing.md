@@ -33,15 +33,15 @@
   - `tmp/Website_Visuals_and_Video_Generation.mp4`
   - `tmp/Video_Generation_With_Specific_Effects.mp4`
 - Supporting docs:
-  - [roadmap.md](docs/plans/project/roadmap.md)
-  - [architecture.md](docs/policies/project/architecture.md)
-  - [design-constitution.md](docs/policies/design/design-constitution.md)
+  - [roadmap.md](../project/roadmap.md)
+  - [architecture.md](../../policies/project/architecture.md)
+  - [design-constitution.md](../../policies/design/design-constitution.md)
 - Current implementation references:
-  - [index.html](index.html)
-  - [layouts.css](assets/css/layouts.css)
-  - [note-detail.css](assets/css/note-detail.css)
-  - [archive-content.js](assets/js/archive/content.js)
-  - [index-note-detail.js](assets/js/index-note-detail.js)
+  - [index.html](../../../index.html)
+  - [layouts.css](../../../assets/css/layouts.css)
+  - [note/detail.css](../../../assets/css/note/detail.css)
+  - [Archive initialization and list/detail orchestration](../../../assets/js/note/archive-controller.js)
+  - [Note-detail utility interactions](../../../assets/js/note/detail-controller.js)
   - `tmp/sample.html`
 
 ## Product Intent

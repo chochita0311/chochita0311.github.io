@@ -4,6 +4,26 @@
   const NOTES_RETURN_ENTRY_MS = 620;
   const NOTES_RETURN_STORAGE_KEY = "chochita:notes-return-entry";
   const TOPBAR_HOLD_STORAGE_KEY = "chochita:topbar-hold";
+  const DESIGN_PREWARM_LINKS = [
+    {
+      href: "/assets/css/design/collection-browser.css",
+      as: "style",
+    },
+    {
+      href: "/assets/js/design/collection-browser.js",
+      as: "script",
+    },
+    {
+      href: "/assets/js/design/archive-controller.js",
+      as: "script",
+    },
+    {
+      href: "/assets/design/andromeda_galaxy.jpg",
+      as: "image",
+    },
+  ];
+
+  let designPrewarmStarted = false;
 
   function topbarController() {
     return window.TopbarController;
@@ -87,6 +107,48 @@
 
   function clearStoredTopbarHold(holdTarget) {
     safeSessionStorageRemove(TOPBAR_HOLD_STORAGE_KEY, holdTarget);
+  }
+
+  function appendPrefetchLink({ href, as }) {
+    if (document.querySelector(`link[rel="prefetch"][href="${href}"]`)) {
+      return;
+    }
+
+    const link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = href;
+
+    if (as) {
+      link.as = as;
+    }
+
+    document.head.append(link);
+  }
+
+  function preloadDesignSurface() {
+    if (designPrewarmStarted || document.body.classList.contains("design-page")) {
+      return;
+    }
+
+    designPrewarmStarted = true;
+    DESIGN_PREWARM_LINKS.forEach(appendPrefetchLink);
+  }
+
+  function scheduleDesignSurfacePreload() {
+    if (designPrewarmStarted || document.body.classList.contains("design-page")) {
+      return;
+    }
+
+    const run = () => {
+      preloadDesignSurface();
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(run, { timeout: 1600 });
+      return;
+    }
+
+    window.setTimeout(run, 700);
   }
 
   function releaseTopbarHold(holdTarget, { blurElement = false } = {}) {
@@ -175,10 +237,12 @@
     }
 
     if (!hasSidebar || prefersReducedMotion()) {
+      preloadDesignSurface();
       navigateTo(url);
       return;
     }
 
+    preloadDesignSurface();
     sidebar.setAttribute("aria-hidden", "true");
     sidebar.inert = true;
     document.body.classList.add("is-design-handoff");
@@ -306,6 +370,9 @@
 
   function bindArchiveKindRoutes() {
     document.querySelectorAll("[data-design-route]").forEach((link) => {
+      link.addEventListener("pointerenter", scheduleDesignSurfacePreload, { passive: true });
+      link.addEventListener("focus", scheduleDesignSurfacePreload);
+      link.addEventListener("touchstart", preloadDesignSurface, { passive: true });
       link.addEventListener("click", (event) => {
         const targetUrl = link.getAttribute("href");
 
@@ -357,6 +424,7 @@
   window.ShellHandoff = {
     beginDesignHandoff,
     beginNotesHandoff,
+    preloadDesignSurface: scheduleDesignSurfacePreload,
     resetDesignSurface,
   };
 

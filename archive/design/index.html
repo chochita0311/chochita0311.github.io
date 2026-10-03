@@ -29,6 +29,7 @@
       rel="stylesheet"
     />
     <link href="/assets/css/app.css" rel="stylesheet" />
+    <link href="/assets/css/design/collection-browser.css" rel="stylesheet" />
   </head>
   <body class="design-page">
     <nav class="topbar no-line-rule">
@@ -83,66 +84,115 @@
         </label>
       </div>
     </nav>
-    <main class="design-main" data-design-browser>
-      <section class="design-stage" aria-labelledby="design-stage-title">
-        <div class="design-stage__header">
-          <p class="design-stage__eyebrow">Design Archive</p>
-          <h1 class="design-stage__title" id="design-stage-title">Orbital Slide Specimens</h1>
-          <p class="design-stage__summary">
-            Twenty static card specimens arranged as a finite golden-ratio reel.
+    <main class="design-main design-main--collection-browser">
+      <div class="design-collection-shell" data-design-archive data-design-collection-browser>
+        <aside class="left-panel" aria-label="Design collections">
+          <div class="eyebrow" data-design-archive-eyebrow>Design Archive</div>
+          <h1 data-design-collection-title>Andromeda<br />Archive</h1>
+          <p data-design-collection-summary>
+            디자인 실험들을 별자리 노드처럼 배치한 탐색형 아카이브입니다. 드래그로 이동하고, 휠로
+            확대해서 각 specimen을 관측하세요.
           </p>
-        </div>
-        <div
-          class="design-orbit"
-          data-design-stage
-          tabindex="0"
-          aria-roledescription="carousel"
-          aria-label="Design card specimens"
-        >
-          <div class="design-orbit__rings" aria-hidden="true">
-            <span class="design-orbit__ring design-orbit__ring--outer"></span>
-            <span class="design-orbit__ring design-orbit__ring--middle"></span>
-            <span class="design-orbit__ring design-orbit__ring--inner"></span>
+          <nav
+            class="collection-list"
+            data-design-collection-list
+            aria-label="Design archive collections"
+          ></nav>
+          <div class="stats" data-design-collection-stats aria-hidden="true">
+            <div class="stat"><strong>16</strong><span>Specimens</span></div>
+            <div class="stat"><strong>16</strong><span>Primary nodes</span></div>
+            <div class="stat"><strong>∞</strong><span>Paths</span></div>
           </div>
-          <div class="design-orbit__cards" data-design-cards></div>
-        </div>
-        <div class="design-controls" aria-label="Design card controls">
-          <button
-            class="design-control design-control--previous"
-            type="button"
-            data-design-previous
-            aria-label="Previous design card"
-          >
-            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
-              >chevron_left</span
-            >
-          </button>
-          <div class="design-index">
-            <p class="design-index__label">Specimen</p>
-            <p class="design-index__value" data-design-index>01 / 20</p>
+          <div class="panel-actions">
+            <button class="panel-btn" id="tourBtn" type="button">Focus selected →</button>
+            <button class="panel-btn" id="resetBtn2" type="button">Reset map</button>
+            <button class="panel-btn" id="uploadBgBtn" type="button">배경 교체</button>
+            <input class="sr-only" id="bgFile" type="file" accept="image/*" />
           </div>
+          <div class="gesture-hint" aria-hidden="true">
+            <svg class="gesture-icon" viewBox="0 0 48 48" fill="none">
+              <path
+                d="M13 19c-3 3-3 7 0 10m22-10c3 3 3 7 0 10"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+              <path
+                d="M18 14l-5 5 5 5m12-10 5 5-5 5"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M23 18v14m0 0 5-5m-5 5-5-5"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <em>Drag to pan</em>
+            <em>Scroll to zoom</em>
+          </div>
+        </aside>
+
+        <aside class="selected-panel" id="selectedPanel" aria-live="polite">
+          <small>Selected specimen</small>
+          <h2 id="selectedTitle">Ambient Interface Matrix 01</h2>
+          <p id="selectedDesc">
+            노드 위 카드에 마우스를 올리면 이 영역과 별자리 선이 함께 갱신됩니다. 클릭하면 선택
+            상태로 고정됩니다.
+          </p>
+          <span class="selected-node-name" id="selectedNode">Mirach · Node 01</span>
+        </aside>
+
+        <section class="viewport" id="viewport" aria-label="Zoomable constellation archive canvas">
+          <section class="world" id="world" aria-label="Andromeda constellation archive map">
+            <div class="world-bg" id="worldBg" aria-hidden="true"></div>
+            <svg
+              class="constellation-svg"
+              id="constellationSvg"
+              viewBox="0 0 3000 1800"
+              aria-hidden="true"
+            ></svg>
+            <div id="nodesLayer"></div>
+            <div id="cardsLayer"></div>
+          </section>
+        </section>
+
+        <div class="compass" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 2 22.5 29 16 24.5 9.5 29 16 2Z" fill="currentColor" opacity="0.9" />
+            <path d="M16 2v22.5" stroke="#fff" stroke-width="1.1" opacity="0.45" />
+          </svg>
+        </div>
+
+        <div class="controls" aria-label="Map controls">
+          <button class="control-btn" id="zoomInBtn" type="button" aria-label="Zoom in">+</button>
+          <button class="control-btn" id="zoomOutBtn" type="button" aria-label="Zoom out">−</button>
           <button
-            class="design-control design-control--next"
+            class="control-btn"
+            id="resetBtn"
             type="button"
-            data-design-next
-            aria-label="Next design card"
+            aria-label="Reset map"
+            style="font-size: 20px"
           >
-            <span aria-hidden="true" class="icon icon--material material-symbols-outlined"
-              >chevron_right</span
-            >
+            ⌖
           </button>
         </div>
-        <div class="design-position-rail" aria-label="Design card position" data-design-rail></div>
-        <p class="design-live-status" data-design-status aria-live="polite">
-          Showing design specimen 1 of 20.
-        </p>
-      </section>
+
+        <div class="zoom-readout" id="zoomReadout">ZOOM 100%</div>
+
+        <div class="cursor-tip" id="cursorTip">click to lock focus</div>
+      </div>
     </main>
     <script defer src="/assets/js/shared/icons.js"></script>
     <script defer src="/assets/js/archive/route.js"></script>
     <script defer src="/assets/js/shell/sidebar.js"></script>
     <script defer src="/assets/js/shell/topbar.js"></script>
     <script defer src="/assets/js/shell/handoff.js"></script>
-    <script defer src="/assets/js/design/cards.js"></script>
+    <script defer src="/assets/js/design/collection-browser.js"></script>
+    <script defer src="/assets/js/design/archive-controller.js"></script>
   </body>
 </html>

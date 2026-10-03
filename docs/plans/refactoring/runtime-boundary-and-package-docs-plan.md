@@ -170,7 +170,7 @@ Status:
 - Shell runtime files now live under `assets/js/shell/`: `bootstrap.js`, `sidebar.js`, `topbar.js`, and `handoff.js`.
 - Root landing runtime now lives under `assets/js/landing/main.js`.
 - Note runtime files now live under `assets/js/note/`: `archive-controller.js`, `search.js`, `list-renderer.js`, `view-controls.js`, `popular-tags.js`, `detail-renderer.js`, and `detail-controller.js`.
-- Design runtime now lives under `assets/js/design/cards.js`.
+- The 2026-05-03 batch moved the first-pass Design runtime to `assets/js/design/cards.js`. The subsequent collection-browser replacement is recorded in [Design Collection Session Summary](../design/design-collection-session-summary.md).
 - Archive runtime now keeps only archive-wide route grammar under `assets/js/archive/route.js`.
 - `assets/js/note/archive-controller.js` has been reduced toward state/data/location orchestration; `docs/plans/refactoring/archive-js-structure-plan.md` now owns any further detail-route extraction.
 - `assets/js/note/search.js` publishes `window.NoteSearch` and keeps `window.ArchiveSearch` as a compatibility alias for existing plain-script consumers.
@@ -182,7 +182,7 @@ Goal:
 - Decide whether the current CSS structure is still healthy, then split or re-home rules only where a file has mixed ownership that slows maintenance.
 
 Why this grouping:
-- The current CSS layers are conceptually sound, but `components.css`, `layouts.css`, `note-detail.css`, `design.css`, and handoff rules in `app.css` need an ownership audit as new surfaces are added.
+- The current CSS layers are conceptually sound, but `components.css`, `layouts.css`, `note/detail.css`, `design/cards.css`, and handoff rules in `app.css` need an ownership audit as new surfaces are added.
 
 Guardrails:
 - Treat this as structural CSS movement, not visual redesign.
@@ -198,8 +198,8 @@ Targets:
 - `assets/css/semantic.css`
 - `assets/css/layouts.css`
 - `assets/css/components.css`
-- `assets/css/note-detail.css`
-- `assets/css/design.css`
+- `assets/css/note/detail.css`
+- `assets/css/design/cards.css`
 - HTML class contracts in active entry files
 
 Validation:
@@ -213,15 +213,16 @@ Exit gate:
 
 Status:
 - Ownership audit completed on 2026-05-03.
-- No selector movement was made in this batch because the current layers are still coherent:
+- No selector movement was made in the 2026-05-03 batch because the layers were coherent at that time:
   - `tokens.css`, `base.css`, and `semantic.css` keep primitive, browser-base, and semantic-variable ownership separate.
   - `layouts.css` owns shell, archive canvas, landing-entry layout, and responsive layout structure.
   - `components.css` owns shared reusable controls, topbar/sidebar components, archive cards, view toggles, page-size controls, and footer component styling.
-  - `note-detail.css` owns note-detail presentation and Markdown-rendered body styling.
-  - `design.css` owns the Design archive-kind surface.
+  - `note-detail.css` owned note-detail presentation and Markdown-rendered body styling.
+  - `design.css` owned the Design archive-kind surface.
   - `app.css` owns import order and cross-surface Notes/Design handoff transition classes.
-- `docs/policies/project/architecture.md` was updated to make the `app.css` handoff ownership and `note-detail.css` path explicit.
+- `docs/policies/project/architecture.md` was updated to make the `app.css` handoff ownership and then-current `note-detail.css` path explicit.
 - A future split should be driven by a concrete mixed-owner selector problem, not by file size alone.
+- Later owner-directed work moved those domain styles to `note/detail.css` and `design/cards.css`, then added `design/collection-browser.css`; use [Project Architecture](../../policies/project/architecture.md) for current ownership.
 
 ### Step 5 - Package Docs Structuring Pass
 

@@ -73,7 +73,7 @@
 
 - [assets/css/layouts.css](../../../assets/css/layouts.css)
 - [assets/css/components.css](../../../assets/css/components.css)
-- [assets/css/note-detail.css](../../../assets/css/note-detail.css)
+- [assets/css/note/detail.css](../../../assets/css/note/detail.css)
 - [index.html](../../../index.html)
 - [archive/index.html](../../../archive/index.html)
 - [archive/note/index.html](../../../archive/note/index.html)

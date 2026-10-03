@@ -77,7 +77,7 @@
 - [assets/css/base.css](../../../assets/css/base.css)
 - [assets/css/layouts.css](../../../assets/css/layouts.css)
 - [assets/css/components.css](../../../assets/css/components.css)
-- [assets/css/note-detail.css](../../../assets/css/note-detail.css)
+- [assets/css/note/detail.css](../../../assets/css/note/detail.css)
 
 ## Pass Or Fail Checks
 

@@ -42,7 +42,7 @@
   - [base.css](../../../assets/css/base.css)
   - [layouts.css](../../../assets/css/layouts.css)
   - [components.css](../../../assets/css/components.css)
-  - [note-detail.css](../../../assets/css/note-detail.css)
+  - [note/detail.css](../../../assets/css/note/detail.css)
 
 ## Product Intent
 

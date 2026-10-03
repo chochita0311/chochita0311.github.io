@@ -73,9 +73,9 @@
 
 ## Likely Affected Surfaces
 
-- [assets/js/index-note-detail.js](../../../assets/js/index-note-detail.js)
-- [assets/js/archive/content.js](../../../assets/js/archive/content.js)
-- [assets/css/note-detail.css](../../../assets/css/note-detail.css)
+- [Note-detail DOM and utility helpers](../../../assets/js/note/detail-controller.js)
+- [Note-detail orchestration and reference markup](../../../assets/js/note/archive-controller.js)
+- [assets/css/note/detail.css](../../../assets/css/note/detail.css)
 - [assets/generated/archives-index.json](../../../assets/generated/archives-index.json)
 - source note for id `51`
 

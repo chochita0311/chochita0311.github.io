@@ -21,7 +21,7 @@
 - Source file:
   - `assets/js/note/detail-renderer.js`
 - Primary styles:
-  - `assets/css/note-detail.css`
+  - `assets/css/note/detail.css`
 
 ## General Model
 - Notes are stored as Markdown files under `NOTES/`.

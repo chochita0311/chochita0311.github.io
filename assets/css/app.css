@@ -3,7 +3,7 @@
 @import url("./semantic.css");
 @import url("./layouts.css");
 @import url("./components.css");
-@import url("./design.css");
+@import url("./design/cards.css");
 
 body.is-design-handoff {
   overscroll-behavior: none;

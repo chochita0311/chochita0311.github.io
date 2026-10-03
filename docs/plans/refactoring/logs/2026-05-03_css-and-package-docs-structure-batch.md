@@ -22,9 +22,11 @@
 - `assets/css/tokens.css`, `base.css`, and `semantic.css` remain primitive, browser-base, and semantic-variable layers.
 - `assets/css/layouts.css` remains the shell, archive canvas, landing-entry, and responsive layout layer.
 - `assets/css/components.css` remains the shared control, topbar/sidebar, archive-card, view-toggle, page-size, and footer component layer.
-- `assets/css/note-detail.css` remains the note-detail and rendered-Markdown presentation layer.
-- `assets/css/design.css` remains the Design archive-kind surface layer.
+- `assets/css/note-detail.css` remained the note-detail and rendered-Markdown presentation layer at the time of this batch.
+- `assets/css/design.css` remained the Design archive-kind surface layer at the time of this batch.
 - No selector movement was made; future CSS movement should start from a concrete mixed-owner selector problem.
+
+The later domain-folder moves and collection canvas are recorded in [Design Collection Session Summary](../../design/design-collection-session-summary.md). Current file ownership belongs to [Project Architecture](../../../policies/project/architecture.md).
 
 ## Docs Structuring
 

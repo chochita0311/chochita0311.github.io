@@ -6,8 +6,8 @@
 - Status: `approved`
 - Run ID: `run-20260418-02`
 - Attempt: `1`
-- Parent Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
-- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+- Parent Feature: [feat-0011-wide-screen-sidebar-content-spacing.md](../feature/feat-0011-wide-screen-sidebar-content-spacing.md)
+- Parent PRD: [prd-0005-landing-entry-and-wide-screen-content-spacing.md](../prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Created: `2026-04-18`
 - Updated: `2026-04-20`
 
@@ -19,14 +19,14 @@
   - use the current breakpoint model rather than inventing a separate one
   - adjust the current shell state rather than creating a second large-screen mode
 - Parent feature:
-  - [feat-0011-wide-screen-sidebar-content-spacing.md](docs/plans/feature/feat-0011-wide-screen-sidebar-content-spacing.md)
+  - [feat-0011-wide-screen-sidebar-content-spacing.md](../feature/feat-0011-wide-screen-sidebar-content-spacing.md)
 - Parent PRD:
-  - [prd-0005-landing-entry-and-wide-screen-content-spacing.md](docs/plans/prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
+  - [prd-0005-landing-entry-and-wide-screen-content-spacing.md](../prd/prd-0005-landing-entry-and-wide-screen-content-spacing.md)
 - Golden sources:
-  - current archive shell in [index.html](index.html)
-  - current spacing ownership in [layouts.css](assets/css/layouts.css) and [note-detail.css](assets/css/note-detail.css)
+  - current archive shell in [index.html](../../../index.html)
+  - current spacing ownership in [layouts.css](../../../assets/css/layouts.css) and [note/detail.css](../../../assets/css/note/detail.css)
 - Relevant policies or contracts:
-  - [architecture.md](docs/policies/project/architecture.md)
+  - [architecture.md](../../policies/project/architecture.md)
 
 ## Implementation Goal
 
@@ -52,10 +52,10 @@
 
 ## Affected Surfaces
 
-- [assets/css/layouts.css](assets/css/layouts.css)
-- [assets/css/note-detail.css](assets/css/note-detail.css)
-- [assets/css/tokens.css](assets/css/tokens.css)
-- [index.html](index.html)
+- [assets/css/layouts.css](../../../assets/css/layouts.css)
+- [assets/css/note/detail.css](../../../assets/css/note/detail.css)
+- [assets/css/tokens.css](../../../assets/css/tokens.css)
+- [index.html](../../../index.html)
 
 ## State And Interaction Contract
 
@@ -73,7 +73,7 @@
 ## Data And Contract Assumptions
 
 - Current shell spacing is primarily owned by CSS variables and layout rules rather than JS layout calculation.
-- The breakpoint model already used by `layouts.css` and `note-detail.css` remains the source of truth for responsive shell behavior.
+- The breakpoint model already used by `layouts.css` and `note/detail.css` remains the source of truth for responsive shell behavior.
 - The feature does not require runtime state or URL changes.
 
 ## Acceptance Mapping

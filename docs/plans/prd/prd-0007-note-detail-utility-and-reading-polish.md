@@ -36,13 +36,13 @@
 
 ## Likely Affected Surfaces
 
-- [index.html](index.html)
-- [archive/index.html](archive/index.html)
-- [archive/note/index.html](archive/note/index.html)
-- [assets/css/note-detail.css](assets/css/note-detail.css)
-- [assets/js/index-note-detail.js](assets/js/index-note-detail.js)
-- [assets/js/archive/content.js](assets/js/archive/content.js)
-- [assets/js/icons.js](assets/js/icons.js)
+- [index.html](../../../index.html)
+- [archive/index.html](../../../archive/index.html)
+- [archive/note/index.html](../../../archive/note/index.html)
+- [assets/css/note/detail.css](../../../assets/css/note/detail.css)
+- [assets/js/note/detail-controller.js](../../../assets/js/note/detail-controller.js)
+- [assets/js/note/archive-controller.js](../../../assets/js/note/archive-controller.js)
+- [assets/js/shared/icons.js](../../../assets/js/shared/icons.js)
 
 ## Continuity Notes
 
