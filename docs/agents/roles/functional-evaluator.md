@@ -11,10 +11,10 @@
 
 ## Input Contract
 - one approved feature document
-- one active spec document
+- one active spec document or designated [docs-content writing contract](../../policies/harness/execution-loop-governance.md#docs-content-writing-contract)
 - candidate implementation
 - relevant runtime behavior context
-- relevant interaction-quality policies when visible state changes or flow continuity are in scope
+- relevant interaction-quality policies, including [Interaction Evaluation](../../policies/experience/interaction-evaluation.md) when installed, for visible state or flow continuity
 
 ## Core Rules
 - Evaluate only what the feature and spec actually require.
@@ -24,6 +24,8 @@
 - Prefer deterministic pass or fail language over vague QA commentary.
 - Recheck interaction continuity after rerendering surfaces, especially when controls are recreated through template, component, or markup replacement updates.
 - Treat lost click handlers, dead pagination, broken toggles, or one-time-only controls as blocking defects.
+- Distinguish a fresh isolated-process pass from evidence against the active long-running runtime. When server code, templates, schemas, generated assets, or browser caches can advance independently, test the mixed-version or restart boundary or state clearly that it remains unverified.
+- For client-enhanced actions, a successful endpoint call is not proof that the currently served control works. Check the rendered control with the served asset version and its required fallback path when progressive enhancement is part of the contract.
 
 ## Required Output
 Produce:
@@ -32,6 +34,7 @@ Produce:
 2. concrete defects with reproduction context
 3. regression findings
 4. blockers caused by missing spec clarity
+5. evidence environments, coverage, and any unverified runtime claims
 
 ## Baton To Fix Agent
 - Hand off only confirmed defects or clearly reproducible blockers.

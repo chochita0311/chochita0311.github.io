@@ -16,3 +16,9 @@ npm-debug.log*
 
 # Local scratch output
 tmp/
+
+# Private harness experience (public reference snapshots stay separately owned)
+/docs/evidence/STORE.md
+/docs/evidence/stages/
+/docs/evidence/improvements/
+/docs/evidence/experiments/

@@ -35,7 +35,7 @@
   - No decorative gradients except controlled action emphasis.
   - No “AI product” cues, assistant persona framing, or novelty ornament.
   - No visual drift toward admin dashboards, notification centers, or utility consoles.
-- Source of truth: This constitution is the durable rule set. [DESIGN.md](../../DESIGN.md) provides the visual north star and material rules. [index.html](../../index.html) is a starting artifact, not a durable source by itself.
+- Source of truth: This constitution is the durable rule set. [DESIGN.md](../../../DESIGN.md) provides the visual north star and material rules. [index.html](../../../index.html) is a starting artifact, not a durable source by itself.
 - Reference boundaries: If a future screen conflicts with this constitution and `DESIGN.md`, update the constitution first instead of improvising screen-local styling.
 
 ## 4. Primitive Tokens

@@ -12,6 +12,7 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/agents/`: installed agent package, split into roles, flows, operations, and execution profiles
 - `docs/policies/`: durable rules, definitions, contracts, guides, and governance docs
 - `docs/plans/`: active or historical planning tracks, execution plans, and refactoring work
+- `docs/evidence/`: locally excluded experience outputs; selected public references, when installed, have separate import ownership
 
 ## Package Guide
 
@@ -19,6 +20,8 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/agents/flows/`: sequence and baton-flow docs that compose roles into workflows
 - `docs/agents/operations/`: run-start and run-continuation invocation docs
 - `docs/agents/profiles/`: execution-profile presets for frontend, backend, fullstack, contract, infrastructure, and docs/content work
+- `docs/agents/templates/`: reusable operator and private-experience scaffolds
+- `docs/agents/schemas/`: Improvement Record metadata schema
 - `docs/policies/project/`: project/runtime policy, architecture, and workflow rules
 - `docs/policies/project/architecture.md`: runtime file ownership including generated crawl-discovery assets such as `sitemap.xml` and `robots.txt`
 - `docs/policies/project/developer-guide.md`: maintenance workflow including archive-index and sitemap regeneration steps
@@ -45,6 +48,11 @@ This directory holds the repository's durable policy docs and active planning ar
 - `docs/plans/refactoring/`: refactor tracks, inventories, and implementation plans
 
 ## Navigation Shortcuts
+
+- [Harness import baseline](agents/README.md#import-baseline): accepted source provenance, file ownership, and refresh rules.
+- [Harness Improvement](agents/operations/harness-improvement.md): stage entry/closing, local store setup, and authorized common export; discover the local binding at `docs/evidence/STORE.md`.
+- [Improvement Record contract](policies/harness/improvement-record-contract.md): knowledge/work identity and exchange boundaries.
+- [Operator context](policies/harness/operator-briefing-and-review-receipts.md) and [delegation policy](policies/harness/competence-first-delegation.md): conditional continuity and worker routing.
 
 - Use `docs/agents/` when you are refining reusable agent packages and execution docs.
 - Use `docs/agents/operations/runner.md` when you need execution startup prompts and run-continuation rules.

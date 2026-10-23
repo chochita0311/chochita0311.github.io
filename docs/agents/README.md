@@ -5,6 +5,14 @@
 - Separate role contracts from flow, operation, and profile docs so workflow variants can compose from the same role set.
 - Keep these docs aligned with the shared source package while preserving repo-specific rules in `AGENTS.md` and `docs/policies/`.
 
+## Import Baseline
+
+- The [harness import manifest](harness-import-manifest.json) records the accepted committed source, mapping version, and per-file source/rendered hashes for all 43 selected harness-origin files.
+- Ownership is `managed` for 33 shared files and `local` for 10 files with intentional consumer wording. These ten files require explicit ownership review for later upstream changes.
+- Before refreshing a `managed` file, compare its current bytes with the manifest's `rendered_sha256`; resolve a mismatch before replacing it. Advance its source revision, mapping version and both hashes together only after an accepted refresh.
+- Preserve `local` files and their recorded source revision, mapping version and both detachment hashes during ordinary refresh. Rebase or reattach them only through an explicit ownership decision.
+- Keep repository entrance docs, product artifacts and private experience with their existing local owners. Save the manifest only after the selected content, ownership, provenance and links pass validation.
+
 ## Roles Package
 ### Planning Roles
 - `docs/agents/roles/prd-normalizer.md`: normalize chaotic product inputs into a bounded PRD package
@@ -26,6 +34,8 @@
 ## Operations Package
 - `docs/agents/operations/runner.md`: define how a human or harness starts and continues one run using prompts
 
+- [Harness Improvement](operations/harness-improvement.md): configured stage entry/closing, bounded investigation and authorized common export
+
 ## Profiles Package
 - `docs/agents/profiles/README.md`: explain reusable execution profiles
 - `docs/agents/profiles/frontend-product.md`: user-facing screen, route, component, and interaction work
@@ -35,7 +45,18 @@
 - `docs/agents/profiles/infra-devtool.md`: infrastructure, tooling, scripts, CI, and local workflow work
 - `docs/agents/profiles/docs-content.md`: documentation, content, policy, guide, and information-architecture work
 
+## Experience And Response Assets
+
+- [Operator briefing scaffold](templates/operator-briefing.md): non-persistent continuity responses
+- [Local store](templates/harness-local-store.md), [stage record](templates/harness-stage-record.md), [experiment](templates/harness-experiment.md), and [Improvement Record](templates/harness-improvement-record.md): blank scaffolds completed at their private owners when needed
+- [Improvement Record schema](schemas/improvement-record.schema.json): metadata shape; semantic evidence and authority review remain separate
+- Find the configured local store at `docs/evidence/STORE.md`; preserve its locally excluded records and any existing override. Public records are selected separately; no public records or catalog are selected in the current import.
+
 ## Related Local Docs
+- [Harness Improvement policy](../policies/harness/harness-improvement.md): private experience and promotion boundaries
+- [Improvement Record contract](../policies/harness/improvement-record-contract.md): common knowledge/work identity and exchange
+- [Operator context policy](../policies/harness/operator-briefing-and-review-receipts.md): conditional briefings and review receipts
+- [Delegation policy](../policies/harness/competence-first-delegation.md): competence, bounded packets and final ownership
 - `docs/policies/harness/prd-feature-management.md`: planning-governance rule for PRDs, features, approval, and traceability
 - `docs/policies/harness/execution-loop-governance.md`: execution-loop rules, fail classification, routing, and artifact ownership
 - `docs/policies/harness/execution-profiles.md`: profile selection, surface-lane, and evaluator routing rules

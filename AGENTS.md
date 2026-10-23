@@ -66,3 +66,29 @@
 - Do not start spec work, code changes, or evaluation until one feature boundary is explicitly approved.
 - If open points could still change scope, acceptance, dependency, or user-visible behavior, stop and ask instead of implementing.
 - Do not reinterpret a planning request as implementation approval unless the user explicitly says to proceed with implementation.
+
+## Harness Context And Experience
+
+- When a canonical target starts or resumes and prior context materially affects understanding or execution, apply `docs/policies/harness/operator-briefing-and-review-receipts.md`; otherwise preserve the normal response shape.
+
+When Harness Improvement is selected, follow
+docs/agents/operations/harness-improvement.md for ordinary stage entry, observed
+component use, and closing reflection. Find the default local store at
+docs/evidence/STORE.md or an existing override through this consumer's approved
+private context. Follow the configuration procedure for first setup; preserve
+existing records and report unresolved conflicts without resetting them. With a
+ready binding, retrieve relevant experience and retain knowledge and improvement work in common records as
+part of the normal PRD/feature/spec/build/evaluate/fix flow without a separate
+user command. Otherwise report the persistence gap and keep observations
+session-only. Preserve existing approvals; export common experience only
+within its separately applicable source-edit and disclosure authority.
+In established ai-assets commonization context, recognize short export requests
+through that operation's Recognize An Export Request section. Without a narrower
+selection, review available current-project harness, skill/resource and UI/UX
+experience. Respect case-only, review-only and category/time limits; generalize
+and review public fitness before any common-source write.
+Use Improvement Record v1 for reusable experience and unresolved asset-level
+work. Import selected public records as references or explicit work candidates;
+keep local applicability and execution in the private receipt/task owner. Follow
+the operation's maintenance and record import/export procedures, preserving
+revisit conditions and action authority. A pending task is not a supported lesson.

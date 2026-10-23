@@ -12,7 +12,7 @@
 
 ## Input Contract
 - one approved feature document
-- one active spec document
+- one active spec document or designated [docs-content writing contract](../../policies/harness/execution-loop-governance.md#docs-content-writing-contract)
 - candidate implementation or proposed contract update
 - relevant project policies, architecture rules, schemas, generated artifacts, fixtures, and integration docs
 - active execution profile and surface-lane metadata when present
@@ -46,6 +46,7 @@ Produce:
 4. stale-assumption risks found or ruled out
 5. defects classified as `implementation bug`, `spec gap`, or `planning gap`
 6. recommended next route: `fix`, `spec-review`, `planning-review`, or `pass`
+7. evidence environments, coverage, and any unverified contract claims
 
 ## Baton To Fix Agent
 - Hand off only concrete contract defects tied to the approved feature and active spec.

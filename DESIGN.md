@@ -2,7 +2,7 @@
 
 This document is the creative source for the design system: it captures the north star, visual rationale, and material direction extracted from the starting artifact.
 
-Concrete tokens, enforceable implementation rules, and durable system constraints belong in [docs/designs/design-constitution.md](./docs/designs/design-constitution.md).
+Concrete tokens, enforceable implementation rules, and durable system constraints belong in [docs/policies/design/design-constitution.md](./docs/policies/design/design-constitution.md).
 
 ## 1. Overview & Creative North Star
 

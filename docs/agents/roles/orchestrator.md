@@ -10,6 +10,8 @@
 - It does not own the operator-facing prompt entry pattern for starting a run.
 - Use `docs/agents/flows/workflow.md` for the sequence model.
 - Use `docs/agents/operations/runner.md` for run-start and run-continuation invocation prompts.
+- Use `docs/policies/harness/execution-profiles.md` for profile selection, surface lanes, and evaluator routing.
+- Use `docs/policies/harness/execution-loop-governance.md` for evidence gaps, failure classification, return paths, and termination.
 
 ## When To Use
 - A feature has been approved and is ready to enter execution.
@@ -17,83 +19,32 @@
 
 ## Input Contract
 - one approved feature document
-- one active spec document when it already exists
+- one active spec document or designated docs-content writing contract when it already exists
 - declared feature type, surface, execution profile, and surface lanes when available
 - current evaluator and fix artifacts when the loop is already running
 - relevant execution governance rules
 - relevant execution-profile rules
 
 ## Core Rules
-- Keep only one feature `in-loop` unless the human owner explicitly wants parallel execution.
-- Choose the smallest execution profile that fits the active feature.
-- Choose only the evaluators needed by the active feature type, surface, profile, and lanes.
-- Route foundation and contract-heavy work to Contract Evaluator by default.
-- For multi-surface work, define lane order before build work starts.
-- Route failures to the correct layer:
-  - implementation bug -> builder or fix loop
-  - spec gap -> spec review
-  - planning gap -> planning review
-- Do not let heuristic suggestions silently enter build or fix work.
-- End the loop only on pass, explicit escalation, or explicit return to planning/spec.
-- Treat one run as an automated execution unit.
-- Human review normally happens after the run reports its result, not as an in-progress interruption path.
+- Apply the execution-profile policy to choose the smallest fitting profile, declare any surface lanes, and select only the required evaluators.
+- Apply the execution-loop governance policy to active-feature concurrency, run-unit boundaries, heuristic handling, evidence gaps, failure classification, return and review timing, and termination.
 
 ## Decision Rules
 
-### Profile Selection
-- `frontend-product`:
-  - user-facing screen, route, component, interaction, or presentation work
-- `backend-product`:
-  - service, API, command, job, persistence, messaging, or server-side behavior work
-- `fullstack-product`:
-  - coordinated product work across two or more coupled surfaces
-- `foundation-contract`:
-  - contract, invariant, ownership, schema, identity, fallback, or generated-output foundation work
-- `infra-devtool`:
-  - infrastructure, tooling, CI, local workflow, script, or command behavior work
-- `docs-content`:
-  - documentation, policy, guide, content, or information-architecture work
+### Apply Profile And Evaluator Policy
+- Read the approved feature metadata and apply the execution-profile policy without reproducing its profile definitions or evaluator matrix locally.
+- Record the selected profile, surface lanes, evaluator set, and any run-specific deviation in the active run artifact.
+- For `docs-content`, designate the active spec or compact writing contract through [execution-loop governance](../../policies/harness/execution-loop-governance.md#docs-content-writing-contract) before handing off to build or evaluation.
 
-### Surface Lane Selection
-- Use no lanes when the feature has one coherent execution surface.
-- Use lanes when one approved feature must coordinate multiple surfaces.
-- Require each lane to name path roots, dependencies, validation evidence, and evaluator ownership.
-- Run contract-producing lanes before dependent lanes.
-
-### Evaluator Selection
-- `foundation`:
-  - contract evaluator by default
-  - functional evaluator only when runtime behavior also changes
-- `product` + visual surface:
-  - contract evaluator when contract surfaces are affected
-  - design evaluator
-  - functional evaluator
-  - UX heuristic evaluator
-- `product` + low-visibility or non-visual surface:
-  - contract evaluator when contract surfaces are affected
-  - functional evaluator
-  - UX heuristic evaluator when interaction clarity still matters
-- `fullstack` or multi-surface:
-  - contract evaluator for cross-surface handoff
-  - lane-specific evaluators from the active profile
-
-### Loop Termination
-- `PASS`:
-  - terminate the active loop
-- `FAIL` with `implementation bug`:
-  - continue builder or fix loop
-- `FAIL` with `spec gap`:
-  - report the result for post-run human routing to spec review
-- `FAIL` with `planning gap`:
-  - report the result for post-run human routing to planning review
+### Apply Return And Termination Policy
+- Apply the execution-loop governance policy to evaluator results, evidence gaps, in-loop fixes, post-run returns, and terminal states.
+- Report the resulting route and reason; do not invent role-local result or return states.
 
 ### Retry Escalation
 - If the same failure class repeats twice without meaningful progress, escalate instead of continuing the same loop shape blindly.
 
 ### Capability-Aware Routing
-- If a role has relevant optional skills or tools available in the current environment, prefer using them before generic freeform execution.
-- Treat these as conditional accelerators, not hard prerequisites.
-- Do not block the loop solely because an optional skill or MCP tool is missing.
+- Apply the execution-loop governance policy's optional-capability rule when selecting available tools or skills; conditional accelerators must not become undeclared prerequisites.
 
 ## Required Output
 Produce or update:
@@ -107,8 +58,17 @@ Produce or update:
 7. next role to run
 8. termination reason when the loop stops
 9. post-run recommendation for human review when the correct next step is accept, return to spec, or return to planning
+10. evaluator result, evidence coverage, and acceptance impact when an evidence gap exists
 
 ## Non-Goals
 - redefining scope
 - code changes
 - evaluator-specific defect analysis
+
+## Operator Context Continuity
+
+- Apply [Operator Briefing And Review Receipts](../../policies/harness/operator-briefing-and-review-receipts.md) as an additive user-facing projection.
+- Resolve the canonical target, authority, and persistence disposition before producing a briefing.
+- Emit the shortest self-contained explanation that lets the operator understand the causal context without opening linked artifacts.
+- Do not repeat a full briefing for an unchanged target, and do not emit a receipt when no meaningful direction, open-point, assumption, or review delta exists.
+- Keep routing, approvals, artifact ownership, and lifecycle state unchanged; a briefing or receipt never authorizes work or becomes a source of truth.

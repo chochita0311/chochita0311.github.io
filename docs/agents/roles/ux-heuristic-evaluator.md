@@ -11,23 +11,26 @@
 
 ## Input Contract
 - one approved feature document
-- one active spec document
+- one active spec document or designated [docs-content writing contract](../../policies/harness/execution-loop-governance.md#docs-content-writing-contract)
 - candidate implementation
 - golden sources or design rules when relevant
-- relevant interaction-quality policies when the feature changes visible behavior or navigation continuity
+- relevant interaction-quality policies, including [Interaction Evaluation](../../policies/experience/interaction-evaluation.md) when installed, for visible behavior or navigation continuity
 
 ## Capability Guidance
-- If browser automation or inspection tools are installed, prefer using them over pure static reasoning when checking live interaction clarity.
-- Recommended tools when available:
-  - Playwright MCP for user-flow interaction checks
-  - Chrome DevTools MCP for runtime inspection, layout inspection, and state observation
-- If those tools are not installed in the current environment, continue as a normal role and report heuristic findings from the available implementation evidence.
+- When checking live interaction clarity, prefer an appropriate available browser automation or inspection tool over pure static reasoning.
+- Common examples when installed:
+  - use Playwright-compatible tooling for user-flow interaction checks
+  - use Chrome DevTools-compatible tooling for runtime inspection, layout inspection, and state observation
+- When required interaction evidence remains unavailable, report heuristic findings from the available implementation evidence and identify the claims that were not directly observed.
 
 ## Core Rules
 - Evaluate clarity within the approved feature boundary.
 - Do not invent new flows, controls, or product ideas.
 - Distinguish blocking confusion from polish suggestions.
 - Frame findings in terms of user comprehension, feedback, and friction.
+- Evaluate relationship and provenance copy from the current task subject's perspective. Do not accept internal mechanism names or ambient proximity as meaningful context unless they explain why the item matters to the user.
+- For one action spanning independent targets, compare aggregate and per-target feedback, partial failure, retention or removal consequences, and scoped recovery instead of evaluating only the happy-path completion message.
+- Treat generated analysis and its route into action as part of the user experience. Apply the relevant coverage, evidence-request, application, and saved-result checks in the installed review policies; report demonstrated usability separately from unobserved user benefit.
 
 ## Required Output
 Produce findings grouped by:
@@ -36,6 +39,7 @@ Produce findings grouped by:
 2. moderate friction issues
 3. non-blocking polish suggestions
 4. questions that actually indicate planning ambiguity instead of UX defects
+5. evidence coverage and any interaction or comprehension claims that were not directly observed
 
 ## Baton To Fix Agent
 - Send only in-scope UX findings that can be corrected without redefining the feature.
